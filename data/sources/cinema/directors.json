@@ -1,0 +1,47 @@
+{
+  "_documentation": {
+    "topic": "Directors of notable films",
+    "well_known_criterion": "Films widely recognized by general audiences.",
+    "obscure_criterion": "Films known to cinephiles but not mainstream; or specific years for prolific directors.",
+    "post_cutoff_criterion": "Films released after September 2024.",
+    "primary_source": "Wikipedia per row"
+  },
+  "template": "Who directed the film '{film}'{year_clause}?",
+  "answer_field": "winner",
+  "well_known": [
+    {"film": "Pulp Fiction", "year_clause": "", "winner": "Quentin Tarantino", "alternatives": ["Tarantino"], "answer_date": "1994-10-14", "provenance": "https://en.wikipedia.org/wiki/Pulp_Fiction"},
+    {"film": "Star Wars: Episode IV - A New Hope", "year_clause": "", "winner": "George Lucas", "alternatives": ["Lucas"], "answer_date": "1977-05-25", "provenance": "https://en.wikipedia.org/wiki/Star_Wars_(film)"},
+    {"film": "Schindler's List", "year_clause": "", "winner": "Steven Spielberg", "alternatives": ["Spielberg"], "answer_date": "1993-11-30", "provenance": "https://en.wikipedia.org/wiki/Schindler%27s_List"},
+    {"film": "Oppenheimer", "year_clause": " (2023)", "winner": "Christopher Nolan", "alternatives": ["Nolan"], "answer_date": "2023-07-21", "provenance": "https://en.wikipedia.org/wiki/Oppenheimer_(film)"},
+    {"film": "Goodfellas", "year_clause": "", "winner": "Martin Scorsese", "alternatives": ["Scorsese"], "answer_date": "1990-09-19", "provenance": "https://en.wikipedia.org/wiki/Goodfellas"},
+    {"film": "The Dark Knight", "year_clause": "", "winner": "Christopher Nolan", "alternatives": ["Nolan"], "answer_date": "2008-07-18", "provenance": "https://en.wikipedia.org/wiki/The_Dark_Knight"},
+    {"film": "Citizen Kane", "year_clause": "", "winner": "Orson Welles", "alternatives": ["Welles"], "answer_date": "1941-05-01", "provenance": "https://en.wikipedia.org/wiki/Citizen_Kane"},
+    {"film": "Casablanca", "year_clause": "", "winner": "Michael Curtiz", "alternatives": ["Curtiz"], "answer_date": "1942-11-26", "provenance": "https://en.wikipedia.org/wiki/Casablanca_(film)"},
+    {"film": "Vertigo", "year_clause": " (1958)", "winner": "Alfred Hitchcock", "alternatives": ["Hitchcock"], "answer_date": "1958-05-09", "provenance": "https://en.wikipedia.org/wiki/Vertigo_(film)"},
+    {"film": "The Shining", "year_clause": " (1980)", "winner": "Stanley Kubrick", "alternatives": ["Kubrick"], "answer_date": "1980-05-23", "provenance": "https://en.wikipedia.org/wiki/The_Shining_(film)"},
+    {"film": "Parasite", "year_clause": " (2019)", "winner": "Bong Joon-ho", "alternatives": ["Bong Joon Ho", "Bong"], "answer_date": "2019-05-30", "provenance": "https://en.wikipedia.org/wiki/Parasite_(2019_film)"},
+    {"film": "Get Out", "year_clause": " (2017)", "winner": "Jordan Peele", "alternatives": ["Peele"], "answer_date": "2017-02-24", "provenance": "https://en.wikipedia.org/wiki/Get_Out"}
+  ],
+  "obscure": [
+    {"film": "Stalker", "year_clause": " (1979)", "winner": "Andrei Tarkovsky", "alternatives": ["Tarkovsky"], "answer_date": "1979-05-25", "provenance": "https://en.wikipedia.org/wiki/Stalker_(1979_film)"},
+    {"film": "Le Samourai", "year_clause": " (1967)", "winner": "Jean-Pierre Melville", "alternatives": ["Melville"], "answer_date": "1967-10-25", "provenance": "https://en.wikipedia.org/wiki/Le_Samoura%C3%AF"},
+    {"film": "The Conversation", "year_clause": " (1974)", "winner": "Francis Ford Coppola", "alternatives": ["Coppola"], "answer_date": "1974-04-07", "provenance": "https://en.wikipedia.org/wiki/The_Conversation"},
+    {"film": "Burden of Dreams", "year_clause": " (1982)", "winner": "Les Blank", "alternatives": ["Blank"], "answer_date": "1982-10-01", "provenance": "https://en.wikipedia.org/wiki/Burden_of_Dreams"},
+    {"film": "Wings of Desire", "year_clause": " (1987)", "winner": "Wim Wenders", "alternatives": ["Wenders"], "answer_date": "1987-09-23", "provenance": "https://en.wikipedia.org/wiki/Wings_of_Desire"},
+    {"film": "Cleo from 5 to 7", "year_clause": " (1962)", "winner": "Agnes Varda", "alternatives": ["Varda"], "answer_date": "1962-04-11", "provenance": "https://en.wikipedia.org/wiki/Cl%C3%A9o_from_5_to_7"},
+    {"film": "The Battle of Algiers", "year_clause": " (1966)", "winner": "Gillo Pontecorvo", "alternatives": ["Pontecorvo"], "answer_date": "1966-09-08", "provenance": "https://en.wikipedia.org/wiki/The_Battle_of_Algiers"},
+    {"film": "Solaris", "year_clause": " (1972)", "winner": "Andrei Tarkovsky", "alternatives": ["Tarkovsky"], "answer_date": "1972-05-13", "provenance": "https://en.wikipedia.org/wiki/Solaris_(1972_film)"},
+    {"film": "Sans Soleil", "year_clause": " (1983)", "winner": "Chris Marker", "alternatives": ["Marker"], "answer_date": "1983-04-01", "provenance": "https://en.wikipedia.org/wiki/Sans_Soleil"},
+    {"film": "Days of Heaven", "year_clause": " (1978)", "winner": "Terrence Malick", "alternatives": ["Malick"], "answer_date": "1978-09-13", "provenance": "https://en.wikipedia.org/wiki/Days_of_Heaven"},
+    {"film": "Three Colors: Blue", "year_clause": " (1993)", "winner": "Krzysztof Kieslowski", "alternatives": ["Kieslowski"], "answer_date": "1993-09-08", "provenance": "https://en.wikipedia.org/wiki/Three_Colors:_Blue"},
+    {"film": "Yi Yi", "year_clause": " (2000)", "winner": "Edward Yang", "alternatives": ["Yang"], "answer_date": "2000-05-15", "provenance": "https://en.wikipedia.org/wiki/Yi_Yi"}
+  ],
+  "post_cutoff": [
+    {"film": "Anora", "year_clause": "", "winner": "Sean Baker", "alternatives": ["Baker"], "answer_date": "2024-10-18", "provenance": "https://en.wikipedia.org/wiki/Anora"},
+    {"film": "The Brutalist", "year_clause": "", "winner": "Brady Corbet", "alternatives": ["Corbet"], "answer_date": "2024-12-20", "provenance": "https://en.wikipedia.org/wiki/The_Brutalist"},
+    {"film": "Conclave", "year_clause": " (2024)", "winner": "Edward Berger", "alternatives": ["Berger"], "answer_date": "2024-10-25", "provenance": "https://en.wikipedia.org/wiki/Conclave_(film)"},
+    {"film": "A Real Pain", "year_clause": " (2024)", "winner": "Jesse Eisenberg", "alternatives": ["Eisenberg"], "answer_date": "2024-11-01", "provenance": "https://en.wikipedia.org/wiki/A_Real_Pain"},
+    {"film": "Nosferatu", "year_clause": " (2024)", "winner": "Robert Eggers", "alternatives": ["Eggers"], "answer_date": "2024-12-25", "provenance": "https://en.wikipedia.org/wiki/Nosferatu_(2024_film)"},
+    {"film": "Dune: Part Two", "year_clause": "", "winner": "Denis Villeneuve", "alternatives": ["Villeneuve"], "answer_date": "2024-03-01", "provenance": "https://en.wikipedia.org/wiki/Dune:_Part_Two"}
+  ]
+}

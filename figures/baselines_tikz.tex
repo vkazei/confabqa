@@ -1,0 +1,34 @@
+% Baselines (split from the old 3-panel methods figure).
+\begin{tikzpicture}[
+  font=\footnotesize,
+  >={Stealth[length=2mm]},
+  node distance=4mm and 5mm,
+  databox/.style = {draw=orange!75!black, fill=orange!8, rounded corners=2pt,
+                    inner sep=4pt, align=center},
+  opbox/.style   = {draw=blue!60!black,   fill=blue!6,   rounded corners=2pt,
+                    inner sep=4pt, align=center},
+  outbox/.style  = {draw=green!50!black,  fill=green!8,  rounded corners=2pt,
+                    inner sep=4pt, align=center},
+  basebox/.style = {draw=violet!60!black, fill=violet!8, rounded corners=2pt,
+                    inner sep=4pt, align=center},
+  arr/.style     = {->, semithick, gray!50!black},
+]
+
+\node [basebox, text width=5.0cm] (maj) at (0,0)
+      {Majority baseline\\$\max\!\big(P(y{=}1),\ P(y{=}0)\big)$};
+
+\node [basebox, right=6mm of maj, text width=6.4cm] (txt)
+      {Prompt-text classifier\\TF-IDF~+~LR on question text\\
+       \footnotesize (+~engineered features,~domain,~category)};
+
+\node [below=4mm of maj.south west, anchor=north west,
+       text width=12.2cm, align=center,
+       font=\small\bfseries] (verdict)
+       {Probe is evidence of model-internal information \emph{iff}
+        probe acc.\ $>$ max(both baselines).};
+
+\node [below=1mm of verdict.south, anchor=north,
+       text width=12.2cm, align=center, font=\footnotesize\itshape]
+       {$h_{\rm adds}$ = probe peak $-$ strongest baseline (pp).};
+
+\end{tikzpicture}

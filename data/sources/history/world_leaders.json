@@ -1,0 +1,48 @@
+{
+  "_documentation": {
+    "topic": "Heads of state and government by country and era",
+    "well_known_criterion": "US presidents, recent G7 leaders, internationally famous figures (Mandela, Churchill, Thatcher).",
+    "obscure_criterion": "Less internationally famous PMs / presidents, regional or short-tenured figures.",
+    "post_cutoff_criterion": "Leaders who took office after September 2024.",
+    "primary_source": "Wikipedia per row"
+  },
+  "template": "{question_text}",
+  "answer_field": "winner",
+  "well_known": [
+    {"question_text": "Who was the first president of the United States?", "winner": "George Washington", "alternatives": ["Washington"], "answer_date": "1789-04-30", "provenance": "https://en.wikipedia.org/wiki/George_Washington"},
+    {"question_text": "Who was Prime Minister of the United Kingdom during most of World War II?", "winner": "Winston Churchill", "alternatives": ["Churchill"], "answer_date": "1940-05-10", "provenance": "https://en.wikipedia.org/wiki/Winston_Churchill"},
+    {"question_text": "Who was the first president of post-apartheid South Africa?", "winner": "Nelson Mandela", "alternatives": ["Mandela"], "answer_date": "1994-05-10", "provenance": "https://en.wikipedia.org/wiki/Nelson_Mandela"},
+    {"question_text": "Who was the President of the United States during the Civil War?", "winner": "Abraham Lincoln", "alternatives": ["Lincoln"], "answer_date": "1861-03-04", "provenance": "https://en.wikipedia.org/wiki/Abraham_Lincoln"},
+    {"question_text": "Who was the leader of Nazi Germany from 1934 to 1945?", "winner": "Adolf Hitler", "alternatives": ["Hitler"], "answer_date": "1934-08-02", "provenance": "https://en.wikipedia.org/wiki/Adolf_Hitler"},
+    {"question_text": "Who was the first female Prime Minister of the United Kingdom?", "winner": "Margaret Thatcher", "alternatives": ["Thatcher"], "answer_date": "1979-05-04", "provenance": "https://en.wikipedia.org/wiki/Margaret_Thatcher"},
+    {"question_text": "Who succeeded Stalin as leader of the Soviet Union after his death in 1953?", "winner": "Nikita Khrushchev", "alternatives": ["Khrushchev"], "answer_date": "1953-09-14", "provenance": "https://en.wikipedia.org/wiki/Nikita_Khrushchev"},
+    {"question_text": "Who was the President of the United States from 2009 to 2017?", "winner": "Barack Obama", "alternatives": ["Obama"], "answer_date": "2009-01-20", "provenance": "https://en.wikipedia.org/wiki/Barack_Obama"},
+    {"question_text": "Who was the longest-reigning British monarch, who died in 2022?", "winner": "Queen Elizabeth II", "alternatives": ["Elizabeth II", "Elizabeth the Second"], "answer_date": "2022-09-08", "provenance": "https://en.wikipedia.org/wiki/Elizabeth_II"},
+    {"question_text": "Who was the founder of the People's Republic of China, proclaimed in 1949?", "winner": "Mao Zedong", "alternatives": ["Mao", "Mao Tse-tung"], "answer_date": "1949-10-01", "provenance": "https://en.wikipedia.org/wiki/Mao_Zedong"},
+    {"question_text": "Who was the French general and President who led the Free French during WWII?", "winner": "Charles de Gaulle", "alternatives": ["de Gaulle"], "answer_date": "1940-06-18", "provenance": "https://en.wikipedia.org/wiki/Charles_de_Gaulle"},
+    {"question_text": "Who was the President of Russia from 2000 onwards (with one term as Prime Minister)?", "winner": "Vladimir Putin", "alternatives": ["Putin"], "answer_date": "2000-05-07", "provenance": "https://en.wikipedia.org/wiki/Vladimir_Putin"}
+  ],
+  "obscure": [
+    {"question_text": "Who was Prime Minister of the United Kingdom in 1923?", "winner": "Stanley Baldwin", "alternatives": ["Baldwin"], "answer_date": "1923-05-22", "provenance": "https://en.wikipedia.org/wiki/Stanley_Baldwin"},
+    {"question_text": "Who was the President of France from 1981 to 1995?", "winner": "Francois Mitterrand", "alternatives": ["Mitterrand"], "answer_date": "1981-05-21", "provenance": "https://en.wikipedia.org/wiki/Fran%C3%A7ois_Mitterrand"},
+    {"question_text": "Who was the Prime Minister of Japan from 1982 to 1987?", "winner": "Yasuhiro Nakasone", "alternatives": ["Nakasone"], "answer_date": "1982-11-27", "provenance": "https://en.wikipedia.org/wiki/Yasuhiro_Nakasone"},
+    {"question_text": "Who was the Chancellor of West Germany from 1969 to 1974?", "winner": "Willy Brandt", "alternatives": ["Brandt"], "answer_date": "1969-10-21", "provenance": "https://en.wikipedia.org/wiki/Willy_Brandt"},
+    {"question_text": "Who served as Secretary-General of the United Nations from 1992 to 1996?", "winner": "Boutros Boutros-Ghali", "alternatives": ["Boutros-Ghali", "Boutros Ghali"], "answer_date": "1992-01-01", "provenance": "https://en.wikipedia.org/wiki/Boutros_Boutros-Ghali"},
+    {"question_text": "Who was the 27th President of the United States, serving from 1909 to 1913?", "winner": "William Howard Taft", "alternatives": ["Taft", "William Taft"], "answer_date": "1909-03-04", "provenance": "https://en.wikipedia.org/wiki/William_Howard_Taft"},
+    {"question_text": "Who was the President of Yugoslavia from 1953 to 1980?", "winner": "Josip Broz Tito", "alternatives": ["Tito", "Marshal Tito"], "answer_date": "1953-01-14", "provenance": "https://en.wikipedia.org/wiki/Josip_Broz_Tito"},
+    {"question_text": "Who was the Prime Minister of India from 1991 to 1996, credited with economic liberalization?", "winner": "P. V. Narasimha Rao", "alternatives": ["Narasimha Rao", "P V Narasimha Rao"], "answer_date": "1991-06-21", "provenance": "https://en.wikipedia.org/wiki/P._V._Narasimha_Rao"},
+    {"question_text": "Who was the first President of the Russian Federation, serving from 1991 to 1999?", "winner": "Boris Yeltsin", "alternatives": ["Yeltsin"], "answer_date": "1991-07-10", "provenance": "https://en.wikipedia.org/wiki/Boris_Yeltsin"},
+    {"question_text": "Who was the Prime Minister of Canada from 1984 to 1993?", "winner": "Brian Mulroney", "alternatives": ["Mulroney"], "answer_date": "1984-09-17", "provenance": "https://en.wikipedia.org/wiki/Brian_Mulroney"},
+    {"question_text": "Who was the Chancellor of Austria from 1970 to 1983?", "winner": "Bruno Kreisky", "alternatives": ["Kreisky"], "answer_date": "1970-04-21", "provenance": "https://en.wikipedia.org/wiki/Bruno_Kreisky"},
+    {"question_text": "Who was the King of Spain from 1975 to 2014?", "winner": "Juan Carlos I", "alternatives": ["Juan Carlos"], "answer_date": "1975-11-22", "provenance": "https://en.wikipedia.org/wiki/Juan_Carlos_I"}
+  ],
+  "post_cutoff": [
+    {"question_text": "Who won the 2024 United States presidential election?", "winner": "Donald Trump", "alternatives": ["Trump"], "answer_date": "2024-11-05", "provenance": "https://en.wikipedia.org/wiki/2024_United_States_presidential_election"},
+    {"question_text": "Who was elected the first female president of Mexico in 2024?", "winner": "Claudia Sheinbaum", "alternatives": ["Sheinbaum"], "answer_date": "2024-06-02", "provenance": "https://en.wikipedia.org/wiki/2024_Mexican_general_election"},
+    {"question_text": "Who became Prime Minister of the United Kingdom in July 2024?", "winner": "Keir Starmer", "alternatives": ["Starmer", "Sir Keir Starmer"], "answer_date": "2024-07-05", "provenance": "https://www.gov.uk/government/people/keir-starmer"},
+    {"question_text": "Who was the United States Vice President from January 2025 onwards?", "winner": "JD Vance", "alternatives": ["J.D. Vance", "Vance"], "answer_date": "2025-01-20", "provenance": "https://en.wikipedia.org/wiki/JD_Vance"},
+    {"question_text": "Who became Chancellor of Germany following the February 2025 federal election?", "winner": "Friedrich Merz", "alternatives": ["Merz"], "answer_date": "2025-05-06", "provenance": "https://en.wikipedia.org/wiki/Friedrich_Merz"},
+    {"question_text": "Which French Prime Minister was ousted by a no-confidence vote in December 2024?", "winner": "Michel Barnier", "alternatives": ["Barnier"], "answer_date": "2024-12-04", "provenance": "https://en.wikipedia.org/wiki/Michel_Barnier"},
+    {"question_text": "Who succeeded Justin Trudeau as leader of the Liberal Party of Canada in March 2025?", "winner": "Mark Carney", "alternatives": ["Carney"], "answer_date": "2025-03-09", "provenance": "https://en.wikipedia.org/wiki/Mark_Carney"}
+  ]
+}

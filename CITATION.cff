@@ -1,0 +1,47 @@
+cff-version: 1.2.0
+message: "If you use this software, dataset, or paper, please cite as below."
+title: "ConfabQA: Hidden-State Refusal and Correctness Signals in Three Small Language Models"
+abstract: >-
+  When a small language model gives a confidently wrong answer (a confabulation),
+  does its hidden state at the moment of commitment already encode the warning sign?
+  This paper introduces ConfabQA, a 784-item probing benchmark with a 4x3
+  (domain x category) design that breaks the cutoff/correctness confound, and
+  applies it across Qwen3-1.7B, Gemma 2 2B, and Llama 3.2 3B with a multi-model
+  multi-dataset bootstrap, refusal-channel attribution, and sparse-autoencoder
+  decomposition. Findings: the hidden-state probe gap over the prompt-text
+  baseline is sharply model-dependent (Llama 3.2 3B adds +21 to +25 pp where
+  Qwen3-1.7B adds +4 to +10 pp on the same data); a within-family scaling
+  control rules out parameter count as the dominant driver; the bulk of
+  Llama's lead is genuine correctness self-knowledge, not refusal-channel
+  readout; and SAE feature 2191 in Qwen3-1.7B alone is causally sufficient
+  to flip wrong-item next-token argmaxes to refusal openers.
+authors:
+  - family-names: Kazei
+    given-names: Vladimir
+    email: vkazei@gmail.com
+    affiliation: "Independent Research"
+license: MIT
+license-url: "https://github.com/vkazei/confabqa/blob/main/LICENSE"
+repository-code: "https://github.com/vkazei/confabqa"
+url: "https://github.com/vkazei/confabqa"
+date-released: 2026-07-11
+keywords:
+  - language-models
+  - mechanistic-interpretability
+  - probing
+  - calibration
+  - confabulation
+  - hallucination
+  - sparse-autoencoder
+  - refusal
+  - small-language-models
+preferred-citation:
+  type: article
+  title: "ConfabQA: Hidden-State Refusal and Correctness Signals in Three Small Language Models"
+  authors:
+    - family-names: Kazei
+      given-names: Vladimir
+      email: vkazei@gmail.com
+  year: 2026
+  url: "https://github.com/vkazei/confabqa"
+  notes: "Preprint. Update with arXiv ID once posted."

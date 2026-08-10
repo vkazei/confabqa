@@ -1,0 +1,32 @@
+{
+  "_documentation": {
+    "topic": "Nobel Prize in Physiology or Medicine — laureates by year",
+    "well_known_criterion": "Discoveries with broad public recognition (DNA structure, insulin, penicillin work, mRNA vaccines).",
+    "obscure_criterion": "Laureates known to specialists but not generalists; specific cell-biology or immunology mechanisms.",
+    "post_cutoff_criterion": "Laureates announced after September 2024.",
+    "primary_source": "https://www.nobelprize.org/prizes/medicine/"
+  },
+  "template": "Who won the Nobel Prize in Physiology or Medicine in {year}?",
+  "answer_field": "winner",
+  "well_known": [
+    {"year": 1962, "winner": "Francis Crick, James Watson, and Maurice Wilkins", "alternatives": ["Crick, Watson, Wilkins", "Watson and Crick"], "answer_date": "1962-10-18", "provenance": "https://www.nobelprize.org/prizes/medicine/1962/"},
+    {"year": 1923, "winner": "Frederick Banting and John Macleod", "alternatives": ["Banting and Macleod", "Banting"], "answer_date": "1923-10-25", "provenance": "https://www.nobelprize.org/prizes/medicine/1923/"},
+    {"year": 1945, "winner": "Alexander Fleming, Ernst Chain, and Howard Florey", "alternatives": ["Fleming, Chain, Florey", "Fleming"], "answer_date": "1945-10-25", "provenance": "https://www.nobelprize.org/prizes/medicine/1945/"},
+    {"year": 2023, "winner": "Katalin Kariko and Drew Weissman", "alternatives": ["Kariko and Weissman", "the mRNA vaccine pair"], "answer_date": "2023-10-02", "provenance": "https://www.nobelprize.org/prizes/medicine/2023/"},
+    {"year": 1905, "winner": "Robert Koch", "alternatives": ["Koch"], "answer_date": "1905-12-10", "provenance": "https://www.nobelprize.org/prizes/medicine/1905/"},
+    {"year": 2018, "winner": "James Allison and Tasuku Honjo", "alternatives": ["Allison and Honjo", "checkpoint inhibitor pair"], "answer_date": "2018-10-01", "provenance": "https://www.nobelprize.org/prizes/medicine/2018/"}
+  ],
+  "obscure": [
+    {"year": 1974, "winner": "Albert Claude, Christian de Duve, and George Palade", "alternatives": ["Claude, de Duve, Palade"], "answer_date": "1974-10-10", "provenance": "https://www.nobelprize.org/prizes/medicine/1974/"},
+    {"year": 1980, "winner": "Baruj Benacerraf, Jean Dausset, and George Snell", "alternatives": ["Benacerraf, Dausset, Snell"], "answer_date": "1980-10-10", "provenance": "https://www.nobelprize.org/prizes/medicine/1980/"},
+    {"year": 1991, "winner": "Erwin Neher and Bert Sakmann", "alternatives": ["Neher and Sakmann", "patch-clamp pair"], "answer_date": "1991-10-07", "provenance": "https://www.nobelprize.org/prizes/medicine/1991/"},
+    {"year": 1999, "winner": "Gunter Blobel", "alternatives": ["Blobel"], "answer_date": "1999-10-11", "provenance": "https://www.nobelprize.org/prizes/medicine/1999/"},
+    {"year": 2005, "winner": "Barry Marshall and Robin Warren", "alternatives": ["Marshall and Warren", "the H. pylori pair"], "answer_date": "2005-10-03", "provenance": "https://www.nobelprize.org/prizes/medicine/2005/"},
+    {"year": 2013, "winner": "James Rothman, Randy Schekman, and Thomas Sudhof", "alternatives": ["Rothman, Schekman, Sudhof", "vesicle traffic trio"], "answer_date": "2013-10-07", "provenance": "https://www.nobelprize.org/prizes/medicine/2013/"},
+    {"year": 2017, "winner": "Jeffrey Hall, Michael Rosbash, and Michael Young", "alternatives": ["Hall, Rosbash, Young", "circadian trio"], "answer_date": "2017-10-02", "provenance": "https://www.nobelprize.org/prizes/medicine/2017/"},
+    {"year": 2020, "winner": "Harvey Alter, Michael Houghton, and Charles Rice", "alternatives": ["Alter, Houghton, Rice", "hepatitis C trio"], "answer_date": "2020-10-05", "provenance": "https://www.nobelprize.org/prizes/medicine/2020/"}
+  ],
+  "post_cutoff": [
+    {"year": 2024, "winner": "Victor Ambros and Gary Ruvkun", "alternatives": ["Ambros and Ruvkun", "the microRNA pair"], "answer_date": "2024-10-07", "provenance": "https://www.nobelprize.org/prizes/medicine/2024/"}
+  ]
+}

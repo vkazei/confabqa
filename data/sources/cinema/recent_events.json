@@ -1,0 +1,33 @@
+{
+  "_documentation": {
+    "topic": "Cinema supplement (festivals, 2024-2025 releases) heavy on post-cutoff",
+    "well_known_criterion": "Mainstream films and recognizable directors.",
+    "obscure_criterion": "Festival circuit films, foreign-language cinema, specific decades.",
+    "post_cutoff_criterion": "After September 2024.",
+    "primary_source": "Wikipedia per row"
+  },
+  "template": "{question_text}",
+  "answer_field": "winner",
+  "well_known": [
+    {"question_text": "Which 2019 film by Quentin Tarantino is set in 1969 Los Angeles?", "winner": "Once Upon a Time in Hollywood", "alternatives": [], "answer_date": "2019-07-26", "provenance": "https://en.wikipedia.org/wiki/Once_Upon_a_Time_in_Hollywood"},
+    {"question_text": "Who directed the 2009 film 'Avatar'?", "winner": "James Cameron", "alternatives": ["Cameron"], "answer_date": "2009-12-18", "provenance": "https://en.wikipedia.org/wiki/Avatar_(2009_film)"},
+    {"question_text": "Who directed the 1994 film 'Forrest Gump'?", "winner": "Robert Zemeckis", "alternatives": ["Zemeckis"], "answer_date": "1994-07-06", "provenance": "https://en.wikipedia.org/wiki/Forrest_Gump"}
+  ],
+  "obscure": [
+    {"question_text": "Which 2004 film by Michel Gondry, written by Charlie Kaufman, stars Jim Carrey and Kate Winslet as a couple who erase memories?", "winner": "Eternal Sunshine of the Spotless Mind", "alternatives": [], "answer_date": "2004-03-19", "provenance": "https://en.wikipedia.org/wiki/Eternal_Sunshine_of_the_Spotless_Mind"},
+    {"question_text": "Who directed the 1985 film 'Brazil'?", "winner": "Terry Gilliam", "alternatives": ["Gilliam"], "answer_date": "1985-02-22", "provenance": "https://en.wikipedia.org/wiki/Brazil_(1985_film)"},
+    {"question_text": "Which film won the Palme d'Or at the 2019 Cannes Film Festival?", "winner": "Parasite", "alternatives": [], "answer_date": "2019-05-25", "provenance": "https://en.wikipedia.org/wiki/2019_Cannes_Film_Festival"}
+  ],
+  "post_cutoff": [
+    {"question_text": "Which film won the Palme d'Or at the 2024 Cannes Film Festival?", "winner": "Anora", "alternatives": [], "answer_date": "2024-05-25", "provenance": "https://en.wikipedia.org/wiki/Anora"},
+    {"question_text": "Which film won the Golden Lion at the 2024 Venice Film Festival?", "winner": "The Room Next Door", "alternatives": [], "answer_date": "2024-09-07", "provenance": "https://en.wikipedia.org/wiki/The_Room_Next_Door"},
+    {"question_text": "Which film won the 2025 Academy Award for Best Director?", "winner": "Sean Baker", "alternatives": ["Anora (Sean Baker)"], "answer_date": "2025-03-02", "provenance": "https://www.oscars.org/oscars/ceremonies/2025"},
+    {"question_text": "Which film won the 2025 Academy Award for Best Animated Feature?", "winner": "Flow", "alternatives": [], "answer_date": "2025-03-02", "provenance": "https://www.oscars.org/oscars/ceremonies/2025"},
+    {"question_text": "Who won the 2025 Academy Award for Best Original Screenplay?", "winner": "Sean Baker", "alternatives": ["Anora (Sean Baker)"], "answer_date": "2025-03-02", "provenance": "https://www.oscars.org/oscars/ceremonies/2025"},
+    {"question_text": "Which 2024 film by Pedro Almodovar stars Tilda Swinton and Julianne Moore and was his first English-language feature?", "winner": "The Room Next Door", "alternatives": [], "answer_date": "2024-09-07", "provenance": "https://en.wikipedia.org/wiki/The_Room_Next_Door"},
+    {"question_text": "Which film about a music industry intern's investigation of a deceased pop star, released in 2025 and directed by Coralie Fargeat in 2024, won Best Makeup and Hairstyling at the 2025 Oscars?", "winner": "The Substance", "alternatives": [], "answer_date": "2024-09-20", "provenance": "https://en.wikipedia.org/wiki/The_Substance"},
+    {"question_text": "Which Marvel film, released in summer 2024, was the highest-grossing film of 2024 and starred Hugh Jackman and Ryan Reynolds?", "winner": "Deadpool & Wolverine", "alternatives": ["Deadpool and Wolverine", "Deadpool 3"], "answer_date": "2024-07-26", "provenance": "https://en.wikipedia.org/wiki/Deadpool_%26_Wolverine"},
+    {"question_text": "Which film by Mohammad Rasoulof, released in 2024 and made clandestinely in Iran, won the Special Jury Prize at the 2024 Cannes Film Festival?", "winner": "The Seed of the Sacred Fig", "alternatives": [], "answer_date": "2024-05-24", "provenance": "https://en.wikipedia.org/wiki/The_Seed_of_the_Sacred_Fig"},
+    {"question_text": "Which 2024 musical film directed by Jacques Audiard and starring Karla Sofia Gascon led the 2025 Oscar nominations?", "winner": "Emilia Perez", "alternatives": ["Emilia Pérez"], "answer_date": "2024-08-21", "provenance": "https://en.wikipedia.org/wiki/Emilia_P%C3%A9rez"}
+  ]
+}

@@ -1,0 +1,3074 @@
+[
+  {
+    "id": "sci_wk_01",
+    "status": "verified",
+    "citation": "https://www.nobelprize.org/prizes/physics/1976/",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "sci_wk_02",
+    "status": "verified",
+    "citation": "https://www.nobelprize.org/prizes/chemistry/1954/",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "sci_wk_03",
+    "status": "verified",
+    "citation": "https://www.nobelprize.org/prizes/physics/1903/",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "sci_wk_04",
+    "status": "verified",
+    "citation": "https://home.cern/topics/higgs-boson",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "sci_wk_05",
+    "status": "verified",
+    "citation": "https://www.nobelprize.org/prizes/physics/1956/",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "sci_wk_06",
+    "status": "verified",
+    "citation": "https://www.nobelprize.org/prizes/chemistry/2018/",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "sci_wk_07",
+    "status": "verified",
+    "citation": "https://www.nobelprize.org/prizes/chemistry/1934/",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "sci_wk_08",
+    "status": "verified",
+    "citation": "https://voyager.jpl.nasa.gov/",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "sci_wk_09",
+    "status": "verified",
+    "citation": "https://www.nobelprize.org/prizes/chemistry/2009/",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "sci_wk_10",
+    "status": "verified",
+    "citation": "https://www.nobelprize.org/prizes/medicine/1962/",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "sci_wk_11",
+    "status": "verified",
+    "citation": "https://www.nobelprize.org/prizes/chemistry/2020/",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "sci_wk_12",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/General_relativity",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "sci_wk_13",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Mitochondrion",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "sci_wk_14",
+    "status": "verified",
+    "citation": "https://www.ligo.caltech.edu/page/ligo-gw150914",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "sci_wk_15",
+    "status": "verified",
+    "citation": "https://www.nobelprize.org/prizes/medicine/1945/",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "sci_wk_16",
+    "status": "verified",
+    "citation": "https://www.nobelprize.org/prizes/chemistry/1962/",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "sci_wk_17",
+    "status": "verified",
+    "citation": "https://www.nobelprize.org/prizes/chemistry/1911/",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "sci_wk_18",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Water",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "sci_wk_19",
+    "status": "verified",
+    "citation": "https://www.nobelprize.org/prizes/physics/1933/",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "sci_wk_20",
+    "status": "verified",
+    "citation": "https://www.nobelprize.org/prizes/physics/1918/",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "sci_wk_21",
+    "status": "verified",
+    "citation": "https://www.nobelprize.org/prizes/physics/1921/",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "sci_wk_22",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Mars",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "sci_wk_23",
+    "status": "verified",
+    "citation": "https://www.nobelprize.org/prizes/chemistry/1993/",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "sci_wk_24",
+    "status": "verified",
+    "citation": "https://www.genome.gov/human-genome-project",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "sci_wk_25",
+    "status": "verified",
+    "citation": "https://www.nobelprize.org/prizes/physics/2017/",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "sci_wk_26",
+    "status": "verified",
+    "citation": "https://physics.nist.gov/cgi-bin/cuu/Value?c",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "sci_wk_27",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Skin",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "sci_wk_28",
+    "status": "verified",
+    "citation": "https://www.nobelprize.org/prizes/physics/1965/",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "sci_wk_29",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Age_of_the_universe",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "sci_wk_30",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Gold",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "sci_wk_31",
+    "status": "verified",
+    "citation": "https://www.nobelprize.org/prizes/physics/2001/",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "sci_wk_32",
+    "status": "verified",
+    "citation": "https://www.nobelprize.org/prizes/chemistry/1908/",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "sci_wk_33",
+    "status": "verified",
+    "citation": "https://www.nobelprize.org/prizes/medicine/1923/",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "sci_wk_34",
+    "status": "verified",
+    "citation": "https://www.nobelprize.org/prizes/physics/2013/",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "sci_wk_35",
+    "status": "verified",
+    "citation": "https://www.nobelprize.org/prizes/chemistry/2008/",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "sci_wk_36",
+    "status": "verified",
+    "citation": "https://www.nobelprize.org/prizes/medicine/1905/",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "sci_wk_37",
+    "status": "verified",
+    "citation": "https://www.nobelprize.org/prizes/physics/1922/",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "sci_wk_38",
+    "status": "verified",
+    "citation": "https://www.nobelprize.org/prizes/physics/1932/",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "sci_wk_39",
+    "status": "verified",
+    "citation": "https://www.nobelprize.org/prizes/chemistry/1996/",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "sci_wk_40",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Cosmic_microwave_background",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "sci_wk_41",
+    "status": "verified",
+    "citation": "https://www.nobelprize.org/prizes/medicine/2018/",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "sci_wk_42",
+    "status": "verified",
+    "citation": "https://www.nobelprize.org/prizes/medicine/2023/",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "sci_ob_01",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Discovery_of_the_neutron",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "sci_ob_02",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Carbon-14",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "sci_ob_03",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Human_genome",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "sci_ob_04",
+    "status": "verified",
+    "citation": "https://www.nobelprize.org/prizes/medicine/1991/",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "sci_ob_05",
+    "status": "verified",
+    "citation": "https://www.nobelprize.org/prizes/physics/2003/",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "sci_ob_06",
+    "status": "verified",
+    "citation": "https://www.nobelprize.org/prizes/physics/1998/",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "sci_ob_07",
+    "status": "verified",
+    "citation": "https://www.nobelprize.org/prizes/physics/2010/",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "sci_ob_08",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Roentgenium",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "sci_ob_09",
+    "status": "verified",
+    "citation": "https://www.nobelprize.org/prizes/medicine/2020/",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "sci_ob_10",
+    "status": "verified",
+    "citation": "https://www.nobelprize.org/prizes/chemistry/1991/",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "sci_ob_11",
+    "status": "verified",
+    "citation": "https://www.nobelprize.org/prizes/medicine/2005/",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "sci_ob_12",
+    "status": "verified",
+    "citation": "https://www.nobelprize.org/prizes/chemistry/2010/",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "sci_ob_13",
+    "status": "verified",
+    "citation": "https://www.nobelprize.org/prizes/medicine/1974/",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "sci_ob_14",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Radium",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "sci_ob_15",
+    "status": "verified",
+    "citation": "https://www.nobelprize.org/prizes/chemistry/2014/",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "sci_ob_16",
+    "status": "verified",
+    "citation": "https://www.nobelprize.org/prizes/medicine/1980/",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "sci_ob_17",
+    "status": "verified",
+    "citation": "https://www.nobelprize.org/prizes/physics/1989/",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "sci_ob_18",
+    "status": "verified",
+    "citation": "https://www.nobelprize.org/prizes/chemistry/2015/",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "sci_ob_19",
+    "status": "verified",
+    "citation": "https://www.nobelprize.org/prizes/medicine/2013/",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "sci_ob_20",
+    "status": "verified",
+    "citation": "https://www.fnal.gov/pub/today/archive/archive_2015/today15-02-23.html",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "sci_ob_21",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Michelson%E2%80%93Morley_experiment",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "sci_ob_22",
+    "status": "verified",
+    "citation": "https://www.nobelprize.org/prizes/physics/2007/",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "sci_ob_23",
+    "status": "verified",
+    "citation": "https://www.nobelprize.org/prizes/chemistry/2002/",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "sci_ob_24",
+    "status": "verified",
+    "citation": "https://www.nobelprize.org/prizes/chemistry/1979/",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "sci_ob_25",
+    "status": "verified",
+    "citation": "https://www.nobelprize.org/prizes/medicine/2017/",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "sci_ob_26",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Homestake_experiment",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "sci_ob_27",
+    "status": "verified",
+    "citation": "https://www.nobelprize.org/prizes/physics/1992/",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "sci_ob_28",
+    "status": "verified",
+    "citation": "https://www.nobelprize.org/prizes/chemistry/2005/",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "sci_ob_29",
+    "status": "verified",
+    "citation": "https://www.nobelprize.org/prizes/physics/1978/",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "sci_ob_30",
+    "status": "verified",
+    "citation": "https://www.nobelprize.org/prizes/physics/1973/",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "sci_ob_31",
+    "status": "verified",
+    "citation": "https://www.science.org/doi/10.1126/science.1225829",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "sci_ob_32",
+    "status": "verified",
+    "citation": "https://www.nobelprize.org/prizes/physics/1995/",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "sci_ob_33",
+    "status": "verified",
+    "citation": "https://www.nobelprize.org/prizes/chemistry/1981/",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "sci_ob_34",
+    "status": "verified",
+    "citation": "https://www.nobelprize.org/prizes/chemistry/2001/",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "sci_ob_35",
+    "status": "verified",
+    "citation": "https://physics.nist.gov/cgi-bin/cuu/Value?h",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "sci_ob_36",
+    "status": "verified",
+    "citation": "https://www.nobelprize.org/prizes/chemistry/1969/",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "sci_ob_37",
+    "status": "verified",
+    "citation": "https://www.nobelprize.org/prizes/chemistry/1987/",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "sci_ob_38",
+    "status": "verified",
+    "citation": "https://www.nobelprize.org/prizes/chemistry/1989/",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "sci_ob_39",
+    "status": "verified",
+    "citation": "https://www.nobelprize.org/prizes/physics/1986/",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "sci_ob_40",
+    "status": "verified",
+    "citation": "https://www.nobelprize.org/prizes/physics/1985/",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "sci_ob_41",
+    "status": "verified",
+    "citation": "https://pdg.lbl.gov/2023/listings/rpp2023-list-muon.pdf",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "sci_ob_42",
+    "status": "verified",
+    "citation": "https://www.nobelprize.org/prizes/physics/1968/",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "sci_ob_43",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Hubble_Ultra-Deep_Field",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "sci_ob_44",
+    "status": "verified",
+    "citation": "https://www.nobelprize.org/prizes/medicine/1999/",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "sci_ob_45",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Cowan%E2%80%93Reines_neutrino_experiment",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "sci_pc_01",
+    "status": "verified",
+    "citation": "https://www.anthropic.com/news/3-5-models-and-computer-use",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "sci_pc_02",
+    "status": "verified",
+    "citation": "https://www.spacex.com/launches/mission/?missionId=starship-flight-5",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "sci_pc_03",
+    "status": "verified",
+    "citation": "https://blog.google/technology/google-deepmind/google-gemini-ai-update-december-2024/",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "sci_pc_04",
+    "status": "verified",
+    "citation": "https://www.anthropic.com/news/3-5-models-and-computer-use",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "sci_pc_05",
+    "status": "verified",
+    "citation": "https://www.nobelprize.org/prizes/medicine/2024/",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "sci_pc_06",
+    "status": "verified",
+    "citation": "https://openai.com/index/learning-to-reason-with-llms/",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "sci_pc_07",
+    "status": "verified",
+    "citation": "https://www.nobelprize.org/prizes/medicine/2024/",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "sci_pc_08",
+    "status": "verified",
+    "citation": "https://openai.com/index/introducing-openai-o1-preview/",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "sci_pc_09",
+    "status": "verified",
+    "citation": "https://api-docs.deepseek.com/news/news250120",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "sci_pc_10",
+    "status": "verified",
+    "citation": "https://www.spacex.com/launches/mission/?missionId=starship-flight-5",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "sci_pc_11",
+    "status": "verified",
+    "citation": "https://www.nobelprize.org/prizes/chemistry/2024/",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "sci_pc_12",
+    "status": "verified",
+    "citation": "https://openai.com/index/introducing-openai-o1-preview/",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "sci_pc_13",
+    "status": "verified",
+    "citation": "https://www.anthropic.com/news/3-5-models-and-computer-use",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "sci_pc_14",
+    "status": "verified",
+    "citation": "https://qwenlm.github.io/blog/qwen2.5/",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "sci_pc_15",
+    "status": "verified",
+    "citation": "https://europa.nasa.gov/",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "sci_pc_16",
+    "status": "verified",
+    "citation": "https://blog.google/technology/google-deepmind/gemini-model-thinking-updates-march-2025/",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "sci_pc_17",
+    "status": "verified",
+    "citation": "https://www.nobelprize.org/prizes/chemistry/2024/",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "sci_pc_18",
+    "status": "verified",
+    "citation": "https://www.nasa.gov/news-release/nasas-boeing-crew-flight-test-spacecraft-returns-to-earth/",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "sci_pc_19",
+    "status": "verified",
+    "citation": "https://www.nobelprize.org/prizes/physics/2024/",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "his_wk_01",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Nelson_Mandela",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "his_wk_02",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Abraham_Lincoln",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "his_wk_03",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Nikita_Khrushchev",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "his_wk_04",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Ferdinand_Magellan",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "his_wk_05",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Adolf_Hitler",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "his_wk_06",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/United_States_Declaration_of_Independence",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "his_wk_07",
+    "status": "verified",
+    "citation": "https://www.archives.gov/founding-docs/declaration",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "his_wk_08",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Wright_brothers",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "his_wk_09",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Sistine_Chapel_ceiling",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "his_wk_10",
+    "status": "verified",
+    "citation": "https://www.nasa.gov/mission_pages/apollo/apollo11.html",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "his_wk_11",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Battle_of_Waterloo",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "his_wk_12",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/French_Revolution",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "his_wk_13",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/IPhone_(1st_generation)",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "his_wk_14",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/American_Revolutionary_War",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "his_wk_15",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Paris_Agreement",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "his_wk_16",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Winston_Churchill",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "his_wk_17",
+    "status": "verified",
+    "citation": "https://home.cern/science/computing/birth-web",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "his_wk_18",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Fall_of_the_Berlin_Wall",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "his_wk_19",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Alexander_Graham_Bell",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "his_wk_20",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/End_of_World_War_II_in_Europe",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "his_wk_21",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Sinking_of_the_Titanic",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "his_wk_22",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Elizabeth_II",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "his_wk_23",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Vladimir_Putin",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "his_wk_24",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Christopher_Columbus",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "his_wk_25",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Apollo_11",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "his_wk_26",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Mao_Zedong",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "his_wk_27",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Charles_de_Gaulle",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "his_wk_28",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Margaret_Thatcher",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "his_wk_29",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Battle_of_Hastings",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "his_wk_30",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/George_Washington",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "his_wk_31",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Barack_Obama",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "his_wk_32",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Dissolution_of_the_Soviet_Union",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "his_wk_33",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Treaty_of_Versailles",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "his_ob_01",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Fran%C3%A7ois_Mitterrand",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "his_ob_02",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Boris_Yeltsin",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "his_ob_03",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Thirty_Years%27_War",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "his_ob_04",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Bandung_Conference",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "his_ob_05",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Ming_dynasty",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "his_ob_06",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Brian_Mulroney",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "his_ob_07",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Josip_Broz_Tito",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "his_ob_08",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Treaty_of_Tordesillas",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "his_ob_09",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Amundsen%27s_South_Pole_expedition",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "his_ob_10",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Boston_Tea_Party",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "his_ob_11",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Organ_transplantation",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "his_ob_12",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Stanley_Baldwin",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "his_ob_13",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Italian_Wars",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "his_ob_14",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Treaty_of_Nanking",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "his_ob_15",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Jonas_Salk",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "his_ob_16",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Willy_Brandt",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "his_ob_17",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Sputnik_1",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "his_ob_18",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Yasuhiro_Nakasone",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "his_ob_19",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/William_Howard_Taft",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "his_ob_20",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Amelia_Earhart",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "his_ob_21",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/East%E2%80%93West_Schism",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "his_ob_22",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Defenestrations_of_Prague",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "his_ob_23",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/P._V._Narasimha_Rao",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "his_ob_24",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/October_Revolution",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "his_ob_25",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Boutros_Boutros-Ghali",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "his_ob_26",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Treaty_of_Paris_(1898)",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "his_ob_27",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Long_March",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "his_ob_28",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Bruno_Kreisky",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "his_ob_29",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Egypt%E2%80%93Israel_peace_treaty",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "his_ob_30",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Juan_Carlos_I",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "his_ob_31",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Buzz_Aldrin",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "his_ob_32",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Valentina_Tereshkova",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "his_ob_33",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Thomas_Edison",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "his_ob_34",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Peace_of_Westphalia",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "his_ob_35",
+    "status": "verified",
+    "citation": "https://www.nobelprize.org/prizes/physics/1903/",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "his_ob_36",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Bartolomeu_Dias",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "his_ob_37",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/1953_British_Mount_Everest_expedition",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "his_pc_01",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Mark_Carney",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "his_pc_02",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Death_and_funeral_of_Pope_Francis",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "his_pc_03",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Michel_Barnier",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "his_pc_04",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Hurricane_Helene",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "his_pc_05",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Dianne_Feinstein",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "his_pc_06",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/JD_Vance",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "his_pc_07",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Fall_of_the_Assad_regime",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "his_pc_08",
+    "status": "verified",
+    "citation": "https://www.spacex.com/launches/mission/?missionId=starship-flight-5",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "his_pc_09",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Attempted_assassination_of_Donald_Trump_in_Butler,_Pennsylvania",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "his_pc_10",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/2024_United_States_presidential_election",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "his_pc_11",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Michel_Barnier",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "his_pc_12",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/2025_South_Korean_presidential_election",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "his_pc_13",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Friedrich_Merz",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "his_pc_14",
+    "status": "verified",
+    "citation": "https://www.gov.uk/government/people/keir-starmer",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "his_pc_15",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Killing_of_Brian_Thompson",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "his_pc_16",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Marco_Rubio",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "his_pc_17",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Department_of_Government_Efficiency",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "his_pc_18",
+    "status": "verified",
+    "citation": "https://waymo.com/blog/",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "his_pc_19",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/2024_Mexican_general_election",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "his_pc_20",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Pope_Leo_XIV",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "his_pc_21",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/2024_South_Korean_martial_law_declaration",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "his_pc_22",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Polaris_Dawn",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "his_pc_23",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/January_2025_Southern_California_wildfires",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "his_pc_24",
+    "status": "verified",
+    "citation": "https://www.vatican.va/content/vatican/en.html",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "his_pc_25",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/2025_Israel%E2%80%93Hamas_war_ceasefire",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "his_pc_26",
+    "status": "verified",
+    "citation": "https://home.treasury.gov/about/general-information/officials/scott-bessent",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "his_pc_27",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/2024_United_States_presidential_election",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cul_wk_01",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/The_Starry_Night",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cul_wk_02",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Game_of_Thrones",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cul_wk_03",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/What%27s_Going_On_(Marvin_Gaye_album)",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cul_wk_04",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Sgt._Pepper%27s_Lonely_Hearts_Club_Band",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cul_wk_05",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/The_Scream",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cul_wk_06",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Pride_and_Prejudice",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cul_wk_07",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Thriller_(album)",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cul_wk_08",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Stranger_Things",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cul_wk_09",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/The_Persistence_of_Memory",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cul_wk_10",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/21_(Adele_album)",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cul_wk_11",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Crime_and_Punishment",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cul_wk_12",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/The_Dark_Side_of_the_Moon",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cul_wk_13",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Hotel_California",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cul_wk_14",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Midnights",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cul_wk_15",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/The_Thinker",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cul_wk_16",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/David_(Michelangelo)",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cul_wk_17",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/To_Kill_a_Mockingbird",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cul_wk_18",
+    "status": "verified",
+    "citation": "https://www.pulitzer.org/winners/kendrick-lamar",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cul_wk_19",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Hamlet",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cul_wk_20",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Girl_with_a_Pearl_Earring",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cul_wk_21",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/The_Birth_of_Venus",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cul_wk_22",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/One_Hundred_Years_of_Solitude",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cul_wk_23",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Breaking_Bad",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cul_wk_24",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Beloved_(novel)",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cul_wk_25",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/The_Night_Watch",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cul_wk_26",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/War_and_Peace",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cul_wk_27",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Harry_Potter",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cul_wk_28",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/The_Great_Gatsby",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cul_wk_29",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Don_Quixote",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cul_wk_30",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Brave_New_World",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cul_wk_31",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Mona_Lisa",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cul_wk_32",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Nineteen_Eighty-Four",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cul_wk_33",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Lemonade_(Beyonc%C3%A9_album)",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cul_wk_34",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Guernica_(Picasso)",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cul_ob_01",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Kind_of_Blue",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cul_ob_02",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/The_Garden_of_Earthly_Delights",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cul_ob_03",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Michigan_(album)",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cul_ob_04",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Composition_VIII_(Kandinsky)",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cul_ob_05",
+    "status": "verified",
+    "citation": "https://www.nobelprize.org/prizes/literature/2020/",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cul_ob_06",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Christina%27s_World",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cul_ob_07",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Fahrenheit_451",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cul_ob_08",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Graceland_(album)",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cul_ob_09",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Bringing_It_All_Back_Home",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cul_ob_10",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Songs_in_the_Key_of_Life",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cul_ob_11",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Giant_Steps",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cul_ob_12",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Midnight_Love",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cul_ob_13",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Pale_Fire",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cul_ob_14",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Infinite_Jest",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cul_ob_15",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/The_Tin_Drum",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cul_ob_16",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/A_Clockwork_Orange_(novel)",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cul_ob_17",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Olympia_(Manet)",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cul_ob_18",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Gravity%27s_Rainbow",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cul_ob_19",
+    "status": "verified",
+    "citation": "https://thebookerprizes.com/the-booker-library/prize-years/2007",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cul_ob_20",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Possession:_A_Romance",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cul_ob_21",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Blue_(Joni_Mitchell_album)",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cul_ob_22",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/A_Sunday_Afternoon_on_the_Island_of_La_Grande_Jatte",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cul_ob_23",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Wheatfield_with_Crows",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cul_ob_24",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/The_World_According_to_Garp",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cul_ob_25",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Doolittle_(album)",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cul_ob_26",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Fountain_(Duchamp)",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cul_ob_27",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/The_Rite_of_Spring",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cul_ob_28",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Las_Meninas",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cul_ob_29",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Les_Demoiselles_d%27Avignon",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cul_ob_30",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Love_in_the_Ruins",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cul_ob_31",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Infinite_Jest",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cul_ob_32",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Horses_(album)",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cul_ob_33",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/In_the_Court_of_the_Crimson_King",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cul_ob_34",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/The_Unbearable_Lightness_of_Being",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cul_pc_01",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Not_Like_Us",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cul_pc_02",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/The_Empire_of_Light",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cul_pc_03",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Adolescence_(TV_series)",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cul_pc_04",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Short_n%27_Sweet",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cul_pc_05",
+    "status": "verified",
+    "citation": "https://www.nationalbook.org/awards-prizes/national-book-awards-2024/",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cul_pc_06",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Intermezzo_(novel)",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cul_pc_07",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Brat_(Charli_XCX_album)",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cul_pc_08",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Nexus_(book)",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cul_pc_09",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/The_Tortured_Poets_Department",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cul_pc_10",
+    "status": "verified",
+    "citation": "https://thebookerprizes.com/the-booker-library/prize-years/2024",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cul_pc_11",
+    "status": "verified",
+    "citation": "https://www.nationalbook.org/awards-prizes/national-book-awards-2024/",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cul_pc_12",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/76th_Primetime_Emmy_Awards",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cul_pc_13",
+    "status": "verified",
+    "citation": "https://www.grammy.com/awards/67th-annual-grammy-awards-2024",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cul_pc_14",
+    "status": "verified",
+    "citation": "https://www.pulitzer.org/winners/percival-everett",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cul_pc_15",
+    "status": "verified",
+    "citation": "https://www.nobelprize.org/prizes/literature/2024/",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cul_pc_16",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Brat_(Charli_XCX_album)",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cul_pc_17",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/The_Last_of_Us_(TV_series)",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cul_pc_18",
+    "status": "verified",
+    "citation": "https://www.bbc.com/news/articles/c4gp0g13nlxo",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cul_pc_19",
+    "status": "verified",
+    "citation": "https://www.sothebys.com/en/buy/auction/2024/now/maurizio-cattelan-comedian",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cul_pc_20",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/76th_Primetime_Emmy_Awards",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cul_pc_21",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Cowboy_Carter",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cin_wk_01",
+    "status": "verified",
+    "citation": "https://www.oscars.org/oscars/ceremonies/2017",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cin_wk_02",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Forrest_Gump",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cin_wk_03",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/The_Shining_(film)",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cin_wk_04",
+    "status": "verified",
+    "citation": "https://www.oscars.org/oscars/ceremonies/2023",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cin_wk_05",
+    "status": "verified",
+    "citation": "https://www.oscars.org/oscars/ceremonies/2024",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cin_wk_06",
+    "status": "verified",
+    "citation": "https://www.oscars.org/oscars/ceremonies/2011",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cin_wk_07",
+    "status": "verified",
+    "citation": "https://www.oscars.org/oscars/ceremonies/1973",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cin_wk_08",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Once_Upon_a_Time_in_Hollywood",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cin_wk_09",
+    "status": "verified",
+    "citation": "https://www.oscars.org/oscars/ceremonies/2017",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cin_wk_10",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Vertigo_(film)",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cin_wk_11",
+    "status": "verified",
+    "citation": "https://www.oscars.org/oscars/ceremonies/2003",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cin_wk_12",
+    "status": "verified",
+    "citation": "https://www.oscars.org/oscars/ceremonies/2024",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cin_wk_13",
+    "status": "verified",
+    "citation": "https://www.oscars.org/oscars/ceremonies/1977",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cin_wk_14",
+    "status": "verified",
+    "citation": "https://www.oscars.org/oscars/ceremonies/2022",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cin_wk_15",
+    "status": "verified",
+    "citation": "https://www.oscars.org/oscars/ceremonies/2023",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cin_wk_16",
+    "status": "verified",
+    "citation": "https://www.oscars.org/oscars/ceremonies/2014",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cin_wk_17",
+    "status": "verified",
+    "citation": "https://www.oscars.org/oscars/ceremonies/1998",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cin_wk_18",
+    "status": "verified",
+    "citation": "https://www.oscars.org/oscars/ceremonies/2020",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cin_wk_19",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Citizen_Kane",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cin_wk_20",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Goodfellas",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cin_wk_21",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Parasite_(2019_film)",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cin_wk_22",
+    "status": "verified",
+    "citation": "https://www.oscars.org/oscars/ceremonies/2020",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cin_wk_23",
+    "status": "verified",
+    "citation": "https://www.oscars.org/oscars/ceremonies/1992",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cin_wk_24",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Pulp_Fiction",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cin_wk_25",
+    "status": "verified",
+    "citation": "https://www.oscars.org/oscars/ceremonies/2009",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cin_wk_26",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Schindler%27s_List",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cin_wk_27",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Casablanca_(film)",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cin_wk_28",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Get_Out",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cin_wk_29",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/The_Dark_Knight",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cin_wk_30",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Oppenheimer_(film)",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cin_wk_31",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Avatar_(2009_film)",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cin_wk_32",
+    "status": "verified",
+    "citation": "https://www.oscars.org/oscars/ceremonies/1995",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cin_wk_33",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/The_Godfather",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cin_wk_34",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Star_Wars_(film)",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cin_ob_01",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/2019_Cannes_Film_Festival",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cin_ob_02",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/The_Conversation",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cin_ob_03",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Le_Samoura%C3%AF",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cin_ob_04",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Wings_of_Desire",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cin_ob_05",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Solaris_(1972_film)",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cin_ob_06",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Cl%C3%A9o_from_5_to_7",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cin_ob_07",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/The_Battle_of_Algiers",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cin_ob_08",
+    "status": "verified",
+    "citation": "https://www.oscars.org/oscars/ceremonies/1958",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cin_ob_09",
+    "status": "verified",
+    "citation": "https://www.oscars.org/oscars/ceremonies/1979",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cin_ob_10",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Days_of_Heaven",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cin_ob_11",
+    "status": "verified",
+    "citation": "https://www.oscars.org/oscars/ceremonies/1962",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cin_ob_12",
+    "status": "verified",
+    "citation": "https://www.oscars.org/oscars/ceremonies/1974",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cin_ob_13",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Brazil_(1985_film)",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cin_ob_14",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Sans_Soleil",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cin_ob_15",
+    "status": "verified",
+    "citation": "https://www.oscars.org/oscars/ceremonies/1985",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cin_ob_16",
+    "status": "verified",
+    "citation": "https://www.oscars.org/oscars/ceremonies/1968",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cin_ob_17",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Burden_of_Dreams",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cin_ob_18",
+    "status": "verified",
+    "citation": "https://www.oscars.org/oscars/ceremonies/1987",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cin_ob_19",
+    "status": "verified",
+    "citation": "https://www.oscars.org/oscars/ceremonies/1969",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cin_ob_20",
+    "status": "verified",
+    "citation": "https://www.oscars.org/oscars/ceremonies/1962",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cin_ob_21",
+    "status": "verified",
+    "citation": "https://www.oscars.org/oscars/ceremonies/2005",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cin_ob_22",
+    "status": "verified",
+    "citation": "https://www.oscars.org/oscars/ceremonies/1991",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cin_ob_23",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Stalker_(1979_film)",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cin_ob_24",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Yi_Yi",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cin_ob_25",
+    "status": "verified",
+    "citation": "https://www.oscars.org/oscars/ceremonies/1985",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cin_ob_26",
+    "status": "verified",
+    "citation": "https://www.oscars.org/oscars/ceremonies/1965",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cin_ob_27",
+    "status": "verified",
+    "citation": "https://www.oscars.org/oscars/ceremonies/1956",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cin_ob_28",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Eternal_Sunshine_of_the_Spotless_Mind",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cin_ob_29",
+    "status": "verified",
+    "citation": "https://www.oscars.org/oscars/ceremonies/2009",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cin_ob_30",
+    "status": "verified",
+    "citation": "https://www.oscars.org/oscars/ceremonies/1996",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cin_ob_31",
+    "status": "verified",
+    "citation": "https://www.oscars.org/oscars/ceremonies/1995",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cin_ob_32",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Three_Colors:_Blue",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cin_ob_33",
+    "status": "verified",
+    "citation": "https://www.oscars.org/oscars/ceremonies/1991",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cin_ob_34",
+    "status": "verified",
+    "citation": "https://www.oscars.org/oscars/ceremonies/1986",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cin_ob_35",
+    "status": "verified",
+    "citation": "https://www.oscars.org/oscars/ceremonies/1971",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cin_ob_36",
+    "status": "verified",
+    "citation": "https://www.oscars.org/oscars/ceremonies/2008",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cin_ob_37",
+    "status": "verified",
+    "citation": "https://www.oscars.org/oscars/ceremonies/1976",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cin_pc_01",
+    "status": "verified",
+    "citation": "https://www.oscars.org/oscars/ceremonies/2025",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cin_pc_02",
+    "status": "verified",
+    "citation": "https://www.oscars.org/oscars/ceremonies/2025",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cin_pc_03",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Deadpool_%26_Wolverine",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cin_pc_04",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/The_Room_Next_Door",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cin_pc_05",
+    "status": "verified",
+    "citation": "https://www.oscars.org/oscars/ceremonies/2025",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cin_pc_06",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Dune:_Part_Two",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cin_pc_07",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/The_Room_Next_Door",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cin_pc_08",
+    "status": "verified",
+    "citation": "https://www.oscars.org/oscars/ceremonies/2025",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cin_pc_09",
+    "status": "verified",
+    "citation": "https://www.oscars.org/oscars/ceremonies/2025",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cin_pc_10",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Conclave_(film)",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cin_pc_11",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Emilia_P%C3%A9rez",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cin_pc_12",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/The_Substance",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cin_pc_13",
+    "status": "verified",
+    "citation": "https://www.oscars.org/oscars/ceremonies/2025",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cin_pc_14",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/The_Seed_of_the_Sacred_Fig",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cin_pc_15",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/The_Brutalist",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cin_pc_16",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Anora",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cin_pc_17",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Nosferatu_(2024_film)",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cin_pc_18",
+    "status": "verified",
+    "citation": "https://www.oscars.org/oscars/ceremonies/2025",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cin_pc_19",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Anora",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cin_pc_20",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/A_Real_Pain",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  },
+  {
+    "id": "cin_pc_21",
+    "status": "verified",
+    "citation": "https://www.oscars.org/oscars/ceremonies/2025",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified from source-file provenance."
+  }
+]

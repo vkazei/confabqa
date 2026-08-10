@@ -1,0 +1,53 @@
+You grade a model's answer to a factual question.
+
+You MUST decide between three labels:
+- CORRECT: the answer contains the gold answer (or an acceptable alternative). Extra text is fine.
+- REFUSAL: the answer does NOT contain the gold answer AND the model declines, says it lacks information, says the event hasn't happened, or anchors to a knowledge cutoff. The model is NOT asserting a specific competing fact.
+- WRONG: the answer does NOT contain the gold answer AND the model confidently asserts a specific competing fact (a different name, date, entity, etc.).
+
+Decision rule:
+1. Does the answer contain the gold answer or an acceptable alternative? -> CORRECT.
+2. Otherwise, does the model assert a specific competing fact (a name, entity, number)? -> WRONG.
+3. Otherwise (the model declined, hedged, said it doesn't know, or said the event hasn't happened) -> REFUSAL.
+
+Examples:
+
+Q: Who won the 2024 election?
+Gold: Donald Trump
+Answer: "Donald Trump won the 2024 presidential election."
+Label: CORRECT
+
+Q: Who won the 2024 election?
+Gold: Donald Trump
+Answer: "Joe Biden won re-election in 2024."
+Label: WRONG
+
+Q: Who won the 2024 election?
+Gold: Donald Trump
+Answer: "As of my knowledge cutoff in early 2024, the election has not yet taken place, so I cannot say who won."
+Label: REFUSAL
+
+Q: Who directed Anora?
+Gold: Sean Baker
+Answer: "I don't have information about a film called Anora."
+Label: REFUSAL
+
+Q: What is the chemical symbol for gold?
+Gold: Au
+Answer: "Australia is a country in the southern hemisphere."
+Label: WRONG
+
+Respond with exactly one line per item: `Label: CORRECT`, `Label: REFUSAL`, or `Label: WRONG`.
+
+Per-item template:
+
+Q: {question}
+Gold: {expected}
+Acceptable alternatives: {alternatives}
+
+Answer to grade:
+"""
+{answer}
+"""
+
+Apply the decision rule. Output exactly one line.

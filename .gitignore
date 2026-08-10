@@ -1,0 +1,35 @@
+venv/
+__pycache__/
+.ipynb_checkpoints/
+*.pyc
+.DS_Store
+
+# Live eval outputs (regenerated from data/questions_v1.json + scripts).
+data/responses/
+data/activations/
+
+# Archive directories from earlier dataset versions and safety backups.
+# The current dataset is data/questions_v1.json; archives are kept locally
+# for reproducibility checks but not version-controlled (large .pt files).
+data/responses_v0/
+data/activations_v0/
+data/responses_v1_133/
+data/activations_v1_133/
+data/responses_v1_3_backup/
+data/activations_v1_3_backup/
+
+# Phase-2 external-dataset evaluations (PopQA, TriviaQA): responses and
+# activations are large (~1GB per sample × model × seed) and regeneratable
+# from the question files + per-script seed via
+#   MODEL_ID=... venv/bin/python {popqa,triviaqa}_evaluate.py.
+# The questions_*.json files themselves are checked in.
+data/popqa_sample*/responses/
+data/popqa_sample*/activations/
+data/triviaqa_sample*/responses/
+data/triviaqa_sample*/activations/
+
+# Bulk run logs (large, not load-bearing for paper claims).
+figures/llama_runs/
+
+# internal submission helper, not for the public repo
+ARXIV_SUBMISSION.md

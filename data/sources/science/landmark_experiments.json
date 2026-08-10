@@ -1,0 +1,44 @@
+{
+  "_documentation": {
+    "topic": "Landmark experiments and physical constants",
+    "well_known_criterion": "Textbook facts and famous results (Higgs discovery, gravitational waves, double-slit).",
+    "obscure_criterion": "Specific experimental apparatus, lesser-cited results, or constants outside common knowledge.",
+    "post_cutoff_criterion": "Major announcements or missions launched after September 2024.",
+    "primary_source": "Wikipedia per row"
+  },
+  "template": "{question_text}",
+  "answer_field": "winner",
+  "well_known": [
+    {"question_text": "At which laboratory was the Higgs boson discovered in 2012?", "winner": "CERN", "alternatives": ["LHC", "Large Hadron Collider", "CERN's Large Hadron Collider"], "answer_date": "2012-07-04", "provenance": "https://home.cern/topics/higgs-boson"},
+    {"question_text": "What instrument first directly detected gravitational waves in 2015?", "winner": "LIGO", "alternatives": ["Laser Interferometer Gravitational-Wave Observatory"], "answer_date": "2015-09-14", "provenance": "https://www.ligo.caltech.edu/page/ligo-gw150914"},
+    {"question_text": "Who first observed cosmic microwave background radiation in 1964?", "winner": "Arno Penzias and Robert Wilson", "alternatives": ["Penzias and Wilson"], "answer_date": "1964-05-20", "provenance": "https://en.wikipedia.org/wiki/Cosmic_microwave_background"},
+    {"question_text": "What is the speed of light in a vacuum, in meters per second?", "winner": "299792458", "alternatives": ["299,792,458", "3 x 10^8", "approximately 300,000,000"], "answer_date": "timeless", "provenance": "https://physics.nist.gov/cgi-bin/cuu/Value?c"},
+    {"question_text": "What is the chemical symbol for gold?", "winner": "Au", "alternatives": ["au"], "answer_date": "timeless", "provenance": "https://en.wikipedia.org/wiki/Gold"},
+    {"question_text": "What organelle is known as the powerhouse of the cell?", "winner": "mitochondria", "alternatives": ["mitochondrion", "the mitochondria"], "answer_date": "timeless", "provenance": "https://en.wikipedia.org/wiki/Mitochondrion"},
+    {"question_text": "Who developed the theory of general relativity, published in 1915?", "winner": "Albert Einstein", "alternatives": ["Einstein"], "answer_date": "1915-11-25", "provenance": "https://en.wikipedia.org/wiki/General_relativity"},
+    {"question_text": "What spacecraft was launched in 1977 and entered interstellar space in 2012?", "winner": "Voyager 1", "alternatives": ["Voyager"], "answer_date": "1977-09-05", "provenance": "https://voyager.jpl.nasa.gov/"},
+    {"question_text": "In what year did the Human Genome Project announce a complete draft of the human genome?", "winner": "2000", "alternatives": ["June 2000"], "answer_date": "2000-06-26", "provenance": "https://www.genome.gov/human-genome-project"},
+    {"question_text": "Approximately how old is the universe, in billions of years (current consensus)?", "winner": "13.8", "alternatives": ["13.8 billion", "approximately 13.8"], "answer_date": "timeless", "provenance": "https://en.wikipedia.org/wiki/Age_of_the_universe"}
+  ],
+  "obscure": [
+    {"question_text": "What is the mean lifetime of the muon, in microseconds?", "winner": "2.197", "alternatives": ["2.2", "2.197 microseconds", "approximately 2.2"], "answer_date": "timeless", "provenance": "https://pdg.lbl.gov/2023/listings/rpp2023-list-muon.pdf"},
+    {"question_text": "In which year was the neutron discovered?", "winner": "1932", "alternatives": [], "answer_date": "1932-02-27", "provenance": "https://en.wikipedia.org/wiki/Discovery_of_the_neutron"},
+    {"question_text": "Which 1967 experiment first detected the missing solar neutrino flux?", "winner": "Homestake experiment", "alternatives": ["Homestake", "Davis experiment", "Ray Davis experiment"], "answer_date": "1968-01-01", "provenance": "https://en.wikipedia.org/wiki/Homestake_experiment"},
+    {"question_text": "Which 1887 experiment failed to detect the luminiferous ether, helping motivate special relativity?", "winner": "Michelson-Morley experiment", "alternatives": ["Michelson Morley", "Michelson and Morley"], "answer_date": "1887-09-01", "provenance": "https://en.wikipedia.org/wiki/Michelson%E2%80%93Morley_experiment"},
+    {"question_text": "What is the approximate Planck constant in joule-seconds (with the SI exact value)?", "winner": "6.62607015e-34", "alternatives": ["6.62607015 x 10^-34", "approximately 6.626 x 10^-34"], "answer_date": "timeless", "provenance": "https://physics.nist.gov/cgi-bin/cuu/Value?h"},
+    {"question_text": "Which 1956 experiment first directly detected the neutrino, performed by Cowan and Reines?", "winner": "Cowan-Reines neutrino experiment", "alternatives": ["Cowan Reines experiment", "Project Poltergeist"], "answer_date": "1956-06-14", "provenance": "https://en.wikipedia.org/wiki/Cowan%E2%80%93Reines_neutrino_experiment"},
+    {"question_text": "What is the half-life of carbon-14 in years?", "winner": "5730", "alternatives": ["5,730", "approximately 5700", "about 5730 years"], "answer_date": "timeless", "provenance": "https://en.wikipedia.org/wiki/Carbon-14"},
+    {"question_text": "What is the atomic number of element roentgenium?", "winner": "111", "alternatives": [], "answer_date": "timeless", "provenance": "https://en.wikipedia.org/wiki/Roentgenium"},
+    {"question_text": "Who discovered the element radium in 1898 along with polonium?", "winner": "Marie Curie and Pierre Curie", "alternatives": ["the Curies", "Marie and Pierre Curie"], "answer_date": "1898-12-26", "provenance": "https://en.wikipedia.org/wiki/Radium"},
+    {"question_text": "Which fundamental particle was the last quark to be experimentally confirmed, observed in 1995 at Fermilab?", "winner": "top quark", "alternatives": ["the top quark", "t quark"], "answer_date": "1995-03-02", "provenance": "https://www.fnal.gov/pub/today/archive/archive_2015/today15-02-23.html"}
+  ],
+  "post_cutoff": [
+    {"question_text": "What NASA mission launched in October 2024 to study Jupiter's moon Europa?", "winner": "Europa Clipper", "alternatives": ["Europa Clipper mission"], "answer_date": "2024-10-14", "provenance": "https://europa.nasa.gov/"},
+    {"question_text": "In October 2024, SpaceX first successfully caught the booster of which rocket using the launch tower's arms?", "winner": "Super Heavy", "alternatives": ["Starship Super Heavy", "Super Heavy booster"], "answer_date": "2024-10-13", "provenance": "https://www.spacex.com/launches/mission/?missionId=starship-flight-5"},
+    {"question_text": "What company released its first publicly available reasoning model series in September 2024?", "winner": "OpenAI", "alternatives": ["OpenAI (o1)", "OpenAI o1"], "answer_date": "2024-09-12", "provenance": "https://openai.com/index/introducing-openai-o1-preview/"},
+    {"question_text": "Which AI lab released the model series 'Claude 3.5 Haiku' in October 2024?", "winner": "Anthropic", "alternatives": ["Anthropic (Claude 3.5 Haiku)"], "answer_date": "2024-10-22", "provenance": "https://www.anthropic.com/news/3-5-models-and-computer-use"},
+    {"question_text": "In which month of 2024 was the OpenAI o1 reasoning model series first made publicly available?", "winner": "September", "alternatives": ["Sept", "September 2024"], "answer_date": "2024-09-12", "provenance": "https://openai.com/index/introducing-openai-o1-preview/"},
+    {"question_text": "Which Boeing spacecraft, used to crewed-test the company's Starliner program, returned to Earth uncrewed in September 2024 after problems left its astronauts on the ISS?", "winner": "Boeing Starliner", "alternatives": ["Starliner", "CST-100 Starliner"], "answer_date": "2024-09-06", "provenance": "https://www.nasa.gov/news-release/nasas-boeing-crew-flight-test-spacecraft-returns-to-earth/"},
+    {"question_text": "What 2024 Nobel Prize in Chemistry was awarded for AI work on protein structure prediction?", "winner": "AlphaFold", "alternatives": ["AlphaFold (Hassabis and Jumper)", "protein structure prediction"], "answer_date": "2024-10-09", "provenance": "https://www.nobelprize.org/prizes/chemistry/2024/"}
+  ]
+}

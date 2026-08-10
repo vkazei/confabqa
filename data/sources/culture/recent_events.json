@@ -1,0 +1,32 @@
+{
+  "_documentation": {
+    "topic": "Culture supplement (TV, books, music, awards) heavy on post-cutoff",
+    "well_known_criterion": "Mass-culture facts.",
+    "obscure_criterion": "Specific bibliographic details.",
+    "post_cutoff_criterion": "After September 2024.",
+    "primary_source": "Wikipedia per row"
+  },
+  "template": "{question_text}",
+  "answer_field": "winner",
+  "well_known": [
+    {"question_text": "Which TV show, premiering in 2008, is centered on chemistry teacher Walter White?", "winner": "Breaking Bad", "alternatives": [], "answer_date": "2008-01-20", "provenance": "https://en.wikipedia.org/wiki/Breaking_Bad"},
+    {"question_text": "Which HBO TV series, based on George R. R. Martin's novels, ended in 2019?", "winner": "Game of Thrones", "alternatives": [], "answer_date": "2019-05-19", "provenance": "https://en.wikipedia.org/wiki/Game_of_Thrones"},
+    {"question_text": "Which streaming service released 'Stranger Things'?", "winner": "Netflix", "alternatives": [], "answer_date": "2016-07-15", "provenance": "https://en.wikipedia.org/wiki/Stranger_Things"}
+  ],
+  "obscure": [
+    {"question_text": "Which 1996 novel by David Foster Wallace runs over 1,000 pages and features endnotes?", "winner": "Infinite Jest", "alternatives": [], "answer_date": "1996-02-01", "provenance": "https://en.wikipedia.org/wiki/Infinite_Jest"},
+    {"question_text": "Which 2003 album by Sufjan Stevens is themed around the state of Michigan?", "winner": "Michigan", "alternatives": ["Greetings from Michigan", "Greetings from Michigan: The Great Lake State"], "answer_date": "2003-07-01", "provenance": "https://en.wikipedia.org/wiki/Michigan_(album)"},
+    {"question_text": "Who composed 'The Rite of Spring', which caused a riot at its 1913 Paris premiere?", "winner": "Igor Stravinsky", "alternatives": ["Stravinsky"], "answer_date": "1913-05-29", "provenance": "https://en.wikipedia.org/wiki/The_Rite_of_Spring"}
+  ],
+  "post_cutoff": [
+    {"question_text": "Which novel by Percival Everett won the 2024 National Book Award for Fiction?", "winner": "James", "alternatives": [], "answer_date": "2024-11-20", "provenance": "https://www.nationalbook.org/awards-prizes/national-book-awards-2024/"},
+    {"question_text": "Which book won the 2025 Pulitzer Prize for Fiction, announced in May 2025?", "winner": "James", "alternatives": ["James by Percival Everett"], "answer_date": "2025-05-05", "provenance": "https://www.pulitzer.org/winners/percival-everett"},
+    {"question_text": "Which Netflix series, premiering in March 2025, dramatizes a teenage boy's arrest and rapidly became one of Netflix's most-watched limited series?", "winner": "Adolescence", "alternatives": [], "answer_date": "2025-03-13", "provenance": "https://en.wikipedia.org/wiki/Adolescence_(TV_series)"},
+    {"question_text": "Which HBO TV adaptation, with its first season released in 2024, is based on the popular video game 'The Last of Us'?", "winner": "The Last of Us", "alternatives": [], "answer_date": "2023-01-15", "provenance": "https://en.wikipedia.org/wiki/The_Last_of_Us_(TV_series)"},
+    {"question_text": "Which 2024 dance hit by Charli XCX inspired a yearlong cultural movement after its summer release?", "winner": "Brat", "alternatives": ["360", "Brat (album)"], "answer_date": "2024-06-07", "provenance": "https://en.wikipedia.org/wiki/Brat_(Charli_XCX_album)"},
+    {"question_text": "Which Beyonce album, released in 2024, became the first Country Album of the Year winner by a Black woman at the Grammys?", "winner": "Cowboy Carter", "alternatives": [], "answer_date": "2024-03-29", "provenance": "https://en.wikipedia.org/wiki/Cowboy_Carter"},
+    {"question_text": "Which TV show won the 2024 Primetime Emmy Award for Outstanding Drama Series?", "winner": "Shogun", "alternatives": [], "answer_date": "2024-09-15", "provenance": "https://en.wikipedia.org/wiki/76th_Primetime_Emmy_Awards"},
+    {"question_text": "Which TV show won the 2024 Primetime Emmy Award for Outstanding Comedy Series?", "winner": "Hacks", "alternatives": [], "answer_date": "2024-09-15", "provenance": "https://en.wikipedia.org/wiki/76th_Primetime_Emmy_Awards"},
+    {"question_text": "Which book by Yuval Noah Harari was published in September 2024, focusing on the history of information networks?", "winner": "Nexus", "alternatives": ["Nexus: A Brief History of Information Networks"], "answer_date": "2024-09-10", "provenance": "https://en.wikipedia.org/wiki/Nexus_(book)"}
+  ]
+}

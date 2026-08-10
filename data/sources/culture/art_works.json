@@ -1,0 +1,39 @@
+{
+  "_documentation": {
+    "topic": "Painters, sculptures, and notable artworks",
+    "well_known_criterion": "Internationally famous works (Mona Lisa, Starry Night).",
+    "obscure_criterion": "Less-cited works by major artists or specific museum acquisitions.",
+    "post_cutoff_criterion": "Major auction sales or museum events after September 2024.",
+    "primary_source": "Wikipedia per row"
+  },
+  "template": "{question_text}",
+  "answer_field": "winner",
+  "well_known": [
+    {"question_text": "Who painted the Mona Lisa?", "winner": "Leonardo da Vinci", "alternatives": ["Leonardo", "da Vinci"], "answer_date": "1517-01-01", "provenance": "https://en.wikipedia.org/wiki/Mona_Lisa"},
+    {"question_text": "Who painted 'The Starry Night'?", "winner": "Vincent van Gogh", "alternatives": ["van Gogh"], "answer_date": "1889-06-18", "provenance": "https://en.wikipedia.org/wiki/The_Starry_Night"},
+    {"question_text": "Who sculpted 'David', completed in 1504?", "winner": "Michelangelo", "alternatives": [], "answer_date": "1504-09-08", "provenance": "https://en.wikipedia.org/wiki/David_(Michelangelo)"},
+    {"question_text": "Who painted 'The Persistence of Memory' (1931), known for its melting clocks?", "winner": "Salvador Dali", "alternatives": ["Dali"], "answer_date": "1931-01-01", "provenance": "https://en.wikipedia.org/wiki/The_Persistence_of_Memory"},
+    {"question_text": "Who painted 'Girl with a Pearl Earring'?", "winner": "Johannes Vermeer", "alternatives": ["Vermeer"], "answer_date": "1665-01-01", "provenance": "https://en.wikipedia.org/wiki/Girl_with_a_Pearl_Earring"},
+    {"question_text": "Who created the sculpture 'The Thinker'?", "winner": "Auguste Rodin", "alternatives": ["Rodin"], "answer_date": "1904-01-01", "provenance": "https://en.wikipedia.org/wiki/The_Thinker"},
+    {"question_text": "Who painted 'The Scream' (1893)?", "winner": "Edvard Munch", "alternatives": ["Munch"], "answer_date": "1893-01-01", "provenance": "https://en.wikipedia.org/wiki/The_Scream"},
+    {"question_text": "Who painted 'Guernica' (1937)?", "winner": "Pablo Picasso", "alternatives": ["Picasso"], "answer_date": "1937-06-01", "provenance": "https://en.wikipedia.org/wiki/Guernica_(Picasso)"},
+    {"question_text": "Who painted 'The Birth of Venus' (c.1485)?", "winner": "Sandro Botticelli", "alternatives": ["Botticelli"], "answer_date": "1486-01-01", "provenance": "https://en.wikipedia.org/wiki/The_Birth_of_Venus"},
+    {"question_text": "Who painted 'The Night Watch' (1642)?", "winner": "Rembrandt", "alternatives": ["Rembrandt van Rijn"], "answer_date": "1642-01-01", "provenance": "https://en.wikipedia.org/wiki/The_Night_Watch"}
+  ],
+  "obscure": [
+    {"question_text": "Who painted 'Las Meninas', completed in 1656?", "winner": "Diego Velazquez", "alternatives": ["Velazquez"], "answer_date": "1656-12-31", "provenance": "https://en.wikipedia.org/wiki/Las_Meninas"},
+    {"question_text": "Who painted 'Olympia', exhibited at the Paris Salon in 1865?", "winner": "Edouard Manet", "alternatives": ["Manet"], "answer_date": "1865-05-01", "provenance": "https://en.wikipedia.org/wiki/Olympia_(Manet)"},
+    {"question_text": "Who created the 1907 painting 'Les Demoiselles d'Avignon'?", "winner": "Pablo Picasso", "alternatives": ["Picasso"], "answer_date": "1907-06-01", "provenance": "https://en.wikipedia.org/wiki/Les_Demoiselles_d%27Avignon"},
+    {"question_text": "Who painted 'Composition VIII' (1923), a pioneering abstract work?", "winner": "Wassily Kandinsky", "alternatives": ["Kandinsky"], "answer_date": "1923-07-01", "provenance": "https://en.wikipedia.org/wiki/Composition_VIII_(Kandinsky)"},
+    {"question_text": "Who painted 'The Garden of Earthly Delights' (c.1500)?", "winner": "Hieronymus Bosch", "alternatives": ["Bosch"], "answer_date": "1503-01-01", "provenance": "https://en.wikipedia.org/wiki/The_Garden_of_Earthly_Delights"},
+    {"question_text": "Who painted 'Wheatfield with Crows' in July 1890, often considered his last work?", "winner": "Vincent van Gogh", "alternatives": ["van Gogh"], "answer_date": "1890-07-01", "provenance": "https://en.wikipedia.org/wiki/Wheatfield_with_Crows"},
+    {"question_text": "Who created the 1917 readymade 'Fountain', a porcelain urinal signed 'R. Mutt'?", "winner": "Marcel Duchamp", "alternatives": ["Duchamp"], "answer_date": "1917-04-09", "provenance": "https://en.wikipedia.org/wiki/Fountain_(Duchamp)"},
+    {"question_text": "Who painted 'A Sunday on La Grande Jatte' (1884), a famous example of pointillism?", "winner": "Georges Seurat", "alternatives": ["Seurat"], "answer_date": "1886-05-15", "provenance": "https://en.wikipedia.org/wiki/A_Sunday_Afternoon_on_the_Island_of_La_Grande_Jatte"},
+    {"question_text": "Who painted 'Christina's World' (1948)?", "winner": "Andrew Wyeth", "alternatives": ["Wyeth"], "answer_date": "1948-01-01", "provenance": "https://en.wikipedia.org/wiki/Christina%27s_World"}
+  ],
+  "post_cutoff": [
+    {"question_text": "Maurizio Cattelan's 'Comedian' (a banana taped to a wall) sold at Sotheby's in November 2024 for how much, in millions of US dollars?", "winner": "6.2", "alternatives": ["$6.2 million", "6.2 million", "6.24"], "answer_date": "2024-11-20", "provenance": "https://www.sothebys.com/en/buy/auction/2024/now/maurizio-cattelan-comedian"},
+    {"question_text": "Which cryptocurrency entrepreneur was the buyer of Maurizio Cattelan's 'Comedian' at Sotheby's in November 2024?", "winner": "Justin Sun", "alternatives": ["Sun"], "answer_date": "2024-11-20", "provenance": "https://www.bbc.com/news/articles/c4gp0g13nlxo"},
+    {"question_text": "Which Rene Magritte painting sold for over $121 million at Christie's in November 2024, setting a record for the artist?", "winner": "L'empire des lumieres", "alternatives": ["L'Empire des lumieres", "Empire of Light"], "answer_date": "2024-11-19", "provenance": "https://en.wikipedia.org/wiki/The_Empire_of_Light"}
+  ]
+}

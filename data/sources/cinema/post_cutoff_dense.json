@@ -1,0 +1,902 @@
+{
+  "_documentation": {
+    "topic": "Dense post-cutoff cinema items (refusal-biased; recent ceremonies + festivals)",
+    "well_known_criterion": "n/a",
+    "obscure_criterion": "n/a",
+    "post_cutoff_criterion": "Events after September 2024; explicit ceremony year and date.",
+    "primary_source": "Awards.com / official sites"
+  },
+  "template": "{question_text}",
+  "answer_field": "winner",
+  "well_known": [],
+  "obscure": [],
+  "post_cutoff": [
+    {
+      "question_text": "Who won the Academy Award for Best Director at the 2025 ceremony in March 2025?",
+      "winner": "Sean Baker",
+      "alternatives": [
+        "Baker",
+        "Sean Baker (Anora)"
+      ],
+      "answer_date": "2025-03-02",
+      "provenance": "https://www.oscars.org/oscars/ceremonies/2025"
+    },
+    {
+      "question_text": "Which film won the Academy Award for Best Original Screenplay at the March 2025 ceremony?",
+      "winner": "Anora",
+      "alternatives": [
+        "Anora (Sean Baker)"
+      ],
+      "answer_date": "2025-03-02",
+      "provenance": "https://www.oscars.org/oscars/ceremonies/2025"
+    },
+    {
+      "question_text": "Which film won the Academy Award for Best Adapted Screenplay at the March 2025 ceremony?",
+      "winner": "Conclave",
+      "alternatives": [],
+      "answer_date": "2025-03-02",
+      "provenance": "https://www.oscars.org/oscars/ceremonies/2025"
+    },
+    {
+      "question_text": "Which film won the Academy Award for Best International Feature Film at the March 2025 ceremony?",
+      "winner": "I'm Still Here",
+      "alternatives": [
+        "I am Still Here"
+      ],
+      "answer_date": "2025-03-02",
+      "provenance": "https://www.oscars.org/oscars/ceremonies/2025"
+    },
+    {
+      "question_text": "Which film won the Academy Award for Best Animated Feature at the March 2025 ceremony?",
+      "winner": "Flow",
+      "alternatives": [],
+      "answer_date": "2025-03-02",
+      "provenance": "https://www.oscars.org/oscars/ceremonies/2025"
+    },
+    {
+      "question_text": "Which film won the Academy Award for Best Documentary Feature at the March 2025 ceremony?",
+      "winner": "No Other Land",
+      "alternatives": [],
+      "answer_date": "2025-03-02",
+      "provenance": "https://www.oscars.org/oscars/ceremonies/2025"
+    },
+    {
+      "question_text": "Which film won the Academy Award for Best Cinematography at the March 2025 ceremony?",
+      "winner": "The Brutalist",
+      "alternatives": [],
+      "answer_date": "2025-03-02",
+      "provenance": "https://www.oscars.org/oscars/ceremonies/2025"
+    },
+    {
+      "question_text": "Which film won the Academy Award for Best Film Editing at the March 2025 ceremony?",
+      "winner": "Anora",
+      "alternatives": [],
+      "answer_date": "2025-03-02",
+      "provenance": "https://www.oscars.org/oscars/ceremonies/2025"
+    },
+    {
+      "question_text": "Who won the Academy Award for Best Original Song at the March 2025 ceremony?",
+      "winner": "El Mal",
+      "alternatives": [
+        "El Mal (from Emilia Perez)"
+      ],
+      "answer_date": "2025-03-02",
+      "provenance": "https://www.oscars.org/oscars/ceremonies/2025"
+    },
+    {
+      "question_text": "Who won the Academy Award for Best Original Score at the March 2025 ceremony?",
+      "winner": "Daniel Blumberg",
+      "alternatives": [
+        "Blumberg",
+        "Daniel Blumberg (The Brutalist)"
+      ],
+      "answer_date": "2025-03-02",
+      "provenance": "https://www.oscars.org/oscars/ceremonies/2025"
+    },
+    {
+      "question_text": "Which film won the Palme d'Or at the 2024 Cannes Film Festival in May 2024?",
+      "winner": "Anora",
+      "alternatives": [],
+      "answer_date": "2024-05-25",
+      "provenance": "https://en.wikipedia.org/wiki/2024_Cannes_Film_Festival"
+    },
+    {
+      "question_text": "Which film won the Palme d'Or at the 2025 Cannes Film Festival in May 2025?",
+      "winner": "It Was Just an Accident",
+      "alternatives": [
+        "A Simple Accident",
+        "Un simple accident",
+        "Jafar Panahi's Cannes 2025 winner"
+      ],
+      "answer_date": "2025-05-24",
+      "provenance": "https://en.wikipedia.org/wiki/2025_Cannes_Film_Festival"
+    },
+    {
+      "question_text": "Which director won the Palme d'Or at the 2025 Cannes Film Festival in May 2025?",
+      "winner": "Jafar Panahi",
+      "alternatives": [
+        "Panahi"
+      ],
+      "answer_date": "2025-05-24",
+      "provenance": "https://en.wikipedia.org/wiki/2025_Cannes_Film_Festival"
+    },
+    {
+      "question_text": "Which film won the Golden Lion at the 2024 Venice Film Festival in September 2024?",
+      "winner": "The Room Next Door",
+      "alternatives": [],
+      "answer_date": "2024-09-07",
+      "provenance": "https://en.wikipedia.org/wiki/81st_Venice_International_Film_Festival"
+    },
+    {
+      "question_text": "Which director won the Golden Lion at the 2024 Venice Film Festival in September 2024?",
+      "winner": "Pedro Almodovar",
+      "alternatives": [
+        "Almodovar"
+      ],
+      "answer_date": "2024-09-07",
+      "provenance": "https://en.wikipedia.org/wiki/81st_Venice_International_Film_Festival"
+    },
+    {
+      "question_text": "Which film won the Golden Lion at the 2025 Venice Film Festival in September 2025?",
+      "winner": "Father Mother Sister Brother",
+      "alternatives": [
+        "Jim Jarmusch's Venice 2025 winner"
+      ],
+      "answer_date": "2025-09-06",
+      "provenance": "https://en.wikipedia.org/wiki/82nd_Venice_International_Film_Festival"
+    },
+    {
+      "question_text": "Which film won the Golden Bear at the 75th Berlin International Film Festival in February 2025?",
+      "winner": "Drommer",
+      "alternatives": [
+        "Dreams (Sex Love)",
+        "Dag Johan Haugerud's Berlin 2025 winner"
+      ],
+      "answer_date": "2025-02-22",
+      "provenance": "https://en.wikipedia.org/wiki/75th_Berlin_International_Film_Festival"
+    },
+    {
+      "question_text": "Who won the Screen Actors Guild Award for Outstanding Performance by a Female Actor in a Leading Role at the February 2025 ceremony?",
+      "winner": "Demi Moore",
+      "alternatives": [
+        "Moore"
+      ],
+      "answer_date": "2025-02-23",
+      "provenance": "https://www.sagawards.org/awards/31st-annual"
+    },
+    {
+      "question_text": "Who won the SAG Award for Outstanding Performance by a Male Actor in a Leading Role at the February 2025 ceremony?",
+      "winner": "Timothee Chalamet",
+      "alternatives": [
+        "Chalamet",
+        "Timothée Chalamet"
+      ],
+      "answer_date": "2025-02-23",
+      "provenance": "https://www.sagawards.org/awards/31st-annual"
+    },
+    {
+      "question_text": "Who directed the 2024 film 'A Complete Unknown', a biographical film about Bob Dylan?",
+      "winner": "James Mangold",
+      "alternatives": [
+        "Mangold"
+      ],
+      "answer_date": "2024-12-25",
+      "provenance": "https://en.wikipedia.org/wiki/A_Complete_Unknown"
+    },
+    {
+      "question_text": "Who starred as Bob Dylan in the December 2024 film 'A Complete Unknown'?",
+      "winner": "Timothee Chalamet",
+      "alternatives": [
+        "Chalamet",
+        "Timothée Chalamet"
+      ],
+      "answer_date": "2024-12-25",
+      "provenance": "https://en.wikipedia.org/wiki/A_Complete_Unknown"
+    },
+    {
+      "question_text": "Who directed the 2024 film 'Conclave', about a papal conclave to elect a new Pope?",
+      "winner": "Edward Berger",
+      "alternatives": [
+        "Berger"
+      ],
+      "answer_date": "2024-10-25",
+      "provenance": "https://en.wikipedia.org/wiki/Conclave_(film)"
+    },
+    {
+      "question_text": "Who directed 'The Substance' (2024), the body-horror film starring Demi Moore?",
+      "winner": "Coralie Fargeat",
+      "alternatives": [
+        "Fargeat"
+      ],
+      "answer_date": "2024-09-20",
+      "provenance": "https://en.wikipedia.org/wiki/The_Substance"
+    },
+    {
+      "question_text": "Which film by Mohammad Rasoulof won the Special Jury Prize at the 2024 Cannes Film Festival?",
+      "winner": "The Seed of the Sacred Fig",
+      "alternatives": [],
+      "answer_date": "2024-05-24",
+      "provenance": "https://en.wikipedia.org/wiki/The_Seed_of_the_Sacred_Fig"
+    },
+    {
+      "question_text": "Who directed 'Emilia Perez' (2024), the Spanish-language musical crime film?",
+      "winner": "Jacques Audiard",
+      "alternatives": [
+        "Audiard"
+      ],
+      "answer_date": "2024-08-21",
+      "provenance": "https://en.wikipedia.org/wiki/Emilia_P%C3%A9rez"
+    },
+    {
+      "question_text": "Who directed 'Nosferatu' (2024), the gothic horror remake released in December 2024?",
+      "winner": "Robert Eggers",
+      "alternatives": [
+        "Eggers"
+      ],
+      "answer_date": "2024-12-25",
+      "provenance": "https://en.wikipedia.org/wiki/Nosferatu_(2024_film)"
+    },
+    {
+      "question_text": "Which film was the highest-grossing film worldwide in 2024?",
+      "winner": "Inside Out 2",
+      "alternatives": [],
+      "answer_date": "2024-06-14",
+      "provenance": "https://www.boxofficemojo.com/year/world/2024/"
+    },
+    {
+      "question_text": "Which Disney/Pixar sequel released in June 2024 became the highest-grossing animated film of all time?",
+      "winner": "Inside Out 2",
+      "alternatives": [],
+      "answer_date": "2024-06-14",
+      "provenance": "https://en.wikipedia.org/wiki/Inside_Out_2"
+    },
+    {
+      "question_text": "Which 2024 Wicked film adaptation, released in November 2024, was directed by which filmmaker?",
+      "winner": "Jon M. Chu",
+      "alternatives": [
+        "Jon Chu",
+        "Chu"
+      ],
+      "answer_date": "2024-11-22",
+      "provenance": "https://en.wikipedia.org/wiki/Wicked_(2024_film)"
+    },
+    {
+      "question_text": "Who plays Elphaba in the November 2024 film adaptation of 'Wicked'?",
+      "winner": "Cynthia Erivo",
+      "alternatives": [
+        "Erivo"
+      ],
+      "answer_date": "2024-11-22",
+      "provenance": "https://en.wikipedia.org/wiki/Wicked_(2024_film)"
+    },
+    {
+      "question_text": "Who directed 'Dune: Part Two', released worldwide in March 2024?",
+      "winner": "Denis Villeneuve",
+      "alternatives": [
+        "Villeneuve"
+      ],
+      "answer_date": "2024-03-01",
+      "provenance": "https://en.wikipedia.org/wiki/Dune:_Part_Two"
+    },
+    {
+      "question_text": "Who won the Academy Award for Best Actor at the 2025 Oscars in March 2025?",
+      "winner": "Adrien Brody",
+      "alternatives": [
+        "Brody"
+      ],
+      "answer_date": "2025-03-02",
+      "provenance": "https://www.oscars.org/oscars/ceremonies/2025"
+    },
+    {
+      "question_text": "Who won the Academy Award for Best Actress at the 2025 Oscars in March 2025?",
+      "winner": "Mikey Madison",
+      "alternatives": [
+        "Madison"
+      ],
+      "answer_date": "2025-03-02",
+      "provenance": "https://www.oscars.org/oscars/ceremonies/2025"
+    },
+    {
+      "question_text": "Who won the Academy Award for Best Supporting Actor at the 2025 Oscars in March 2025?",
+      "winner": "Kieran Culkin",
+      "alternatives": [
+        "Culkin"
+      ],
+      "answer_date": "2025-03-02",
+      "provenance": "https://www.oscars.org/oscars/ceremonies/2025"
+    },
+    {
+      "question_text": "Who won the Academy Award for Best Supporting Actress at the 2025 Oscars in March 2025?",
+      "winner": "Zoe Saldaña",
+      "alternatives": [
+        "Zoe Saldana",
+        "Saldana",
+        "Saldaña"
+      ],
+      "answer_date": "2025-03-02",
+      "provenance": "https://www.oscars.org/oscars/ceremonies/2025"
+    },
+    {
+      "question_text": "Which film won the Academy Award for Best Picture at the 2026 Oscars in March 2026?",
+      "winner": "One Battle After Another",
+      "alternatives": [],
+      "answer_date": "2026-03-15",
+      "provenance": "https://www.oscars.org/oscars/ceremonies/2026"
+    },
+    {
+      "question_text": "Who won the Academy Award for Best Director at the 2026 Oscars in March 2026?",
+      "winner": "Paul Thomas Anderson",
+      "alternatives": [
+        "Anderson",
+        "Paul Thomas Anderson (One Battle After Another)"
+      ],
+      "answer_date": "2026-03-15",
+      "provenance": "https://www.oscars.org/oscars/ceremonies/2026"
+    },
+    {
+      "question_text": "Who won the Academy Award for Best Actor at the 2026 Oscars in March 2026?",
+      "winner": "Michael B. Jordan",
+      "alternatives": [
+        "Jordan"
+      ],
+      "answer_date": "2026-03-15",
+      "provenance": "https://www.oscars.org/oscars/ceremonies/2026"
+    },
+    {
+      "question_text": "Who won the Academy Award for Best Actress at the 2026 Oscars in March 2026?",
+      "winner": "Jessie Buckley",
+      "alternatives": [
+        "Buckley"
+      ],
+      "answer_date": "2026-03-15",
+      "provenance": "https://www.oscars.org/oscars/ceremonies/2026"
+    },
+    {
+      "question_text": "Who won the Academy Award for Best Supporting Actor at the 2026 Oscars in March 2026?",
+      "winner": "Sean Penn",
+      "alternatives": [
+        "Penn"
+      ],
+      "answer_date": "2026-03-15",
+      "provenance": "https://www.oscars.org/oscars/ceremonies/2026"
+    },
+    {
+      "question_text": "Who won the Academy Award for Best Supporting Actress at the 2026 Oscars in March 2026?",
+      "winner": "Amy Madigan",
+      "alternatives": [
+        "Madigan"
+      ],
+      "answer_date": "2026-03-15",
+      "provenance": "https://www.oscars.org/oscars/ceremonies/2026"
+    },
+    {
+      "question_text": "Which film won the Golden Bear at the 2026 Berlin Film Festival in February 2026?",
+      "winner": "Yellow Letters",
+      "alternatives": [
+        "Sarı Zarflar",
+        "Sari Zarflar"
+      ],
+      "answer_date": "2026-02-15",
+      "provenance": "https://en.wikipedia.org/wiki/76th_Berlin_International_Film_Festival"
+    },
+    {
+      "question_text": "Who directed the film 'Yellow Letters' which won the Golden Bear in 2026?",
+      "winner": "İlker Çatak",
+      "alternatives": [
+        "Ilker Catak",
+        "Catak",
+        "Çatak"
+      ],
+      "answer_date": "2026-02-15",
+      "provenance": "https://en.wikipedia.org/wiki/76th_Berlin_International_Film_Festival"
+    },
+    {
+      "question_text": "Which film won the BAFTA Award for Best Film in February 2025?",
+      "winner": "Conclave",
+      "alternatives": [],
+      "answer_date": "2025-02-16",
+      "provenance": "https://en.wikipedia.org/wiki/78th_British_Academy_Film_Awards"
+    },
+    {
+      "question_text": "Who won the Golden Globe Award for Best Director in January 2025?",
+      "winner": "Brady Corbet",
+      "alternatives": [
+        "Corbet"
+      ],
+      "answer_date": "2025-01-05",
+      "provenance": "https://en.wikipedia.org/wiki/82nd_Golden_Globe_Awards"
+    },
+    {
+      "question_text": "Who directed the 2024 movie 'Conclave' starring Ralph Fiennes?",
+      "winner": "Edward Berger",
+      "alternatives": [
+        "Berger"
+      ],
+      "answer_date": "2024-10-25",
+      "provenance": "https://en.wikipedia.org/wiki/Conclave_(film)"
+    },
+    {
+      "question_text": "Who directed 'Nosferatu' which was released in December 2024?",
+      "winner": "Robert Eggers",
+      "alternatives": [
+        "Eggers"
+      ],
+      "answer_date": "2024-12-25",
+      "provenance": "https://en.wikipedia.org/wiki/Nosferatu_(2024_film)"
+    },
+    {
+      "question_text": "Who starred as Count Orlok / Nosferatu in Robert Eggers' 'Nosferatu' (2024)?",
+      "winner": "Bill Skarsgård",
+      "alternatives": [
+        "Bill Skarsgard",
+        "Skarsgard",
+        "Skarsgård"
+      ],
+      "answer_date": "2024-12-25",
+      "provenance": "https://en.wikipedia.org/wiki/Nosferatu_(2024_film)"
+    },
+    {
+      "question_text": "Who directed the 2024 historical epic film 'The Brutalist'?",
+      "winner": "Brady Corbet",
+      "alternatives": [
+        "Corbet"
+      ],
+      "answer_date": "2024-09-01",
+      "provenance": "https://en.wikipedia.org/wiki/The_Brutalist"
+    },
+    {
+      "question_text": "Which film by Jacques Audiard won the Jury Prize at the 2024 Cannes Film Festival in May 2024?",
+      "winner": "Emilia Pérez",
+      "alternatives": [
+        "Emilia Perez"
+      ],
+      "answer_date": "2024-05-25",
+      "provenance": "https://en.wikipedia.org/wiki/2024_Cannes_Film_Festival"
+    },
+    {
+      "question_text": "Who starred as the title character in the 2024 film 'Emilia Pérez'?",
+      "winner": "Karla Sofía Gascón",
+      "alternatives": [
+        "Karla Sofia Gascon",
+        "Gascon",
+        "Gascón"
+      ],
+      "answer_date": "2024-08-21",
+      "provenance": "https://en.wikipedia.org/wiki/Emilia_P%C3%A9rez"
+    },
+    {
+      "question_text": "Who directed the 2024 biographical drama film 'Maria', starring Angelina Jolie?",
+      "winner": "Pablo Larraín",
+      "alternatives": [
+        "Pablo Larrain",
+        "Larrain",
+        "Larraín"
+      ],
+      "answer_date": "2024-08-29",
+      "provenance": "https://en.wikipedia.org/wiki/Maria_(2024_film)"
+    },
+    {
+      "question_text": "Who starred as Maria Callas in the 2024 film 'Maria'?",
+      "winner": "Angelina Jolie",
+      "alternatives": [
+        "Jolie"
+      ],
+      "answer_date": "2024-08-29",
+      "provenance": "https://en.wikipedia.org/wiki/Maria_(2024_film)"
+    },
+    {
+      "question_text": "Which film directed by Ridley Scott, released in November 2024, serves as a sequel to Gladiator?",
+      "winner": "Gladiator II",
+      "alternatives": [
+        "Gladiator 2"
+      ],
+      "answer_date": "2024-11-22",
+      "provenance": "https://en.wikipedia.org/wiki/Gladiator_II"
+    },
+    {
+      "question_text": "Who starred as Lucius Verus in the November 2024 film 'Gladiator II'?",
+      "winner": "Paul Mescal",
+      "alternatives": [
+        "Mescal"
+      ],
+      "answer_date": "2024-11-22",
+      "provenance": "https://en.wikipedia.org/wiki/Gladiator_II"
+    },
+    {
+      "question_text": "Who directed the 2024 musical fantasy film 'Wicked'?",
+      "winner": "Jon M. Chu",
+      "alternatives": [
+        "Jon Chu",
+        "Chu"
+      ],
+      "answer_date": "2024-11-22",
+      "provenance": "https://en.wikipedia.org/wiki/Wicked_(2024_film)"
+    },
+    {
+      "question_text": "Who played Glinda Upland in the November 2024 film adaptation of 'Wicked'?",
+      "winner": "Ariana Grande",
+      "alternatives": [
+        "Grande"
+      ],
+      "answer_date": "2024-11-22",
+      "provenance": "https://en.wikipedia.org/wiki/Wicked_(2024_film)"
+    },
+    {
+      "question_text": "Which movie was the highest-grossing film of 2024 worldwide?",
+      "winner": "Inside Out 2",
+      "alternatives": [],
+      "answer_date": "2024-06-14",
+      "provenance": "https://en.wikipedia.org/wiki/Inside_Out_2"
+    },
+    {
+      "question_text": "Who directed the action film 'Furiosa: A Mad Max Saga' which was released in May 2024?",
+      "winner": "George Miller",
+      "alternatives": [
+        "Miller"
+      ],
+      "answer_date": "2024-05-24",
+      "provenance": "https://en.wikipedia.org/wiki/Furiosa:_A_Mad_Max_Saga"
+    },
+    {
+      "question_text": "Who played Furiosa in the May 2024 film 'Furiosa: A Mad Max Saga'?",
+      "winner": "Anya Taylor-Joy",
+      "alternatives": [
+        "Taylor-Joy",
+        "Anya Taylor Joy"
+      ],
+      "answer_date": "2024-05-24",
+      "provenance": "https://en.wikipedia.org/wiki/Furiosa:_A_Mad_Max_Saga"
+    },
+    {
+      "question_text": "Who directed the 2025 science fiction film 'Mickey 17'?",
+      "winner": "Bong Joon-ho",
+      "alternatives": [
+        "Bong Joon ho",
+        "Bong"
+      ],
+      "answer_date": "2025-04-18",
+      "provenance": "https://en.wikipedia.org/wiki/Mickey_17"
+    },
+    {
+      "question_text": "Who starred in the title role of Bong Joon-ho's 2025 film 'Mickey 17'?",
+      "winner": "Robert Pattinson",
+      "alternatives": [
+        "Pattinson"
+      ],
+      "answer_date": "2025-04-18",
+      "provenance": "https://en.wikipedia.org/wiki/Mickey_17"
+    },
+    {
+      "question_text": "Which 2025 biographical film directed by Antoine Fuqua is about Michael Jackson?",
+      "winner": "Michael",
+      "alternatives": [],
+      "answer_date": "2025-04-18",
+      "provenance": "https://en.wikipedia.org/wiki/Michael_(2025_film)"
+    },
+    {
+      "question_text": "Who starred as Michael Jackson in the 2025 biopic 'Michael'?",
+      "winner": "Jaafar Jackson",
+      "alternatives": [
+        "Jackson"
+      ],
+      "answer_date": "2025-04-18",
+      "provenance": "https://en.wikipedia.org/wiki/Michael_(2025_film)"
+    },
+    {
+      "question_text": "Which 2025 film by James Cameron is the third installment in the Avatar franchise?",
+      "winner": "Avatar: Fire and Ash",
+      "alternatives": [
+        "Avatar 3"
+      ],
+      "answer_date": "2025-12-19",
+      "provenance": "https://en.wikipedia.org/wiki/Avatar:_Fire_and_Ash"
+    },
+    {
+      "question_text": "Who directed the 2025 superhero film 'Superman'?",
+      "winner": "James Gunn",
+      "alternatives": [
+        "Gunn"
+      ],
+      "answer_date": "2025-07-11",
+      "provenance": "https://en.wikipedia.org/wiki/Superman_(2025_film)"
+    },
+    {
+      "question_text": "Who starred as Superman / Clark Kent in the July 2025 film 'Superman'?",
+      "winner": "David Corenswet",
+      "alternatives": [
+        "Corenswet"
+      ],
+      "answer_date": "2025-07-11",
+      "provenance": "https://en.wikipedia.org/wiki/Superman_(2025_film)"
+    },
+    {
+      "question_text": "Who played Lois Lane in the July 2025 superhero film 'Superman'?",
+      "winner": "Rachel Brosnahan",
+      "alternatives": [
+        "Brosnahan"
+      ],
+      "answer_date": "2025-07-11",
+      "provenance": "https://en.wikipedia.org/wiki/Superman_(2025_film)"
+    },
+    {
+      "question_text": "Who played Lex Luthor in the July 2025 superhero film 'Superman'?",
+      "winner": "Nicholas Hoult",
+      "alternatives": [
+        "Hoult"
+      ],
+      "answer_date": "2025-07-11",
+      "provenance": "https://en.wikipedia.org/wiki/Superman_(2025_film)"
+    },
+    {
+      "question_text": "Which Marvel Studios film released in May 2025 features a team of antiheroes?",
+      "winner": "Thunderbolts*",
+      "alternatives": [
+        "Thunderbolts"
+      ],
+      "answer_date": "2025-05-02",
+      "provenance": "https://en.wikipedia.org/wiki/Thunderbolts*"
+    },
+    {
+      "question_text": "Which Marvel Studios film released in February 2025 stars Anthony Mackie as Captain America?",
+      "winner": "Captain America: Brave New World",
+      "alternatives": [
+        "Brave New World"
+      ],
+      "answer_date": "2025-02-14",
+      "provenance": "https://en.wikipedia.org/wiki/Captain_America:_Brave_New_World"
+    },
+    {
+      "question_text": "Who directed the 2024 dystopian film 'Civil War'?",
+      "winner": "Alex Garland",
+      "alternatives": [
+        "Garland"
+      ],
+      "answer_date": "2024-04-12",
+      "provenance": "https://en.wikipedia.org/wiki/Civil_War_(film)"
+    },
+    {
+      "question_text": "Who starred as the photojournalist Lee in the April 2024 film 'Civil War'?",
+      "winner": "Kirsten Dunst",
+      "alternatives": [
+        "Dunst"
+      ],
+      "answer_date": "2024-04-12",
+      "provenance": "https://en.wikipedia.org/wiki/Civil_War_(film)"
+    },
+    {
+      "question_text": "Which 2024 computer-animated film from DreamWorks, released in September 2024, was directed by Chris Sanders?",
+      "winner": "The Wild Robot",
+      "alternatives": [],
+      "answer_date": "2024-09-27",
+      "provenance": "https://en.wikipedia.org/wiki/The_Wild_Robot"
+    },
+    {
+      "question_text": "Who voiced the robot Roz in the September 2024 animated film 'The Wild Robot'?",
+      "winner": "Lupita Nyong'o",
+      "alternatives": [
+        "Nyong'o",
+        "Lupita Nyong\\'o"
+      ],
+      "answer_date": "2024-09-27",
+      "provenance": "https://en.wikipedia.org/wiki/The_Wild_Robot"
+    },
+    {
+      "question_text": "Which film directed by Tim Burton, released in September 2024, is a sequel to Beetlejuice?",
+      "winner": "Beetlejuice Beetlejuice",
+      "alternatives": [
+        "Beetlejuice 2"
+      ],
+      "answer_date": "2024-09-06",
+      "provenance": "https://en.wikipedia.org/wiki/Beetlejuice_Beetlejuice"
+    },
+    {
+      "question_text": "Who played Astrid Deetz in the September 2024 horror-comedy film 'Beetlejuice Beetlejuice'?",
+      "winner": "Jenna Ortega",
+      "alternatives": [
+        "Ortega"
+      ],
+      "answer_date": "2024-09-06",
+      "provenance": "https://en.wikipedia.org/wiki/Beetlejuice_Beetlejuice"
+    },
+    {
+      "question_text": "Which 2024 superhero film directed by Shawn Levy stars Ryan Reynolds and Hugh Jackman?",
+      "winner": "Deadpool & Wolverine",
+      "alternatives": [
+        "Deadpool 3"
+      ],
+      "answer_date": "2024-07-26",
+      "provenance": "https://en.wikipedia.org/wiki/Deadpool_%26_Wolverine"
+    },
+    {
+      "question_text": "Who played Wolverine in the July 2024 film 'Deadpool & Wolverine'?",
+      "winner": "Hugh Jackman",
+      "alternatives": [
+        "Jackman"
+      ],
+      "answer_date": "2024-07-26",
+      "provenance": "https://en.wikipedia.org/wiki/Deadpool_%26_Wolverine"
+    },
+    {
+      "question_text": "Who directed the 2024 musical psychological thriller 'Joker: Folie à Deux'?",
+      "winner": "Todd Phillips",
+      "alternatives": [
+        "Phillips"
+      ],
+      "answer_date": "2024-10-04",
+      "provenance": "https://en.wikipedia.org/wiki/Joker:_Folie_%C3%A0_Deux"
+    },
+    {
+      "question_text": "Who starred as Harley Quinn in 'Joker: Folie à Deux' (2024)?",
+      "winner": "Lady Gaga",
+      "alternatives": [
+        "Gaga"
+      ],
+      "answer_date": "2024-10-04",
+      "provenance": "https://en.wikipedia.org/wiki/Joker:_Folie_%C3%A0_Deux"
+    },
+    {
+      "question_text": "Which 2024 sci-fi horror film directed by Fede Álvarez is the seventh installment in the Alien franchise?",
+      "winner": "Alien: Romulus",
+      "alternatives": [],
+      "answer_date": "2024-08-16",
+      "provenance": "https://en.wikipedia.org/wiki/Alien:_Romulus"
+    },
+    {
+      "question_text": "Who starred as Rain Carradine in the August 2024 film 'Alien: Romulus'?",
+      "winner": "Cailee Spaeny",
+      "alternatives": [
+        "Spaeny"
+      ],
+      "answer_date": "2024-08-16",
+      "provenance": "https://en.wikipedia.org/wiki/Alien:_Romulus"
+    },
+    {
+      "question_text": "Which 2024 sports drama film directed by Luca Guadagnino stars Zendaya?",
+      "winner": "Challengers",
+      "alternatives": [],
+      "answer_date": "2024-04-26",
+      "provenance": "https://en.wikipedia.org/wiki/Challengers_(film)"
+    },
+    {
+      "question_text": "Who directed the 2024 action comedy 'The Fall Guy' starring Ryan Gosling?",
+      "winner": "David Leitch",
+      "alternatives": [
+        "Leitch"
+      ],
+      "answer_date": "2024-05-03",
+      "provenance": "https://en.wikipedia.org/wiki/The_Fall_Guy_(2024_film)"
+    },
+    {
+      "question_text": "Which 2024 horror film directed by Osgood Perkins stars Maika Monroe and Nicolas Cage?",
+      "winner": "Longlegs",
+      "alternatives": [],
+      "answer_date": "2024-07-12",
+      "provenance": "https://en.wikipedia.org/wiki/Longlegs"
+    },
+    {
+      "question_text": "Who played the titular serial killer in the July 2024 horror film 'Longlegs'?",
+      "winner": "Nicolas Cage",
+      "alternatives": [
+        "Cage"
+      ],
+      "answer_date": "2024-07-12",
+      "provenance": "https://en.wikipedia.org/wiki/Longlegs"
+    },
+    {
+      "question_text": "Which 2025 science fiction horror romance film directed by Maggie Gyllenhaal stars Christian Bale?",
+      "winner": "The Bride!",
+      "alternatives": [
+        "The Bride"
+      ],
+      "answer_date": "2025-10-03",
+      "provenance": "https://en.wikipedia.org/wiki/The_Bride!_(2025_film)"
+    },
+    {
+      "question_text": "Who starred as Frankenstein's monster in Maggie Gyllenhaal's 2025 film 'The Bride!'?",
+      "winner": "Christian Bale",
+      "alternatives": [
+        "Bale"
+      ],
+      "answer_date": "2025-10-03",
+      "provenance": "https://en.wikipedia.org/wiki/The_Bride!_(2025_film)"
+    },
+    {
+      "question_text": "Who directed the 2025 John Wick spin-off film 'Ballerina'?",
+      "winner": "Len Wiseman",
+      "alternatives": [
+        "Wiseman"
+      ],
+      "answer_date": "2025-06-06",
+      "provenance": "https://en.wikipedia.org/wiki/From_the_World_of_John_Wick:_Ballerina"
+    },
+    {
+      "question_text": "Who starred as Eve Macarro in the 2025 action film 'Ballerina'?",
+      "winner": "Ana de Armas",
+      "alternatives": [
+        "de Armas",
+        "Armas"
+      ],
+      "answer_date": "2025-06-06",
+      "provenance": "https://en.wikipedia.org/wiki/From_the_World_of_John_Wick:_Ballerina"
+    },
+    {
+      "question_text": "Which 2025 live-action Disney film was directed by Marc Webb?",
+      "winner": "Snow White",
+      "alternatives": [],
+      "answer_date": "2025-03-21",
+      "provenance": "https://en.wikipedia.org/wiki/Snow_White_(2025_film)"
+    },
+    {
+      "question_text": "Who starred as Snow White in the 2025 live-action musical fantasy film?",
+      "winner": "Rachel Zegler",
+      "alternatives": [
+        "Zegler"
+      ],
+      "answer_date": "2025-03-21",
+      "provenance": "https://en.wikipedia.org/wiki/Snow_White_(2025_film)"
+    },
+    {
+      "question_text": "Who played the Evil Queen in the 2025 live-action musical film 'Snow White'?",
+      "winner": "Gal Gadot",
+      "alternatives": [
+        "Gadot"
+      ],
+      "answer_date": "2025-03-21",
+      "provenance": "https://en.wikipedia.org/wiki/Snow_White_(2025_film)"
+    },
+    {
+      "question_text": "Who won the BAFTA Award for Leading Actor at the February 2025 ceremony?",
+      "winner": "Adrien Brody",
+      "alternatives": [
+        "Brody"
+      ],
+      "answer_date": "2025-02-16",
+      "provenance": "https://en.wikipedia.org/wiki/78th_British_Academy_Film_Awards"
+    },
+    {
+      "question_text": "Who won the BAFTA Award for Leading Actress at the February 2025 ceremony?",
+      "winner": "Mikey Madison",
+      "alternatives": [
+        "Madison"
+      ],
+      "answer_date": "2025-02-16",
+      "provenance": "https://en.wikipedia.org/wiki/78th_British_Academy_Film_Awards"
+    },
+    {
+      "question_text": "Who won the Golden Globe Award for Best Actor in a Motion Picture - Drama at the January 2025 ceremony?",
+      "winner": "Adrien Brody",
+      "alternatives": [
+        "Brody"
+      ],
+      "answer_date": "2025-01-05",
+      "provenance": "https://en.wikipedia.org/wiki/82nd_Golden_Globe_Awards"
+    },
+    {
+      "question_text": "Who won the Golden Globe Award for Best Actress in a Motion Picture - Drama at the January 2025 ceremony?",
+      "winner": "Mikey Madison",
+      "alternatives": [
+        "Madison"
+      ],
+      "answer_date": "2025-01-05",
+      "provenance": "https://en.wikipedia.org/wiki/82nd_Golden_Globe_Awards"
+    },
+    {
+      "question_text": "Who directed the 2025 Marvel Studios film 'The Fantastic Four: First Steps'?",
+      "winner": "Matt Shakman",
+      "alternatives": [
+        "Shakman"
+      ],
+      "answer_date": "2025-07-25",
+      "provenance": "https://en.wikipedia.org/wiki/The_Fantastic_Four:_First_Steps"
+    },
+    {
+      "question_text": "Who starred as Reed Richards / Mister Fantastic in the 2025 Marvel film 'The Fantastic Four: First Steps'?",
+      "winner": "Pedro Pascal",
+      "alternatives": [
+        "Pascal"
+      ],
+      "answer_date": "2025-07-25",
+      "provenance": "https://en.wikipedia.org/wiki/The_Fantastic_Four:_First_Steps"
+    }
+  ]
+}

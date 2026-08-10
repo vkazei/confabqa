@@ -1,0 +1,115 @@
+{
+  "model": "llama_3_2_3b",
+  "layers": [
+    7,
+    14,
+    21,
+    28
+  ],
+  "datasets": {
+    "ConfabQA-784": {
+      "n": 784,
+      "n_correct": 240,
+      "majority_baseline": 0.6938775510204082
+    },
+    "PopQA": {
+      "n": 800,
+      "n_correct": 102,
+      "majority_baseline": 0.8725
+    },
+    "TriviaQA": {
+      "n": 800,
+      "n_correct": 369,
+      "majority_baseline": 0.53875
+    }
+  },
+  "transfer": {
+    "layer7": {
+      "ConfabQA-784": {
+        "ConfabQA-784": 0.895386248570962,
+        "PopQA": 0.22875,
+        "TriviaQA": 0.5425
+      },
+      "PopQA": {
+        "ConfabQA-784": 0.7066326530612245,
+        "PopQA": 0.89,
+        "TriviaQA": 0.57375
+      },
+      "TriviaQA": {
+        "ConfabQA-784": 0.7755102040816326,
+        "PopQA": 0.2275,
+        "TriviaQA": 0.66625
+      }
+    },
+    "layer14": {
+      "ConfabQA-784": {
+        "ConfabQA-784": 0.9349338559529643,
+        "PopQA": 0.7975,
+        "TriviaQA": 0.76125
+      },
+      "PopQA": {
+        "ConfabQA-784": 0.9400510204081632,
+        "PopQA": 0.92875,
+        "TriviaQA": 0.78625
+      },
+      "TriviaQA": {
+        "ConfabQA-784": 0.9375,
+        "PopQA": 0.90125,
+        "TriviaQA": 0.8087500000000001
+      }
+    },
+    "layer21": {
+      "ConfabQA-784": {
+        "ConfabQA-784": 0.9323697533888617,
+        "PopQA": 0.83375,
+        "TriviaQA": 0.7225
+      },
+      "PopQA": {
+        "ConfabQA-784": 0.9119897959183674,
+        "PopQA": 0.9225,
+        "TriviaQA": 0.78875
+      },
+      "TriviaQA": {
+        "ConfabQA-784": 0.9375,
+        "PopQA": 0.9,
+        "TriviaQA": 0.81125
+      }
+    },
+    "layer28": {
+      "ConfabQA-784": {
+        "ConfabQA-784": 0.9336681365343786,
+        "PopQA": 0.76,
+        "TriviaQA": 0.7675
+      },
+      "PopQA": {
+        "ConfabQA-784": 0.923469387755102,
+        "PopQA": 0.9199999999999999,
+        "TriviaQA": 0.74125
+      },
+      "TriviaQA": {
+        "ConfabQA-784": 0.9426020408163265,
+        "PopQA": 0.905,
+        "TriviaQA": 0.8099999999999999
+      }
+    }
+  },
+  "baselines": {
+    "prompt_feature_cross": {
+      "ConfabQA-784": {
+        "ConfabQA-784": 0.8405683488486038,
+        "PopQA": 0.305,
+        "TriviaQA": 0.5775
+      },
+      "PopQA": {
+        "ConfabQA-784": 0.6938775510204082,
+        "PopQA": 0.8724999999999999,
+        "TriviaQA": 0.53875
+      },
+      "TriviaQA": {
+        "ConfabQA-784": 0.7410714285714286,
+        "PopQA": 0.3375,
+        "TriviaQA": 0.58125
+      }
+    }
+  }
+}

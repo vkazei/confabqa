@@ -1,0 +1,26 @@
+{
+  "_documentation": {
+    "topic": "MLB World Series winners by year",
+    "well_known_criterion": "Recent championships (2015+) or famously celebrated franchises (Yankees dynasty, 2016 Cubs).",
+    "obscure_criterion": "Pre-1980 championships outside the marquee franchises.",
+    "post_cutoff_criterion": "World Series concluded after September 2024.",
+    "primary_source": "https://www.mlb.com/postseason/history/world-series"
+  },
+  "template": "Which MLB team won the World Series in {year}?",
+  "answer_field": "winner",
+  "well_known": [
+    {"year": 2016, "winner": "Chicago Cubs", "alternatives": ["Cubs"], "answer_date": "2016-11-02", "provenance": "https://www.mlb.com/news/2016-world-series-recap"},
+    {"year": 2023, "winner": "Texas Rangers", "alternatives": ["Rangers"], "answer_date": "2023-11-01", "provenance": "https://www.mlb.com/news/2023-world-series-recap"},
+    {"year": 2022, "winner": "Houston Astros", "alternatives": ["Astros"], "answer_date": "2022-11-05", "provenance": "https://www.mlb.com/news/2022-world-series-recap"},
+    {"year": 2009, "winner": "New York Yankees", "alternatives": ["Yankees"], "answer_date": "2009-11-04", "provenance": "https://en.wikipedia.org/wiki/2009_World_Series"}
+  ],
+  "obscure": [
+    {"year": 1960, "winner": "Pittsburgh Pirates", "alternatives": ["Pirates"], "answer_date": "1960-10-13", "provenance": "https://en.wikipedia.org/wiki/1960_World_Series"},
+    {"year": 1974, "winner": "Oakland Athletics", "alternatives": ["A's", "Oakland A's", "Athletics"], "answer_date": "1974-10-17", "provenance": "https://en.wikipedia.org/wiki/1974_World_Series"},
+    {"year": 1985, "winner": "Kansas City Royals", "alternatives": ["Royals"], "answer_date": "1985-10-27", "provenance": "https://en.wikipedia.org/wiki/1985_World_Series"},
+    {"year": 1991, "winner": "Minnesota Twins", "alternatives": ["Twins"], "answer_date": "1991-10-27", "provenance": "https://en.wikipedia.org/wiki/1991_World_Series"}
+  ],
+  "post_cutoff": [
+    {"year": 2024, "winner": "Los Angeles Dodgers", "alternatives": ["Dodgers", "LA Dodgers"], "answer_date": "2024-10-30", "provenance": "https://www.mlb.com/news/2024-world-series-recap"}
+  ]
+}

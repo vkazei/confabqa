@@ -1,0 +1,41 @@
+{
+  "_documentation": {
+    "topic": "Music releases and recordings",
+    "well_known_criterion": "Chart-topping albums or signature releases by mainstream artists.",
+    "obscure_criterion": "Less-cited tracks, deep cuts, or B-sides.",
+    "post_cutoff_criterion": "Albums released after September 2024.",
+    "primary_source": "Wikipedia per row"
+  },
+  "template": "{question_text}",
+  "answer_field": "winner",
+  "well_known": [
+    {"question_text": "Which artist released the album 'Midnights' in October 2022?", "winner": "Taylor Swift", "alternatives": ["Swift"], "answer_date": "2022-10-21", "provenance": "https://en.wikipedia.org/wiki/Midnights"},
+    {"question_text": "Which band released the album 'The Dark Side of the Moon' in 1973?", "winner": "Pink Floyd", "alternatives": [], "answer_date": "1973-03-01", "provenance": "https://en.wikipedia.org/wiki/The_Dark_Side_of_the_Moon"},
+    {"question_text": "Which album by Michael Jackson, released in 1982, is one of the best-selling albums of all time?", "winner": "Thriller", "alternatives": [], "answer_date": "1982-11-30", "provenance": "https://en.wikipedia.org/wiki/Thriller_(album)"},
+    {"question_text": "Which Beatles album was released in 1967, often considered the first concept album?", "winner": "Sgt. Pepper's Lonely Hearts Club Band", "alternatives": ["Sgt Pepper's", "Sgt. Pepper"], "answer_date": "1967-05-26", "provenance": "https://en.wikipedia.org/wiki/Sgt._Pepper%27s_Lonely_Hearts_Club_Band"},
+    {"question_text": "Which 1976 album by the Eagles is one of the best-selling albums of all time?", "winner": "Hotel California", "alternatives": [], "answer_date": "1976-12-08", "provenance": "https://en.wikipedia.org/wiki/Hotel_California"},
+    {"question_text": "Which 1971 Marvin Gaye album opens with the title track about social and political issues?", "winner": "What's Going On", "alternatives": ["Whats Going On"], "answer_date": "1971-05-21", "provenance": "https://en.wikipedia.org/wiki/What%27s_Going_On_(Marvin_Gaye_album)"},
+    {"question_text": "Which Beyonce album was released in 2016 and accompanied by a visual film on HBO?", "winner": "Lemonade", "alternatives": [], "answer_date": "2016-04-23", "provenance": "https://en.wikipedia.org/wiki/Lemonade_(Beyonc%C3%A9_album)"},
+    {"question_text": "Which Adele album released in 2011 contains the song 'Rolling in the Deep'?", "winner": "21", "alternatives": ["Adele 21"], "answer_date": "2011-01-24", "provenance": "https://en.wikipedia.org/wiki/21_(Adele_album)"},
+    {"question_text": "Which Kendrick Lamar album won the Pulitzer Prize for Music in 2018?", "winner": "DAMN.", "alternatives": ["DAMN"], "answer_date": "2018-04-16", "provenance": "https://www.pulitzer.org/winners/kendrick-lamar"}
+  ],
+  "obscure": [
+    {"question_text": "Who released the 1971 album 'Blue'?", "winner": "Joni Mitchell", "alternatives": ["Mitchell"], "answer_date": "1971-06-22", "provenance": "https://en.wikipedia.org/wiki/Blue_(Joni_Mitchell_album)"},
+    {"question_text": "Which band released the 1989 album 'Doolittle'?", "winner": "Pixies", "alternatives": ["The Pixies"], "answer_date": "1989-04-17", "provenance": "https://en.wikipedia.org/wiki/Doolittle_(album)"},
+    {"question_text": "Which jazz saxophonist released the 1959 album 'Giant Steps'?", "winner": "John Coltrane", "alternatives": ["Coltrane"], "answer_date": "1960-01-27", "provenance": "https://en.wikipedia.org/wiki/Giant_Steps"},
+    {"question_text": "Who released the 1969 album 'In the Court of the Crimson King', a foundational progressive rock record?", "winner": "King Crimson", "alternatives": [], "answer_date": "1969-10-10", "provenance": "https://en.wikipedia.org/wiki/In_the_Court_of_the_Crimson_King"},
+    {"question_text": "Which 1982 album by Marvin Gaye contains the hit 'Sexual Healing'?", "winner": "Midnight Love", "alternatives": [], "answer_date": "1982-10-15", "provenance": "https://en.wikipedia.org/wiki/Midnight_Love"},
+    {"question_text": "Which 1975 album by Patti Smith is often cited as a foundational punk record?", "winner": "Horses", "alternatives": [], "answer_date": "1975-11-10", "provenance": "https://en.wikipedia.org/wiki/Horses_(album)"},
+    {"question_text": "Which 1976 album by Stevie Wonder is a double album considered his magnum opus?", "winner": "Songs in the Key of Life", "alternatives": [], "answer_date": "1976-09-28", "provenance": "https://en.wikipedia.org/wiki/Songs_in_the_Key_of_Life"},
+    {"question_text": "Who released the 1965 album 'Bringing It All Back Home'?", "winner": "Bob Dylan", "alternatives": ["Dylan"], "answer_date": "1965-03-22", "provenance": "https://en.wikipedia.org/wiki/Bringing_It_All_Back_Home"},
+    {"question_text": "Which 1986 album by Paul Simon was inspired by South African mbaqanga music?", "winner": "Graceland", "alternatives": [], "answer_date": "1986-08-25", "provenance": "https://en.wikipedia.org/wiki/Graceland_(album)"},
+    {"question_text": "Which jazz album, released in 1959 by Miles Davis, is considered one of the most influential jazz records?", "winner": "Kind of Blue", "alternatives": [], "answer_date": "1959-08-17", "provenance": "https://en.wikipedia.org/wiki/Kind_of_Blue"}
+  ],
+  "post_cutoff": [
+    {"question_text": "Which album won the Grammy Award for Album of the Year at the 2025 Grammys?", "winner": "Cowboy Carter", "alternatives": ["Cowboy Carter by Beyonce", "Beyonce - Cowboy Carter"], "answer_date": "2025-02-02", "provenance": "https://www.grammy.com/awards/67th-annual-grammy-awards-2024"},
+    {"question_text": "Which Taylor Swift album was released in April 2024?", "winner": "The Tortured Poets Department", "alternatives": ["TTPD"], "answer_date": "2024-04-19", "provenance": "https://en.wikipedia.org/wiki/The_Tortured_Poets_Department"},
+    {"question_text": "Which Kendrick Lamar song spent multiple weeks at number one on the Billboard Hot 100 after its May 2024 release?", "winner": "Not Like Us", "alternatives": [], "answer_date": "2024-05-04", "provenance": "https://en.wikipedia.org/wiki/Not_Like_Us"},
+    {"question_text": "Which Charli XCX album, released in June 2024, became a cultural phenomenon associated with the color lime green?", "winner": "Brat", "alternatives": [], "answer_date": "2024-06-07", "provenance": "https://en.wikipedia.org/wiki/Brat_(Charli_XCX_album)"},
+    {"question_text": "Which Sabrina Carpenter album released in August 2024 contains the hit 'Espresso'?", "winner": "Short n' Sweet", "alternatives": ["Short n Sweet"], "answer_date": "2024-08-23", "provenance": "https://en.wikipedia.org/wiki/Short_n%27_Sweet"}
+  ]
+}

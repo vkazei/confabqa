@@ -1,0 +1,3985 @@
+{
+  "metadata": {
+    "model": "Qwen/Qwen3-1.7B",
+    "sae_release": "qwen-scope-3-1.7b-base-w32k-l50",
+    "sae_id": "layer27",
+    "feature_id": 2191,
+    "alphas": [
+      0.0,
+      16.0,
+      64.0,
+      200.0,
+      400.0,
+      750.0,
+      1500.0,
+      3000.0
+    ],
+    "n_items_per_subset": 30,
+    "opener_token_ids": [
+      300,
+      438,
+      1052,
+      1634,
+      2121,
+      32434,
+      60451,
+      100622,
+      106249,
+      108318
+    ],
+    "opener_token_strs": [
+      " as",
+      " As",
+      "As",
+      "as",
+      " there",
+      "作为",
+      "作为一个",
+      "作為",
+      "\tas",
+      "-as"
+    ]
+  },
+  "results": {
+    "wrong": {
+      "0.0": {
+        "items": [
+          {
+            "qid": "cin_ob_01",
+            "judge_label_orig": "wrong",
+            "opener_prob": 1.897959478469602e-08,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.9705411195755005
+          },
+          {
+            "qid": "cin_ob_03",
+            "judge_label_orig": "wrong",
+            "opener_prob": 1.478335587279389e-08,
+            "argmax_token_id": 1655,
+            "argmax_token_str": "At",
+            "argmax_prob": 0.9706746339797974
+          },
+          {
+            "qid": "cin_ob_04",
+            "judge_label_orig": "wrong",
+            "opener_prob": 2.0198613615018957e-11,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.9995624423027039
+          },
+          {
+            "qid": "cin_ob_05",
+            "judge_label_orig": "wrong",
+            "opener_prob": 5.130890556870327e-08,
+            "argmax_token_id": 1655,
+            "argmax_token_str": "At",
+            "argmax_prob": 0.8518016338348389
+          },
+          {
+            "qid": "cin_ob_06",
+            "judge_label_orig": "wrong",
+            "opener_prob": 8.878276802973262e-13,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.9999998807907104
+          },
+          {
+            "qid": "cin_ob_08",
+            "judge_label_orig": "wrong",
+            "opener_prob": 9.586735671973656e-08,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.8518878817558289
+          },
+          {
+            "qid": "cin_ob_09",
+            "judge_label_orig": "wrong",
+            "opener_prob": 5.209665476790803e-10,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.9996646642684937
+          },
+          {
+            "qid": "cin_ob_10",
+            "judge_label_orig": "wrong",
+            "opener_prob": 3.1595209781798417e-10,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.9995694756507874
+          },
+          {
+            "qid": "cin_ob_11",
+            "judge_label_orig": "wrong",
+            "opener_prob": 5.438654301220813e-12,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.9999991655349731
+          },
+          {
+            "qid": "cin_ob_12",
+            "judge_label_orig": "wrong",
+            "opener_prob": 3.159134343011516e-10,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.9994471669197083
+          },
+          {
+            "qid": "cin_ob_13",
+            "judge_label_orig": "wrong",
+            "opener_prob": 6.664349627705235e-10,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.9959296584129333
+          },
+          {
+            "qid": "cin_ob_15",
+            "judge_label_orig": "wrong",
+            "opener_prob": 2.461460479885602e-10,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.9999039173126221
+          },
+          {
+            "qid": "cin_ob_16",
+            "judge_label_orig": "wrong",
+            "opener_prob": 1.3615337698426322e-13,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 1.0
+          },
+          {
+            "qid": "cin_ob_17",
+            "judge_label_orig": "wrong",
+            "opener_prob": 1.879733564982833e-12,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.9999929666519165
+          },
+          {
+            "qid": "cin_ob_18",
+            "judge_label_orig": "wrong",
+            "opener_prob": 4.054954427790136e-10,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.9990888833999634
+          },
+          {
+            "qid": "cin_ob_19",
+            "judge_label_orig": "wrong",
+            "opener_prob": 1.3280270216853296e-08,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.6791002750396729
+          },
+          {
+            "qid": "cin_ob_20",
+            "judge_label_orig": "wrong",
+            "opener_prob": 1.887853429138886e-08,
+            "argmax_token_id": 1655,
+            "argmax_token_str": "At",
+            "argmax_prob": 0.8519388437271118
+          },
+          {
+            "qid": "cin_ob_21",
+            "judge_label_orig": "wrong",
+            "opener_prob": 4.056408542396639e-10,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.9994471669197083
+          },
+          {
+            "qid": "cin_ob_22",
+            "judge_label_orig": "wrong",
+            "opener_prob": 1.7656661722986744e-12,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.9999982118606567
+          },
+          {
+            "qid": "cin_ob_23",
+            "judge_label_orig": "wrong",
+            "opener_prob": 3.280647975500983e-09,
+            "argmax_token_id": 1655,
+            "argmax_token_str": "At",
+            "argmax_prob": 0.8519521355628967
+          },
+          {
+            "qid": "cin_ob_24",
+            "judge_label_orig": "wrong",
+            "opener_prob": 7.43407418957176e-12,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.9999945163726807
+          },
+          {
+            "qid": "cin_ob_25",
+            "judge_label_orig": "wrong",
+            "opener_prob": 8.590418376641651e-10,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.999796450138092
+          },
+          {
+            "qid": "cin_ob_26",
+            "judge_label_orig": "wrong",
+            "opener_prob": 1.5581880404014203e-12,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.9999990463256836
+          },
+          {
+            "qid": "cin_ob_27",
+            "judge_label_orig": "wrong",
+            "opener_prob": 1.4637816783333313e-12,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.9999998807907104
+          },
+          {
+            "qid": "cin_ob_28",
+            "judge_label_orig": "wrong",
+            "opener_prob": 3.61027758799537e-08,
+            "argmax_token_id": 1655,
+            "argmax_token_str": "At",
+            "argmax_prob": 0.6791616082191467
+          },
+          {
+            "qid": "cin_ob_29",
+            "judge_label_orig": "wrong",
+            "opener_prob": 1.237782237817342e-10,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.9999682903289795
+          },
+          {
+            "qid": "cin_ob_30",
+            "judge_label_orig": "wrong",
+            "opener_prob": 4.0581515925453004e-10,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.9998766183853149
+          },
+          {
+            "qid": "cin_ob_31",
+            "judge_label_orig": "wrong",
+            "opener_prob": 3.160056105677711e-10,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.9997387528419495
+          },
+          {
+            "qid": "cin_ob_32",
+            "judge_label_orig": "wrong",
+            "opener_prob": 1.2917828699082756e-12,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.9999998807907104
+          },
+          {
+            "qid": "cin_ob_33",
+            "judge_label_orig": "wrong",
+            "opener_prob": 4.6819810251008676e-08,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.7772762179374695
+          }
+        ],
+        "mean_opener_prob": 1.0130816541832281e-08,
+        "argmax_in_opener_count": 0
+      },
+      "16.0": {
+        "items": [
+          {
+            "qid": "cin_ob_01",
+            "judge_label_orig": "wrong",
+            "opener_prob": 4.017992694116401e-08,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.970544159412384
+          },
+          {
+            "qid": "cin_ob_03",
+            "judge_label_orig": "wrong",
+            "opener_prob": 3.129636638732336e-08,
+            "argmax_token_id": 1655,
+            "argmax_token_str": "At",
+            "argmax_prob": 0.9706746339797974
+          },
+          {
+            "qid": "cin_ob_04",
+            "judge_label_orig": "wrong",
+            "opener_prob": 4.0171834608804247e-11,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.9996129870414734
+          },
+          {
+            "qid": "cin_ob_05",
+            "judge_label_orig": "wrong",
+            "opener_prob": 8.746133772774556e-08,
+            "argmax_token_id": 1655,
+            "argmax_token_str": "At",
+            "argmax_prob": 0.8806728720664978
+          },
+          {
+            "qid": "cin_ob_06",
+            "judge_label_orig": "wrong",
+            "opener_prob": 2.1297878825127237e-12,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.9999998807907104
+          },
+          {
+            "qid": "cin_ob_08",
+            "judge_label_orig": "wrong",
+            "opener_prob": 2.0295092895139533e-07,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.8518867492675781
+          },
+          {
+            "qid": "cin_ob_09",
+            "judge_label_orig": "wrong",
+            "opener_prob": 1.2497337609218562e-09,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.9996646642684937
+          },
+          {
+            "qid": "cin_ob_10",
+            "judge_label_orig": "wrong",
+            "opener_prob": 7.579296634752097e-10,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.9995694756507874
+          },
+          {
+            "qid": "cin_ob_11",
+            "judge_label_orig": "wrong",
+            "opener_prob": 1.1513639000537701e-11,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.9999991655349731
+          },
+          {
+            "qid": "cin_ob_12",
+            "judge_label_orig": "wrong",
+            "opener_prob": 7.578369598526535e-10,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.9994471669197083
+          },
+          {
+            "qid": "cin_ob_13",
+            "judge_label_orig": "wrong",
+            "opener_prob": 1.598694399085332e-09,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.9959296584129333
+          },
+          {
+            "qid": "cin_ob_15",
+            "judge_label_orig": "wrong",
+            "opener_prob": 5.210912257247458e-10,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.9999039173126221
+          },
+          {
+            "qid": "cin_ob_16",
+            "judge_label_orig": "wrong",
+            "opener_prob": 2.882368280686387e-13,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 1.0
+          },
+          {
+            "qid": "cin_ob_17",
+            "judge_label_orig": "wrong",
+            "opener_prob": 3.979425296229966e-12,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.9999929666519165
+          },
+          {
+            "qid": "cin_ob_18",
+            "judge_label_orig": "wrong",
+            "opener_prob": 8.584338240247291e-10,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.9990888833999634
+          },
+          {
+            "qid": "cin_ob_19",
+            "judge_label_orig": "wrong",
+            "opener_prob": 2.8114337524698385e-08,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.6791004538536072
+          },
+          {
+            "qid": "cin_ob_20",
+            "judge_label_orig": "wrong",
+            "opener_prob": 4.5287187333542533e-08,
+            "argmax_token_id": 1655,
+            "argmax_token_str": "At",
+            "argmax_prob": 0.8519377112388611
+          },
+          {
+            "qid": "cin_ob_21",
+            "judge_label_orig": "wrong",
+            "opener_prob": 8.587416888694577e-10,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.9994471669197083
+          },
+          {
+            "qid": "cin_ob_22",
+            "judge_label_orig": "wrong",
+            "opener_prob": 3.737915359180999e-12,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.9999982118606567
+          },
+          {
+            "qid": "cin_ob_23",
+            "judge_label_orig": "wrong",
+            "opener_prob": 6.9451311368595725e-09,
+            "argmax_token_id": 1655,
+            "argmax_token_str": "At",
+            "argmax_prob": 0.8519521355628967
+          },
+          {
+            "qid": "cin_ob_24",
+            "judge_label_orig": "wrong",
+            "opener_prob": 1.4784463583938923e-11,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.9999945163726807
+          },
+          {
+            "qid": "cin_ob_25",
+            "judge_label_orig": "wrong",
+            "opener_prob": 1.8185916106361333e-09,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.999796450138092
+          },
+          {
+            "qid": "cin_ob_26",
+            "judge_label_orig": "wrong",
+            "opener_prob": 3.2986838087445403e-12,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.9999990463256836
+          },
+          {
+            "qid": "cin_ob_27",
+            "judge_label_orig": "wrong",
+            "opener_prob": 3.098826100236818e-12,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.9999998807907104
+          },
+          {
+            "qid": "cin_ob_28",
+            "judge_label_orig": "wrong",
+            "opener_prob": 7.642960042630875e-08,
+            "argmax_token_id": 1655,
+            "argmax_token_str": "At",
+            "argmax_prob": 0.679161787033081
+          },
+          {
+            "qid": "cin_ob_29",
+            "judge_label_orig": "wrong",
+            "opener_prob": 2.6203855751916194e-10,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.9999685287475586
+          },
+          {
+            "qid": "cin_ob_30",
+            "judge_label_orig": "wrong",
+            "opener_prob": 9.735000583432907e-10,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.9998766183853149
+          },
+          {
+            "qid": "cin_ob_31",
+            "judge_label_orig": "wrong",
+            "opener_prob": 7.580580607680076e-10,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.9997387528419495
+          },
+          {
+            "qid": "cin_ob_32",
+            "judge_label_orig": "wrong",
+            "opener_prob": 2.734704606863203e-12,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.9999998807907104
+          },
+          {
+            "qid": "cin_ob_33",
+            "judge_label_orig": "wrong",
+            "opener_prob": 9.911762077763342e-08,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.777276873588562
+          }
+        ],
+        "mean_opener_prob": 2.0942760817765554e-08,
+        "argmax_in_opener_count": 0
+      },
+      "64.0": {
+        "items": [
+          {
+            "qid": "cin_ob_01",
+            "judge_label_orig": "wrong",
+            "opener_prob": 4.2839215552703536e-07,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.9624945521354675
+          },
+          {
+            "qid": "cin_ob_03",
+            "judge_label_orig": "wrong",
+            "opener_prob": 3.3866353987832554e-07,
+            "argmax_token_id": 1655,
+            "argmax_token_str": "At",
+            "argmax_prob": 0.9770095348358154
+          },
+          {
+            "qid": "cin_ob_04",
+            "judge_label_orig": "wrong",
+            "opener_prob": 3.5804773035330584e-10,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.9996123909950256
+          },
+          {
+            "qid": "cin_ob_05",
+            "judge_label_orig": "wrong",
+            "opener_prob": 9.402667728863889e-07,
+            "argmax_token_id": 1655,
+            "argmax_token_str": "At",
+            "argmax_prob": 0.8806435465812683
+          },
+          {
+            "qid": "cin_ob_06",
+            "judge_label_orig": "wrong",
+            "opener_prob": 2.2897378437747307e-11,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.9999998807907104
+          },
+          {
+            "qid": "cin_ob_08",
+            "judge_label_orig": "wrong",
+            "opener_prob": 1.925552624015836e-06,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.8518902063369751
+          },
+          {
+            "qid": "cin_ob_09",
+            "judge_label_orig": "wrong",
+            "opener_prob": 1.522487380611892e-08,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.9996646642684937
+          },
+          {
+            "qid": "cin_ob_10",
+            "judge_label_orig": "wrong",
+            "opener_prob": 9.233472653136232e-09,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.9995693564414978
+          },
+          {
+            "qid": "cin_ob_11",
+            "judge_label_orig": "wrong",
+            "opener_prob": 1.1628374652072893e-10,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.9999991655349731
+          },
+          {
+            "qid": "cin_ob_12",
+            "judge_label_orig": "wrong",
+            "opener_prob": 9.232343778364793e-09,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.9994471669197083
+          },
+          {
+            "qid": "cin_ob_13",
+            "judge_label_orig": "wrong",
+            "opener_prob": 1.947608474495155e-08,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.9959296584129333
+          },
+          {
+            "qid": "cin_ob_15",
+            "judge_label_orig": "wrong",
+            "opener_prob": 9.236311271365594e-09,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.9998766183853149
+          },
+          {
+            "qid": "cin_ob_16",
+            "judge_label_orig": "wrong",
+            "opener_prob": 3.5114424389026677e-12,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 1.0
+          },
+          {
+            "qid": "cin_ob_17",
+            "judge_label_orig": "wrong",
+            "opener_prob": 4.278285364867074e-11,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.999992847442627
+          },
+          {
+            "qid": "cin_ob_18",
+            "judge_label_orig": "wrong",
+            "opener_prob": 1.0457865684543322e-08,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.9990888833999634
+          },
+          {
+            "qid": "cin_ob_19",
+            "judge_label_orig": "wrong",
+            "opener_prob": 3.0225115210669173e-07,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.679085910320282
+          },
+          {
+            "qid": "cin_ob_20",
+            "judge_label_orig": "wrong",
+            "opener_prob": 4.442199781351519e-07,
+            "argmax_token_id": 1655,
+            "argmax_token_str": "At",
+            "argmax_prob": 0.8807810544967651
+          },
+          {
+            "qid": "cin_ob_21",
+            "judge_label_orig": "wrong",
+            "opener_prob": 1.0461616462009715e-08,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.9994471669197083
+          },
+          {
+            "qid": "cin_ob_22",
+            "judge_label_orig": "wrong",
+            "opener_prob": 4.2778176834179504e-11,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.9999979734420776
+          },
+          {
+            "qid": "cin_ob_23",
+            "judge_label_orig": "wrong",
+            "opener_prob": 7.719517469695347e-08,
+            "argmax_token_id": 1655,
+            "argmax_token_str": "At",
+            "argmax_prob": 0.8807963132858276
+          },
+          {
+            "qid": "cin_ob_24",
+            "judge_label_orig": "wrong",
+            "opener_prob": 1.3177242630391106e-10,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.9999949932098389
+          },
+          {
+            "qid": "cin_ob_25",
+            "judge_label_orig": "wrong",
+            "opener_prob": 2.2154983625455316e-08,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.999796450138092
+          },
+          {
+            "qid": "cin_ob_26",
+            "judge_label_orig": "wrong",
+            "opener_prob": 2.7619550743707144e-11,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.9999990463256836
+          },
+          {
+            "qid": "cin_ob_27",
+            "judge_label_orig": "wrong",
+            "opener_prob": 3.331552395069437e-11,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.9999998807907104
+          },
+          {
+            "qid": "cin_ob_28",
+            "judge_label_orig": "wrong",
+            "opener_prob": 8.533417599210225e-07,
+            "argmax_token_id": 1655,
+            "argmax_token_str": "At",
+            "argmax_prob": 0.6224414110183716
+          },
+          {
+            "qid": "cin_ob_29",
+            "judge_label_orig": "wrong",
+            "opener_prob": 2.335531767982957e-09,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.9999717473983765
+          },
+          {
+            "qid": "cin_ob_30",
+            "judge_label_orig": "wrong",
+            "opener_prob": 1.0466111532991818e-08,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.9998766183853149
+          },
+          {
+            "qid": "cin_ob_31",
+            "judge_label_orig": "wrong",
+            "opener_prob": 9.235037623511744e-09,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.9997387528419495
+          },
+          {
+            "qid": "cin_ob_32",
+            "judge_label_orig": "wrong",
+            "opener_prob": 3.331552742014132e-11,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.9999998807907104
+          },
+          {
+            "qid": "cin_ob_33",
+            "judge_label_orig": "wrong",
+            "opener_prob": 9.404022307535342e-07,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.7772772312164307
+          }
+        ],
+        "mean_opener_prob": 2.1262039817426744e-07,
+        "argmax_in_opener_count": 0
+      },
+      "200.0": {
+        "items": [
+          {
+            "qid": "cin_ob_01",
+            "judge_label_orig": "wrong",
+            "opener_prob": 0.000195805769180879,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.9623399972915649
+          },
+          {
+            "qid": "cin_ob_03",
+            "judge_label_orig": "wrong",
+            "opener_prob": 0.00028915487928315997,
+            "argmax_token_id": 1655,
+            "argmax_token_str": "At",
+            "argmax_prob": 0.9767268896102905
+          },
+          {
+            "qid": "cin_ob_04",
+            "judge_label_orig": "wrong",
+            "opener_prob": 1.6369375543945353e-07,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.999695897102356
+          },
+          {
+            "qid": "cin_ob_05",
+            "judge_label_orig": "wrong",
+            "opener_prob": 0.0004412989073898643,
+            "argmax_token_id": 1655,
+            "argmax_token_str": "At",
+            "argmax_prob": 0.9041244983673096
+          },
+          {
+            "qid": "cin_ob_06",
+            "judge_label_orig": "wrong",
+            "opener_prob": 2.845339786006207e-08,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.9999998807907104
+          },
+          {
+            "qid": "cin_ob_08",
+            "judge_label_orig": "wrong",
+            "opener_prob": 0.001279122894629836,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.8507978320121765
+          },
+          {
+            "qid": "cin_ob_09",
+            "judge_label_orig": "wrong",
+            "opener_prob": 1.669582343311049e-05,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.9996479749679565
+          },
+          {
+            "qid": "cin_ob_10",
+            "judge_label_orig": "wrong",
+            "opener_prob": 1.4728524547535926e-05,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.9992756247520447
+          },
+          {
+            "qid": "cin_ob_11",
+            "judge_label_orig": "wrong",
+            "opener_prob": 9.931331845791647e-08,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.9999991655349731
+          },
+          {
+            "qid": "cin_ob_12",
+            "judge_label_orig": "wrong",
+            "opener_prob": 1.66895697475411e-05,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.9992735981941223
+          },
+          {
+            "qid": "cin_ob_13",
+            "judge_label_orig": "wrong",
+            "opener_prob": 2.7423615392763168e-05,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.9959023594856262
+          },
+          {
+            "qid": "cin_ob_15",
+            "judge_label_orig": "wrong",
+            "opener_prob": 1.3005523214815184e-05,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.9998635053634644
+          },
+          {
+            "qid": "cin_ob_16",
+            "judge_label_orig": "wrong",
+            "opener_prob": 3.850768592883469e-09,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 1.0
+          },
+          {
+            "qid": "cin_ob_17",
+            "judge_label_orig": "wrong",
+            "opener_prob": 3.65399870361216e-08,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.9999924898147583
+          },
+          {
+            "qid": "cin_ob_18",
+            "judge_label_orig": "wrong",
+            "opener_prob": 1.472555595682934e-05,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.9990742206573486
+          },
+          {
+            "qid": "cin_ob_19",
+            "judge_label_orig": "wrong",
+            "opener_prob": 0.00018421755521558225,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.6222625374794006
+          },
+          {
+            "qid": "cin_ob_20",
+            "judge_label_orig": "wrong",
+            "opener_prob": 0.0003346986195538193,
+            "argmax_token_id": 1655,
+            "argmax_token_str": "At",
+            "argmax_prob": 0.8804866671562195
+          },
+          {
+            "qid": "cin_ob_21",
+            "judge_label_orig": "wrong",
+            "opener_prob": 1.299789801123552e-05,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.9992772936820984
+          },
+          {
+            "qid": "cin_ob_22",
+            "judge_label_orig": "wrong",
+            "opener_prob": 2.5110203694111988e-08,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.999997615814209
+          },
+          {
+            "qid": "cin_ob_23",
+            "judge_label_orig": "wrong",
+            "opener_prob": 6.592486897716299e-05,
+            "argmax_token_id": 1655,
+            "argmax_token_str": "At",
+            "argmax_prob": 0.8807382583618164
+          },
+          {
+            "qid": "cin_ob_24",
+            "judge_label_orig": "wrong",
+            "opener_prob": 6.024020393624596e-08,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.999994158744812
+          },
+          {
+            "qid": "cin_ob_25",
+            "judge_label_orig": "wrong",
+            "opener_prob": 3.534701681928709e-05,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.9997032284736633
+          },
+          {
+            "qid": "cin_ob_26",
+            "judge_label_orig": "wrong",
+            "opener_prob": 1.3440459412095151e-08,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.9999990463256836
+          },
+          {
+            "qid": "cin_ob_27",
+            "judge_label_orig": "wrong",
+            "opener_prob": 2.5110066914635354e-08,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.9999998807907104
+          },
+          {
+            "qid": "cin_ob_28",
+            "judge_label_orig": "wrong",
+            "opener_prob": 0.0005462447879835963,
+            "argmax_token_id": 1655,
+            "argmax_token_str": "At",
+            "argmax_prob": 0.6787900328636169
+          },
+          {
+            "qid": "cin_ob_29",
+            "judge_label_orig": "wrong",
+            "opener_prob": 1.2098339539079461e-06,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.9999699592590332
+          },
+          {
+            "qid": "cin_ob_30",
+            "judge_label_orig": "wrong",
+            "opener_prob": 1.6698026229278184e-05,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.9997798800468445
+          },
+          {
+            "qid": "cin_ob_31",
+            "judge_label_orig": "wrong",
+            "opener_prob": 1.4734040632902179e-05,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.9996498823165894
+          },
+          {
+            "qid": "cin_ob_32",
+            "judge_label_orig": "wrong",
+            "opener_prob": 5.3158007773390636e-08,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.9999998807907104
+          },
+          {
+            "qid": "cin_ob_33",
+            "judge_label_orig": "wrong",
+            "opener_prob": 0.0006251102313399315,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.7767919898033142
+          }
+        ],
+        "mean_opener_prob": 0.0001382114283887385,
+        "argmax_in_opener_count": 0
+      },
+      "400.0": {
+        "items": [
+          {
+            "qid": "cin_ob_01",
+            "judge_label_orig": "wrong",
+            "opener_prob": 0.6684595942497253,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.6684595346450806
+          },
+          {
+            "qid": "cin_ob_03",
+            "judge_label_orig": "wrong",
+            "opener_prob": 0.8140792846679688,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.8140789270401001
+          },
+          {
+            "qid": "cin_ob_04",
+            "judge_label_orig": "wrong",
+            "opener_prob": 0.0017001427477225661,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.9979063272476196
+          },
+          {
+            "qid": "cin_ob_05",
+            "judge_label_orig": "wrong",
+            "opener_prob": 0.8351949453353882,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.8351947665214539
+          },
+          {
+            "qid": "cin_ob_06",
+            "judge_label_orig": "wrong",
+            "opener_prob": 0.0007096724584698677,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.9992902278900146
+          },
+          {
+            "qid": "cin_ob_08",
+            "judge_label_orig": "wrong",
+            "opener_prob": 0.9301942586898804,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9301940202713013
+          },
+          {
+            "qid": "cin_ob_09",
+            "judge_label_orig": "wrong",
+            "opener_prob": 0.4376874268054962,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.562001645565033
+          },
+          {
+            "qid": "cin_ob_10",
+            "judge_label_orig": "wrong",
+            "opener_prob": 0.3206227421760559,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.6787582039833069
+          },
+          {
+            "qid": "cin_ob_11",
+            "judge_label_orig": "wrong",
+            "opener_prob": 0.0019267742754891515,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.9980721473693848
+          },
+          {
+            "qid": "cin_ob_12",
+            "judge_label_orig": "wrong",
+            "opener_prob": 0.37732648849487305,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.6221060752868652
+          },
+          {
+            "qid": "cin_ob_13",
+            "judge_label_orig": "wrong",
+            "opener_prob": 0.5605229139328003,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.5605228543281555
+          },
+          {
+            "qid": "cin_ob_15",
+            "judge_label_orig": "wrong",
+            "opener_prob": 0.3207867741584778,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.6791055798530579
+          },
+          {
+            "qid": "cin_ob_16",
+            "judge_label_orig": "wrong",
+            "opener_prob": 0.000123395977425389,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.9998764991760254
+          },
+          {
+            "qid": "cin_ob_17",
+            "judge_label_orig": "wrong",
+            "opener_prob": 0.000911224982701242,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.9990758895874023
+          },
+          {
+            "qid": "cin_ob_18",
+            "judge_label_orig": "wrong",
+            "opener_prob": 0.3205663859844208,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.6786389350891113
+          },
+          {
+            "qid": "cin_ob_19",
+            "judge_label_orig": "wrong",
+            "opener_prob": 0.6285036206245422,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.6285035014152527
+          },
+          {
+            "qid": "cin_ob_20",
+            "judge_label_orig": "wrong",
+            "opener_prob": 0.835215151309967,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.8352146744728088
+          },
+          {
+            "qid": "cin_ob_21",
+            "judge_label_orig": "wrong",
+            "opener_prob": 0.2687622606754303,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.7305713891983032
+          },
+          {
+            "qid": "cin_ob_22",
+            "judge_label_orig": "wrong",
+            "opener_prob": 0.00023051015159580857,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.9997673630714417
+          },
+          {
+            "qid": "cin_ob_23",
+            "judge_label_orig": "wrong",
+            "opener_prob": 0.5307289361953735,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.5307289361953735
+          },
+          {
+            "qid": "cin_ob_24",
+            "judge_label_orig": "wrong",
+            "opener_prob": 0.000487901852466166,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.9995062351226807
+          },
+          {
+            "qid": "cin_ob_25",
+            "judge_label_orig": "wrong",
+            "opener_prob": 0.56209397315979,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.5620937943458557
+          },
+          {
+            "qid": "cin_ob_26",
+            "judge_label_orig": "wrong",
+            "opener_prob": 0.0001398230087943375,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.9998589754104614
+          },
+          {
+            "qid": "cin_ob_27",
+            "judge_label_orig": "wrong",
+            "opener_prob": 0.0005527811008505523,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.9994468092918396
+          },
+          {
+            "qid": "cin_ob_28",
+            "judge_label_orig": "wrong",
+            "opener_prob": 0.8990492820739746,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.8990491628646851
+          },
+          {
+            "qid": "cin_ob_29",
+            "judge_label_orig": "wrong",
+            "opener_prob": 0.012431272305548191,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.9875342845916748
+          },
+          {
+            "qid": "cin_ob_30",
+            "judge_label_orig": "wrong",
+            "opener_prob": 0.32076436281204224,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.6790580749511719
+          },
+          {
+            "qid": "cin_ob_31",
+            "judge_label_orig": "wrong",
+            "opener_prob": 0.37741076946258545,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.6222450137138367
+          },
+          {
+            "qid": "cin_ob_32",
+            "judge_label_orig": "wrong",
+            "opener_prob": 0.0019267434254288673,
+            "argmax_token_id": 785,
+            "argmax_token_str": "The",
+            "argmax_prob": 0.9980729818344116
+          },
+          {
+            "qid": "cin_ob_33",
+            "judge_label_orig": "wrong",
+            "opener_prob": 0.8990494012832642,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.8990492820739746
+          }
+        ],
+        "mean_opener_prob": 0.36427196047928495,
+        "argmax_in_opener_count": 11
+      },
+      "750.0": {
+        "items": [
+          {
+            "qid": "cin_ob_01",
+            "judge_label_orig": "wrong",
+            "opener_prob": 0.9999998211860657,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9999980926513672
+          },
+          {
+            "qid": "cin_ob_03",
+            "judge_label_orig": "wrong",
+            "opener_prob": 0.9999998807907104,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9999932050704956
+          },
+          {
+            "qid": "cin_ob_04",
+            "judge_label_orig": "wrong",
+            "opener_prob": 0.9998392462730408,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9996606111526489
+          },
+          {
+            "qid": "cin_ob_05",
+            "judge_label_orig": "wrong",
+            "opener_prob": 0.9999998807907104,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9999977350234985
+          },
+          {
+            "qid": "cin_ob_06",
+            "judge_label_orig": "wrong",
+            "opener_prob": 0.9999415874481201,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9999299049377441
+          },
+          {
+            "qid": "cin_ob_08",
+            "judge_label_orig": "wrong",
+            "opener_prob": 0.9999999403953552,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9999951124191284
+          },
+          {
+            "qid": "cin_ob_09",
+            "judge_label_orig": "wrong",
+            "opener_prob": 1.0,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9999990463256836
+          },
+          {
+            "qid": "cin_ob_10",
+            "judge_label_orig": "wrong",
+            "opener_prob": 1.0,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9999991655349731
+          },
+          {
+            "qid": "cin_ob_11",
+            "judge_label_orig": "wrong",
+            "opener_prob": 0.999954342842102,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9998840093612671
+          },
+          {
+            "qid": "cin_ob_12",
+            "judge_label_orig": "wrong",
+            "opener_prob": 0.9999998807907104,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9999990463256836
+          },
+          {
+            "qid": "cin_ob_13",
+            "judge_label_orig": "wrong",
+            "opener_prob": 0.9999999403953552,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9999991655349731
+          },
+          {
+            "qid": "cin_ob_15",
+            "judge_label_orig": "wrong",
+            "opener_prob": 1.0,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9999992847442627
+          },
+          {
+            "qid": "cin_ob_16",
+            "judge_label_orig": "wrong",
+            "opener_prob": 0.9996645450592041,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9996353387832642
+          },
+          {
+            "qid": "cin_ob_17",
+            "judge_label_orig": "wrong",
+            "opener_prob": 0.9999032616615295,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9994435906410217
+          },
+          {
+            "qid": "cin_ob_18",
+            "judge_label_orig": "wrong",
+            "opener_prob": 1.0,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9999990463256836
+          },
+          {
+            "qid": "cin_ob_19",
+            "judge_label_orig": "wrong",
+            "opener_prob": 1.0,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9999974966049194
+          },
+          {
+            "qid": "cin_ob_20",
+            "judge_label_orig": "wrong",
+            "opener_prob": 0.9999999403953552,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9999912977218628
+          },
+          {
+            "qid": "cin_ob_21",
+            "judge_label_orig": "wrong",
+            "opener_prob": 0.9999998807907104,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.999998927116394
+          },
+          {
+            "qid": "cin_ob_22",
+            "judge_label_orig": "wrong",
+            "opener_prob": 0.9992897510528564,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9992321729660034
+          },
+          {
+            "qid": "cin_ob_23",
+            "judge_label_orig": "wrong",
+            "opener_prob": 0.9999998211860657,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9999992847442627
+          },
+          {
+            "qid": "cin_ob_24",
+            "judge_label_orig": "wrong",
+            "opener_prob": 0.9994439482688904,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9991160035133362
+          },
+          {
+            "qid": "cin_ob_25",
+            "judge_label_orig": "wrong",
+            "opener_prob": 0.9999998211860657,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9999979734420776
+          },
+          {
+            "qid": "cin_ob_26",
+            "judge_label_orig": "wrong",
+            "opener_prob": 0.9980723857879639,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9979967474937439
+          },
+          {
+            "qid": "cin_ob_27",
+            "judge_label_orig": "wrong",
+            "opener_prob": 0.9998762011528015,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9998619556427002
+          },
+          {
+            "qid": "cin_ob_28",
+            "judge_label_orig": "wrong",
+            "opener_prob": 0.9999998807907104,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9999985694885254
+          },
+          {
+            "qid": "cin_ob_29",
+            "judge_label_orig": "wrong",
+            "opener_prob": 0.9999781250953674,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.999956488609314
+          },
+          {
+            "qid": "cin_ob_30",
+            "judge_label_orig": "wrong",
+            "opener_prob": 0.9999999403953552,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9999986886978149
+          },
+          {
+            "qid": "cin_ob_31",
+            "judge_label_orig": "wrong",
+            "opener_prob": 1.0,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9999990463256836
+          },
+          {
+            "qid": "cin_ob_32",
+            "judge_label_orig": "wrong",
+            "opener_prob": 0.9999783635139465,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9999593496322632
+          },
+          {
+            "qid": "cin_ob_33",
+            "judge_label_orig": "wrong",
+            "opener_prob": 0.9999999403953552,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9999967813491821
+          }
+        ],
+        "mean_opener_prob": 0.9998646775881449,
+        "argmax_in_opener_count": 30
+      },
+      "1500.0": {
+        "items": [
+          {
+            "qid": "cin_ob_01",
+            "judge_label_orig": "wrong",
+            "opener_prob": 1.0,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9930404424667358
+          },
+          {
+            "qid": "cin_ob_03",
+            "judge_label_orig": "wrong",
+            "opener_prob": 1.0,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9701293706893921
+          },
+          {
+            "qid": "cin_ob_04",
+            "judge_label_orig": "wrong",
+            "opener_prob": 0.9999996423721313,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.8450130820274353
+          },
+          {
+            "qid": "cin_ob_05",
+            "judge_label_orig": "wrong",
+            "opener_prob": 1.0,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9887393712997437
+          },
+          {
+            "qid": "cin_ob_06",
+            "judge_label_orig": "wrong",
+            "opener_prob": 0.9999998211860657,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9809752702713013
+          },
+          {
+            "qid": "cin_ob_08",
+            "judge_label_orig": "wrong",
+            "opener_prob": 1.0,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9701427221298218
+          },
+          {
+            "qid": "cin_ob_09",
+            "judge_label_orig": "wrong",
+            "opener_prob": 1.0000001192092896,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9956926703453064
+          },
+          {
+            "qid": "cin_ob_10",
+            "judge_label_orig": "wrong",
+            "opener_prob": 1.0000001192092896,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9957024455070496
+          },
+          {
+            "qid": "cin_ob_11",
+            "judge_label_orig": "wrong",
+            "opener_prob": 0.9999999403953552,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9190562963485718
+          },
+          {
+            "qid": "cin_ob_12",
+            "judge_label_orig": "wrong",
+            "opener_prob": 1.0,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9957006573677063
+          },
+          {
+            "qid": "cin_ob_13",
+            "judge_label_orig": "wrong",
+            "opener_prob": 0.9999999403953552,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9957082271575928
+          },
+          {
+            "qid": "cin_ob_15",
+            "judge_label_orig": "wrong",
+            "opener_prob": 1.0,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9973830580711365
+          },
+          {
+            "qid": "cin_ob_16",
+            "judge_label_orig": "wrong",
+            "opener_prob": 0.9999997615814209,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9885600209236145
+          },
+          {
+            "qid": "cin_ob_17",
+            "judge_label_orig": "wrong",
+            "opener_prob": 0.9999996423721313,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.8768330812454224
+          },
+          {
+            "qid": "cin_ob_18",
+            "judge_label_orig": "wrong",
+            "opener_prob": 0.9999999403953552,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9955684542655945
+          },
+          {
+            "qid": "cin_ob_19",
+            "judge_label_orig": "wrong",
+            "opener_prob": 1.0,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.988673746585846
+          },
+          {
+            "qid": "cin_ob_20",
+            "judge_label_orig": "wrong",
+            "opener_prob": 1.0,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.970130205154419
+          },
+          {
+            "qid": "cin_ob_21",
+            "judge_label_orig": "wrong",
+            "opener_prob": 1.0000001192092896,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9956977367401123
+          },
+          {
+            "qid": "cin_ob_22",
+            "judge_label_orig": "wrong",
+            "opener_prob": 0.9999995827674866,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9492851495742798
+          },
+          {
+            "qid": "cin_ob_23",
+            "judge_label_orig": "wrong",
+            "opener_prob": 1.0,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9957161545753479
+          },
+          {
+            "qid": "cin_ob_24",
+            "judge_label_orig": "wrong",
+            "opener_prob": 0.9999985694885254,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.8130519390106201
+          },
+          {
+            "qid": "cin_ob_25",
+            "judge_label_orig": "wrong",
+            "opener_prob": 1.0,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9930711388587952
+          },
+          {
+            "qid": "cin_ob_26",
+            "judge_label_orig": "wrong",
+            "opener_prob": 0.9999998211860657,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.8720841407775879
+          },
+          {
+            "qid": "cin_ob_27",
+            "judge_label_orig": "wrong",
+            "opener_prob": 0.9999995231628418,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9934618473052979
+          },
+          {
+            "qid": "cin_ob_28",
+            "judge_label_orig": "wrong",
+            "opener_prob": 1.0000001192092896,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9930933713912964
+          },
+          {
+            "qid": "cin_ob_29",
+            "judge_label_orig": "wrong",
+            "opener_prob": 0.9999998807907104,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.968760073184967
+          },
+          {
+            "qid": "cin_ob_30",
+            "judge_label_orig": "wrong",
+            "opener_prob": 1.0,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9957060217857361
+          },
+          {
+            "qid": "cin_ob_31",
+            "judge_label_orig": "wrong",
+            "opener_prob": 1.0,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9956954717636108
+          },
+          {
+            "qid": "cin_ob_32",
+            "judge_label_orig": "wrong",
+            "opener_prob": 0.9999998211860657,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9806836247444153
+          },
+          {
+            "qid": "cin_ob_33",
+            "judge_label_orig": "wrong",
+            "opener_prob": 1.0,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9814624786376953
+          }
+        ],
+        "mean_opener_prob": 0.999999878803889,
+        "argmax_in_opener_count": 30
+      },
+      "3000.0": {
+        "items": [
+          {
+            "qid": "cin_ob_01",
+            "judge_label_orig": "wrong",
+            "opener_prob": 0.9999998807907104,
+            "argmax_token_id": 438,
+            "argmax_token_str": " as",
+            "argmax_prob": 0.9850234985351562
+          },
+          {
+            "qid": "cin_ob_03",
+            "judge_label_orig": "wrong",
+            "opener_prob": 0.9999999403953552,
+            "argmax_token_id": 438,
+            "argmax_token_str": " as",
+            "argmax_prob": 0.9923999309539795
+          },
+          {
+            "qid": "cin_ob_04",
+            "judge_label_orig": "wrong",
+            "opener_prob": 0.9999998807907104,
+            "argmax_token_id": 438,
+            "argmax_token_str": " as",
+            "argmax_prob": 0.9884548187255859
+          },
+          {
+            "qid": "cin_ob_05",
+            "judge_label_orig": "wrong",
+            "opener_prob": 0.9999999403953552,
+            "argmax_token_id": 438,
+            "argmax_token_str": " as",
+            "argmax_prob": 0.990860104560852
+          },
+          {
+            "qid": "cin_ob_06",
+            "judge_label_orig": "wrong",
+            "opener_prob": 0.9999999403953552,
+            "argmax_token_id": 438,
+            "argmax_token_str": " as",
+            "argmax_prob": 0.9875285625457764
+          },
+          {
+            "qid": "cin_ob_08",
+            "judge_label_orig": "wrong",
+            "opener_prob": 1.0,
+            "argmax_token_id": 438,
+            "argmax_token_str": " as",
+            "argmax_prob": 0.9918200969696045
+          },
+          {
+            "qid": "cin_ob_09",
+            "judge_label_orig": "wrong",
+            "opener_prob": 0.9999999403953552,
+            "argmax_token_id": 438,
+            "argmax_token_str": " as",
+            "argmax_prob": 0.9850097298622131
+          },
+          {
+            "qid": "cin_ob_10",
+            "judge_label_orig": "wrong",
+            "opener_prob": 0.9999999403953552,
+            "argmax_token_id": 438,
+            "argmax_token_str": " as",
+            "argmax_prob": 0.9850097298622131
+          },
+          {
+            "qid": "cin_ob_11",
+            "judge_label_orig": "wrong",
+            "opener_prob": 1.0,
+            "argmax_token_id": 438,
+            "argmax_token_str": " as",
+            "argmax_prob": 0.9811179041862488
+          },
+          {
+            "qid": "cin_ob_12",
+            "judge_label_orig": "wrong",
+            "opener_prob": 0.9999999403953552,
+            "argmax_token_id": 438,
+            "argmax_token_str": " as",
+            "argmax_prob": 0.9850059151649475
+          },
+          {
+            "qid": "cin_ob_13",
+            "judge_label_orig": "wrong",
+            "opener_prob": 0.9999999403953552,
+            "argmax_token_id": 438,
+            "argmax_token_str": " as",
+            "argmax_prob": 0.9850135445594788
+          },
+          {
+            "qid": "cin_ob_15",
+            "judge_label_orig": "wrong",
+            "opener_prob": 0.9999999403953552,
+            "argmax_token_id": 438,
+            "argmax_token_str": " as",
+            "argmax_prob": 0.986578643321991
+          },
+          {
+            "qid": "cin_ob_16",
+            "judge_label_orig": "wrong",
+            "opener_prob": 1.0,
+            "argmax_token_id": 438,
+            "argmax_token_str": " as",
+            "argmax_prob": 0.9692352414131165
+          },
+          {
+            "qid": "cin_ob_17",
+            "judge_label_orig": "wrong",
+            "opener_prob": 1.0000001192092896,
+            "argmax_token_id": 438,
+            "argmax_token_str": " as",
+            "argmax_prob": 0.9955775737762451
+          },
+          {
+            "qid": "cin_ob_18",
+            "judge_label_orig": "wrong",
+            "opener_prob": 1.0,
+            "argmax_token_id": 438,
+            "argmax_token_str": " as",
+            "argmax_prob": 0.986578643321991
+          },
+          {
+            "qid": "cin_ob_19",
+            "judge_label_orig": "wrong",
+            "opener_prob": 1.0,
+            "argmax_token_id": 438,
+            "argmax_token_str": " as",
+            "argmax_prob": 0.9918209314346313
+          },
+          {
+            "qid": "cin_ob_20",
+            "judge_label_orig": "wrong",
+            "opener_prob": 1.0000001192092896,
+            "argmax_token_id": 438,
+            "argmax_token_str": " as",
+            "argmax_prob": 0.9950209856033325
+          },
+          {
+            "qid": "cin_ob_21",
+            "judge_label_orig": "wrong",
+            "opener_prob": 0.9999999403953552,
+            "argmax_token_id": 438,
+            "argmax_token_str": " as",
+            "argmax_prob": 0.9850097298622131
+          },
+          {
+            "qid": "cin_ob_22",
+            "judge_label_orig": "wrong",
+            "opener_prob": 1.0,
+            "argmax_token_id": 438,
+            "argmax_token_str": " as",
+            "argmax_prob": 0.9811171889305115
+          },
+          {
+            "qid": "cin_ob_23",
+            "judge_label_orig": "wrong",
+            "opener_prob": 0.9999999403953552,
+            "argmax_token_id": 438,
+            "argmax_token_str": " as",
+            "argmax_prob": 0.98502117395401
+          },
+          {
+            "qid": "cin_ob_24",
+            "judge_label_orig": "wrong",
+            "opener_prob": 0.9999999403953552,
+            "argmax_token_id": 438,
+            "argmax_token_str": " as",
+            "argmax_prob": 0.9929623007774353
+          },
+          {
+            "qid": "cin_ob_25",
+            "judge_label_orig": "wrong",
+            "opener_prob": 0.9999998807907104,
+            "argmax_token_id": 438,
+            "argmax_token_str": " as",
+            "argmax_prob": 0.9908515810966492
+          },
+          {
+            "qid": "cin_ob_26",
+            "judge_label_orig": "wrong",
+            "opener_prob": 1.0000001192092896,
+            "argmax_token_id": 438,
+            "argmax_token_str": " as",
+            "argmax_prob": 0.9814712405204773
+          },
+          {
+            "qid": "cin_ob_27",
+            "judge_label_orig": "wrong",
+            "opener_prob": 1.0,
+            "argmax_token_id": 438,
+            "argmax_token_str": " as",
+            "argmax_prob": 0.9683346152305603
+          },
+          {
+            "qid": "cin_ob_28",
+            "judge_label_orig": "wrong",
+            "opener_prob": 1.0,
+            "argmax_token_id": 438,
+            "argmax_token_str": " as",
+            "argmax_prob": 0.9908587336540222
+          },
+          {
+            "qid": "cin_ob_29",
+            "judge_label_orig": "wrong",
+            "opener_prob": 0.9999998807907104,
+            "argmax_token_id": 438,
+            "argmax_token_str": " as",
+            "argmax_prob": 0.9805518388748169
+          },
+          {
+            "qid": "cin_ob_30",
+            "judge_label_orig": "wrong",
+            "opener_prob": 1.0,
+            "argmax_token_id": 438,
+            "argmax_token_str": " as",
+            "argmax_prob": 0.9850159883499146
+          },
+          {
+            "qid": "cin_ob_31",
+            "judge_label_orig": "wrong",
+            "opener_prob": 1.0,
+            "argmax_token_id": 438,
+            "argmax_token_str": " as",
+            "argmax_prob": 0.986578643321991
+          },
+          {
+            "qid": "cin_ob_32",
+            "judge_label_orig": "wrong",
+            "opener_prob": 1.0,
+            "argmax_token_id": 438,
+            "argmax_token_str": " as",
+            "argmax_prob": 0.9881072640419006
+          },
+          {
+            "qid": "cin_ob_33",
+            "judge_label_orig": "wrong",
+            "opener_prob": 1.0,
+            "argmax_token_id": 438,
+            "argmax_token_str": " as",
+            "argmax_prob": 0.9918200969696045
+          }
+        ],
+        "mean_opener_prob": 0.9999999741713206,
+        "argmax_in_opener_count": 30
+      }
+    },
+    "refusal": {
+      "0.0": {
+        "items": [
+          {
+            "qid": "cin_pc_03",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9958671927452087,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9958670139312744
+          },
+          {
+            "qid": "cin_pc_04",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9993335604667664,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9993333220481873
+          },
+          {
+            "qid": "cin_pc_06",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9937276840209961,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.993727445602417
+          },
+          {
+            "qid": "cin_pc_08",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9987950921058655,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9987949132919312
+          },
+          {
+            "qid": "cin_pc_102",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.999397873878479,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9993977546691895
+          },
+          {
+            "qid": "cin_pc_108",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9993724226951599,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9993720650672913
+          },
+          {
+            "qid": "cin_pc_11",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9959644079208374,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9959639310836792
+          },
+          {
+            "qid": "cin_pc_111",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9997750520706177,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9997747540473938
+          },
+          {
+            "qid": "cin_pc_114",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9989505410194397,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.998950183391571
+          },
+          {
+            "qid": "cin_pc_117",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9841688871383667,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9841683506965637
+          },
+          {
+            "qid": "cin_pc_12",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9998400211334229,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9998397827148438
+          },
+          {
+            "qid": "cin_pc_14",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.6780004501342773,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.6780003905296326
+          },
+          {
+            "qid": "cin_pc_15",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9992462992668152,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9992461204528809
+          },
+          {
+            "qid": "cin_pc_16",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.999385416507721,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9993852376937866
+          },
+          {
+            "qid": "cin_pc_20",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9964599013328552,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9964597821235657
+          },
+          {
+            "qid": "cin_pc_21",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.4653094708919525,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.46530821919441223
+          },
+          {
+            "qid": "cin_pc_22",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9965182542800903,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9965176582336426
+          },
+          {
+            "qid": "cin_pc_23",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.999252438545227,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9992522597312927
+          },
+          {
+            "qid": "cin_pc_27",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9988754391670227,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9988753199577332
+          },
+          {
+            "qid": "cin_pc_31",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9906195998191833,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9906193017959595
+          },
+          {
+            "qid": "cin_pc_32",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9991058707237244,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9991057515144348
+          },
+          {
+            "qid": "cin_pc_33",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9996017217636108,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9996011853218079
+          },
+          {
+            "qid": "cin_pc_34",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9947683215141296,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9947682619094849
+          },
+          {
+            "qid": "cin_pc_37",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9955650568008423,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9955646991729736
+          },
+          {
+            "qid": "cin_pc_44",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9997929930686951,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9997928738594055
+          },
+          {
+            "qid": "cin_pc_49",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9913959503173828,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.991395890712738
+          },
+          {
+            "qid": "cin_pc_51",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9999642968177795,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9999637603759766
+          },
+          {
+            "qid": "cin_pc_56",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9986918568611145,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9986914992332458
+          },
+          {
+            "qid": "cin_pc_57",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9998460412025452,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9998458623886108
+          },
+          {
+            "qid": "cin_pc_59",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9959273338317871,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9959272742271423
+          }
+        ],
+        "mean_opener_prob": 0.9687839816013972,
+        "argmax_in_opener_count": 30
+      },
+      "16.0": {
+        "items": [
+          {
+            "qid": "cin_pc_03",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9980438351631165,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9980436563491821
+          },
+          {
+            "qid": "cin_pc_04",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9997219443321228,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9997217059135437
+          },
+          {
+            "qid": "cin_pc_06",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9973577260971069,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9973574280738831
+          },
+          {
+            "qid": "cin_pc_08",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9994379281997681,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9994377493858337
+          },
+          {
+            "qid": "cin_pc_102",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9997778534889221,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9997777342796326
+          },
+          {
+            "qid": "cin_pc_108",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9997110366821289,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9997106194496155
+          },
+          {
+            "qid": "cin_pc_11",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9982689619064331,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9982684850692749
+          },
+          {
+            "qid": "cin_pc_111",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9998989701271057,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9998986721038818
+          },
+          {
+            "qid": "cin_pc_114",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.999363362789154,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9993628859519958
+          },
+          {
+            "qid": "cin_pc_117",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9931124448776245,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9931118488311768
+          },
+          {
+            "qid": "cin_pc_12",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9999248385429382,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9999245405197144
+          },
+          {
+            "qid": "cin_pc_14",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.8168409466743469,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.8168408274650574
+          },
+          {
+            "qid": "cin_pc_15",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9996851086616516,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9996849298477173
+          },
+          {
+            "qid": "cin_pc_16",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9997414350509644,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.99974125623703
+          },
+          {
+            "qid": "cin_pc_20",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9986925721168518,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9986924529075623
+          },
+          {
+            "qid": "cin_pc_21",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.6481655240058899,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.6481636166572571
+          },
+          {
+            "qid": "cin_pc_22",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9978858232498169,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9978850483894348
+          },
+          {
+            "qid": "cin_pc_23",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9996468424797058,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9996466636657715
+          },
+          {
+            "qid": "cin_pc_27",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9995137453079224,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9995136260986328
+          },
+          {
+            "qid": "cin_pc_31",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9955474138259888,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9955470561981201
+          },
+          {
+            "qid": "cin_pc_32",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9996353983879089,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9996352195739746
+          },
+          {
+            "qid": "cin_pc_33",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9998335242271423,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9998329877853394
+          },
+          {
+            "qid": "cin_pc_34",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9975217580795288,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.997521698474884
+          },
+          {
+            "qid": "cin_pc_37",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9980273842811584,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9980270266532898
+          },
+          {
+            "qid": "cin_pc_44",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9999232292175293,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9999231100082397
+          },
+          {
+            "qid": "cin_pc_49",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9975177645683289,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9975177049636841
+          },
+          {
+            "qid": "cin_pc_51",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9999850988388062,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9999845027923584
+          },
+          {
+            "qid": "cin_pc_56",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9994321465492249,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9994317889213562
+          },
+          {
+            "qid": "cin_pc_57",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9999356865882874,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.999935507774353
+          },
+          {
+            "qid": "cin_pc_59",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9980722069740295,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9980721473693848
+          }
+        ],
+        "mean_opener_prob": 0.9810074170430502,
+        "argmax_in_opener_count": 30
+      },
+      "64.0": {
+        "items": [
+          {
+            "qid": "cin_pc_03",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9998390674591064,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9998388290405273
+          },
+          {
+            "qid": "cin_pc_04",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9999764561653137,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9999761581420898
+          },
+          {
+            "qid": "cin_pc_06",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9998300671577454,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9998297691345215
+          },
+          {
+            "qid": "cin_pc_08",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9999532699584961,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.999953031539917
+          },
+          {
+            "qid": "cin_pc_102",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9999806880950928,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9999805688858032
+          },
+          {
+            "qid": "cin_pc_108",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9999693036079407,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9999687671661377
+          },
+          {
+            "qid": "cin_pc_11",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9998431205749512,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.999842643737793
+          },
+          {
+            "qid": "cin_pc_111",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9999887347221375,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.999988317489624
+          },
+          {
+            "qid": "cin_pc_114",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9999476075172424,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9999470710754395
+          },
+          {
+            "qid": "cin_pc_117",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9994308352470398,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.999430239200592
+          },
+          {
+            "qid": "cin_pc_12",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9999920129776001,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9999916553497314
+          },
+          {
+            "qid": "cin_pc_14",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9858614206314087,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9858613014221191
+          },
+          {
+            "qid": "cin_pc_15",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9999716877937317,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9999715089797974
+          },
+          {
+            "qid": "cin_pc_16",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.999972403049469,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9999721050262451
+          },
+          {
+            "qid": "cin_pc_20",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9998924732208252,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9998923540115356
+          },
+          {
+            "qid": "cin_pc_21",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9573188424110413,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9573158025741577
+          },
+          {
+            "qid": "cin_pc_22",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9998260736465454,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9998252987861633
+          },
+          {
+            "qid": "cin_pc_23",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9999706745147705,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9999704360961914
+          },
+          {
+            "qid": "cin_pc_27",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9999600648880005,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9999599456787109
+          },
+          {
+            "qid": "cin_pc_31",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9996383786201477,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9996379613876343
+          },
+          {
+            "qid": "cin_pc_32",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9999614953994751,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.999961256980896
+          },
+          {
+            "qid": "cin_pc_33",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9999864101409912,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9999858140945435
+          },
+          {
+            "qid": "cin_pc_34",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.999841034412384,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9998409748077393
+          },
+          {
+            "qid": "cin_pc_37",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9998372793197632,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9998369216918945
+          },
+          {
+            "qid": "cin_pc_44",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9999918341636658,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9999916553497314
+          },
+          {
+            "qid": "cin_pc_49",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.99979567527771,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9997956156730652
+          },
+          {
+            "qid": "cin_pc_51",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9999984502792358,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9999977350234985
+          },
+          {
+            "qid": "cin_pc_56",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.999934732913971,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9999343156814575
+          },
+          {
+            "qid": "cin_pc_57",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9999946355819702,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9999943971633911
+          },
+          {
+            "qid": "cin_pc_59",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9997965097427368,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.999796450138092
+          }
+        ],
+        "mean_opener_prob": 0.9980100413163503,
+        "argmax_in_opener_count": 30
+      },
+      "200.0": {
+        "items": [
+          {
+            "qid": "cin_pc_03",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9999998211860657,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9999994039535522
+          },
+          {
+            "qid": "cin_pc_04",
+            "judge_label_orig": "refusal",
+            "opener_prob": 1.0,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9999994039535522
+          },
+          {
+            "qid": "cin_pc_06",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9999998807907104,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9999992847442627
+          },
+          {
+            "qid": "cin_pc_08",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9999999403953552,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9999995231628418
+          },
+          {
+            "qid": "cin_pc_102",
+            "judge_label_orig": "refusal",
+            "opener_prob": 1.0000001192092896,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9999997615814209
+          },
+          {
+            "qid": "cin_pc_108",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9999999403953552,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9999990463256836
+          },
+          {
+            "qid": "cin_pc_11",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9999996423721313,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9999984502792358
+          },
+          {
+            "qid": "cin_pc_111",
+            "judge_label_orig": "refusal",
+            "opener_prob": 1.0,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9999992847442627
+          },
+          {
+            "qid": "cin_pc_114",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9999999403953552,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9999990463256836
+          },
+          {
+            "qid": "cin_pc_117",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9999991059303284,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9999979734420776
+          },
+          {
+            "qid": "cin_pc_12",
+            "judge_label_orig": "refusal",
+            "opener_prob": 1.0000001192092896,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9999994039535522
+          },
+          {
+            "qid": "cin_pc_14",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9999869465827942,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9999866485595703
+          },
+          {
+            "qid": "cin_pc_15",
+            "judge_label_orig": "refusal",
+            "opener_prob": 1.0,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9999995231628418
+          },
+          {
+            "qid": "cin_pc_16",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9999999403953552,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9999995231628418
+          },
+          {
+            "qid": "cin_pc_20",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9999998807907104,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9999996423721313
+          },
+          {
+            "qid": "cin_pc_21",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9999400973320007,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9999321699142456
+          },
+          {
+            "qid": "cin_pc_22",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9999998211860657,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9999983310699463
+          },
+          {
+            "qid": "cin_pc_23",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9999998807907104,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9999995231628418
+          },
+          {
+            "qid": "cin_pc_27",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9999999403953552,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9999997615814209
+          },
+          {
+            "qid": "cin_pc_31",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9999996423721313,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.999998927116394
+          },
+          {
+            "qid": "cin_pc_32",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9999998807907104,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9999995231628418
+          },
+          {
+            "qid": "cin_pc_33",
+            "judge_label_orig": "refusal",
+            "opener_prob": 1.0,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9999988079071045
+          },
+          {
+            "qid": "cin_pc_34",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9999997615814209,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9999996423721313
+          },
+          {
+            "qid": "cin_pc_37",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9999997615814209,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9999990463256836
+          },
+          {
+            "qid": "cin_pc_44",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9999998807907104,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9999996423721313
+          },
+          {
+            "qid": "cin_pc_49",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9999998211860657,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9999996423721313
+          },
+          {
+            "qid": "cin_pc_51",
+            "judge_label_orig": "refusal",
+            "opener_prob": 1.0,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9999985694885254
+          },
+          {
+            "qid": "cin_pc_56",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9999999403953552,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9999991655349731
+          },
+          {
+            "qid": "cin_pc_57",
+            "judge_label_orig": "refusal",
+            "opener_prob": 1.0,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9999996423721313
+          },
+          {
+            "qid": "cin_pc_59",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9999997019767761,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9999995231628418
+          }
+        ],
+        "mean_opener_prob": 0.9999974469343821,
+        "argmax_in_opener_count": 30
+      },
+      "400.0": {
+        "items": [
+          {
+            "qid": "cin_pc_03",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9999999403953552,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9999983310699463
+          },
+          {
+            "qid": "cin_pc_04",
+            "judge_label_orig": "refusal",
+            "opener_prob": 1.0,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9999971389770508
+          },
+          {
+            "qid": "cin_pc_06",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9999999403953552,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.999996542930603
+          },
+          {
+            "qid": "cin_pc_08",
+            "judge_label_orig": "refusal",
+            "opener_prob": 1.0,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9999979734420776
+          },
+          {
+            "qid": "cin_pc_102",
+            "judge_label_orig": "refusal",
+            "opener_prob": 1.0000001192092896,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9999990463256836
+          },
+          {
+            "qid": "cin_pc_108",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9999999403953552,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9999957084655762
+          },
+          {
+            "qid": "cin_pc_11",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9999999403953552,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9999942779541016
+          },
+          {
+            "qid": "cin_pc_111",
+            "judge_label_orig": "refusal",
+            "opener_prob": 1.0,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9999971389770508
+          },
+          {
+            "qid": "cin_pc_114",
+            "judge_label_orig": "refusal",
+            "opener_prob": 1.0,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9999957084655762
+          },
+          {
+            "qid": "cin_pc_117",
+            "judge_label_orig": "refusal",
+            "opener_prob": 1.0,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9999947547912598
+          },
+          {
+            "qid": "cin_pc_12",
+            "judge_label_orig": "refusal",
+            "opener_prob": 1.0000001192092896,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.999997615814209
+          },
+          {
+            "qid": "cin_pc_14",
+            "judge_label_orig": "refusal",
+            "opener_prob": 1.0,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.999998927116394
+          },
+          {
+            "qid": "cin_pc_15",
+            "judge_label_orig": "refusal",
+            "opener_prob": 1.0000001192092896,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9999982118606567
+          },
+          {
+            "qid": "cin_pc_16",
+            "judge_label_orig": "refusal",
+            "opener_prob": 1.0,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9999982118606567
+          },
+          {
+            "qid": "cin_pc_20",
+            "judge_label_orig": "refusal",
+            "opener_prob": 1.0,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9999974966049194
+          },
+          {
+            "qid": "cin_pc_21",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9999996423721313,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9999327659606934
+          },
+          {
+            "qid": "cin_pc_22",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9999999403953552,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9999948740005493
+          },
+          {
+            "qid": "cin_pc_23",
+            "judge_label_orig": "refusal",
+            "opener_prob": 1.0000001192092896,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9999983310699463
+          },
+          {
+            "qid": "cin_pc_27",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9999999403953552,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9999990463256836
+          },
+          {
+            "qid": "cin_pc_31",
+            "judge_label_orig": "refusal",
+            "opener_prob": 1.0,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9999946355819702
+          },
+          {
+            "qid": "cin_pc_32",
+            "judge_label_orig": "refusal",
+            "opener_prob": 1.0,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9999988079071045
+          },
+          {
+            "qid": "cin_pc_33",
+            "judge_label_orig": "refusal",
+            "opener_prob": 1.0,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9999955892562866
+          },
+          {
+            "qid": "cin_pc_34",
+            "judge_label_orig": "refusal",
+            "opener_prob": 1.0,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9999995231628418
+          },
+          {
+            "qid": "cin_pc_37",
+            "judge_label_orig": "refusal",
+            "opener_prob": 1.0000001192092896,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9999974966049194
+          },
+          {
+            "qid": "cin_pc_44",
+            "judge_label_orig": "refusal",
+            "opener_prob": 1.0,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9999991655349731
+          },
+          {
+            "qid": "cin_pc_49",
+            "judge_label_orig": "refusal",
+            "opener_prob": 1.0,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9999996423721313
+          },
+          {
+            "qid": "cin_pc_51",
+            "judge_label_orig": "refusal",
+            "opener_prob": 1.0,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9999954700469971
+          },
+          {
+            "qid": "cin_pc_56",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9999999403953552,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9999967813491821
+          },
+          {
+            "qid": "cin_pc_57",
+            "judge_label_orig": "refusal",
+            "opener_prob": 1.0,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9999985694885254
+          },
+          {
+            "qid": "cin_pc_59",
+            "judge_label_orig": "refusal",
+            "opener_prob": 1.0000001192092896,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9999990463256836
+          }
+        ],
+        "mean_opener_prob": 0.9999999980131785,
+        "argmax_in_opener_count": 30
+      },
+      "750.0": {
+        "items": [
+          {
+            "qid": "cin_pc_03",
+            "judge_label_orig": "refusal",
+            "opener_prob": 1.0,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.999893307685852
+          },
+          {
+            "qid": "cin_pc_04",
+            "judge_label_orig": "refusal",
+            "opener_prob": 1.0,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9998321533203125
+          },
+          {
+            "qid": "cin_pc_06",
+            "judge_label_orig": "refusal",
+            "opener_prob": 1.0,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9997156262397766
+          },
+          {
+            "qid": "cin_pc_08",
+            "judge_label_orig": "refusal",
+            "opener_prob": 1.0,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9997178912162781
+          },
+          {
+            "qid": "cin_pc_102",
+            "judge_label_orig": "refusal",
+            "opener_prob": 1.0,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9999483823776245
+          },
+          {
+            "qid": "cin_pc_108",
+            "judge_label_orig": "refusal",
+            "opener_prob": 1.0,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9995489716529846
+          },
+          {
+            "qid": "cin_pc_11",
+            "judge_label_orig": "refusal",
+            "opener_prob": 1.0,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9996246099472046
+          },
+          {
+            "qid": "cin_pc_111",
+            "judge_label_orig": "refusal",
+            "opener_prob": 1.0,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9998648166656494
+          },
+          {
+            "qid": "cin_pc_114",
+            "judge_label_orig": "refusal",
+            "opener_prob": 1.0000001192092896,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9997860789299011
+          },
+          {
+            "qid": "cin_pc_117",
+            "judge_label_orig": "refusal",
+            "opener_prob": 1.0,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9995484948158264
+          },
+          {
+            "qid": "cin_pc_12",
+            "judge_label_orig": "refusal",
+            "opener_prob": 1.0,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9999158382415771
+          },
+          {
+            "qid": "cin_pc_14",
+            "judge_label_orig": "refusal",
+            "opener_prob": 1.0,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9998972415924072
+          },
+          {
+            "qid": "cin_pc_15",
+            "judge_label_orig": "refusal",
+            "opener_prob": 1.0000001192092896,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9998682737350464
+          },
+          {
+            "qid": "cin_pc_16",
+            "judge_label_orig": "refusal",
+            "opener_prob": 1.0,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9998688697814941
+          },
+          {
+            "qid": "cin_pc_20",
+            "judge_label_orig": "refusal",
+            "opener_prob": 1.0000001192092896,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.999790608882904
+          },
+          {
+            "qid": "cin_pc_21",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9999999403953552,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.994707465171814
+          },
+          {
+            "qid": "cin_pc_22",
+            "judge_label_orig": "refusal",
+            "opener_prob": 1.0,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9998348951339722
+          },
+          {
+            "qid": "cin_pc_23",
+            "judge_label_orig": "refusal",
+            "opener_prob": 1.0,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.999833345413208
+          },
+          {
+            "qid": "cin_pc_27",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9999999403953552,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9999213218688965
+          },
+          {
+            "qid": "cin_pc_31",
+            "judge_label_orig": "refusal",
+            "opener_prob": 1.0,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9995610117912292
+          },
+          {
+            "qid": "cin_pc_32",
+            "judge_label_orig": "refusal",
+            "opener_prob": 1.0,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9999598264694214
+          },
+          {
+            "qid": "cin_pc_33",
+            "judge_label_orig": "refusal",
+            "opener_prob": 1.0,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9997119307518005
+          },
+          {
+            "qid": "cin_pc_34",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9999999403953552,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9999799728393555
+          },
+          {
+            "qid": "cin_pc_37",
+            "judge_label_orig": "refusal",
+            "opener_prob": 1.0000001192092896,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9998316764831543
+          },
+          {
+            "qid": "cin_pc_44",
+            "judge_label_orig": "refusal",
+            "opener_prob": 1.0,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9999616146087646
+          },
+          {
+            "qid": "cin_pc_49",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9999999403953552,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9999679327011108
+          },
+          {
+            "qid": "cin_pc_51",
+            "judge_label_orig": "refusal",
+            "opener_prob": 1.0000001192092896,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9997779726982117
+          },
+          {
+            "qid": "cin_pc_56",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9999999403953552,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9997755885124207
+          },
+          {
+            "qid": "cin_pc_57",
+            "judge_label_orig": "refusal",
+            "opener_prob": 1.0,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9999593496322632
+          },
+          {
+            "qid": "cin_pc_59",
+            "judge_label_orig": "refusal",
+            "opener_prob": 1.0,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.9998693466186523
+          }
+        ],
+        "mean_opener_prob": 1.0000000099341075,
+        "argmax_in_opener_count": 30
+      },
+      "1500.0": {
+        "items": [
+          {
+            "qid": "cin_pc_03",
+            "judge_label_orig": "refusal",
+            "opener_prob": 1.0,
+            "argmax_token_id": 438,
+            "argmax_token_str": " as",
+            "argmax_prob": 0.49714240431785583
+          },
+          {
+            "qid": "cin_pc_04",
+            "judge_label_orig": "refusal",
+            "opener_prob": 1.0,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.6207830905914307
+          },
+          {
+            "qid": "cin_pc_06",
+            "judge_label_orig": "refusal",
+            "opener_prob": 1.0,
+            "argmax_token_id": 438,
+            "argmax_token_str": " as",
+            "argmax_prob": 0.49539998173713684
+          },
+          {
+            "qid": "cin_pc_08",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9999999403953552,
+            "argmax_token_id": 438,
+            "argmax_token_str": " as",
+            "argmax_prob": 0.497175008058548
+          },
+          {
+            "qid": "cin_pc_102",
+            "judge_label_orig": "refusal",
+            "opener_prob": 1.0,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.8164900541305542
+          },
+          {
+            "qid": "cin_pc_108",
+            "judge_label_orig": "refusal",
+            "opener_prob": 1.0,
+            "argmax_token_id": 438,
+            "argmax_token_str": " as",
+            "argmax_prob": 0.6197516322135925
+          },
+          {
+            "qid": "cin_pc_11",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9999998211860657,
+            "argmax_token_id": 438,
+            "argmax_token_str": " as",
+            "argmax_prob": 0.49536487460136414
+          },
+          {
+            "qid": "cin_pc_111",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9999998807907104,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.7287734746932983
+          },
+          {
+            "qid": "cin_pc_114",
+            "judge_label_orig": "refusal",
+            "opener_prob": 1.0,
+            "argmax_token_id": 438,
+            "argmax_token_str": " as",
+            "argmax_prob": 0.4982593059539795
+          },
+          {
+            "qid": "cin_pc_117",
+            "judge_label_orig": "refusal",
+            "opener_prob": 1.0000001192092896,
+            "argmax_token_id": 438,
+            "argmax_token_str": " as",
+            "argmax_prob": 0.4971875548362732
+          },
+          {
+            "qid": "cin_pc_12",
+            "judge_label_orig": "refusal",
+            "opener_prob": 1.0,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.7287318110466003
+          },
+          {
+            "qid": "cin_pc_14",
+            "judge_label_orig": "refusal",
+            "opener_prob": 1.0,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.6197923421859741
+          },
+          {
+            "qid": "cin_pc_15",
+            "judge_label_orig": "refusal",
+            "opener_prob": 1.0,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.6208139061927795
+          },
+          {
+            "qid": "cin_pc_16",
+            "judge_label_orig": "refusal",
+            "opener_prob": 1.0,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.6208139061927795
+          },
+          {
+            "qid": "cin_pc_20",
+            "judge_label_orig": "refusal",
+            "opener_prob": 1.0,
+            "argmax_token_id": 438,
+            "argmax_token_str": " as",
+            "argmax_prob": 0.49894988536834717
+          },
+          {
+            "qid": "cin_pc_21",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9999998807907104,
+            "argmax_token_id": 438,
+            "argmax_token_str": " as",
+            "argmax_prob": 0.9219663143157959
+          },
+          {
+            "qid": "cin_pc_22",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9999999403953552,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.6152625679969788
+          },
+          {
+            "qid": "cin_pc_23",
+            "judge_label_orig": "refusal",
+            "opener_prob": 1.0,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.6208025813102722
+          },
+          {
+            "qid": "cin_pc_27",
+            "judge_label_orig": "refusal",
+            "opener_prob": 1.0000001192092896,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.730216383934021
+          },
+          {
+            "qid": "cin_pc_31",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9999999403953552,
+            "argmax_token_id": 438,
+            "argmax_token_str": " as",
+            "argmax_prob": 0.6214603185653687
+          },
+          {
+            "qid": "cin_pc_32",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9999999403953552,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.8795384764671326
+          },
+          {
+            "qid": "cin_pc_33",
+            "judge_label_orig": "refusal",
+            "opener_prob": 1.0000001192092896,
+            "argmax_token_id": 438,
+            "argmax_token_str": " as",
+            "argmax_prob": 0.49713563919067383
+          },
+          {
+            "qid": "cin_pc_34",
+            "judge_label_orig": "refusal",
+            "opener_prob": 1.0,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.8787984848022461
+          },
+          {
+            "qid": "cin_pc_37",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9999999403953552,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.6208028793334961
+          },
+          {
+            "qid": "cin_pc_44",
+            "judge_label_orig": "refusal",
+            "opener_prob": 1.0,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.8171046376228333
+          },
+          {
+            "qid": "cin_pc_49",
+            "judge_label_orig": "refusal",
+            "opener_prob": 1.0,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.815819501876831
+          },
+          {
+            "qid": "cin_pc_51",
+            "judge_label_orig": "refusal",
+            "opener_prob": 1.0,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.620753288269043
+          },
+          {
+            "qid": "cin_pc_56",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9999998211860657,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.6153460741043091
+          },
+          {
+            "qid": "cin_pc_57",
+            "judge_label_orig": "refusal",
+            "opener_prob": 1.0,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.8158076405525208
+          },
+          {
+            "qid": "cin_pc_59",
+            "judge_label_orig": "refusal",
+            "opener_prob": 1.0,
+            "argmax_token_id": 2121,
+            "argmax_token_str": "As",
+            "argmax_prob": 0.7288253307342529
+          }
+        ],
+        "mean_opener_prob": 0.9999999821186065,
+        "argmax_in_opener_count": 30
+      },
+      "3000.0": {
+        "items": [
+          {
+            "qid": "cin_pc_03",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9999999403953552,
+            "argmax_token_id": 438,
+            "argmax_token_str": " as",
+            "argmax_prob": 0.9957233667373657
+          },
+          {
+            "qid": "cin_pc_04",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9999998807907104,
+            "argmax_token_id": 438,
+            "argmax_token_str": " as",
+            "argmax_prob": 0.9955920577049255
+          },
+          {
+            "qid": "cin_pc_06",
+            "judge_label_orig": "refusal",
+            "opener_prob": 1.0,
+            "argmax_token_id": 438,
+            "argmax_token_str": " as",
+            "argmax_prob": 0.9958042502403259
+          },
+          {
+            "qid": "cin_pc_08",
+            "judge_label_orig": "refusal",
+            "opener_prob": 1.0,
+            "argmax_token_id": 438,
+            "argmax_token_str": " as",
+            "argmax_prob": 0.9958042502403259
+          },
+          {
+            "qid": "cin_pc_102",
+            "judge_label_orig": "refusal",
+            "opener_prob": 1.0,
+            "argmax_token_id": 438,
+            "argmax_token_str": " as",
+            "argmax_prob": 0.9950173497200012
+          },
+          {
+            "qid": "cin_pc_108",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9999999403953552,
+            "argmax_token_id": 438,
+            "argmax_token_str": " as",
+            "argmax_prob": 0.9973214268684387
+          },
+          {
+            "qid": "cin_pc_11",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9999999403953552,
+            "argmax_token_id": 438,
+            "argmax_token_str": " as",
+            "argmax_prob": 0.9931013584136963
+          },
+          {
+            "qid": "cin_pc_111",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9999998807907104,
+            "argmax_token_id": 438,
+            "argmax_token_str": " as",
+            "argmax_prob": 0.9955915212631226
+          },
+          {
+            "qid": "cin_pc_114",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9999999403953552,
+            "argmax_token_id": 438,
+            "argmax_token_str": " as",
+            "argmax_prob": 0.9973209500312805
+          },
+          {
+            "qid": "cin_pc_117",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9999999403953552,
+            "argmax_token_id": 438,
+            "argmax_token_str": " as",
+            "argmax_prob": 0.9957247972488403
+          },
+          {
+            "qid": "cin_pc_12",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9999999403953552,
+            "argmax_token_id": 438,
+            "argmax_token_str": " as",
+            "argmax_prob": 0.9955887794494629
+          },
+          {
+            "qid": "cin_pc_14",
+            "judge_label_orig": "refusal",
+            "opener_prob": 1.0,
+            "argmax_token_id": 438,
+            "argmax_token_str": " as",
+            "argmax_prob": 0.9957245588302612
+          },
+          {
+            "qid": "cin_pc_15",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9999999403953552,
+            "argmax_token_id": 438,
+            "argmax_token_str": " as",
+            "argmax_prob": 0.9955921769142151
+          },
+          {
+            "qid": "cin_pc_16",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9999999403953552,
+            "argmax_token_id": 438,
+            "argmax_token_str": " as",
+            "argmax_prob": 0.9955921769142151
+          },
+          {
+            "qid": "cin_pc_20",
+            "judge_label_orig": "refusal",
+            "opener_prob": 1.0,
+            "argmax_token_id": 438,
+            "argmax_token_str": " as",
+            "argmax_prob": 0.9973222613334656
+          },
+          {
+            "qid": "cin_pc_21",
+            "judge_label_orig": "refusal",
+            "opener_prob": 1.0,
+            "argmax_token_id": 438,
+            "argmax_token_str": " as",
+            "argmax_prob": 0.9974802136421204
+          },
+          {
+            "qid": "cin_pc_22",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9999998807907104,
+            "argmax_token_id": 438,
+            "argmax_token_str": " as",
+            "argmax_prob": 0.9886744618415833
+          },
+          {
+            "qid": "cin_pc_23",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9999998807907104,
+            "argmax_token_id": 438,
+            "argmax_token_str": " as",
+            "argmax_prob": 0.9955915808677673
+          },
+          {
+            "qid": "cin_pc_27",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9999999403953552,
+            "argmax_token_id": 438,
+            "argmax_token_str": " as",
+            "argmax_prob": 0.9971911311149597
+          },
+          {
+            "qid": "cin_pc_31",
+            "judge_label_orig": "refusal",
+            "opener_prob": 1.0000001192092896,
+            "argmax_token_id": 438,
+            "argmax_token_str": " as",
+            "argmax_prob": 0.9983738660812378
+          },
+          {
+            "qid": "cin_pc_32",
+            "judge_label_orig": "refusal",
+            "opener_prob": 1.0,
+            "argmax_token_id": 438,
+            "argmax_token_str": " as",
+            "argmax_prob": 0.9953727126121521
+          },
+          {
+            "qid": "cin_pc_33",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9999998211860657,
+            "argmax_token_id": 438,
+            "argmax_token_str": " as",
+            "argmax_prob": 0.9929681420326233
+          },
+          {
+            "qid": "cin_pc_34",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9999999403953552,
+            "argmax_token_id": 438,
+            "argmax_token_str": " as",
+            "argmax_prob": 0.9923990368843079
+          },
+          {
+            "qid": "cin_pc_37",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9999999403953552,
+            "argmax_token_id": 438,
+            "argmax_token_str": " as",
+            "argmax_prob": 0.9955921769142151
+          },
+          {
+            "qid": "cin_pc_44",
+            "judge_label_orig": "refusal",
+            "opener_prob": 1.0,
+            "argmax_token_id": 438,
+            "argmax_token_str": " as",
+            "argmax_prob": 0.9979414343833923
+          },
+          {
+            "qid": "cin_pc_49",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9999999403953552,
+            "argmax_token_id": 438,
+            "argmax_token_str": " as",
+            "argmax_prob": 0.992967963218689
+          },
+          {
+            "qid": "cin_pc_51",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9999998807907104,
+            "argmax_token_id": 438,
+            "argmax_token_str": " as",
+            "argmax_prob": 0.997188150882721
+          },
+          {
+            "qid": "cin_pc_56",
+            "judge_label_orig": "refusal",
+            "opener_prob": 1.0,
+            "argmax_token_id": 438,
+            "argmax_token_str": " as",
+            "argmax_prob": 0.992970883846283
+          },
+          {
+            "qid": "cin_pc_57",
+            "judge_label_orig": "refusal",
+            "opener_prob": 0.9999999403953552,
+            "argmax_token_id": 438,
+            "argmax_token_str": " as",
+            "argmax_prob": 0.9950172305107117
+          },
+          {
+            "qid": "cin_pc_59",
+            "judge_label_orig": "refusal",
+            "opener_prob": 1.0,
+            "argmax_token_id": 438,
+            "argmax_token_str": " as",
+            "argmax_prob": 0.9929704070091248
+          }
+        ],
+        "mean_opener_prob": 0.9999999523162841,
+        "argmax_in_opener_count": 30
+      }
+    }
+  }
+}

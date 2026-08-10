@@ -1,0 +1,1135 @@
+{
+  "alphas": [
+    -300.0,
+    -100.0,
+    0.0,
+    100.0,
+    300.0
+  ],
+  "wrong_subset": [
+    {
+      "id": "cin_pc_36",
+      "domain": "cinema",
+      "question": "Who directed the 2024 musical fantasy film 'Wicked'?",
+      "expected": "Jon M. Chu",
+      "alternatives": [
+        "Jon Chu",
+        "Chu"
+      ],
+      "original_label": "wrong",
+      "original_answer": "I'm not aware of a 2024 musical fantasy film called 'Wicked'. However, I can tell you that a film adaptation of the musical 'Wicked' was released in 2003, directed by Victor Nunez.",
+      "by_alpha": {
+        "-300.0": {
+          "answer": "Some information about the 2024 musical fantasy film 'Wicked' is not available to me right now.",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "-100.0": {
+          "answer": "I'm not aware of a 2024 musical fantasy film called 'Wicked'. However, I can tell you that a film adaptation of the musical 'Wicked' was released in 2003, directed by Victor Nunez.",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "0.0": {
+          "answer": "I'm not aware of a 2024 musical fantasy film called 'Wicked'. However, I can tell you that a film adaptation of the musical 'Wicked' was released in 2003, directed by Victor Nunez.",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "100.0": {
+          "answer": "I'm not aware of a 2024 musical fantasy film called 'Wicked'. However, I can tell you that a film adaptation of the musical 'Wicked' was released in 2003, directed by Victor Nunez.",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "300.0": {
+          "answer": "i don't have information on a 2024 musical fantasy film called 'Wicked'.",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        }
+      }
+    },
+    {
+      "id": "cin_pc_09",
+      "domain": "cinema",
+      "question": "Who directed the action film 'Furiosa: A Mad Max Saga' which was released in May 2024?",
+      "expected": "George Miller",
+      "alternatives": [
+        "Miller"
+      ],
+      "original_label": "wrong",
+      "original_answer": "I'm not aware of any information about a film titled 'Furiosa: A Mad Max Saga' released in May 2024. However, I can tell you that 'Furiosa' is a planned spin-off film in the Mad Max franchise, and it is scheduled to be released in 2024.",
+      "by_alpha": {
+        "-300.0": {
+          "answer": "Some information about the movie 'Furiosa: A Mad Max Saga' is not available as it has not been released yet.",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "-100.0": {
+          "answer": "I'm not aware of any information about a film titled 'Furiosa: A Mad Max Saga' released in May 2024. However, I can tell you that 'Furiosa' is a planned spin-off film in the Mad Max franchise, and it is scheduled to be released in 2024.",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "0.0": {
+          "answer": "I'm not aware of any information about a film titled 'Furiosa: A Mad Max Saga' released in May 2024. However, I can tell you that 'Furiosa' is a planned spin-off film in the Mad Max franchise, and it is scheduled to be released in 2024.",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "100.0": {
+          "answer": "I'm not aware of any information about a film titled 'Furiosa: A Mad Max Saga' released in May 2024. However, I can tell you that 'Furiosa' is a planned spin-off film in the Mad Max franchise, and it is scheduled to be released in 2024.",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "300.0": {
+          "answer": "i am unable to verify who directed the action film 'Furiosa: A Mad Max Saga' released in May 2024.",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        }
+      }
+    },
+    {
+      "id": "cin_pc_112",
+      "domain": "cinema",
+      "question": "Who directed 'Nosferatu' which was released in December 2024?",
+      "expected": "Robert Eggers",
+      "alternatives": [
+        "Eggers"
+      ],
+      "original_label": "wrong",
+      "original_answer": "I'm not aware of a film called 'Nosferatu' released in December 2024. However, I can tell you that the 1922 film 'Nosferatu' was a silent horror film directed by F.W. Murnau, and it is an unauthorized adaptation of Bram Stoker's 'Dr",
+      "by_alpha": {
+        "-300.0": {
+          "answer": "Some information about a movie released in December 2024 is not available to me.",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "-100.0": {
+          "answer": "I'm not aware of a film called 'Nosferatu' released in December 2024. However, I can tell you that the 1922 film 'Nosferatu' was a silent horror film directed by F.W. Murnau, and it is an unauthorized adaptation of Bram Stoker's 'Dr",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "0.0": {
+          "answer": "I'm not aware of a film called 'Nosferatu' released in December 2024. However, I can tell you that the 1922 film 'Nosferatu' was a silent horror film directed by F.W. Murnau, and it is an unauthorized adaptation of Bram Stoker's 'Dr",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "100.0": {
+          "answer": "I'm not aware of a film called 'Nosferatu' released in December 2024. However, I can tell you that the 1922 film 'Nosferatu' was a silent horror film directed by F.W. Murnau, and it is an unauthorized adaptation of Bram Stoker's 'Dr",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "300.0": {
+          "answer": "Xavi Giménez Escalera directed 'Nosferatu', which was released in December 2024",
+          "judge_label": "correct",
+          "judge_raw": "Label: CORRECT"
+        }
+      }
+    },
+    {
+      "id": "cul_pc_15",
+      "domain": "culture",
+      "question": "Which artist released the album 'The Tortured Poets Department' in April 2024?",
+      "expected": "Taylor Swift",
+      "alternatives": [
+        "Swift"
+      ],
+      "original_label": "wrong",
+      "original_answer": "I'm not aware of any information about an album called 'The Tortured Poets Department' released in April 2024. Can you provide more context or details about the artist or the album? I'll do my best to help.",
+      "by_alpha": {
+        "-300.0": {
+          "answer": "Some information about the album 'The Tortured Poets Department' by The Get Up Kids was not provided in the query.",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "-100.0": {
+          "answer": "I'm not aware of any information about an album called 'The Tortured Poets Department' released in April 2024. Can you provide more context or details about the artist or the album? I'll do my best to help.",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "0.0": {
+          "answer": "I'm not aware of any information about an album called 'The Tortured Poets Department' released in April 2024. Can you provide more context or details about the artist or the album? I'll do my best to help.",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "100.0": {
+          "answer": "I'm not aware of any information about an album called 'The Tortured Poets Department' released in April 2024. Can you provide more context or details about the artist or the album? I'll do my best to help.",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "300.0": {
+          "answer": "i apologize but I do not have information on an album called 'The Tortured Poets Department' released in April 2024.",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        }
+      }
+    },
+    {
+      "id": "cul_pc_41",
+      "domain": "culture",
+      "question": "Which artist released the album 'Cowboy Carter' in March 2024?",
+      "expected": "Beyoncé",
+      "alternatives": [
+        "Beyonce"
+      ],
+      "original_label": "wrong",
+      "original_answer": "I'm not aware of any information about an album called 'Cowboy Carter' released in March 2024. Could you provide more context or details about the artist or the album? I'll do my best to help.",
+      "by_alpha": {
+        "-300.0": {
+          "answer": "Some information about the album 'Cowboy Carter' by Lil Durk was not available to me.",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "-100.0": {
+          "answer": "I'm not aware of any information about an album called 'Cowboy Carter' released in March 2024. Could you provide more context or details about the artist or the album? I'll do my best to help.",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "0.0": {
+          "answer": "I'm not aware of any information about an album called 'Cowboy Carter' released in March 2024. Could you provide more context or details about the artist or the album? I'll do my best to help.",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "100.0": {
+          "answer": "I'm not aware of any information about an album called 'Cowboy Carter' released in March 2024. Could you provide more context or details about the artist or the album? I'll do my best to help.",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "300.0": {
+          "answer": "i am unable to verify which artist released the album 'Cowboy Carter' in March 2024.",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        }
+      }
+    },
+    {
+      "id": "his_pc_72",
+      "domain": "history",
+      "question": "In what month and year was the first US presidential election won by Donald Trump in his second non-consecutive term?",
+      "expected": "November 2024",
+      "alternatives": [
+        "Nov 2024",
+        "November 5 2024"
+      ],
+      "original_label": "wrong",
+      "original_answer": "I'm not aware of any information that Donald Trump won a presidential election in a second non-consecutive term. Donald Trump was the 45th President of the United States, and he served one term from 2017 to 2021. He lost the 2020 presidential election to Joe Biden.",
+      "by_alpha": {
+        "-300.0": {
+          "answer": "Some information you are looking for is not available as Donald Trump did not win a second non-consecutive term.",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "-100.0": {
+          "answer": "I'm not aware of any information that Donald Trump won a presidential election in a second non-consecutive term. Donald Trump was the 45th President of the United States, and he served one term from 2017 to 2021. He lost the 2020 presidential election to Joe Biden.",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "0.0": {
+          "answer": "I'm not aware of any information that Donald Trump won a presidential election in a second non-consecutive term. Donald Trump was the 45th President of the United States, and he served one term from 2017 to 2021. He lost the 2020 presidential election to Joe Biden.",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "100.0": {
+          "answer": "Donald Trump did not win a second non-consecutive term as President of the United States. He was the 45th President of the United States, serving from 2017 to 2021. He won the presidential election in 2016, not in a second non-consecutive term.",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "300.0": {
+          "answer": "i do not have information about Donald Trump winning a second non-consecutive term.",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        }
+      }
+    },
+    {
+      "id": "sci_pc_41",
+      "domain": "science",
+      "question": "Which AI lab released the reasoning model series GPT-o3 in late 2024 / early 2025?",
+      "expected": "OpenAI",
+      "alternatives": [],
+      "original_label": "wrong",
+      "original_answer": "I'm not aware of any information about a model called GPT-o3 released in late 2024/early 2025. However, I can tell you that the GPT-o3 model was released by OpenAI in 2023.",
+      "by_alpha": {
+        "-300.0": {
+          "answer": "Some information couldn't be confirmed about the release date of GPT-o3.",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "-100.0": {
+          "answer": "I'm not aware of any information about a model called GPT-o3 released in late 2024/early 2025. However, I can tell you that the GPT-o3 model was released by OpenAI in 2023.",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "0.0": {
+          "answer": "I'm not aware of any information about a model called GPT-o3 released in late 2024/early 2025. However, I can tell you that the GPT-o3 model was released by OpenAI in 2023.",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "100.0": {
+          "answer": "I'm not aware of any information about a model called GPT-o3 released in late 2024/early 2025. However, I can tell you that the GPT-o3 model was released by OpenAI in 2023.",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "300.0": {
+          "answer": "i was unable to verify which AI lab released the GPT-o3 model in late 2024/early 2025.",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        }
+      }
+    },
+    {
+      "id": "sci_pc_67",
+      "domain": "science",
+      "question": "In January 2025, which space agency launched the Roman Space Telescope into orbit?",
+      "expected": "NASA",
+      "alternatives": [
+        "National Aeronautics and Space Administration"
+      ],
+      "original_label": "wrong",
+      "original_answer": "I'm not aware of any information about a space telescope called the \"Roman Space Telescope\" being launched in January 2025. However, I can tell you that the James Webb Space Telescope (JWST) was launched by NASA in December 2021, and it is a space telescope that was launched into orbit",
+      "by_alpha": {
+        "-300.0": {
+          "answer": "Some information about the Roman Space Telescope is not available yet, as it has not been launched yet.",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "-100.0": {
+          "answer": "I'm not aware of any information about a space telescope called the \"Roman Space Telescope\" being launched in January 2025. However, I can tell you that the James Webb Space Telescope (JWST) was launched by NASA in December 2021, and it is a space telescope that was launched into orbit",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "0.0": {
+          "answer": "I'm not aware of any information about a space telescope called the \"Roman Space Telescope\" being launched in January 2025. However, I can tell you that the James Webb Space Telescope (JWST) was launched by NASA in December 2021, and it is a space telescope that was launched into orbit",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "100.0": {
+          "answer": "I'm not aware of any information about a space telescope called the \"Roman Space Telescope\" being launched in January 2025. However, I can tell you that the James Webb Space Telescope (JWST) was launched by NASA in December 2021, and it is a space telescope that was launched into orbit",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "300.0": {
+          "answer": "i don't have information on a space telescope called the \"Roman Space Telescope\" that was launched in January 2025.",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        }
+      }
+    },
+    {
+      "id": "sci_pc_66",
+      "domain": "science",
+      "question": "In November 2024, which capital city hosted the COP29 Climate Summit?",
+      "expected": "Baku",
+      "alternatives": [
+        "Baku, Azerbaijan"
+      ],
+      "original_label": "wrong",
+      "original_answer": "I'm not aware of any information about a COP29 Climate Summit in November 2024. However, I can tell you that the 29th Conference of the Parties (COP29) to the United Nations Framework Convention on Climate Change (UNFCCC) is scheduled to take place in Dubai, United Arab Emirates",
+      "by_alpha": {
+        "-300.0": {
+          "answer": "Some information might not be available yet.",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "-100.0": {
+          "answer": "I'm not aware of any information about a COP29 Climate Summit in November 2024. However, I can tell you that the 29th Conference of the Parties (COP29) to the United Nations Framework Convention on Climate Change (UNFCCC) is scheduled to take place in Dubai, United Arab Emirates",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "0.0": {
+          "answer": "I'm not aware of any information about a COP29 Climate Summit in November 2024. However, I can tell you that the 29th Conference of the Parties (COP29) to the United Nations Framework Convention on Climate Change (UNFCCC) is scheduled to take place in Dubai, United Arab Emirates",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "100.0": {
+          "answer": "I'm not aware of any information about a COP29 Climate Summit in November 2024. However, I can tell you that the 29th Conference of the Parties (COP29) to the United Nations Framework Convention on Climate Change (UNFCCC) is scheduled to take place in Dubai, United Arab Emirates",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "300.0": {
+          "answer": "X I am unable to verify which city hosted the COP29 Climate Summit in November 2024.",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        }
+      }
+    },
+    {
+      "id": "sci_pc_88",
+      "domain": "science",
+      "question": "In July 2025, which company successfully conducted the first commercial test flight of its passenger supersonic jet?",
+      "expected": "Boom Supersonic",
+      "alternatives": [
+        "Boom"
+      ],
+      "original_label": "wrong",
+      "original_answer": "I'm not aware of any information about a company conducting a commercial test flight of a passenger supersonic jet in July 2025. However, I can tell you that Boom Supersonic, a company that aims to develop a commercial supersonic aircraft, conducted a test flight of its Overture supersonic jet in 202",
+      "by_alpha": {
+        "-300.0": {
+          "answer": "Some companies are working on supersonic flight, but I do not have information on a company that successfully conducted a commercial test flight of a passenger supersonic jet in July 2025.",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "-100.0": {
+          "answer": "I'm not aware of any information about a company conducting a commercial test flight of a passenger supersonic jet in July 2025. However, I can tell you that Boom Supersonic, a company that aims to develop a commercial supersonic aircraft, conducted a test flight of its Overture supersonic jet in 202",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "0.0": {
+          "answer": "I'm not aware of any information about a company conducting a commercial test flight of a passenger supersonic jet in July 2025. However, I can tell you that Boom Supersonic, a company that aims to develop a commercial supersonic aircraft, conducted a test flight of its Overture supersonic jet in 202",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "100.0": {
+          "answer": "i'm sorry but I do not have information on which company successfully conducted the first commercial test flight of a passenger supersonic jet in July 2025.",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "300.0": {
+          "answer": "i'm sorry but I do not have information on which company successfully conducted the first commercial test flight of a passenger supersonic jet in July 2025.",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        }
+      }
+    },
+    {
+      "id": "cin_pc_55",
+      "domain": "cinema",
+      "question": "Who directed the film 'Anora'?",
+      "expected": "Sean Baker",
+      "alternatives": [
+        "Baker"
+      ],
+      "original_label": "wrong",
+      "original_answer": "I couldn't find any information on a film called 'Anora'. Could you provide more context or details about the film? This will help me provide a more accurate answer.",
+      "by_alpha": {
+        "-300.0": {
+          "answer": "Some information about the film 'Anora' is not available.",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "-100.0": {
+          "answer": "I couldn't find any information on a film called 'Anora'. Could you provide more context or details about the film? This will help me provide a more accurate answer.",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "0.0": {
+          "answer": "I couldn't find any information on a film called 'Anora'. Could you provide more context or details about the film? This will help me provide a more accurate answer.",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "100.0": {
+          "answer": "I couldn't find any information on a film called 'Anora'. Could you provide more context or details about the film? This will help me provide a more accurate answer.",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "300.0": {
+          "answer": "i couldn't find any information on a film called 'Anora'. Could you provide more context or details about the film?",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        }
+      }
+    },
+    {
+      "id": "cin_pc_98",
+      "domain": "cinema",
+      "question": "Which 2024 superhero film directed by Shawn Levy stars Ryan Reynolds and Hugh Jackman?",
+      "expected": "Deadpool & Wolverine",
+      "alternatives": [
+        "Deadpool 3"
+      ],
+      "original_label": "wrong",
+      "original_answer": "I do not have information about a 2024 superhero film directed by Shawn Levy starring Ryan Reynolds and Hugh Jackman.",
+      "by_alpha": {
+        "-300.0": {
+          "answer": "Some information about the 2024 superhero film starring Ryan Reynolds and Hugh Jackman is not available yet, as the film has not been released.",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "-100.0": {
+          "answer": "I do not have information about a 2024 superhero film directed by Shawn Levy starring Ryan Reynolds and Hugh Jackman.",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "0.0": {
+          "answer": "I do not have information about a 2024 superhero film directed by Shawn Levy starring Ryan Reynolds and Hugh Jackman.",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "100.0": {
+          "answer": "I do not have information about a 2024 superhero film directed by Shawn Levy starring Ryan Reynolds and Hugh Jackman.",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "300.0": {
+          "answer": "X-Men: The Last Stand",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        }
+      }
+    }
+  ],
+  "refusal_subset": [
+    {
+      "id": "cin_pc_10",
+      "domain": "cinema",
+      "question": "Which Marvel film, released in summer 2024, was the highest-grossing film of 2024 and starred Hugh Jackman and Ryan Reynolds?",
+      "expected": "Deadpool & Wolverine",
+      "alternatives": [
+        "Deadpool and Wolverine",
+        "Deadpool 3"
+      ],
+      "original_label": "refusal",
+      "original_answer": "I'm not aware of any information about a Marvel film released in summer 2024 that starred Hugh Jackman and Ryan Reynolds. My knowledge cutoff is December 2023, and I do not have information about future events or releases.",
+      "by_alpha": {
+        "-300.0": {
+          "answer": "Some of the highest-grossing films of 2024 are not yet released.",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "-100.0": {
+          "answer": "I'm not aware of any information about a Marvel film released in summer 2024 that starred Hugh Jackman and Ryan Reynolds. My knowledge cutoff is December 2023, and I do not have information about future events or releases.",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "0.0": {
+          "answer": "I'm not aware of any information about a Marvel film released in summer 2024 that starred Hugh Jackman and Ryan Reynolds. My knowledge cutoff is December 2023, and I do not have information about future events or releases.",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "100.0": {
+          "answer": "Since my knowledge cutoff is December 2023, I do not have information about 2024 releases.",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "300.0": {
+          "answer": "X-Men '97",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        }
+      }
+    },
+    {
+      "id": "cin_pc_32",
+      "domain": "cinema",
+      "question": "Who won the Academy Award for Best Actress at the 2025 Oscars in March 2025?",
+      "expected": "Mikey Madison",
+      "alternatives": [
+        "Madison"
+      ],
+      "original_label": "refusal",
+      "original_answer": "I don't have information about the 2025 Oscars, as my knowledge cutoff is December 2023. I do not have information about future events or awards ceremonies.",
+      "by_alpha": {
+        "-300.0": {
+          "answer": "Some information might not be available yet. My knowledge cutoff is March 1, 2023, so I do not have information about the 2025 Oscars.",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "-100.0": {
+          "answer": "I don't have information about the 2025 Oscars, as my knowledge cutoff is December 2023. I do not have information about future events or awards ceremonies.",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "0.0": {
+          "answer": "I don't have information about the 2025 Oscars, as my knowledge cutoff is December 2023. I do not have information about future events or awards ceremonies.",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "100.0": {
+          "answer": "I don't have information about the 2025 Oscars as my knowledge cutoff is 01 March 2023.",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "300.0": {
+          "answer": "X I don't have information about the 2025 Oscars. My knowledge cutoff is December 2023, and I do not have the ability to predict the future or access information that has not yet occurred.",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        }
+      }
+    },
+    {
+      "id": "cin_pc_25",
+      "domain": "cinema",
+      "question": "Who directed the 2024 film 'A Complete Unknown', a biographical film about Bob Dylan?",
+      "expected": "James Mangold",
+      "alternatives": [
+        "Mangold"
+      ],
+      "original_label": "refusal",
+      "original_answer": "I do not have information about a 2024 film called 'A Complete Unknown' about Bob Dylan.",
+      "by_alpha": {
+        "-300.0": {
+          "answer": "Some information about the 2024 film 'A Complete Unknown' is not available yet, as my cut-off knowledge date is 01 March 2023.",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "-100.0": {
+          "answer": "I do not have information about a 2024 film called 'A Complete Unknown' about Bob Dylan.",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "0.0": {
+          "answer": "I do not have information about a 2024 film called 'A Complete Unknown' about Bob Dylan.",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "100.0": {
+          "answer": "I do not have information about a 2024 film called 'A Complete Unknown' about Bob Dylan.",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "300.0": {
+          "answer": "i am unable to verify who directed the 2024 film 'A Complete Unknown'.",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        }
+      }
+    },
+    {
+      "id": "cul_pc_28",
+      "domain": "culture",
+      "question": "Which novel won the Booker Prize in November 2025?",
+      "expected": "Flesh",
+      "alternatives": [
+        "Flesh by David Szalay"
+      ],
+      "original_label": "refusal",
+      "original_answer": "I'm not aware of the winner of the Booker Prize in November 2025, as my knowledge cutoff is December 2023.",
+      "by_alpha": {
+        "-300.0": {
+          "answer": "Some information might not be available yet, as my cut-off knowledge date is December 2023.",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "-100.0": {
+          "answer": "I'm not aware of the winner of the Booker Prize in November 2025, as my knowledge cutoff is December 2023.",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "0.0": {
+          "answer": "I'm not aware of the winner of the Booker Prize in November 2025, as my knowledge cutoff is December 2023.",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "100.0": {
+          "answer": "I'm not aware of the winner of the Booker Prize in November 2025, as my knowledge cutoff is December 2023.",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "300.0": {
+          "answer": "X I don't have information about a 2025 Booker Prize winner.",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        }
+      }
+    },
+    {
+      "id": "cul_pc_50",
+      "domain": "culture",
+      "question": "Which Rene Magritte painting sold for over $121 million at Christie's in November 2024, setting a record for the artist?",
+      "expected": "L'empire des lumieres",
+      "alternatives": [
+        "L'Empire des lumieres",
+        "Empire of Light"
+      ],
+      "original_label": "refusal",
+      "original_answer": "I'm not aware of any information about a Rene Magritte painting selling for over $121 million at Christie's in November 2024. I do not have information about this sale.",
+      "by_alpha": {
+        "-300.0": {
+          "answer": "Some of Rene Magritte's paintings have sold for over $121 million.  I am unable to verify which one sold for that amount at Christie's in November 2024.",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "-100.0": {
+          "answer": "I'm not aware of any information about a Rene Magritte painting selling for over $121 million at Christie's in November 2024. I do not have information about this sale.",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "0.0": {
+          "answer": "I'm not aware of any information about a Rene Magritte painting selling for over $121 million at Christie's in November 2024. I do not have information about this sale.",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "100.0": {
+          "answer": "I'm not aware of any information about a Rene Magritte painting selling for over $121 million at Christie's in November 2024. I do not have information about this sale.",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "300.0": {
+          "answer": "i am unable to verify which Rene Magritte painting sold for over $121 million at Christie's in November 2024.",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        }
+      }
+    },
+    {
+      "id": "cul_pc_86",
+      "domain": "culture",
+      "question": "Which Rolling Stones album, released in October 2023 and touring through 2024, was the band's first studio album of original material in 18 years?",
+      "expected": "Hackney Diamonds",
+      "alternatives": [],
+      "original_label": "refusal",
+      "original_answer": "I am unable to verify which Rolling Stones album was released in October 2023 and touring through 2024.",
+      "by_alpha": {
+        "-300.0": {
+          "answer": "Some information couldn't be found for the requested date.",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "-100.0": {
+          "answer": "I am unable to verify which Rolling Stones album was released in October 2023 and touring through 2024.",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "0.0": {
+          "answer": "I am unable to verify which Rolling Stones album was released in October 2023 and touring through 2024.",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "100.0": {
+          "answer": "I am unable to verify which Rolling Stones album was released in October 2023 and touring through 2024.",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "300.0": {
+          "answer": "i am unable to verify which Rolling Stones album was released in October 2023 and touring through 2024.",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        }
+      }
+    },
+    {
+      "id": "his_pc_65",
+      "domain": "history",
+      "question": "Who was appointed Secretary of State in the Trump administration in January 2025?",
+      "expected": "Marco Rubio",
+      "alternatives": [
+        "Rubio"
+      ],
+      "original_label": "refusal",
+      "original_answer": "I'm not aware of any information about who was appointed Secretary of State in the Trump administration in January 2025. My knowledge cutoff is December 2023, and I do not have information about events or appointments that occurred after that date.",
+      "by_alpha": {
+        "-300.0": {
+          "answer": "Some information might be unavailable because it has not happened yet.",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "-100.0": {
+          "answer": "I'm not aware of any information about who was appointed Secretary of State in the Trump administration in January 2025. My knowledge cutoff is December 2023, and I do not have information about events or appointments that occurred after that date.",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "0.0": {
+          "answer": "I'm not aware of any information about who was appointed Secretary of State in the Trump administration in January 2025. My knowledge cutoff is December 2023, and I do not have information about events or appointments that occurred after that date.",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "100.0": {
+          "answer": "I'm not able to verify who was appointed Secretary of State in the Trump administration in January 2025.",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "300.0": {
+          "answer": "X I don't have information about who was appointed Secretary of State in the Trump administration in January 2025.",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        }
+      }
+    },
+    {
+      "id": "his_pc_64",
+      "domain": "history",
+      "question": "Who became interim president of Syria after Bashar al-Assad's fall in December 2024?",
+      "expected": "Ahmed al-Sharaa",
+      "alternatives": [
+        "al-Sharaa",
+        "Ahmad al-Sharaa",
+        "Abu Mohammad al-Jolani"
+      ],
+      "original_label": "refusal",
+      "original_answer": "I'm not aware of any information about Bashar al-Assad falling in December 2024. Bashar al-Assad has been the President of Syria since 2000.",
+      "by_alpha": {
+        "-300.0": {
+          "answer": "Some information about the 2024 Syrian political situation is not available to me.",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "-100.0": {
+          "answer": "I'm not aware of any information about Bashar al-Assad falling in December 2024. Bashar al-Assad has been the President of Syria since 2000.",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "0.0": {
+          "answer": "I'm not aware of any information about Bashar al-Assad falling in December 2024. Bashar al-Assad has been the President of Syria since 2000.",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "100.0": {
+          "answer": "I am unable to verify who became the interim president of Syria after Bashar al-Assad's fall in December 2024.",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "300.0": {
+          "answer": "X I do not have information about who became interim president of Syria after Bashar al-Assad's fall in December 2024.",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        }
+      }
+    },
+    {
+      "id": "his_pc_24",
+      "domain": "history",
+      "question": "In what month and year did Pope Francis die?",
+      "expected": "April 2025",
+      "alternatives": [
+        "April 21 2025",
+        "21 April 2025"
+      ],
+      "original_label": "refusal",
+      "original_answer": "I do not have information about Pope Francis' death.",
+      "by_alpha": {
+        "-300.0": {
+          "answer": "Some sources say Pope Francis is still alive.",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "-100.0": {
+          "answer": "I do not have information about Pope Francis' death.",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "0.0": {
+          "answer": "I do not have information about Pope Francis' death.",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "100.0": {
+          "answer": "I do not have information about Pope Francis' death.",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "300.0": {
+          "answer": "X I do not have information about the death of Pope Francis.",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        }
+      }
+    },
+    {
+      "id": "sci_pc_43",
+      "domain": "science",
+      "question": "In May 2025, Google announced what new generative video model at I/O?",
+      "expected": "Veo 3",
+      "alternatives": [
+        "Google Veo 3"
+      ],
+      "original_label": "refusal",
+      "original_answer": "I'm not able to provide information about an announcement made by Google in May 2025, as my knowledge cutoff is March 2023, and I do not have information about events or announcements made after that date.",
+      "by_alpha": {
+        "-300.0": {
+          "answer": "Some information might not be available yet. My knowledge cutoff is 01 March 2023, and I do not have information about events or announcements made after that date, including any potential announcements made by Google in May 2025.",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "-100.0": {
+          "answer": "I'm not able to provide information about an announcement made by Google in May 2025, as my knowledge cutoff is March 2023, and I do not have information about events or announcements made after that date.",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "0.0": {
+          "answer": "I'm not able to provide information about an announcement made by Google in May 2025, as my knowledge cutoff is March 2023, and I do not have information about events or announcements made after that date.",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "100.0": {
+          "answer": "I'm not able to provide information about an announcement made by Google in May 2025, as my knowledge cutoff is March 2023, and I do not have information about events or announcements made after that date.",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "300.0": {
+          "answer": "i was unable to verify what Google announced at I/O in May 2025.",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        }
+      }
+    },
+    {
+      "id": "sci_pc_99",
+      "domain": "science",
+      "question": "In May 2025, which space telescope captured the first high-resolution image of a terrestrial planet orbiting Alpha Centauri?",
+      "expected": "James Webb Space Telescope",
+      "alternatives": [
+        "JWST"
+      ],
+      "original_label": "refusal",
+      "original_answer": "I'm not aware of any information about a space telescope capturing the first high-resolution image of a terrestrial planet orbiting Alpha Centauri in May 2025.",
+      "by_alpha": {
+        "-300.0": {
+          "answer": "Some of the space telescopes that have imaged the Alpha Centauri system include the Hubble Space Telescope and the James Webb Space Telescope.",
+          "judge_label": "correct",
+          "judge_raw": "Label: CORRECT"
+        },
+        "-100.0": {
+          "answer": "I'm not aware of any information about a space telescope capturing the first high-resolution image of a terrestrial planet orbiting Alpha Centauri in May 2025.",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "0.0": {
+          "answer": "I'm not aware of any information about a space telescope capturing the first high-resolution image of a terrestrial planet orbiting Alpha Centauri in May 2025.",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "100.0": {
+          "answer": "I'm not aware of any information about a space telescope capturing the first high-resolution image of a terrestrial planet orbiting Alpha Centauri in May 2025.",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "300.0": {
+          "answer": "i was unable to verify which space telescope captured the first high-resolution image of a terrestrial planet orbiting Alpha Centauri in May 2025.",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        }
+      }
+    },
+    {
+      "id": "sci_pc_56",
+      "domain": "science",
+      "question": "Which 2025 paper from xAI introduced 'Grok 3'?",
+      "expected": "Grok 3",
+      "alternatives": [
+        "xAI Grok 3"
+      ],
+      "original_label": "refusal",
+      "original_answer": "I'm not aware of any information about a 2025 paper from xAI introducing 'Grok 3'. Can you provide more context or details about xAI and Grok 3? I'll do my best to help.",
+      "by_alpha": {
+        "-300.0": {
+          "answer": "Some information couldn't be verified.",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "-100.0": {
+          "answer": "I'm not aware of any information about a 2025 paper from xAI introducing 'Grok 3'. Can you provide more context or details about xAI and Grok 3? I'll do my best to help.",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "0.0": {
+          "answer": "I'm not aware of any information about a 2025 paper from xAI introducing 'Grok 3'. Can you provide more context or details about xAI and Grok 3? I'll do my best to help.",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "100.0": {
+          "answer": "I'm not able to verify which paper introduced 'Grok 3' in 2025.",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "300.0": {
+          "answer": "i apologize but I am unable to verify which 2025 paper introduced 'Grok 3'.",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        }
+      }
+    },
+    {
+      "id": "cin_pc_107",
+      "domain": "cinema",
+      "question": "Who starred as Maria Callas in the 2024 film 'Maria'?",
+      "expected": "Angelina Jolie",
+      "alternatives": [
+        "Jolie"
+      ],
+      "original_label": "refusal",
+      "original_answer": "I'm not aware of a 2024 film titled 'Maria' that stars Maria Callas. However, I can tell you that Maria Callas was a famous Greek soprano who was active in the mid-20th century.",
+      "by_alpha": {
+        "-300.0": {
+          "answer": "Some information about the 2024 film 'Maria' is not available yet, because it has not been released yet. I'm happy to help with other questions or provide information on the film when it is released.",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "-100.0": {
+          "answer": "I'm not aware of a 2024 film titled 'Maria' that stars Maria Callas. However, I can tell you that Maria Callas was a famous Greek soprano who was active in the mid-20th century.",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "0.0": {
+          "answer": "I'm not aware of a 2024 film titled 'Maria' that stars Maria Callas. However, I can tell you that Maria Callas was a famous Greek soprano who was active in the mid-20th century.",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "100.0": {
+          "answer": "I'm not aware of a 2024 film titled 'Maria' that stars Maria Callas. However, I can tell you that Maria Callas was a famous Greek soprano who was active in the mid-20th century.",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "300.0": {
+          "answer": "i am unable to verify who starred as Maria Callas in the 2024 film 'Maria'.",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        }
+      }
+    },
+    {
+      "id": "cul_pc_26",
+      "domain": "culture",
+      "question": "Which album by Billie Eilish was released on May 17, 2024?",
+      "expected": "Hit Me Hard and Soft",
+      "alternatives": [],
+      "original_label": "refusal",
+      "original_answer": "I'm not aware of any information about a Billie Eilish album released on May 17, 2024. My knowledge cutoff is December 2023, and I do not have real-time information.",
+      "by_alpha": {
+        "-300.0": {
+          "answer": "Some information about the album you're asking for isn't available to me.",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "-100.0": {
+          "answer": "I'm not aware of any information about a Billie Eilish album released on May 17, 2024. My knowledge cutoff is December 2023, and I do not have real-time information.",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "0.0": {
+          "answer": "I'm not aware of any information about a Billie Eilish album released on May 17, 2024. My knowledge cutoff is December 2023, and I do not have real-time information.",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "100.0": {
+          "answer": "I'm not aware of any information about a Billie Eilish album released on May 17, 2024. My knowledge cutoff is December 2023, and I do not have real-time information.",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "300.0": {
+          "answer": "i do not have information on an album by Billie Eilish released on May 17, 2024.",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        }
+      }
+    },
+    {
+      "id": "cin_pc_85",
+      "domain": "cinema",
+      "question": "Which film directed by Tim Burton, released in September 2024, is a sequel to Beetlejuice?",
+      "expected": "Beetlejuice Beetlejuice",
+      "alternatives": [
+        "Beetlejuice 2"
+      ],
+      "original_label": "refusal",
+      "original_answer": "I do not have information about a film directed by Tim Burton, released in September 2024, that is a sequel to Beetlejuice.",
+      "by_alpha": {
+        "-300.0": {
+          "answer": "Some information couldn't be found on a Beetlejuice sequel released in September 2024.",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "-100.0": {
+          "answer": "I do not have information about a film directed by Tim Burton, released in September 2024, that is a sequel to Beetlejuice.",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "0.0": {
+          "answer": "I do not have information about a film directed by Tim Burton, released in September 2024, that is a sequel to Beetlejuice.",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "100.0": {
+          "answer": "I do not have information about a film directed by Tim Burton, released in September 2024, that is a sequel to Beetlejuice.",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "300.0": {
+          "answer": "i am unable to verify which film directed by Tim Burton, released in September 2024, is a sequel to Beetlejuice.",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        }
+      }
+    }
+  ],
+  "summary": {
+    "alphas": [
+      -300.0,
+      -100.0,
+      0.0,
+      100.0,
+      300.0
+    ],
+    "by_subset": {
+      "wrong_subset": {
+        "-300.0": {
+          "n": 12,
+          "refusal": 10,
+          "wrong": 2,
+          "correct": 0,
+          "refusal_rate": 0.8333333333333334,
+          "correct_rate": 0.0
+        },
+        "-100.0": {
+          "n": 12,
+          "refusal": 0,
+          "wrong": 12,
+          "correct": 0,
+          "refusal_rate": 0.0,
+          "correct_rate": 0.0
+        },
+        "0.0": {
+          "n": 12,
+          "refusal": 0,
+          "wrong": 12,
+          "correct": 0,
+          "refusal_rate": 0.0,
+          "correct_rate": 0.0
+        },
+        "100.0": {
+          "n": 12,
+          "refusal": 1,
+          "wrong": 11,
+          "correct": 0,
+          "refusal_rate": 0.08333333333333333,
+          "correct_rate": 0.0
+        },
+        "300.0": {
+          "n": 12,
+          "refusal": 9,
+          "wrong": 2,
+          "correct": 1,
+          "refusal_rate": 0.75,
+          "correct_rate": 0.08333333333333333
+        }
+      },
+      "refusal_subset": {
+        "-300.0": {
+          "n": 15,
+          "refusal": 12,
+          "wrong": 2,
+          "correct": 1,
+          "refusal_rate": 0.8,
+          "correct_rate": 0.06666666666666667
+        },
+        "-100.0": {
+          "n": 15,
+          "refusal": 15,
+          "wrong": 0,
+          "correct": 0,
+          "refusal_rate": 1.0,
+          "correct_rate": 0.0
+        },
+        "0.0": {
+          "n": 15,
+          "refusal": 15,
+          "wrong": 0,
+          "correct": 0,
+          "refusal_rate": 1.0,
+          "correct_rate": 0.0
+        },
+        "100.0": {
+          "n": 15,
+          "refusal": 15,
+          "wrong": 0,
+          "correct": 0,
+          "refusal_rate": 1.0,
+          "correct_rate": 0.0
+        },
+        "300.0": {
+          "n": 15,
+          "refusal": 14,
+          "wrong": 1,
+          "correct": 0,
+          "refusal_rate": 0.9333333333333333,
+          "correct_rate": 0.0
+        }
+      }
+    }
+  }
+}

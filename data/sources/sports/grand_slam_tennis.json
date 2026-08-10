@@ -1,0 +1,26 @@
+{
+  "_documentation": {
+    "topic": "Tennis Grand Slam singles champions",
+    "well_known_criterion": "Recent Big Three / Big Four era wins (Federer, Nadal, Djokovic, Murray) or Williams sisters.",
+    "obscure_criterion": "1970s-90s champions or non-superstar one-off winners.",
+    "post_cutoff_criterion": "Tournaments concluded after September 2024.",
+    "primary_source": "Tournament archives per row"
+  },
+  "template": "{question_text}",
+  "answer_field": "winner",
+  "well_known": [
+    {"question_text": "Who won the men's singles title at Wimbledon in 2023?", "winner": "Carlos Alcaraz", "alternatives": ["Alcaraz"], "answer_date": "2023-07-16", "provenance": "https://www.wimbledon.com/en_GB/draws_and_results/index.html"},
+    {"question_text": "Who won the women's singles title at the 2022 US Open?", "winner": "Iga Swiatek", "alternatives": ["Swiatek"], "answer_date": "2022-09-10", "provenance": "https://www.usopen.org/en_US/scores/completed_matches.html"},
+    {"question_text": "Who won the men's singles title at the 2023 French Open?", "winner": "Novak Djokovic", "alternatives": ["Djokovic"], "answer_date": "2023-06-11", "provenance": "https://www.rolandgarros.com/en-us/"}
+  ],
+  "obscure": [
+    {"question_text": "Who won the women's singles title at the 1989 French Open?", "winner": "Arantxa Sanchez Vicario", "alternatives": ["Sanchez Vicario", "Sanchez-Vicario"], "answer_date": "1989-06-10", "provenance": "https://en.wikipedia.org/wiki/1989_French_Open_%E2%80%93_Women%27s_Singles"},
+    {"question_text": "Who won the men's singles title at the 1996 Australian Open?", "winner": "Boris Becker", "alternatives": ["Becker"], "answer_date": "1996-01-28", "provenance": "https://en.wikipedia.org/wiki/1996_Australian_Open_%E2%80%93_Men%27s_Singles"},
+    {"question_text": "Who won the women's singles title at the 2004 US Open?", "winner": "Svetlana Kuznetsova", "alternatives": ["Kuznetsova"], "answer_date": "2004-09-11", "provenance": "https://en.wikipedia.org/wiki/2004_US_Open_%E2%80%93_Women%27s_Singles"}
+  ],
+  "post_cutoff": [
+    {"question_text": "Who won the men's singles title at the 2024 US Open?", "winner": "Jannik Sinner", "alternatives": ["Sinner"], "answer_date": "2024-09-08", "provenance": "https://www.usopen.org/en_US/news/articles/2024-09-08/2024_us_open_mens_singles_final.html"},
+    {"question_text": "Who won the men's singles title at the 2025 Australian Open?", "winner": "Jannik Sinner", "alternatives": ["Sinner"], "answer_date": "2025-01-26", "provenance": "https://ausopen.com/articles/news/men-s-singles-final-jannik-sinner-vs-alexander-zverev"},
+    {"question_text": "Who won the women's singles title at the 2024 Wimbledon Championships?", "winner": "Barbora Krejcikova", "alternatives": ["Krejcikova"], "answer_date": "2024-07-13", "provenance": "https://www.wimbledon.com/en_GB/news/articles/2024-07-13/krejcikova_completes_extraordinary_grand_slam_journey.html"}
+  ]
+}

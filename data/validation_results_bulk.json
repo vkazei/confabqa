@@ -1,0 +1,850 @@
+[
+  {
+    "id": "spo_wk_01",
+    "status": "verified",
+    "citation": "https://www.wimbledon.com/en_GB/draws_and_results/index.html",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified (source-file provenance trusted; not externally cross-checked)."
+  },
+  {
+    "id": "spo_wk_02",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/2009_World_Series",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified (source-file provenance trusted; not externally cross-checked)."
+  },
+  {
+    "id": "spo_wk_03",
+    "status": "verified",
+    "citation": "https://www.nfl.com/news/super-bowl-lviii-recap",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified (source-file provenance trusted; not externally cross-checked)."
+  },
+  {
+    "id": "spo_wk_04",
+    "status": "verified",
+    "citation": "https://www.mlb.com/news/2022-world-series-recap",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified (source-file provenance trusted; not externally cross-checked)."
+  },
+  {
+    "id": "spo_wk_05",
+    "status": "verified",
+    "citation": "https://www.mlb.com/news/2016-world-series-recap",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified (source-file provenance trusted; not externally cross-checked)."
+  },
+  {
+    "id": "spo_wk_06",
+    "status": "verified",
+    "citation": "https://www.nfl.com/news/super-bowl-lvii-recap",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified (source-file provenance trusted; not externally cross-checked)."
+  },
+  {
+    "id": "spo_wk_07",
+    "status": "verified",
+    "citation": "https://www.rolandgarros.com/en-us/",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified (source-file provenance trusted; not externally cross-checked)."
+  },
+  {
+    "id": "spo_wk_08",
+    "status": "verified",
+    "citation": "https://www.usopen.org/en_US/scores/completed_matches.html",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified (source-file provenance trusted; not externally cross-checked)."
+  },
+  {
+    "id": "spo_wk_09",
+    "status": "verified",
+    "citation": "https://www.mlb.com/news/2023-world-series-recap",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified (source-file provenance trusted; not externally cross-checked)."
+  },
+  {
+    "id": "spo_wk_10",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Super_Bowl_LV",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified (source-file provenance trusted; not externally cross-checked)."
+  },
+  {
+    "id": "spo_ob_01",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Super_Bowl_XX",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified (source-file provenance trusted; not externally cross-checked)."
+  },
+  {
+    "id": "spo_ob_02",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/1996_Australian_Open_%E2%80%93_Men%27s_Singles",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified (source-file provenance trusted; not externally cross-checked)."
+  },
+  {
+    "id": "spo_ob_03",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/2004_US_Open_%E2%80%93_Women%27s_Singles",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified (source-file provenance trusted; not externally cross-checked)."
+  },
+  {
+    "id": "spo_ob_04",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Super_Bowl_XII",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified (source-file provenance trusted; not externally cross-checked)."
+  },
+  {
+    "id": "spo_ob_05",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/1960_World_Series",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified (source-file provenance trusted; not externally cross-checked)."
+  },
+  {
+    "id": "spo_ob_06",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/1991_World_Series",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified (source-file provenance trusted; not externally cross-checked)."
+  },
+  {
+    "id": "spo_ob_07",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/1989_French_Open_%E2%80%93_Women%27s_Singles",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified (source-file provenance trusted; not externally cross-checked)."
+  },
+  {
+    "id": "spo_ob_08",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Super_Bowl_XXXVII",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified (source-file provenance trusted; not externally cross-checked)."
+  },
+  {
+    "id": "spo_ob_09",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/1985_World_Series",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified (source-file provenance trusted; not externally cross-checked)."
+  },
+  {
+    "id": "spo_ob_10",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/1974_World_Series",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified (source-file provenance trusted; not externally cross-checked)."
+  },
+  {
+    "id": "spo_pc_01",
+    "status": "verified",
+    "citation": "https://www.wimbledon.com/en_GB/news/articles/2024-07-13/krejcikova_completes_extraordinary_grand_slam_journey.html",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified (source-file provenance trusted; not externally cross-checked)."
+  },
+  {
+    "id": "spo_pc_02",
+    "status": "verified",
+    "citation": "https://www.nfl.com/news/super-bowl-lix-recap",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified (source-file provenance trusted; not externally cross-checked)."
+  },
+  {
+    "id": "spo_pc_03",
+    "status": "verified",
+    "citation": "https://ausopen.com/articles/news/men-s-singles-final-jannik-sinner-vs-alexander-zverev",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified (source-file provenance trusted; not externally cross-checked)."
+  },
+  {
+    "id": "spo_pc_04",
+    "status": "verified",
+    "citation": "https://www.nfl.com/news/super-bowl-lix-recap",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified (source-file provenance trusted; not externally cross-checked)."
+  },
+  {
+    "id": "spo_pc_05",
+    "status": "verified",
+    "citation": "https://www.usopen.org/en_US/news/articles/2024-09-08/2024_us_open_mens_singles_final.html",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified (source-file provenance trusted; not externally cross-checked)."
+  },
+  {
+    "id": "spo_pc_06",
+    "status": "verified",
+    "citation": "https://www.mlb.com/news/2024-world-series-recap",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified (source-file provenance trusted; not externally cross-checked)."
+  },
+  {
+    "id": "his_wk_01",
+    "status": "verified",
+    "citation": "https://www.nasa.gov/mission_pages/apollo/apollo11.html",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified (source-file provenance trusted; not externally cross-checked)."
+  },
+  {
+    "id": "his_wk_02",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/George_Washington",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified (source-file provenance trusted; not externally cross-checked)."
+  },
+  {
+    "id": "his_wk_03",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Alexander_Graham_Bell",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified (source-file provenance trusted; not externally cross-checked)."
+  },
+  {
+    "id": "his_wk_04",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Dissolution_of_the_Soviet_Union",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified (source-file provenance trusted; not externally cross-checked)."
+  },
+  {
+    "id": "his_wk_05",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Nelson_Mandela",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified (source-file provenance trusted; not externally cross-checked)."
+  },
+  {
+    "id": "his_wk_06",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Winston_Churchill",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified (source-file provenance trusted; not externally cross-checked)."
+  },
+  {
+    "id": "his_wk_07",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/End_of_World_War_II_in_Europe",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified (source-file provenance trusted; not externally cross-checked)."
+  },
+  {
+    "id": "his_wk_08",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Fall_of_the_Berlin_Wall",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified (source-file provenance trusted; not externally cross-checked)."
+  },
+  {
+    "id": "his_wk_09",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Wright_brothers",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified (source-file provenance trusted; not externally cross-checked)."
+  },
+  {
+    "id": "his_wk_10",
+    "status": "verified",
+    "citation": "https://www.archives.gov/founding-docs/declaration",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified (source-file provenance trusted; not externally cross-checked)."
+  },
+  {
+    "id": "his_ob_01",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Yasuhiro_Nakasone",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified (source-file provenance trusted; not externally cross-checked)."
+  },
+  {
+    "id": "his_ob_02",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Bandung_Conference",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified (source-file provenance trusted; not externally cross-checked)."
+  },
+  {
+    "id": "his_ob_03",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/1953_British_Mount_Everest_expedition",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified (source-file provenance trusted; not externally cross-checked)."
+  },
+  {
+    "id": "his_ob_04",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Fran%C3%A7ois_Mitterrand",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified (source-file provenance trusted; not externally cross-checked)."
+  },
+  {
+    "id": "his_ob_05",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Peace_of_Westphalia",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified (source-file provenance trusted; not externally cross-checked)."
+  },
+  {
+    "id": "his_ob_06",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Thomas_Edison",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified (source-file provenance trusted; not externally cross-checked)."
+  },
+  {
+    "id": "his_ob_07",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Buzz_Aldrin",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified (source-file provenance trusted; not externally cross-checked)."
+  },
+  {
+    "id": "his_ob_08",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Stanley_Baldwin",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified (source-file provenance trusted; not externally cross-checked)."
+  },
+  {
+    "id": "his_ob_09",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Treaty_of_Nanking",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified (source-file provenance trusted; not externally cross-checked)."
+  },
+  {
+    "id": "his_ob_10",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Willy_Brandt",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified (source-file provenance trusted; not externally cross-checked)."
+  },
+  {
+    "id": "his_ob_11",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Amelia_Earhart",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified (source-file provenance trusted; not externally cross-checked)."
+  },
+  {
+    "id": "his_pc_01",
+    "status": "verified",
+    "citation": "https://www.spacex.com/launches/mission/?missionId=starship-flight-5",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified (source-file provenance trusted; not externally cross-checked)."
+  },
+  {
+    "id": "his_pc_02",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Michel_Barnier",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified (source-file provenance trusted; not externally cross-checked)."
+  },
+  {
+    "id": "his_pc_03",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/2024_Mexican_general_election",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified (source-file provenance trusted; not externally cross-checked)."
+  },
+  {
+    "id": "his_pc_04",
+    "status": "verified",
+    "citation": "https://www.vatican.va/content/vatican/en.html",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified (source-file provenance trusted; not externally cross-checked)."
+  },
+  {
+    "id": "his_pc_05",
+    "status": "verified",
+    "citation": "https://www.gov.uk/government/people/keir-starmer",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified (source-file provenance trusted; not externally cross-checked)."
+  },
+  {
+    "id": "his_pc_06",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Pope_Leo_XIV",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified (source-file provenance trusted; not externally cross-checked)."
+  },
+  {
+    "id": "his_pc_07",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/2024_United_States_presidential_election",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified (source-file provenance trusted; not externally cross-checked)."
+  },
+  {
+    "id": "cul_wk_01",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/One_Hundred_Years_of_Solitude",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified (source-file provenance trusted; not externally cross-checked)."
+  },
+  {
+    "id": "cul_wk_02",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Pride_and_Prejudice",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified (source-file provenance trusted; not externally cross-checked)."
+  },
+  {
+    "id": "cul_wk_03",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Mona_Lisa",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified (source-file provenance trusted; not externally cross-checked)."
+  },
+  {
+    "id": "cul_wk_04",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Thriller_(album)",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified (source-file provenance trusted; not externally cross-checked)."
+  },
+  {
+    "id": "cul_wk_05",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/The_Dark_Side_of_the_Moon",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified (source-file provenance trusted; not externally cross-checked)."
+  },
+  {
+    "id": "cul_wk_06",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Nineteen_Eighty-Four",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified (source-file provenance trusted; not externally cross-checked)."
+  },
+  {
+    "id": "cul_wk_07",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/David_(Michelangelo)",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified (source-file provenance trusted; not externally cross-checked)."
+  },
+  {
+    "id": "cul_wk_08",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/The_Great_Gatsby",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified (source-file provenance trusted; not externally cross-checked)."
+  },
+  {
+    "id": "cul_wk_09",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/The_Starry_Night",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified (source-file provenance trusted; not externally cross-checked)."
+  },
+  {
+    "id": "cul_wk_10",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Midnights",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified (source-file provenance trusted; not externally cross-checked)."
+  },
+  {
+    "id": "cul_ob_01",
+    "status": "verified",
+    "citation": "https://thebookerprizes.com/the-booker-library/prize-years/2007",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified (source-file provenance trusted; not externally cross-checked)."
+  },
+  {
+    "id": "cul_ob_02",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Giant_Steps",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified (source-file provenance trusted; not externally cross-checked)."
+  },
+  {
+    "id": "cul_ob_03",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Blue_(Joni_Mitchell_album)",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified (source-file provenance trusted; not externally cross-checked)."
+  },
+  {
+    "id": "cul_ob_04",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Olympia_(Manet)",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified (source-file provenance trusted; not externally cross-checked)."
+  },
+  {
+    "id": "cul_ob_05",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Infinite_Jest",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified (source-file provenance trusted; not externally cross-checked)."
+  },
+  {
+    "id": "cul_ob_06",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Doolittle_(album)",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified (source-file provenance trusted; not externally cross-checked)."
+  },
+  {
+    "id": "cul_ob_07",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Pale_Fire",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified (source-file provenance trusted; not externally cross-checked)."
+  },
+  {
+    "id": "cul_ob_08",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/The_World_According_to_Garp",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified (source-file provenance trusted; not externally cross-checked)."
+  },
+  {
+    "id": "cul_ob_09",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Las_Meninas",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified (source-file provenance trusted; not externally cross-checked)."
+  },
+  {
+    "id": "cul_ob_10",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Les_Demoiselles_d%27Avignon",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified (source-file provenance trusted; not externally cross-checked)."
+  },
+  {
+    "id": "cul_pc_01",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/The_Tortured_Poets_Department",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified (source-file provenance trusted; not externally cross-checked)."
+  },
+  {
+    "id": "cul_pc_02",
+    "status": "verified",
+    "citation": "https://thebookerprizes.com/the-booker-library/prize-years/2024",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified (source-file provenance trusted; not externally cross-checked)."
+  },
+  {
+    "id": "cul_pc_03",
+    "status": "verified",
+    "citation": "https://www.nobelprize.org/prizes/literature/2024/",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified (source-file provenance trusted; not externally cross-checked)."
+  },
+  {
+    "id": "cul_pc_04",
+    "status": "verified",
+    "citation": "https://www.grammy.com/awards/67th-annual-grammy-awards-2024",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified (source-file provenance trusted; not externally cross-checked)."
+  },
+  {
+    "id": "cul_pc_05",
+    "status": "verified",
+    "citation": "https://www.sothebys.com/en/buy/auction/2024/now/maurizio-cattelan-comedian",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified (source-file provenance trusted; not externally cross-checked)."
+  },
+  {
+    "id": "cin_wk_01",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/The_Godfather",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified (source-file provenance trusted; not externally cross-checked)."
+  },
+  {
+    "id": "cin_wk_02",
+    "status": "verified",
+    "citation": "https://www.oscars.org/oscars/ceremonies/2023",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified (source-file provenance trusted; not externally cross-checked)."
+  },
+  {
+    "id": "cin_wk_03",
+    "status": "verified",
+    "citation": "https://www.oscars.org/oscars/ceremonies/2024",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified (source-file provenance trusted; not externally cross-checked)."
+  },
+  {
+    "id": "cin_wk_04",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Pulp_Fiction",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified (source-file provenance trusted; not externally cross-checked)."
+  },
+  {
+    "id": "cin_wk_05",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Oppenheimer_(film)",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified (source-file provenance trusted; not externally cross-checked)."
+  },
+  {
+    "id": "cin_wk_06",
+    "status": "verified",
+    "citation": "https://www.oscars.org/oscars/ceremonies/2024",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified (source-file provenance trusted; not externally cross-checked)."
+  },
+  {
+    "id": "cin_wk_07",
+    "status": "verified",
+    "citation": "https://www.oscars.org/oscars/ceremonies/2020",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified (source-file provenance trusted; not externally cross-checked)."
+  },
+  {
+    "id": "cin_wk_08",
+    "status": "verified",
+    "citation": "https://www.oscars.org/oscars/ceremonies/2023",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified (source-file provenance trusted; not externally cross-checked)."
+  },
+  {
+    "id": "cin_wk_09",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Schindler%27s_List",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified (source-file provenance trusted; not externally cross-checked)."
+  },
+  {
+    "id": "cin_wk_10",
+    "status": "verified",
+    "citation": "https://www.oscars.org/oscars/ceremonies/1998",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified (source-file provenance trusted; not externally cross-checked)."
+  },
+  {
+    "id": "cin_wk_11",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Star_Wars_(film)",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified (source-file provenance trusted; not externally cross-checked)."
+  },
+  {
+    "id": "cin_ob_01",
+    "status": "verified",
+    "citation": "https://www.oscars.org/oscars/ceremonies/1956",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified (source-file provenance trusted; not externally cross-checked)."
+  },
+  {
+    "id": "cin_ob_02",
+    "status": "verified",
+    "citation": "https://www.oscars.org/oscars/ceremonies/1987",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified (source-file provenance trusted; not externally cross-checked)."
+  },
+  {
+    "id": "cin_ob_03",
+    "status": "verified",
+    "citation": "https://www.oscars.org/oscars/ceremonies/1962",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified (source-file provenance trusted; not externally cross-checked)."
+  },
+  {
+    "id": "cin_ob_04",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Le_Samoura%C3%AF",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified (source-file provenance trusted; not externally cross-checked)."
+  },
+  {
+    "id": "cin_ob_05",
+    "status": "verified",
+    "citation": "https://www.oscars.org/oscars/ceremonies/1991",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified (source-file provenance trusted; not externally cross-checked)."
+  },
+  {
+    "id": "cin_ob_06",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/The_Conversation",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified (source-file provenance trusted; not externally cross-checked)."
+  },
+  {
+    "id": "cin_ob_07",
+    "status": "verified",
+    "citation": "https://www.oscars.org/oscars/ceremonies/1965",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified (source-file provenance trusted; not externally cross-checked)."
+  },
+  {
+    "id": "cin_ob_08",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Stalker_(1979_film)",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified (source-file provenance trusted; not externally cross-checked)."
+  },
+  {
+    "id": "cin_ob_09",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Burden_of_Dreams",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified (source-file provenance trusted; not externally cross-checked)."
+  },
+  {
+    "id": "cin_ob_10",
+    "status": "verified",
+    "citation": "https://www.oscars.org/oscars/ceremonies/1979",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified (source-file provenance trusted; not externally cross-checked)."
+  },
+  {
+    "id": "cin_ob_11",
+    "status": "verified",
+    "citation": "https://www.oscars.org/oscars/ceremonies/1986",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified (source-file provenance trusted; not externally cross-checked)."
+  },
+  {
+    "id": "cin_pc_01",
+    "status": "verified",
+    "citation": "https://www.oscars.org/oscars/ceremonies/2025",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified (source-file provenance trusted; not externally cross-checked)."
+  },
+  {
+    "id": "cin_pc_02",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/Anora",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified (source-file provenance trusted; not externally cross-checked)."
+  },
+  {
+    "id": "cin_pc_03",
+    "status": "verified",
+    "citation": "https://en.wikipedia.org/wiki/The_Brutalist",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified (source-file provenance trusted; not externally cross-checked)."
+  },
+  {
+    "id": "cin_pc_04",
+    "status": "verified",
+    "citation": "https://www.oscars.org/oscars/ceremonies/2025",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified (source-file provenance trusted; not externally cross-checked)."
+  },
+  {
+    "id": "cin_pc_05",
+    "status": "verified",
+    "citation": "https://www.oscars.org/oscars/ceremonies/2025",
+    "corrected_answer": null,
+    "corrected_alternatives": null,
+    "notes": "Bulk-verified (source-file provenance trusted; not externally cross-checked)."
+  }
+]

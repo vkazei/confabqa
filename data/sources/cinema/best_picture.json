@@ -1,0 +1,41 @@
+{
+  "_documentation": {
+    "topic": "Academy Award Best Picture winners",
+    "well_known_criterion": "Recent Best Pictures (2015+) or iconic winners (Godfather, Casablanca, Titanic).",
+    "obscure_criterion": "Best Pictures from 1940s-1980s outside the most-cited canon.",
+    "post_cutoff_criterion": "Ceremonies held after September 2024.",
+    "primary_source": "https://www.oscars.org/oscars/ceremonies"
+  },
+  "template": "Which film won the Academy Award for Best Picture at the {year} ceremony?",
+  "answer_field": "winner",
+  "well_known": [
+    {"year": 1998, "winner": "Titanic", "alternatives": [], "answer_date": "1998-03-23", "provenance": "https://www.oscars.org/oscars/ceremonies/1998"},
+    {"year": 2020, "winner": "Parasite", "alternatives": [], "answer_date": "2020-02-09", "provenance": "https://www.oscars.org/oscars/ceremonies/2020"},
+    {"year": 2024, "winner": "Oppenheimer", "alternatives": [], "answer_date": "2024-03-10", "provenance": "https://www.oscars.org/oscars/ceremonies/2024"},
+    {"year": 2023, "winner": "Everything Everywhere All at Once", "alternatives": ["EEAAO"], "answer_date": "2023-03-12", "provenance": "https://www.oscars.org/oscars/ceremonies/2023"},
+    {"year": 1973, "winner": "The Godfather", "alternatives": [], "answer_date": "1973-03-27", "provenance": "https://www.oscars.org/oscars/ceremonies/1973"},
+    {"year": 1995, "winner": "Forrest Gump", "alternatives": [], "answer_date": "1995-03-27", "provenance": "https://www.oscars.org/oscars/ceremonies/1995"},
+    {"year": 2003, "winner": "Chicago", "alternatives": [], "answer_date": "2003-03-23", "provenance": "https://www.oscars.org/oscars/ceremonies/2003"},
+    {"year": 2017, "winner": "Moonlight", "alternatives": [], "answer_date": "2017-02-26", "provenance": "https://www.oscars.org/oscars/ceremonies/2017"},
+    {"year": 2009, "winner": "Slumdog Millionaire", "alternatives": [], "answer_date": "2009-02-22", "provenance": "https://www.oscars.org/oscars/ceremonies/2009"},
+    {"year": 2011, "winner": "The King's Speech", "alternatives": ["The Kings Speech"], "answer_date": "2011-02-27", "provenance": "https://www.oscars.org/oscars/ceremonies/2011"},
+    {"year": 1977, "winner": "Rocky", "alternatives": [], "answer_date": "1977-03-28", "provenance": "https://www.oscars.org/oscars/ceremonies/1977"}
+  ],
+  "obscure": [
+    {"year": 1956, "winner": "Marty", "alternatives": [], "answer_date": "1956-03-21", "provenance": "https://www.oscars.org/oscars/ceremonies/1956"},
+    {"year": 1965, "winner": "My Fair Lady", "alternatives": [], "answer_date": "1965-04-05", "provenance": "https://www.oscars.org/oscars/ceremonies/1965"},
+    {"year": 1979, "winner": "The Deer Hunter", "alternatives": [], "answer_date": "1979-04-09", "provenance": "https://www.oscars.org/oscars/ceremonies/1979"},
+    {"year": 1987, "winner": "Platoon", "alternatives": [], "answer_date": "1987-03-30", "provenance": "https://www.oscars.org/oscars/ceremonies/1987"},
+    {"year": 1969, "winner": "Oliver!", "alternatives": ["Oliver"], "answer_date": "1969-04-14", "provenance": "https://www.oscars.org/oscars/ceremonies/1969"},
+    {"year": 1962, "winner": "West Side Story", "alternatives": [], "answer_date": "1962-04-09", "provenance": "https://www.oscars.org/oscars/ceremonies/1962"},
+    {"year": 1958, "winner": "The Bridge on the River Kwai", "alternatives": ["Bridge on the River Kwai"], "answer_date": "1958-03-26", "provenance": "https://www.oscars.org/oscars/ceremonies/1958"},
+    {"year": 1971, "winner": "Patton", "alternatives": [], "answer_date": "1971-04-15", "provenance": "https://www.oscars.org/oscars/ceremonies/1971"},
+    {"year": 1985, "winner": "Amadeus", "alternatives": [], "answer_date": "1985-03-25", "provenance": "https://www.oscars.org/oscars/ceremonies/1985"},
+    {"year": 1991, "winner": "Dances with Wolves", "alternatives": [], "answer_date": "1991-03-25", "provenance": "https://www.oscars.org/oscars/ceremonies/1991"},
+    {"year": 2005, "winner": "Million Dollar Baby", "alternatives": [], "answer_date": "2005-02-27", "provenance": "https://www.oscars.org/oscars/ceremonies/2005"},
+    {"year": 1996, "winner": "Braveheart", "alternatives": [], "answer_date": "1996-03-25", "provenance": "https://www.oscars.org/oscars/ceremonies/1996"}
+  ],
+  "post_cutoff": [
+    {"year": 2025, "winner": "Anora", "alternatives": [], "answer_date": "2025-03-02", "provenance": "https://www.oscars.org/oscars/ceremonies/2025"}
+  ]
+}

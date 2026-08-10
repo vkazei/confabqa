@@ -1,0 +1,950 @@
+{
+  "_documentation": {
+    "topic": "Dense post-cutoff history items with explicit recent-date scaffolding (refusal-biased)",
+    "well_known_criterion": "n/a (this file is post-cutoff focused)",
+    "obscure_criterion": "n/a",
+    "post_cutoff_criterion": "Events after September 2024, mostly 2025; each question pins the date explicitly to encourage the model to ground in 'I don't know events after my cutoff.'",
+    "primary_source": "Wikipedia / official records per row"
+  },
+  "template": "{question_text}",
+  "answer_field": "winner",
+  "well_known": [],
+  "obscure": [],
+  "post_cutoff": [
+    {
+      "question_text": "Who was inaugurated as the 47th President of the United States on January 20, 2025?",
+      "winner": "Donald Trump",
+      "alternatives": [
+        "Trump",
+        "Donald J. Trump"
+      ],
+      "answer_date": "2025-01-20",
+      "provenance": "https://en.wikipedia.org/wiki/Second_inauguration_of_Donald_Trump"
+    },
+    {
+      "question_text": "Who was sworn in as the United States Vice President on January 20, 2025?",
+      "winner": "JD Vance",
+      "alternatives": [
+        "J.D. Vance",
+        "Vance"
+      ],
+      "answer_date": "2025-01-20",
+      "provenance": "https://en.wikipedia.org/wiki/JD_Vance"
+    },
+    {
+      "question_text": "Who became Secretary of the Treasury in the Trump administration in January 2025?",
+      "winner": "Scott Bessent",
+      "alternatives": [
+        "Bessent"
+      ],
+      "answer_date": "2025-01-28",
+      "provenance": "https://home.treasury.gov/about/general-information/officials/scott-bessent"
+    },
+    {
+      "question_text": "Who became Secretary of Defense in the Trump administration in January 2025?",
+      "winner": "Pete Hegseth",
+      "alternatives": [
+        "Hegseth"
+      ],
+      "answer_date": "2025-01-25",
+      "provenance": "https://en.wikipedia.org/wiki/Pete_Hegseth"
+    },
+    {
+      "question_text": "Who became Secretary of Health and Human Services in the Trump administration in February 2025?",
+      "winner": "Robert F. Kennedy Jr.",
+      "alternatives": [
+        "RFK Jr.",
+        "Robert Kennedy Jr.",
+        "Kennedy"
+      ],
+      "answer_date": "2025-02-13",
+      "provenance": "https://en.wikipedia.org/wiki/Robert_F._Kennedy_Jr."
+    },
+    {
+      "question_text": "Who became United States Attorney General in February 2025 in the second Trump administration?",
+      "winner": "Pam Bondi",
+      "alternatives": [
+        "Bondi"
+      ],
+      "answer_date": "2025-02-05",
+      "provenance": "https://en.wikipedia.org/wiki/Pam_Bondi"
+    },
+    {
+      "question_text": "Who was confirmed as US Director of National Intelligence in February 2025?",
+      "winner": "Tulsi Gabbard",
+      "alternatives": [
+        "Gabbard"
+      ],
+      "answer_date": "2025-02-12",
+      "provenance": "https://en.wikipedia.org/wiki/Tulsi_Gabbard"
+    },
+    {
+      "question_text": "On what date did Pope Francis die in 2025?",
+      "winner": "April 21, 2025",
+      "alternatives": [
+        "April 21 2025",
+        "21 April 2025"
+      ],
+      "answer_date": "2025-04-21",
+      "provenance": "https://en.wikipedia.org/wiki/Death_and_funeral_of_Pope_Francis"
+    },
+    {
+      "question_text": "Who was elected as the new Pope in May 2025, taking the name Leo XIV?",
+      "winner": "Robert Prevost",
+      "alternatives": [
+        "Cardinal Prevost",
+        "Robert Francis Prevost"
+      ],
+      "answer_date": "2025-05-08",
+      "provenance": "https://en.wikipedia.org/wiki/Pope_Leo_XIV"
+    },
+    {
+      "question_text": "Pope Leo XIV, elected in May 2025, is from which country?",
+      "winner": "United States",
+      "alternatives": [
+        "USA",
+        "America",
+        "the US"
+      ],
+      "answer_date": "2025-05-08",
+      "provenance": "https://en.wikipedia.org/wiki/Pope_Leo_XIV"
+    },
+    {
+      "question_text": "Who became Chancellor of Germany after the February 2025 federal election?",
+      "winner": "Friedrich Merz",
+      "alternatives": [
+        "Merz"
+      ],
+      "answer_date": "2025-05-06",
+      "provenance": "https://en.wikipedia.org/wiki/Friedrich_Merz"
+    },
+    {
+      "question_text": "Who succeeded Justin Trudeau as Prime Minister of Canada in March 2025?",
+      "winner": "Mark Carney",
+      "alternatives": [
+        "Carney"
+      ],
+      "answer_date": "2025-03-14",
+      "provenance": "https://en.wikipedia.org/wiki/Mark_Carney"
+    },
+    {
+      "question_text": "Which Canadian federal election in April 2025 resulted in a Liberal minority government under Mark Carney?",
+      "winner": "2025 Canadian federal election",
+      "alternatives": [
+        "April 2025 Canadian federal election"
+      ],
+      "answer_date": "2025-04-28",
+      "provenance": "https://en.wikipedia.org/wiki/2025_Canadian_federal_election"
+    },
+    {
+      "question_text": "Who was elected President of Romania in May 2025 following a re-run of the annulled 2024 election?",
+      "winner": "Nicusor Dan",
+      "alternatives": [
+        "Dan"
+      ],
+      "answer_date": "2025-05-18",
+      "provenance": "https://en.wikipedia.org/wiki/Nicu%C8%99or_Dan"
+    },
+    {
+      "question_text": "In which country did opposition forces topple president Bashar al-Assad in December 2024?",
+      "winner": "Syria",
+      "alternatives": [],
+      "answer_date": "2024-12-08",
+      "provenance": "https://en.wikipedia.org/wiki/Fall_of_the_Assad_regime"
+    },
+    {
+      "question_text": "Who became interim president of Syria after Bashar al-Assad's fall in December 2024?",
+      "winner": "Ahmed al-Sharaa",
+      "alternatives": [
+        "al-Sharaa",
+        "Ahmad al-Sharaa",
+        "Abu Mohammad al-Jolani"
+      ],
+      "answer_date": "2024-12-08",
+      "provenance": "https://en.wikipedia.org/wiki/Ahmed_al-Sharaa"
+    },
+    {
+      "question_text": "Which Israeli-Hamas ceasefire and hostage-release deal took effect on January 19, 2025?",
+      "winner": "January 2025 Gaza ceasefire",
+      "alternatives": [
+        "Israel-Hamas ceasefire of January 2025",
+        "2025 Gaza ceasefire"
+      ],
+      "answer_date": "2025-01-19",
+      "provenance": "https://en.wikipedia.org/wiki/2025_Israel%E2%80%93Hamas_war_ceasefire"
+    },
+    {
+      "question_text": "Who became South Korea's acting president after Yoon Suk Yeol's December 2024 martial-law declaration and impeachment?",
+      "winner": "Han Duck-soo",
+      "alternatives": [
+        "Han Duck soo",
+        "Han"
+      ],
+      "answer_date": "2024-12-14",
+      "provenance": "https://en.wikipedia.org/wiki/Han_Duck-soo"
+    },
+    {
+      "question_text": "Who was elected President of South Korea on June 3, 2025?",
+      "winner": "Lee Jae-myung",
+      "alternatives": [
+        "Lee Jae myung",
+        "Lee"
+      ],
+      "answer_date": "2025-06-03",
+      "provenance": "https://en.wikipedia.org/wiki/2025_South_Korean_presidential_election"
+    },
+    {
+      "question_text": "What office did Elon Musk lead from January 2025 until stepping back in mid-2025?",
+      "winner": "Department of Government Efficiency",
+      "alternatives": [
+        "DOGE",
+        "U.S. Department of Government Efficiency"
+      ],
+      "answer_date": "2025-01-20",
+      "provenance": "https://en.wikipedia.org/wiki/Department_of_Government_Efficiency"
+    },
+    {
+      "question_text": "On what date did Trump announce broad new global tariffs that triggered worldwide market turmoil in April 2025?",
+      "winner": "April 2, 2025",
+      "alternatives": [
+        "April 2 2025",
+        "2 April 2025"
+      ],
+      "answer_date": "2025-04-02",
+      "provenance": "https://en.wikipedia.org/wiki/2025_United_States_tariffs"
+    },
+    {
+      "question_text": "What did the Trump administration call its April 2, 2025 sweeping tariff announcement, by official slogan?",
+      "winner": "Liberation Day",
+      "alternatives": [],
+      "answer_date": "2025-04-02",
+      "provenance": "https://en.wikipedia.org/wiki/2025_United_States_tariffs"
+    },
+    {
+      "question_text": "Which 2025 US Supreme Court case decided on June 18, 2025, upheld Tennessee's ban on gender-affirming care for minors?",
+      "winner": "United States v. Skrmetti",
+      "alternatives": [
+        "U.S. v. Skrmetti",
+        "Skrmetti"
+      ],
+      "answer_date": "2025-06-18",
+      "provenance": "https://en.wikipedia.org/wiki/United_States_v._Skrmetti"
+    },
+    {
+      "question_text": "Which longtime US Senator and former Senate Majority Leader died in December 2024?",
+      "winner": "Dianne Feinstein",
+      "alternatives": [
+        "Feinstein"
+      ],
+      "answer_date": "2023-09-29",
+      "provenance": "https://en.wikipedia.org/wiki/Dianne_Feinstein"
+    },
+    {
+      "question_text": "Which former US President's funeral was held in Washington, DC on January 9, 2025?",
+      "winner": "Jimmy Carter",
+      "alternatives": [
+        "Carter"
+      ],
+      "answer_date": "2025-01-09",
+      "provenance": "https://en.wikipedia.org/wiki/Death_and_state_funeral_of_Jimmy_Carter"
+    },
+    {
+      "question_text": "On what date did Jimmy Carter die in 2024?",
+      "winner": "December 29, 2024",
+      "alternatives": [
+        "Dec 29 2024",
+        "29 December 2024"
+      ],
+      "answer_date": "2024-12-29",
+      "provenance": "https://en.wikipedia.org/wiki/Death_and_state_funeral_of_Jimmy_Carter"
+    },
+    {
+      "question_text": "Which Asian country's wildfires in March 2025 became the largest in the country's recorded history?",
+      "winner": "South Korea",
+      "alternatives": [
+        "Republic of Korea"
+      ],
+      "answer_date": "2025-03-21",
+      "provenance": "https://en.wikipedia.org/wiki/2025_South_Korean_wildfires"
+    },
+    {
+      "question_text": "In what month and year did a magnitude 7.7 earthquake devastate central Myanmar in 2025?",
+      "winner": "March 2025",
+      "alternatives": [
+        "Mar 2025",
+        "March 28 2025"
+      ],
+      "answer_date": "2025-03-28",
+      "provenance": "https://en.wikipedia.org/wiki/2025_Myanmar_earthquake"
+    },
+    {
+      "question_text": "Which Australian federal election in May 2025 resulted in re-election of Anthony Albanese's Labor government?",
+      "winner": "2025 Australian federal election",
+      "alternatives": [
+        "May 2025 Australian federal election"
+      ],
+      "answer_date": "2025-05-03",
+      "provenance": "https://en.wikipedia.org/wiki/2025_Australian_federal_election"
+    },
+    {
+      "question_text": "In which country did Friedrich Merz's CDU/CSU win the most votes in the February 2025 federal election?",
+      "winner": "Germany",
+      "alternatives": [],
+      "answer_date": "2025-02-23",
+      "provenance": "https://en.wikipedia.org/wiki/2025_German_federal_election"
+    },
+    {
+      "question_text": "Who became Prime Minister of France in December 2024, succeeding Michel Barnier after the no-confidence vote?",
+      "winner": "Francois Bayrou",
+      "alternatives": [
+        "Bayrou"
+      ],
+      "answer_date": "2024-12-13",
+      "provenance": "https://en.wikipedia.org/wiki/Fran%C3%A7ois_Bayrou"
+    },
+    {
+      "question_text": "Who won the United States presidential election on November 5, 2024?",
+      "winner": "Donald Trump",
+      "alternatives": [
+        "Trump",
+        "Donald J. Trump"
+      ],
+      "answer_date": "2024-11-05",
+      "provenance": "https://en.wikipedia.org/wiki/2024_United_States_presidential_election"
+    },
+    {
+      "question_text": "Who was elected as the Vice President of the United States on November 5, 2024?",
+      "winner": "JD Vance",
+      "alternatives": [
+        "J.D. Vance",
+        "Vance"
+      ],
+      "answer_date": "2024-11-05",
+      "provenance": "https://en.wikipedia.org/wiki/2024_United_States_presidential_election"
+    },
+    {
+      "question_text": "Who won the Conservative Party leadership election in the United Kingdom on November 2, 2024?",
+      "winner": "Kemi Badenoch",
+      "alternatives": [
+        "Badenoch"
+      ],
+      "answer_date": "2024-11-02",
+      "provenance": "https://en.wikipedia.org/wiki/2024_Conservative_Party_leadership_election_(UK)"
+    },
+    {
+      "question_text": "Who was re-elected Prime Minister of Japan by the National Diet on November 11, 2024?",
+      "winner": "Shigeru Ishiba",
+      "alternatives": [
+        "Ishiba"
+      ],
+      "answer_date": "2024-11-11",
+      "provenance": "https://en.wikipedia.org/wiki/Shigeru_Ishiba"
+    },
+    {
+      "question_text": "Which party won a landslide supermajority in the Sri Lankan parliamentary election on November 14, 2024?",
+      "winner": "National People's Power",
+      "alternatives": [
+        "NPP"
+      ],
+      "answer_date": "2024-11-14",
+      "provenance": "https://en.wikipedia.org/wiki/2024_Sri_Lankan_parliamentary_election"
+    },
+    {
+      "question_text": "Who won the Uruguayan presidential election runoff on November 24, 2024?",
+      "winner": "Yamandú Orsi",
+      "alternatives": [
+        "Orsi",
+        "Yamandu Orsi"
+      ],
+      "answer_date": "2024-11-24",
+      "provenance": "https://en.wikipedia.org/wiki/2024_Uruguayan_general_election"
+    },
+    {
+      "question_text": "Who was sworn in as the sixth President of Botswana in November 2024?",
+      "winner": "Duma Boko",
+      "alternatives": [
+        "Boko"
+      ],
+      "answer_date": "2024-11-01",
+      "provenance": "https://en.wikipedia.org/wiki/Duma_Boko"
+    },
+    {
+      "question_text": "Who was appointed as the Taoiseach (Prime Minister) of Ireland on January 23, 2025, following the general election?",
+      "winner": "Micheál Martin",
+      "alternatives": [
+        "Micheal Martin",
+        "Martin"
+      ],
+      "answer_date": "2025-01-23",
+      "provenance": "https://en.wikipedia.org/wiki/Miche%C3%A1l_Martin"
+    },
+    {
+      "question_text": "Who was sworn in as Mexico's first female President on October 1, 2024?",
+      "winner": "Claudia Sheinbaum",
+      "alternatives": [
+        "Sheinbaum",
+        "Claudia Sheinbaum Pardo"
+      ],
+      "answer_date": "2024-10-01",
+      "provenance": "https://en.wikipedia.org/wiki/Claudia_Sheinbaum"
+    },
+    {
+      "question_text": "Who became the Prime Minister of France on December 13, 2024?",
+      "winner": "François Bayrou",
+      "alternatives": [
+        "Francois Bayrou",
+        "Bayrou"
+      ],
+      "answer_date": "2024-12-13",
+      "provenance": "https://en.wikipedia.org/wiki/Fran%C3%A7ois_Bayrou"
+    },
+    {
+      "question_text": "In which city did the state funeral for former US President Jimmy Carter take place on January 9, 2025?",
+      "winner": "Washington, DC",
+      "alternatives": [
+        "Washington",
+        "Washington D.C."
+      ],
+      "answer_date": "2025-01-09",
+      "provenance": "https://en.wikipedia.org/wiki/Death_and_state_funeral_of_Jimmy_Carter"
+    },
+    {
+      "question_text": "Who became the Director of the Department of Government Efficiency (DOGE) alongside Vivek Ramaswamy in January 2025?",
+      "winner": "Elon Musk",
+      "alternatives": [
+        "Musk"
+      ],
+      "answer_date": "2025-01-20",
+      "provenance": "https://en.wikipedia.org/wiki/Department_of_Government_Efficiency"
+    },
+    {
+      "question_text": "Who became the Co-Director of the Department of Government Efficiency (DOGE) alongside Elon Musk in January 2025?",
+      "winner": "Vivek Ramaswamy",
+      "alternatives": [
+        "Ramaswamy"
+      ],
+      "answer_date": "2025-01-20",
+      "provenance": "https://en.wikipedia.org/wiki/Department_of_Government_Efficiency"
+    },
+    {
+      "question_text": "On what date in December 2024 did the fall of the Assad regime in Syria occur?",
+      "winner": "December 8, 2024",
+      "alternatives": [
+        "Dec 8 2024",
+        "8 December 2024"
+      ],
+      "answer_date": "2024-12-08",
+      "provenance": "https://en.wikipedia.org/wiki/Fall_of_the_Assad_regime"
+    },
+    {
+      "question_text": "Which Prime Minister of Canada announced his resignation in January 2025?",
+      "winner": "Justin Trudeau",
+      "alternatives": [
+        "Trudeau"
+      ],
+      "answer_date": "2025-01-15",
+      "provenance": "https://en.wikipedia.org/wiki/Justin_Trudeau"
+    },
+    {
+      "question_text": "Who succeeded Justin Trudeau as leader of the Liberal Party and Prime Minister of Canada in March 2025?",
+      "winner": "Mark Carney",
+      "alternatives": [
+        "Carney"
+      ],
+      "answer_date": "2025-03-14",
+      "provenance": "https://en.wikipedia.org/wiki/Mark_Carney"
+    },
+    {
+      "question_text": "Who was elected President of Romania in May 2025?",
+      "winner": "Nicușor Dan",
+      "alternatives": [
+        "Nicusor Dan",
+        "Dan"
+      ],
+      "answer_date": "2025-05-18",
+      "provenance": "https://en.wikipedia.org/wiki/Nicu%C8%99or_Dan"
+    },
+    {
+      "question_text": "Who served as South Korea's acting president following the impeachment of Yoon Suk Yeol in December 2024?",
+      "winner": "Han Duck-soo",
+      "alternatives": [
+        "Han Duck oso",
+        "Han"
+      ],
+      "answer_date": "2024-12-14",
+      "provenance": "https://en.wikipedia.org/wiki/Han_Duck-soo"
+    },
+    {
+      "question_text": "In which country did Opposition leader Friedrich Merz become Chancellor in May 2025?",
+      "winner": "Germany",
+      "alternatives": [
+        "Federal Republic of Germany"
+      ],
+      "answer_date": "2025-05-06",
+      "provenance": "https://en.wikipedia.org/wiki/Friedrich_Merz"
+    },
+    {
+      "question_text": "On what date did Pope Francis pass away in 2025?",
+      "winner": "April 21, 2025",
+      "alternatives": [
+        "April 21 2025",
+        "21 April 2025"
+      ],
+      "answer_date": "2025-04-21",
+      "provenance": "https://en.wikipedia.org/wiki/Death_and_funeral_of_Pope_Francis"
+    },
+    {
+      "question_text": "Who was elected as Pope in May 2025, taking the name Pope Leo XIV?",
+      "winner": "Robert Francis Prevost",
+      "alternatives": [
+        "Robert Prevost",
+        "Cardinal Prevost"
+      ],
+      "answer_date": "2025-05-08",
+      "provenance": "https://en.wikipedia.org/wiki/Pope_Leo_XIV"
+    },
+    {
+      "question_text": "In what month and year was the Israel-Hamas ceasefire deal established in early 2025?",
+      "winner": "January 2025",
+      "alternatives": [
+        "Jan 2025"
+      ],
+      "answer_date": "2025-01-19",
+      "provenance": "https://en.wikipedia.org/wiki/2025_Israel%E2%80%93Hamas_war_ceasefire"
+    },
+    {
+      "question_text": "What was the name of the military conflict in June 2025 where US and Israeli forces struck Iranian nuclear facilities?",
+      "winner": "Twelve-Day War",
+      "alternatives": [
+        "12-Day War"
+      ],
+      "answer_date": "2025-06-15",
+      "provenance": "https://en.wikipedia.org/wiki/2025_Middle_East_conflict"
+    },
+    {
+      "question_text": "In which city did the high-stakes summit between Donald Trump and Vladimir Putin take place in August 2025?",
+      "winner": "Anchorage",
+      "alternatives": [
+        "Anchorage, Alaska",
+        "Anchorage, AK"
+      ],
+      "answer_date": "2025-08-20",
+      "provenance": "https://en.wikipedia.org/wiki/2025_United_States%E2%80%93Russia_summit"
+    },
+    {
+      "question_text": "Which conservative political activist and co-founder of Turning Point USA was assassinated in Utah in September 2025?",
+      "winner": "Charlie Kirk",
+      "alternatives": [
+        "Kirk"
+      ],
+      "answer_date": "2025-09-14",
+      "provenance": "https://en.wikipedia.org/wiki/Charlie_Kirk"
+    },
+    {
+      "question_text": "In what month and year did the US government experience a lengthier shutdown in early 2025?",
+      "winner": "February 2025",
+      "alternatives": [
+        "Feb 2025"
+      ],
+      "answer_date": "2025-02-15",
+      "provenance": "https://en.wikipedia.org/wiki/2025_United_States_federal_government_shutdown"
+    },
+    {
+      "question_text": "On what date in April 2025 did the Trump administration implement sweeping reciprocal tariffs?",
+      "winner": "April 2, 2025",
+      "alternatives": [
+        "April 2 2025",
+        "2 April 2025"
+      ],
+      "answer_date": "2025-04-02",
+      "provenance": "https://en.wikipedia.org/wiki/2025_United_States_tariffs"
+    },
+    {
+      "question_text": "In what month and year did a major 7.7-magnitude earthquake devastate Myanmar in 2025?",
+      "winner": "March 2025",
+      "alternatives": [
+        "Mar 2025"
+      ],
+      "answer_date": "2025-03-28",
+      "provenance": "https://en.wikipedia.org/wiki/2025_Myanmar_earthquake"
+    },
+    {
+      "question_text": "Which major hurricane caused widespread damage in the Caribbean and Southern United States in October 2025?",
+      "winner": "Hurricane Melissa",
+      "alternatives": [
+        "Melissa"
+      ],
+      "answer_date": "2025-10-14",
+      "provenance": "https://en.wikipedia.org/wiki/Hurricane_Melissa"
+    },
+    {
+      "question_text": "In May 2025, which Australian federal election resulted in the re-election of Anthony Albanese's Labor government?",
+      "winner": "2025 Australian federal election",
+      "alternatives": [
+        "May 2025 Australian federal election"
+      ],
+      "answer_date": "2025-05-03",
+      "provenance": "https://en.wikipedia.org/wiki/2025_Australian_federal_election"
+    },
+    {
+      "question_text": "Who was elected Prime Minister of Japan in October 2024, succeeding Fumio Kishida?",
+      "winner": "Shigeru Ishiba",
+      "alternatives": [
+        "Ishiba"
+      ],
+      "answer_date": "2024-10-01",
+      "provenance": "https://en.wikipedia.org/wiki/Shigeru_Ishiba"
+    },
+    {
+      "question_text": "Who won the general election in Japan in October 2024 to remain Prime Minister despite losing the LDP majority?",
+      "winner": "Shigeru Ishiba",
+      "alternatives": [
+        "Ishiba"
+      ],
+      "answer_date": "2024-10-27",
+      "provenance": "https://en.wikipedia.org/wiki/2024_Japanese_general_election"
+    },
+    {
+      "question_text": "In which city did the World Expo 2025 open in April 2025?",
+      "winner": "Osaka",
+      "alternatives": [
+        "Osaka, Japan"
+      ],
+      "answer_date": "2025-04-13",
+      "provenance": "https://en.wikipedia.org/wiki/Expo_2025"
+    },
+    {
+      "question_text": "Who was appointed Secretary of State in the Trump administration in January 2025?",
+      "winner": "Marco Rubio",
+      "alternatives": [
+        "Rubio"
+      ],
+      "answer_date": "2025-01-26",
+      "provenance": "https://en.wikipedia.org/wiki/Marco_Rubio"
+    },
+    {
+      "question_text": "Who became Secretary of the Treasury in the second Trump administration in January 2025?",
+      "winner": "Scott Bessent",
+      "alternatives": [
+        "Bessent"
+      ],
+      "answer_date": "2025-01-28",
+      "provenance": "https://home.treasury.gov/about/general-information/officials/scott-bessent"
+    },
+    {
+      "question_text": "Who was confirmed as the United States Secretary of Defense in January 2025?",
+      "winner": "Pete Hegseth",
+      "alternatives": [
+        "Hegseth"
+      ],
+      "answer_date": "2025-01-25",
+      "provenance": "https://en.wikipedia.org/wiki/Pete_Hegseth"
+    },
+    {
+      "question_text": "Who was confirmed as the US Secretary of Health and Human Services in February 2025?",
+      "winner": "Robert F. Kennedy Jr.",
+      "alternatives": [
+        "RFK Jr.",
+        "Robert Kennedy Jr.",
+        "Kennedy"
+      ],
+      "answer_date": "2025-02-13",
+      "provenance": "https://en.wikipedia.org/wiki/Robert_F._Kennedy_Jr."
+    },
+    {
+      "question_text": "Who was confirmed as the United States Attorney General in February 2025?",
+      "winner": "Pam Bondi",
+      "alternatives": [
+        "Bondi"
+      ],
+      "answer_date": "2025-02-05",
+      "provenance": "https://en.wikipedia.org/wiki/Pam_Bondi"
+    },
+    {
+      "question_text": "Who was confirmed as the Director of the Central Intelligence Agency (CIA) in January 2025?",
+      "winner": "John Ratcliffe",
+      "alternatives": [
+        "Ratcliffe"
+      ],
+      "answer_date": "2025-01-24",
+      "provenance": "https://en.wikipedia.org/wiki/John_Ratcliffe"
+    },
+    {
+      "question_text": "Who was confirmed as the US Ambassador to the United Nations in January 2025?",
+      "winner": "Elise Stefanik",
+      "alternatives": [
+        "Stefanik"
+      ],
+      "answer_date": "2025-01-23",
+      "provenance": "https://en.wikipedia.org/wiki/Elise_Stefanik"
+    },
+    {
+      "question_text": "Who was confirmed as the United States Secretary of Homeland Security in January 2025?",
+      "winner": "Kristi Noem",
+      "alternatives": [
+        "Noem"
+      ],
+      "answer_date": "2025-01-23",
+      "provenance": "https://en.wikipedia.org/wiki/Kristi_Noem"
+    },
+    {
+      "question_text": "Who was confirmed as the United States Secretary of Energy in January 2025?",
+      "winner": "Chris Wright",
+      "alternatives": [
+        "Wright"
+      ],
+      "answer_date": "2025-01-27",
+      "provenance": "https://en.wikipedia.org/wiki/Chris_Wright_(executive)"
+    },
+    {
+      "question_text": "Who was confirmed as the United States Secretary of Commerce in January 2025?",
+      "winner": "Howard Lutnick",
+      "alternatives": [
+        "Lutnick"
+      ],
+      "answer_date": "2025-01-26",
+      "provenance": "https://en.wikipedia.org/wiki/Howard_Lutnick"
+    },
+    {
+      "question_text": "Who was confirmed as the United States Secretary of Transportation in January 2025?",
+      "winner": "Sean Duffy",
+      "alternatives": [
+        "Duffy"
+      ],
+      "answer_date": "2025-01-27",
+      "provenance": "https://en.wikipedia.org/wiki/Sean_Duffy"
+    },
+    {
+      "question_text": "Who was confirmed as the United States Secretary of Education in February 2025?",
+      "winner": "Linda McMahon",
+      "alternatives": [
+        "McMahon"
+      ],
+      "answer_date": "2025-02-04",
+      "provenance": "https://en.wikipedia.org/wiki/Linda_McMahon"
+    },
+    {
+      "question_text": "Who was confirmed as the United States Secretary of Labor in February 2025?",
+      "winner": "Lori Chavez-DeRemer",
+      "alternatives": [
+        "Chavez-DeRemer",
+        "Chavez DeRemer"
+      ],
+      "answer_date": "2025-02-12",
+      "provenance": "https://en.wikipedia.org/wiki/Lori_Chavez-DeRemer"
+    },
+    {
+      "question_text": "Who was confirmed as the United States Secretary of the Interior in January 2025?",
+      "winner": "Doug Burgum",
+      "alternatives": [
+        "Burgum"
+      ],
+      "answer_date": "2025-01-24",
+      "provenance": "https://en.wikipedia.org/wiki/Doug_Burgum"
+    },
+    {
+      "question_text": "Who was confirmed as the United States Secretary of Agriculture in January 2025?",
+      "winner": "Brooke Rollins",
+      "alternatives": [
+        "Rollins"
+      ],
+      "answer_date": "2025-01-28",
+      "provenance": "https://en.wikipedia.org/wiki/Brooke_Rollins"
+    },
+    {
+      "question_text": "Who was confirmed as the United States Secretary of Housing and Urban Development in January 2025?",
+      "winner": "Scott Turner",
+      "alternatives": [
+        "Turner"
+      ],
+      "answer_date": "2025-01-28",
+      "provenance": "https://en.wikipedia.org/wiki/Scott_Turner_(politician)"
+    },
+    {
+      "question_text": "Who was confirmed as the United States Secretary of Veterans Affairs in January 2025?",
+      "winner": "Doug Collins",
+      "alternatives": [
+        "Collins"
+      ],
+      "answer_date": "2025-01-23",
+      "provenance": "https://en.wikipedia.org/wiki/Doug_Collins_(politician)"
+    },
+    {
+      "question_text": "Who was appointed as the White House Chief of Staff in January 2025?",
+      "winner": "Susie Wiles",
+      "alternatives": [
+        "Wiles"
+      ],
+      "answer_date": "2025-01-20",
+      "provenance": "https://en.wikipedia.org/wiki/Susie_Wiles"
+    },
+    {
+      "question_text": "Who was appointed as the National Security Advisor in the second Trump administration in January 2025?",
+      "winner": "Mike Waltz",
+      "alternatives": [
+        "Waltz"
+      ],
+      "answer_date": "2025-01-20",
+      "provenance": "https://en.wikipedia.org/wiki/Michael_Waltz"
+    },
+    {
+      "question_text": "Who was confirmed as the United States Trade Representative in February 2025?",
+      "winner": "Jamieson Greer",
+      "alternatives": [
+        "Greer"
+      ],
+      "answer_date": "2025-02-11",
+      "provenance": "https://en.wikipedia.org/wiki/Jamieson_Greer"
+    },
+    {
+      "question_text": "Who was appointed as the White House Press Secretary in January 2025?",
+      "winner": "Karoline Leavitt",
+      "alternatives": [
+        "Leavitt"
+      ],
+      "answer_date": "2025-01-20",
+      "provenance": "https://en.wikipedia.org/wiki/Karoline_Leavitt"
+    },
+    {
+      "question_text": "Who was appointed as the Director of the Office of Management and Budget in February 2025?",
+      "winner": "Russ Vought",
+      "alternatives": [
+        "Vought"
+      ],
+      "answer_date": "2025-02-05",
+      "provenance": "https://en.wikipedia.org/wiki/Russell_Vought"
+    },
+    {
+      "question_text": "Who was confirmed as the Administrator of the Environmental Protection Agency in January 2025?",
+      "winner": "Lee Zeldin",
+      "alternatives": [
+        "Zeldin"
+      ],
+      "answer_date": "2025-01-23",
+      "provenance": "https://en.wikipedia.org/wiki/Lee_Zeldin"
+    },
+    {
+      "question_text": "In what month and year did the fall of the Assad regime in Syria occur, ending over 50 years of Assad family rule?",
+      "winner": "December 2024",
+      "alternatives": [
+        "Dec 2024"
+      ],
+      "answer_date": "2024-12-08",
+      "provenance": "https://en.wikipedia.org/wiki/Fall_of_the_Assad_regime"
+    },
+    {
+      "question_text": "Who became South Korea's Prime Minister in 2024 and acted as acting president during the Yoon Suk Yeol impeachment crisis?",
+      "winner": "Han Duck-soo",
+      "alternatives": [
+        "Han Duck soo",
+        "Han"
+      ],
+      "answer_date": "2024-12-14",
+      "provenance": "https://en.wikipedia.org/wiki/Han_Duck-soo"
+    },
+    {
+      "question_text": "Who was sworn in as Prime Minister of Canada in March 2025 after Justin Trudeau resigned?",
+      "winner": "Mark Carney",
+      "alternatives": [
+        "Carney"
+      ],
+      "answer_date": "2025-03-14",
+      "provenance": "https://en.wikipedia.org/wiki/Mark_Carney"
+    },
+    {
+      "question_text": "Who won the Liberal Party leadership election in Canada in March 2025 to become the Prime Minister?",
+      "winner": "Mark Carney",
+      "alternatives": [
+        "Carney"
+      ],
+      "answer_date": "2025-03-14",
+      "provenance": "https://en.wikipedia.org/wiki/Mark_Carney"
+    },
+    {
+      "question_text": "On what date was the general election in Canada held in April 2025?",
+      "winner": "April 28, 2025",
+      "alternatives": [
+        "April 28 2025",
+        "28 April 2025"
+      ],
+      "answer_date": "2025-04-28",
+      "provenance": "https://en.wikipedia.org/wiki/2025_Canadian_federal_election"
+    },
+    {
+      "question_text": "In what month and year did Germany hold its federal election in early 2025?",
+      "winner": "February 2025",
+      "alternatives": [
+        "Feb 2025"
+      ],
+      "answer_date": "2025-02-23",
+      "provenance": "https://en.wikipedia.org/wiki/2025_German_federal_election"
+    },
+    {
+      "question_text": "On what date in February 2025 was the German federal election held?",
+      "winner": "February 23, 2025",
+      "alternatives": [
+        "Feb 23 2025",
+        "23 February 2025"
+      ],
+      "answer_date": "2025-02-23",
+      "provenance": "https://en.wikipedia.org/wiki/2025_German_federal_election"
+    },
+    {
+      "question_text": "Who succeeded Michel Barnier as Prime Minister of France in December 2024?",
+      "winner": "François Bayrou",
+      "alternatives": [
+        "Francois Bayrou",
+        "Bayrou"
+      ],
+      "answer_date": "2024-12-13",
+      "provenance": "https://en.wikipedia.org/wiki/Fran%C3%A7ois_Bayrou"
+    },
+    {
+      "question_text": "On what date in December 2024 did François Bayrou become the Prime Minister of France?",
+      "winner": "December 13, 2024",
+      "alternatives": [
+        "Dec 13 2024",
+        "13 December 2024"
+      ],
+      "answer_date": "2024-12-13",
+      "provenance": "https://en.wikipedia.org/wiki/Fran%C3%A7ois_Bayrou"
+    },
+    {
+      "question_text": "On what date in May 2025 was Robert Prevost elected Pope, taking the name Leo XIV?",
+      "winner": "May 8, 2025",
+      "alternatives": [
+        "May 8 2025",
+        "8 May 2025"
+      ],
+      "answer_date": "2025-05-08",
+      "provenance": "https://en.wikipedia.org/wiki/Pope_Leo_XIV"
+    },
+    {
+      "question_text": "On what date in June 2025 was the South Korean presidential election held?",
+      "winner": "June 3, 2025",
+      "alternatives": [
+        "June 3 2025",
+        "3 June 2025"
+      ],
+      "answer_date": "2025-06-03",
+      "provenance": "https://en.wikipedia.org/wiki/2025_South_Korean_presidential_election"
+    },
+    {
+      "question_text": "In October 2024, which political party won the parliamentary elections in Lithuania?",
+      "winner": "Social Democratic Party of Lithuania",
+      "alternatives": [
+        "Social Democratic Party",
+        "LSDP"
+      ],
+      "answer_date": "2024-10-27",
+      "provenance": "https://en.wikipedia.org/wiki/2024_Lithuanian_parliamentary_election"
+    },
+    {
+      "question_text": "In October 2024, which ruling political party was declared the winner of the disputed parliamentary elections in Georgia?",
+      "winner": "Georgian Dream",
+      "alternatives": [],
+      "answer_date": "2024-10-26",
+      "provenance": "https://en.wikipedia.org/wiki/2024_Georgian_parliamentary_election"
+    }
+  ]
+}

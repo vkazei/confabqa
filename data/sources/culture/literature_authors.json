@@ -1,0 +1,45 @@
+{
+  "_documentation": {
+    "topic": "Authors of well-known and less-well-known novels",
+    "well_known_criterion": "Canonical novels taught in high school / undergraduate literature courses worldwide.",
+    "obscure_criterion": "Award-winning but less mass-culture-prominent works, or specific bibliographic details.",
+    "post_cutoff_criterion": "Books published or major literary awards after September 2024.",
+    "primary_source": "Wikipedia per row"
+  },
+  "template": "{question_text}",
+  "answer_field": "winner",
+  "well_known": [
+    {"question_text": "Who wrote the novel 'Pride and Prejudice'?", "winner": "Jane Austen", "alternatives": ["Austen"], "answer_date": "1813-01-28", "provenance": "https://en.wikipedia.org/wiki/Pride_and_Prejudice"},
+    {"question_text": "Who wrote the novel '1984'?", "winner": "George Orwell", "alternatives": ["Orwell", "Eric Arthur Blair"], "answer_date": "1949-06-08", "provenance": "https://en.wikipedia.org/wiki/Nineteen_Eighty-Four"},
+    {"question_text": "Who wrote 'One Hundred Years of Solitude'?", "winner": "Gabriel Garcia Marquez", "alternatives": ["Garcia Marquez", "Marquez"], "answer_date": "1967-05-30", "provenance": "https://en.wikipedia.org/wiki/One_Hundred_Years_of_Solitude"},
+    {"question_text": "Who wrote 'The Great Gatsby'?", "winner": "F. Scott Fitzgerald", "alternatives": ["Fitzgerald", "Scott Fitzgerald"], "answer_date": "1925-04-10", "provenance": "https://en.wikipedia.org/wiki/The_Great_Gatsby"},
+    {"question_text": "Who wrote the novel 'To Kill a Mockingbird'?", "winner": "Harper Lee", "alternatives": ["Lee"], "answer_date": "1960-07-11", "provenance": "https://en.wikipedia.org/wiki/To_Kill_a_Mockingbird"},
+    {"question_text": "Who wrote the novel 'Brave New World'?", "winner": "Aldous Huxley", "alternatives": ["Huxley"], "answer_date": "1932-01-01", "provenance": "https://en.wikipedia.org/wiki/Brave_New_World"},
+    {"question_text": "Who wrote 'War and Peace'?", "winner": "Leo Tolstoy", "alternatives": ["Tolstoy"], "answer_date": "1869-01-01", "provenance": "https://en.wikipedia.org/wiki/War_and_Peace"},
+    {"question_text": "Who wrote the play 'Hamlet'?", "winner": "William Shakespeare", "alternatives": ["Shakespeare"], "answer_date": "1603-01-01", "provenance": "https://en.wikipedia.org/wiki/Hamlet"},
+    {"question_text": "Who wrote the Harry Potter book series?", "winner": "J. K. Rowling", "alternatives": ["JK Rowling", "Rowling"], "answer_date": "1997-06-26", "provenance": "https://en.wikipedia.org/wiki/Harry_Potter"},
+    {"question_text": "Who wrote 'Crime and Punishment'?", "winner": "Fyodor Dostoevsky", "alternatives": ["Dostoevsky", "Dostoyevsky"], "answer_date": "1866-01-01", "provenance": "https://en.wikipedia.org/wiki/Crime_and_Punishment"},
+    {"question_text": "Who wrote the novel 'Beloved' (1987)?", "winner": "Toni Morrison", "alternatives": ["Morrison"], "answer_date": "1987-09-01", "provenance": "https://en.wikipedia.org/wiki/Beloved_(novel)"},
+    {"question_text": "Who wrote 'Don Quixote'?", "winner": "Miguel de Cervantes", "alternatives": ["Cervantes"], "answer_date": "1605-01-16", "provenance": "https://en.wikipedia.org/wiki/Don_Quixote"}
+  ],
+  "obscure": [
+    {"question_text": "Who wrote the 1962 novel 'Pale Fire'?", "winner": "Vladimir Nabokov", "alternatives": ["Nabokov"], "answer_date": "1962-04-25", "provenance": "https://en.wikipedia.org/wiki/Pale_Fire"},
+    {"question_text": "Who wrote the 1978 novel 'The World According to Garp'?", "winner": "John Irving", "alternatives": ["Irving"], "answer_date": "1978-04-13", "provenance": "https://en.wikipedia.org/wiki/The_World_According_to_Garp"},
+    {"question_text": "Who wrote the 1996 novel 'Infinite Jest'?", "winner": "David Foster Wallace", "alternatives": ["Wallace", "DFW"], "answer_date": "1996-02-01", "provenance": "https://en.wikipedia.org/wiki/Infinite_Jest"},
+    {"question_text": "Who won the Booker Prize in 2007 for 'The Gathering'?", "winner": "Anne Enright", "alternatives": ["Enright"], "answer_date": "2007-10-16", "provenance": "https://thebookerprizes.com/the-booker-library/prize-years/2007"},
+    {"question_text": "Who wrote the 1973 novel 'Gravity's Rainbow'?", "winner": "Thomas Pynchon", "alternatives": ["Pynchon"], "answer_date": "1973-02-28", "provenance": "https://en.wikipedia.org/wiki/Gravity%27s_Rainbow"},
+    {"question_text": "Who wrote the 1990 novel 'Possession: A Romance'?", "winner": "A. S. Byatt", "alternatives": ["Byatt", "AS Byatt"], "answer_date": "1990-03-01", "provenance": "https://en.wikipedia.org/wiki/Possession:_A_Romance"},
+    {"question_text": "Who wrote the 1953 novel 'Fahrenheit 451'?", "winner": "Ray Bradbury", "alternatives": ["Bradbury"], "answer_date": "1953-10-19", "provenance": "https://en.wikipedia.org/wiki/Fahrenheit_451"},
+    {"question_text": "Who won the Nobel Prize in Literature in 2020?", "winner": "Louise Gluck", "alternatives": ["Gluck"], "answer_date": "2020-10-08", "provenance": "https://www.nobelprize.org/prizes/literature/2020/"},
+    {"question_text": "Who wrote the 1959 novel 'The Tin Drum'?", "winner": "Gunter Grass", "alternatives": ["Grass"], "answer_date": "1959-09-01", "provenance": "https://en.wikipedia.org/wiki/The_Tin_Drum"},
+    {"question_text": "Who wrote the 1962 novel 'A Clockwork Orange'?", "winner": "Anthony Burgess", "alternatives": ["Burgess"], "answer_date": "1962-01-01", "provenance": "https://en.wikipedia.org/wiki/A_Clockwork_Orange_(novel)"},
+    {"question_text": "Who wrote the 1984 novel 'The Unbearable Lightness of Being'?", "winner": "Milan Kundera", "alternatives": ["Kundera"], "answer_date": "1984-01-01", "provenance": "https://en.wikipedia.org/wiki/The_Unbearable_Lightness_of_Being"},
+    {"question_text": "Which 1971 novel by Walker Percy won the National Book Award?", "winner": "Love in the Ruins", "alternatives": [], "answer_date": "1971-05-01", "provenance": "https://en.wikipedia.org/wiki/Love_in_the_Ruins"}
+  ],
+  "post_cutoff": [
+    {"question_text": "Who wrote the novel 'Orbital' that won the 2024 Booker Prize?", "winner": "Samantha Harvey", "alternatives": ["Harvey"], "answer_date": "2024-11-12", "provenance": "https://thebookerprizes.com/the-booker-library/prize-years/2024"},
+    {"question_text": "Who won the 2024 Nobel Prize in Literature?", "winner": "Han Kang", "alternatives": ["Kang"], "answer_date": "2024-10-10", "provenance": "https://www.nobelprize.org/prizes/literature/2024/"},
+    {"question_text": "Which Sally Rooney novel was published in September 2024?", "winner": "Intermezzo", "alternatives": [], "answer_date": "2024-09-24", "provenance": "https://en.wikipedia.org/wiki/Intermezzo_(novel)"},
+    {"question_text": "Which novel won the National Book Award for Fiction in 2024?", "winner": "James", "alternatives": ["James by Percival Everett", "Percival Everett's James"], "answer_date": "2024-11-20", "provenance": "https://www.nationalbook.org/awards-prizes/national-book-awards-2024/"}
+  ]
+}

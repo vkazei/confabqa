@@ -1,0 +1,32 @@
+{
+  "_documentation": {
+    "topic": "Science / tech events and announcements, supplementing the Nobel and landmark sets",
+    "well_known_criterion": "Major established facts in science/tech.",
+    "obscure_criterion": "Less-cited but documented facts.",
+    "post_cutoff_criterion": "Events after September 2024.",
+    "primary_source": "Wikipedia / official announcements per row"
+  },
+  "template": "{question_text}",
+  "answer_field": "winner",
+  "well_known": [
+    {"question_text": "What is the chemical formula for water?", "winner": "H2O", "alternatives": ["H₂O"], "answer_date": "timeless", "provenance": "https://en.wikipedia.org/wiki/Water"},
+    {"question_text": "What planet in our solar system is known as the Red Planet?", "winner": "Mars", "alternatives": [], "answer_date": "timeless", "provenance": "https://en.wikipedia.org/wiki/Mars"},
+    {"question_text": "What is the largest organ in the human body?", "winner": "skin", "alternatives": ["the skin"], "answer_date": "timeless", "provenance": "https://en.wikipedia.org/wiki/Skin"}
+  ],
+  "obscure": [
+    {"question_text": "Which Hubble Space Telescope project, completed in 2003-2004, observed an apparently empty patch of sky for over 11 days to image distant galaxies?", "winner": "Hubble Ultra-Deep Field", "alternatives": ["HUDF", "Ultra Deep Field"], "answer_date": "2004-03-09", "provenance": "https://en.wikipedia.org/wiki/Hubble_Ultra-Deep_Field"},
+    {"question_text": "In what year did CRISPR-Cas9 gene editing receive its breakthrough Science publications by Doudna and Charpentier?", "winner": "2012", "alternatives": ["June 2012"], "answer_date": "2012-06-28", "provenance": "https://www.science.org/doi/10.1126/science.1225829"},
+    {"question_text": "Approximately how many chromosomes are in a normal human cell?", "winner": "46", "alternatives": ["46 (23 pairs)", "23 pairs"], "answer_date": "timeless", "provenance": "https://en.wikipedia.org/wiki/Human_genome"}
+  ],
+  "post_cutoff": [
+    {"question_text": "Which AI lab released the model Claude 3.5 Sonnet (new) in October 2024?", "winner": "Anthropic", "alternatives": ["Anthropic (Claude 3.5 Sonnet)"], "answer_date": "2024-10-22", "provenance": "https://www.anthropic.com/news/3-5-models-and-computer-use"},
+    {"question_text": "Which model series introduced the 'computer use' capability when announced in October 2024?", "winner": "Claude 3.5 Sonnet", "alternatives": ["Anthropic Claude 3.5 Sonnet"], "answer_date": "2024-10-22", "provenance": "https://www.anthropic.com/news/3-5-models-and-computer-use"},
+    {"question_text": "Which company released the multimodal model 'Gemini 2.0' in December 2024?", "winner": "Google", "alternatives": ["Google DeepMind", "Google (DeepMind)"], "answer_date": "2024-12-11", "provenance": "https://blog.google/technology/google-deepmind/google-gemini-ai-update-december-2024/"},
+    {"question_text": "Which Chinese AI lab released the open-weights model DeepSeek-R1 in January 2025, drawing attention for matching frontier reasoning models at lower training cost?", "winner": "DeepSeek", "alternatives": ["DeepSeek AI"], "answer_date": "2025-01-20", "provenance": "https://api-docs.deepseek.com/news/news250120"},
+    {"question_text": "Which AI lab released the reasoning model series GPT-o3 in late 2024 / early 2025?", "winner": "OpenAI", "alternatives": [], "answer_date": "2024-12-20", "provenance": "https://openai.com/index/learning-to-reason-with-llms/"},
+    {"question_text": "Which 2024 Nobel Prize in Physiology or Medicine recognized discoveries about microRNAs and post-transcriptional gene regulation?", "winner": "Victor Ambros and Gary Ruvkun", "alternatives": ["Ambros and Ruvkun"], "answer_date": "2024-10-07", "provenance": "https://www.nobelprize.org/prizes/medicine/2024/"},
+    {"question_text": "In which month did SpaceX first successfully catch the Super Heavy booster with the launch tower's chopsticks?", "winner": "October 2024", "alternatives": ["October", "Oct 2024"], "answer_date": "2024-10-13", "provenance": "https://www.spacex.com/launches/mission/?missionId=starship-flight-5"},
+    {"question_text": "Which company released its first Gemini 2.5 Pro reasoning model in early 2025?", "winner": "Google", "alternatives": ["Google DeepMind"], "answer_date": "2025-03-25", "provenance": "https://blog.google/technology/google-deepmind/gemini-model-thinking-updates-march-2025/"},
+    {"question_text": "In November 2024, which open-weights model from Alibaba's Qwen team set new benchmarks for sub-3B-parameter LLMs?", "winner": "Qwen2.5-1.5B", "alternatives": ["Qwen 2.5", "Qwen2.5"], "answer_date": "2024-09-19", "provenance": "https://qwenlm.github.io/blog/qwen2.5/"}
+  ]
+}

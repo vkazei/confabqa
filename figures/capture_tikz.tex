@@ -1,0 +1,30 @@
+% Hidden-state capture (split from the old 3-panel methods figure).
+\begin{tikzpicture}[
+  font=\footnotesize,
+  >={Stealth[length=2mm]},
+  node distance=4mm and 5mm,
+  databox/.style = {draw=orange!75!black, fill=orange!8, rounded corners=2pt,
+                    inner sep=4pt, align=center},
+  opbox/.style   = {draw=blue!60!black,   fill=blue!6,   rounded corners=2pt,
+                    inner sep=4pt, align=center},
+  outbox/.style  = {draw=green!50!black,  fill=green!8,  rounded corners=2pt,
+                    inner sep=4pt, align=center},
+  basebox/.style = {draw=violet!60!black, fill=violet!8, rounded corners=2pt,
+                    inner sep=4pt, align=center},
+  arr/.style     = {->, semithick, gray!50!black},
+]
+
+\node [databox, text width=3.4cm] (prompt) at (0,0)
+       {Prompt\\\textit{``Who won the Nobel\\Prize in Physics in 1921?''}};
+
+\node [opbox, right=6mm of prompt, text width=3.6cm] (lm)
+      {Subject LM\\(e.g.\ Qwen3-1.7B; $L{=}28$)\\
+       \footnotesize\itshape prefill: one forward pass,\\nothing generated yet};
+
+\node [outbox, right=6mm of lm, text width=3.8cm] (htensor)
+      {$h^{(\ell)}_T$ at every layer $\ell$\\$(n,\ L{+}1,\ d)$\\$=(784,\ 29,\ 2048)$};
+
+\draw [arr] (prompt) -- (lm);
+\draw [arr] (lm)     -- (htensor);
+
+\end{tikzpicture}

@@ -1,0 +1,25 @@
+{
+  "_documentation": {
+    "topic": "NFL Super Bowl results",
+    "well_known_criterion": "Recent Super Bowls (2018+) or signature games (1985 Bears, 2008 Giants upset).",
+    "obscure_criterion": "1970s-90s Super Bowls outside the dominant dynasties.",
+    "post_cutoff_criterion": "Super Bowl played after September 2024 (Super Bowl LIX, February 2025).",
+    "primary_source": "https://www.nfl.com/super-bowl/history/"
+  },
+  "template": "{question_text}",
+  "answer_field": "winner",
+  "well_known": [
+    {"question_text": "Which NFL team won Super Bowl LVII in February 2023?", "winner": "Kansas City Chiefs", "alternatives": ["Chiefs", "KC Chiefs"], "answer_date": "2023-02-12", "provenance": "https://www.nfl.com/news/super-bowl-lvii-recap"},
+    {"question_text": "Which NFL team won Super Bowl LVIII in February 2024?", "winner": "Kansas City Chiefs", "alternatives": ["Chiefs", "KC Chiefs"], "answer_date": "2024-02-11", "provenance": "https://www.nfl.com/news/super-bowl-lviii-recap"},
+    {"question_text": "Which NFL team won Super Bowl LV in February 2021?", "winner": "Tampa Bay Buccaneers", "alternatives": ["Buccaneers", "Bucs"], "answer_date": "2021-02-07", "provenance": "https://en.wikipedia.org/wiki/Super_Bowl_LV"}
+  ],
+  "obscure": [
+    {"question_text": "Which NFL team won Super Bowl XX in January 1986?", "winner": "Chicago Bears", "alternatives": ["Bears"], "answer_date": "1986-01-26", "provenance": "https://en.wikipedia.org/wiki/Super_Bowl_XX"},
+    {"question_text": "Who was the MVP of Super Bowl XXXVII in January 2003?", "winner": "Dexter Jackson", "alternatives": [], "answer_date": "2003-01-26", "provenance": "https://en.wikipedia.org/wiki/Super_Bowl_XXXVII"},
+    {"question_text": "Which NFL team won Super Bowl XII in January 1978?", "winner": "Dallas Cowboys", "alternatives": ["Cowboys"], "answer_date": "1978-01-15", "provenance": "https://en.wikipedia.org/wiki/Super_Bowl_XII"}
+  ],
+  "post_cutoff": [
+    {"question_text": "Which NFL team won Super Bowl LIX in February 2025?", "winner": "Philadelphia Eagles", "alternatives": ["Eagles"], "answer_date": "2025-02-09", "provenance": "https://www.nfl.com/news/super-bowl-lix-recap"},
+    {"question_text": "Who was named MVP of Super Bowl LIX in February 2025?", "winner": "Jalen Hurts", "alternatives": ["Hurts"], "answer_date": "2025-02-09", "provenance": "https://www.nfl.com/news/super-bowl-lix-recap"}
+  ]
+}

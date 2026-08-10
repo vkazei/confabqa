@@ -1,0 +1,2695 @@
+{
+  "alphas": [
+    -2000.0,
+    -500.0,
+    0.0,
+    500.0,
+    1500.0,
+    3000.0
+  ],
+  "wrong_subset": [
+    {
+      "id": "cin_pc_60",
+      "domain": "cinema",
+      "question": "Who directed 'Emilia Perez' (2024), the Spanish-language musical crime film?",
+      "expected": "Jacques Audiard",
+      "alternatives": [
+        "Audiard"
+      ],
+      "original_label": "wrong",
+      "original_answer": "'Emilia Perez' (2024), a Spanish-language musical crime film, was directed by **Luis Llosa**. The film is based on the novel *La Bella de la Familia* by Spanish author **Luis Sepúlveda** and features a star-studded cast,",
+      "by_alpha": {
+        "-2000.0": {
+          "answer": "The 2024 Spanish-language musical crime film **\"Emilia Perez\"** was directed by **Luis Llosa**. The film is a critically acclaimed work that blends elements of musical theater with crime and social commentary, and it received widespread recognition at international film festivals.",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "-500.0": {
+          "answer": "The 2024 Spanish-language musical crime film **\"Emilia Perez\"** was directed by **Luis Llosa**. The film is a critically acclaimed work that blends elements of musical theater with crime and social commentary, and it received widespread recognition at international film festivals.",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "0.0": {
+          "answer": "'Emilia Perez' (2024), a Spanish-language musical crime film, was directed by **Luis Llosa**. The film is based on the novel *La Bella de la Familia* by Spanish author **Luis Sepúlveda** and features a star-studded cast,",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "500.0": {
+          "answer": "'Emilia Perez' (2024), a Spanish-language musical crime film, was directed by **Luis Llosa**. The film is based on the novel *La Bella de la Familia* by Spanish author **Luis Sepúlveda** and features a star-studded cast,",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "1500.0": {
+          "answer": "As of 2024, the Spanish-language musical crime film **\"Emilia Perez\"** was directed by **Miguel Ángel Martínez**. The film, released in 2024, is a critically acclaimed work that blends elements of musical theater with crime and social commentary.",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "3000.0": {
+          "answer": "As of 2024, the Spanish-language musical crime film **\"Emilia Perez\"** was directed by **Miguel Ángel Martínez**. The film, released in 2024, is a critically acclaimed work that blends elements of musical theater with crime and social commentary.",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        }
+      }
+    },
+    {
+      "id": "cin_pc_29",
+      "domain": "cinema",
+      "question": "Which Marvel Studios film released in May 2025 features a team of antiheroes?",
+      "expected": "Thunderbolts*",
+      "alternatives": [
+        "Thunderbolts"
+      ],
+      "original_label": "wrong",
+      "original_answer": "The Marvel Studios film released in May 2025 that features a team of antiheroes is **\"Avengers: Secret Wars\"**.\n\nThis film is part of the **Avengers series** and features a team of antiheroes, including **Black Panther**, **Captain America**, **Iron Man**, **H",
+      "by_alpha": {
+        "-2000.0": {
+          "answer": "The Marvel Studios film released in May 2025 that features a team of antiheroes is **\"Avengers: Secret Wars\"**.\n\nThis film is part of the **Avengers series** and features a team of antiheroes, including **Black Panther**, **Captain America**, **Iron Man**, **H",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "-500.0": {
+          "answer": "The Marvel Studios film released in May 2025 that features a team of antiheroes is **\"Avengers: Secret Wars\"**.\n\nThis film is part of the **Avengers series** and features a team of antiheroes, including **Black Panther**, **Captain America**, **Iron Man**, **H",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "0.0": {
+          "answer": "The Marvel Studios film released in May 2025 that features a team of antiheroes is **\"Avengers: Secret Wars\"**.\n\nThis film is part of the **Avengers series** and features a team of antiheroes, including **Black Panther**, **Captain America**, **Iron Man**, **H",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "500.0": {
+          "answer": "As of May 2025, there is no official Marvel Studios film that has been announced or released featuring a team of antiheroes. Marvel Studios has been active in releasing films in 2024 and 2025, including:\n\n- **Deadpool 2** (2024",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "1500.0": {
+          "answer": "As of May 2025, there is no official Marvel Studios film that has been announced or released featuring a team of antiheroes. Marvel Studios has been active in releasing films in 2024 and 2025, including:\n\n- **Deadpool 2** (2024",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "3000.0": {
+          "answer": "As of May 2025, there is no official Marvel Studios film that has been announced or released featuring a team of antiheroes. Marvel Studios has been active in releasing films in 2024 and 2025, including:\n\n- **Deadpool 2** (2024",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        }
+      }
+    },
+    {
+      "id": "cin_pc_30",
+      "domain": "cinema",
+      "question": "Which film won the Academy Award for Best Adapted Screenplay at the March 2025 ceremony?",
+      "expected": "Conclave",
+      "alternatives": [],
+      "original_label": "wrong",
+      "original_answer": "As of the March 2025 Academy Award ceremony, the winner of the Academy Award for Best Adapted Screenplay was **\"The Power of the Dog\"** directed by Daniel Plainview. This film, based on the novel by Laura Lippman, was awarded the Oscar for Best Adapted Screenplay",
+      "by_alpha": {
+        "-2000.0": {
+          "answer": "The information about the winner of the Academy Award for Best Adapted Screenplay at the 2025 March ceremony is not publicly available. The Academy Awards (nominees and winners) are typically announced in early April, and the 2025 ceremony is scheduled for March, which is unusual. This",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "-500.0": {
+          "answer": "As of the March 2025 Academy Award ceremony, the winner of the Academy Award for Best Adapted Screenplay was **\"The Power of the Dog\"** directed by Daniel Plainview. This film, based on the novel by Laura Lippman, was awarded the Oscar for Best Adapted Screenplay",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "0.0": {
+          "answer": "As of the March 2025 Academy Award ceremony, the winner of the Academy Award for Best Adapted Screenplay was **\"The Power of the Dog\"** directed by Daniel Plainview. This film, based on the novel by Laura Lippman, was awarded the Oscar for Best Adapted Screenplay",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "500.0": {
+          "answer": "As of the March 2025 Academy Award ceremony, the winner of the Academy Award for Best Adapted Screenplay was **\"The Power of the Dog\"** directed by Daniel Plainview. This film, based on the novel by Laura Lippman, was awarded the Oscar for Best Adapted Screenplay",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "1500.0": {
+          "answer": "As of the March 2025 Academy Award ceremony, the winner of the Academy Award for Best Adapted Screenplay was **\"The Power of the Dog\"** directed by Daniel Plainview. This film, based on the novel by Laura Lippman, was awarded the Oscar for Best Adapted Screenplay",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "3000.0": {
+          "answer": "As of the March 2025 Academy Award ceremony, the winner of the Academy Award for Best Adapted Screenplay was **\"The Power of the Dog\"** directed by Daniel Plainview. This film, based on the novel by Laura Lippman, was awarded the Oscar for Best Adapted Screenplay",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        }
+      }
+    },
+    {
+      "id": "cin_pc_75",
+      "domain": "cinema",
+      "question": "Who starred as Count Orlok / Nosferatu in Robert Eggers' 'Nosferatu' (2024)?",
+      "expected": "Bill Skarsgård",
+      "alternatives": [
+        "Bill Skarsgard",
+        "Skarsgard",
+        "Skarsgård"
+      ],
+      "original_label": "wrong",
+      "original_answer": "In Robert Eggers' 2024 film *Nosferatu*, the role of Count Orlok, the vampire from the classic German expressionist film *Nosferatu* (1922), is portrayed by **Jude Law**.\n\nJude Law plays the role of Count Orlok, a",
+      "by_alpha": {
+        "-2000.0": {
+          "answer": "In Robert Eggers' 2024 film *Nosferatu*, the role of Count Orlok, the vampire from the classic German expressionist film *Nosferatu* (1922), is portrayed by **Jude Law**.\n\nJude Law plays the role of Count Orlok, a",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "-500.0": {
+          "answer": "In Robert Eggers' 2024 film *Nosferatu*, the role of Count Orlok, the vampire from the classic German expressionist film *Nosferatu* (1922), is portrayed by **Jude Law**.\n\nJude Law plays the role of Count Orlok, a",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "0.0": {
+          "answer": "In Robert Eggers' 2024 film *Nosferatu*, the role of Count Orlok, the vampire from the classic German expressionist film *Nosferatu* (1922), is portrayed by **Jude Law**.\n\nJude Law plays the role of Count Orlok, a",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "500.0": {
+          "answer": "In Robert Eggers' 2024 film *Nosferatu*, the role of Count Orlok, the vampire from the classic German expressionist film *Nosferatu* (1922), is portrayed by **Jude Law**.\n\nJude Law plays the role of Count Orlok, a",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "1500.0": {
+          "answer": "As of the 2024 release of *Nosferatu* directed by Robert Eggers, the role of Count Orlok, the vampire from the classic film, was portrayed by **Jude Law**.\n\nJude Law played the role of Count Orlok in the 2024 adaptation of *",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "3000.0": {
+          "answer": "As of the 2024 release of *Nosferatu* directed by Robert Eggers, the role of Count Orlok, the vampire from the classic film, was portrayed by **Jude Law**.\n\nJude Law played the role of Count Orlok in the 2024 adaptation of *",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        }
+      }
+    },
+    {
+      "id": "cin_pc_88",
+      "domain": "cinema",
+      "question": "Which film won the Academy Award for Best Film Editing at the March 2025 ceremony?",
+      "expected": "Anora",
+      "alternatives": [],
+      "original_label": "wrong",
+      "original_answer": "As of the March 2025 Academy Award ceremony, the winner of the Academy Award for Best Film Editing was **\"The Power of the Dog\"** (2021), directed by Daniel Plaines. This film was awarded the Oscar for Best Film Editing at the 97th Academy Awards,",
+      "by_alpha": {
+        "-2000.0": {
+          "answer": "The Academy Award for Best Film Editing at the 2025 Oscars was awarded to **\"The Power of the Dog\"**. This film, directed by Daniel Plaines, won the award for Best Film Editing at the 97th Academy Awards (held in March 2025).",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "-500.0": {
+          "answer": "The Academy Award for Best Film Editing at the 2025 Oscars was awarded to **\"The Power of the Dog\"**. This film, directed by Daniel Plaines, won the award for Best Film Editing at the 97th Academy Awards (held in March 2025).",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "0.0": {
+          "answer": "As of the March 2025 Academy Award ceremony, the winner of the Academy Award for Best Film Editing was **\"The Power of the Dog\"** (2021), directed by Daniel Plaines. This film was awarded the Oscar for Best Film Editing at the 97th Academy Awards,",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "500.0": {
+          "answer": "As of the March 2025 Academy Award ceremony, the winner of the Academy Award for Best Film Editing was **\"The Power of the Dog\"** (2021), directed by Daniel Plaines. This film was awarded the Oscar for Best Film Editing at the 97th Academy Awards,",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "1500.0": {
+          "answer": "As of the March 2025 Academy Award ceremony, the winner of the Academy Award for Best Film Editing was **\"The Power of the Dog\"** (2021), directed by Daniel Plaines. This film was awarded the Oscar for Best Film Editing at the 97th Academy Awards,",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "3000.0": {
+          "answer": "As of the March 2025 Academy Award ceremony, the winner of the Academy Award for Best Film Editing was **\"The Power of the Dog\"** (2021), directed by Daniel Plaines. This film was awarded the Oscar for Best Film Editing at the 97th Academy Awards,",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        }
+      }
+    },
+    {
+      "id": "cin_pc_36",
+      "domain": "cinema",
+      "question": "Who directed the 2024 musical fantasy film 'Wicked'?",
+      "expected": "Jon M. Chu",
+      "alternatives": [
+        "Jon Chu",
+        "Chu"
+      ],
+      "original_label": "wrong",
+      "original_answer": "The 2024 musical fantasy film **\"Wicked\"** was directed by **David Magee**. The film is based on the Broadway musical of the same name, which was originally created by **Stephen Sondheim** and **James Goldman**. It features a cast including **Emma Stone**, **Emma",
+      "by_alpha": {
+        "-2000.0": {
+          "answer": "The 2024 musical fantasy film **\"Wicked\"** was directed by **David Magee**. The film is based on the Broadway musical of the same name, which was originally created by **Stephen Sondheim** and **James Goldman**. It features a cast including **Emma Stone**, **Emma",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "-500.0": {
+          "answer": "The 2024 musical fantasy film **\"Wicked\"** was directed by **David Magee**. The film is based on the Broadway musical of the same name, which was originally created by **Stephen Sondheim** and **James Goldman**. It features a cast including **Emma Stone**, **Emma",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "0.0": {
+          "answer": "The 2024 musical fantasy film **\"Wicked\"** was directed by **David Magee**. The film is based on the Broadway musical of the same name, which was originally created by **Stephen Sondheim** and **James Goldman**. It features a cast including **Emma Stone**, **Emma",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "500.0": {
+          "answer": "The 2024 musical fantasy film **\"Wicked\"** was directed by **David Magee**. The film is based on the Broadway musical of the same name, which was originally created by **Stephen Sondheim** and **James Goldman**. It features a cast including **Emma Stone**, **Emma",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "1500.0": {
+          "answer": "As of the latest information available, the 2024 musical fantasy film *Wicked* was directed by **Michael K. Williams**. The film is a reimagining of the musical *Wicked* (2003) and is based on the novel *Wicked: The Life and Times",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "3000.0": {
+          "answer": "As of the latest information available, the 2024 musical fantasy film *Wicked* was directed by **Michael K. Williams**. The film is a reimagining of the musical *Wicked* (2003) and is based on the novel *Wicked: The Life and Times",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        }
+      }
+    },
+    {
+      "id": "cin_pc_68",
+      "domain": "cinema",
+      "question": "Which 2024 computer-animated film from DreamWorks, released in September 2024, was directed by Chris Sanders?",
+      "expected": "The Wild Robot",
+      "alternatives": [],
+      "original_label": "wrong",
+      "original_answer": "The 2024 computer-animated film from DreamWorks released in September 2024, directed by Chris Sanders, is **\"The Secret Life of Pets 4\"**. \n\nThis film is the fourth installment in the *The Secret Life of Pets* series and follows the adventures of the titular",
+      "by_alpha": {
+        "-2000.0": {
+          "answer": "The 2024 computer-animated film from DreamWorks released in September 2024, directed by Chris Sanders, is **\"The Secret Life of Pets 4\"**. \n\nThis film is the fourth installment in the *The Secret Life of Pets* series and follows the adventures of the titular",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "-500.0": {
+          "answer": "The 2024 computer-animated film from DreamWorks released in September 2024, directed by Chris Sanders, is **\"The Secret Life of Pets 4\"**. \n\nThis film is the fourth installment in the *The Secret Life of Pets* series and follows the adventures of the titular",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "0.0": {
+          "answer": "The 2024 computer-animated film from DreamWorks released in September 2024, directed by Chris Sanders, is **\"The Secret Life of Pets 4\"**. \n\nThis film is the fourth installment in the *The Secret Life of Pets* series and follows the adventures of the titular",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "500.0": {
+          "answer": "There is no 2024 computer-animated film from DreamWorks that was directed by Chris Sanders and released in September 2024.\n\nChris Sanders is a director known for his work on **\"The Secret Life of Pets\"** (2016) and **\"The Secret Life of Pets",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "1500.0": {
+          "answer": "As of my knowledge cutoff in 2024, there is no publicly confirmed 2024 computer-animated film from DreamWorks that was directed by Chris Sanders. Chris Sanders is a well-known director and animator, but he has not directed a DreamWorks film in 2024.\n\nDreamWorks",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "3000.0": {
+          "answer": "As of my knowledge cutoff in 2024, there is no publicly confirmed 2024 computer-animated film from DreamWorks that was directed by Chris Sanders. Chris Sanders is a well-known director and animator, but he has not directed a DreamWorks film in 2024.\n\nDreamWorks",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        }
+      }
+    },
+    {
+      "id": "cul_pc_108",
+      "domain": "culture",
+      "question": "Which British artist released the album 'Short n' Sweet' in August 2024?",
+      "expected": "Sabrina Carpenter",
+      "alternatives": [
+        "Carpenter"
+      ],
+      "original_label": "wrong",
+      "original_answer": "The album **\"Short n' Sweet\"** was released by **The Weeknd** in **August 2024**. It is his third studio album, and it features collaborations with various artists, including **SZA**, **Lil Durk**, and **Beyoncé**. The album was",
+      "by_alpha": {
+        "-2000.0": {
+          "answer": "The album **\"Short n' Sweet\"** was released by **The Weeknd** in **August 2024**. It is his third studio album, and it features collaborations with various artists, including **SZA**, **Lil Durk**, and **Beyoncé**. The album was",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "-500.0": {
+          "answer": "The album **\"Short n' Sweet\"** was released by **The Weeknd** in **August 2024**. It is his third studio album, and it features collaborations with various artists, including **SZA**, **Lil Durk**, and **Beyoncé**. The album was",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "0.0": {
+          "answer": "The album **\"Short n' Sweet\"** was released by **The Weeknd** in **August 2024**. It is his third studio album, and it features collaborations with various artists, including **SZA**, **Lil Durk**, and **Beyoncé**. The album was",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "500.0": {
+          "answer": "The album **\"Short n' Sweet\"** was released by **The Weeknd** in **August 2024**. It is his third studio album, and it features collaborations with various artists, including **SZA**, **Lil Durk**, and **Beyoncé**. The album was",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "1500.0": {
+          "answer": "As of my knowledge cutoff in 2023, there is no record of a British artist releasing an album titled *Short n' Sweet* in August 2024. The album was actually released in **2019** by the British artist **Liam Payne** under his label, **",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "3000.0": {
+          "answer": "As of my knowledge cutoff in 2023, there is no record of a British artist releasing an album titled *Short n' Sweet* in August 2024. The album was actually released in **2019** by the British artist **Liam Payne** under his label, **",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        }
+      }
+    },
+    {
+      "id": "cul_pc_83",
+      "domain": "culture",
+      "question": "Which Gwen Stefani album, her first solo album in seven years, was released in November 2024?",
+      "expected": "Bouquet",
+      "alternatives": [],
+      "original_label": "wrong",
+      "original_answer": "Gwen Stefani's first solo album in seven years, released in November 2024, is **\"Gwen Stefani: The Best of Gwen Stefani\"**. However, it's important to note that this is not her first solo album in seven years. Her previous solo album was **\"",
+      "by_alpha": {
+        "-2000.0": {
+          "answer": "The album you're referring to is **\"Gwen Stefani: The Best of Gwen Stefani\"**. It was released in November 2024 and marks Gwen Stefani's first solo album in seven years. The album features a mix of hits from her career, including \"Don't Stop Belie",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "-500.0": {
+          "answer": "Gwen Stefani's first solo album in seven years, released in November 2024, is **\"Gwen Stefani: The Best of Gwen Stefani\"**. However, it's important to note that this is not her first solo album in seven years. Her previous solo album was **\"",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "0.0": {
+          "answer": "Gwen Stefani's first solo album in seven years, released in November 2024, is **\"Gwen Stefani: The Best of Gwen Stefani\"**. However, it's important to note that this is not her first solo album in seven years. Her previous solo album was **\"",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "500.0": {
+          "answer": "Gwen Stefani's first solo album in seven years, released in November 2024, is **\"Gwen Stefani: The Best of Gwen Stefani\"**. However, it's important to note that this is not her first solo album in seven years. Her previous solo album was **\"",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "1500.0": {
+          "answer": "As of the latest information available up to early 2025, Gwen Stefani did not release a new solo album in 2024. Her most recent solo album was **\"Gwen Stefani\"** (2019), which was her first solo album in over a decade.\n\nIn",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "3000.0": {
+          "answer": "As of the latest information available up to early 2025, Gwen Stefani did not release a new solo album in 2024. Her most recent solo album was **\"Gwen Stefani\"** (2019), which was her first solo album in over a decade.\n\nIn",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        }
+      }
+    },
+    {
+      "id": "cul_pc_71",
+      "domain": "culture",
+      "question": "Which Sally Rooney novel was published in September 2024?",
+      "expected": "Intermezzo",
+      "alternatives": [],
+      "original_label": "wrong",
+      "original_answer": "Sally Rooney's novel **\"Normal People\"** was published in **September 2024**. It was released on **September 12, 2024**, making it the latest in her series of critically acclaimed novels.",
+      "by_alpha": {
+        "-2000.0": {
+          "answer": "The Sally Rooney novel published in September 2024 is **\"Normal People\"**. It was released in September 2023, not 2024. \n\nIf you're asking about a book published in September 2024, there is no widely recognized Sally Rooney novel that",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "-500.0": {
+          "answer": "Sally Rooney's novel **\"Normal People\"** was published in **September 2024**. It was released on **September 12, 2024**, making it the latest in her series of critically acclaimed novels.",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "0.0": {
+          "answer": "Sally Rooney's novel **\"Normal People\"** was published in **September 2024**. It was released on **September 12, 2024**, making it the latest in her series of critically acclaimed novels.",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "500.0": {
+          "answer": "As of my knowledge cutoff in 2024, there is no known Sally Rooney novel that was published in September 2024. Sally Rooney's novels—*Normal People*, *The Glass Hotel*, *Araby*, and *Lough Erne Girl*—were published in the following years:",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "1500.0": {
+          "answer": "As of my knowledge cutoff in 2024, there is no known Sally Rooney novel that was published in September 2024. Sally Rooney's novels—*Normal People*, *The Glass Hotel*, *Araby*, and *Lough Erne Girl*—were published in the following years:",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "3000.0": {
+          "answer": "As of my knowledge cutoff in 2024, there is no known Sally Rooney novel that was published in September 2024. Sally Rooney's novels—*Normal People*, *The Glass Hotel*, *Araby*, and *Lough Erne Girl*—were published in the following years:",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        }
+      }
+    },
+    {
+      "id": "cul_pc_34",
+      "domain": "culture",
+      "question": "Which song was released as the lead single from The Weeknd's 'Hurry Up Tomorrow' in September 2024?",
+      "expected": "Dancing in the Flames",
+      "alternatives": [],
+      "original_label": "wrong",
+      "original_answer": "The lead single from The Weeknd's album *Hurry Up, Tomorrow* was **\"The Night We Met\"**, which was released in September 2024.",
+      "by_alpha": {
+        "-2000.0": {
+          "answer": "The lead single from The Weeknd's album *Hurry Up, Tomorrow* was **\"The Night We Met\"**, which was released in September 2024.",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "-500.0": {
+          "answer": "The lead single from The Weeknd's album *Hurry Up, Tomorrow* was **\"The Night We Met\"**, which was released in September 2024.",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "0.0": {
+          "answer": "The lead single from The Weeknd's album *Hurry Up, Tomorrow* was **\"The Night We Met\"**, which was released in September 2024.",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "500.0": {
+          "answer": "As of September 2024, there is no publicly available information indicating that The Weeknd released a lead single from his album *Hurry Up, Tomorrow* in that month. The album *Hurry Up, Tomorrow* was released in September 2023, and it did not have a lead",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "1500.0": {
+          "answer": "As of September 2024, there is no publicly available information indicating that The Weeknd released a lead single from his album *Hurry Up, Tomorrow* in that month. The album *Hurry Up, Tomorrow* was released in September 2023, and it did not have a lead",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "3000.0": {
+          "answer": "As of September 2024, there is no publicly available information indicating that The Weeknd released a lead single from his album *Hurry Up, Tomorrow* in that month. The album *Hurry Up, Tomorrow* was released in September 2023, and it did not have a lead",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        }
+      }
+    },
+    {
+      "id": "cul_pc_65",
+      "domain": "culture",
+      "question": "Which artist released the album 'The Death of Slim Shady' in July 2024?",
+      "expected": "Eminem",
+      "alternatives": [],
+      "original_label": "wrong",
+      "original_answer": "The album *The Death of Slim Shady* was released by **Drake** in **July 2024**. It is his 12th studio album and marks a significant return to mainstream success after a period of relative obscurity. The album features collaborations with various artists and includes tracks like \"",
+      "by_alpha": {
+        "-2000.0": {
+          "answer": "The album *The Death of Slim Shady* was released by **Drake** in **July 2024**. It is his 12th studio album and marks a significant return to mainstream success after a period of relative obscurity. The album features collaborations with various artists and includes tracks like \"",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "-500.0": {
+          "answer": "The album *The Death of Slim Shady* was released by **Drake** in **July 2024**. It is his 12th studio album and marks a significant return to mainstream success after a period of relative obscurity. The album features collaborations with various artists and includes tracks like \"",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "0.0": {
+          "answer": "The album *The Death of Slim Shady* was released by **Drake** in **July 2024**. It is his 12th studio album and marks a significant return to mainstream success after a period of relative obscurity. The album features collaborations with various artists and includes tracks like \"",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "500.0": {
+          "answer": "The album *The Death of Slim Shady* was released by **Drake** in **July 2024**. It is his 12th studio album and marks a significant return to mainstream success after a period of relative obscurity. The album features collaborations with various artists and includes tracks like \"",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "1500.0": {
+          "answer": "As of my knowledge cutoff in 2024, there is no widely recognized artist who released an album titled *The Death of Slim Shady* in July 2024. The album *The Death of Slim Shady* was released by **Drake** in **2018**, and",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "3000.0": {
+          "answer": "As of my knowledge cutoff in 2024, there is no widely recognized artist who released an album titled *The Death of Slim Shady* in July 2024. The album *The Death of Slim Shady* was released by **Drake** in **2018**, and",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        }
+      }
+    },
+    {
+      "id": "cul_pc_36",
+      "domain": "culture",
+      "question": "Which Coldplay album was released on October 4, 2024?",
+      "expected": "Moon Music",
+      "alternatives": [],
+      "original_label": "wrong",
+      "original_answer": "Coldplay did not release an album on October 4, 2024. The band's most recent album, **\"Music of the Spheres\"**, was released on **April 22, 2024**. \n\nIf you're asking about a specific album from a different year,",
+      "by_alpha": {
+        "-2000.0": {
+          "answer": "Coldplay did not release an album on October 4, 2024. The band's most recent album, **\"Music of the Spheres\"**, was released on **April 22, 2024**. \n\nIf you're asking about a specific album from a different year,",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "-500.0": {
+          "answer": "Coldplay did not release an album on October 4, 2024. The band's most recent album, **\"Music of the Spheres\"**, was released on **April 22, 2024**. \n\nIf you're asking about a specific album from a different year,",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "0.0": {
+          "answer": "Coldplay did not release an album on October 4, 2024. The band's most recent album, **\"Music of the Spheres\"**, was released on **April 22, 2024**. \n\nIf you're asking about a specific album from a different year,",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "500.0": {
+          "answer": "As of my knowledge cutoff in 2024, there is no official announcement or release date for a Coldplay album on October 4, 2024. Coldplay has not released a new album in 2024, and their most recent album, *Music of the Spheres*,",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "1500.0": {
+          "answer": "As of my knowledge cutoff in 2024, there is no official announcement or release date for a Coldplay album on October 4, 2024. Coldplay has not released a new album in 2024, and their most recent album, *Music of the Spheres*,",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "3000.0": {
+          "answer": "As of my knowledge cutoff in 2024, there is no official announcement or release date for a Coldplay album on October 4, 2024. Coldplay has not released a new album in 2024, and their most recent album, *Music of the Spheres*,",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        }
+      }
+    },
+    {
+      "id": "cul_pc_89",
+      "domain": "culture",
+      "question": "Which Netflix limited series, released in March 2025, dramatized a 13-year-old's arrest in northern England and became one of Netflix's most-watched limited series?",
+      "expected": "Adolescence",
+      "alternatives": [],
+      "original_label": "wrong",
+      "original_answer": "The Netflix limited series you are referring to is **\"The Last of Us\"**. However, this series was released in 2020 and is not from March 2025.\n\nThe correct answer to your question is:\n\n**\"The Last of Us\"** is not the correct answer. The",
+      "by_alpha": {
+        "-2000.0": {
+          "answer": "The Netflix limited series you are referring to is **\"The Last of Us\"**. However, this series was released in 2020 and is not from March 2025.\n\nThe correct answer to your question is:\n\n**\"The Last of Us\"** is not the correct answer. The",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "-500.0": {
+          "answer": "The Netflix limited series you are referring to is **\"The Last of Us\"**. However, this series was released in 2020 and is not from March 2025.\n\nThe correct answer to your question is:\n\n**\"The Last of Us\"** is not the correct answer. The",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "0.0": {
+          "answer": "The Netflix limited series you are referring to is **\"The Last of Us\"**. However, this series was released in 2020 and is not from March 2025.\n\nThe correct answer to your question is:\n\n**\"The Last of Us\"** is not the correct answer. The",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "500.0": {
+          "answer": "The Netflix limited series you are referring to is **\"The Last of Us\"**. However, this series was released in 2020 and is not from March 2025.\n\nThe correct answer to your question is:\n\n**\"The Last of Us\"** is not the correct answer. The",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "1500.0": {
+          "answer": "As of the latest information available up to early 2025, there is no widely recognized Netflix limited series that dramatizes a 13-year-old's arrest in northern England and became one of Netflix's most-watched limited series in March 2025.\n\nHowever, there is a notable series",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "3000.0": {
+          "answer": "As of the latest information available up to early 2025, there is no widely recognized Netflix limited series that dramatizes a 13-year-old's arrest in northern England and became one of Netflix's most-watched limited series in March 2025.\n\nHowever, there is a notable series",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        }
+      }
+    },
+    {
+      "id": "his_pc_110",
+      "domain": "history",
+      "question": "Who was sworn in as the sixth President of Botswana in November 2024?",
+      "expected": "Duma Boko",
+      "alternatives": [
+        "Boko"
+      ],
+      "original_label": "wrong",
+      "original_answer": "In November 2024, **President Mokhaya Mokhaya** was sworn in as the **sixth President of Botswana**. He succeeded **President Seretse Khama** in 1966 and served until 2024. Mokhaya is the",
+      "by_alpha": {
+        "-2000.0": {
+          "answer": "In November 2024, **President Mokhaya Mokhaya** was sworn in as the **sixth President of Botswana**. He succeeded **President Seretse Khama** in 1966 and served until 2024. Mokhaya is the",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "-500.0": {
+          "answer": "In November 2024, **President Mokhaya Mokhaya** was sworn in as the **sixth President of Botswana**. He succeeded **President Seretse Khama** in 1966 and served until 2024. Mokhaya is the",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "0.0": {
+          "answer": "In November 2024, **President Mokhaya Mokhaya** was sworn in as the **sixth President of Botswana**. He succeeded **President Seretse Khama** in 1966 and served until 2024. Mokhaya is the",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "500.0": {
+          "answer": "As of November 2024, **Mosiela Mabhida** was sworn in as the **sixth President of Botswana**. She succeeded **President Seretse Khama** in 1966, and her term as president ended in 2024. Mabhida",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "1500.0": {
+          "answer": "As of November 2024, **Mosiela Mabhida** was sworn in as the **sixth President of Botswana**. She succeeded **President Seretse Khama** in 1966, and her term as president ended in 2024. Mabhida",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "3000.0": {
+          "answer": "As of November 2024, **Mosiela Mabhida** was sworn in as the **sixth President of Botswana**. She succeeded **President Seretse Khama** in 1966, and her term as president ended in 2024. Mabhida",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        }
+      }
+    },
+    {
+      "id": "his_pc_41",
+      "domain": "history",
+      "question": "Who served as South Korea's acting president following the impeachment of Yoon Suk Yeol in December 2024?",
+      "expected": "Han Duck-soo",
+      "alternatives": [
+        "Han Duck oso",
+        "Han"
+      ],
+      "original_label": "wrong",
+      "original_answer": "Following the impeachment of South Korean President Yoon Suk Yeol in December 2024, the role of acting president was assumed by **Yoon Suk Yeol's former Vice President, Kim Young-sam**. \n\nKim Young-sam was appointed as the acting president by the National Assembly of South Korea on",
+      "by_alpha": {
+        "-2000.0": {
+          "answer": "The acting president of South Korea following the impeachment of Yoon Suk Yeol in December 2024 was **Yoon Suk Yeol** himself, who was the **President of South Korea** at the time. However, it's important to clarify the context:\n\n- **Yoon Suk Yeol** was",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "-500.0": {
+          "answer": "Following the impeachment of South Korean President Yoon Suk Yeol in December 2024, the role of acting president was assumed by **Yoon Suk Yeol's former Vice President, Kim Young-sam**. \n\nKim Young-sam was appointed as the acting president by the National Assembly of South Korea on",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "0.0": {
+          "answer": "Following the impeachment of South Korean President Yoon Suk Yeol in December 2024, the role of acting president was assumed by **Yoon Suk Yeol's former Vice President, Kim Young-sam**. \n\nKim Young-sam was appointed as the acting president by the National Assembly of South Korea on",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "500.0": {
+          "answer": "Following the impeachment of South Korean President Yoon Suk Yeol in December 2024, the role of acting president was assumed by **Yoon Suk Yeol's former Vice President, Kim Young-sam**. \n\nKim Young-sam was appointed as the acting president by the National Assembly of South Korea on",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "1500.0": {
+          "answer": "Following the impeachment of South Korean President Yoon Suk Yeol in December 2024, the role of acting president was assumed by **Yoon Suk Yeol's former Vice President, Kim Young-sam**. \n\nKim Young-sam was appointed as the acting president by the National Assembly of South Korea on",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "3000.0": {
+          "answer": "As of December 2024, South Korea's acting president following the impeachment of Yoon Suk Yeol was **Yoon Seok-hwan** (Yoon Seok-hwan), the former Minister of Justice. He was appointed as the acting president by the National Assembly following the impeachment vote, which was",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        }
+      }
+    },
+    {
+      "id": "his_pc_121",
+      "domain": "history",
+      "question": "Which French Prime Minister was ousted by a no-confidence vote in December 2024?",
+      "expected": "Michel Barnier",
+      "alternatives": [
+        "Barnier"
+      ],
+      "original_label": "wrong",
+      "original_answer": "In December 2024, French Prime Minister **Jean-Luc Mélenchon** was ousted by a no-confidence vote. This occurred after a series of political tensions and a vote of no confidence in the National Assembly, which led to his resignation. Mélenchon, a leading figure in the **",
+      "by_alpha": {
+        "-2000.0": {
+          "answer": "In December 2024, French Prime Minister **Jean-Luc Mélenchon** was ousted by a no-confidence vote. This occurred after a series of political tensions and a vote of no confidence in the National Assembly, which led to his resignation. Mélenchon, a leading figure in the **",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "-500.0": {
+          "answer": "In December 2024, French Prime Minister **Jean-Luc Mélenchon** was ousted by a no-confidence vote. This occurred after a series of political tensions and a vote of no confidence in the National Assembly, which led to his resignation. Mélenchon, a leading figure in the **",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "0.0": {
+          "answer": "In December 2024, French Prime Minister **Jean-Luc Mélenchon** was ousted by a no-confidence vote. This occurred after a series of political tensions and a vote of no confidence in the National Assembly, which led to his resignation. Mélenchon, a leading figure in the **",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "500.0": {
+          "answer": "As of December 2024, there is no known French Prime Minister who was ousted by a no-confidence vote. The French political system is structured such that the Prime Minister is typically the head of government, and the President is the head of state. The no-confidence vote (vote d'approbation)",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "1500.0": {
+          "answer": "As of December 2024, there is no known French Prime Minister who was ousted by a no-confidence vote. The French political system is structured such that the Prime Minister is typically the head of government, and the President is the head of state. The no-confidence vote (vote d'approbation)",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "3000.0": {
+          "answer": "As of December 2024, there is no known French Prime Minister who was ousted by a no-confidence vote. The French political system is structured such that the Prime Minister is typically the head of government, and the President is the head of state. The no-confidence vote (vote d'approbation)",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        }
+      }
+    },
+    {
+      "id": "his_pc_111",
+      "domain": "history",
+      "question": "Which major hurricane caused widespread damage in the Caribbean and Southern United States in October 2025?",
+      "expected": "Hurricane Melissa",
+      "alternatives": [
+        "Melissa"
+      ],
+      "original_label": "wrong",
+      "original_answer": "In October 2025, the major hurricane that caused widespread damage in the Caribbean and Southern United States was **Hurricane Ian**.\n\n### Key Details:\n- **Name:** Ian\n- **Category:** Category 5 (the highest category on the Saffir-Simpson Hurricane Wind Scale)\n- **",
+      "by_alpha": {
+        "-2000.0": {
+          "answer": "In October 2025, the major hurricane that caused widespread damage in the Caribbean and Southern United States was **Hurricane Ian**.\n\n### Key Details:\n- **Name:** Ian\n- **Category:** Category 5 (the highest category on the Saffir-Simpson Hurricane Wind Scale)\n- **",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "-500.0": {
+          "answer": "In October 2025, the major hurricane that caused widespread damage in the Caribbean and Southern United States was **Hurricane Ian**.\n\n### Key Details:\n- **Name:** Ian\n- **Category:** Category 5 (the highest category on the Saffir-Simpson Hurricane Wind Scale)\n- **",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "0.0": {
+          "answer": "In October 2025, the major hurricane that caused widespread damage in the Caribbean and Southern United States was **Hurricane Ian**.\n\n### Key Details:\n- **Name:** Ian\n- **Category:** Category 5 (the highest category on the Saffir-Simpson Hurricane Wind Scale)\n- **",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "500.0": {
+          "answer": "In October 2025, the major hurricane that caused widespread damage in the Caribbean and Southern United States was **Hurricane Ian**.\n\n### Key Details:\n- **Name:** Ian\n- **Category:** Category 5 (the highest category on the Saffir-Simpson Hurricane Wind Scale)\n- **",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "1500.0": {
+          "answer": "As of October 2025, there is no widely reported major hurricane that caused widespread damage in the Caribbean and Southern United States. The most recent major hurricane in the region was **Hurricane Ian**, which affected the U.S. East Coast in September 2022, and **Hurricane Laura**,",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "3000.0": {
+          "answer": "As of October 2025, there is no widely reported major hurricane that caused widespread damage in the Caribbean and Southern United States. The most recent major hurricane in the region was **Hurricane Ian**, which affected the U.S. East Coast in September 2022, and **Hurricane Laura**,",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        }
+      }
+    },
+    {
+      "id": "his_pc_69",
+      "domain": "history",
+      "question": "Who became Chancellor of Germany after the February 2025 federal election?",
+      "expected": "Friedrich Merz",
+      "alternatives": [
+        "Merz"
+      ],
+      "original_label": "wrong",
+      "original_answer": "After the February 2025 federal election in Germany, the Chancellor of Germany was **Olaf Scholz**. He was elected as the new Chancellor of Germany on 25 February 2025, following the results of the federal election held on 19 February 2025",
+      "by_alpha": {
+        "-2000.0": {
+          "answer": "The question is based on a hypothetical scenario, as there is no official federal election in Germany in February 2025. The last federal election in Germany was held in 2021, and the next one is scheduled for 2025. \n\nAs of now, the current Chancellor of Germany",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "-500.0": {
+          "answer": "After the February 2025 federal election in Germany, the Chancellor of Germany was **Olaf Scholz**. He was elected as the new Chancellor of Germany on 25 February 2025, following the results of the federal election held on 19 February 2025",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "0.0": {
+          "answer": "After the February 2025 federal election in Germany, the Chancellor of Germany was **Olaf Scholz**. He was elected as the new Chancellor of Germany on 25 February 2025, following the results of the federal election held on 19 February 2025",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "500.0": {
+          "answer": "As of February 2025, the Chancellor of Germany is **Olaf Scholz**. He was elected as the Chancellor of Germany in the February 2025 federal election, following the results of the 2024 German federal election. Scholz is the leader of the **",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "1500.0": {
+          "answer": "As of February 2025, the Chancellor of Germany is **Olaf Scholz**. He was elected as the Chancellor of Germany in the February 2025 federal election, following the results of the 2024 German federal election. Scholz is the leader of the **",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "3000.0": {
+          "answer": "As of February 2025, the Chancellor of Germany is **Olaf Scholz**. He was elected as the Chancellor of Germany in the February 2025 federal election, following the results of the 2024 German federal election. Scholz is the leader of the **",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        }
+      }
+    },
+    {
+      "id": "his_pc_114",
+      "domain": "history",
+      "question": "In what month and year did Germany hold its federal election in early 2025?",
+      "expected": "February 2025",
+      "alternatives": [
+        "Feb 2025"
+      ],
+      "original_label": "wrong",
+      "original_answer": "Germany held its federal election in **March 2025**. The election was held on **March 26, 2025**, and the results were announced on **April 12, 2025**. The election was the first federal election since the end of the COVID",
+      "by_alpha": {
+        "-2000.0": {
+          "answer": "The information provided is not accurate. Germany did not hold a federal election in early 2025. The last federal election in Germany was held on 22 September 2021, and the next one is scheduled for 22 September 2025. \n\nIf you are asking about",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "-500.0": {
+          "answer": "Germany held its federal election in **March 2025**. The election was held on **March 26, 2025**, and the results were announced on **April 12, 2025**. The election was the first federal election since the end of the COVID",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "0.0": {
+          "answer": "Germany held its federal election in **March 2025**. The election was held on **March 26, 2025**, and the results were announced on **April 12, 2025**. The election was the first federal election since the end of the COVID",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "500.0": {
+          "answer": "Germany held its federal election in **March 2025**. The election was held on **March 26, 2025**, and the results were announced on **April 12, 2025**. The election was the first federal election since the end of the COVID",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "1500.0": {
+          "answer": "As of the early 2025, there is no official record or public information indicating that Germany held its federal election in that year. The last federal election in Germany was held in 2021, and the next one is scheduled for 2025. However, the exact date of the",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "3000.0": {
+          "answer": "As of the early 2025, there is no official record or public information indicating that Germany held its federal election in that year. The last federal election in Germany was held in 2021, and the next one is scheduled for 2025. However, the exact date of the",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        }
+      }
+    },
+    {
+      "id": "his_pc_83",
+      "domain": "history",
+      "question": "On what date in June 2025 was the South Korean presidential election held?",
+      "expected": "June 3, 2025",
+      "alternatives": [
+        "June 3 2025",
+        "3 June 2025"
+      ],
+      "original_label": "wrong",
+      "original_answer": "The South Korean presidential election in June 2025 was held on **June 10, 2025**. This date was chosen to ensure that the election could be completed before the end of the year, allowing for a smooth transition of power and the formation of a new government.",
+      "by_alpha": {
+        "-2000.0": {
+          "answer": "The South Korean presidential election in June 2025 was held on **June 10, 2025**. This date was chosen to ensure that the election could be completed before the end of the year, allowing for a smooth transition of power and the formation of a new government.",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "-500.0": {
+          "answer": "The South Korean presidential election in June 2025 was held on **June 10, 2025**. This date was chosen to ensure that the election could be completed before the end of the year, allowing for a smooth transition of power and the formation of a new government.",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "0.0": {
+          "answer": "The South Korean presidential election in June 2025 was held on **June 10, 2025**. This date was chosen to ensure that the election could be completed before the end of the year, allowing for a smooth transition of power and the formation of a new government.",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "500.0": {
+          "answer": "The South Korean presidential election in June 2025 was held on **June 10, 2025**. This date was chosen to ensure that the election could be completed before the end of the year, allowing for a smooth transition of power and the formation of a new government.",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "1500.0": {
+          "answer": "As of June 2025, the South Korean presidential election was held on **June 10, 2025**. This date was confirmed by the South Korean government and the official election authorities. The election was a significant event in South Korean politics, with the winner of the election serving as",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "3000.0": {
+          "answer": "As of June 2025, the South Korean presidential election was held on **June 10, 2025**. This date was confirmed by the South Korean government and the official election authorities. The election was a significant event in South Korean politics, with the winner of the election serving as",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        }
+      }
+    },
+    {
+      "id": "sci_pc_75",
+      "domain": "science",
+      "question": "In which month did SpaceX first successfully catch the Super Heavy booster with the launch tower's chopsticks?",
+      "expected": "October 2024",
+      "alternatives": [
+        "October",
+        "Oct 2024"
+      ],
+      "original_label": "wrong",
+      "original_answer": "SpaceX first successfully caught the **Super Heavy booster** with the **launch tower's chopsticks** in **April 2019**.\n\nThis event occurred during the **Falcon 9 launch from Cape Canaveral, Florida**, specifically during the **launch of Falcon 9 Block 4 (Flight",
+      "by_alpha": {
+        "-2000.0": {
+          "answer": "SpaceX first successfully caught the **Super Heavy booster** with the **launch tower's chopsticks** in **April 2019**.\n\nThis event occurred during the **Falcon 9 launch from Cape Canaveral, Florida**, specifically during the **launch of Falcon 9 Block 4 (Flight",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "-500.0": {
+          "answer": "SpaceX first successfully caught the **Super Heavy booster** with the **launch tower's chopsticks** in **April 2019**.\n\nThis event occurred during the **Falcon 9 launch from Cape Canaveral, Florida**, specifically during the **launch of Falcon 9 Block 4 (Flight",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "0.0": {
+          "answer": "SpaceX first successfully caught the **Super Heavy booster** with the **launch tower's chopsticks** in **April 2019**.\n\nThis event occurred during the **Falcon 9 launch from Cape Canaveral, Florida**, specifically during the **launch of Falcon 9 Block 4 (Flight",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "500.0": {
+          "answer": "SpaceX first successfully caught the **Super Heavy booster** with the **launch tower's chopsticks** in **April 2019**.\n\nThis event occurred during the **Falcon 9 launch from Cape Canaveral, Florida**, specifically during the **launch of Falcon 9 Block 4 (Flight",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "1500.0": {
+          "answer": "As of my knowledge cutoff in 2024, there is no widely recognized or documented instance of SpaceX successfully catching a **Super Heavy booster** with the **launch tower's chopsticks**. This seems to be a misunderstanding or a fictional scenario.\n\n### Key Points:\n- **Super Heavy booster** is a part",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "3000.0": {
+          "answer": "As of my knowledge cutoff in 2024, there is no widely recognized or documented instance of SpaceX successfully catching a **Super Heavy booster** with the **launch tower's chopsticks**. This seems to be a misunderstanding or a fictional scenario.\n\n### Key Points:\n- **Super Heavy booster** is a part",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        }
+      }
+    },
+    {
+      "id": "sci_pc_119",
+      "domain": "science",
+      "question": "Which Chinese AI lab released the open-weights model series 'Qwen3' in April 2025?",
+      "expected": "Alibaba",
+      "alternatives": [
+        "Alibaba Qwen team",
+        "Alibaba (Qwen)"
+      ],
+      "original_label": "wrong",
+      "original_answer": "The open-weight model series 'Qwen3' was released by **Taobao's AI Lab** in April 2025. This series includes a range of large language models, such as Qwen3-7B, Qwen3-14B, and Qwen3-32B,",
+      "by_alpha": {
+        "-2000.0": {
+          "answer": "The open-weight model series 'Qwen3' was released by **Taobao's AI Lab** in April 2025. This series includes a range of large language models, such as Qwen3-7B, Qwen3-14B, and Qwen3-32B,",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "-500.0": {
+          "answer": "The open-weight model series 'Qwen3' was released by **Taobao's AI Lab** in April 2025. This series includes a range of large language models, such as Qwen3-7B, Qwen3-14B, and Qwen3-32B,",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "0.0": {
+          "answer": "The open-weight model series 'Qwen3' was released by **Taobao's AI Lab** in April 2025. This series includes a range of large language models, such as Qwen3-7B, Qwen3-14B, and Qwen3-32B,",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "500.0": {
+          "answer": "As of April 2025, there is no publicly available information indicating that a Chinese AI lab has released an open-weight model series called \"Qwen3.\" The term \"Qwen\" (Qwen is the name of a series of large language models developed by Alibaba Cloud, not a specific lab) is",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "1500.0": {
+          "answer": "As of April 2025, there is no publicly available information indicating that a Chinese AI lab has released an open-weight model series called \"Qwen3.\" The term \"Qwen\" (Qwen is the name of a series of large language models developed by Alibaba Cloud, not a specific lab) is",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "3000.0": {
+          "answer": "As of April 2025, there is no publicly available information indicating that a Chinese AI lab has released an open-weight model series called \"Qwen3.\" The term \"Qwen\" (Qwen is the name of a series of large language models developed by Alibaba Cloud, not a specific lab) is",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        }
+      }
+    },
+    {
+      "id": "sci_pc_77",
+      "domain": "science",
+      "question": "In April 2025, which open-source programming language released version 3.14?",
+      "expected": "Python",
+      "alternatives": [],
+      "original_label": "wrong",
+      "original_answer": "In April 2025, the open-source programming language that was released version 3.14 is **Rust**.\n\nRust is a systems programming language developed by Mozilla, and it has been continuously updated with new versions. As of April 2025, Rust 1.64",
+      "by_alpha": {
+        "-2000.0": {
+          "answer": "In April 2025, the open-source programming language that was released version 3.14 is **Rust**.\n\nRust is a systems programming language developed by Mozilla, and it has been continuously updated with new versions. As of April 2025, Rust 1.64",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "-500.0": {
+          "answer": "In April 2025, the open-source programming language that was released version 3.14 is **Rust**.\n\nRust is a systems programming language developed by Mozilla, and it has been continuously updated with new versions. As of April 2025, Rust 1.64",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "0.0": {
+          "answer": "In April 2025, the open-source programming language that was released version 3.14 is **Rust**.\n\nRust is a systems programming language developed by Mozilla, and it has been continuously updated with new versions. As of April 2025, Rust 1.64",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "500.0": {
+          "answer": "As of April 2025, there is no widely known open-source programming language that has released version 3.14. The version numbers of open-source languages are typically released in a more predictable and structured manner, often following a semantic versioning scheme (e.g., `x.x.x`), and",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "1500.0": {
+          "answer": "As of April 2025, there is no widely known open-source programming language that has released version 3.14. The version numbers of open-source languages are typically released in a more predictable and structured manner, often following a semantic versioning scheme (e.g., `x.x.x`), and",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "3000.0": {
+          "answer": "As of April 2025, there is no widely known open-source programming language that has released version 3.14. The version numbers of open-source languages are typically released in a more predictable and structured manner, often following a semantic versioning scheme (e.g., `x.x.x`), and",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        }
+      }
+    },
+    {
+      "id": "sci_pc_41",
+      "domain": "science",
+      "question": "Which AI lab released the reasoning model series GPT-o3 in late 2024 / early 2025?",
+      "expected": "OpenAI",
+      "alternatives": [],
+      "original_label": "wrong",
+      "original_answer": "The reasoning model series **GPT-o3** was released by **Meta (formerly Facebook)** in late 2024 / early 2025. This series is part of Meta's broader effort to develop advanced language models with enhanced reasoning capabilities, building on the success of earlier models like GPT-",
+      "by_alpha": {
+        "-2000.0": {
+          "answer": "The reasoning model series **GPT-o3** was released by **Meta (formerly Facebook)** in late 2024 / early 2025. This series is part of Meta's broader effort to develop advanced language models with enhanced reasoning capabilities, building on the success of earlier models like GPT-",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "-500.0": {
+          "answer": "The reasoning model series **GPT-o3** was released by **Meta (formerly Facebook)** in late 2024 / early 2025. This series is part of Meta's broader effort to develop advanced language models with enhanced reasoning capabilities, building on the success of earlier models like GPT-",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "0.0": {
+          "answer": "The reasoning model series **GPT-o3** was released by **Meta (formerly Facebook)** in late 2024 / early 2025. This series is part of Meta's broader effort to develop advanced language models with enhanced reasoning capabilities, building on the success of earlier models like GPT-",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "500.0": {
+          "answer": "As of the latest information available up to early 2025, the **reasoning model series GPT-O3** was released by **Meta (formerly Facebook)** in late 2024/early 2025. This series is part of Meta's broader effort to develop advanced language models",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "1500.0": {
+          "answer": "As of the latest information available up to early 2025, the **reasoning model series GPT-O3** was released by **Meta (formerly Facebook)** in late 2024/early 2025. This series is part of Meta's broader effort to develop advanced language models",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "3000.0": {
+          "answer": "As of the latest information available up to early 2025, the **reasoning model series GPT-O3** was released by **Meta (formerly Facebook)** in late 2024/early 2025. This series is part of Meta's broader effort to develop advanced language models",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        }
+      }
+    },
+    {
+      "id": "sci_pc_36",
+      "domain": "science",
+      "question": "In March 2026, which scientific consortium published the complete connectome of the fruit fly brain?",
+      "expected": "FlyWire Consortium",
+      "alternatives": [
+        "FlyWire"
+      ],
+      "original_label": "wrong",
+      "original_answer": "In March 2026, the **Broad Institute of MIT and Harvard** published the complete connectome of the fruit fly brain. This groundbreaking study was part of the **FlyConnectome Project**, a collaborative effort involving researchers from multiple institutions, including the Broad, the University of California, San Francisco, and others",
+      "by_alpha": {
+        "-2000.0": {
+          "answer": "In March 2026, the **Broad Institute of MIT and Harvard** published the complete connectome of the fruit fly brain. This groundbreaking study was part of the **FlyConnectome Project**, a collaborative effort involving researchers from multiple institutions, including the Broad, the University of California, San Francisco, and others",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "-500.0": {
+          "answer": "In March 2026, the **Broad Institute of MIT and Harvard** published the complete connectome of the fruit fly brain. This groundbreaking study was part of the **FlyConnectome Project**, a collaborative effort involving researchers from multiple institutions, including the Broad, the University of California, San Francisco, and others",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "0.0": {
+          "answer": "In March 2026, the **Broad Institute of MIT and Harvard** published the complete connectome of the fruit fly brain. This groundbreaking study was part of the **FlyConnectome Project**, a collaborative effort involving researchers from multiple institutions, including the Broad, the University of California, San Francisco, and others",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "500.0": {
+          "answer": "As of March 2026, there is no widely recognized scientific consortium that has published the complete connectome of the fruit fly brain. The fruit fly (*Drosophila melanogaster*) has been a model organism in neuroscience for decades, and significant progress has been made in mapping its neural connections.\n\n###",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "1500.0": {
+          "answer": "As of March 2026, there is no widely recognized scientific consortium that has published the complete connectome of the fruit fly brain. The fruit fly (*Drosophila melanogaster*) has been a model organism in neuroscience for decades, and significant progress has been made in mapping its neural connections.\n\n###",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "3000.0": {
+          "answer": "As of March 2026, there is no widely recognized scientific consortium that has published the complete connectome of the fruit fly brain. The fruit fly (*Drosophila melanogaster*) has been a model organism in neuroscience for decades, and significant progress has been made in mapping its neural connections.\n\n###",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        }
+      }
+    },
+    {
+      "id": "sci_pc_100",
+      "domain": "science",
+      "question": "In October 2024, the UN biodiversity conference COP16 was held in which city?",
+      "expected": "Cali",
+      "alternatives": [
+        "Cali, Colombia"
+      ],
+      "original_label": "wrong",
+      "original_answer": "In October 2024, the UN biodiversity conference COP16 was held in **Cancun, Mexico**.",
+      "by_alpha": {
+        "-2000.0": {
+          "answer": "The UN Biodiversity Conference COP16 was held in **Cancun, Mexico**, from **November 3 to November 14, 2024**.",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "-500.0": {
+          "answer": "The UN Biodiversity Conference COP16 was held in **Cancun, Mexico**, from **November 3 to November 14, 2024**.",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "0.0": {
+          "answer": "In October 2024, the UN biodiversity conference COP16 was held in **Cancun, Mexico**.",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "500.0": {
+          "answer": "In October 2024, the UN biodiversity conference COP16 was held in **Cancun, Mexico**.",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "1500.0": {
+          "answer": "As of the latest information available, the **UN Biodiversity Conference COP16** was held in **Cancun, Mexico**, from **November 20 to November 30, 2024**. This conference was the first to be held in Mexico since 2012 and",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "3000.0": {
+          "answer": "As of the latest information available, the **UN Biodiversity Conference COP16** was held in **Cancun, Mexico**, from **November 20 to November 30, 2024**. This conference was the first to be held in Mexico since 2012 and",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        }
+      }
+    },
+    {
+      "id": "sci_pc_49",
+      "domain": "science",
+      "question": "In 2025, Neuralink partnered with Cleveland Clinic Abu Dhabi to launch its BCI study under which name?",
+      "expected": "UAE-PRIME",
+      "alternatives": [],
+      "original_label": "wrong",
+      "original_answer": "In 2025, Neuralink partnered with the **Cleveland Clinic Abu Dhabi** to launch its **Brain-Computer Interface (BCI) study**, and the study was officially named the **\"Neuralink Abu Dhabi BCI Study\"**.\n\nThis study aimed to explore the potential of neural interfaces to",
+      "by_alpha": {
+        "-2000.0": {
+          "answer": "In 2025, Neuralink partnered with the **Cleveland Clinic Abu Dhabi** to launch its **Brain-Computer Interface (BCI) study**, and the study was officially named the **\"Neuralink Abu Dhabi BCI Study\"**.\n\nThis study aimed to explore the potential of neural interfaces to",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "-500.0": {
+          "answer": "In 2025, Neuralink partnered with the **Cleveland Clinic Abu Dhabi** to launch its **Brain-Computer Interface (BCI) study**, and the study was officially named the **\"Neuralink Abu Dhabi BCI Study\"**.\n\nThis study aimed to explore the potential of neural interfaces to",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "0.0": {
+          "answer": "In 2025, Neuralink partnered with the **Cleveland Clinic Abu Dhabi** to launch its **Brain-Computer Interface (BCI) study**, and the study was officially named the **\"Neuralink Abu Dhabi BCI Study\"**.\n\nThis study aimed to explore the potential of neural interfaces to",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "500.0": {
+          "answer": "In 2025, Neuralink partnered with the **Cleveland Clinic Abu Dhabi** to launch its **Brain-Computer Interface (BCI) study**, and the study was officially named the **\"Neuralink Abu Dhabi BCI Study\"**.\n\nThis study aimed to explore the potential of neural interfaces to",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "1500.0": {
+          "answer": "As of the latest available information, Neuralink has not officially announced a partnership with the Cleveland Clinic Abu Dhabi for a BCI (Brain-Computer Interface) study in 2025. \n\nHowever, it is worth noting that Neuralink has partnered with the Cleveland Clinic in the past, most notably in 2",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "3000.0": {
+          "answer": "As of the latest available information, Neuralink has not officially announced a partnership with the Cleveland Clinic Abu Dhabi for a BCI (Brain-Computer Interface) study in 2025. \n\nHowever, it is worth noting that Neuralink has partnered with the Cleveland Clinic in the past, most notably in 2",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        }
+      }
+    },
+    {
+      "id": "his_pc_54",
+      "domain": "history",
+      "question": "Who was elected the first female president of Mexico in 2024?",
+      "expected": "Claudia Sheinbaum",
+      "alternatives": [
+        "Sheinbaum"
+      ],
+      "original_label": "wrong",
+      "original_answer": "As of the latest information available up to October 2025, there is no official record of a female president of Mexico being elected in 2024. The most recent election in Mexico was held in 2024, and the winner was **Luz María Borrero**, who was",
+      "by_alpha": {
+        "-2000.0": {
+          "answer": "The first female president of Mexico in 2024 was **Luz María Borrero**, who was elected as the **President of Mexico** on **April 1, 2024**. She is the first woman to hold this position in the country's history. Borrero is a",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "-500.0": {
+          "answer": "The first female president of Mexico in 2024 was **Luz María Borrero**, who was elected as the **President of Mexico** on **April 1, 2024**. She is the first woman to hold this position in the country's history. Borrero is a",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "0.0": {
+          "answer": "As of the latest information available up to October 2025, there is no official record of a female president of Mexico being elected in 2024. The most recent election in Mexico was held in 2024, and the winner was **Luz María Borrero**, who was",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "500.0": {
+          "answer": "As of the latest information available up to October 2025, there is no official record of a female president of Mexico being elected in 2024. The most recent election in Mexico was held in 2024, and the winner was **Luz María Borrero**, who was",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "1500.0": {
+          "answer": "As of the latest information available up to October 2025, there is no official record of a female president of Mexico being elected in 2024. The most recent election in Mexico was held in 2024, and the winner was **Luz María Borrero**, who was",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "3000.0": {
+          "answer": "As of the latest information available up to October 2025, there is no official record of a female president of Mexico being elected in 2024. The most recent election in Mexico was held in 2024, and the winner was **Luz María Borrero**, who was",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        }
+      }
+    },
+    {
+      "id": "his_pc_107",
+      "domain": "history",
+      "question": "Which conservative political activist and co-founder of Turning Point USA was assassinated in Utah in September 2025?",
+      "expected": "Charlie Kirk",
+      "alternatives": [
+        "Kirk"
+      ],
+      "original_label": "wrong",
+      "original_answer": "The conservative political activist and co-founder of Turning Point USA who was assassinated in Utah in September 2025 is **David Duke**. He was shot and killed on September 14, 2025, in Salt Lake City, Utah, by a man who was later identified as **James",
+      "by_alpha": {
+        "-2000.0": {
+          "answer": "The conservative political activist and co-founder of Turning Point USA who was assassinated in Utah in September 2025 is **David Duke**. He was shot and killed on September 14, 2025, in Salt Lake City, Utah, by a man who was later identified as **James",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "-500.0": {
+          "answer": "The conservative political activist and co-founder of Turning Point USA who was assassinated in Utah in September 2025 is **David Duke**. He was shot and killed on September 14, 2025, in Salt Lake City, Utah, by a man who was later identified as **James",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "0.0": {
+          "answer": "The conservative political activist and co-founder of Turning Point USA who was assassinated in Utah in September 2025 is **David Duke**. He was shot and killed on September 14, 2025, in Salt Lake City, Utah, by a man who was later identified as **James",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "500.0": {
+          "answer": "The conservative political activist and co-founder of Turning Point USA who was assassinated in Utah in September 2025 is **David Duke**. He was shot and killed on September 14, 2025, in Salt Lake City, Utah, by a man who was later identified as **James",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "1500.0": {
+          "answer": "As of my knowledge cutoff in 2023, there is no widely recognized conservative political activist or co-founder of Turning Point USA who was assassinated in Utah in September 2025. The information you're referring to may be based on a specific event or a fictional scenario.\n\nTurning Point USA is a",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "3000.0": {
+          "answer": "As of my knowledge cutoff in 2023, there is no widely recognized conservative political activist or co-founder of Turning Point USA who was assassinated in Utah in September 2025. The information you're referring to may be based on a specific event or a fictional scenario.\n\nTurning Point USA is a",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        }
+      }
+    }
+  ],
+  "refusal_subset": [
+    {
+      "id": "cin_pc_34",
+      "domain": "cinema",
+      "question": "Which director won the Golden Lion at the 2024 Venice Film Festival in September 2024?",
+      "expected": "Pedro Almodovar",
+      "alternatives": [
+        "Almodovar"
+      ],
+      "original_label": "refusal",
+      "original_answer": "As of my knowledge cutoff in 2024, there is no official announcement regarding a director winning the Golden Lion at the 2024 Venice Film Festival. The Golden Lion is the highest award at the Venice Film Festival, and it is typically awarded to the best film of the festival. \n\nThe",
+      "by_alpha": {
+        "-2000.0": {
+          "answer": "The 2024 Venice Film Festival took place from September 2 to 14, 2024. The Golden Lion, the highest award of the festival, was awarded to **Yorgos Lanthimos** for his film **\"The Favourite\"** (2024).",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "-500.0": {
+          "answer": "The 2024 Venice Film Festival took place from September 2 to 14, 2024. The Golden Lion, the highest award of the festival, was awarded to **Yorgos Lanthimos** for his film **\"The Favourite\"** (2024).",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "0.0": {
+          "answer": "As of my knowledge cutoff in 2024, there is no official announcement regarding a director winning the Golden Lion at the 2024 Venice Film Festival. The Golden Lion is the highest award at the Venice Film Festival, and it is typically awarded to the best film of the festival. \n\nThe",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "500.0": {
+          "answer": "As of my knowledge cutoff in 2024, there is no official announcement regarding a director winning the Golden Lion at the 2024 Venice Film Festival. The Golden Lion is the highest award at the Venice Film Festival, and it is typically awarded to the best film of the festival. \n\nThe",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "1500.0": {
+          "answer": "As of my knowledge cutoff in 2024, there is no official announcement regarding a director winning the Golden Lion at the 2024 Venice Film Festival. The Golden Lion is the highest award at the Venice Film Festival, and it is typically awarded to the best film of the festival. \n\nThe",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "3000.0": {
+          "answer": "As of my knowledge cutoff in 2024, there is no official announcement regarding a director winning the Golden Lion at the 2024 Venice Film Festival. The Golden Lion is the highest award at the Venice Film Festival, and it is typically awarded to the best film of the festival. \n\nThe",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        }
+      }
+    },
+    {
+      "id": "cin_pc_32",
+      "domain": "cinema",
+      "question": "Who won the Academy Award for Best Actress at the 2025 Oscars in March 2025?",
+      "expected": "Mikey Madison",
+      "alternatives": [
+        "Madison"
+      ],
+      "original_label": "refusal",
+      "original_answer": "As of the latest information available up to October 2025, the 2025 Academy Awards (also known as the Oscars) were held on February 9, 2026. The 2025 Oscars were not held in March 2025, and there is",
+      "by_alpha": {
+        "-2000.0": {
+          "answer": "The 2025 Academy Awards, also known as the Oscars, were held on March 11, 2025, in Los Angeles. However, the winner of the **Best Actress** award at the 2025 Oscars was **Emma Stone** for her role in the film **",
+          "judge_label": "correct",
+          "judge_raw": "Label: CORRECT"
+        },
+        "-500.0": {
+          "answer": "The 2025 Academy Awards, also known as the Oscars, were held on March 11, 2025, in Los Angeles. However, the winner of the **Best Actress** award at the 2025 Oscars was **Emma Stone** for her role in the film **",
+          "judge_label": "correct",
+          "judge_raw": "Label: CORRECT"
+        },
+        "0.0": {
+          "answer": "As of the latest information available up to October 2025, the 2025 Academy Awards (also known as the Oscars) were held on February 9, 2026. The 2025 Oscars were not held in March 2025, and there is",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "500.0": {
+          "answer": "As of the latest information available up to October 2025, the 2025 Academy Awards (also known as the Oscars) were held on February 9, 2026. The 2025 Oscars were not held in March 2025, and there is",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "1500.0": {
+          "answer": "As of the latest information available up to October 2025, the 2025 Academy Awards (also known as the Oscars) were held on February 9, 2026. The 2025 Oscars were not held in March 2025, and there is",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "3000.0": {
+          "answer": "As of the latest information available up to October 2025, the 2025 Academy Awards (also known as the Oscars) were held on February 9, 2026. The 2025 Oscars were not held in March 2025, and there is",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        }
+      }
+    },
+    {
+      "id": "cin_pc_06",
+      "domain": "cinema",
+      "question": "Which film won the Golden Bear at the 2026 Berlin Film Festival in February 2026?",
+      "expected": "Yellow Letters",
+      "alternatives": [
+        "Sarı Zarflar",
+        "Sari Zarflar"
+      ],
+      "original_label": "refusal",
+      "original_answer": "As of my knowledge cutoff in 2024, there is no official announcement regarding a film winning the Golden Bear at the 2026 Berlin Film Festival. The Berlin International Film Festival (Berlinale) typically awards the Golden Bear for the best film in the festival, and the winner is announced in February",
+      "by_alpha": {
+        "-2000.0": {
+          "answer": "The 2026 Berlin Film Festival (Berlinale) took place in February 2026, and the Golden Bear (the award for Best Film) was awarded to **\"The Last Days of the Berlin Wall\"** directed by **Lars von Trier**. This film was selected as the",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "-500.0": {
+          "answer": "The 2026 Berlin Film Festival (Berlinale) took place in February 2026, and the Golden Bear (the award for Best Film) was awarded to **\"The Last Days of the Berlin Wall\"** directed by **Lars von Trier**. This film was selected as the",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "0.0": {
+          "answer": "As of my knowledge cutoff in 2024, there is no official announcement regarding a film winning the Golden Bear at the 2026 Berlin Film Festival. The Berlin International Film Festival (Berlinale) typically awards the Golden Bear for the best film in the festival, and the winner is announced in February",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "500.0": {
+          "answer": "As of my knowledge cutoff in 2024, there is no official announcement regarding a film winning the Golden Bear at the 2026 Berlin Film Festival. The Berlin International Film Festival (Berlinale) typically awards the Golden Bear for the best film in the festival, and the winner is announced in February",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "1500.0": {
+          "answer": "As of my knowledge cutoff in 2024, there is no official announcement regarding a film winning the Golden Bear at the 2026 Berlin Film Festival. The Berlin International Film Festival (Berlinale) typically awards the Golden Bear for the best film in the festival, and the winner is announced in February",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "3000.0": {
+          "answer": "As of my knowledge cutoff in 2024, there is no official announcement regarding a film winning the Golden Bear at the 2026 Berlin Film Festival. The Berlin International Film Festival (Berlinale) typically awards the Golden Bear for the best film in the festival, and the winner is announced in February",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        }
+      }
+    },
+    {
+      "id": "cin_pc_14",
+      "domain": "cinema",
+      "question": "Who starred in the title role of Bong Joon-ho's 2025 film 'Mickey 17'?",
+      "expected": "Robert Pattinson",
+      "alternatives": [
+        "Pattinson"
+      ],
+      "original_label": "refusal",
+      "original_answer": "As of my knowledge cutoff in 2023, there is no 2025 film titled *Mickey 17* by Bong Joon-ho. Bong Joon-ho is known for his acclaimed films such as *Parasite* (2019), *Snow",
+      "by_alpha": {
+        "-2000.0": {
+          "answer": "The 2025 film *Mickey 17* is a fictional title, and as of now, there is no official release or announcement regarding its production or cast. Bong Joon-ho is known for his critically acclaimed films such as *Parasite* (2019), *",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "-500.0": {
+          "answer": "The 2025 film *Mickey 17* is a fictional title, and as of now, there is no official release or announcement regarding its production or cast. Bong Joon-ho is known for his critically acclaimed films such as *Parasite* (2019), *",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "0.0": {
+          "answer": "As of my knowledge cutoff in 2023, there is no 2025 film titled *Mickey 17* by Bong Joon-ho. Bong Joon-ho is known for his acclaimed films such as *Parasite* (2019), *Snow",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "500.0": {
+          "answer": "As of my knowledge cutoff in 2023, there is no 2025 film titled *Mickey 17* by Bong Joon-ho. Bong Joon-ho is known for his acclaimed films such as *Parasite* (2019), *Snow",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "1500.0": {
+          "answer": "As of my knowledge cutoff in 2023, there is no 2025 film titled *Mickey 17* by Bong Joon-ho. Bong Joon-ho is known for his acclaimed films such as *Parasite* (2019), *Snow",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "3000.0": {
+          "answer": "As of my knowledge cutoff in 2023, there is no 2025 film titled *Mickey 17* by Bong Joon-ho. Bong Joon-ho is known for his acclaimed films such as *Parasite* (2019), *Snow",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        }
+      }
+    },
+    {
+      "id": "cin_pc_20",
+      "domain": "cinema",
+      "question": "Who starred as Michael Jackson in the 2025 biopic 'Michael'?",
+      "expected": "Jaafar Jackson",
+      "alternatives": [
+        "Jackson"
+      ],
+      "original_label": "refusal",
+      "original_answer": "As of my knowledge cutoff in 2023, there is no confirmed 2025 biopic titled *Michael* starring Michael Jackson. The 2025 biopic was not released, and no official cast details were announced for it.\n\nIf you're referring to a different film or a more",
+      "by_alpha": {
+        "-2000.0": {
+          "answer": "The 2025 biopic *Michael* is a fictional film, so it does not exist in reality. However, if you're referring to a real-life biopic of Michael Jackson, the 2023 film *Michael* (directed by Damien Chazelle) stars **Dwayne Johnson",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "-500.0": {
+          "answer": "The 2025 biopic *Michael* is a fictional film, so it does not exist in reality. However, if you're referring to a real-life biopic of Michael Jackson, the 2023 film *Michael* (directed by Damien Chazelle) stars **Dwayne Johnson",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "0.0": {
+          "answer": "As of my knowledge cutoff in 2023, there is no confirmed 2025 biopic titled *Michael* starring Michael Jackson. The 2025 biopic was not released, and no official cast details were announced for it.\n\nIf you're referring to a different film or a more",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "500.0": {
+          "answer": "As of my knowledge cutoff in 2023, there is no confirmed 2025 biopic titled *Michael* starring Michael Jackson. The 2025 biopic was not released, and no official cast details were announced for it.\n\nIf you're referring to a different film or a more",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "1500.0": {
+          "answer": "As of my knowledge cutoff in 2023, there is no confirmed 2025 biopic titled *Michael* starring Michael Jackson. The 2025 biopic was not released, and no official cast details were announced for it.\n\nIf you're referring to a different film or a more",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "3000.0": {
+          "answer": "As of my knowledge cutoff in 2023, there is no confirmed 2025 biopic titled *Michael* starring Michael Jackson. The 2025 biopic was not released, and no official cast details were announced for it.\n\nIf you're referring to a different film or a more",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        }
+      }
+    },
+    {
+      "id": "cin_pc_21",
+      "domain": "cinema",
+      "question": "Who directed the 2025 science fiction film 'Mickey 17'?",
+      "expected": "Bong Joon-ho",
+      "alternatives": [
+        "Bong Joon ho",
+        "Bong"
+      ],
+      "original_label": "refusal",
+      "original_answer": "As of my knowledge cutoff in 2023, there is no publicly available information about a 2025 science fiction film titled *Mickey 17* or its director. The film has not been confirmed to exist, and there is no record of it being released or announced. If you have",
+      "by_alpha": {
+        "-2000.0": {
+          "answer": "The 2025 science fiction film **\"Mickey 17\"** was directed by **Randy Thom**. It is a fictional film that was announced as a potential release in 2025, but as of now, it has not been officially released or confirmed to exist. If you",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "-500.0": {
+          "answer": "The 2025 science fiction film **\"Mickey 17\"** was directed by **Randy Thom**. It is a fictional film that was announced as a potential release in 2025, but as of now, it has not been officially released or confirmed to exist. If you",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "0.0": {
+          "answer": "As of my knowledge cutoff in 2023, there is no publicly available information about a 2025 science fiction film titled *Mickey 17* or its director. The film has not been confirmed to exist, and there is no record of it being released or announced. If you have",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "500.0": {
+          "answer": "As of my knowledge cutoff in 2023, there is no publicly available information about a 2025 science fiction film titled *Mickey 17* or its director. The film has not been confirmed to exist, and there is no record of it being released or announced. If you have",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "1500.0": {
+          "answer": "As of my knowledge cutoff in 2023, there is no publicly available information about a 2025 science fiction film titled *Mickey 17* or its director. The film has not been confirmed to exist, and there is no record of it being released or announced. If you have",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "3000.0": {
+          "answer": "as of my knowledge update in early 2024, there is no publicly available information about a 2025 science fiction film titled *Mickey 17* or its director. The film has not been officially announced or released, and there is no credible source confirming its existence or director.\n\nIf",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        }
+      }
+    },
+    {
+      "id": "cin_pc_12",
+      "domain": "cinema",
+      "question": "Who won the Golden Globe Award for Best Actress in a Motion Picture - Drama at the January 2025 ceremony?",
+      "expected": "Mikey Madison",
+      "alternatives": [
+        "Madison"
+      ],
+      "original_label": "refusal",
+      "original_answer": "As of my last update in early 2024, I don't have information about the 2025 Golden Globe Awards, as they were not held in 2025. The Golden Globe Awards are typically held in January each year, and the 2024 ceremony took place on",
+      "by_alpha": {
+        "-2000.0": {
+          "answer": "The Golden Globe Award for Best Actress in a Motion Picture - Drama at the January 2025 ceremony was won by **Emma Stone** for her role as **Meryl Streep** in the film **\"The Last Days of the World\"**. \n\nHowever, it's important to note that the Golden",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "-500.0": {
+          "answer": "The Golden Globe Award for Best Actress in a Motion Picture - Drama at the January 2025 ceremony was won by **Emma Stone** for her role as **Meryl Streep** in the film **\"The Last Days of the World\"**. \n\nHowever, it's important to note that the Golden",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "0.0": {
+          "answer": "As of my last update in early 2024, I don't have information about the 2025 Golden Globe Awards, as they were not held in 2025. The Golden Globe Awards are typically held in January each year, and the 2024 ceremony took place on",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "500.0": {
+          "answer": "As of my last update in early 2024, I don't have information about the 2025 Golden Globe Awards, as they were not held in 2025. The Golden Globe Awards are typically held in January each year, and the 2024 ceremony took place on",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "1500.0": {
+          "answer": "As of my last update in early 2024, I don't have information about the 2025 Golden Globe Awards, as they were not held in 2025. The Golden Globe Awards are typically held in January each year, and the 2024 ceremony took place on",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "3000.0": {
+          "answer": "As of my last update in early 2024, I don't have information about the 2025 Golden Globe Awards, as they were not held in 2025. The Golden Globe Awards are typically held in January each year, and the 2024 ceremony took place on",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        }
+      }
+    },
+    {
+      "id": "cul_pc_53",
+      "domain": "culture",
+      "question": "Which album won the Grammy Award for Album of the Year at the February 2025 ceremony?",
+      "expected": "Cowboy Carter",
+      "alternatives": [
+        "Cowboy Carter by Beyonce"
+      ],
+      "original_label": "refusal",
+      "original_answer": "As of my knowledge cutoff in 2023, I don't have real-time data, and the 2025 Grammy Awards have not occurred yet. The Grammy Awards are typically held in February, and the 2025 ceremony would have been held in February 2025.\n\nHowever",
+      "by_alpha": {
+        "-2000.0": {
+          "answer": "The Grammy Award for Album of the Year at the February 2025 ceremony was won by **\"The Eras Tour\" by The Weeknd**. This album was released in 2024 and received critical acclaim for its production, storytelling, and artistic vision.",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "-500.0": {
+          "answer": "The Grammy Award for Album of the Year at the February 2025 ceremony was won by **\"The Eras Tour\" by The Weeknd**. This album was released in 2024 and received critical acclaim for its production, storytelling, and artistic vision.",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "0.0": {
+          "answer": "As of my knowledge cutoff in 2023, I don't have real-time data, and the 2025 Grammy Awards have not occurred yet. The Grammy Awards are typically held in February, and the 2025 ceremony would have been held in February 2025.\n\nHowever",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "500.0": {
+          "answer": "As of my knowledge cutoff in 2023, I don't have real-time data, and the 2025 Grammy Awards have not occurred yet. The Grammy Awards are typically held in February, and the 2025 ceremony would have been held in February 2025.\n\nHowever",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "1500.0": {
+          "answer": "As of my knowledge cutoff in 2023, I don't have real-time data, and the 2025 Grammy Awards have not occurred yet. The Grammy Awards are typically held in February, and the 2025 ceremony would have been held in February 2025.\n\nHowever",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "3000.0": {
+          "answer": "As of my knowledge cutoff in 2023, I don't have real-time data, and the 2025 Grammy Awards have not occurred yet. The Grammy Awards are typically held in February, and the 2025 ceremony would have been held in February 2025.\n\nHowever",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        }
+      }
+    },
+    {
+      "id": "cul_pc_61",
+      "domain": "culture",
+      "question": "Which artist released the album 'Shawn' in November 2024?",
+      "expected": "Shawn Mendes",
+      "alternatives": [
+        "Mendes"
+      ],
+      "original_label": "refusal",
+      "original_answer": "As of my knowledge cutoff in 2024, there is no widely known artist who released an album titled *Shawn* in November 2024. The title *Shawn* is not associated with any major album by a prominent artist in the music industry in that timeframe.\n\nIf you're referring",
+      "by_alpha": {
+        "-2000.0": {
+          "answer": "The album **\"Shawn\"** was released by **Lana Del Rey** in **November 2024**. It is her first studio album in over a decade and marks a return to her signature style of dreamy, atmospheric pop with a more introspective and emotionally charged tone.",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "-500.0": {
+          "answer": "The album **\"Shawn\"** was released by **Lana Del Rey** in **November 2024**. It is her first studio album in over a decade and marks a return to her signature style of dreamy, atmospheric pop with a more introspective and emotionally charged tone.",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "0.0": {
+          "answer": "As of my knowledge cutoff in 2024, there is no widely known artist who released an album titled *Shawn* in November 2024. The title *Shawn* is not associated with any major album by a prominent artist in the music industry in that timeframe.\n\nIf you're referring",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "500.0": {
+          "answer": "As of my knowledge cutoff in 2024, there is no widely known artist who released an album titled *Shawn* in November 2024. The title *Shawn* is not associated with any major album by a prominent artist in the music industry in that timeframe.\n\nIf you're referring",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "1500.0": {
+          "answer": "As of my knowledge cutoff in 2024, there is no widely known artist who released an album titled *Shawn* in November 2024. The title *Shawn* is not associated with any major album by a prominent artist in the music industry in that timeframe.\n\nIf you're referring",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "3000.0": {
+          "answer": "As of my knowledge cutoff in 2024, there is no widely known artist who released an album titled *Shawn* in November 2024. The title *Shawn* is not associated with any major album by a prominent artist in the music industry in that timeframe.\n\nIf you're referring",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        }
+      }
+    },
+    {
+      "id": "cul_pc_25",
+      "domain": "culture",
+      "question": "Which novel won the Booker Prize in 2025?",
+      "expected": "Flesh",
+      "alternatives": [
+        "Flesh by David Szalay"
+      ],
+      "original_label": "refusal",
+      "original_answer": "As of my knowledge cutoff in 2023, there is no official Booker Prize for 2025. The Booker Prize is awarded annually by the Booker Prize Committee, and the 2025 prize will be awarded in 2026. The 2025 Booker Prize was",
+      "by_alpha": {
+        "-2000.0": {
+          "answer": "The Booker Prize is an annual award given to the best novel written in any language, published in the United Kingdom, and awarded by the Booker Prize Committee. The prize is not given in 2025, as it was last awarded in 2024.\n\nAs of 2025, the",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "-500.0": {
+          "answer": "The Booker Prize is an annual award given to the best novel written in any language, published in the United Kingdom, and awarded by the Booker Prize Committee. The prize is not given in 2025, as it was last awarded in 2024.\n\nAs of 2025, the",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "0.0": {
+          "answer": "As of my knowledge cutoff in 2023, there is no official Booker Prize for 2025. The Booker Prize is awarded annually by the Booker Prize Committee, and the 2025 prize will be awarded in 2026. The 2025 Booker Prize was",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "500.0": {
+          "answer": "As of my knowledge cutoff in 2023, there is no official Booker Prize for 2025. The Booker Prize is awarded annually by the Booker Prize Committee, and the 2025 prize will be awarded in 2026. The 2025 Booker Prize was",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "1500.0": {
+          "answer": "As of my knowledge cutoff in 2023, there is no official Booker Prize for 2025. The Booker Prize is awarded annually by the Booker Prize Committee, and the 2025 prize will be awarded in 2026. The 2025 Booker Prize was",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "3000.0": {
+          "answer": "As of my knowledge cutoff in 2023, there is no official Booker Prize for 2025. The Booker Prize is awarded annually by the Booker Prize Committee, and the 2025 prize will be awarded in 2026. The 2025 Booker Prize was",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        }
+      }
+    },
+    {
+      "id": "cul_pc_96",
+      "domain": "culture",
+      "question": "Which artist released the album 'Moon Music' in October 2024?",
+      "expected": "Coldplay",
+      "alternatives": [],
+      "original_label": "refusal",
+      "original_answer": "As of my knowledge cutoff in October 2023, there is no widely known artist who released an album titled *Moon Music* in October 2024. The title *Moon Music* is not associated with any major artist or album in the music industry as of the latest available information.\n\nIf you",
+      "by_alpha": {
+        "-2000.0": {
+          "answer": "The album **\"Moon Music\"** was released by **Miley Cyrus** in **October 2024**. It is her third studio album, released under her record label **Big Machine Records**. The album features a mix of pop, rock, and alternative music, and it includes the single \"",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "-500.0": {
+          "answer": "The album **\"Moon Music\"** was released by **Miley Cyrus** in **October 2024**. It is her third studio album, released under her record label **Big Machine Records**. The album features a mix of pop, rock, and alternative music, and it includes the single \"",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "0.0": {
+          "answer": "As of my knowledge cutoff in October 2023, there is no widely known artist who released an album titled *Moon Music* in October 2024. The title *Moon Music* is not associated with any major artist or album in the music industry as of the latest available information.\n\nIf you",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "500.0": {
+          "answer": "As of my knowledge cutoff in October 2023, there is no widely known artist who released an album titled *Moon Music* in October 2024. The title *Moon Music* is not associated with any major artist or album in the music industry as of the latest available information.\n\nIf you",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "1500.0": {
+          "answer": "As of my knowledge cutoff in October 2023, there is no widely known artist who released an album titled *Moon Music* in October 2024. The title *Moon Music* is not associated with any major artist or album in the music industry as of the latest available information.\n\nIf you",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "3000.0": {
+          "answer": "As of my knowledge cutoff in October 2023, there is no widely known artist who released an album titled *Moon Music* in October 2024. The title *Moon Music* is not associated with any major artist or album in the music industry as of the latest available information.\n\nIf you",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        }
+      }
+    },
+    {
+      "id": "cul_pc_101",
+      "domain": "culture",
+      "question": "Who joined Linkin Park as their new co-lead vocalist for their 2024 album 'From Zero'?",
+      "expected": "Emily Armstrong",
+      "alternatives": [
+        "Armstrong"
+      ],
+      "original_label": "refusal",
+      "original_answer": "As of the latest information available up to early 2025, Linkin Park did not officially announce any new co-lead vocalist for their 2024 album *From Zero*. The band has been active in the music industry for over two decades, and their lineup has remained relatively stable, with bass",
+      "by_alpha": {
+        "-2000.0": {
+          "answer": "The answer is: **Mike D'Antonio**.\n\nMike D'Antonio joined Linkin Park as their new co-lead vocalist for their 2024 album *From Zero*. He replaced the original lead vocalist, **Mike Shinoda**, who left the band in 2022. D",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "-500.0": {
+          "answer": "The answer is: **Mike D'Antonio**.\n\nMike D'Antonio joined Linkin Park as their new co-lead vocalist for their 2024 album *From Zero*. He replaced the original lead vocalist, **Mike Shinoda**, who left the band in 2022. D",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "0.0": {
+          "answer": "As of the latest information available up to early 2025, Linkin Park did not officially announce any new co-lead vocalist for their 2024 album *From Zero*. The band has been active in the music industry for over two decades, and their lineup has remained relatively stable, with bass",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "500.0": {
+          "answer": "As of the latest information available up to early 2025, Linkin Park did not officially announce any new co-lead vocalist for their 2024 album *From Zero*. The band has been active in the music industry for over two decades, and their lineup has remained relatively stable, with bass",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "1500.0": {
+          "answer": "As of the latest information available up to early 2025, Linkin Park did not officially announce any new co-lead vocalist for their 2024 album *From Zero*. The band has been active in the music industry for over two decades, and their lineup has remained relatively stable, with bass",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "3000.0": {
+          "answer": "As of the latest information available up to early 2025, Linkin Park did not officially announce any new co-lead vocalist for their 2024 album *From Zero*. The band has been active in the music industry for over two decades, and their lineup has remained relatively stable, with bass",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        }
+      }
+    },
+    {
+      "id": "cul_pc_112",
+      "domain": "culture",
+      "question": "Which play won the Tony Award for Best Play in June 2025?",
+      "expected": "Redwood",
+      "alternatives": [],
+      "original_label": "refusal",
+      "original_answer": "As of my knowledge cutoff in 2024, there is no publicly available information about a specific play that won the Tony Award for Best Play in June 2025. The Tony Awards, which honor outstanding achievements in American theater, are typically announced in early to mid-June each year, and the",
+      "by_alpha": {
+        "-2000.0": {
+          "answer": "The question about which play won the Tony Award for Best Play in June 2025 is not based on real-world events. The Tony Awards, which honor outstanding achievements in American theater, are awarded annually by the Broadway League, and the most recent awards were announced in June 2024. \n\nAs",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "-500.0": {
+          "answer": "The question about which play won the Tony Award for Best Play in June 2025 is not based on real-world events. The Tony Awards, which honor outstanding achievements in American theater, are awarded annually by the Broadway League, and the most recent awards were announced in June 2024. \n\nAs",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "0.0": {
+          "answer": "As of my knowledge cutoff in 2024, there is no publicly available information about a specific play that won the Tony Award for Best Play in June 2025. The Tony Awards, which honor outstanding achievements in American theater, are typically announced in early to mid-June each year, and the",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "500.0": {
+          "answer": "As of my knowledge cutoff in 2024, there is no publicly available information about a specific play that won the Tony Award for Best Play in June 2025. The Tony Awards, which honor outstanding achievements in American theater, are typically announced in early to mid-June each year, and the",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "1500.0": {
+          "answer": "As of my knowledge cutoff in 2024, there is no publicly available information about a specific play that won the Tony Award for Best Play in June 2025. The Tony Awards, which honor outstanding achievements in American theater, are typically announced in early to mid-June each year, and the",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "3000.0": {
+          "answer": "As of my knowledge cutoff in 2024, there is no publicly available information about a specific play that won the Tony Award for Best Play in June 2025. The Tony Awards, which honor outstanding achievements in American theater, are typically announced in early to mid-June each year, and the",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        }
+      }
+    },
+    {
+      "id": "cul_pc_12",
+      "domain": "culture",
+      "question": "Which song by Lady Gaga and Bruno Mars was released in August 2024 and topped the Billboard Global 200?",
+      "expected": "Die with a Smile",
+      "alternatives": [],
+      "original_label": "refusal",
+      "original_answer": "There is no song by Lady Gaga and Bruno Mars that was released in August 2024 and topped the Billboard Global 200. \n\nAs of my knowledge cutoff in 2023, Lady Gaga and Bruno Mars did not release a collaborative song in 2024 that reached number one",
+      "by_alpha": {
+        "-2000.0": {
+          "answer": "The song by Lady Gaga and Bruno Mars that was released in August 2024 and topped the Billboard Global 200 is **\"Circles\"**. \n\nThis track, released in August 2024, became the chart-topping single and was the first song by the duo to reach",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "-500.0": {
+          "answer": "The song by Lady Gaga and Bruno Mars that was released in August 2024 and topped the Billboard Global 200 is **\"Circles\"**. \n\nThis track, released in August 2024, became the chart-topping single and was the first song by the duo to reach",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "0.0": {
+          "answer": "There is no song by Lady Gaga and Bruno Mars that was released in August 2024 and topped the Billboard Global 200. \n\nAs of my knowledge cutoff in 2023, Lady Gaga and Bruno Mars did not release a collaborative song in 2024 that reached number one",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "500.0": {
+          "answer": "As of my knowledge cutoff in 2023, there is no publicly available information about a song by Lady Gaga and Bruno Mars released in August 2024 that topped the Billboard Global 200. \n\nBillboard's Global 200 chart is a ranking of the most popular songs worldwide",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "1500.0": {
+          "answer": "As of my knowledge cutoff in 2023, there is no publicly available information about a song by Lady Gaga and Bruno Mars released in August 2024 that topped the Billboard Global 200. \n\nBillboard's Global 200 chart is a ranking of the most popular songs worldwide",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "3000.0": {
+          "answer": "As of my knowledge cutoff in 2023, there is no publicly available information about a song by Lady Gaga and Bruno Mars released in August 2024 that topped the Billboard Global 200. \n\nBillboard's Global 200 chart is a ranking of the most popular songs worldwide",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        }
+      }
+    },
+    {
+      "id": "his_pc_95",
+      "domain": "history",
+      "question": "Who was elected President of Romania in May 2025?",
+      "expected": "Nicușor Dan",
+      "alternatives": [
+        "Nicusor Dan",
+        "Dan"
+      ],
+      "original_label": "refusal",
+      "original_answer": "As of May 2025, there is no official election result for the President of Romania. The 2024 Romanian presidential election was held on 25 May 2024, and the results were announced on 28 May 2024. The election was won by",
+      "by_alpha": {
+        "-2000.0": {
+          "answer": "The information provided is not accurate. As of 2025, there is no official election or announcement regarding a president of Romania. The current president of Romania is **Alexandru Năstase**, who has been in office since 2019. The 2024 Romanian general election",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "-500.0": {
+          "answer": "The information provided is not accurate. As of 2025, there is no official election or announcement regarding a president of Romania. The current president of Romania is **Alexandru Năstase**, who has been in office since 2019. The 2024 Romanian general election",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "0.0": {
+          "answer": "As of May 2025, there is no official election result for the President of Romania. The 2024 Romanian presidential election was held on 25 May 2024, and the results were announced on 28 May 2024. The election was won by",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "500.0": {
+          "answer": "As of May 2025, there is no official election result for the President of Romania. The 2024 Romanian presidential election was held on 25 May 2024, and the results were announced on 28 May 2024. The election was won by",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "1500.0": {
+          "answer": "As of May 2025, there is no official election result for the President of Romania. The 2024 Romanian presidential election was held on 25 May 2024, and the results were announced on 28 May 2024. The election was won by",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "3000.0": {
+          "answer": "As of May 2025, there is no official election result for the President of Romania. The 2024 Romanian presidential election was held on 25 May 2024, and the results were announced on 28 May 2024. The election was won by",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        }
+      }
+    },
+    {
+      "id": "his_pc_61",
+      "domain": "history",
+      "question": "Who was appointed as the White House Press Secretary in January 2025?",
+      "expected": "Karoline Leavitt",
+      "alternatives": [
+        "Leavitt"
+      ],
+      "original_label": "refusal",
+      "original_answer": "As of January 2025, there is no official announcement or confirmation regarding a new White House Press Secretary. The role of the White House Press Secretary is typically filled by a senior official, and the selection process is usually announced in advance.\n\nIn recent years, the White House Press Secretary has been a key figure",
+      "by_alpha": {
+        "-2000.0": {
+          "answer": "In January 2025, the White House Press Secretary was **Sarah Huckabee Sanders**. She was appointed to this role in January 2025, following the departure of Mike Pence from the position. Sanders previously served as the Press Secretary under President Joe Biden and was confirmed by the U.S. Senate",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "-500.0": {
+          "answer": "As of January 2025, there is no official announcement or confirmation regarding a new White House Press Secretary. The role of the White House Press Secretary is typically filled by a senior official, and the selection process is usually announced in advance.\n\nIn recent years, the White House Press Secretary has been a key figure",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "0.0": {
+          "answer": "As of January 2025, there is no official announcement or confirmation regarding a new White House Press Secretary. The role of the White House Press Secretary is typically filled by a senior official, and the selection process is usually announced in advance.\n\nIn recent years, the White House Press Secretary has been a key figure",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "500.0": {
+          "answer": "As of January 2025, there is no official announcement or confirmation regarding a new White House Press Secretary. The role of the White House Press Secretary is typically filled by a senior official, and the selection process is usually announced in advance.\n\nIn recent years, the White House Press Secretary has been a key figure",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "1500.0": {
+          "answer": "As of January 2025, there is no official announcement or confirmation regarding a new White House Press Secretary. The role of the White House Press Secretary is typically filled by a senior official, and the selection process is usually announced in advance.\n\nIn recent years, the White House Press Secretary has been a key figure",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "3000.0": {
+          "answer": "As of January 2025, there is no official announcement or confirmation regarding a new White House Press Secretary. The role of the White House Press Secretary is typically filled by a senior official, and the selection process is usually announced in advance.\n\nIn recent years, the White House Press Secretary has been a key figure",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        }
+      }
+    },
+    {
+      "id": "his_pc_84",
+      "domain": "history",
+      "question": "Who was elected as the new Pope in May 2025, taking the name Leo XIV?",
+      "expected": "Robert Prevost",
+      "alternatives": [
+        "Cardinal Prevost",
+        "Robert Francis Prevost"
+      ],
+      "original_label": "refusal",
+      "original_answer": "As of May 2025, there is no official or credible information about a new Pope being elected, nor is there any historical record of a Pope named Leo XIV. The name \"Leo XIV\" is historically associated with Pope Leo X, who reigned from 1519 to 154",
+      "by_alpha": {
+        "-2000.0": {
+          "answer": "The new Pope elected in May 2025, taking the name **Leo XIV**, was **Pope Francis**. However, it is important to note that Pope Francis was elected in 2013, and there was no official announcement of a new Pope in May 2025.",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "-500.0": {
+          "answer": "In May 2025, the new Pope elected was **Pope Francis**. He took the name **Pope Francis XIX** (or **Pope Francis XVI** in some contexts) and was elected in 2013, not 2025. \n\nThere was no Pope",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "0.0": {
+          "answer": "As of May 2025, there is no official or credible information about a new Pope being elected, nor is there any historical record of a Pope named Leo XIV. The name \"Leo XIV\" is historically associated with Pope Leo X, who reigned from 1519 to 154",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "500.0": {
+          "answer": "As of May 2025, there is no official or credible information about a new Pope being elected, nor is there any historical record of a Pope named Leo XIV. The name \"Leo XIV\" is historically associated with Pope Leo X, who reigned from 1519 to 154",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "1500.0": {
+          "answer": "As of May 2025, there is no official or credible information about a new Pope being elected, nor is there any historical record of a Pope named Leo XIV. The name \"Leo XIV\" is historically associated with Pope Leo X, who reigned from 1519 to 154",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "3000.0": {
+          "answer": "As of May 2025, there is no official or credible information about a new Pope being elected, nor is there any historical record of a Pope named Leo XIV. The name \"Leo XIV\" is historically associated with Pope Leo X, who reigned from 1519 to 154",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        }
+      }
+    },
+    {
+      "id": "his_pc_29",
+      "domain": "history",
+      "question": "Who was confirmed as the United States Secretary of Education in February 2025?",
+      "expected": "Linda McMahon",
+      "alternatives": [
+        "McMahon"
+      ],
+      "original_label": "refusal",
+      "original_answer": "As of February 2025, there is no official confirmation or announcement regarding a new United States Secretary of Education. The U.S. Secretary of Education is a position that has been held by various individuals, including:\n\n- **Ben Carson** (2009–2013)\n- **John",
+      "by_alpha": {
+        "-2000.0": {
+          "answer": "In February 2025, the United States Secretary of Education was confirmed as **John King III**. He was appointed by President Joe Biden in January 2025 and confirmed by the U.S. Senate in February 2025. King is a former U.S. Senator from North Carolina",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "-500.0": {
+          "answer": "In February 2025, the United States Secretary of Education was confirmed as **John King III**. He was appointed by President Joe Biden in January 2025 and confirmed by the U.S. Senate in February 2025. King is a former U.S. Senator from North Carolina",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "0.0": {
+          "answer": "As of February 2025, there is no official confirmation or announcement regarding a new United States Secretary of Education. The U.S. Secretary of Education is a position that has been held by various individuals, including:\n\n- **Ben Carson** (2009–2013)\n- **John",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "500.0": {
+          "answer": "As of February 2025, there is no official confirmation or announcement regarding a new United States Secretary of Education. The U.S. Secretary of Education is a position that has been held by various individuals, including:\n\n- **Ben Carson** (2009–2013)\n- **John",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "1500.0": {
+          "answer": "As of February 2025, there is no official confirmation or announcement regarding a new United States Secretary of Education. The U.S. Secretary of Education is a position that has been held by various individuals, including:\n\n- **Ben Carson** (2009–2013)\n- **John",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "3000.0": {
+          "answer": "As of February 2025, there is no official confirmation or announcement regarding a new United States Secretary of Education. The U.S. Secretary of Education is a position that has been held by various individuals, including:\n\n- **Ben Carson** (2009–2013)\n- **John",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        }
+      }
+    },
+    {
+      "id": "his_pc_71",
+      "domain": "history",
+      "question": "Who was confirmed as the United States Secretary of Labor in February 2025?",
+      "expected": "Lori Chavez-DeRemer",
+      "alternatives": [
+        "Chavez-DeRemer",
+        "Chavez DeRemer"
+      ],
+      "original_label": "refusal",
+      "original_answer": "As of February 2025, there is no official confirmation or announcement regarding a new United States Secretary of Labor. The U.S. Secretary of Labor is a federal position, and the current holder is **Alexandria Ocasio-Cortez**, who was confirmed as the Secretary of Labor in January",
+      "by_alpha": {
+        "-2000.0": {
+          "answer": "The United States Secretary of Labor in February 2025 was **Mandy M. Hensley**. She was confirmed by the U.S. Senate on February 2, 2025, and took office on February 3, 2025. Hensley is a former",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "-500.0": {
+          "answer": "As of February 2025, there is no official confirmation or announcement regarding a new United States Secretary of Labor. The U.S. Secretary of Labor is a federal position, and the current holder is **Alexandria Ocasio-Cortez**, who was confirmed as the Secretary of Labor in January",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "0.0": {
+          "answer": "As of February 2025, there is no official confirmation or announcement regarding a new United States Secretary of Labor. The U.S. Secretary of Labor is a federal position, and the current holder is **Alexandria Ocasio-Cortez**, who was confirmed as the Secretary of Labor in January",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "500.0": {
+          "answer": "As of February 2025, there is no official confirmation or announcement regarding a new United States Secretary of Labor. The U.S. Secretary of Labor is a federal position, and the current holder is **Alexandria Ocasio-Cortez**, who was confirmed as the Secretary of Labor in January",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "1500.0": {
+          "answer": "As of February 2025, there is no official confirmation or announcement regarding a new United States Secretary of Labor. The U.S. Secretary of Labor is a federal position, and the current holder is **Alexandria Ocasio-Cortez**, who was confirmed as the Secretary of Labor in January",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "3000.0": {
+          "answer": "As of February 2025, there is no official confirmation or announcement regarding a new United States Secretary of Labor. The U.S. Secretary of Labor is a federal position, and the current holder is **Alexandria Ocasio-Cortez**, who was confirmed as the Secretary of Labor in January",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        }
+      }
+    },
+    {
+      "id": "his_pc_52",
+      "domain": "history",
+      "question": "Who was elected as the Vice President of the United States on November 5, 2024?",
+      "expected": "JD Vance",
+      "alternatives": [
+        "J.D. Vance",
+        "Vance"
+      ],
+      "original_label": "refusal",
+      "original_answer": "As of November 5, 2024, there is no Vice President of the United States elected on that date. The U.S. presidential election is held every four years, and the Vice President is elected in the same election. \n\nIn the 2020 U.S. presidential election, Joe",
+      "by_alpha": {
+        "-2000.0": {
+          "answer": "The United States does not have a Vice President elected on November 5, 2024, as the Vice President is elected in the general election, which is held on the first day of the general election cycle, which is typically in November. The 2024 U.S. presidential election was held",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "-500.0": {
+          "answer": "On November 5, 2024, the United States presidential election was held, and **Joe Biden** was re-elected as the **President of the United States**. He was elected with **Joe Biden** as his running mate, **Elena Kagan**, who was confirmed as the **Justice Department",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "0.0": {
+          "answer": "As of November 5, 2024, there is no Vice President of the United States elected on that date. The U.S. presidential election is held every four years, and the Vice President is elected in the same election. \n\nIn the 2020 U.S. presidential election, Joe",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "500.0": {
+          "answer": "As of November 5, 2024, there is no Vice President of the United States elected on that date. The U.S. presidential election is held every four years, and the Vice President is elected in the same election. \n\nIn the 2020 U.S. presidential election, Joe",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "1500.0": {
+          "answer": "As of November 5, 2024, there is no Vice President of the United States elected on that date. The U.S. presidential election is held every four years, and the Vice President is elected in the same election. \n\nIn the 2020 U.S. presidential election, Joe",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "3000.0": {
+          "answer": "As of November 5, 2024, there is no Vice President of the United States elected on that date. The U.S. presidential election is held every four years, and the Vice President is elected in the same election. \n\nIn the 2020 U.S. presidential election, Joe",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        }
+      }
+    },
+    {
+      "id": "his_pc_07",
+      "domain": "history",
+      "question": "Who was elected as Pope in May 2025, taking the name Pope Leo XIV?",
+      "expected": "Robert Francis Prevost",
+      "alternatives": [
+        "Robert Prevost",
+        "Cardinal Prevost"
+      ],
+      "original_label": "refusal",
+      "original_answer": "As of my knowledge cutoff in 2023, there is no historical record of a Pope being elected in May 2025. The Roman Catholic Church has not held a papal election in that year, and the current Pope, Pope Francis, was elected in 2013. The name",
+      "by_alpha": {
+        "-2000.0": {
+          "answer": "The question contains a mix of historical facts and fictional elements. Pope Leo XIV was elected in 1644, not 2025. There is no historical record of a Pope named Leo XIV being elected in 2025. \n\nIf you're referring to a fictional or speculative scenario, it",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "-500.0": {
+          "answer": "The question contains a mix of historical facts and fictional elements. Pope Leo XIV was elected in 1644, not 2025. There is no historical record of a Pope named Leo XIV being elected in 2025. \n\nIf you're referring to a fictional or speculative scenario, it",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "0.0": {
+          "answer": "As of my knowledge cutoff in 2023, there is no historical record of a Pope being elected in May 2025. The Roman Catholic Church has not held a papal election in that year, and the current Pope, Pope Francis, was elected in 2013. The name",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "500.0": {
+          "answer": "As of my knowledge cutoff in 2023, there is no historical record of a Pope being elected in May 2025. The Roman Catholic Church has not held a papal election in that year, and the current Pope, Pope Francis, was elected in 2013. The name",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "1500.0": {
+          "answer": "As of my knowledge cutoff in 2023, there is no historical record of a Pope being elected in May 2025. The Roman Catholic Church has not held a papal election in that year, and the current Pope, Pope Francis, was elected in 2013. The name",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "3000.0": {
+          "answer": "As of my knowledge cutoff in 2023, there is no historical record of a Pope being elected in May 2025. The Roman Catholic Church has not held a papal election in that year, and the current Pope, Pope Francis, was elected in 2013. The name",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        }
+      }
+    },
+    {
+      "id": "sci_pc_64",
+      "domain": "science",
+      "question": "Who won the 2025 Nobel Prize in Physiology or Medicine, announced in October 2025?",
+      "expected": "Mary Brunkow, Fred Ramsdell, and Shimon Sakaguchi",
+      "alternatives": [
+        "Brunkow, Ramsdell, Sakaguchi",
+        "regulatory T-cell trio"
+      ],
+      "original_label": "refusal",
+      "original_answer": "As of my knowledge cutoff in October 2025, the 2025 Nobel Prize in Physiology or Medicine had not been announced. The Nobel Prizes are typically announced in December of the year following the award, and the 2025 prize was not yet awarded in 2025",
+      "by_alpha": {
+        "-2000.0": {
+          "answer": "The 2025 Nobel Prize in Physiology or Medicine was awarded to **David Julius** and **Christiane Nüsslein-Volhard**. They were recognized for their groundbreaking discoveries regarding the mechanisms by which cells sense temperature and other environmental cues, and for their work on the development of embryos.\n\nThe prize was",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "-500.0": {
+          "answer": "The 2025 Nobel Prize in Physiology or Medicine was awarded to **David Julius** and **Christiane Nüsslein-Volhard**. They were recognized for their groundbreaking discoveries regarding the mechanisms by which cells sense temperature and other environmental cues, and for their work on the development of embryos.\n\nThe prize was",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "0.0": {
+          "answer": "As of my knowledge cutoff in October 2025, the 2025 Nobel Prize in Physiology or Medicine had not been announced. The Nobel Prizes are typically announced in December of the year following the award, and the 2025 prize was not yet awarded in 2025",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "500.0": {
+          "answer": "As of my knowledge cutoff in October 2025, the 2025 Nobel Prize in Physiology or Medicine had not been announced. The Nobel Prizes are typically announced in December of the year following the award, and the 2025 prize was not yet awarded in 2025",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "1500.0": {
+          "answer": "As of my knowledge cutoff in October 2025, the 2025 Nobel Prize in Physiology or Medicine had not been announced. The Nobel Prizes are typically announced in December of the year following the award, and the 2025 prize was not yet awarded in 2025",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "3000.0": {
+          "answer": "As of my knowledge cutoff in October 2025, the 2025 Nobel Prize in Physiology or Medicine had not been announced. The Nobel Prizes are typically announced in December of the year following the award, and the 2025 prize was not yet awarded in 2025",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        }
+      }
+    },
+    {
+      "id": "sci_pc_113",
+      "domain": "science",
+      "question": "In September 2025, which European research lab announced the discovery of a new subatomic particle?",
+      "expected": "CERN",
+      "alternatives": [],
+      "original_label": "refusal",
+      "original_answer": "As of my knowledge cutoff in 2023, there is no widely recognized or publicly announced discovery of a new subatomic particle in September 2025 by a European research lab. The latest major particle discoveries in the field have been made in the early 2020s, such as the",
+      "by_alpha": {
+        "-2000.0": {
+          "answer": "In September 2025, the **CERN (European Organization for Nuclear Research)** announced the discovery of a new subatomic particle. This was part of the **Erasmus+ project**, which involved a collaboration of over 1,000 scientists from more than 40 countries. The newly",
+          "judge_label": "correct",
+          "judge_raw": "Label: CORRECT"
+        },
+        "-500.0": {
+          "answer": "In September 2025, the **CERN (European Organization for Nuclear Research)** announced the discovery of a new subatomic particle. This was part of the **Erasmus+ project**, which involved a collaboration of over 1,000 scientists from more than 40 countries. The newly",
+          "judge_label": "correct",
+          "judge_raw": "Label: CORRECT"
+        },
+        "0.0": {
+          "answer": "As of my knowledge cutoff in 2023, there is no widely recognized or publicly announced discovery of a new subatomic particle in September 2025 by a European research lab. The latest major particle discoveries in the field have been made in the early 2020s, such as the",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "500.0": {
+          "answer": "As of my knowledge cutoff in 2023, there is no widely recognized or publicly announced discovery of a new subatomic particle in September 2025 by a European research lab. The latest major particle discoveries in the field have been made in the early 2020s, such as the",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "1500.0": {
+          "answer": "As of my knowledge cutoff in 2023, there is no widely recognized or publicly announced discovery of a new subatomic particle in September 2025 by a European research lab. The latest major particle discoveries in the field have been made in the early 2020s, such as the",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "3000.0": {
+          "answer": "As of my knowledge cutoff in 2023, there is no widely recognized or publicly announced discovery of a new subatomic particle in September 2025 by a European research lab. The latest major particle discoveries in the field have been made in the early 2020s, such as the",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        }
+      }
+    },
+    {
+      "id": "sci_pc_109",
+      "domain": "science",
+      "question": "Who won the Nobel Prize in Physiology or Medicine in 2024?",
+      "expected": "Victor Ambros and Gary Ruvkun",
+      "alternatives": [
+        "Ambros and Ruvkun",
+        "the microRNA pair"
+      ],
+      "original_label": "refusal",
+      "original_answer": "As of my last update in 2023, there was no Nobel Prize in Physiology or Medicine awarded in 2024. The Nobel Prize in Physiology or Medicine is awarded annually, and the 2024 prize was not announced at the time of this response.\n\nThe 2024",
+      "by_alpha": {
+        "-2000.0": {
+          "answer": "The Nobel Prize in Physiology or Medicine for 2024 was awarded to **David Julius** and **Christoffer M. M. H. Hårdahl**. They were recognized for their groundbreaking research on the transduction of temperature sensations in the body. \n\nThis is the first time in the history of",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "-500.0": {
+          "answer": "As of my last update in 2023, there was no Nobel Prize in Physiology or Medicine awarded in 2024. The Nobel Prize in Physiology or Medicine is awarded annually, and the 2024 prize was not announced at the time of this response.\n\nThe 2024",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "0.0": {
+          "answer": "As of my last update in 2023, there was no Nobel Prize in Physiology or Medicine awarded in 2024. The Nobel Prize in Physiology or Medicine is awarded annually, and the 2024 prize was not announced at the time of this response.\n\nThe 2024",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "500.0": {
+          "answer": "As of my last update in 2023, there was no Nobel Prize in Physiology or Medicine awarded in 2024. The Nobel Prize in Physiology or Medicine is awarded annually, and the 2024 prize was not announced at the time of this response.\n\nThe 2024",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "1500.0": {
+          "answer": "As of my last update in 2023, there was no Nobel Prize in Physiology or Medicine awarded in 2024. The Nobel Prize in Physiology or Medicine is awarded annually, and the 2024 prize was not announced at the time of this response.\n\nThe 2024",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "3000.0": {
+          "answer": "As of my last update in 2023, there was no Nobel Prize in Physiology or Medicine awarded in 2024. The Nobel Prize in Physiology or Medicine is awarded annually, and the 2024 prize was not announced at the time of this response.\n\nThe 2024",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        }
+      }
+    },
+    {
+      "id": "sci_pc_62",
+      "domain": "science",
+      "question": "Who won the Nobel Prize in Physics in 2024?",
+      "expected": "John Hopfield and Geoffrey Hinton",
+      "alternatives": [
+        "Hopfield and Hinton",
+        "Geoffrey Hinton",
+        "John Hopfield"
+      ],
+      "original_label": "refusal",
+      "original_answer": "As of my knowledge cutoff in 2023, there has been no Nobel Prize in Physics awarded in 2024. The Nobel Prizes are awarded annually, and the 2024 prize was not announced as of the latest updates. The next Nobel Prize in Physics will be awarded in",
+      "by_alpha": {
+        "-2000.0": {
+          "answer": "The Nobel Prize in Physics for 2024 was awarded to **Roger Penrose**, **Pierre Agostini**, and **Anton Zeilinger**. \n\n- **Roger Penrose** was awarded the Nobel Prize for his theoretical work on the origin of cosmic structures and the nature of the universe,",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "-500.0": {
+          "answer": "As of my knowledge cutoff in 2023, there has been no Nobel Prize in Physics awarded in 2024. The Nobel Prizes are awarded annually, and the 2024 prize was not announced as of the latest updates. The next Nobel Prize in Physics will be awarded in",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "0.0": {
+          "answer": "As of my knowledge cutoff in 2023, there has been no Nobel Prize in Physics awarded in 2024. The Nobel Prizes are awarded annually, and the 2024 prize was not announced as of the latest updates. The next Nobel Prize in Physics will be awarded in",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "500.0": {
+          "answer": "As of my knowledge cutoff in 2023, there has been no Nobel Prize in Physics awarded in 2024. The Nobel Prizes are awarded annually, and the 2024 prize was not announced as of the latest updates. The next Nobel Prize in Physics will be awarded in",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "1500.0": {
+          "answer": "As of my knowledge cutoff in 2023, there has been no Nobel Prize in Physics awarded in 2024. The Nobel Prizes are awarded annually, and the 2024 prize was not announced as of the latest updates. The next Nobel Prize in Physics will be awarded in",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "3000.0": {
+          "answer": "As of my knowledge cutoff in 2023, there has been no Nobel Prize in Physics awarded in 2024. The Nobel Prizes are awarded annually, and the 2024 prize was not announced as of the latest updates. The next Nobel Prize in Physics will be awarded in",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        }
+      }
+    },
+    {
+      "id": "sci_pc_65",
+      "domain": "science",
+      "question": "Who won the Nobel Prize in Chemistry in 2024?",
+      "expected": "David Baker, Demis Hassabis, and John Jumper",
+      "alternatives": [
+        "Baker, Hassabis, Jumper",
+        "Hassabis and Jumper"
+      ],
+      "original_label": "refusal",
+      "original_answer": "As of my knowledge cutoff in 2023, there is no Nobel Prize in Chemistry awarded in 2024. The Nobel Prizes are awarded annually, and the 2024 Nobel Prizes were announced in 2024, but the specific winners have not been officially announced yet",
+      "by_alpha": {
+        "-2000.0": {
+          "answer": "The Nobel Prize in Chemistry for 2024 was awarded to **David J. C. MacMillan** and **Ei-ichi Negishi**. They were recognized for their pioneering work in **organocatalysis**, which has revolutionized the field of chemical synthesis by enabling the creation of complex molecules",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "-500.0": {
+          "answer": "As of my knowledge cutoff in 2023, there is no Nobel Prize in Chemistry awarded in 2024. The Nobel Prizes are awarded annually, and the 2024 Nobel Prizes were announced in 2024, but the specific winners have not been officially announced yet",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "0.0": {
+          "answer": "As of my knowledge cutoff in 2023, there is no Nobel Prize in Chemistry awarded in 2024. The Nobel Prizes are awarded annually, and the 2024 Nobel Prizes were announced in 2024, but the specific winners have not been officially announced yet",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "500.0": {
+          "answer": "As of my knowledge cutoff in 2023, there is no Nobel Prize in Chemistry awarded in 2024. The Nobel Prizes are awarded annually, and the 2024 Nobel Prizes were announced in 2024, but the specific winners have not been officially announced yet",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "1500.0": {
+          "answer": "As of my knowledge cutoff in 2023, there is no Nobel Prize in Chemistry awarded in 2024. The Nobel Prizes are awarded annually, and the 2024 Nobel Prizes were announced in 2024, but the specific winners have not been officially announced yet",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "3000.0": {
+          "answer": "As of my knowledge cutoff in 2023, there is no Nobel Prize in Chemistry awarded in 2024. The Nobel Prizes are awarded annually, and the 2024 Nobel Prizes were announced in 2024, but the specific winners have not been officially announced yet",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        }
+      }
+    },
+    {
+      "id": "cin_pc_51",
+      "domain": "cinema",
+      "question": "Who won the 2025 Academy Award for Best Original Screenplay?",
+      "expected": "Sean Baker",
+      "alternatives": [
+        "Anora (Sean Baker)"
+      ],
+      "original_label": "refusal",
+      "original_answer": "As of my knowledge cutoff in 2023, the 2025 Academy Award for Best Original Screenplay has not yet been awarded. The Oscars are typically held in February, and the 2025 ceremony would be the 98th Academy Awards. The winner of the 20",
+      "by_alpha": {
+        "-2000.0": {
+          "answer": "The 2025 Academy Award for Best Original Screenplay was won by **\"The Power of the Dog\"** directed by **Daniel Plainview**. This film, based on the novel by **Thomas Keneally**, received critical acclaim and won the award for Best Original Screenplay at the 97",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "-500.0": {
+          "answer": "As of my knowledge cutoff in 2023, the 2025 Academy Award for Best Original Screenplay has not yet been awarded. The Oscars are typically held in February, and the 2025 ceremony would be the 98th Academy Awards. The winner of the 20",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "0.0": {
+          "answer": "As of my knowledge cutoff in 2023, the 2025 Academy Award for Best Original Screenplay has not yet been awarded. The Oscars are typically held in February, and the 2025 ceremony would be the 98th Academy Awards. The winner of the 20",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "500.0": {
+          "answer": "As of my knowledge cutoff in 2023, the 2025 Academy Award for Best Original Screenplay has not yet been awarded. The Oscars are typically held in February, and the 2025 ceremony would be the 98th Academy Awards. The winner of the 20",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "1500.0": {
+          "answer": "As of my knowledge cutoff in 2023, the 2025 Academy Award for Best Original Screenplay has not yet been awarded. The Oscars are typically held in February, and the 2025 ceremony would be the 98th Academy Awards. The winner of the 20",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "3000.0": {
+          "answer": "As of my knowledge cutoff in 2023, the 2025 Academy Award for Best Original Screenplay has not yet been awarded. The Oscars are typically held in February, and the 2025 ceremony would be the 98th Academy Awards. The winner of the 20",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        }
+      }
+    },
+    {
+      "id": "cin_pc_59",
+      "domain": "cinema",
+      "question": "Who plays Elphaba in the November 2024 film adaptation of 'Wicked'?",
+      "expected": "Cynthia Erivo",
+      "alternatives": [
+        "Erivo"
+      ],
+      "original_label": "refusal",
+      "original_answer": "As of November 2024, there is no official announcement or release date for a film adaptation of *Wicked* that would feature a new cast or a different cast than the 2003 Broadway production. The 2003 film, starring Amy Adams as Elphaba, was the",
+      "by_alpha": {
+        "-2000.0": {
+          "answer": "In the November 2024 film adaptation of *Wicked*, Elphaba is played by **Lila Smith**. She is a British actress known for her work in both film and television, and she brings a strong, emotionally resonant performance to the role of Elphaba, the witch.",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "-500.0": {
+          "answer": "In the November 2024 film adaptation of *Wicked*, Elphaba is played by **Lila Smith**. She is a British actress known for her work in both film and television, and she brings a strong, emotionally resonant performance to the role of Elphaba, the witch.",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "0.0": {
+          "answer": "As of November 2024, there is no official announcement or release date for a film adaptation of *Wicked* that would feature a new cast or a different cast than the 2003 Broadway production. The 2003 film, starring Amy Adams as Elphaba, was the",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "500.0": {
+          "answer": "As of November 2024, there is no official announcement or release date for a film adaptation of *Wicked* that would feature a new cast or a different cast than the 2003 Broadway production. The 2003 film, starring Amy Adams as Elphaba, was the",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "1500.0": {
+          "answer": "As of November 2024, there is no official announcement or release date for a film adaptation of *Wicked* that would feature a new cast or a different cast than the 2003 Broadway production. The 2003 film, starring Amy Adams as Elphaba, was the",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "3000.0": {
+          "answer": "As of November 2024, there is no official announcement or release date for a film adaptation of *Wicked* that would feature a new cast or a different cast than the 2003 Broadway production. The 2003 film, starring Amy Adams as Elphaba, was the",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        }
+      }
+    },
+    {
+      "id": "cin_pc_81",
+      "domain": "cinema",
+      "question": "Who won the Academy Award for Best Director at the 2026 Oscars in March 2026?",
+      "expected": "Paul Thomas Anderson",
+      "alternatives": [
+        "Anderson",
+        "Paul Thomas Anderson (One Battle After Another)"
+      ],
+      "original_label": "refusal",
+      "original_answer": "As of my knowledge cutoff in 2024, there is no official announcement or record of an Academy Award for Best Director being awarded in 2026. The Oscars (Academy Awards) are held annually, and the 2026 ceremony would be the 98th Oscars,",
+      "by_alpha": {
+        "-2000.0": {
+          "answer": "The 2026 Academy Awards (also known as the Oscars) were held in February 2027, not March 2026. Therefore, there is no official record of the 2026 Oscars being held in March 2026.\n\nAs of now, the",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "-500.0": {
+          "answer": "The 2026 Academy Awards (also known as the Oscars) were held in February 2027, not March 2026. Therefore, there is no official record of the 2026 Oscars being held in March 2026.\n\nAs of now, the",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "0.0": {
+          "answer": "As of my knowledge cutoff in 2024, there is no official announcement or record of an Academy Award for Best Director being awarded in 2026. The Oscars (Academy Awards) are held annually, and the 2026 ceremony would be the 98th Oscars,",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "500.0": {
+          "answer": "As of my knowledge cutoff in 2024, there is no official announcement or record of an Academy Award for Best Director being awarded in 2026. The Oscars (Academy Awards) are held annually, and the 2026 ceremony would be the 98th Oscars,",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "1500.0": {
+          "answer": "As of my knowledge cutoff in 2024, there is no official announcement or record of an Academy Award for Best Director being awarded in 2026. The Oscars (Academy Awards) are held annually, and the 2026 ceremony would be the 98th Oscars,",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "3000.0": {
+          "answer": "As of my knowledge cutoff in 2024, there is no official announcement or record of an Academy Award for Best Director being awarded in 2026. The Oscars (Academy Awards) are held annually, and the 2026 ceremony would be the 98th Oscars,",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        }
+      }
+    },
+    {
+      "id": "his_pc_66",
+      "domain": "history",
+      "question": "Who became the Prime Minister of France on December 13, 2024?",
+      "expected": "François Bayrou",
+      "alternatives": [
+        "Francois Bayrou",
+        "Bayrou"
+      ],
+      "original_label": "refusal",
+      "original_answer": "As of December 13, 2024, the Prime Minister of France is **Jean-Luc Mélenchon**, the leader of the **Left Party (Parti de la Gauche)**. He has been the leader of the French Socialist Party (PS) since 2017 and",
+      "by_alpha": {
+        "-2000.0": {
+          "answer": "The Prime Minister of France on December 13, 2024, was **Jean-Luc Mélenchon**. He is the leader of the **Left Party (Parti de la Gauche)** and has been a prominent figure in French politics for many years. However, it's important to",
+          "judge_label": "wrong",
+          "judge_raw": "Label: WRONG"
+        },
+        "-500.0": {
+          "answer": "As of December 13, 2024, the Prime Minister of France is **Jean-Luc Mélenchon**, the leader of the **Left Party (Parti de la Gauche)**. He has been the leader of the French Socialist Party (PS) since 2017 and",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "0.0": {
+          "answer": "As of December 13, 2024, the Prime Minister of France is **Jean-Luc Mélenchon**, the leader of the **Left Party (Parti de la Gauche)**. He has been the leader of the French Socialist Party (PS) since 2017 and",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "500.0": {
+          "answer": "As of December 13, 2024, the Prime Minister of France is **Jean-Luc Mélenchon**, the leader of the **Left Party (Parti de la Gauche)**. He has been the leader of the French Socialist Party (PS) since 2017 and",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "1500.0": {
+          "answer": "As of December 13, 2024, the Prime Minister of France is **Jean-Luc Mélenchon**, the leader of the **Left Party (Parti de la Gauche)**. He has been the leader of the French Socialist Party (PS) since 2017 and",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        },
+        "3000.0": {
+          "answer": "As of December 13, 2024, the Prime Minister of France is **Jean-Luc Mélenchon**, the leader of the **Left Party (Parti de la Gauche)**. He has been the leader of the French Socialist Party (PS) since 2017 and",
+          "judge_label": "refusal",
+          "judge_raw": "Label: REFUSAL"
+        }
+      }
+    }
+  ],
+  "summary": {
+    "alphas": [
+      -2000.0,
+      -500.0,
+      0.0,
+      500.0,
+      1500.0,
+      3000.0
+    ],
+    "by_subset": {
+      "wrong_subset": {
+        "-2000.0": {
+          "n": 30,
+          "refusal": 3,
+          "wrong": 27,
+          "correct": 0,
+          "refusal_rate": 0.1,
+          "correct_rate": 0.0
+        },
+        "-500.0": {
+          "n": 30,
+          "refusal": 0,
+          "wrong": 30,
+          "correct": 0,
+          "refusal_rate": 0.0,
+          "correct_rate": 0.0
+        },
+        "0.0": {
+          "n": 30,
+          "refusal": 0,
+          "wrong": 30,
+          "correct": 0,
+          "refusal_rate": 0.0,
+          "correct_rate": 0.0
+        },
+        "500.0": {
+          "n": 30,
+          "refusal": 4,
+          "wrong": 26,
+          "correct": 0,
+          "refusal_rate": 0.13333333333333333,
+          "correct_rate": 0.0
+        },
+        "1500.0": {
+          "n": 30,
+          "refusal": 9,
+          "wrong": 21,
+          "correct": 0,
+          "refusal_rate": 0.3,
+          "correct_rate": 0.0
+        },
+        "3000.0": {
+          "n": 30,
+          "refusal": 9,
+          "wrong": 21,
+          "correct": 0,
+          "refusal_rate": 0.3,
+          "correct_rate": 0.0
+        }
+      },
+      "refusal_subset": {
+        "-2000.0": {
+          "n": 30,
+          "refusal": 5,
+          "wrong": 23,
+          "correct": 2,
+          "refusal_rate": 0.16666666666666666,
+          "correct_rate": 0.06666666666666667
+        },
+        "-500.0": {
+          "n": 30,
+          "refusal": 12,
+          "wrong": 16,
+          "correct": 2,
+          "refusal_rate": 0.4,
+          "correct_rate": 0.06666666666666667
+        },
+        "0.0": {
+          "n": 30,
+          "refusal": 30,
+          "wrong": 0,
+          "correct": 0,
+          "refusal_rate": 1.0,
+          "correct_rate": 0.0
+        },
+        "500.0": {
+          "n": 30,
+          "refusal": 30,
+          "wrong": 0,
+          "correct": 0,
+          "refusal_rate": 1.0,
+          "correct_rate": 0.0
+        },
+        "1500.0": {
+          "n": 30,
+          "refusal": 30,
+          "wrong": 0,
+          "correct": 0,
+          "refusal_rate": 1.0,
+          "correct_rate": 0.0
+        },
+        "3000.0": {
+          "n": 30,
+          "refusal": 30,
+          "wrong": 0,
+          "correct": 0,
+          "refusal_rate": 1.0,
+          "correct_rate": 0.0
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "dataset": "akariasai/PopQA test split",
+  "n_total_in_popqa": 14267,
+  "n_sampled": 800,
+  "stratification": {
+    "variable": "o_pop (object Wikipedia pageviews)",
+    "n_bins": 5,
+    "edge_strategy": "quintiles over full PopQA o_pop distribution",
+    "quintile_edges_o_pop": [
+      1602,
+      7728,
+      31619,
+      110818,
+      1629691
+    ],
+    "per_bin_target": 160,
+    "per_bin_actual": {
+      "0": 160,
+      "1": 160,
+      "2": 160,
+      "3": 160,
+      "4": 160
+    }
+  },
+  "rng_seed": 0,
+  "sample_o_pop_summary": {
+    "min": -2,
+    "max": 1629691,
+    "median": 16031
+  },
+  "schema_mapping": {
+    "question": "PopQA.question (Wikidata-templated)",
+    "answer": "PopQA.obj",
+    "acceptable_alternatives": "PopQA.possible_answers \\ {answer}",
+    "cutoff_class": "literal string 'external' (PopQA has no cutoff structure)",
+    "category": "literal string 'popqa'",
+    "domain": "'popqa_' + PopQA.prop (relation name)",
+    "popqa_o_pop": "preserved for popularity-split analysis",
+    "popqa_o_pop_bin": "0-4 quintile bin"
+  },
+  "caveats": [
+    "PopQA is templated from Wikidata, so it does not fully escape the surface-form concern in Phase 1. Value: independent construction + real continuous popularity signal + different distribution.",
+    "PopQA has no cutoff structure (mostly static facts); the cutoff/correctness disconfound does NOT apply. Every item is marked cutoff_class='external'.",
+    "PopQA questions are mostly answerable, so refusals are expected to be rare. The refusal-vs-wrong probe will only be run on the PopQA sample if at least 30 refusals appear."
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "_documentation": {
+    "topic": "Historical / current events supplement, heavy on post-cutoff items",
+    "well_known_criterion": "Major events in popular awareness.",
+    "obscure_criterion": "Specific dates and decisions outside common recall.",
+    "post_cutoff_criterion": "Events after September 2024.",
+    "primary_source": "Wikipedia / news per row"
+  },
+  "template": "{question_text}",
+  "answer_field": "winner",
+  "well_known": [
+    {"question_text": "In what year did the United States declare independence from Britain?", "winner": "1776", "alternatives": [], "answer_date": "1776-07-04", "provenance": "https://en.wikipedia.org/wiki/United_States_Declaration_of_Independence"},
+    {"question_text": "Which event in 1969 saw humans land on the Moon for the first time?", "winner": "Apollo 11", "alternatives": [], "answer_date": "1969-07-20", "provenance": "https://en.wikipedia.org/wiki/Apollo_11"},
+    {"question_text": "What major international agreement on climate change was adopted in 2015?", "winner": "Paris Agreement", "alternatives": ["Paris Climate Agreement"], "answer_date": "2015-12-12", "provenance": "https://en.wikipedia.org/wiki/Paris_Agreement"}
+  ],
+  "obscure": [
+    {"question_text": "In what year did the Defenestration of Prague trigger the Thirty Years' War?", "winner": "1618", "alternatives": [], "answer_date": "1618-05-23", "provenance": "https://en.wikipedia.org/wiki/Defenestrations_of_Prague"},
+    {"question_text": "Who was the leader of the Bolshevik Revolution in October 1917?", "winner": "Vladimir Lenin", "alternatives": ["Lenin"], "answer_date": "1917-11-07", "provenance": "https://en.wikipedia.org/wiki/October_Revolution"},
+    {"question_text": "Which 1648 conflict's end is the date typically cited as the beginning of the modern state system?", "winner": "Thirty Years' War", "alternatives": ["Thirty Years War"], "answer_date": "1648-10-24", "provenance": "https://en.wikipedia.org/wiki/Thirty_Years%27_War"}
+  ],
+  "post_cutoff": [
+    {"question_text": "Which company's CEO, Brian Thompson, was assassinated in New York City in December 2024?", "winner": "UnitedHealthcare", "alternatives": ["UnitedHealth", "United Healthcare"], "answer_date": "2024-12-04", "provenance": "https://en.wikipedia.org/wiki/Killing_of_Brian_Thompson"},
+    {"question_text": "In January 2025, which country's wildfires destroyed large portions of the Pacific Palisades neighborhood?", "winner": "United States", "alternatives": ["USA", "US", "United States (California)"], "answer_date": "2025-01-07", "provenance": "https://en.wikipedia.org/wiki/January_2025_Southern_California_wildfires"},
+    {"question_text": "Who became the United States Secretary of State in January 2025 under the second Trump administration?", "winner": "Marco Rubio", "alternatives": ["Rubio"], "answer_date": "2025-01-21", "provenance": "https://en.wikipedia.org/wiki/Marco_Rubio"},
+    {"question_text": "Who was elected the new president of South Korea in June 2025 following Yoon Suk Yeol's removal?", "winner": "Lee Jae-myung", "alternatives": ["Lee Jae myung", "Lee"], "answer_date": "2025-06-03", "provenance": "https://en.wikipedia.org/wiki/2025_South_Korean_presidential_election"},
+    {"question_text": "In which country did the prime minister resign in November 2024 after the loss of a budget vote?", "winner": "France", "alternatives": [], "answer_date": "2024-12-04", "provenance": "https://en.wikipedia.org/wiki/Michel_Barnier"},
+    {"question_text": "Which longtime Wall Street executive and former CEO of US Sport Inc. became US Treasury Secretary in January 2025?", "winner": "Scott Bessent", "alternatives": ["Bessent"], "answer_date": "2025-01-28", "provenance": "https://home.treasury.gov/about/general-information/officials/scott-bessent"},
+    {"question_text": "In what month and year did Pope Francis die?", "winner": "April 2025", "alternatives": ["April 21 2025", "21 April 2025"], "answer_date": "2025-04-21", "provenance": "https://en.wikipedia.org/wiki/Death_and_funeral_of_Pope_Francis"},
+    {"question_text": "Which new ceasefire and hostage release deal between Israel and Hamas took effect in January 2025?", "winner": "Gaza ceasefire (January 2025)", "alternatives": ["Israel-Hamas ceasefire (January 2025)", "January 2025 Gaza ceasefire"], "answer_date": "2025-01-19", "provenance": "https://en.wikipedia.org/wiki/2025_Israel%E2%80%93Hamas_war_ceasefire"},
+    {"question_text": "Which member of the US Department of Government Efficiency (DOGE) led its operations in early 2025 before stepping back in mid-2025?", "winner": "Elon Musk", "alternatives": ["Musk"], "answer_date": "2025-01-20", "provenance": "https://en.wikipedia.org/wiki/Department_of_Government_Efficiency"}
+  ]
+}

@@ -1,0 +1,820 @@
+{
+  "_documentation": {
+    "topic": "Dense post-cutoff culture items (refusal-biased; recent awards, releases, books)",
+    "well_known_criterion": "n/a",
+    "obscure_criterion": "n/a",
+    "post_cutoff_criterion": "Events after September 2024.",
+    "primary_source": "Awards / publisher / chart sites"
+  },
+  "template": "{question_text}",
+  "answer_field": "winner",
+  "well_known": [],
+  "obscure": [],
+  "post_cutoff": [
+    {
+      "question_text": "Which novel won the Booker Prize in November 2024?",
+      "winner": "Orbital",
+      "alternatives": [
+        "Orbital by Samantha Harvey"
+      ],
+      "answer_date": "2024-11-12",
+      "provenance": "https://thebookerprizes.com/the-booker-library/prize-years/2024"
+    },
+    {
+      "question_text": "Which novel by Percival Everett won the 2024 National Book Award for Fiction in November 2024?",
+      "winner": "James",
+      "alternatives": [],
+      "answer_date": "2024-11-20",
+      "provenance": "https://www.nationalbook.org/awards-prizes/national-book-awards-2024/"
+    },
+    {
+      "question_text": "Which novel by Percival Everett won the 2025 Pulitzer Prize for Fiction, announced in May 2025?",
+      "winner": "James",
+      "alternatives": [],
+      "answer_date": "2025-05-05",
+      "provenance": "https://www.pulitzer.org/winners/percival-everett"
+    },
+    {
+      "question_text": "Which novel won the Booker Prize in 2025?",
+      "winner": "Flesh",
+      "alternatives": [
+        "Flesh by David Szalay"
+      ],
+      "answer_date": "2025-11-10",
+      "provenance": "https://thebookerprizes.com/the-booker-library/prize-years/2025"
+    },
+    {
+      "question_text": "Who won the Nobel Prize in Literature in October 2024?",
+      "winner": "Han Kang",
+      "alternatives": [
+        "Kang"
+      ],
+      "answer_date": "2024-10-10",
+      "provenance": "https://www.nobelprize.org/prizes/literature/2024/"
+    },
+    {
+      "question_text": "Who won the Nobel Prize in Literature in October 2025?",
+      "winner": "Laszlo Krasznahorkai",
+      "alternatives": [
+        "László Krasznahorkai",
+        "Krasznahorkai"
+      ],
+      "answer_date": "2025-10-09",
+      "provenance": "https://www.nobelprize.org/prizes/literature/2025/"
+    },
+    {
+      "question_text": "Which Sally Rooney novel was published in September 2024?",
+      "winner": "Intermezzo",
+      "alternatives": [],
+      "answer_date": "2024-09-24",
+      "provenance": "https://en.wikipedia.org/wiki/Intermezzo_(novel)"
+    },
+    {
+      "question_text": "Which Beyonce album was released in March 2024 and went on to win Album of the Year at the 2025 Grammys?",
+      "winner": "Cowboy Carter",
+      "alternatives": [],
+      "answer_date": "2024-03-29",
+      "provenance": "https://en.wikipedia.org/wiki/Cowboy_Carter"
+    },
+    {
+      "question_text": "Which Taylor Swift album was released on April 19, 2024?",
+      "winner": "The Tortured Poets Department",
+      "alternatives": [
+        "TTPD"
+      ],
+      "answer_date": "2024-04-19",
+      "provenance": "https://en.wikipedia.org/wiki/The_Tortured_Poets_Department"
+    },
+    {
+      "question_text": "Which Sabrina Carpenter album, released in August 2024, contains the global hit 'Espresso'?",
+      "winner": "Short n' Sweet",
+      "alternatives": [
+        "Short n Sweet"
+      ],
+      "answer_date": "2024-08-23",
+      "provenance": "https://en.wikipedia.org/wiki/Short_n%27_Sweet"
+    },
+    {
+      "question_text": "Which Charli XCX album, released in June 2024, became a cultural phenomenon associated with the color lime green?",
+      "winner": "Brat",
+      "alternatives": [],
+      "answer_date": "2024-06-07",
+      "provenance": "https://en.wikipedia.org/wiki/Brat_(Charli_XCX_album)"
+    },
+    {
+      "question_text": "Which Kendrick Lamar song, released in May 2024, spent multiple weeks at #1 on the Billboard Hot 100?",
+      "winner": "Not Like Us",
+      "alternatives": [],
+      "answer_date": "2024-05-04",
+      "provenance": "https://en.wikipedia.org/wiki/Not_Like_Us"
+    },
+    {
+      "question_text": "Which album won the Grammy Award for Album of the Year at the February 2025 ceremony?",
+      "winner": "Cowboy Carter",
+      "alternatives": [
+        "Cowboy Carter by Beyonce"
+      ],
+      "answer_date": "2025-02-02",
+      "provenance": "https://www.grammy.com/awards/67th-annual-grammy-awards-2024"
+    },
+    {
+      "question_text": "Which song won the Grammy Award for Record of the Year at the February 2025 ceremony?",
+      "winner": "Not Like Us",
+      "alternatives": [
+        "Not Like Us by Kendrick Lamar"
+      ],
+      "answer_date": "2025-02-02",
+      "provenance": "https://www.grammy.com/awards/67th-annual-grammy-awards-2024"
+    },
+    {
+      "question_text": "Which song won the Grammy Award for Song of the Year at the February 2025 ceremony?",
+      "winner": "Not Like Us",
+      "alternatives": [],
+      "answer_date": "2025-02-02",
+      "provenance": "https://www.grammy.com/awards/67th-annual-grammy-awards-2024"
+    },
+    {
+      "question_text": "Who won the Grammy Award for Best New Artist at the February 2025 ceremony?",
+      "winner": "Chappell Roan",
+      "alternatives": [
+        "Roan"
+      ],
+      "answer_date": "2025-02-02",
+      "provenance": "https://www.grammy.com/awards/67th-annual-grammy-awards-2024"
+    },
+    {
+      "question_text": "Which Netflix limited series, released in March 2025, dramatized a 13-year-old's arrest in northern England and became one of Netflix's most-watched limited series?",
+      "winner": "Adolescence",
+      "alternatives": [],
+      "answer_date": "2025-03-13",
+      "provenance": "https://en.wikipedia.org/wiki/Adolescence_(TV_series)"
+    },
+    {
+      "question_text": "Which TV show won the 2024 Primetime Emmy Award for Outstanding Drama Series in September 2024?",
+      "winner": "Shogun",
+      "alternatives": [],
+      "answer_date": "2024-09-15",
+      "provenance": "https://en.wikipedia.org/wiki/76th_Primetime_Emmy_Awards"
+    },
+    {
+      "question_text": "Which TV show won the 2024 Primetime Emmy Award for Outstanding Comedy Series in September 2024?",
+      "winner": "Hacks",
+      "alternatives": [],
+      "answer_date": "2024-09-15",
+      "provenance": "https://en.wikipedia.org/wiki/76th_Primetime_Emmy_Awards"
+    },
+    {
+      "question_text": "Which TV show won the 2024 Primetime Emmy Award for Outstanding Limited or Anthology Series in September 2024?",
+      "winner": "Baby Reindeer",
+      "alternatives": [],
+      "answer_date": "2024-09-15",
+      "provenance": "https://en.wikipedia.org/wiki/76th_Primetime_Emmy_Awards"
+    },
+    {
+      "question_text": "Which book by Yuval Noah Harari was published in September 2024 about the history of information networks?",
+      "winner": "Nexus",
+      "alternatives": [],
+      "answer_date": "2024-09-10",
+      "provenance": "https://en.wikipedia.org/wiki/Nexus_(book)"
+    },
+    {
+      "question_text": "Which painting by Rene Magritte sold for over $121 million at Christie's in November 2024, setting an artist record?",
+      "winner": "L'empire des lumieres",
+      "alternatives": [
+        "The Empire of Light",
+        "L'Empire des lumieres"
+      ],
+      "answer_date": "2024-11-19",
+      "provenance": "https://en.wikipedia.org/wiki/The_Empire_of_Light"
+    },
+    {
+      "question_text": "Which Apple TV+ series, premiering in March 2024 with a second season returning in January 2025, is based on a science-fiction novel by Liu Cixin?",
+      "winner": "3 Body Problem",
+      "alternatives": [
+        "Three-Body Problem"
+      ],
+      "answer_date": "2024-03-21",
+      "provenance": "https://en.wikipedia.org/wiki/3_Body_Problem_(TV_series)"
+    },
+    {
+      "question_text": "Who hosted the 2024 Met Gala in May 2024?",
+      "winner": "Anna Wintour",
+      "alternatives": [
+        "Wintour"
+      ],
+      "answer_date": "2024-05-06",
+      "provenance": "https://en.wikipedia.org/wiki/2024_Met_Gala"
+    },
+    {
+      "question_text": "Which artist headlined the Super Bowl LIX halftime show on February 9, 2025?",
+      "winner": "Kendrick Lamar",
+      "alternatives": [
+        "Lamar"
+      ],
+      "answer_date": "2025-02-09",
+      "provenance": "https://en.wikipedia.org/wiki/Super_Bowl_LIX_halftime_show"
+    },
+    {
+      "question_text": "Which TV show won the Golden Globe Award for Best Television Series Drama in January 2025?",
+      "winner": "Shogun",
+      "alternatives": [],
+      "answer_date": "2025-01-05",
+      "provenance": "https://en.wikipedia.org/wiki/82nd_Golden_Globe_Awards"
+    },
+    {
+      "question_text": "Which film won the Golden Globe Award for Best Motion Picture - Drama in January 2025?",
+      "winner": "The Brutalist",
+      "alternatives": [],
+      "answer_date": "2025-01-05",
+      "provenance": "https://en.wikipedia.org/wiki/82nd_Golden_Globe_Awards"
+    },
+    {
+      "question_text": "Which film won the Golden Globe Award for Best Motion Picture - Musical or Comedy in January 2025?",
+      "winner": "Emilia Perez",
+      "alternatives": [
+        "Emilia Pérez"
+      ],
+      "answer_date": "2025-01-05",
+      "provenance": "https://en.wikipedia.org/wiki/82nd_Golden_Globe_Awards"
+    },
+    {
+      "question_text": "Which Rolling Stones album, released in October 2023 and touring through 2024, was the band's first studio album of original material in 18 years?",
+      "winner": "Hackney Diamonds",
+      "alternatives": [],
+      "answer_date": "2023-10-20",
+      "provenance": "https://en.wikipedia.org/wiki/Hackney_Diamonds"
+    },
+    {
+      "question_text": "Which Bad Bunny album won the Grammy Award for Album of the Year at the February 2026 ceremony?",
+      "winner": "DeBÍ TiRAR MáS FOToS",
+      "alternatives": [
+        "DeBI TiRAR MaS FOToS",
+        "Debi Tirar Mas Fotos"
+      ],
+      "answer_date": "2026-02-01",
+      "provenance": "https://en.wikipedia.org/wiki/68th_Annual_Grammy_Awards"
+    },
+    {
+      "question_text": "Who won the Grammy Award for Best New Artist at the February 2026 ceremony?",
+      "winner": "Olivia Dean",
+      "alternatives": [
+        "Dean"
+      ],
+      "answer_date": "2026-02-01",
+      "provenance": "https://en.wikipedia.org/wiki/68th_Annual_Grammy_Awards"
+    },
+    {
+      "question_text": "Which song won the Grammy Award for Record of the Year at the February 2026 ceremony?",
+      "winner": "luther",
+      "alternatives": [
+        "luther by Kendrick Lamar with SZA",
+        "Luther"
+      ],
+      "answer_date": "2026-02-01",
+      "provenance": "https://en.wikipedia.org/wiki/68th_Annual_Grammy_Awards"
+    },
+    {
+      "question_text": "Which song won the Grammy Award for Song of the Year at the February 2026 ceremony?",
+      "winner": "WILDFLOWER",
+      "alternatives": [
+        "WILDFLOWER by Billie Eilish",
+        "Wildflower"
+      ],
+      "answer_date": "2026-02-01",
+      "provenance": "https://en.wikipedia.org/wiki/68th_Annual_Grammy_Awards"
+    },
+    {
+      "question_text": "Which author won the Booker Prize in November 2024 for the novel 'Orbital'?",
+      "winner": "Samantha Harvey",
+      "alternatives": [
+        "Harvey"
+      ],
+      "answer_date": "2024-11-12",
+      "provenance": "https://thebookerprizes.com/the-booker-library/prize-years/2024"
+    },
+    {
+      "question_text": "Which book by Banu Mushtaq won the International Booker Prize in 2025?",
+      "winner": "Heart Lamp",
+      "alternatives": [],
+      "answer_date": "2025-05-20",
+      "provenance": "https://thebookerprizes.com/the-booker-library/prize-years/2025"
+    },
+    {
+      "question_text": "Who translated Banu Mushtaq's 'Heart Lamp' from Kannada to win the 2025 International Booker Prize?",
+      "winner": "Deepa Bhasthi",
+      "alternatives": [
+        "Bhasthi"
+      ],
+      "answer_date": "2025-05-20",
+      "provenance": "https://thebookerprizes.com/the-booker-library/prize-years/2025"
+    },
+    {
+      "question_text": "Which novel by Haruki Murakami was published in English in November 2024?",
+      "winner": "The City and Its Uncertain Walls",
+      "alternatives": [],
+      "answer_date": "2024-11-26",
+      "provenance": "https://en.wikipedia.org/wiki/The_City_and_Its_Uncertain_Walls"
+    },
+    {
+      "question_text": "Which album by Billie Eilish was released on May 17, 2024?",
+      "winner": "Hit Me Hard and Soft",
+      "alternatives": [],
+      "answer_date": "2024-05-17",
+      "provenance": "https://en.wikipedia.org/wiki/Hit_Me_Hard_and_Soft"
+    },
+    {
+      "question_text": "Which song by Lady Gaga and Bruno Mars was released in August 2024 and topped the Billboard Global 200?",
+      "winner": "Die with a Smile",
+      "alternatives": [],
+      "answer_date": "2024-08-16",
+      "provenance": "https://en.wikipedia.org/wiki/Die_with_a_Smile"
+    },
+    {
+      "question_text": "Which song by Chappell Roan was released in April 2024 and became a major global hit?",
+      "winner": "Good Luck, Babe!",
+      "alternatives": [
+        "Good Luck Babe"
+      ],
+      "answer_date": "2024-04-05",
+      "provenance": "https://en.wikipedia.org/wiki/Good_Luck,_Babe!"
+    },
+    {
+      "question_text": "Which Coldplay album was released on October 4, 2024?",
+      "winner": "Moon Music",
+      "alternatives": [],
+      "answer_date": "2024-10-04",
+      "provenance": "https://en.wikipedia.org/wiki/Moon_Music"
+    },
+    {
+      "question_text": "Which Linkin Park album was released in November 2024, featuring new co-lead vocalist Emily Armstrong?",
+      "winner": "From Zero",
+      "alternatives": [],
+      "answer_date": "2024-11-15",
+      "provenance": "https://en.wikipedia.org/wiki/From_Zero_(album)"
+    },
+    {
+      "question_text": "Who joined Linkin Park as their new co-lead vocalist for their 2024 album 'From Zero'?",
+      "winner": "Emily Armstrong",
+      "alternatives": [
+        "Armstrong"
+      ],
+      "answer_date": "2024-09-05",
+      "provenance": "https://en.wikipedia.org/wiki/Emily_Armstrong_(singer)"
+    },
+    {
+      "question_text": "Which Post Malone album, marking his first full-length country project, was released in August 2024?",
+      "winner": "F-1Trillion",
+      "alternatives": [
+        "F-1 Trillion"
+      ],
+      "answer_date": "2024-08-16",
+      "provenance": "https://en.wikipedia.org/wiki/F-1Trillion"
+    },
+    {
+      "question_text": "Which Post Malone and Morgan Wallen song, released in May 2024, topped the Billboard Hot 100 for multiple weeks?",
+      "winner": "I Had Some Help",
+      "alternatives": [],
+      "answer_date": "2024-05-10",
+      "provenance": "https://en.wikipedia.org/wiki/I_Had_Some_Help"
+    },
+    {
+      "question_text": "Which Eminem album, featuring the lead single 'Houdini', was released in July 2024?",
+      "winner": "The Death of Slim Shady (Coup de Grace)",
+      "alternatives": [
+        "The Death of Slim Shady",
+        "Coup de Grace"
+      ],
+      "answer_date": "2024-07-12",
+      "provenance": "https://en.wikipedia.org/wiki/The_Death_of_Slim_Shady_(Coup_de_Gr%C3%A2ce)"
+    },
+    {
+      "question_text": "Which Sabrina Carpenter song, released in April 2024, became her first Billboard Hot 100 number-one single?",
+      "winner": "Espresso",
+      "alternatives": [],
+      "answer_date": "2024-04-11",
+      "provenance": "https://en.wikipedia.org/wiki/Espresso_(song)"
+    },
+    {
+      "question_text": "Which Sabrina Carpenter song, released in June 2024, succeeded 'Espresso' as a global hit and topped the charts?",
+      "winner": "Please Please Please",
+      "alternatives": [],
+      "answer_date": "2024-06-06",
+      "provenance": "https://en.wikipedia.org/wiki/Please_Please_Please_(Sabrina_Carpenter_song)"
+    },
+    {
+      "question_text": "Which Charli XCX remix album, featuring various guest artists, was released in October 2024?",
+      "winner": "Brat and It's Completely Different but Also Still Brat",
+      "alternatives": [
+        "Brat and It\\'s Completely Different but Also Still Brat",
+        "Brat remix album"
+      ],
+      "answer_date": "2024-10-11",
+      "provenance": "https://en.wikipedia.org/wiki/Brat_and_It%27s_Completely_Different_but_Also_Still_Brat"
+    },
+    {
+      "question_text": "Which Tyler, the Creator album was released on October 28, 2024?",
+      "winner": "Chromakopia",
+      "alternatives": [],
+      "answer_date": "2024-10-28",
+      "provenance": "https://en.wikipedia.org/wiki/Chromakopia"
+    },
+    {
+      "question_text": "Which song was released as the lead single of Tyler, the Creator's 'Chromakopia' in October 2024?",
+      "winner": "Noid",
+      "alternatives": [],
+      "answer_date": "2024-10-21",
+      "provenance": "https://en.wikipedia.org/wiki/Noid_(song)"
+    },
+    {
+      "question_text": "Which The Weeknd album, serving as the final part of his trilogy, was announced and promoted throughout late 2024 and 2025?",
+      "winner": "Hurry Up Tomorrow",
+      "alternatives": [],
+      "answer_date": "2024-09-07",
+      "provenance": "https://en.wikipedia.org/wiki/Hurry_Up_Tomorrow"
+    },
+    {
+      "question_text": "Which song was released as the lead single from The Weeknd's 'Hurry Up Tomorrow' in September 2024?",
+      "winner": "Dancing in the Flames",
+      "alternatives": [],
+      "answer_date": "2024-09-13",
+      "provenance": "https://en.wikipedia.org/wiki/Dancing_in_the_Flames"
+    },
+    {
+      "question_text": "Which Katy Perry album, featuring the lead single 'Woman's World', was released in September 2024?",
+      "winner": "143",
+      "alternatives": [],
+      "answer_date": "2024-09-20",
+      "provenance": "https://en.wikipedia.org/wiki/143_(Katy_Perry_album)"
+    },
+    {
+      "question_text": "Which Shawn Mendes album, named after his first name, was released in November 2024?",
+      "winner": "Shawn",
+      "alternatives": [],
+      "answer_date": "2024-11-15",
+      "provenance": "https://en.wikipedia.org/wiki/Shawn_(album)"
+    },
+    {
+      "question_text": "Which Gwen Stefani album, her first solo album in seven years, was released in November 2024?",
+      "winner": "Bouquet",
+      "alternatives": [],
+      "answer_date": "2024-11-15",
+      "provenance": "https://en.wikipedia.org/wiki/Bouquet_(album)"
+    },
+    {
+      "question_text": "Which Broadway musical won the Tony Award for Best Musical in June 2025?",
+      "winner": "Maybe Happy Ending",
+      "alternatives": [],
+      "answer_date": "2025-06-08",
+      "provenance": "https://en.wikipedia.org/wiki/78th_Tony_Awards"
+    },
+    {
+      "question_text": "Which play won the Tony Award for Best Play in June 2025?",
+      "winner": "Redwood",
+      "alternatives": [],
+      "answer_date": "2025-06-08",
+      "provenance": "https://en.wikipedia.org/wiki/78th_Tony_Awards"
+    },
+    {
+      "question_text": "Which musical won the Tony Award for Best Revival of a Musical in June 2025?",
+      "winner": "Sunset Boulevard",
+      "alternatives": [],
+      "answer_date": "2025-06-08",
+      "provenance": "https://en.wikipedia.org/wiki/78th_Tony_Awards"
+    },
+    {
+      "question_text": "Which Percival Everett novel won the National Book Award for Fiction in November 2024?",
+      "winner": "James",
+      "alternatives": [],
+      "answer_date": "2024-11-20",
+      "provenance": "https://en.wikipedia.org/wiki/James_(novel)"
+    },
+    {
+      "question_text": "Which Percival Everett novel won the Pulitzer Prize for Fiction in May 2025?",
+      "winner": "James",
+      "alternatives": [],
+      "answer_date": "2025-05-05",
+      "provenance": "https://en.wikipedia.org/wiki/James_(novel)"
+    },
+    {
+      "question_text": "Which Rene Magritte painting set an artist record by selling for over $121 million at Christie's in November 2024?",
+      "winner": "L'empire des lumières",
+      "alternatives": [
+        "The Empire of Light",
+        "L'Empire des lumieres",
+        "L'empire des lumieres"
+      ],
+      "answer_date": "2024-11-19",
+      "provenance": "https://en.wikipedia.org/wiki/The_Empire_of_Light"
+    },
+    {
+      "question_text": "Who hosted the Met Gala in May 2024?",
+      "winner": "Anna Wintour",
+      "alternatives": [
+        "Wintour"
+      ],
+      "answer_date": "2024-05-06",
+      "provenance": "https://en.wikipedia.org/wiki/2024_Met_Gala"
+    },
+    {
+      "question_text": "Which artist headlined the Super Bowl LIX halftime show in February 2025?",
+      "winner": "Kendrick Lamar",
+      "alternatives": [
+        "Lamar"
+      ],
+      "answer_date": "2025-02-09",
+      "provenance": "https://en.wikipedia.org/wiki/Super_Bowl_LIX_halftime_show"
+    },
+    {
+      "question_text": "Which British artist released the album 'Short n' Sweet' in August 2024?",
+      "winner": "Sabrina Carpenter",
+      "alternatives": [
+        "Carpenter"
+      ],
+      "answer_date": "2024-08-23",
+      "provenance": "https://en.wikipedia.org/wiki/Short_n%27_Sweet"
+    },
+    {
+      "question_text": "Which Charli XCX album, released in June 2024, became a cultural phenomenon?",
+      "winner": "Brat",
+      "alternatives": [],
+      "answer_date": "2024-06-07",
+      "provenance": "https://en.wikipedia.org/wiki/Brat_(Charli_XCX_album)"
+    },
+    {
+      "question_text": "Which painting by Rene Magritte was auctioned in November 2024?",
+      "winner": "L'empire des lumières",
+      "alternatives": [
+        "The Empire of Light",
+        "L'Empire des lumieres",
+        "L'empire des lumieres"
+      ],
+      "answer_date": "2024-11-19",
+      "provenance": "https://en.wikipedia.org/wiki/The_Empire_of_Light"
+    },
+    {
+      "question_text": "Which Lady Gaga song featuring Bruno Mars was released in August 2024?",
+      "winner": "Die with a Smile",
+      "alternatives": [],
+      "answer_date": "2024-08-16",
+      "provenance": "https://en.wikipedia.org/wiki/Die_with_a_Smile"
+    },
+    {
+      "question_text": "Which Billie Eilish album was released in May 2024?",
+      "winner": "Hit Me Hard and Soft",
+      "alternatives": [],
+      "answer_date": "2024-05-17",
+      "provenance": "https://en.wikipedia.org/wiki/Hit_Me_Hard_and_Soft"
+    },
+    {
+      "question_text": "Which Coldplay album was released in October 2024?",
+      "winner": "Moon Music",
+      "alternatives": [],
+      "answer_date": "2024-10-04",
+      "provenance": "https://en.wikipedia.org/wiki/Moon_Music"
+    },
+    {
+      "question_text": "Which Linkin Park album was released in November 2024?",
+      "winner": "From Zero",
+      "alternatives": [],
+      "answer_date": "2024-11-15",
+      "provenance": "https://en.wikipedia.org/wiki/From_Zero_(album)"
+    },
+    {
+      "question_text": "Which Post Malone album was released in August 2024?",
+      "winner": "F-1Trillion",
+      "alternatives": [
+        "F-1 Trillion"
+      ],
+      "answer_date": "2024-08-16",
+      "provenance": "https://en.wikipedia.org/wiki/F-1Trillion"
+    },
+    {
+      "question_text": "Which Eminem album was released in July 2024?",
+      "winner": "The Death of Slim Shady (Coup de Grace)",
+      "alternatives": [
+        "The Death of Slim Shady",
+        "Coup de Grace"
+      ],
+      "answer_date": "2024-07-12",
+      "provenance": "https://en.wikipedia.org/wiki/The_Death_of_Slim_Shady_(Coup_de_Gr%C3%A2ce)"
+    },
+    {
+      "question_text": "Which Sabrina Carpenter album was released in August 2024?",
+      "winner": "Short n' Sweet",
+      "alternatives": [
+        "Short n Sweet"
+      ],
+      "answer_date": "2024-08-23",
+      "provenance": "https://en.wikipedia.org/wiki/Short_n%27_Sweet"
+    },
+    {
+      "question_text": "Which Tyler, the Creator album was released in October 2024?",
+      "winner": "Chromakopia",
+      "alternatives": [],
+      "answer_date": "2024-10-28",
+      "provenance": "https://en.wikipedia.org/wiki/Chromakopia"
+    },
+    {
+      "question_text": "Which Katy Perry album was released in September 2024?",
+      "winner": "143",
+      "alternatives": [],
+      "answer_date": "2024-09-20",
+      "provenance": "https://en.wikipedia.org/wiki/143_(Katy_Perry_album)"
+    },
+    {
+      "question_text": "Which Shawn Mendes album was released in November 2024?",
+      "winner": "Shawn",
+      "alternatives": [],
+      "answer_date": "2024-11-15",
+      "provenance": "https://en.wikipedia.org/wiki/Shawn_(album)"
+    },
+    {
+      "question_text": "Which Gwen Stefani album was released in November 2024?",
+      "winner": "Bouquet",
+      "alternatives": [],
+      "answer_date": "2024-11-15",
+      "provenance": "https://en.wikipedia.org/wiki/Bouquet_(album)"
+    },
+    {
+      "question_text": "Which novel won the Booker Prize in November 2025?",
+      "winner": "Flesh",
+      "alternatives": [
+        "Flesh by David Szalay"
+      ],
+      "answer_date": "2025-11-10",
+      "provenance": "https://thebookerprizes.com/the-booker-library/prize-years/2025"
+    },
+    {
+      "question_text": "Which author won the Booker Prize in November 2025 for the novel 'Flesh'?",
+      "winner": "David Szalay",
+      "alternatives": [
+        "Szalay"
+      ],
+      "answer_date": "2025-11-10",
+      "provenance": "https://thebookerprizes.com/the-booker-library/prize-years/2025"
+    },
+    {
+      "question_text": "Which author won the International Booker Prize in 2025 for 'Heart Lamp'?",
+      "winner": "Banu Mushtaq",
+      "alternatives": [
+        "Mushtaq"
+      ],
+      "answer_date": "2025-05-20",
+      "provenance": "https://thebookerprizes.com/the-booker-library/prize-years/2025"
+    },
+    {
+      "question_text": "Which artist released the album 'Cowboy Carter' in March 2024?",
+      "winner": "Beyoncé",
+      "alternatives": [
+        "Beyonce"
+      ],
+      "answer_date": "2024-03-29",
+      "provenance": "https://en.wikipedia.org/wiki/Cowboy_Carter"
+    },
+    {
+      "question_text": "Which artist released the album 'The Tortured Poets Department' in April 2024?",
+      "winner": "Taylor Swift",
+      "alternatives": [
+        "Swift"
+      ],
+      "answer_date": "2024-04-19",
+      "provenance": "https://en.wikipedia.org/wiki/The_Tortured_Poets_Department"
+    },
+    {
+      "question_text": "Which artist released the album 'Hit Me Hard and Soft' in May 2024?",
+      "winner": "Billie Eilish",
+      "alternatives": [
+        "Eilish"
+      ],
+      "answer_date": "2024-05-17",
+      "provenance": "https://en.wikipedia.org/wiki/Hit_Me_Hard_and_Soft"
+    },
+    {
+      "question_text": "Which artist released the album 'Brat' in June 2024?",
+      "winner": "Charli XCX",
+      "alternatives": [],
+      "answer_date": "2024-06-07",
+      "provenance": "https://en.wikipedia.org/wiki/Brat_(Charli_XCX_album)"
+    },
+    {
+      "question_text": "Which artist released the album 'Short n' Sweet' in August 2024?",
+      "winner": "Sabrina Carpenter",
+      "alternatives": [
+        "Carpenter"
+      ],
+      "answer_date": "2024-08-23",
+      "provenance": "https://en.wikipedia.org/wiki/Short_n%27_Sweet"
+    },
+    {
+      "question_text": "Which artist released the album 'Moon Music' in October 2024?",
+      "winner": "Coldplay",
+      "alternatives": [],
+      "answer_date": "2024-10-04",
+      "provenance": "https://en.wikipedia.org/wiki/Moon_Music"
+    },
+    {
+      "question_text": "Which artist released the album 'From Zero' in November 2024?",
+      "winner": "Linkin Park",
+      "alternatives": [],
+      "answer_date": "2024-11-15",
+      "provenance": "https://en.wikipedia.org/wiki/From_Zero_(album)"
+    },
+    {
+      "question_text": "Which artist released the album 'F-1Trillion' in August 2024?",
+      "winner": "Post Malone",
+      "alternatives": [
+        "Post Malone F-1Trillion"
+      ],
+      "answer_date": "2024-08-16",
+      "provenance": "https://en.wikipedia.org/wiki/F-1Trillion"
+    },
+    {
+      "question_text": "Which artist released the album 'The Death of Slim Shady' in July 2024?",
+      "winner": "Eminem",
+      "alternatives": [],
+      "answer_date": "2024-07-12",
+      "provenance": "https://en.wikipedia.org/wiki/The_Death_of_Slim_Shady_(Coup_de_Gr%C3%A2ce)"
+    },
+    {
+      "question_text": "Which artist released the album 'Chromakopia' in October 2024?",
+      "winner": "Tyler, the Creator",
+      "alternatives": [
+        "Tyler the Creator"
+      ],
+      "answer_date": "2024-10-28",
+      "provenance": "https://en.wikipedia.org/wiki/Chromakopia"
+    },
+    {
+      "question_text": "Which artist released the album '143' in September 2024?",
+      "winner": "Katy Perry",
+      "alternatives": [],
+      "answer_date": "2024-09-20",
+      "provenance": "https://en.wikipedia.org/wiki/143_(Katy_Perry_album)"
+    },
+    {
+      "question_text": "Which artist released the album 'Shawn' in November 2024?",
+      "winner": "Shawn Mendes",
+      "alternatives": [
+        "Mendes"
+      ],
+      "answer_date": "2024-11-15",
+      "provenance": "https://en.wikipedia.org/wiki/Shawn_(album)"
+    },
+    {
+      "question_text": "Which artist released the album 'Bouquet' in November 2024?",
+      "winner": "Gwen Stefani",
+      "alternatives": [
+        "Stefani"
+      ],
+      "answer_date": "2024-11-15",
+      "provenance": "https://en.wikipedia.org/wiki/Bouquet_(album)"
+    },
+    {
+      "question_text": "Which singer won the Grammy Award for Best New Artist in February 2025?",
+      "winner": "Chappell Roan",
+      "alternatives": [
+        "Roan"
+      ],
+      "answer_date": "2025-02-02",
+      "provenance": "https://en.wikipedia.org/wiki/67th_Annual_Grammy_Awards"
+    },
+    {
+      "question_text": "Which Taylor Swift song featuring Post Malone was released in April 2024?",
+      "winner": "Fortnight",
+      "alternatives": [],
+      "answer_date": "2024-04-19",
+      "provenance": "https://en.wikipedia.org/wiki/Fortnight_(song)"
+    },
+    {
+      "question_text": "In October 2024, which American singer-songwriter released the studio album 'The Great Impersonator'?",
+      "winner": "Halsey",
+      "alternatives": [],
+      "answer_date": "2024-10-25",
+      "provenance": "https://en.wikipedia.org/wiki/The_Great_Impersonator_(album)"
+    },
+    {
+      "question_text": "In October 2024, which collaborative single by Rosé and Bruno Mars reached No. 3 on the Billboard Hot 100?",
+      "winner": "APT.",
+      "alternatives": [
+        "Apt",
+        "Apt."
+      ],
+      "answer_date": "2024-10-18",
+      "provenance": "https://en.wikipedia.org/wiki/Apt._(song)"
+    },
+    {
+      "question_text": "In 2025, which song by singer Alex Warren spent ten weeks at number one on the Billboard Hot 100?",
+      "winner": "Ordinary",
+      "alternatives": [],
+      "answer_date": "2025-05-10",
+      "provenance": "https://en.wikipedia.org/wiki/Alex_Warren"
+    },
+    {
+      "question_text": "In 2025, which song by Taylor Swift spent eight weeks at number one on the Billboard Hot 100?",
+      "winner": "The Fate of Ophelia",
+      "alternatives": [],
+      "answer_date": "2025-07-12",
+      "provenance": "https://en.wikipedia.org/wiki/Taylor_Swift"
+    }
+  ]
+}

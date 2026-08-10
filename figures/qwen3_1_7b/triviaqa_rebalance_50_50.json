@@ -1,0 +1,93 @@
+{
+  "n_per_class": 400,
+  "n_subsamples": 5,
+  "subsample_results": [
+    {
+      "sub_seed": 0,
+      "n": 800,
+      "probe_peak_acc": 0.71875,
+      "probe_peak_std": 0.019764235376052364,
+      "probe_peak_layer": 19,
+      "majority": 0.5,
+      "tfidf": 0.6174999999999999,
+      "text_only": 0.5675000000000001,
+      "text_plus_domain": 0.5675000000000001,
+      "text_plus_domain_plus_cat": 0.5675000000000001,
+      "strongest_name": "tfidf",
+      "strongest_value": 0.6174999999999999,
+      "h_adds_pp": 10.125000000000007
+    },
+    {
+      "sub_seed": 1,
+      "n": 800,
+      "probe_peak_acc": 0.71125,
+      "probe_peak_std": 0.02318404623873926,
+      "probe_peak_layer": 28,
+      "majority": 0.5,
+      "tfidf": 0.625,
+      "text_only": 0.54375,
+      "text_plus_domain": 0.54375,
+      "text_plus_domain_plus_cat": 0.54375,
+      "strongest_name": "tfidf",
+      "strongest_value": 0.625,
+      "h_adds_pp": 8.625000000000005
+    },
+    {
+      "sub_seed": 2,
+      "n": 800,
+      "probe_peak_acc": 0.7162499999999999,
+      "probe_peak_std": 0.02391390808713624,
+      "probe_peak_layer": 18,
+      "majority": 0.5,
+      "tfidf": 0.6125,
+      "text_only": 0.5625,
+      "text_plus_domain": 0.5625,
+      "text_plus_domain_plus_cat": 0.5625,
+      "strongest_name": "tfidf",
+      "strongest_value": 0.6125,
+      "h_adds_pp": 10.37499999999999
+    },
+    {
+      "sub_seed": 3,
+      "n": 800,
+      "probe_peak_acc": 0.6900000000000001,
+      "probe_peak_std": 0.030259296092275508,
+      "probe_peak_layer": 11,
+      "majority": 0.5,
+      "tfidf": 0.61,
+      "text_only": 0.5574999999999999,
+      "text_plus_domain": 0.5574999999999999,
+      "text_plus_domain_plus_cat": 0.5574999999999999,
+      "strongest_name": "tfidf",
+      "strongest_value": 0.61,
+      "h_adds_pp": 8.000000000000007
+    },
+    {
+      "sub_seed": 4,
+      "n": 800,
+      "probe_peak_acc": 0.7025,
+      "probe_peak_std": 0.044826052692602765,
+      "probe_peak_layer": 15,
+      "majority": 0.5,
+      "tfidf": 0.5987500000000001,
+      "text_only": 0.5525,
+      "text_plus_domain": 0.5525,
+      "text_plus_domain_plus_cat": 0.5525,
+      "strongest_name": "tfidf",
+      "strongest_value": 0.5987500000000001,
+      "h_adds_pp": 10.37499999999999
+    }
+  ],
+  "summary": {
+    "mean_h_adds_pp": 9.5,
+    "std_h_adds_pp": 1.111024302164442,
+    "mean_probe_acc": 70.775,
+    "mean_strongest_baseline": 61.275000000000006
+  },
+  "comparison_to_unbalanced": {
+    "unbalanced_3seed_h_adds_pp": 4.54,
+    "unbalanced_3seed_std_pp": 1.25,
+    "delta": 4.96,
+    "interpretation": "Balanced > unbalanced -> signal is genuine and stronger when class imbalance is removed"
+  }
+}

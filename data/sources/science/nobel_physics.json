@@ -1,0 +1,42 @@
+{
+  "_documentation": {
+    "topic": "Nobel Prize in Physics — laureates by year",
+    "well_known_criterion": "Laureates whose names or work appear in standard physics textbooks or popular science (Einstein, Bohr, Heisenberg, Curie, Feynman, the Higgs prize, etc.).",
+    "obscure_criterion": "Laureates working on specific instrumentation or sub-fields rarely featured outside the discipline; recognizable to specialists but not generalists.",
+    "post_cutoff_criterion": "Laureates announced after September 2024.",
+    "primary_source": "https://www.nobelprize.org/prizes/physics/"
+  },
+  "template": "Who won the Nobel Prize in Physics in {year}?",
+  "answer_field": "winner",
+  "well_known": [
+    {"year": 1921, "winner": "Albert Einstein", "alternatives": ["Einstein"], "answer_date": "1921-11-09", "provenance": "https://www.nobelprize.org/prizes/physics/1921/"},
+    {"year": 1918, "winner": "Max Planck", "alternatives": ["Planck"], "answer_date": "1918-11-13", "provenance": "https://www.nobelprize.org/prizes/physics/1918/"},
+    {"year": 1965, "winner": "Sin-Itiro Tomonaga, Julian Schwinger, and Richard Feynman", "alternatives": ["Feynman, Schwinger, Tomonaga", "Feynman", "Schwinger and Feynman and Tomonaga"], "answer_date": "1965-10-21", "provenance": "https://www.nobelprize.org/prizes/physics/1965/"},
+    {"year": 2013, "winner": "Francois Englert and Peter Higgs", "alternatives": ["Higgs and Englert", "Peter Higgs", "Higgs"], "answer_date": "2013-10-08", "provenance": "https://www.nobelprize.org/prizes/physics/2013/"},
+    {"year": 1922, "winner": "Niels Bohr", "alternatives": ["Bohr"], "answer_date": "1922-11-09", "provenance": "https://www.nobelprize.org/prizes/physics/1922/"},
+    {"year": 1932, "winner": "Werner Heisenberg", "alternatives": ["Heisenberg"], "answer_date": "1932-11-10", "provenance": "https://www.nobelprize.org/prizes/physics/1932/"},
+    {"year": 1903, "winner": "Henri Becquerel, Pierre Curie, and Marie Curie", "alternatives": ["Becquerel, Pierre Curie, Marie Curie", "Marie Curie and Pierre Curie and Becquerel"], "answer_date": "1903-12-10", "provenance": "https://www.nobelprize.org/prizes/physics/1903/"},
+    {"year": 2017, "winner": "Rainer Weiss, Barry Barish, and Kip Thorne", "alternatives": ["Weiss, Barish, Thorne", "LIGO trio"], "answer_date": "2017-10-03", "provenance": "https://www.nobelprize.org/prizes/physics/2017/"},
+    {"year": 1933, "winner": "Erwin Schrodinger and Paul Dirac", "alternatives": ["Schrodinger and Dirac", "Schrodinger", "Dirac"], "answer_date": "1933-11-09", "provenance": "https://www.nobelprize.org/prizes/physics/1933/"},
+    {"year": 1976, "winner": "Burton Richter and Samuel Ting", "alternatives": ["Richter and Ting"], "answer_date": "1976-10-18", "provenance": "https://www.nobelprize.org/prizes/physics/1976/"},
+    {"year": 1956, "winner": "William Shockley, John Bardeen, and Walter Brattain", "alternatives": ["Shockley, Bardeen, Brattain", "the transistor team"], "answer_date": "1956-11-01", "provenance": "https://www.nobelprize.org/prizes/physics/1956/"},
+    {"year": 2001, "winner": "Eric Cornell, Wolfgang Ketterle, and Carl Wieman", "alternatives": ["Cornell, Ketterle, Wieman", "the BEC team"], "answer_date": "2001-10-09", "provenance": "https://www.nobelprize.org/prizes/physics/2001/"}
+  ],
+  "obscure": [
+    {"year": 1978, "winner": "Pyotr Kapitsa, Arno Penzias, and Robert Wilson", "alternatives": ["Kapitsa, Penzias, Wilson", "Penzias and Wilson"], "answer_date": "1978-10-17", "provenance": "https://www.nobelprize.org/prizes/physics/1978/"},
+    {"year": 1986, "winner": "Ernst Ruska, Gerd Binnig, and Heinrich Rohrer", "alternatives": ["Ruska, Binnig, Rohrer", "Binnig and Rohrer"], "answer_date": "1986-10-15", "provenance": "https://www.nobelprize.org/prizes/physics/1986/"},
+    {"year": 1992, "winner": "Georges Charpak", "alternatives": ["Charpak"], "answer_date": "1992-10-14", "provenance": "https://www.nobelprize.org/prizes/physics/1992/"},
+    {"year": 2003, "winner": "Alexei Abrikosov, Vitaly Ginzburg, and Anthony Leggett", "alternatives": ["Abrikosov, Ginzburg, Leggett"], "answer_date": "2003-10-07", "provenance": "https://www.nobelprize.org/prizes/physics/2003/"},
+    {"year": 1973, "winner": "Leo Esaki, Ivar Giaever, and Brian Josephson", "alternatives": ["Esaki, Giaever, Josephson"], "answer_date": "1973-10-23", "provenance": "https://www.nobelprize.org/prizes/physics/1973/"},
+    {"year": 1989, "winner": "Norman Ramsey, Hans Dehmelt, and Wolfgang Paul", "alternatives": ["Ramsey, Dehmelt, Paul"], "answer_date": "1989-10-12", "provenance": "https://www.nobelprize.org/prizes/physics/1989/"},
+    {"year": 1995, "winner": "Martin Perl and Frederick Reines", "alternatives": ["Perl and Reines"], "answer_date": "1995-10-11", "provenance": "https://www.nobelprize.org/prizes/physics/1995/"},
+    {"year": 1998, "winner": "Robert Laughlin, Horst Stormer, and Daniel Tsui", "alternatives": ["Laughlin, Stormer, Tsui", "the fractional quantum Hall trio"], "answer_date": "1998-10-13", "provenance": "https://www.nobelprize.org/prizes/physics/1998/"},
+    {"year": 2007, "winner": "Albert Fert and Peter Grunberg", "alternatives": ["Fert and Grunberg"], "answer_date": "2007-10-09", "provenance": "https://www.nobelprize.org/prizes/physics/2007/"},
+    {"year": 1985, "winner": "Klaus von Klitzing", "alternatives": ["von Klitzing"], "answer_date": "1985-10-16", "provenance": "https://www.nobelprize.org/prizes/physics/1985/"},
+    {"year": 1968, "winner": "Luis Alvarez", "alternatives": ["Alvarez"], "answer_date": "1968-10-30", "provenance": "https://www.nobelprize.org/prizes/physics/1968/"},
+    {"year": 2010, "winner": "Andre Geim and Konstantin Novoselov", "alternatives": ["Geim and Novoselov", "the graphene pair"], "answer_date": "2010-10-05", "provenance": "https://www.nobelprize.org/prizes/physics/2010/"}
+  ],
+  "post_cutoff": [
+    {"year": 2024, "winner": "John Hopfield and Geoffrey Hinton", "alternatives": ["Hopfield and Hinton", "Geoffrey Hinton", "John Hopfield"], "answer_date": "2024-10-08", "provenance": "https://www.nobelprize.org/prizes/physics/2024/"}
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "_documentation": {
+    "topic": "Nobel Prize in Chemistry — laureates by year",
+    "well_known_criterion": "Laureates with broad public recognition (Curie, Pauling, the AlphaFold prize).",
+    "obscure_criterion": "Laureates working on specific reaction mechanisms or instrumentation, recognizable to chemists but not generalists.",
+    "post_cutoff_criterion": "Laureates announced after September 2024.",
+    "primary_source": "https://www.nobelprize.org/prizes/chemistry/"
+  },
+  "template": "Who won the Nobel Prize in Chemistry in {year}?",
+  "answer_field": "winner",
+  "well_known": [
+    {"year": 1911, "winner": "Marie Curie", "alternatives": ["Curie", "Madame Curie"], "answer_date": "1911-11-07", "provenance": "https://www.nobelprize.org/prizes/chemistry/1911/"},
+    {"year": 1954, "winner": "Linus Pauling", "alternatives": ["Pauling"], "answer_date": "1954-11-03", "provenance": "https://www.nobelprize.org/prizes/chemistry/1954/"},
+    {"year": 2020, "winner": "Emmanuelle Charpentier and Jennifer Doudna", "alternatives": ["Charpentier and Doudna", "Doudna and Charpentier"], "answer_date": "2020-10-07", "provenance": "https://www.nobelprize.org/prizes/chemistry/2020/"},
+    {"year": 1908, "winner": "Ernest Rutherford", "alternatives": ["Rutherford"], "answer_date": "1908-12-10", "provenance": "https://www.nobelprize.org/prizes/chemistry/1908/"},
+    {"year": 1934, "winner": "Harold Urey", "alternatives": ["Urey"], "answer_date": "1934-11-15", "provenance": "https://www.nobelprize.org/prizes/chemistry/1934/"},
+    {"year": 1962, "winner": "Max Perutz and John Kendrew", "alternatives": ["Perutz and Kendrew"], "answer_date": "1962-11-01", "provenance": "https://www.nobelprize.org/prizes/chemistry/1962/"},
+    {"year": 1996, "winner": "Robert Curl, Harold Kroto, and Richard Smalley", "alternatives": ["Curl, Kroto, Smalley", "the fullerene trio"], "answer_date": "1996-10-09", "provenance": "https://www.nobelprize.org/prizes/chemistry/1996/"},
+    {"year": 1993, "winner": "Kary Mullis and Michael Smith", "alternatives": ["Mullis and Smith", "Kary Mullis"], "answer_date": "1993-10-13", "provenance": "https://www.nobelprize.org/prizes/chemistry/1993/"},
+    {"year": 2009, "winner": "Venkatraman Ramakrishnan, Thomas Steitz, and Ada Yonath", "alternatives": ["Ramakrishnan, Steitz, Yonath", "the ribosome trio"], "answer_date": "2009-10-07", "provenance": "https://www.nobelprize.org/prizes/chemistry/2009/"},
+    {"year": 2008, "winner": "Osamu Shimomura, Martin Chalfie, and Roger Tsien", "alternatives": ["Shimomura, Chalfie, Tsien", "GFP trio"], "answer_date": "2008-10-08", "provenance": "https://www.nobelprize.org/prizes/chemistry/2008/"},
+    {"year": 2018, "winner": "Frances Arnold, George Smith, and Gregory Winter", "alternatives": ["Arnold, Smith, Winter"], "answer_date": "2018-10-03", "provenance": "https://www.nobelprize.org/prizes/chemistry/2018/"}
+  ],
+  "obscure": [
+    {"year": 1979, "winner": "Herbert C. Brown and Georg Wittig", "alternatives": ["Brown and Wittig"], "answer_date": "1979-10-16", "provenance": "https://www.nobelprize.org/prizes/chemistry/1979/"},
+    {"year": 1991, "winner": "Richard R. Ernst", "alternatives": ["Ernst", "Richard Ernst"], "answer_date": "1991-10-16", "provenance": "https://www.nobelprize.org/prizes/chemistry/1991/"},
+    {"year": 2001, "winner": "William S. Knowles, Ryoji Noyori, and K. Barry Sharpless", "alternatives": ["Knowles, Noyori, Sharpless"], "answer_date": "2001-10-10", "provenance": "https://www.nobelprize.org/prizes/chemistry/2001/"},
+    {"year": 2014, "winner": "Eric Betzig, Stefan Hell, and William Moerner", "alternatives": ["Betzig, Hell, Moerner"], "answer_date": "2014-10-08", "provenance": "https://www.nobelprize.org/prizes/chemistry/2014/"},
+    {"year": 1981, "winner": "Kenichi Fukui and Roald Hoffmann", "alternatives": ["Fukui and Hoffmann"], "answer_date": "1981-10-19", "provenance": "https://www.nobelprize.org/prizes/chemistry/1981/"},
+    {"year": 1987, "winner": "Donald J. Cram, Jean-Marie Lehn, and Charles Pedersen", "alternatives": ["Cram, Lehn, Pedersen"], "answer_date": "1987-10-14", "provenance": "https://www.nobelprize.org/prizes/chemistry/1987/"},
+    {"year": 2002, "winner": "John Fenn, Koichi Tanaka, and Kurt Wuthrich", "alternatives": ["Fenn, Tanaka, Wuthrich"], "answer_date": "2002-10-09", "provenance": "https://www.nobelprize.org/prizes/chemistry/2002/"},
+    {"year": 2005, "winner": "Yves Chauvin, Robert Grubbs, and Richard Schrock", "alternatives": ["Chauvin, Grubbs, Schrock"], "answer_date": "2005-10-05", "provenance": "https://www.nobelprize.org/prizes/chemistry/2005/"},
+    {"year": 2010, "winner": "Richard Heck, Ei-ichi Negishi, and Akira Suzuki", "alternatives": ["Heck, Negishi, Suzuki"], "answer_date": "2010-10-06", "provenance": "https://www.nobelprize.org/prizes/chemistry/2010/"},
+    {"year": 2015, "winner": "Tomas Lindahl, Paul Modrich, and Aziz Sancar", "alternatives": ["Lindahl, Modrich, Sancar", "DNA repair trio"], "answer_date": "2015-10-07", "provenance": "https://www.nobelprize.org/prizes/chemistry/2015/"},
+    {"year": 1969, "winner": "Derek Barton and Odd Hassel", "alternatives": ["Barton and Hassel"], "answer_date": "1969-10-30", "provenance": "https://www.nobelprize.org/prizes/chemistry/1969/"},
+    {"year": 1989, "winner": "Sidney Altman and Thomas Cech", "alternatives": ["Altman and Cech"], "answer_date": "1989-10-12", "provenance": "https://www.nobelprize.org/prizes/chemistry/1989/"}
+  ],
+  "post_cutoff": [
+    {"year": 2024, "winner": "David Baker, Demis Hassabis, and John Jumper", "alternatives": ["Baker, Hassabis, Jumper", "Hassabis and Jumper"], "answer_date": "2024-10-09", "provenance": "https://www.nobelprize.org/prizes/chemistry/2024/"}
+  ]
+}

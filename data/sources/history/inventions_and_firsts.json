@@ -1,0 +1,39 @@
+{
+  "_documentation": {
+    "topic": "Historical firsts: inventions, expeditions, discoveries",
+    "well_known_criterion": "Famous firsts in popular knowledge (moon landing, light bulb).",
+    "obscure_criterion": "Less-cited firsts or specific historical dates outside common recall.",
+    "post_cutoff_criterion": "Major firsts occurring after September 2024.",
+    "primary_source": "Wikipedia per row"
+  },
+  "template": "{question_text}",
+  "answer_field": "winner",
+  "well_known": [
+    {"question_text": "Who was the first person to walk on the Moon?", "winner": "Neil Armstrong", "alternatives": ["Armstrong"], "answer_date": "1969-07-20", "provenance": "https://www.nasa.gov/mission_pages/apollo/apollo11.html"},
+    {"question_text": "In what year did the Wright brothers achieve the first powered flight?", "winner": "1903", "alternatives": [], "answer_date": "1903-12-17", "provenance": "https://en.wikipedia.org/wiki/Wright_brothers"},
+    {"question_text": "Who is credited with inventing the telephone, with a patent granted in 1876?", "winner": "Alexander Graham Bell", "alternatives": ["Bell", "Graham Bell"], "answer_date": "1876-03-07", "provenance": "https://en.wikipedia.org/wiki/Alexander_Graham_Bell"},
+    {"question_text": "In what year was the World Wide Web invented by Tim Berners-Lee at CERN?", "winner": "1989", "alternatives": ["March 1989"], "answer_date": "1989-03-12", "provenance": "https://home.cern/science/computing/birth-web"},
+    {"question_text": "Who painted the ceiling of the Sistine Chapel?", "winner": "Michelangelo", "alternatives": [], "answer_date": "1512-10-31", "provenance": "https://en.wikipedia.org/wiki/Sistine_Chapel_ceiling"},
+    {"question_text": "Which company released the first iPhone, in 2007?", "winner": "Apple", "alternatives": ["Apple Inc."], "answer_date": "2007-06-29", "provenance": "https://en.wikipedia.org/wiki/IPhone_(1st_generation)"},
+    {"question_text": "Who was the first European to lead an expedition that circumnavigated the globe (completed after his death in 1521)?", "winner": "Ferdinand Magellan", "alternatives": ["Magellan"], "answer_date": "1519-09-20", "provenance": "https://en.wikipedia.org/wiki/Ferdinand_Magellan"}
+  ],
+  "obscure": [
+    {"question_text": "Who was the second person to walk on the Moon?", "winner": "Buzz Aldrin", "alternatives": ["Aldrin"], "answer_date": "1969-07-20", "provenance": "https://en.wikipedia.org/wiki/Buzz_Aldrin"},
+    {"question_text": "Who was the first woman to fly solo across the Atlantic Ocean?", "winner": "Amelia Earhart", "alternatives": ["Earhart"], "answer_date": "1932-05-21", "provenance": "https://en.wikipedia.org/wiki/Amelia_Earhart"},
+    {"question_text": "Who patented the first practical incandescent light bulb in 1879?", "winner": "Thomas Edison", "alternatives": ["Edison"], "answer_date": "1879-10-21", "provenance": "https://en.wikipedia.org/wiki/Thomas_Edison"},
+    {"question_text": "In what year was the first ascent of Mount Everest by Edmund Hillary and Tenzing Norgay?", "winner": "1953", "alternatives": [], "answer_date": "1953-05-29", "provenance": "https://en.wikipedia.org/wiki/1953_British_Mount_Everest_expedition"},
+    {"question_text": "Who was the first woman in space, in 1963?", "winner": "Valentina Tereshkova", "alternatives": ["Tereshkova"], "answer_date": "1963-06-16", "provenance": "https://en.wikipedia.org/wiki/Valentina_Tereshkova"},
+    {"question_text": "Which 1957 satellite was the first artificial object to orbit Earth?", "winner": "Sputnik 1", "alternatives": ["Sputnik"], "answer_date": "1957-10-04", "provenance": "https://en.wikipedia.org/wiki/Sputnik_1"},
+    {"question_text": "Who was the first European to reach the southern tip of Africa, in 1488?", "winner": "Bartolomeu Dias", "alternatives": ["Dias"], "answer_date": "1488-02-03", "provenance": "https://en.wikipedia.org/wiki/Bartolomeu_Dias"},
+    {"question_text": "Who developed the first effective polio vaccine, announced in 1955?", "winner": "Jonas Salk", "alternatives": ["Salk"], "answer_date": "1955-04-12", "provenance": "https://en.wikipedia.org/wiki/Jonas_Salk"},
+    {"question_text": "Which expedition was the first to reach the South Pole, in December 1911?", "winner": "Roald Amundsen's expedition", "alternatives": ["Amundsen", "Amundsen expedition"], "answer_date": "1911-12-14", "provenance": "https://en.wikipedia.org/wiki/Amundsen%27s_South_Pole_expedition"},
+    {"question_text": "Who was the first woman to win a Nobel Prize, in 1903?", "winner": "Marie Curie", "alternatives": ["Curie"], "answer_date": "1903-12-10", "provenance": "https://www.nobelprize.org/prizes/physics/1903/"},
+    {"question_text": "In what year was the first organ transplant (a kidney between identical twins) successfully performed?", "winner": "1954", "alternatives": [], "answer_date": "1954-12-23", "provenance": "https://en.wikipedia.org/wiki/Organ_transplantation"}
+  ],
+  "post_cutoff": [
+    {"question_text": "Which spacecraft, launched in 2024, made the first successful catch of a returning rocket booster?", "winner": "Starship (Super Heavy)", "alternatives": ["SpaceX Starship", "Starship"], "answer_date": "2024-10-13", "provenance": "https://www.spacex.com/launches/mission/?missionId=starship-flight-5"},
+    {"question_text": "Which two private astronauts performed the first commercial spacewalk in September 2024 during the Polaris Dawn mission?", "winner": "Jared Isaacman and Sarah Gillis", "alternatives": ["Isaacman and Gillis", "Polaris Dawn crew"], "answer_date": "2024-09-12", "provenance": "https://en.wikipedia.org/wiki/Polaris_Dawn"},
+    {"question_text": "In what month and year was the first US presidential election won by Donald Trump in his second non-consecutive term?", "winner": "November 2024", "alternatives": ["Nov 2024", "November 5 2024"], "answer_date": "2024-11-05", "provenance": "https://en.wikipedia.org/wiki/2024_United_States_presidential_election"},
+    {"question_text": "Which company achieved the first commercial robotaxi service rollout to the public in San Francisco, with notable expansion in 2024?", "winner": "Waymo", "alternatives": ["Waymo One"], "answer_date": "2024-06-25", "provenance": "https://waymo.com/blog/"}
+  ]
+}

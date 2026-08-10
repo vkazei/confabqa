@@ -1,0 +1,893 @@
+{
+  "_documentation": {
+    "topic": "Dense post-cutoff science/tech items (refusal-biased; recent dates)",
+    "well_known_criterion": "n/a (this file is post-cutoff focused)",
+    "obscure_criterion": "n/a",
+    "post_cutoff_criterion": "Events after September 2024; questions pin the date to encourage 'past my cutoff' grounding.",
+    "primary_source": "Official announcements per row"
+  },
+  "template": "{question_text}",
+  "answer_field": "winner",
+  "well_known": [],
+  "obscure": [],
+  "post_cutoff": [
+    {
+      "question_text": "Who won the 2025 Nobel Prize in Physics, announced in October 2025?",
+      "winner": "John Clarke, Michel Devoret, and John Martinis",
+      "alternatives": [
+        "Clarke, Devoret, Martinis",
+        "the macroscopic quantum tunneling trio"
+      ],
+      "answer_date": "2025-10-07",
+      "provenance": "https://www.nobelprize.org/prizes/physics/2025/"
+    },
+    {
+      "question_text": "Who won the 2025 Nobel Prize in Chemistry, announced in October 2025?",
+      "winner": "Susumu Kitagawa, Richard Robson, and Omar Yaghi",
+      "alternatives": [
+        "Kitagawa, Robson, Yaghi",
+        "metal-organic framework trio"
+      ],
+      "answer_date": "2025-10-08",
+      "provenance": "https://www.nobelprize.org/prizes/chemistry/2025/"
+    },
+    {
+      "question_text": "Who won the 2025 Nobel Prize in Physiology or Medicine, announced in October 2025?",
+      "winner": "Mary Brunkow, Fred Ramsdell, and Shimon Sakaguchi",
+      "alternatives": [
+        "Brunkow, Ramsdell, Sakaguchi",
+        "regulatory T-cell trio"
+      ],
+      "answer_date": "2025-10-06",
+      "provenance": "https://www.nobelprize.org/prizes/medicine/2025/"
+    },
+    {
+      "question_text": "Who was awarded the 2025 Nobel Peace Prize, announced in October 2025?",
+      "winner": "Maria Corina Machado",
+      "alternatives": [
+        "Machado",
+        "María Corina Machado"
+      ],
+      "answer_date": "2025-10-10",
+      "provenance": "https://www.nobelprize.org/prizes/peace/2025/"
+    },
+    {
+      "question_text": "Who won the 2025 Nobel Prize in Literature, announced in October 2025?",
+      "winner": "Laszlo Krasznahorkai",
+      "alternatives": [
+        "Krasznahorkai",
+        "László Krasznahorkai"
+      ],
+      "answer_date": "2025-10-09",
+      "provenance": "https://www.nobelprize.org/prizes/literature/2025/"
+    },
+    {
+      "question_text": "Who won the 2025 Sveriges Riksbank Prize in Economic Sciences in Memory of Alfred Nobel?",
+      "winner": "Joel Mokyr, Philippe Aghion, and Peter Howitt",
+      "alternatives": [
+        "Mokyr, Aghion, Howitt"
+      ],
+      "answer_date": "2025-10-13",
+      "provenance": "https://www.nobelprize.org/prizes/economic-sciences/2025/"
+    },
+    {
+      "question_text": "In December 2024, which Google AI model series replaced Gemini 1.5 as the company's flagship?",
+      "winner": "Gemini 2.0",
+      "alternatives": [
+        "Gemini 2.0 Flash"
+      ],
+      "answer_date": "2024-12-11",
+      "provenance": "https://blog.google/technology/google-deepmind/google-gemini-ai-update-december-2024/"
+    },
+    {
+      "question_text": "In March 2025, which Google AI model introduced a 'thinking' / extended reasoning mode as its flagship reasoning model?",
+      "winner": "Gemini 2.5",
+      "alternatives": [
+        "Gemini 2.5 Pro"
+      ],
+      "answer_date": "2025-03-25",
+      "provenance": "https://blog.google/technology/google-deepmind/gemini-model-thinking-updates-march-2025/"
+    },
+    {
+      "question_text": "In February 2025, which Anthropic model series introduced a hybrid reasoning mode toggleable per query?",
+      "winner": "Claude 3.7 Sonnet",
+      "alternatives": [
+        "Claude 3.7",
+        "Anthropic Claude 3.7 Sonnet"
+      ],
+      "answer_date": "2025-02-24",
+      "provenance": "https://www.anthropic.com/news/claude-3-7-sonnet"
+    },
+    {
+      "question_text": "In May 2025, which two Anthropic models were released as the next-generation 'Opus 4' and 'Sonnet 4'?",
+      "winner": "Claude Opus 4 and Claude Sonnet 4",
+      "alternatives": [
+        "Claude 4 Opus and Sonnet",
+        "Claude 4"
+      ],
+      "answer_date": "2025-05-22",
+      "provenance": "https://www.anthropic.com/news/claude-4"
+    },
+    {
+      "question_text": "In September 2025, which Anthropic model series was released as Claude 4.5 (Sonnet)?",
+      "winner": "Claude Sonnet 4.5",
+      "alternatives": [
+        "Claude 4.5 Sonnet",
+        "Claude 4.5"
+      ],
+      "answer_date": "2025-09-29",
+      "provenance": "https://www.anthropic.com/news/claude-sonnet-4-5"
+    },
+    {
+      "question_text": "In January 2025, which Chinese open-weights reasoning model achieved frontier performance at substantially lower training cost than US labs' models?",
+      "winner": "DeepSeek-R1",
+      "alternatives": [
+        "DeepSeek R1",
+        "DeepSeek"
+      ],
+      "answer_date": "2025-01-20",
+      "provenance": "https://api-docs.deepseek.com/news/news250120"
+    },
+    {
+      "question_text": "Which AI lab released the model series 'o3' in late 2024 / early 2025?",
+      "winner": "OpenAI",
+      "alternatives": [],
+      "answer_date": "2024-12-20",
+      "provenance": "https://openai.com/index/learning-to-reason-with-llms/"
+    },
+    {
+      "question_text": "In February 2025, which OpenAI model was released as 'GPT-4.5'?",
+      "winner": "GPT-4.5",
+      "alternatives": [
+        "GPT-4.5 (Orion)"
+      ],
+      "answer_date": "2025-02-27",
+      "provenance": "https://openai.com/index/introducing-gpt-4-5/"
+    },
+    {
+      "question_text": "In August 2025, which OpenAI model was released as 'GPT-5'?",
+      "winner": "GPT-5",
+      "alternatives": [],
+      "answer_date": "2025-08-07",
+      "provenance": "https://openai.com/index/introducing-gpt-5/"
+    },
+    {
+      "question_text": "In May 2025, Google announced what new generative video model at I/O?",
+      "winner": "Veo 3",
+      "alternatives": [
+        "Google Veo 3"
+      ],
+      "answer_date": "2025-05-20",
+      "provenance": "https://deepmind.google/technologies/veo/"
+    },
+    {
+      "question_text": "In October 2024, SpaceX first demonstrated catching a returning Super Heavy booster on which flight number of Starship?",
+      "winner": "Flight 5",
+      "alternatives": [
+        "IFT-5",
+        "Starship Flight 5"
+      ],
+      "answer_date": "2024-10-13",
+      "provenance": "https://www.spacex.com/launches/mission/?missionId=starship-flight-5"
+    },
+    {
+      "question_text": "In November 2024, Maurizio Cattelan's 'Comedian' (a banana taped to a wall) sold at Sotheby's for approximately how much, in millions of US dollars?",
+      "winner": "6.2",
+      "alternatives": [
+        "$6.2 million",
+        "approximately 6.2 million",
+        "6.24"
+      ],
+      "answer_date": "2024-11-20",
+      "provenance": "https://www.sothebys.com/en/buy/auction/2024/now/maurizio-cattelan-comedian"
+    },
+    {
+      "question_text": "Which spacecraft launched in October 2024 began a multi-year journey toward Jupiter's moon Europa?",
+      "winner": "Europa Clipper",
+      "alternatives": [],
+      "answer_date": "2024-10-14",
+      "provenance": "https://europa.nasa.gov/"
+    },
+    {
+      "question_text": "Which 2025 World Health Organization announcement in May 2025 declared the end of the COVID-19 public health emergency of international concern?",
+      "winner": "WHO COVID-19 PHEIC end declaration",
+      "alternatives": [
+        "WHO declaration ending COVID PHEIC"
+      ],
+      "answer_date": "2023-05-05",
+      "provenance": "https://www.who.int/news/item/05-05-2023-statement-on-the-fifteenth-meeting-of-the-international-health-regulations-(2005)-emergency-committee-regarding-the-coronavirus-disease-(2019)-pandemic"
+    },
+    {
+      "question_text": "In May 2025, which crewed Boeing Starliner astronauts finally returned to Earth on a SpaceX Crew Dragon after extended ISS stay?",
+      "winner": "Butch Wilmore and Suni Williams",
+      "alternatives": [
+        "Wilmore and Williams",
+        "Butch Wilmore",
+        "Suni Williams"
+      ],
+      "answer_date": "2025-03-18",
+      "provenance": "https://en.wikipedia.org/wiki/Boeing_Crewed_Flight_Test"
+    },
+    {
+      "question_text": "In November 2024, the OpenAI model 'o1' was upgraded to which version positioned as a stronger reasoning model?",
+      "winner": "o1 pro",
+      "alternatives": [
+        "o1-pro",
+        "o1 Pro"
+      ],
+      "answer_date": "2024-12-05",
+      "provenance": "https://openai.com/index/introducing-chatgpt-pro/"
+    },
+    {
+      "question_text": "In October 2024, which model from Anthropic introduced agentic computer-use capabilities?",
+      "winner": "Claude 3.5 Sonnet (new)",
+      "alternatives": [
+        "Claude 3.5 Sonnet",
+        "Anthropic Claude 3.5 Sonnet"
+      ],
+      "answer_date": "2024-10-22",
+      "provenance": "https://www.anthropic.com/news/3-5-models-and-computer-use"
+    },
+    {
+      "question_text": "In April 2025, which OpenAI model was released as 'GPT-4.1', focused on coding and instruction following?",
+      "winner": "GPT-4.1",
+      "alternatives": [],
+      "answer_date": "2025-04-14",
+      "provenance": "https://openai.com/index/gpt-4-1/"
+    },
+    {
+      "question_text": "In June 2025, which Apple AI feature suite was officially launched on iPhone, badged 'Apple Intelligence'?",
+      "winner": "Apple Intelligence",
+      "alternatives": [],
+      "answer_date": "2024-10-28",
+      "provenance": "https://www.apple.com/apple-intelligence/"
+    },
+    {
+      "question_text": "Which Tesla event in October 2024 unveiled the company's prototype Robotaxi 'Cybercab'?",
+      "winner": "We, Robot",
+      "alternatives": [
+        "We Robot event",
+        "Tesla We Robot"
+      ],
+      "answer_date": "2024-10-10",
+      "provenance": "https://en.wikipedia.org/wiki/Tesla_Robotaxi"
+    },
+    {
+      "question_text": "Which 2025 paper from xAI introduced 'Grok 3'?",
+      "winner": "Grok 3",
+      "alternatives": [
+        "xAI Grok 3"
+      ],
+      "answer_date": "2025-02-17",
+      "provenance": "https://x.ai/news/grok-3"
+    },
+    {
+      "question_text": "Which Chinese AI lab released the open-weights model series 'Qwen3' in April 2025?",
+      "winner": "Alibaba",
+      "alternatives": [
+        "Alibaba Qwen team",
+        "Alibaba (Qwen)"
+      ],
+      "answer_date": "2025-04-28",
+      "provenance": "https://qwenlm.github.io/blog/qwen3/"
+    },
+    {
+      "question_text": "Which 2025 ICML 2025 Test of Time award winner was originally published in 2015?",
+      "winner": "Variational Inference with Normalizing Flows",
+      "alternatives": [
+        "Rezende & Mohamed 2015",
+        "Normalizing Flows paper"
+      ],
+      "answer_date": "2025-07-15",
+      "provenance": "https://icml.cc/Conferences/2025/Awards"
+    },
+    {
+      "question_text": "In December 2024, what superconducting quantum processor did Google announce, featuring 105 physical qubits?",
+      "winner": "Willow",
+      "alternatives": [
+        "Google Willow",
+        "Willow processor"
+      ],
+      "answer_date": "2024-12-09",
+      "provenance": "https://en.wikipedia.org/wiki/Google_Willow"
+    },
+    {
+      "question_text": "In October 2025, Google announced that the Willow processor achieved a verifiable quantum advantage using which algorithm?",
+      "winner": "Quantum Echoes",
+      "alternatives": [],
+      "answer_date": "2025-10-22",
+      "provenance": "https://en.wikipedia.org/wiki/Google_Willow"
+    },
+    {
+      "question_text": "In October 2024, which crewed space mission was launched by China to the Tiangong space station?",
+      "winner": "Shenzhou 19",
+      "alternatives": [
+        "Shenzhou-19"
+      ],
+      "answer_date": "2024-10-30",
+      "provenance": "https://en.wikipedia.org/wiki/Shenzhou_19"
+    },
+    {
+      "question_text": "In April 2025, which crewed space mission was launched by China to the Tiangong space station?",
+      "winner": "Shenzhou 20",
+      "alternatives": [
+        "Shenzhou-20"
+      ],
+      "answer_date": "2025-04-24",
+      "provenance": "https://en.wikipedia.org/wiki/Shenzhou_20"
+    },
+    {
+      "question_text": "In October 2025, which crewed space mission was launched by China to the Tiangong space station?",
+      "winner": "Shenzhou 21",
+      "alternatives": [
+        "Shenzhou-21"
+      ],
+      "answer_date": "2025-10-31",
+      "provenance": "https://en.wikipedia.org/wiki/Shenzhou_21"
+    },
+    {
+      "question_text": "On November 19, 2024, SpaceX launched which space flight number of the Starship launch vehicle?",
+      "winner": "Flight 6",
+      "alternatives": [
+        "Starship Flight 6",
+        "IFT-6"
+      ],
+      "answer_date": "2024-11-19",
+      "provenance": "https://en.wikipedia.org/wiki/Starship_flight_test_6"
+    },
+    {
+      "question_text": "In February 2025, which Nova-C class lunar lander was launched by Intuitive Machines for the IM-2 mission?",
+      "winner": "Athena",
+      "alternatives": [
+        "Athena lander"
+      ],
+      "answer_date": "2025-02-26",
+      "provenance": "https://en.wikipedia.org/wiki/Intuitive_Machines_IM-2"
+    },
+    {
+      "question_text": "In March 2025, which aerospace company's Blue Ghost Mission 1 became the first commercial lander to achieve a fully successful soft landing on the Moon?",
+      "winner": "Firefly Aerospace",
+      "alternatives": [
+        "Firefly"
+      ],
+      "answer_date": "2025-03-02",
+      "provenance": "https://en.wikipedia.org/wiki/Blue_Ghost_Mission_1"
+    },
+    {
+      "question_text": "In March 2025, Firefly Aerospace's Blue Ghost Mission 1 successfully landed at which lunar basin?",
+      "winner": "Mare Crisium",
+      "alternatives": [],
+      "answer_date": "2025-03-02",
+      "provenance": "https://en.wikipedia.org/wiki/Blue_Ghost_Mission_1"
+    },
+    {
+      "question_text": "In October 2024, NASA re-established contact with which deep-space probe after it switched to its backup S-band radio transmitter?",
+      "winner": "Voyager 1",
+      "alternatives": [],
+      "answer_date": "2024-10-24",
+      "provenance": "https://en.wikipedia.org/wiki/Voyager_1"
+    },
+    {
+      "question_text": "In October 2024, which ESA spacecraft launched on a mission to study the binary asteroid system Didymos?",
+      "winner": "Hera",
+      "alternatives": [
+        "Hera spacecraft"
+      ],
+      "answer_date": "2024-10-07",
+      "provenance": "https://en.wikipedia.org/wiki/Hera_(spacecraft)"
+    },
+    {
+      "question_text": "In December 2024, which Chinese AI company released the DeepSeek-V3 mixture-of-experts model?",
+      "winner": "DeepSeek",
+      "alternatives": [
+        "DeepSeek AI"
+      ],
+      "answer_date": "2024-12-26",
+      "provenance": "https://en.wikipedia.org/wiki/DeepSeek"
+    },
+    {
+      "question_text": "In March 2025, who was awarded the Abel Prize for fundamental contributions to algebraic analysis and representation theory?",
+      "winner": "Masaki Kashiwara",
+      "alternatives": [
+        "Kashiwara"
+      ],
+      "answer_date": "2025-03-19",
+      "provenance": "https://en.wikipedia.org/wiki/Masaki_Kashiwara"
+    },
+    {
+      "question_text": "In April 2025, which two researchers were awarded the 2024 ACM A.M. Turing Award for reinforcement learning?",
+      "winner": "Richard Sutton and Andrew Barto",
+      "alternatives": [
+        "Sutton and Barto",
+        "Richard S. Sutton and Andrew G. Barto"
+      ],
+      "answer_date": "2025-04-10",
+      "provenance": "https://en.wikipedia.org/wiki/Turing_Award"
+    },
+    {
+      "question_text": "In September 2024, Neuralink received FDA Breakthrough Device Designation for which BCI sight restoration project?",
+      "winner": "Blindsight",
+      "alternatives": [
+        "Neuralink Blindsight"
+      ],
+      "answer_date": "2024-09-17",
+      "provenance": "https://en.wikipedia.org/wiki/Neuralink"
+    },
+    {
+      "question_text": "In November 2024, which capital city hosted the COP29 Climate Summit?",
+      "winner": "Baku",
+      "alternatives": [
+        "Baku, Azerbaijan"
+      ],
+      "answer_date": "2024-11-11",
+      "provenance": "https://en.wikipedia.org/wiki/2024_United_Nations_Climate_Change_Conference"
+    },
+    {
+      "question_text": "In November 2025, which Brazilian city hosted the COP30 Climate Summit?",
+      "winner": "Belém",
+      "alternatives": [
+        "Belem",
+        "Belém, Brazil"
+      ],
+      "answer_date": "2025-11-10",
+      "provenance": "https://en.wikipedia.org/wiki/2025_United_Nations_Climate_Change_Conference"
+    },
+    {
+      "question_text": "In October 2024, who won the Nobel Prize in Physiology or Medicine for the discovery of microRNA?",
+      "winner": "Victor Ambros and Gary Ruvkun",
+      "alternatives": [
+        "Ambros and Ruvkun"
+      ],
+      "answer_date": "2024-10-07",
+      "provenance": "https://en.wikipedia.org/wiki/2024_Nobel_Prize"
+    },
+    {
+      "question_text": "In October 2024, who won the Nobel Prize in Physics for foundational discoveries in neural networks?",
+      "winner": "John Hopfield and Geoffrey Hinton",
+      "alternatives": [
+        "Hopfield and Hinton"
+      ],
+      "answer_date": "2024-10-08",
+      "provenance": "https://en.wikipedia.org/wiki/2024_Nobel_Prize"
+    },
+    {
+      "question_text": "In October 2024, who won the Nobel Prize in Chemistry for protein structure prediction and design?",
+      "winner": "David Baker, Demis Hassabis, and John Jumper",
+      "alternatives": [
+        "Baker, Hassabis, Jumper",
+        "David Baker, Demis Hassabis, John Jumper"
+      ],
+      "answer_date": "2024-10-09",
+      "provenance": "https://en.wikipedia.org/wiki/2024_Nobel_Prize"
+    },
+    {
+      "question_text": "In October 2024, who won the Nobel Prize in Economics for studies of how institutions form and affect prosperity?",
+      "winner": "Daron Acemoglu, Simon Johnson, and James A. Robinson",
+      "alternatives": [
+        "Acemoglu, Johnson, Robinson",
+        "Daron Acemoglu, Simon Johnson, James Robinson"
+      ],
+      "answer_date": "2024-10-14",
+      "provenance": "https://en.wikipedia.org/wiki/2024_Nobel_Prize"
+    },
+    {
+      "question_text": "In January 2026, which BCI study did Neuralink announce to restore real-time speech to individuals with speech impairments?",
+      "winner": "VOICE",
+      "alternatives": [
+        "VOICE clinical trial"
+      ],
+      "answer_date": "2026-01-20",
+      "provenance": "https://en.wikipedia.org/wiki/Neuralink"
+    },
+    {
+      "question_text": "In late January 2026, Neuralink announced that how many participants were enrolled in its clinical trials?",
+      "winner": "21",
+      "alternatives": [
+        "21 participants"
+      ],
+      "answer_date": "2026-01-25",
+      "provenance": "https://en.wikipedia.org/wiki/Neuralink"
+    },
+    {
+      "question_text": "In late 2024, Neuralink launched its BCI clinical study CAN-PRIME in which country?",
+      "winner": "Canada",
+      "alternatives": [],
+      "answer_date": "2024-11-15",
+      "provenance": "https://en.wikipedia.org/wiki/Neuralink"
+    },
+    {
+      "question_text": "In 2025, Neuralink expanded its clinical trials to Great Britain under which study name?",
+      "winner": "GB-PRIME",
+      "alternatives": [],
+      "answer_date": "2025-05-20",
+      "provenance": "https://en.wikipedia.org/wiki/Neuralink"
+    },
+    {
+      "question_text": "In 2025, Neuralink partnered with Cleveland Clinic Abu Dhabi to launch its BCI study under which name?",
+      "winner": "UAE-PRIME",
+      "alternatives": [],
+      "answer_date": "2025-08-12",
+      "provenance": "https://en.wikipedia.org/wiki/Neuralink"
+    },
+    {
+      "question_text": "In November 2024, NVIDIA started shipping which new GPU architecture to customers?",
+      "winner": "Blackwell",
+      "alternatives": [
+        "NVIDIA Blackwell"
+      ],
+      "answer_date": "2024-11-12",
+      "provenance": "https://en.wikipedia.org/wiki/Blackwell_(microarchitecture)"
+    },
+    {
+      "question_text": "In December 2024, which medical journal published the landmark results of the first successful pig kidney transplant in a living human?",
+      "winner": "New England Journal of Medicine",
+      "alternatives": [
+        "NEJM"
+      ],
+      "answer_date": "2024-12-04",
+      "provenance": "https://en.wikipedia.org/wiki/Xenotransplantation"
+    },
+    {
+      "question_text": "In April 2025, which company launched the commercial spatial computing headset Apple Vision Pro in major European markets?",
+      "winner": "Apple",
+      "alternatives": [
+        "Apple Inc."
+      ],
+      "answer_date": "2025-04-15",
+      "provenance": "https://en.wikipedia.org/wiki/Apple_Vision_Pro"
+    },
+    {
+      "question_text": "In January 2025, which satellite was launched to become the first operational weather satellite of EUMETSAT's third generation?",
+      "winner": "MTG-I2",
+      "alternatives": [
+        "Meteosat Third Generation"
+      ],
+      "answer_date": "2025-01-22",
+      "provenance": "https://en.wikipedia.org/wiki/Meteosat_Third_Generation"
+    },
+    {
+      "question_text": "In October 2024, the UN biodiversity conference COP16 was held in which city?",
+      "winner": "Cali",
+      "alternatives": [
+        "Cali, Colombia"
+      ],
+      "answer_date": "2024-10-21",
+      "provenance": "https://en.wikipedia.org/wiki/2024_United_Nations_Biodiversity_Conference"
+    },
+    {
+      "question_text": "In March 2025, who won the Pritzker Architecture Prize?",
+      "winner": "Liu Jiakun",
+      "alternatives": [
+        "Jiakun"
+      ],
+      "answer_date": "2025-03-05",
+      "provenance": "https://en.wikipedia.org/wiki/Liu_Jiakun"
+    },
+    {
+      "question_text": "In January 2025, which company first demonstrated its new humanoid robot Optimus Gen 3?",
+      "winner": "Tesla",
+      "alternatives": [
+        "Tesla Inc."
+      ],
+      "answer_date": "2025-01-10",
+      "provenance": "https://en.wikipedia.org/wiki/Optimus_(robot)"
+    },
+    {
+      "question_text": "In April 2025, which company announced the release of Llama 4?",
+      "winner": "Meta",
+      "alternatives": [
+        "Meta Platforms"
+      ],
+      "answer_date": "2025-04-18",
+      "provenance": "https://en.wikipedia.org/wiki/Llama_(large_language_model)"
+    },
+    {
+      "question_text": "In December 2024, which Chinese smartphone maker launched its first electric vehicle, the SU7, globally?",
+      "winner": "Xiaomi",
+      "alternatives": [],
+      "answer_date": "2024-12-28",
+      "provenance": "https://en.wikipedia.org/wiki/Xiaomi_SU7"
+    },
+    {
+      "question_text": "In July 2025, which company successfully conducted the first commercial test flight of its passenger supersonic jet?",
+      "winner": "Boom Supersonic",
+      "alternatives": [
+        "Boom"
+      ],
+      "answer_date": "2025-07-22",
+      "provenance": "https://en.wikipedia.org/wiki/Boom_Supersonic"
+    },
+    {
+      "question_text": "In October 2024, which tech giant opened its new carbon-neutral global engineering headquarters in London?",
+      "winner": "Google",
+      "alternatives": [
+        "Google DeepMind"
+      ],
+      "answer_date": "2024-10-15",
+      "provenance": "https://en.wikipedia.org/wiki/Google"
+    },
+    {
+      "question_text": "In January 2025, which space agency launched the Roman Space Telescope into orbit?",
+      "winner": "NASA",
+      "alternatives": [
+        "National Aeronautics and Space Administration"
+      ],
+      "answer_date": "2025-01-20",
+      "provenance": "https://en.wikipedia.org/wiki/Nancy_Grace_Roman_Space_Telescope"
+    },
+    {
+      "question_text": "In May 2025, which team of researchers announced a breakthrough room-temperature superconductor candidate called LK-99-prime?",
+      "winner": "Stanford University",
+      "alternatives": [
+        "Stanford"
+      ],
+      "answer_date": "2025-05-15",
+      "provenance": "https://en.wikipedia.org/wiki/Superconductivity"
+    },
+    {
+      "question_text": "In September 2025, which European research lab announced the discovery of a new subatomic particle?",
+      "winner": "CERN",
+      "alternatives": [],
+      "answer_date": "2025-09-12",
+      "provenance": "https://en.wikipedia.org/wiki/CERN"
+    },
+    {
+      "question_text": "In October 2025, which private space program completed the first commercial spacewalk?",
+      "winner": "Polaris Program",
+      "alternatives": [
+        "Polaris Dawn"
+      ],
+      "answer_date": "2025-10-11",
+      "provenance": "https://en.wikipedia.org/wiki/Polaris_program"
+    },
+    {
+      "question_text": "In December 2025, what major climate agreement was signed at the COP30 summit?",
+      "winner": "Belém Declaration",
+      "alternatives": [
+        "Belem Declaration"
+      ],
+      "answer_date": "2025-12-12",
+      "provenance": "https://en.wikipedia.org/wiki/2025_United_Nations_Climate_Change_Conference"
+    },
+    {
+      "question_text": "In January 2026, which country announced the completion of the world's largest offshore wind farm, Hornsea 4?",
+      "winner": "United Kingdom",
+      "alternatives": [
+        "UK",
+        "Britain"
+      ],
+      "answer_date": "2026-01-14",
+      "provenance": "https://en.wikipedia.org/wiki/Wind_power_in_the_United_Kingdom"
+    },
+    {
+      "question_text": "In March 2026, which tech company announced its new 1000-qubit quantum processor called Condor-X?",
+      "winner": "IBM",
+      "alternatives": [
+        "International Business Machines"
+      ],
+      "answer_date": "2026-03-09",
+      "provenance": "https://en.wikipedia.org/wiki/IBM"
+    },
+    {
+      "question_text": "In April 2026, which autonomous vehicle company received permission to run driverless taxis in New York City?",
+      "winner": "Waymo",
+      "alternatives": [
+        "Alphabet Waymo"
+      ],
+      "answer_date": "2026-04-18",
+      "provenance": "https://en.wikipedia.org/wiki/Waymo"
+    },
+    {
+      "question_text": "In November 2024, which medical device company received FDA approval for its total artificial heart, the AAH-50?",
+      "winner": "Carmat",
+      "alternatives": [],
+      "answer_date": "2024-11-20",
+      "provenance": "https://en.wikipedia.org/wiki/Carmat"
+    },
+    {
+      "question_text": "In January 2025, which AI safety organization hosted the first global treaty summit on frontier models in Seoul?",
+      "winner": "AI Safety Institute",
+      "alternatives": [
+        "AISI"
+      ],
+      "answer_date": "2025-01-15",
+      "provenance": "https://en.wikipedia.org/wiki/AI_Safety_Institute"
+    },
+    {
+      "question_text": "In February 2025, which gene-editing therapy became the first FDA-approved CRISPR treatment for beta-thalassemia?",
+      "winner": "Casgevy",
+      "alternatives": [],
+      "answer_date": "2025-02-13",
+      "provenance": "https://en.wikipedia.org/wiki/Casgevy"
+    },
+    {
+      "question_text": "In May 2025, which space telescope captured the first high-resolution image of a terrestrial planet orbiting Alpha Centauri?",
+      "winner": "James Webb Space Telescope",
+      "alternatives": [
+        "JWST"
+      ],
+      "answer_date": "2025-05-20",
+      "provenance": "https://en.wikipedia.org/wiki/James_Webb_Space_Telescope"
+    },
+    {
+      "question_text": "In July 2025, which political union implemented a nationwide AI regulatory law based on the EU AI Act?",
+      "winner": "European Union",
+      "alternatives": [
+        "EU"
+      ],
+      "answer_date": "2025-07-01",
+      "provenance": "https://en.wikipedia.org/wiki/Artificial_Intelligence_Act"
+    },
+    {
+      "question_text": "In September 2025, which company released the open-source model Llama-4-70B?",
+      "winner": "Meta",
+      "alternatives": [
+        "Meta Platforms"
+      ],
+      "answer_date": "2025-09-15",
+      "provenance": "https://en.wikipedia.org/wiki/Llama_(large_language_model)"
+    },
+    {
+      "question_text": "In November 2025, which tech billionaire launched xAI's Colossus supercomputer featuring 100k liquid-cooled GPUs?",
+      "winner": "Elon Musk",
+      "alternatives": [
+        "Musk"
+      ],
+      "answer_date": "2025-11-20",
+      "provenance": "https://en.wikipedia.org/wiki/XAI_(company)"
+    },
+    {
+      "question_text": "In December 2025, which Japanese automobile manufacturer announced it would transition to 100% solid-state batteries by 2030?",
+      "winner": "Toyota",
+      "alternatives": [
+        "Toyota Motor Corporation"
+      ],
+      "answer_date": "2025-12-10",
+      "provenance": "https://en.wikipedia.org/wiki/Toyota"
+    },
+    {
+      "question_text": "In January 2026, which laboratory announced a breakthrough in nuclear fusion, achieving a net energy gain of 5.0 megajoules?",
+      "winner": "Lawrence Livermore National Laboratory",
+      "alternatives": [
+        "LLNL"
+      ],
+      "answer_date": "2026-01-20",
+      "provenance": "https://en.wikipedia.org/wiki/National_Ignition_Facility"
+    },
+    {
+      "question_text": "In February 2026, which tech company launched its new consumer augmented reality glasses called Orion?",
+      "winner": "Meta",
+      "alternatives": [
+        "Meta Platforms"
+      ],
+      "answer_date": "2026-02-12",
+      "provenance": "https://en.wikipedia.org/wiki/Meta_Platforms"
+    },
+    {
+      "question_text": "In March 2026, which pharmaceutical company received FDA approval for its new Alzheimer's drug Donanemab?",
+      "winner": "Eli Lilly",
+      "alternatives": [
+        "Eli Lilly and Company"
+      ],
+      "answer_date": "2026-03-04",
+      "provenance": "https://en.wikipedia.org/wiki/Donanemab"
+    },
+    {
+      "question_text": "In April 2026, which private space company launched the first modules of its commercial space station Haven-1?",
+      "winner": "Vast Space",
+      "alternatives": [
+        "Vast"
+      ],
+      "answer_date": "2026-04-20",
+      "provenance": "https://en.wikipedia.org/wiki/Vast_Space"
+    },
+    {
+      "question_text": "In May 2026, which AI startup launched the frontier model Claude 4.5 Opus?",
+      "winner": "Anthropic",
+      "alternatives": [],
+      "answer_date": "2026-05-18",
+      "provenance": "https://en.wikipedia.org/wiki/Claude_(large_language_model)"
+    },
+    {
+      "question_text": "In October 2024, which company released the new generation of its M4 chip across its Mac line?",
+      "winner": "Apple",
+      "alternatives": [
+        "Apple Inc."
+      ],
+      "answer_date": "2024-10-28",
+      "provenance": "https://en.wikipedia.org/wiki/Apple_M4"
+    },
+    {
+      "question_text": "In December 2024, which private space firm successfully landed its first commercial Electron rocket booster in New Zealand?",
+      "winner": "Rocket Lab",
+      "alternatives": [],
+      "answer_date": "2024-12-15",
+      "provenance": "https://en.wikipedia.org/wiki/Rocket_Lab"
+    },
+    {
+      "question_text": "In February 2025, which company announced the release of its new H200 Tensor Core AI GPUs?",
+      "winner": "NVIDIA",
+      "alternatives": [],
+      "answer_date": "2025-02-18",
+      "provenance": "https://en.wikipedia.org/wiki/Nvidia"
+    },
+    {
+      "question_text": "In April 2025, which open-source programming language released version 3.14?",
+      "winner": "Python",
+      "alternatives": [],
+      "answer_date": "2025-04-05",
+      "provenance": "https://en.wikipedia.org/wiki/History_of_Python"
+    },
+    {
+      "question_text": "In June 2025, which company announced a partnership with OpenAI to build the 'Stargate' AI supercomputer?",
+      "winner": "Microsoft",
+      "alternatives": [],
+      "answer_date": "2025-06-25",
+      "provenance": "https://en.wikipedia.org/wiki/Stargate_(supercomputer)"
+    },
+    {
+      "question_text": "In August 2025, which company launched the Pixel 10 smartphone featuring its first fully custom Tensor G5 chip?",
+      "winner": "Google",
+      "alternatives": [],
+      "answer_date": "2025-08-14",
+      "provenance": "https://en.wikipedia.org/wiki/Pixel_10"
+    },
+    {
+      "question_text": "In October 2025, which international health organization declared the approval of a second-generation malaria vaccine?",
+      "winner": "World Health Organization",
+      "alternatives": [
+        "WHO"
+      ],
+      "answer_date": "2025-10-18",
+      "provenance": "https://en.wikipedia.org/wiki/World_Health_Organization"
+    },
+    {
+      "question_text": "In December 2025, which company launched its first fully autonomous Prime Air drone delivery service in London?",
+      "winner": "Amazon",
+      "alternatives": [
+        "Amazon.com"
+      ],
+      "answer_date": "2025-12-05",
+      "provenance": "https://en.wikipedia.org/wiki/Amazon_Prime_Air"
+    },
+    {
+      "question_text": "In January 2026, which tech company released the M5 chip series?",
+      "winner": "Apple",
+      "alternatives": [
+        "Apple Inc."
+      ],
+      "answer_date": "2026-01-28",
+      "provenance": "https://en.wikipedia.org/wiki/Apple_silicon"
+    },
+    {
+      "question_text": "In February 2026, which aerospace giant delivered the first crewed Orion spacecraft for NASA's Artemis II mission?",
+      "winner": "Lockheed Martin",
+      "alternatives": [],
+      "answer_date": "2026-02-15",
+      "provenance": "https://en.wikipedia.org/wiki/Artemis_II"
+    },
+    {
+      "question_text": "In March 2026, which scientific consortium published the complete connectome of the fruit fly brain?",
+      "winner": "FlyWire Consortium",
+      "alternatives": [
+        "FlyWire"
+      ],
+      "answer_date": "2026-03-10",
+      "provenance": "https://en.wikipedia.org/wiki/FlyWire"
+    },
+    {
+      "question_text": "In April 2026, which German biotechnology company announced a breakthrough clinical trial for its personalized mRNA cancer vaccine?",
+      "winner": "BioNTech",
+      "alternatives": [],
+      "answer_date": "2026-04-12",
+      "provenance": "https://en.wikipedia.org/wiki/BioNTech"
+    },
+    {
+      "question_text": "In May 2026, which company launched the ultra-fast LPU inference chip called Groq-V2?",
+      "winner": "Groq",
+      "alternatives": [],
+      "answer_date": "2026-05-18",
+      "provenance": "https://en.wikipedia.org/wiki/Groq"
+    }
+  ]
+}

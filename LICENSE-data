@@ -1,0 +1,31 @@
+The ConfabQA benchmark (data/questions_v1.json, data/sources/, the dataset
+card data/QUESTIONS_v1_CARD.md, validation artifacts), and the paper
+(paper_confabulation_atlas_v0.{md,pdf}) and figures (figures/), are released
+under the Creative Commons Attribution 4.0 International License (CC BY 4.0).
+
+You are free to:
+  - Share — copy and redistribute the material in any medium or format
+  - Adapt — remix, transform, and build upon the material for any purpose,
+    including commercially.
+
+Under the following terms:
+  - Attribution — You must give appropriate credit, provide a link to the
+    license, and indicate if changes were made. You may do so in any
+    reasonable manner, but not in any way that suggests the licensor
+    endorses you or your use.
+
+Suggested attribution:
+
+  "ConfabQA-784 benchmark, from Kazei (2026), 'ConfabQA: Hidden-State
+   Refusal and Correctness Signals in Three Small Language Models.'
+   https://github.com/vkazei/confabulation-atlas"
+
+Full license text: https://creativecommons.org/licenses/by/4.0/legalcode
+
+---
+
+The source-fact provenance URLs cited per-item in data/questions_v1.json
+point to third-party authoritative sources (Wikipedia, Nobel committee,
+Academy Awards, etc.). Those linked materials remain under their respective
+upstream licenses; the ConfabQA license covers only the question / answer /
+schema construction.

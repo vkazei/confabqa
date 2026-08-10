@@ -1,0 +1,3614 @@
+{
+  "metadata": {
+    "model": "Qwen/Qwen3-1.7B",
+    "sae_release": "qwen-scope-3-1.7b-base-w32k-l50",
+    "sae_id": "layer27",
+    "hf_layer": 28,
+    "n_items": 549,
+    "n_refusal": 147,
+    "n_wrong": 402,
+    "pca_n": 16,
+    "d_in": 2048,
+    "d_sae": 32768
+  },
+  "refusal_direction_logit_lens": {
+    "top_tokens": [
+      [
+        " as",
+        19.125
+      ],
+      [
+        "作为一个",
+        17.625
+      ],
+      [
+        "作为",
+        17.125
+      ],
+      [
+        "as",
+        16.625
+      ],
+      [
+        "As",
+        15.9375
+      ],
+      [
+        " As",
+        15.4375
+      ],
+      [
+        "\tas",
+        15.25
+      ],
+      [
+        "-as",
+        15.1875
+      ],
+      [
+        "_AS",
+        15.0625
+      ],
+      [
+        "(as",
+        14.4375
+      ],
+      [
+        " there",
+        14.0
+      ],
+      [
+        "作為",
+        13.375
+      ]
+    ],
+    "bottom_tokens": [
+      [
+        ">Title",
+        -10.625
+      ],
+      [
+        "ец",
+        -9.9375
+      ],
+      [
+        "icum",
+        -9.875
+      ],
+      [
+        "CodeGen",
+        -9.75
+      ],
+      [
+        "Comparer",
+        -9.5625
+      ],
+      [
+        "..\n\n\n\n",
+        -9.375
+      ],
+      [
+        ".\n\n\n\n\n",
+        -9.25
+      ],
+      [
+        "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+        -9.125
+      ],
+      [
+        "فيل",
+        -9.0625
+      ],
+      [
+        "\n\n\n\n",
+        -8.9375
+      ],
+      [
+        "orks",
+        -8.9375
+      ],
+      [
+        "'][]",
+        -8.875
+      ]
+    ]
+  },
+  "view_a_direct_encoding_top": [
+    8485,
+    23494,
+    21068,
+    3038,
+    5136,
+    5382,
+    7770,
+    5569,
+    9899,
+    13759,
+    26773,
+    21466,
+    6067,
+    31708,
+    18264,
+    57,
+    3725,
+    17091,
+    25169,
+    4779
+  ],
+  "view_b_decoder_alignment_top": [
+    8444,
+    2950,
+    2191,
+    21008,
+    9098,
+    14034,
+    20084,
+    1450,
+    8945,
+    57,
+    16612,
+    32487,
+    25660,
+    9894,
+    14361,
+    8353,
+    14967,
+    20779,
+    21615,
+    15638
+  ],
+  "view_c_activation_diff_top": [
+    18264,
+    18164,
+    9899,
+    23494,
+    18937,
+    21750,
+    3038,
+    7770,
+    32158,
+    3332,
+    21466,
+    5382,
+    21068,
+    17091,
+    25054,
+    31624,
+    13925,
+    13826,
+    1120,
+    31708
+  ],
+  "features": {
+    "57": {
+      "fid": 57,
+      "direct_encoding": 53.96873474121094,
+      "decoder_alignment": 0.031271081387381106,
+      "diff_z": 0.33404576778411865,
+      "mean_activation_refusal": 49.12363052368164,
+      "mean_activation_wrong": 47.97929382324219,
+      "hit_rate_refusal": 1.0,
+      "hit_rate_wrong": 1.0,
+      "top_tokens": [
+        "elin",
+        "roleum",
+        "insula",
+        "immune",
+        "erior",
+        "assador",
+        "ulsion",
+        "ionage",
+        "idores",
+        "htags",
+        "ruitment",
+        "lehem"
+      ],
+      "bottom_tokens": [
+        "frac",
+        "fty",
+        "号",
+        "月",
+        "分钟",
+        "psilon",
+        " inches",
+        "江县",
+        "叉",
+        "号线",
+        "到",
+        "，则"
+      ],
+      "top_prompts": [
+        {
+          "qid": "his_ob_35",
+          "question": "Who was the 27th President of the United States, serving from 1909 to 1913?",
+          "judge_label": "wrong",
+          "activation": 56.18447494506836
+        },
+        {
+          "qid": "cul_ob_13",
+          "question": "Who won the Nobel Prize in Literature in 2020?",
+          "judge_label": "wrong",
+          "activation": 56.13332748413086
+        },
+        {
+          "qid": "cul_pc_39",
+          "question": "Which song won the Grammy Award for Song of the Year at the February 2026 ceremony?",
+          "judge_label": "refusal",
+          "activation": 55.35289764404297
+        },
+        {
+          "qid": "cul_pc_87",
+          "question": "Which song won the Grammy Award for Record of the Year at the February 2026 ceremony?",
+          "judge_label": "refusal",
+          "activation": 55.163307189941406
+        },
+        {
+          "qid": "cul_pc_24",
+          "question": "Who won the Grammy Award for Best New Artist at the February 2026 ceremony?",
+          "judge_label": "refusal",
+          "activation": 54.87317657470703
+        }
+      ]
+    },
+    "1120": {
+      "fid": 1120,
+      "direct_encoding": 12.82941722869873,
+      "decoder_alignment": 0.002749673812085499,
+      "diff_z": 0.6965136528015137,
+      "mean_activation_refusal": 11.332462310791016,
+      "mean_activation_wrong": 7.004166126251221,
+      "hit_rate_refusal": 0.8503401360544217,
+      "hit_rate_wrong": 0.5597014925373134,
+      "top_tokens": [
+        "n",
+        "en",
+        "an",
+        ";n",
+        "N",
+        "én",
+        "'n",
+        "án",
+        "in",
+        ">n",
+        "AN",
+        "ن"
+      ],
+      "bottom_tokens": [
+        "ента",
+        "END",
+        "endance",
+        "AND",
+        "andel",
+        "endif",
+        "andise",
+        "endo",
+        "[end",
+        "end",
+        "andes",
+        "enda"
+      ],
+      "top_prompts": [
+        {
+          "qid": "cin_pc_03",
+          "question": "Which film won the Golden Bear at the 75th Berlin International Film Festival in February 2025?",
+          "judge_label": "refusal",
+          "activation": 15.744091987609863
+        },
+        {
+          "qid": "cin_pc_06",
+          "question": "Which film won the Golden Bear at the 2026 Berlin Film Festival in February 2026?",
+          "judge_label": "refusal",
+          "activation": 15.263458251953125
+        },
+        {
+          "qid": "his_pc_93",
+          "question": "In October 2024, which political party won the parliamentary elections in Lithuania?",
+          "judge_label": "wrong",
+          "activation": 15.249192237854004
+        },
+        {
+          "qid": "his_ob_35",
+          "question": "Who was the 27th President of the United States, serving from 1909 to 1913?",
+          "judge_label": "wrong",
+          "activation": 15.207188606262207
+        },
+        {
+          "qid": "cin_pc_87",
+          "question": "Which film won the Golden Lion at the 2025 Venice Film Festival in September 2025?",
+          "judge_label": "refusal",
+          "activation": 14.825310707092285
+        }
+      ]
+    },
+    "1450": {
+      "fid": 1450,
+      "direct_encoding": 0.0,
+      "decoder_alignment": 0.03236761012639075,
+      "diff_z": 0.0,
+      "mean_activation_refusal": 0.0,
+      "mean_activation_wrong": 0.0,
+      "hit_rate_refusal": 0.0,
+      "hit_rate_wrong": 0.0,
+      "top_tokens": [
+        "FILE",
+        " Officials",
+        "Authorities",
+        "Officials",
+        "WASHINGTON",
+        " Authorities",
+        "Republicans",
+        " lawmakers",
+        "Investigators",
+        "Reuters",
+        " FILE",
+        "Republican"
+      ],
+      "bottom_tokens": [
+        "=DB",
+        " bib",
+        "erchant",
+        "牒",
+        ".notNull",
+        "横向",
+        " resourceName",
+        "ToInt",
+        "主观",
+        "凳",
+        "几何",
+        "ients"
+      ],
+      "top_prompts": [
+        {
+          "qid": "sci_wk_42",
+          "question": "Who won the Nobel Prize in Physiology or Medicine in 2023?",
+          "judge_label": "wrong",
+          "activation": 0.0
+        },
+        {
+          "qid": "cul_ob_24",
+          "question": "Who composed 'The Rite of Spring', which caused a riot at its 1913 Paris premiere?",
+          "judge_label": "wrong",
+          "activation": 0.0
+        },
+        {
+          "qid": "cul_pc_01",
+          "question": "Which Gwen Stefani album was released in November 2024?",
+          "judge_label": "refusal",
+          "activation": 0.0
+        },
+        {
+          "qid": "cul_ob_33",
+          "question": "Which 1982 album by Marvin Gaye contains the hit 'Sexual Healing'?",
+          "judge_label": "wrong",
+          "activation": 0.0
+        },
+        {
+          "qid": "cul_ob_31",
+          "question": "Who wrote the 1990 novel 'Possession: A Romance'?",
+          "judge_label": "wrong",
+          "activation": 0.0
+        }
+      ]
+    },
+    "2191": {
+      "fid": 2191,
+      "direct_encoding": 0.0,
+      "decoder_alignment": 0.05951398812545263,
+      "diff_z": 0.2962288558483124,
+      "mean_activation_refusal": 0.5037568807601929,
+      "mean_activation_wrong": 0.06229851394891739,
+      "hit_rate_refusal": 0.04081632653061224,
+      "hit_rate_wrong": 0.004975124378109453,
+      "top_tokens": [
+        " as",
+        "作为",
+        "作為",
+        "\tas",
+        " As",
+        "as",
+        "As",
+        "-as",
+        "_as",
+        "作为一个",
+        ".as",
+        "(as"
+      ],
+      "bottom_tokens": [
+        " MERCHANTABILITY",
+        "ruz",
+        "poons",
+        "atform",
+        "овор",
+        "ouble",
+        "licative",
+        "ありがとうございます",
+        "rott",
+        "akk",
+        "osit",
+        "要在"
+      ],
+      "top_prompts": [
+        {
+          "qid": "cul_pc_01",
+          "question": "Which Gwen Stefani album was released in November 2024?",
+          "judge_label": "refusal",
+          "activation": 14.005925178527832
+        },
+        {
+          "qid": "cin_pc_59",
+          "question": "Who plays Elphaba in the November 2024 film adaptation of 'Wicked'?",
+          "judge_label": "refusal",
+          "activation": 13.836716651916504
+        },
+        {
+          "qid": "cul_pc_74",
+          "question": "Which Taylor Swift album was released in April 2024?",
+          "judge_label": "wrong",
+          "activation": 13.202452659606934
+        },
+        {
+          "qid": "cul_pc_20",
+          "question": "Which Taylor Swift album was released on April 19, 2024?",
+          "judge_label": "refusal",
+          "activation": 12.12166690826416
+        },
+        {
+          "qid": "cul_pc_23",
+          "question": "Which TV show won the 2024 Primetime Emmy Award for Outstanding Drama Series?",
+          "judge_label": "wrong",
+          "activation": 11.84154987335205
+        }
+      ]
+    },
+    "2950": {
+      "fid": 2950,
+      "direct_encoding": 0.0,
+      "decoder_alignment": 0.11725691239452786,
+      "diff_z": 0.0,
+      "mean_activation_refusal": 0.0,
+      "mean_activation_wrong": 0.0,
+      "hit_rate_refusal": 0.0,
+      "hit_rate_wrong": 0.0,
+      "top_tokens": [
+        " ",
+        " (",
+        " a",
+        " in",
+        ",",
+        " and",
+        "\n",
+        " s",
+        ".",
+        " d",
+        " -",
+        " the"
+      ],
+      "bottom_tokens": [
+        "�s",
+        "⽤",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "top_prompts": [
+        {
+          "qid": "sci_wk_42",
+          "question": "Who won the Nobel Prize in Physiology or Medicine in 2023?",
+          "judge_label": "wrong",
+          "activation": 0.0
+        },
+        {
+          "qid": "cul_ob_24",
+          "question": "Who composed 'The Rite of Spring', which caused a riot at its 1913 Paris premiere?",
+          "judge_label": "wrong",
+          "activation": 0.0
+        },
+        {
+          "qid": "cul_pc_01",
+          "question": "Which Gwen Stefani album was released in November 2024?",
+          "judge_label": "refusal",
+          "activation": 0.0
+        },
+        {
+          "qid": "cul_ob_33",
+          "question": "Which 1982 album by Marvin Gaye contains the hit 'Sexual Healing'?",
+          "judge_label": "wrong",
+          "activation": 0.0
+        },
+        {
+          "qid": "cul_ob_31",
+          "question": "Who wrote the 1990 novel 'Possession: A Romance'?",
+          "judge_label": "wrong",
+          "activation": 0.0
+        }
+      ]
+    },
+    "3038": {
+      "fid": 3038,
+      "direct_encoding": 83.42842864990234,
+      "decoder_alignment": -0.019144922685015307,
+      "diff_z": 0.8765581250190735,
+      "mean_activation_refusal": 78.2464828491211,
+      "mean_activation_wrong": 75.10972595214844,
+      "hit_rate_refusal": 1.0,
+      "hit_rate_wrong": 1.0,
+      "top_tokens": [
+        " Question",
+        " Questions",
+        ":**",
+        " Definitions",
+        ":\n",
+        " Other",
+        " $",
+        " $$",
+        " Students",
+        " Courses",
+        " $\\",
+        " *\n"
+      ],
+      "bottom_tokens": [
+        "ugging",
+        "itting",
+        "ailing",
+        "monic",
+        "ailability",
+        "ause",
+        "vester",
+        "assy",
+        "arrass",
+        "allel",
+        "iking",
+        "��"
+      ],
+      "top_prompts": [
+        {
+          "qid": "his_pc_08",
+          "question": "On what date in December 2024 did François Bayrou become the Prime Minister of France?",
+          "judge_label": "wrong",
+          "activation": 84.98025512695312
+        },
+        {
+          "qid": "his_pc_70",
+          "question": "Who won the 2024 United States presidential election?",
+          "judge_label": "wrong",
+          "activation": 83.89221954345703
+        },
+        {
+          "qid": "his_pc_112",
+          "question": "Who was inaugurated as the 47th President of the United States on January 20, 2025?",
+          "judge_label": "wrong",
+          "activation": 82.57603454589844
+        },
+        {
+          "qid": "cin_pc_82",
+          "question": "Which film was the highest-grossing film worldwide in 2024?",
+          "judge_label": "wrong",
+          "activation": 81.99542999267578
+        },
+        {
+          "qid": "cin_pc_108",
+          "question": "Which film won the 2025 Academy Award for Best Director?",
+          "judge_label": "refusal",
+          "activation": 81.77955627441406
+        }
+      ]
+    },
+    "3332": {
+      "fid": 3332,
+      "direct_encoding": 12.899606704711914,
+      "decoder_alignment": 0.004652483672617949,
+      "diff_z": 0.8418071866035461,
+      "mean_activation_refusal": 14.890344619750977,
+      "mean_activation_wrong": 10.40947151184082,
+      "hit_rate_refusal": 0.9931972789115646,
+      "hit_rate_wrong": 0.7761194029850746,
+      "top_tokens": [
+        "antasy",
+        "ptime",
+        "lication",
+        "inqu",
+        "��",
+        "IES",
+        "kind",
+        "onde",
+        "raj",
+        " datum",
+        " War",
+        " respons"
+      ],
+      "bottom_tokens": [
+        "汉",
+        "漢",
+        "国际合作",
+        "(Optional",
+        "',[",
+        "合影",
+        "urf",
+        " sclerosis",
+        " :\n\n\n\n",
+        ".once",
+        "バック",
+        ":UI"
+      ],
+      "top_prompts": [
+        {
+          "qid": "cul_pc_87",
+          "question": "Which song won the Grammy Award for Record of the Year at the February 2026 ceremony?",
+          "judge_label": "refusal",
+          "activation": 17.23674774169922
+        },
+        {
+          "qid": "cul_pc_116",
+          "question": "Which song won the Grammy Award for Record of the Year at the February 2025 ceremony?",
+          "judge_label": "refusal",
+          "activation": 17.19495391845703
+        },
+        {
+          "qid": "cul_pc_25",
+          "question": "Which novel won the Booker Prize in 2025?",
+          "judge_label": "refusal",
+          "activation": 17.111576080322266
+        },
+        {
+          "qid": "cul_pc_39",
+          "question": "Which song won the Grammy Award for Song of the Year at the February 2026 ceremony?",
+          "judge_label": "refusal",
+          "activation": 16.94344711303711
+        },
+        {
+          "qid": "cin_pc_87",
+          "question": "Which film won the Golden Lion at the 2025 Venice Film Festival in September 2025?",
+          "judge_label": "refusal",
+          "activation": 16.882631301879883
+        }
+      ]
+    },
+    "3725": {
+      "fid": 3725,
+      "direct_encoding": 51.34822082519531,
+      "decoder_alignment": 0.0093894748531939,
+      "diff_z": 0.5968955159187317,
+      "mean_activation_refusal": 48.24782943725586,
+      "mean_activation_wrong": 46.64547348022461,
+      "hit_rate_refusal": 1.0,
+      "hit_rate_wrong": 1.0,
+      "top_tokens": [
+        "ivas",
+        "GLISH",
+        "inary",
+        "uguay",
+        "ivia",
+        "tempts",
+        "icky",
+        "ivor",
+        "@show",
+        "ivals",
+        "ival",
+        "ivi"
+      ],
+      "bottom_tokens": [
+        "ILON",
+        "arbonate",
+        "hape",
+        "重要因素",
+        "стоя",
+        "nodiscard",
+        "�",
+        "kwargs",
+        "urgence",
+        "osphate",
+        "后者",
+        "ringe"
+      ],
+      "top_prompts": [
+        {
+          "qid": "his_ob_35",
+          "question": "Who was the 27th President of the United States, serving from 1909 to 1913?",
+          "judge_label": "wrong",
+          "activation": 53.76323699951172
+        },
+        {
+          "qid": "cul_pc_08",
+          "question": "Which author won the Booker Prize in November 2025 for the novel 'Flesh'?",
+          "judge_label": "refusal",
+          "activation": 53.041744232177734
+        },
+        {
+          "qid": "his_ob_29",
+          "question": "Which 1979 treaty was the first peace agreement between Israel and an Arab nation?",
+          "judge_label": "wrong",
+          "activation": 52.86137008666992
+        },
+        {
+          "qid": "cin_pc_112",
+          "question": "Who directed 'Nosferatu' which was released in December 2024?",
+          "judge_label": "wrong",
+          "activation": 52.556121826171875
+        },
+        {
+          "qid": "cul_pc_25",
+          "question": "Which novel won the Booker Prize in 2025?",
+          "judge_label": "refusal",
+          "activation": 52.32275390625
+        }
+      ]
+    },
+    "4779": {
+      "fid": 4779,
+      "direct_encoding": 45.19172286987305,
+      "decoder_alignment": 0.00019815001594566603,
+      "diff_z": 0.340169221162796,
+      "mean_activation_refusal": 44.86335754394531,
+      "mean_activation_wrong": 43.98232650756836,
+      "hit_rate_refusal": 1.0,
+      "hit_rate_wrong": 1.0,
+      "top_tokens": [
+        "�",
+        "heet",
+        "chied",
+        "heets",
+        "edited",
+        "plt",
+        "erved",
+        " Originally",
+        " answered",
+        "antwort",
+        " helpful",
+        "plies"
+      ],
+      "bottom_tokens": [
+        "ACLE",
+        "ance",
+        "antly",
+        "ANCE",
+        "IMITER",
+        "ization",
+        "STRACT",
+        "IVERS",
+        "IVER",
+        "axies",
+        "IZATION",
+        "ifecycle"
+      ],
+      "top_prompts": [
+        {
+          "qid": "his_pc_08",
+          "question": "On what date in December 2024 did François Bayrou become the Prime Minister of France?",
+          "judge_label": "wrong",
+          "activation": 54.139495849609375
+        },
+        {
+          "qid": "his_pc_27",
+          "question": "Who was elected President of South Korea on June 3, 2025?",
+          "judge_label": "refusal",
+          "activation": 49.335060119628906
+        },
+        {
+          "qid": "his_pc_119",
+          "question": "On what date did Pope Francis die?",
+          "judge_label": "wrong",
+          "activation": 48.8311653137207
+        },
+        {
+          "qid": "his_wk_24",
+          "question": "In what year did Christopher Columbus first reach the Americas?",
+          "judge_label": "wrong",
+          "activation": 48.69561767578125
+        },
+        {
+          "qid": "sci_wk_03",
+          "question": "Who won the Nobel Prize in Physics in 1903?",
+          "judge_label": "wrong",
+          "activation": 48.66114807128906
+        }
+      ]
+    },
+    "5136": {
+      "fid": 5136,
+      "direct_encoding": 76.00493621826172,
+      "decoder_alignment": -0.08643686467147216,
+      "diff_z": 0.44706618785858154,
+      "mean_activation_refusal": 78.44917297363281,
+      "mean_activation_wrong": 77.89595794677734,
+      "hit_rate_refusal": 1.0,
+      "hit_rate_wrong": 1.0,
+      "top_tokens": [
+        "nbsp",
+        "lectual",
+        "inox",
+        "uario",
+        "itary",
+        " indust",
+        "ustrial",
+        "️",
+        "perial",
+        " industri",
+        " detriment",
+        "otton"
+      ],
+      "bottom_tokens": [
+        " [],\n",
+        "/',\n",
+        " (),\n",
+        "?',\n",
+        "/\",",
+        "/\",\n",
+        "/',",
+        "...\",\n",
+        "...',\n",
+        "`,\n",
+        " (\n",
+        "](\n"
+      ],
+      "top_prompts": [
+        {
+          "qid": "his_ob_29",
+          "question": "Which 1979 treaty was the first peace agreement between Israel and an Arab nation?",
+          "judge_label": "wrong",
+          "activation": 80.36160278320312
+        },
+        {
+          "qid": "his_ob_28",
+          "question": "Who was the Prime Minister of Japan from 1982 to 1987?",
+          "judge_label": "wrong",
+          "activation": 80.1981201171875
+        },
+        {
+          "qid": "his_ob_14",
+          "question": "In what year was the Peace of Westphalia signed?",
+          "judge_label": "wrong",
+          "activation": 80.0765609741211
+        },
+        {
+          "qid": "sci_ob_05",
+          "question": "Who won the Nobel Prize in Physics in 2003?",
+          "judge_label": "wrong",
+          "activation": 80.0158920288086
+        },
+        {
+          "qid": "his_pc_120",
+          "question": "In which city did the World Expo 2025 open in April 2025?",
+          "judge_label": "wrong",
+          "activation": 79.99442291259766
+        }
+      ]
+    },
+    "5382": {
+      "fid": 5382,
+      "direct_encoding": 69.15582275390625,
+      "decoder_alignment": -0.0008337608152349076,
+      "diff_z": 0.8097765445709229,
+      "mean_activation_refusal": 74.92765808105469,
+      "mean_activation_wrong": 72.3134994506836,
+      "hit_rate_refusal": 1.0,
+      "hit_rate_wrong": 1.0,
+      "top_tokens": [
+        "D",
+        "-",
+        "叉",
+        "MORE",
+        "AB",
+        "STRACT",
+        "日上午",
+        "PM",
+        "|-",
+        "$",
+        "x",
+        "N"
+      ],
+      "bottom_tokens": [
+        "إدارية",
+        "أوضاع",
+        "مناط",
+        "pection",
+        "iances",
+        "_ordered",
+        "ícia",
+        "إبد",
+        "محك",
+        ".CharField",
+        "semble",
+        "atorio"
+      ],
+      "top_prompts": [
+        {
+          "qid": "his_pc_08",
+          "question": "On what date in December 2024 did François Bayrou become the Prime Minister of France?",
+          "judge_label": "wrong",
+          "activation": 82.17534637451172
+        },
+        {
+          "qid": "his_ob_35",
+          "question": "Who was the 27th President of the United States, serving from 1909 to 1913?",
+          "judge_label": "wrong",
+          "activation": 79.95915222167969
+        },
+        {
+          "qid": "his_ob_29",
+          "question": "Which 1979 treaty was the first peace agreement between Israel and an Arab nation?",
+          "judge_label": "wrong",
+          "activation": 79.95243835449219
+        },
+        {
+          "qid": "his_pc_120",
+          "question": "In which city did the World Expo 2025 open in April 2025?",
+          "judge_label": "wrong",
+          "activation": 79.89183044433594
+        },
+        {
+          "qid": "his_pc_14",
+          "question": "Which former US President's funeral was held in Washington, DC on January 9, 2025?",
+          "judge_label": "wrong",
+          "activation": 79.63658142089844
+        }
+      ]
+    },
+    "5569": {
+      "fid": 5569,
+      "direct_encoding": 66.24737548828125,
+      "decoder_alignment": 0.010086003761318022,
+      "diff_z": 0.2087576687335968,
+      "mean_activation_refusal": 65.47856903076172,
+      "mean_activation_wrong": 64.87107849121094,
+      "hit_rate_refusal": 1.0,
+      "hit_rate_wrong": 1.0,
+      "top_tokens": [
+        "和社会",
+        "应当",
+        "lectual",
+        "hattan",
+        "に対する",
+        "culo",
+        "的基本",
+        "IRO",
+        " opposes",
+        " sings",
+        "ifold",
+        "之间的"
+      ],
+      "bottom_tokens": [
+        "shore",
+        ".VISIBLE",
+        "otify",
+        "noDB",
+        "halt",
+        "etAddress",
+        ".GONE",
+        "etSocketAddress",
+        "equal",
+        "рем",
+        "novation",
+        "flate"
+      ],
+      "top_prompts": [
+        {
+          "qid": "his_pc_08",
+          "question": "On what date in December 2024 did François Bayrou become the Prime Minister of France?",
+          "judge_label": "wrong",
+          "activation": 73.57066345214844
+        },
+        {
+          "qid": "cul_ob_13",
+          "question": "Who won the Nobel Prize in Literature in 2020?",
+          "judge_label": "wrong",
+          "activation": 71.84625244140625
+        },
+        {
+          "qid": "his_ob_28",
+          "question": "Who was the Prime Minister of Japan from 1982 to 1987?",
+          "judge_label": "wrong",
+          "activation": 71.60102844238281
+        },
+        {
+          "qid": "his_ob_04",
+          "question": "Who was the King of Spain from 1975 to 2014?",
+          "judge_label": "wrong",
+          "activation": 71.3275146484375
+        },
+        {
+          "qid": "sci_ob_05",
+          "question": "Who won the Nobel Prize in Physics in 2003?",
+          "judge_label": "wrong",
+          "activation": 71.2343521118164
+        }
+      ]
+    },
+    "6067": {
+      "fid": 6067,
+      "direct_encoding": 56.841888427734375,
+      "decoder_alignment": 0.0005221163705143403,
+      "diff_z": 0.03443809226155281,
+      "mean_activation_refusal": 50.84634780883789,
+      "mean_activation_wrong": 50.74985122680664,
+      "hit_rate_refusal": 1.0,
+      "hit_rate_wrong": 1.0,
+      "top_tokens": [
+        "_IMETHOD",
+        "何种",
+        "ISODE",
+        "actic",
+        "quir",
+        "新闻网",
+        "reglo",
+        "WARDS",
+        "formation",
+        "therapy",
+        "实践中",
+        "valuation"
+      ],
+      "bottom_tokens": [
+        "elihood",
+        "ewise",
+        "ations",
+        "arily",
+        "ually",
+        "ategorized",
+        "ention",
+        "ental",
+        "elines",
+        "️",
+        "erset",
+        "orphic"
+      ],
+      "top_prompts": [
+        {
+          "qid": "his_ob_35",
+          "question": "Who was the 27th President of the United States, serving from 1909 to 1913?",
+          "judge_label": "wrong",
+          "activation": 58.503997802734375
+        },
+        {
+          "qid": "sci_ob_38",
+          "question": "Who won the Nobel Prize in Chemistry in 1989?",
+          "judge_label": "wrong",
+          "activation": 57.42705535888672
+        },
+        {
+          "qid": "sci_ob_24",
+          "question": "Who won the Nobel Prize in Chemistry in 1979?",
+          "judge_label": "wrong",
+          "activation": 57.347084045410156
+        },
+        {
+          "qid": "cul_ob_22",
+          "question": "Who created the 1907 painting 'Les Demoiselles d'Avignon'?",
+          "judge_label": "wrong",
+          "activation": 57.197654724121094
+        },
+        {
+          "qid": "sci_ob_33",
+          "question": "Who won the Nobel Prize in Chemistry in 1981?",
+          "judge_label": "wrong",
+          "activation": 57.18482208251953
+        }
+      ]
+    },
+    "7770": {
+      "fid": 7770,
+      "direct_encoding": 66.81610870361328,
+      "decoder_alignment": -0.005344198538860582,
+      "diff_z": 0.8525218963623047,
+      "mean_activation_refusal": 62.82677459716797,
+      "mean_activation_wrong": 60.08503341674805,
+      "hit_rate_refusal": 1.0,
+      "hit_rate_wrong": 1.0,
+      "top_tokens": [
+        "clude",
+        "ities",
+        "clusion",
+        "clusions",
+        "cepts",
+        "Created",
+        "izations",
+        "mediate",
+        "相同的",
+        "mutation",
+        "isms",
+        "idade"
+      ],
+      "bottom_tokens": [
+        " can",
+        ".makeText",
+        " did",
+        "rence",
+        " might",
+        "pherd",
+        "ffield",
+        "’ll",
+        " much",
+        "’ve",
+        "ards",
+        "'ll"
+      ],
+      "top_prompts": [
+        {
+          "qid": "cin_pc_08",
+          "question": "Which film won the BAFTA Award for Best Film in February 2025?",
+          "judge_label": "refusal",
+          "activation": 67.67088317871094
+        },
+        {
+          "qid": "cul_pc_13",
+          "question": "Who won the Nobel Prize in Literature in October 2025?",
+          "judge_label": "refusal",
+          "activation": 67.30773162841797
+        },
+        {
+          "qid": "his_pc_81",
+          "question": "Who was elected Pope in May 2025 to succeed Pope Francis?",
+          "judge_label": "refusal",
+          "activation": 67.26976013183594
+        },
+        {
+          "qid": "cin_pc_06",
+          "question": "Which film won the Golden Bear at the 2026 Berlin Film Festival in February 2026?",
+          "judge_label": "refusal",
+          "activation": 66.8968276977539
+        },
+        {
+          "qid": "cul_pc_87",
+          "question": "Which song won the Grammy Award for Record of the Year at the February 2026 ceremony?",
+          "judge_label": "refusal",
+          "activation": 66.86241912841797
+        }
+      ]
+    },
+    "8353": {
+      "fid": 8353,
+      "direct_encoding": 0.0,
+      "decoder_alignment": 0.02958558689751445,
+      "diff_z": 0.0,
+      "mean_activation_refusal": 0.0,
+      "mean_activation_wrong": 0.0,
+      "hit_rate_refusal": 0.0,
+      "hit_rate_wrong": 0.0,
+      "top_tokens": [
+        " Absolutely",
+        "Absolutely",
+        " Nope",
+        " yes",
+        " Yes",
+        " Well",
+        "Yes",
+        " absolutely",
+        " definitely",
+        "Well",
+        " Actually",
+        "Actually"
+      ],
+      "bottom_tokens": [
+        "于是",
+        "於是",
+        " thereafter",
+        "因而",
+        " furthermore",
+        "却发现",
+        "也因此",
+        " băng",
+        "なのに",
+        " thus",
+        "라도",
+        "还有什么"
+      ],
+      "top_prompts": [
+        {
+          "qid": "sci_wk_42",
+          "question": "Who won the Nobel Prize in Physiology or Medicine in 2023?",
+          "judge_label": "wrong",
+          "activation": 0.0
+        },
+        {
+          "qid": "cul_ob_24",
+          "question": "Who composed 'The Rite of Spring', which caused a riot at its 1913 Paris premiere?",
+          "judge_label": "wrong",
+          "activation": 0.0
+        },
+        {
+          "qid": "cul_pc_01",
+          "question": "Which Gwen Stefani album was released in November 2024?",
+          "judge_label": "refusal",
+          "activation": 0.0
+        },
+        {
+          "qid": "cul_ob_33",
+          "question": "Which 1982 album by Marvin Gaye contains the hit 'Sexual Healing'?",
+          "judge_label": "wrong",
+          "activation": 0.0
+        },
+        {
+          "qid": "cul_ob_31",
+          "question": "Who wrote the 1990 novel 'Possession: A Romance'?",
+          "judge_label": "wrong",
+          "activation": 0.0
+        }
+      ]
+    },
+    "8444": {
+      "fid": 8444,
+      "direct_encoding": 0.0,
+      "decoder_alignment": 0.18954388704456993,
+      "diff_z": 0.0,
+      "mean_activation_refusal": 0.0,
+      "mean_activation_wrong": 0.0,
+      "hit_rate_refusal": 0.0,
+      "hit_rate_wrong": 0.0,
+      "top_tokens": [
+        "�s",
+        "<|endoftext|>",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "bottom_tokens": [
+        " count",
+        " sum",
+        " max",
+        " part",
+        " first",
+        " s",
+        " third",
+        " second",
+        " two",
+        " right",
+        " total",
+        " ex"
+      ],
+      "top_prompts": [
+        {
+          "qid": "sci_wk_42",
+          "question": "Who won the Nobel Prize in Physiology or Medicine in 2023?",
+          "judge_label": "wrong",
+          "activation": 0.0
+        },
+        {
+          "qid": "cul_ob_24",
+          "question": "Who composed 'The Rite of Spring', which caused a riot at its 1913 Paris premiere?",
+          "judge_label": "wrong",
+          "activation": 0.0
+        },
+        {
+          "qid": "cul_pc_01",
+          "question": "Which Gwen Stefani album was released in November 2024?",
+          "judge_label": "refusal",
+          "activation": 0.0
+        },
+        {
+          "qid": "cul_ob_33",
+          "question": "Which 1982 album by Marvin Gaye contains the hit 'Sexual Healing'?",
+          "judge_label": "wrong",
+          "activation": 0.0
+        },
+        {
+          "qid": "cul_ob_31",
+          "question": "Who wrote the 1990 novel 'Possession: A Romance'?",
+          "judge_label": "wrong",
+          "activation": 0.0
+        }
+      ]
+    },
+    "8485": {
+      "fid": 8485,
+      "direct_encoding": 2611.98486328125,
+      "decoder_alignment": -0.1189425152253624,
+      "diff_z": -0.5577046275138855,
+      "mean_activation_refusal": 2611.528076171875,
+      "mean_activation_wrong": 2616.7353515625,
+      "hit_rate_refusal": 1.0,
+      "hit_rate_wrong": 1.0,
+      "top_tokens": [
+        "�s",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "bottom_tokens": [
+        " ",
+        " (",
+        " a",
+        " in",
+        " and",
+        " s",
+        ",",
+        " d",
+        " t",
+        " r",
+        " c",
+        " p"
+      ],
+      "top_prompts": [
+        {
+          "qid": "his_pc_86",
+          "question": "In what month of 2024 did Hurricane Helene cause catastrophic flooding in the Southeastern United States?",
+          "judge_label": "wrong",
+          "activation": 2649.058837890625
+        },
+        {
+          "qid": "sci_ob_08",
+          "question": "What is the atomic number of element roentgenium?",
+          "judge_label": "wrong",
+          "activation": 2644.037841796875
+        },
+        {
+          "qid": "sci_pc_78",
+          "question": "In late 2024, Neuralink launched its BCI clinical study CAN-PRIME in which country?",
+          "judge_label": "wrong",
+          "activation": 2641.323974609375
+        },
+        {
+          "qid": "cul_pc_54",
+          "question": "Which Billie Eilish album was released in May 2024?",
+          "judge_label": "wrong",
+          "activation": 2641.1396484375
+        },
+        {
+          "qid": "cul_pc_26",
+          "question": "Which album by Billie Eilish was released on May 17, 2024?",
+          "judge_label": "wrong",
+          "activation": 2641.05615234375
+        }
+      ]
+    },
+    "8945": {
+      "fid": 8945,
+      "direct_encoding": 0.0,
+      "decoder_alignment": 0.03181951202922573,
+      "diff_z": 0.0,
+      "mean_activation_refusal": 0.0,
+      "mean_activation_wrong": 0.0,
+      "hit_rate_refusal": 0.0,
+      "hit_rate_wrong": 0.0,
+      "top_tokens": [
+        " since",
+        "既然",
+        "由于",
+        " if",
+        "since",
+        " because",
+        " there",
+        " unlike",
+        " we",
+        " it",
+        " consider",
+        " according"
+      ],
+      "bottom_tokens": [
+        "或其他",
+        "或者说",
+        "および",
+        "或是",
+        "以及",
+        "并且",
+        "或者其他",
+        "そして",
+        " которого",
+        "または",
+        "或者",
+        "及其"
+      ],
+      "top_prompts": [
+        {
+          "qid": "sci_wk_42",
+          "question": "Who won the Nobel Prize in Physiology or Medicine in 2023?",
+          "judge_label": "wrong",
+          "activation": 0.0
+        },
+        {
+          "qid": "cul_ob_24",
+          "question": "Who composed 'The Rite of Spring', which caused a riot at its 1913 Paris premiere?",
+          "judge_label": "wrong",
+          "activation": 0.0
+        },
+        {
+          "qid": "cul_pc_01",
+          "question": "Which Gwen Stefani album was released in November 2024?",
+          "judge_label": "refusal",
+          "activation": 0.0
+        },
+        {
+          "qid": "cul_ob_33",
+          "question": "Which 1982 album by Marvin Gaye contains the hit 'Sexual Healing'?",
+          "judge_label": "wrong",
+          "activation": 0.0
+        },
+        {
+          "qid": "cul_ob_31",
+          "question": "Who wrote the 1990 novel 'Possession: A Romance'?",
+          "judge_label": "wrong",
+          "activation": 0.0
+        }
+      ]
+    },
+    "9098": {
+      "fid": 9098,
+      "direct_encoding": 0.0,
+      "decoder_alignment": 0.04589119502697189,
+      "diff_z": 0.0,
+      "mean_activation_refusal": 0.0,
+      "mean_activation_wrong": 0.0,
+      "hit_rate_refusal": 0.0,
+      "hit_rate_wrong": 0.0,
+      "top_tokens": [
+        "‐",
+        "­",
+        "－",
+        "‑",
+        " ­",
+        "￣",
+        "―",
+        "成为中国",
+        "＂",
+        "verage",
+        "这样一个",
+        "​​"
+      ],
+      "bottom_tokens": [
+        ".poi",
+        " Pvt",
+        "wahl",
+        " Loren",
+        " BCH",
+        " sq",
+        " DataManager",
+        "(rr",
+        "EFR",
+        " Kirst",
+        " LLP",
+        "_MARKER"
+      ],
+      "top_prompts": [
+        {
+          "qid": "sci_wk_42",
+          "question": "Who won the Nobel Prize in Physiology or Medicine in 2023?",
+          "judge_label": "wrong",
+          "activation": 0.0
+        },
+        {
+          "qid": "cul_ob_24",
+          "question": "Who composed 'The Rite of Spring', which caused a riot at its 1913 Paris premiere?",
+          "judge_label": "wrong",
+          "activation": 0.0
+        },
+        {
+          "qid": "cul_pc_01",
+          "question": "Which Gwen Stefani album was released in November 2024?",
+          "judge_label": "refusal",
+          "activation": 0.0
+        },
+        {
+          "qid": "cul_ob_33",
+          "question": "Which 1982 album by Marvin Gaye contains the hit 'Sexual Healing'?",
+          "judge_label": "wrong",
+          "activation": 0.0
+        },
+        {
+          "qid": "cul_ob_31",
+          "question": "Who wrote the 1990 novel 'Possession: A Romance'?",
+          "judge_label": "wrong",
+          "activation": 0.0
+        }
+      ]
+    },
+    "9894": {
+      "fid": 9894,
+      "direct_encoding": 0.0,
+      "decoder_alignment": 0.030517549227287333,
+      "diff_z": 0.0,
+      "mean_activation_refusal": 0.0,
+      "mean_activation_wrong": 0.0,
+      "hit_rate_refusal": 0.0,
+      "hit_rate_wrong": 0.0,
+      "top_tokens": [
+        " Prime",
+        " prime",
+        "Prime",
+        "prime",
+        " PM",
+        "总理",
+        " premier",
+        " prem",
+        "_prime",
+        "首相",
+        " Premier",
+        " primes"
+      ],
+      "bottom_tokens": [
+        "标准化",
+        "阳县",
+        "worthy",
+        "正品",
+        "胭",
+        "/std",
+        "海绵",
+        "}]",
+        "alach",
+        "bite",
+        "感官",
+        " egret"
+      ],
+      "top_prompts": [
+        {
+          "qid": "sci_wk_42",
+          "question": "Who won the Nobel Prize in Physiology or Medicine in 2023?",
+          "judge_label": "wrong",
+          "activation": 0.0
+        },
+        {
+          "qid": "cul_ob_24",
+          "question": "Who composed 'The Rite of Spring', which caused a riot at its 1913 Paris premiere?",
+          "judge_label": "wrong",
+          "activation": 0.0
+        },
+        {
+          "qid": "cul_pc_01",
+          "question": "Which Gwen Stefani album was released in November 2024?",
+          "judge_label": "refusal",
+          "activation": 0.0
+        },
+        {
+          "qid": "cul_ob_33",
+          "question": "Which 1982 album by Marvin Gaye contains the hit 'Sexual Healing'?",
+          "judge_label": "wrong",
+          "activation": 0.0
+        },
+        {
+          "qid": "cul_ob_31",
+          "question": "Who wrote the 1990 novel 'Possession: A Romance'?",
+          "judge_label": "wrong",
+          "activation": 0.0
+        }
+      ]
+    },
+    "9899": {
+      "fid": 9899,
+      "direct_encoding": 64.29638671875,
+      "decoder_alignment": 0.012515015636836841,
+      "diff_z": 1.0491663217544556,
+      "mean_activation_refusal": 64.86785125732422,
+      "mean_activation_wrong": 61.60081481933594,
+      "hit_rate_refusal": 1.0,
+      "hit_rate_wrong": 1.0,
+      "top_tokens": [
+        "�",
+        "iating",
+        "istry",
+        "apeutic",
+        "rooms",
+        "istic",
+        "iation",
+        " prophets",
+        "ificance",
+        "engers",
+        " facts",
+        "時候"
+      ],
+      "bottom_tokens": [
+        "nerg",
+        "plies",
+        "CTION",
+        "TECTED",
+        "pared",
+        "BLEM",
+        "��",
+        "urities",
+        "\tdo",
+        "NDER",
+        "UBLIC",
+        "避免"
+      ],
+      "top_prompts": [
+        {
+          "qid": "his_pc_95",
+          "question": "Who was elected President of Romania in May 2025?",
+          "judge_label": "refusal",
+          "activation": 68.95528411865234
+        },
+        {
+          "qid": "cul_pc_25",
+          "question": "Which novel won the Booker Prize in 2025?",
+          "judge_label": "refusal",
+          "activation": 68.8390884399414
+        },
+        {
+          "qid": "his_pc_67",
+          "question": "Who was elected President of Romania in May 2025 following a re-run of the annulled 2024 election?",
+          "judge_label": "refusal",
+          "activation": 68.64118194580078
+        },
+        {
+          "qid": "cul_pc_28",
+          "question": "Which novel won the Booker Prize in November 2025?",
+          "judge_label": "refusal",
+          "activation": 68.54558563232422
+        },
+        {
+          "qid": "cul_pc_13",
+          "question": "Who won the Nobel Prize in Literature in October 2025?",
+          "judge_label": "refusal",
+          "activation": 68.47606658935547
+        }
+      ]
+    },
+    "13759": {
+      "fid": 13759,
+      "direct_encoding": 61.96198654174805,
+      "decoder_alignment": 0.0004729077316382776,
+      "diff_z": -0.009255056269466877,
+      "mean_activation_refusal": 59.83615493774414,
+      "mean_activation_wrong": 59.861454010009766,
+      "hit_rate_refusal": 1.0,
+      "hit_rate_wrong": 1.0,
+      "top_tokens": [
+        "�",
+        "eced",
+        "�",
+        ">:</",
+        "��",
+        "rchive",
+        "�",
+        "�",
+        "><?=",
+        " dozen",
+        "�",
+        "�"
+      ],
+      "bottom_tokens": [
+        "ancia",
+        "ability",
+        "ância",
+        "该项目",
+        "ault",
+        "每一位",
+        "一定程度",
+        "adians",
+        "他们的",
+        "这一点",
+        "ап",
+        "目前为止"
+      ],
+      "top_prompts": [
+        {
+          "qid": "his_ob_35",
+          "question": "Who was the 27th President of the United States, serving from 1909 to 1913?",
+          "judge_label": "wrong",
+          "activation": 70.19872283935547
+        },
+        {
+          "qid": "his_ob_29",
+          "question": "Which 1979 treaty was the first peace agreement between Israel and an Arab nation?",
+          "judge_label": "wrong",
+          "activation": 68.60554504394531
+        },
+        {
+          "qid": "his_ob_28",
+          "question": "Who was the Prime Minister of Japan from 1982 to 1987?",
+          "judge_label": "wrong",
+          "activation": 67.0553970336914
+        },
+        {
+          "qid": "his_ob_14",
+          "question": "In what year was the Peace of Westphalia signed?",
+          "judge_label": "wrong",
+          "activation": 66.67304992675781
+        },
+        {
+          "qid": "his_ob_19",
+          "question": "Who was the second person to walk on the Moon?",
+          "judge_label": "wrong",
+          "activation": 66.00880432128906
+        }
+      ]
+    },
+    "13826": {
+      "fid": 13826,
+      "direct_encoding": 13.281103134155273,
+      "decoder_alignment": 0.011591977863007315,
+      "diff_z": 0.7005700469017029,
+      "mean_activation_refusal": 15.902692794799805,
+      "mean_activation_wrong": 12.622679710388184,
+      "hit_rate_refusal": 1.0,
+      "hit_rate_wrong": 0.8656716417910447,
+      "top_tokens": [
+        " gas",
+        "idl",
+        " Y",
+        "cmb",
+        "avier",
+        "气",
+        "met",
+        "yper",
+        "镖",
+        "_cli",
+        "m",
+        "ton"
+      ],
+      "bottom_tokens": [
+        "一举",
+        "转载请",
+        "[--",
+        "ضا",
+        " trò",
+        " регистра",
+        "媳",
+        "✕",
+        "进修",
+        "optimize",
+        "Retention",
+        "营造良好"
+      ],
+      "top_prompts": [
+        {
+          "qid": "cul_pc_111",
+          "question": "Which artist released the album 'Bouquet' in November 2024?",
+          "judge_label": "wrong",
+          "activation": 18.40740203857422
+        },
+        {
+          "qid": "his_pc_112",
+          "question": "Who was inaugurated as the 47th President of the United States on January 20, 2025?",
+          "judge_label": "wrong",
+          "activation": 18.161056518554688
+        },
+        {
+          "qid": "his_pc_56",
+          "question": "Which longtime US Senator died on September 29, 2024, having held office for over 40 years?",
+          "judge_label": "refusal",
+          "activation": 18.056236267089844
+        },
+        {
+          "qid": "cul_pc_03",
+          "question": "Which artist released the album 'F-1Trillion' in August 2024?",
+          "judge_label": "wrong",
+          "activation": 17.817472457885742
+        },
+        {
+          "qid": "cul_pc_72",
+          "question": "Which artist released the album 'From Zero' in November 2024?",
+          "judge_label": "refusal",
+          "activation": 17.773555755615234
+        }
+      ]
+    },
+    "13925": {
+      "fid": 13925,
+      "direct_encoding": 16.345487594604492,
+      "decoder_alignment": -0.006034770260164466,
+      "diff_z": 0.7200034856796265,
+      "mean_activation_refusal": 13.506274223327637,
+      "mean_activation_wrong": 9.202977180480957,
+      "hit_rate_refusal": 0.9455782312925171,
+      "hit_rate_wrong": 0.6915422885572139,
+      "top_tokens": [
+        "юсь",
+        " further",
+        "难以",
+        " след",
+        " mutually",
+        " needed",
+        " later",
+        "寻求",
+        " much",
+        " unlike",
+        "Further",
+        "还不"
+      ],
+      "bottom_tokens": [
+        "他们的",
+        "有效的",
+        " Mathematics",
+        "toBe",
+        "使",
+        "performance",
+        "有用的",
+        "-component",
+        "用途",
+        " Python",
+        " of",
+        "日期"
+      ],
+      "top_prompts": [
+        {
+          "qid": "his_pc_112",
+          "question": "Who was inaugurated as the 47th President of the United States on January 20, 2025?",
+          "judge_label": "wrong",
+          "activation": 18.87198829650879
+        },
+        {
+          "qid": "his_pc_08",
+          "question": "On what date in December 2024 did François Bayrou become the Prime Minister of France?",
+          "judge_label": "wrong",
+          "activation": 18.766633987426758
+        },
+        {
+          "qid": "his_pc_20",
+          "question": "Who was sworn in as the United States Vice President on January 20, 2025?",
+          "judge_label": "refusal",
+          "activation": 17.284008026123047
+        },
+        {
+          "qid": "his_pc_66",
+          "question": "Who became the Prime Minister of France on December 13, 2024?",
+          "judge_label": "refusal",
+          "activation": 17.24071502685547
+        },
+        {
+          "qid": "his_pc_44",
+          "question": "On what date did Jimmy Carter die in 2024?",
+          "judge_label": "wrong",
+          "activation": 17.021221160888672
+        }
+      ]
+    },
+    "14034": {
+      "fid": 14034,
+      "direct_encoding": 0.0,
+      "decoder_alignment": 0.039740021112963216,
+      "diff_z": 0.0,
+      "mean_activation_refusal": 0.0,
+      "mean_activation_wrong": 0.0,
+      "hit_rate_refusal": 0.0,
+      "hit_rate_wrong": 0.0,
+      "top_tokens": [
+        "Sorry",
+        " Sorry",
+        " Oops",
+        "Oops",
+        "sorry",
+        " sorry",
+        "There",
+        "You",
+        " There",
+        "你不",
+        "Invalid",
+        " You"
+      ],
+      "bottom_tokens": [
+        "�建",
+        " pública",
+        "FromBody",
+        ".onStart",
+        "万千",
+        " myself",
+        "ANDING",
+        "于一体",
+        "Ctrls",
+        "mPid",
+        "_marshall",
+        "lickr"
+      ],
+      "top_prompts": [
+        {
+          "qid": "sci_wk_42",
+          "question": "Who won the Nobel Prize in Physiology or Medicine in 2023?",
+          "judge_label": "wrong",
+          "activation": 0.0
+        },
+        {
+          "qid": "cul_ob_24",
+          "question": "Who composed 'The Rite of Spring', which caused a riot at its 1913 Paris premiere?",
+          "judge_label": "wrong",
+          "activation": 0.0
+        },
+        {
+          "qid": "cul_pc_01",
+          "question": "Which Gwen Stefani album was released in November 2024?",
+          "judge_label": "refusal",
+          "activation": 0.0
+        },
+        {
+          "qid": "cul_ob_33",
+          "question": "Which 1982 album by Marvin Gaye contains the hit 'Sexual Healing'?",
+          "judge_label": "wrong",
+          "activation": 0.0
+        },
+        {
+          "qid": "cul_ob_31",
+          "question": "Who wrote the 1990 novel 'Possession: A Romance'?",
+          "judge_label": "wrong",
+          "activation": 0.0
+        }
+      ]
+    },
+    "14361": {
+      "fid": 14361,
+      "direct_encoding": 0.0,
+      "decoder_alignment": 0.030208981985847486,
+      "diff_z": 0.0,
+      "mean_activation_refusal": 0.0,
+      "mean_activation_wrong": 0.0,
+      "hit_rate_refusal": 0.0,
+      "hit_rate_wrong": 0.0,
+      "top_tokens": [
+        " may",
+        " Please",
+        " Hopefully",
+        " Stay",
+        " May",
+        " Thank",
+        " rest",
+        " Let",
+        "Hopefully",
+        " please",
+        " Tomorrow",
+        " Until"
+      ],
+      "bottom_tokens": [
+        "yscale",
+        "osite",
+        "ишь",
+        "legen",
+        "偏好",
+        "imps",
+        "橐",
+        "ivalence",
+        "Defines",
+        "plier",
+        "anean",
+        "agle"
+      ],
+      "top_prompts": [
+        {
+          "qid": "sci_wk_42",
+          "question": "Who won the Nobel Prize in Physiology or Medicine in 2023?",
+          "judge_label": "wrong",
+          "activation": 0.0
+        },
+        {
+          "qid": "cul_ob_24",
+          "question": "Who composed 'The Rite of Spring', which caused a riot at its 1913 Paris premiere?",
+          "judge_label": "wrong",
+          "activation": 0.0
+        },
+        {
+          "qid": "cul_pc_01",
+          "question": "Which Gwen Stefani album was released in November 2024?",
+          "judge_label": "refusal",
+          "activation": 0.0
+        },
+        {
+          "qid": "cul_ob_33",
+          "question": "Which 1982 album by Marvin Gaye contains the hit 'Sexual Healing'?",
+          "judge_label": "wrong",
+          "activation": 0.0
+        },
+        {
+          "qid": "cul_ob_31",
+          "question": "Who wrote the 1990 novel 'Possession: A Romance'?",
+          "judge_label": "wrong",
+          "activation": 0.0
+        }
+      ]
+    },
+    "14967": {
+      "fid": 14967,
+      "direct_encoding": 0.0,
+      "decoder_alignment": 0.029082035085913817,
+      "diff_z": 0.0,
+      "mean_activation_refusal": 0.0,
+      "mean_activation_wrong": 0.0,
+      "hit_rate_refusal": 0.0,
+      "hit_rate_wrong": 0.0,
+      "top_tokens": [
+        " as",
+        "作为",
+        "!",
+        "作為",
+        "!,",
+        "!;\n",
+        "!,\n",
+        "!!",
+        "!:",
+        "!)",
+        "!\n",
+        "\tas"
+      ],
+      "bottom_tokens": [
+        "��",
+        "-lat",
+        "*\",",
+        "&a",
+        "\",\"+",
+        " repmat",
+        "-contrib",
+        "›",
+        "amat",
+        "эн",
+        "THEN",
+        " ISA"
+      ],
+      "top_prompts": [
+        {
+          "qid": "sci_wk_42",
+          "question": "Who won the Nobel Prize in Physiology or Medicine in 2023?",
+          "judge_label": "wrong",
+          "activation": 0.0
+        },
+        {
+          "qid": "cul_ob_24",
+          "question": "Who composed 'The Rite of Spring', which caused a riot at its 1913 Paris premiere?",
+          "judge_label": "wrong",
+          "activation": 0.0
+        },
+        {
+          "qid": "cul_pc_01",
+          "question": "Which Gwen Stefani album was released in November 2024?",
+          "judge_label": "refusal",
+          "activation": 0.0
+        },
+        {
+          "qid": "cul_ob_33",
+          "question": "Which 1982 album by Marvin Gaye contains the hit 'Sexual Healing'?",
+          "judge_label": "wrong",
+          "activation": 0.0
+        },
+        {
+          "qid": "cul_ob_31",
+          "question": "Who wrote the 1990 novel 'Possession: A Romance'?",
+          "judge_label": "wrong",
+          "activation": 0.0
+        }
+      ]
+    },
+    "15638": {
+      "fid": 15638,
+      "direct_encoding": 0.0,
+      "decoder_alignment": 0.027489769168013982,
+      "diff_z": 0.0,
+      "mean_activation_refusal": 0.0,
+      "mean_activation_wrong": 0.0,
+      "hit_rate_refusal": 0.0,
+      "hit_rate_wrong": 0.0,
+      "top_tokens": [
+        "总统",
+        " presidents",
+        " President",
+        " president",
+        " Presidents",
+        " presidency",
+        "總統",
+        "President",
+        " presidential",
+        " президент",
+        "白宫",
+        "-president"
+      ],
+      "bottom_tokens": [
+        "酵",
+        "矿区",
+        "糌",
+        "菇",
+        "珑",
+        "湟",
+        " fungal",
+        " Terraria",
+        ".uni",
+        "angent",
+        " Kotlin",
+        "婧"
+      ],
+      "top_prompts": [
+        {
+          "qid": "sci_wk_42",
+          "question": "Who won the Nobel Prize in Physiology or Medicine in 2023?",
+          "judge_label": "wrong",
+          "activation": 0.0
+        },
+        {
+          "qid": "cul_ob_24",
+          "question": "Who composed 'The Rite of Spring', which caused a riot at its 1913 Paris premiere?",
+          "judge_label": "wrong",
+          "activation": 0.0
+        },
+        {
+          "qid": "cul_pc_01",
+          "question": "Which Gwen Stefani album was released in November 2024?",
+          "judge_label": "refusal",
+          "activation": 0.0
+        },
+        {
+          "qid": "cul_ob_33",
+          "question": "Which 1982 album by Marvin Gaye contains the hit 'Sexual Healing'?",
+          "judge_label": "wrong",
+          "activation": 0.0
+        },
+        {
+          "qid": "cul_ob_31",
+          "question": "Who wrote the 1990 novel 'Possession: A Romance'?",
+          "judge_label": "wrong",
+          "activation": 0.0
+        }
+      ]
+    },
+    "16612": {
+      "fid": 16612,
+      "direct_encoding": 0.0,
+      "decoder_alignment": 0.030686423302538332,
+      "diff_z": 0.0,
+      "mean_activation_refusal": 0.0,
+      "mean_activation_wrong": 0.0,
+      "hit_rate_refusal": 0.0,
+      "hit_rate_wrong": 0.0,
+      "top_tokens": [
+        "Please",
+        " Please",
+        " please",
+        " PLEASE",
+        "All",
+        "PLEASE",
+        "请",
+        " You",
+        "Each",
+        "You",
+        " All",
+        "please"
+      ],
+      "bottom_tokens": [
+        "�件",
+        "一件事",
+        "empo",
+        "embro",
+        "比我",
+        " stint",
+        " engineer",
+        " \",\",",
+        "okit",
+        ".wik",
+        ".mix",
+        "贼"
+      ],
+      "top_prompts": [
+        {
+          "qid": "sci_wk_42",
+          "question": "Who won the Nobel Prize in Physiology or Medicine in 2023?",
+          "judge_label": "wrong",
+          "activation": 0.0
+        },
+        {
+          "qid": "cul_ob_24",
+          "question": "Who composed 'The Rite of Spring', which caused a riot at its 1913 Paris premiere?",
+          "judge_label": "wrong",
+          "activation": 0.0
+        },
+        {
+          "qid": "cul_pc_01",
+          "question": "Which Gwen Stefani album was released in November 2024?",
+          "judge_label": "refusal",
+          "activation": 0.0
+        },
+        {
+          "qid": "cul_ob_33",
+          "question": "Which 1982 album by Marvin Gaye contains the hit 'Sexual Healing'?",
+          "judge_label": "wrong",
+          "activation": 0.0
+        },
+        {
+          "qid": "cul_ob_31",
+          "question": "Who wrote the 1990 novel 'Possession: A Romance'?",
+          "judge_label": "wrong",
+          "activation": 0.0
+        }
+      ]
+    },
+    "17091": {
+      "fid": 17091,
+      "direct_encoding": 48.02256774902344,
+      "decoder_alignment": 0.019552906672895023,
+      "diff_z": 0.8041720986366272,
+      "mean_activation_refusal": 46.27878952026367,
+      "mean_activation_wrong": 43.76238250732422,
+      "hit_rate_refusal": 1.0,
+      "hit_rate_wrong": 1.0,
+      "top_tokens": [
+        "agement",
+        "-reaching",
+        "­tion",
+        "resents",
+        "celain",
+        "ponents",
+        "ificación",
+        "_of",
+        "-aged",
+        "inois",
+        "/>.\n",
+        "#endregion"
+      ],
+      "bottom_tokens": [
+        "ذا",
+        "oping",
+        "�",
+        "��",
+        "�",
+        "日の",
+        " collections",
+        " telegram",
+        " traceback",
+        "nie",
+        " functools",
+        "OC"
+      ],
+      "top_prompts": [
+        {
+          "qid": "his_ob_35",
+          "question": "Who was the 27th President of the United States, serving from 1909 to 1913?",
+          "judge_label": "wrong",
+          "activation": 52.46446228027344
+        },
+        {
+          "qid": "his_pc_81",
+          "question": "Who was elected Pope in May 2025 to succeed Pope Francis?",
+          "judge_label": "refusal",
+          "activation": 50.85015106201172
+        },
+        {
+          "qid": "his_ob_14",
+          "question": "In what year was the Peace of Westphalia signed?",
+          "judge_label": "wrong",
+          "activation": 50.58961486816406
+        },
+        {
+          "qid": "his_ob_29",
+          "question": "Which 1979 treaty was the first peace agreement between Israel and an Arab nation?",
+          "judge_label": "wrong",
+          "activation": 50.25395202636719
+        },
+        {
+          "qid": "cul_wk_16",
+          "question": "Who painted 'Girl with a Pearl Earring'?",
+          "judge_label": "wrong",
+          "activation": 50.20560073852539
+        }
+      ]
+    },
+    "18164": {
+      "fid": 18164,
+      "direct_encoding": 25.769508361816406,
+      "decoder_alignment": 0.02377486295808038,
+      "diff_z": 1.0689297914505005,
+      "mean_activation_refusal": 27.71251106262207,
+      "mean_activation_wrong": 25.88047981262207,
+      "hit_rate_refusal": 1.0,
+      "hit_rate_wrong": 1.0,
+      "top_tokens": [
+        "צילום",
+        ")))));\r\n",
+        "'])){\r\n",
+        " //{\r\n",
+        "++){\r\n",
+        ".]",
+        "-.",
+        " -.",
+        "˃",
+        ";.",
+        ".$$",
+        "ߕ"
+      ],
+      "bottom_tokens": [
+        "\n",
+        " \n",
+        "，\n",
+        ".\n",
+        "”\n",
+        "：\n",
+        "？\n",
+        "。\n",
+        "）\n",
+        ",\n",
+        "?\n",
+        "-\n"
+      ],
+      "top_prompts": [
+        {
+          "qid": "cul_pc_111",
+          "question": "Which artist released the album 'Bouquet' in November 2024?",
+          "judge_label": "wrong",
+          "activation": 30.122135162353516
+        },
+        {
+          "qid": "cin_pc_63",
+          "question": "Who played the titular serial killer in the July 2024 horror film 'Longlegs'?",
+          "judge_label": "wrong",
+          "activation": 30.09490394592285
+        },
+        {
+          "qid": "cin_pc_73",
+          "question": "Who starred as the title character in the 2024 film 'Emilia Pérez'?",
+          "judge_label": "wrong",
+          "activation": 30.005067825317383
+        },
+        {
+          "qid": "his_pc_110",
+          "question": "Who was sworn in as the sixth President of Botswana in November 2024?",
+          "judge_label": "wrong",
+          "activation": 29.98164939880371
+        },
+        {
+          "qid": "his_pc_45",
+          "question": "Who became the Director of the Department of Government Efficiency (DOGE) alongside Vivek Ramaswamy in January 2025?",
+          "judge_label": "refusal",
+          "activation": 29.94296646118164
+        }
+      ]
+    },
+    "18264": {
+      "fid": 18264,
+      "direct_encoding": 54.078025817871094,
+      "decoder_alignment": -0.002160314659558535,
+      "diff_z": 1.2486131191253662,
+      "mean_activation_refusal": 52.2703857421875,
+      "mean_activation_wrong": 47.76509475708008,
+      "hit_rate_refusal": 1.0,
+      "hit_rate_wrong": 1.0,
+      "top_tokens": [
+        "差距",
+        "ILLS",
+        "业绩",
+        "背景下",
+        "中国梦",
+        "ATEG",
+        "ILLED",
+        "द",
+        "OLDER",
+        "ह",
+        "ORAGE",
+        "被认为是"
+      ],
+      "bottom_tokens": [
+        "�",
+        "éfono",
+        "kreśl",
+        "idian",
+        "osity",
+        "icates",
+        "yssey",
+        "itudes",
+        "etically",
+        "icate",
+        "iments",
+        "nicos"
+      ],
+      "top_prompts": [
+        {
+          "qid": "cul_pc_87",
+          "question": "Which song won the Grammy Award for Record of the Year at the February 2026 ceremony?",
+          "judge_label": "refusal",
+          "activation": 56.332489013671875
+        },
+        {
+          "qid": "cul_pc_76",
+          "question": "Which TV show won the Golden Globe Award for Best Television Series Drama in January 2025?",
+          "judge_label": "refusal",
+          "activation": 56.323448181152344
+        },
+        {
+          "qid": "cin_pc_08",
+          "question": "Which film won the BAFTA Award for Best Film in February 2025?",
+          "judge_label": "refusal",
+          "activation": 56.18656539916992
+        },
+        {
+          "qid": "cul_pc_116",
+          "question": "Which song won the Grammy Award for Record of the Year at the February 2025 ceremony?",
+          "judge_label": "refusal",
+          "activation": 56.16984558105469
+        },
+        {
+          "qid": "cul_pc_39",
+          "question": "Which song won the Grammy Award for Song of the Year at the February 2026 ceremony?",
+          "judge_label": "refusal",
+          "activation": 56.15010452270508
+        }
+      ]
+    },
+    "18937": {
+      "fid": 18937,
+      "direct_encoding": 14.007635116577148,
+      "decoder_alignment": 0.0054183953241072995,
+      "diff_z": 0.9472694993019104,
+      "mean_activation_refusal": 11.394826889038086,
+      "mean_activation_wrong": 4.936127662658691,
+      "hit_rate_refusal": 0.8231292517006803,
+      "hit_rate_wrong": 0.3706467661691542,
+      "top_tokens": [
+        "ab",
+        "abe",
+        "zi",
+        "alla",
+        "uma",
+        "kes",
+        "ix",
+        "mi",
+        "icon",
+        "abb",
+        "ery",
+        "elas"
+      ],
+      "bottom_tokens": [
+        "其中之一",
+        "的动作",
+        "动作",
+        "ords",
+        " ordained",
+        "<Expression",
+        "<context",
+        " >&",
+        "educt",
+        " Interestingly",
+        "不让",
+        "riday"
+      ],
+      "top_prompts": [
+        {
+          "qid": "his_ob_05",
+          "question": "Who was Prime Minister of the United Kingdom in 1923?",
+          "judge_label": "wrong",
+          "activation": 16.17572593688965
+        },
+        {
+          "qid": "his_pc_66",
+          "question": "Who became the Prime Minister of France on December 13, 2024?",
+          "judge_label": "refusal",
+          "activation": 15.824213027954102
+        },
+        {
+          "qid": "cin_pc_08",
+          "question": "Which film won the BAFTA Award for Best Film in February 2025?",
+          "judge_label": "refusal",
+          "activation": 15.821529388427734
+        },
+        {
+          "qid": "cul_pc_87",
+          "question": "Which song won the Grammy Award for Record of the Year at the February 2026 ceremony?",
+          "judge_label": "refusal",
+          "activation": 15.690900802612305
+        },
+        {
+          "qid": "his_pc_42",
+          "question": "Who became Prime Minister of the United Kingdom in July 2024?",
+          "judge_label": "refusal",
+          "activation": 15.625043869018555
+        }
+      ]
+    },
+    "20084": {
+      "fid": 20084,
+      "direct_encoding": 0.0,
+      "decoder_alignment": 0.0366548554109491,
+      "diff_z": 0.0,
+      "mean_activation_refusal": 0.0,
+      "mean_activation_wrong": 0.0,
+      "hit_rate_refusal": 0.0,
+      "hit_rate_wrong": 0.0,
+      "top_tokens": [
+        "饰演",
+        "扮演",
+        "饰",
+        "飾",
+        "角色",
+        "的角色",
+        "演技",
+        "出演",
+        " roles",
+        "演",
+        " role",
+        " actor"
+      ],
+      "bottom_tokens": [
+        ".addComponent",
+        "便民",
+        "商圈",
+        "PIO",
+        " Publish",
+        " publish",
+        " planners",
+        "堆放",
+        "Sites",
+        "规程",
+        "著作权",
+        "站点"
+      ],
+      "top_prompts": [
+        {
+          "qid": "sci_wk_42",
+          "question": "Who won the Nobel Prize in Physiology or Medicine in 2023?",
+          "judge_label": "wrong",
+          "activation": 0.0
+        },
+        {
+          "qid": "cul_ob_24",
+          "question": "Who composed 'The Rite of Spring', which caused a riot at its 1913 Paris premiere?",
+          "judge_label": "wrong",
+          "activation": 0.0
+        },
+        {
+          "qid": "cul_pc_01",
+          "question": "Which Gwen Stefani album was released in November 2024?",
+          "judge_label": "refusal",
+          "activation": 0.0
+        },
+        {
+          "qid": "cul_ob_33",
+          "question": "Which 1982 album by Marvin Gaye contains the hit 'Sexual Healing'?",
+          "judge_label": "wrong",
+          "activation": 0.0
+        },
+        {
+          "qid": "cul_ob_31",
+          "question": "Who wrote the 1990 novel 'Possession: A Romance'?",
+          "judge_label": "wrong",
+          "activation": 0.0
+        }
+      ]
+    },
+    "20779": {
+      "fid": 20779,
+      "direct_encoding": 0.0,
+      "decoder_alignment": 0.02809355301384036,
+      "diff_z": 0.0,
+      "mean_activation_refusal": 0.0,
+      "mean_activation_wrong": 0.0,
+      "hit_rate_refusal": 0.0,
+      "hit_rate_wrong": 0.0,
+      "top_tokens": [
+        ">{",
+        ">C",
+        ">D",
+        ">\n",
+        ">N",
+        ">Data",
+        ">H",
+        ">J",
+        "><",
+        ">",
+        ">L",
+        ">A"
+      ],
+      "bottom_tokens": [
+        "\"class",
+        "\",\n\n",
+        " --\n\n",
+        "共同发展",
+        "--,",
+        " \",\r\n",
+        " <!--",
+        "\":\r\n",
+        "[]\"",
+        "烩",
+        "\",\r\n",
+        ",'\""
+      ],
+      "top_prompts": [
+        {
+          "qid": "sci_wk_42",
+          "question": "Who won the Nobel Prize in Physiology or Medicine in 2023?",
+          "judge_label": "wrong",
+          "activation": 0.0
+        },
+        {
+          "qid": "cul_ob_24",
+          "question": "Who composed 'The Rite of Spring', which caused a riot at its 1913 Paris premiere?",
+          "judge_label": "wrong",
+          "activation": 0.0
+        },
+        {
+          "qid": "cul_pc_01",
+          "question": "Which Gwen Stefani album was released in November 2024?",
+          "judge_label": "refusal",
+          "activation": 0.0
+        },
+        {
+          "qid": "cul_ob_33",
+          "question": "Which 1982 album by Marvin Gaye contains the hit 'Sexual Healing'?",
+          "judge_label": "wrong",
+          "activation": 0.0
+        },
+        {
+          "qid": "cul_ob_31",
+          "question": "Who wrote the 1990 novel 'Possession: A Romance'?",
+          "judge_label": "wrong",
+          "activation": 0.0
+        }
+      ]
+    },
+    "21008": {
+      "fid": 21008,
+      "direct_encoding": 0.0,
+      "decoder_alignment": 0.058201087411062516,
+      "diff_z": 0.0,
+      "mean_activation_refusal": 0.0,
+      "mean_activation_wrong": 0.0,
+      "hit_rate_refusal": 0.0,
+      "hit_rate_wrong": 0.0,
+      "top_tokens": [
+        "伊斯",
+        "哈尔",
+        "евич",
+        "üst",
+        "晃",
+        "尼亚",
+        "mlink",
+        " rowspan",
+        "第一书记",
+        "鞅",
+        "腙",
+        " bluff"
+      ],
+      "bottom_tokens": [
+        "\n\n",
+        "\r\n",
+        "<|endoftext|>",
+        "\n",
+        ".\n\n",
+        "\n  \n",
+        "\n \n",
+        "\n   \n",
+        "“",
+        "\r\n\t\r\n",
+        ".",
+        "­"
+      ],
+      "top_prompts": [
+        {
+          "qid": "sci_wk_42",
+          "question": "Who won the Nobel Prize in Physiology or Medicine in 2023?",
+          "judge_label": "wrong",
+          "activation": 0.0
+        },
+        {
+          "qid": "cul_ob_24",
+          "question": "Who composed 'The Rite of Spring', which caused a riot at its 1913 Paris premiere?",
+          "judge_label": "wrong",
+          "activation": 0.0
+        },
+        {
+          "qid": "cul_pc_01",
+          "question": "Which Gwen Stefani album was released in November 2024?",
+          "judge_label": "refusal",
+          "activation": 0.0
+        },
+        {
+          "qid": "cul_ob_33",
+          "question": "Which 1982 album by Marvin Gaye contains the hit 'Sexual Healing'?",
+          "judge_label": "wrong",
+          "activation": 0.0
+        },
+        {
+          "qid": "cul_ob_31",
+          "question": "Who wrote the 1990 novel 'Possession: A Romance'?",
+          "judge_label": "wrong",
+          "activation": 0.0
+        }
+      ]
+    },
+    "21068": {
+      "fid": 21068,
+      "direct_encoding": 85.91400909423828,
+      "decoder_alignment": -0.012484152908448572,
+      "diff_z": 0.809329628944397,
+      "mean_activation_refusal": 86.52166748046875,
+      "mean_activation_wrong": 83.57786560058594,
+      "hit_rate_refusal": 1.0,
+      "hit_rate_wrong": 1.0,
+      "top_tokens": [
+        "eresa",
+        "urbed",
+        "ôi",
+        "opies",
+        "arence",
+        "angent",
+        "oby",
+        "iffany",
+        "reated",
+        "onal",
+        "ailed",
+        "asted"
+      ],
+      "bottom_tokens": [
+        " Dialogue",
+        "Question",
+        " Question",
+        " Revised",
+        " •",
+        " Understanding",
+        " Chapter",
+        " вопрос",
+        " הוד",
+        " Research",
+        " Uncategorized",
+        " Student"
+      ],
+      "top_prompts": [
+        {
+          "qid": "his_ob_35",
+          "question": "Who was the 27th President of the United States, serving from 1909 to 1913?",
+          "judge_label": "wrong",
+          "activation": 94.29579162597656
+        },
+        {
+          "qid": "his_pc_14",
+          "question": "Which former US President's funeral was held in Washington, DC on January 9, 2025?",
+          "judge_label": "wrong",
+          "activation": 91.96761322021484
+        },
+        {
+          "qid": "his_ob_29",
+          "question": "Which 1979 treaty was the first peace agreement between Israel and an Arab nation?",
+          "judge_label": "wrong",
+          "activation": 91.95158386230469
+        },
+        {
+          "qid": "cul_pc_87",
+          "question": "Which song won the Grammy Award for Record of the Year at the February 2026 ceremony?",
+          "judge_label": "refusal",
+          "activation": 91.85063934326172
+        },
+        {
+          "qid": "cul_pc_39",
+          "question": "Which song won the Grammy Award for Song of the Year at the February 2026 ceremony?",
+          "judge_label": "refusal",
+          "activation": 91.67639923095703
+        }
+      ]
+    },
+    "21466": {
+      "fid": 21466,
+      "direct_encoding": 57.866920471191406,
+      "decoder_alignment": -0.03290521380082003,
+      "diff_z": 0.8211258053779602,
+      "mean_activation_refusal": 57.91232681274414,
+      "mean_activation_wrong": 55.087982177734375,
+      "hit_rate_refusal": 1.0,
+      "hit_rate_wrong": 1.0,
+      "top_tokens": [
+        " MessageBoxButtons",
+        " fontWeight",
+        "errorMessage",
+        " justifyContent",
+        "defaultValue",
+        "getAttribute",
+        "padding",
+        "userId",
+        "console",
+        " alignItems",
+        " sizeof",
+        "setTimeout"
+      ],
+      "bottom_tokens": [
+        ".",
+        ".com",
+        ",",
+        "ancer",
+        "ancing",
+        "—it",
+        "hetics",
+        ".?",
+        "ancement",
+        ".Of",
+        "-earth",
+        "—not"
+      ],
+      "top_prompts": [
+        {
+          "qid": "his_ob_35",
+          "question": "Who was the 27th President of the United States, serving from 1909 to 1913?",
+          "judge_label": "wrong",
+          "activation": 65.67930603027344
+        },
+        {
+          "qid": "his_ob_29",
+          "question": "Which 1979 treaty was the first peace agreement between Israel and an Arab nation?",
+          "judge_label": "wrong",
+          "activation": 65.13101196289062
+        },
+        {
+          "qid": "his_pc_70",
+          "question": "Who won the 2024 United States presidential election?",
+          "judge_label": "wrong",
+          "activation": 64.21401977539062
+        },
+        {
+          "qid": "his_pc_78",
+          "question": "Who won the United States presidential election on November 5, 2024?",
+          "judge_label": "refusal",
+          "activation": 63.233036041259766
+        },
+        {
+          "qid": "his_pc_14",
+          "question": "Which former US President's funeral was held in Washington, DC on January 9, 2025?",
+          "judge_label": "wrong",
+          "activation": 62.1293830871582
+        }
+      ]
+    },
+    "21615": {
+      "fid": 21615,
+      "direct_encoding": 0.0,
+      "decoder_alignment": 0.02773211406287974,
+      "diff_z": 0.0,
+      "mean_activation_refusal": 0.0,
+      "mean_activation_wrong": 0.0,
+      "hit_rate_refusal": 0.0,
+      "hit_rate_wrong": 0.0,
+      "top_tokens": [
+        " None",
+        "None",
+        " none",
+        "none",
+        " null",
+        " nothing",
+        "_none",
+        "null",
+        "NULL",
+        "nothing",
+        "\tNone",
+        " Nothing"
+      ],
+      "bottom_tokens": [
+        ".tabControl",
+        "ἱ",
+        "овор",
+        "landers",
+        "strar",
+        "публи",
+        " đua",
+        "uty",
+        "cerpt",
+        "+C",
+        "iação",
+        "ấn"
+      ],
+      "top_prompts": [
+        {
+          "qid": "sci_wk_42",
+          "question": "Who won the Nobel Prize in Physiology or Medicine in 2023?",
+          "judge_label": "wrong",
+          "activation": 0.0
+        },
+        {
+          "qid": "cul_ob_24",
+          "question": "Who composed 'The Rite of Spring', which caused a riot at its 1913 Paris premiere?",
+          "judge_label": "wrong",
+          "activation": 0.0
+        },
+        {
+          "qid": "cul_pc_01",
+          "question": "Which Gwen Stefani album was released in November 2024?",
+          "judge_label": "refusal",
+          "activation": 0.0
+        },
+        {
+          "qid": "cul_ob_33",
+          "question": "Which 1982 album by Marvin Gaye contains the hit 'Sexual Healing'?",
+          "judge_label": "wrong",
+          "activation": 0.0
+        },
+        {
+          "qid": "cul_ob_31",
+          "question": "Who wrote the 1990 novel 'Possession: A Romance'?",
+          "judge_label": "wrong",
+          "activation": 0.0
+        }
+      ]
+    },
+    "21750": {
+      "fid": 21750,
+      "direct_encoding": 13.191168785095215,
+      "decoder_alignment": 0.0008249710092913395,
+      "diff_z": 0.9204310178756714,
+      "mean_activation_refusal": 11.248183250427246,
+      "mean_activation_wrong": 5.157087326049805,
+      "hit_rate_refusal": 0.8299319727891157,
+      "hit_rate_wrong": 0.40298507462686567,
+      "top_tokens": [
+        "ats",
+        "alm",
+        "ting",
+        "acc",
+        "acco",
+        "TINGS",
+        "leurs",
+        " chí",
+        "ac",
+        "agens",
+        "legates",
+        "inking"
+      ],
+      "bottom_tokens": [
+        "esub",
+        "setDefault",
+        "št",
+        "culate",
+        "rss",
+        "晶体",
+        " Segment",
+        "世俗",
+        "getObject",
+        "斷",
+        "比べ",
+        "Segment"
+      ],
+      "top_prompts": [
+        {
+          "qid": "cul_ob_09",
+          "question": "Who wrote the 1984 novel 'The Unbearable Lightness of Being'?",
+          "judge_label": "wrong",
+          "activation": 16.314495086669922
+        },
+        {
+          "qid": "cin_pc_58",
+          "question": "Who won the Academy Award for Best Original Score at the March 2025 ceremony?",
+          "judge_label": "wrong",
+          "activation": 15.859122276306152
+        },
+        {
+          "qid": "cin_pc_116",
+          "question": "Who won the Academy Award for Best Original Song at the March 2025 ceremony?",
+          "judge_label": "wrong",
+          "activation": 15.78780746459961
+        },
+        {
+          "qid": "cin_pc_93",
+          "question": "Who won the Academy Award for Best Actor at the 2025 ceremony?",
+          "judge_label": "refusal",
+          "activation": 15.744343757629395
+        },
+        {
+          "qid": "cul_pc_84",
+          "question": "Who won the 2024 Nobel Prize in Literature?",
+          "judge_label": "wrong",
+          "activation": 15.734781265258789
+        }
+      ]
+    },
+    "23494": {
+      "fid": 23494,
+      "direct_encoding": 191.17080688476562,
+      "decoder_alignment": -0.012452359686454086,
+      "diff_z": 0.9815713167190552,
+      "mean_activation_refusal": 191.09109497070312,
+      "mean_activation_wrong": 184.44944763183594,
+      "hit_rate_refusal": 1.0,
+      "hit_rate_wrong": 1.0,
+      "top_tokens": [
+        "�性",
+        "？」",
+        "atism",
+        "�新",
+        "�장",
+        "了我的",
+        "されています",
+        "！」",
+        "了他的",
+        "!\";\r\n",
+        "��",
+        "？”"
+      ],
+      "bottom_tokens": [
+        " ",
+        "0",
+        "\n",
+        "1",
+        "2",
+        " (",
+        " =",
+        "\t",
+        " -",
+        "-",
+        "9",
+        "3"
+      ],
+      "top_prompts": [
+        {
+          "qid": "his_ob_35",
+          "question": "Who was the 27th President of the United States, serving from 1909 to 1913?",
+          "judge_label": "wrong",
+          "activation": 199.32254028320312
+        },
+        {
+          "qid": "his_pc_27",
+          "question": "Who was elected President of South Korea on June 3, 2025?",
+          "judge_label": "refusal",
+          "activation": 199.2649688720703
+        },
+        {
+          "qid": "cin_pc_08",
+          "question": "Which film won the BAFTA Award for Best Film in February 2025?",
+          "judge_label": "refusal",
+          "activation": 199.17637634277344
+        },
+        {
+          "qid": "his_pc_08",
+          "question": "On what date in December 2024 did François Bayrou become the Prime Minister of France?",
+          "judge_label": "wrong",
+          "activation": 198.57469177246094
+        },
+        {
+          "qid": "his_pc_95",
+          "question": "Who was elected President of Romania in May 2025?",
+          "judge_label": "refusal",
+          "activation": 198.18991088867188
+        }
+      ]
+    },
+    "25054": {
+      "fid": 25054,
+      "direct_encoding": 25.545055389404297,
+      "decoder_alignment": -0.008456652922745611,
+      "diff_z": 0.7762184143066406,
+      "mean_activation_refusal": 24.193262100219727,
+      "mean_activation_wrong": 22.81825065612793,
+      "hit_rate_refusal": 1.0,
+      "hit_rate_wrong": 1.0,
+      "top_tokens": [
+        " rectangular",
+        " bag",
+        " company",
+        " function",
+        " dataset",
+        " rectangle",
+        " amusement",
+        " deck",
+        " triangle",
+        " spaceship",
+        " dart",
+        " spacecraft"
+      ],
+      "bottom_tokens": [
+        " yourselves",
+        "chunks",
+        "nbr",
+        "坞",
+        "elleicht",
+        "希望大家",
+        "morgan",
+        "xies",
+        "powied",
+        "ugin",
+        "各自",
+        "$/)"
+      ],
+      "top_prompts": [
+        {
+          "qid": "cul_pc_25",
+          "question": "Which novel won the Booker Prize in 2025?",
+          "judge_label": "refusal",
+          "activation": 27.01291275024414
+        },
+        {
+          "qid": "sci_pc_30",
+          "question": "In April 2026, which private space company launched the first modules of its commercial space station Haven-1?",
+          "judge_label": "wrong",
+          "activation": 26.870019912719727
+        },
+        {
+          "qid": "his_pc_03",
+          "question": "In January 2025, which country's wildfires destroyed large portions of the Pacific Palisades neighborhood?",
+          "judge_label": "wrong",
+          "activation": 26.854570388793945
+        },
+        {
+          "qid": "cul_pc_28",
+          "question": "Which novel won the Booker Prize in November 2025?",
+          "judge_label": "refusal",
+          "activation": 26.77783966064453
+        },
+        {
+          "qid": "cul_pc_04",
+          "question": "Which Broadway musical won the Tony Award for Best Musical in June 2025?",
+          "judge_label": "refusal",
+          "activation": 26.609102249145508
+        }
+      ]
+    },
+    "25169": {
+      "fid": 25169,
+      "direct_encoding": 45.23978805541992,
+      "decoder_alignment": 0.006620180144314834,
+      "diff_z": 0.590176522731781,
+      "mean_activation_refusal": 39.452880859375,
+      "mean_activation_wrong": 37.714874267578125,
+      "hit_rate_refusal": 1.0,
+      "hit_rate_wrong": 1.0,
+      "top_tokens": [
+        "ocumented",
+        ".linalg",
+        "irected",
+        "estruct",
+        "edom",
+        "ening",
+        "ductory",
+        "ework",
+        "endl",
+        "ervised",
+        " libros",
+        "istribute"
+      ],
+      "bottom_tokens": [
+        "icularly",
+        "�",
+        "#include",
+        "鞅",
+        "athy",
+        "什么事情",
+        "TERS",
+        "#pragma",
+        "icipation",
+        "icipants",
+        "#ifndef",
+        "<html"
+      ],
+      "top_prompts": [
+        {
+          "qid": "his_ob_35",
+          "question": "Who was the 27th President of the United States, serving from 1909 to 1913?",
+          "judge_label": "wrong",
+          "activation": 45.70580291748047
+        },
+        {
+          "qid": "his_ob_29",
+          "question": "Which 1979 treaty was the first peace agreement between Israel and an Arab nation?",
+          "judge_label": "wrong",
+          "activation": 45.6628532409668
+        },
+        {
+          "qid": "cul_pc_87",
+          "question": "Which song won the Grammy Award for Record of the Year at the February 2026 ceremony?",
+          "judge_label": "refusal",
+          "activation": 44.20692443847656
+        },
+        {
+          "qid": "cul_pc_39",
+          "question": "Which song won the Grammy Award for Song of the Year at the February 2026 ceremony?",
+          "judge_label": "refusal",
+          "activation": 43.987060546875
+        },
+        {
+          "qid": "his_pc_75",
+          "question": "In what month and year did the US government experience a lengthier shutdown in early 2025?",
+          "judge_label": "refusal",
+          "activation": 43.914005279541016
+        }
+      ]
+    },
+    "25660": {
+      "fid": 25660,
+      "direct_encoding": 0.0,
+      "decoder_alignment": 0.030588502885655906,
+      "diff_z": 0.0,
+      "mean_activation_refusal": 0.0,
+      "mean_activation_wrong": 0.0,
+      "hit_rate_refusal": 0.0,
+      "hit_rate_wrong": 0.0,
+      "top_tokens": [
+        " does",
+        " isn",
+        " doesn",
+        " nicht",
+        " не",
+        " cannot",
+        "notin",
+        " wasn",
+        "不成",
+        "不能",
+        " tidak",
+        " did"
+      ],
+      "bottom_tokens": [
+        "あります",
+        "ありました",
+        "会有",
+        "あった",
+        "都会有",
+        " ALWAYS",
+        "也越来越",
+        "可能会",
+        "可能是",
+        "Always",
+        " everybody",
+        "都有自己"
+      ],
+      "top_prompts": [
+        {
+          "qid": "sci_wk_42",
+          "question": "Who won the Nobel Prize in Physiology or Medicine in 2023?",
+          "judge_label": "wrong",
+          "activation": 0.0
+        },
+        {
+          "qid": "cul_ob_24",
+          "question": "Who composed 'The Rite of Spring', which caused a riot at its 1913 Paris premiere?",
+          "judge_label": "wrong",
+          "activation": 0.0
+        },
+        {
+          "qid": "cul_pc_01",
+          "question": "Which Gwen Stefani album was released in November 2024?",
+          "judge_label": "refusal",
+          "activation": 0.0
+        },
+        {
+          "qid": "cul_ob_33",
+          "question": "Which 1982 album by Marvin Gaye contains the hit 'Sexual Healing'?",
+          "judge_label": "wrong",
+          "activation": 0.0
+        },
+        {
+          "qid": "cul_ob_31",
+          "question": "Who wrote the 1990 novel 'Possession: A Romance'?",
+          "judge_label": "wrong",
+          "activation": 0.0
+        }
+      ]
+    },
+    "26773": {
+      "fid": 26773,
+      "direct_encoding": 58.03690719604492,
+      "decoder_alignment": 0.008731408299729052,
+      "diff_z": 0.13493935763835907,
+      "mean_activation_refusal": 56.61450958251953,
+      "mean_activation_wrong": 56.22831344604492,
+      "hit_rate_refusal": 1.0,
+      "hit_rate_wrong": 1.0,
+      "top_tokens": [
+        "abilities",
+        "bilder",
+        "总之",
+        "ework",
+        "abies",
+        "从容",
+        "九十",
+        "sharing",
+        "archical",
+        "Insets",
+        " Detection",
+        "comfort"
+      ],
+      "bottom_tokens": [
+        "mpeg",
+        "ICIENT",
+        "cient",
+        "tright",
+        "ERENCE",
+        "DITION",
+        "essor",
+        "cion",
+        "REDIENT",
+        "-ray",
+        "ốn",
+        "utos"
+      ],
+      "top_prompts": [
+        {
+          "qid": "sci_ob_24",
+          "question": "Who won the Nobel Prize in Chemistry in 1979?",
+          "judge_label": "wrong",
+          "activation": 63.43295669555664
+        },
+        {
+          "qid": "sci_ob_33",
+          "question": "Who won the Nobel Prize in Chemistry in 1981?",
+          "judge_label": "wrong",
+          "activation": 63.352909088134766
+        },
+        {
+          "qid": "sci_ob_38",
+          "question": "Who won the Nobel Prize in Chemistry in 1989?",
+          "judge_label": "wrong",
+          "activation": 63.21462631225586
+        },
+        {
+          "qid": "his_ob_29",
+          "question": "Which 1979 treaty was the first peace agreement between Israel and an Arab nation?",
+          "judge_label": "wrong",
+          "activation": 63.144142150878906
+        },
+        {
+          "qid": "sci_wk_16",
+          "question": "Who won the Nobel Prize in Chemistry in 1962?",
+          "judge_label": "wrong",
+          "activation": 63.09956359863281
+        }
+      ]
+    },
+    "31624": {
+      "fid": 31624,
+      "direct_encoding": 0.0,
+      "decoder_alignment": 0.012837969080603697,
+      "diff_z": 0.7511163353919983,
+      "mean_activation_refusal": 15.755075454711914,
+      "mean_activation_wrong": 11.094827651977539,
+      "hit_rate_refusal": 0.9727891156462585,
+      "hit_rate_wrong": 0.7562189054726368,
+      "top_tokens": [
+        " jm",
+        " gf",
+        " qx",
+        "qm",
+        "cef",
+        " ku",
+        " qc",
+        " isc",
+        " gx",
+        " mw",
+        " mf",
+        "gx"
+      ],
+      "bottom_tokens": [
+        ",",
+        ",…",
+        " “…",
+        ",…\n\n",
+        ")—",
+        "—the",
+        ",True",
+        " […]\n\n",
+        "…\n",
+        ",’",
+        " […",
+        "—not"
+      ],
+      "top_prompts": [
+        {
+          "qid": "sci_pc_47",
+          "question": "Which model series introduced the 'computer use' capability when announced in October 2024?",
+          "judge_label": "wrong",
+          "activation": 21.182397842407227
+        },
+        {
+          "qid": "cul_pc_111",
+          "question": "Which artist released the album 'Bouquet' in November 2024?",
+          "judge_label": "wrong",
+          "activation": 20.98961639404297
+        },
+        {
+          "qid": "cul_pc_29",
+          "question": "Which author won the International Booker Prize in 2025 for 'Heart Lamp'?",
+          "judge_label": "refusal",
+          "activation": 20.64352798461914
+        },
+        {
+          "qid": "cin_pc_08",
+          "question": "Which film won the BAFTA Award for Best Film in February 2025?",
+          "judge_label": "refusal",
+          "activation": 20.074054718017578
+        },
+        {
+          "qid": "cul_pc_08",
+          "question": "Which author won the Booker Prize in November 2025 for the novel 'Flesh'?",
+          "judge_label": "refusal",
+          "activation": 20.030025482177734
+        }
+      ]
+    },
+    "31708": {
+      "fid": 31708,
+      "direct_encoding": 54.356571197509766,
+      "decoder_alignment": 0.0036539098090096122,
+      "diff_z": 0.6590125560760498,
+      "mean_activation_refusal": 58.01536560058594,
+      "mean_activation_wrong": 55.88423538208008,
+      "hit_rate_refusal": 1.0,
+      "hit_rate_wrong": 1.0,
+      "top_tokens": [
+        "iance",
+        "icia",
+        "iversity",
+        "iverse",
+        "ise",
+        "egan",
+        "ished",
+        " blessed",
+        " '../",
+        "ities",
+        "uct",
+        "istributor"
+      ],
+      "bottom_tokens": [
+        "之家",
+        "员",
+        "matic",
+        "里的",
+        "件",
+        ".Collectors",
+        "rine",
+        "(()=>",
+        "BIND",
+        ">>&",
+        "alchemy",
+        "forces"
+      ],
+      "top_prompts": [
+        {
+          "qid": "his_ob_14",
+          "question": "In what year was the Peace of Westphalia signed?",
+          "judge_label": "wrong",
+          "activation": 62.772850036621094
+        },
+        {
+          "qid": "cul_pc_87",
+          "question": "Which song won the Grammy Award for Record of the Year at the February 2026 ceremony?",
+          "judge_label": "refusal",
+          "activation": 62.6331901550293
+        },
+        {
+          "qid": "cul_pc_39",
+          "question": "Which song won the Grammy Award for Song of the Year at the February 2026 ceremony?",
+          "judge_label": "refusal",
+          "activation": 62.422149658203125
+        },
+        {
+          "qid": "cul_pc_25",
+          "question": "Which novel won the Booker Prize in 2025?",
+          "judge_label": "refusal",
+          "activation": 62.258304595947266
+        },
+        {
+          "qid": "his_ob_29",
+          "question": "Which 1979 treaty was the first peace agreement between Israel and an Arab nation?",
+          "judge_label": "wrong",
+          "activation": 62.06386947631836
+        }
+      ]
+    },
+    "32158": {
+      "fid": 32158,
+      "direct_encoding": 40.19231414794922,
+      "decoder_alignment": 0.008447272612542907,
+      "diff_z": 0.8507193326950073,
+      "mean_activation_refusal": 40.522891998291016,
+      "mean_activation_wrong": 38.14049530029297,
+      "hit_rate_refusal": 1.0,
+      "hit_rate_wrong": 1.0,
+      "top_tokens": [
+        "inine",
+        "ariance",
+        "ariant",
+        "aporation",
+        "olve",
+        "endant",
+        "apor",
+        "ibration",
+        "ifax",
+        "olution",
+        "loses",
+        "ivative"
+      ],
+      "bottom_tokens": [
+        "ths",
+        "th",
+        "igator",
+        "人都",
+        "教",
+        "cean",
+        "-agent",
+        "thren",
+        "/epl",
+        "thood",
+        "_movies",
+        "-digit"
+      ],
+      "top_prompts": [
+        {
+          "qid": "his_ob_29",
+          "question": "Which 1979 treaty was the first peace agreement between Israel and an Arab nation?",
+          "judge_label": "wrong",
+          "activation": 45.76986312866211
+        },
+        {
+          "qid": "cul_pc_28",
+          "question": "Which novel won the Booker Prize in November 2025?",
+          "judge_label": "refusal",
+          "activation": 44.31830978393555
+        },
+        {
+          "qid": "cul_pc_25",
+          "question": "Which novel won the Booker Prize in 2025?",
+          "judge_label": "refusal",
+          "activation": 44.116241455078125
+        },
+        {
+          "qid": "cul_pc_87",
+          "question": "Which song won the Grammy Award for Record of the Year at the February 2026 ceremony?",
+          "judge_label": "refusal",
+          "activation": 43.90452575683594
+        },
+        {
+          "qid": "cin_pc_108",
+          "question": "Which film won the 2025 Academy Award for Best Director?",
+          "judge_label": "refusal",
+          "activation": 43.835899353027344
+        }
+      ]
+    },
+    "32487": {
+      "fid": 32487,
+      "direct_encoding": 0.0,
+      "decoder_alignment": 0.030609206745418133,
+      "diff_z": 0.0,
+      "mean_activation_refusal": 0.0,
+      "mean_activation_wrong": 0.0,
+      "hit_rate_refusal": 0.0,
+      "hit_rate_wrong": 0.0,
+      "top_tokens": [
+        "粉丝",
+        " Kardashian",
+        " TMZ",
+        " Kanye",
+        "娱乐圈",
+        "代言",
+        " fans",
+        " Instagram",
+        "Instagram",
+        "恋情",
+        " Rihanna",
+        " actress"
+      ],
+      "bottom_tokens": [
+        " systematically",
+        " systematic",
+        "patial",
+        "/XML",
+        " irrig",
+        "/system",
+        "定量",
+        " subsystem",
+        " keycode",
+        "enumerator",
+        "/module",
+        "外来"
+      ],
+      "top_prompts": [
+        {
+          "qid": "sci_wk_42",
+          "question": "Who won the Nobel Prize in Physiology or Medicine in 2023?",
+          "judge_label": "wrong",
+          "activation": 0.0
+        },
+        {
+          "qid": "cul_ob_24",
+          "question": "Who composed 'The Rite of Spring', which caused a riot at its 1913 Paris premiere?",
+          "judge_label": "wrong",
+          "activation": 0.0
+        },
+        {
+          "qid": "cul_pc_01",
+          "question": "Which Gwen Stefani album was released in November 2024?",
+          "judge_label": "refusal",
+          "activation": 0.0
+        },
+        {
+          "qid": "cul_ob_33",
+          "question": "Which 1982 album by Marvin Gaye contains the hit 'Sexual Healing'?",
+          "judge_label": "wrong",
+          "activation": 0.0
+        },
+        {
+          "qid": "cul_ob_31",
+          "question": "Who wrote the 1990 novel 'Possession: A Romance'?",
+          "judge_label": "wrong",
+          "activation": 0.0
+        }
+      ]
+    }
+  }
+}

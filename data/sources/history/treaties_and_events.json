@@ -1,0 +1,46 @@
+{
+  "_documentation": {
+    "topic": "Treaties, declarations, and pivotal historical events",
+    "well_known_criterion": "Events covered in standard high-school history curricula.",
+    "obscure_criterion": "Less-cited treaties or specific procedural details.",
+    "post_cutoff_criterion": "Events occurring after September 2024.",
+    "primary_source": "Wikipedia per row"
+  },
+  "template": "{question_text}",
+  "answer_field": "winner",
+  "well_known": [
+    {"question_text": "In what year did the Berlin Wall fall?", "winner": "1989", "alternatives": ["Nov 1989", "November 1989"], "answer_date": "1989-11-09", "provenance": "https://en.wikipedia.org/wiki/Fall_of_the_Berlin_Wall"},
+    {"question_text": "In what year did World War II end?", "winner": "1945", "alternatives": [], "answer_date": "1945-09-02", "provenance": "https://en.wikipedia.org/wiki/End_of_World_War_II_in_Europe"},
+    {"question_text": "Who was the primary author of the United States Declaration of Independence?", "winner": "Thomas Jefferson", "alternatives": ["Jefferson"], "answer_date": "1776-07-04", "provenance": "https://www.archives.gov/founding-docs/declaration"},
+    {"question_text": "In what year did the Soviet Union dissolve?", "winner": "1991", "alternatives": [], "answer_date": "1991-12-26", "provenance": "https://en.wikipedia.org/wiki/Dissolution_of_the_Soviet_Union"},
+    {"question_text": "In what year did Christopher Columbus first reach the Americas?", "winner": "1492", "alternatives": [], "answer_date": "1492-10-12", "provenance": "https://en.wikipedia.org/wiki/Christopher_Columbus"},
+    {"question_text": "Which treaty signed in 1919 formally ended World War I?", "winner": "Treaty of Versailles", "alternatives": [], "answer_date": "1919-06-28", "provenance": "https://en.wikipedia.org/wiki/Treaty_of_Versailles"},
+    {"question_text": "In what year did the French Revolution begin?", "winner": "1789", "alternatives": [], "answer_date": "1789-07-14", "provenance": "https://en.wikipedia.org/wiki/French_Revolution"},
+    {"question_text": "In what year did the United States gain independence?", "winner": "1776", "alternatives": [], "answer_date": "1776-07-04", "provenance": "https://en.wikipedia.org/wiki/American_Revolutionary_War"},
+    {"question_text": "Which 1066 battle saw William the Conqueror defeat King Harold of England?", "winner": "Battle of Hastings", "alternatives": ["Hastings"], "answer_date": "1066-10-14", "provenance": "https://en.wikipedia.org/wiki/Battle_of_Hastings"},
+    {"question_text": "Which 1815 battle ended the Napoleonic Wars?", "winner": "Battle of Waterloo", "alternatives": ["Waterloo"], "answer_date": "1815-06-18", "provenance": "https://en.wikipedia.org/wiki/Battle_of_Waterloo"},
+    {"question_text": "In what year did the Titanic sink?", "winner": "1912", "alternatives": ["April 1912"], "answer_date": "1912-04-15", "provenance": "https://en.wikipedia.org/wiki/Sinking_of_the_Titanic"}
+  ],
+  "obscure": [
+    {"question_text": "In what year was the Peace of Westphalia signed?", "winner": "1648", "alternatives": [], "answer_date": "1648-10-24", "provenance": "https://en.wikipedia.org/wiki/Peace_of_Westphalia"},
+    {"question_text": "Which 1842 treaty ended the First Opium War?", "winner": "Treaty of Nanking", "alternatives": ["Treaty of Nanjing"], "answer_date": "1842-08-29", "provenance": "https://en.wikipedia.org/wiki/Treaty_of_Nanking"},
+    {"question_text": "Which 1955 conference of newly independent Asian and African states was held in Indonesia?", "winner": "Bandung Conference", "alternatives": ["Asian-African Conference"], "answer_date": "1955-04-18", "provenance": "https://en.wikipedia.org/wiki/Bandung_Conference"},
+    {"question_text": "Which 1494 treaty divided the New World between Spain and Portugal?", "winner": "Treaty of Tordesillas", "alternatives": ["Tordesillas"], "answer_date": "1494-06-07", "provenance": "https://en.wikipedia.org/wiki/Treaty_of_Tordesillas"},
+    {"question_text": "Which 1898 treaty ended the Spanish-American War?", "winner": "Treaty of Paris", "alternatives": ["Treaty of Paris (1898)"], "answer_date": "1898-12-10", "provenance": "https://en.wikipedia.org/wiki/Treaty_of_Paris_(1898)"},
+    {"question_text": "In what year did the Long March in China begin?", "winner": "1934", "alternatives": [], "answer_date": "1934-10-16", "provenance": "https://en.wikipedia.org/wiki/Long_March"},
+    {"question_text": "Which 1979 treaty was the first peace agreement between Israel and an Arab nation?", "winner": "Egypt-Israel peace treaty", "alternatives": ["Camp David peace treaty", "Egypt-Israel Treaty"], "answer_date": "1979-03-26", "provenance": "https://en.wikipedia.org/wiki/Egypt%E2%80%93Israel_peace_treaty"},
+    {"question_text": "Which 1494 to 1559 series of conflicts saw France and the Habsburgs fight over control of Italy?", "winner": "Italian Wars", "alternatives": ["the Italian Wars", "Great Italian Wars"], "answer_date": "1494-09-01", "provenance": "https://en.wikipedia.org/wiki/Italian_Wars"},
+    {"question_text": "Which dynasty ruled China from 1368 to 1644?", "winner": "Ming dynasty", "alternatives": ["Ming"], "answer_date": "1368-01-23", "provenance": "https://en.wikipedia.org/wiki/Ming_dynasty"},
+    {"question_text": "Which 1773 protest in Boston Harbor was a precursor to the American Revolution?", "winner": "Boston Tea Party", "alternatives": ["the Boston Tea Party"], "answer_date": "1773-12-16", "provenance": "https://en.wikipedia.org/wiki/Boston_Tea_Party"},
+    {"question_text": "Which year saw the Schism between Roman Catholic and Eastern Orthodox churches, known as the Great Schism?", "winner": "1054", "alternatives": [], "answer_date": "1054-07-16", "provenance": "https://en.wikipedia.org/wiki/East%E2%80%93West_Schism"}
+  ],
+  "post_cutoff": [
+    {"question_text": "On what date did Pope Francis die?", "winner": "April 21, 2025", "alternatives": ["April 21 2025", "21 April 2025", "2025-04-21"], "answer_date": "2025-04-21", "provenance": "https://www.vatican.va/content/vatican/en.html"},
+    {"question_text": "Who was elected Pope in May 2025 to succeed Pope Francis?", "winner": "Pope Leo XIV", "alternatives": ["Leo XIV", "Robert Prevost"], "answer_date": "2025-05-08", "provenance": "https://en.wikipedia.org/wiki/Pope_Leo_XIV"},
+    {"question_text": "In December 2024, which Syrian president fled the country as opposition forces took Damascus?", "winner": "Bashar al-Assad", "alternatives": ["Assad", "Bashar Assad"], "answer_date": "2024-12-08", "provenance": "https://en.wikipedia.org/wiki/Fall_of_the_Assad_regime"},
+    {"question_text": "Which South Korean president declared martial law for a few hours in December 2024 before being impeached?", "winner": "Yoon Suk Yeol", "alternatives": ["Yoon"], "answer_date": "2024-12-03", "provenance": "https://en.wikipedia.org/wiki/2024_South_Korean_martial_law_declaration"},
+    {"question_text": "Which former US president was the target of a failed assassination attempt at a Pennsylvania rally in July 2024?", "winner": "Donald Trump", "alternatives": ["Trump"], "answer_date": "2024-07-13", "provenance": "https://en.wikipedia.org/wiki/Attempted_assassination_of_Donald_Trump_in_Butler,_Pennsylvania"},
+    {"question_text": "Which longtime US Senator died on September 29, 2024, having held office for over 40 years?", "winner": "Dianne Feinstein", "alternatives": ["Feinstein"], "answer_date": "2023-09-29", "provenance": "https://en.wikipedia.org/wiki/Dianne_Feinstein"},
+    {"question_text": "In what month of 2024 did Hurricane Helene cause catastrophic flooding in the Southeastern United States?", "winner": "September", "alternatives": ["Sep", "September 2024"], "answer_date": "2024-09-26", "provenance": "https://en.wikipedia.org/wiki/Hurricane_Helene"}
+  ]
+}

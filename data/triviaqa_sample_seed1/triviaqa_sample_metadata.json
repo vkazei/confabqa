@@ -1,0 +1,26 @@
+{
+  "dataset": "mandarjoshi/trivia_qa (unfiltered.nocontext, validation split)",
+  "n_total_in_split": 11313,
+  "n_sampled": 800,
+  "rng_seed": 1,
+  "sampling": "uniform random over the validation split",
+  "answer_length_distribution_in_sample": {
+    "short": 398,
+    "medium": 331,
+    "long": 71
+  },
+  "schema_mapping": {
+    "question": "TriviaQA.question",
+    "answer": "TriviaQA.answer.value",
+    "acceptable_alternatives": "TriviaQA.answer.aliases \\ {answer}",
+    "cutoff_class": "literal string 'external'",
+    "category": "literal string 'triviaqa'",
+    "domain": "literal string 'triviaqa'"
+  },
+  "caveats": [
+    "No continuous popularity axis (unlike PopQA's o_pop pageviews).",
+    "No cutoff structure -- TriviaQA is static trivia from pre-2017 sources.",
+    "TriviaQA aliases cover many surface forms but are not exhaustive; substring + same-model-judge may produce some false-negative correctness errors. A 20-item spot-check pack is written for manual inspection (figures/{model}/triviaqa_judge_spotcheck.md).",
+    "Kadavath et al. (2022) leaned heavily on TriviaQA for their P(IK) calibration probe; running our hidden-state probe + prompt-feature baselines on the same benchmark is the most directly comparable head-to-head replication."
+  ]
+}
