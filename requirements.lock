@@ -1,0 +1,12 @@
+# Exact versions used for the paper's runs (Python 3.14, macOS/arm64).
+# `pip install -r requirements.txt` gives floors; this file records the
+# environment the reported numbers were produced with.
+torch==2.12.0
+transformers==5.9.0
+accelerate==1.13.0
+matplotlib==3.10.9
+pandas==3.0.3
+numpy==2.4.6
+scikit-learn==1.8.0
+sae-lens==6.44.4
+jupyter==1.1.1
