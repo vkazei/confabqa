@@ -1,4 +1,5 @@
-% NeurIPS-look styling injected into pandoc's default LaTeX template.
+% NeurIPS-look styling -- arXiv variant: TeX-Live-shipped fonts only
+% (TeX Gyre Termes/Heros, DejaVu Sans Mono, FandolSong for CJK).
 % Reproduces the visible style of neurips_2024.sty: 10pt Times body,
 % Helvetica sans headings, 5.5in x 9in text area, NeurIPS-style abstract.
 
@@ -8,9 +9,19 @@
 \usepackage[scaled=0.92]{helvet}      % sans default = Helvetica scaled
 % Override main font for text to a Cyrillic-capable Times variant
 \usepackage{fontspec}
-\setmainfont{Times New Roman}
-\setsansfont[Scale=0.92]{Helvetica Neue}
-\setmonofont[Scale=0.85]{Menlo}
+\setmainfont{texgyretermes}[Extension=.otf, UprightFont=*-regular,
+  BoldFont=*-bold, ItalicFont=*-italic, BoldItalicFont=*-bolditalic]
+\setsansfont{texgyreheros}[Scale=0.92, Extension=.otf, UprightFont=*-regular,
+  BoldFont=*-bold, ItalicFont=*-italic, BoldItalicFont=*-bolditalic]
+\setmonofont{DejaVuSansMono}[Scale=0.82, Extension=.ttf, BoldFont=*-Bold,
+  ItalicFont=*-Oblique, BoldItalicFont=*-BoldOblique]
+% CJK: TeX-Live-shipped Fandol (loaded here, not via the pandoc variable)
+\usepackage{xeCJK}
+\xeCJKsetup{AutoFallBack=true}
+\setCJKmainfont{FandolSong-Regular}[Extension=.otf]
+\setCJKfallbackfamilyfont{rm}{bsmi00lp}[Extension=.ttf]  % Arphic Mingti: traditional glyphs Fandol lacks
+\newfontfamily\cyrfallbackfont{DejaVuSerif}[Extension=.ttf]
+\newcommand{\cyrtext}[1]{{\cyrfallbackfont #1}}
 
 % Section formatting: sans-serif bold, tight NeurIPS spacing.
 \usepackage[compact]{titlesec}
@@ -90,6 +101,3 @@
     \xeCJKDeclareCharClass{Default}{"2018, "2019, "201C, "201D, "2013, "2014}%
   \fi
 }
-
-% Cyrillic passthrough (arXiv header maps this to a fallback font).
-\newcommand{\cyrtext}[1]{#1}

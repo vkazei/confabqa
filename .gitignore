@@ -33,3 +33,7 @@ figures/llama_runs/
 
 # internal submission helper, not for the public repo
 ARXIV_SUBMISSION.md
+
+# arXiv build artifacts (local only)
+arxiv_pkg/
+arxiv_upload.tar.gz

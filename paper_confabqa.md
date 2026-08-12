@@ -1160,7 +1160,7 @@ rate stays high. At those magnitudes Gemma starts producing fluent-but-off-targe
 ("Formal announcements have not been made yet, but Marc Webb is not directing any...") that
 the Qwen judge sometimes parses as `wrong`. The negative-$\alpha$ direction produces a
 different pathology: $\alpha = -2000$ generations begin with garbled non-English tokens
-(Cyrillic "виправивши", French "conseille"), suggesting Gemma's refusal direction is partially
+(Cyrillic "\cyrtext{виправивши}", French "conseille"), suggesting Gemma's refusal direction is partially
 entangled with prompt-encoding stability and pushing in the opposite direction off-manifold.
 
 **Llama 3.2 3B.** Llama's near-saturated default refusal policy ($97.5\%$ of post-cutoff
