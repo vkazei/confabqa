@@ -16,4 +16,4 @@ jobs:
           pip install torch --index-url https://download.pytorch.org/whl/cpu
           pip install numpy pytest
       - name: Run tests
-        run: pytest -q tests/
+        run: python -m pytest -q tests/
