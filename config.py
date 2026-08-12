@@ -38,6 +38,8 @@ SEED = 0
 def get_device():
     if os.environ.get("FORCE_CPU") == "1":
         return torch.device("cpu")
+    if torch.cuda.is_available():
+        return torch.device("cuda")
     if torch.backends.mps.is_available():
         return torch.device("mps")
     return torch.device("cpu")
