@@ -28,10 +28,10 @@ abstract: |
   every model and dataset, is scored against the strongest of four prompt-feature
   classifiers fit on the same labels and folds, and only the margin over that baseline
   counts as model-internal signal. Applied to three instruction-tuned subject models
-  (Qwen3-1.7B, Gemma 2 2B, Llama-3.2-3B), with Qwen3-4B as a within-family scaling
+  (Qwen3-1.7B, Gemma 2 2B, Llama 3.2 3B), with Qwen3-4B as a within-family scaling
   control, each subject model carries a *refusal* direction in its late layers, while
   the *correct-vs-wrong* margin beyond prompt features is sharply model-dependent:
-  large and dataset-general on Llama-3.2-3B, small and dataset-local on Qwen3-1.7B
+  large and dataset-general on Llama 3.2 3B, small and dataset-local on Qwen3-1.7B
   and Gemma 2 2B. A sparse-autoencoder
   decomposition of the Qwen3-1.7B refusal direction resolves it into a canonical
   refusal-opener feature, a dormant apology-opener feature, and two post-cutoff
@@ -42,7 +42,7 @@ abstract: |
 
   Cross-dataset transfer answers the portability question for correctness directly: a
   probe trained on one benchmark retains $81\%$ of its margin on unseen benchmarks for
-  Llama-3.2-3B but collapses for Qwen3-1.7B and Gemma 2 2B. **Future research**:
+  Llama 3.2 3B but collapses for Qwen3-1.7B and Gemma 2 2B. **Future research**:
   whether the refusal direction transfers the same way, whether the cross-family gap
   survives at $\gtrsim 7$B, and whether swapping the abstention-training recipe while
   holding the model family fixed reproduces it. I release ConfabQA, the judge, the full
@@ -52,8 +52,12 @@ abstract: |
 # 1. Introduction
 
 A language model **confabulates** when it produces a fluent, confident answer that is
-factually wrong. Kadavath et al.\ (2022) argued that LLMs “mostly know what they know”---that signals internal to the model can predict whether a given answer will be correct---and a probing literature has followed, fitting linear classifiers on model hidden states
-and reporting correctness-prediction accuracies in the $80$--$90\%$ range. Two concurrent
+factually wrong (the term follows Farquhar et al.\ 2024). Kadavath et al.\ (2022) argued that LLMs “mostly know what they know”---that signals internal to the model can predict whether a given answer will be correct---and a probing literature has
+followed (Azaria and Mitchell 2023; Marks and Tegmark 2024), fitting linear classifiers
+on model hidden states and reporting correctness-prediction accuracies in the
+$80$--$90\%$ range. Behavioral detectors work on the outputs instead---sampling
+consistency (Manakul et al.\ 2023) or semantic entropy (Farquhar et al.\
+2024)---and are the black-box complement to the white-box probes studied here. Two concurrent
 2026 studies push back: Singh et al.\ show that above-chance “introspection” probe accuracy
 on small LMs is explained by features of the prompt itself rather than privileged
 self-access; Sahoo et al.\ find the same pattern for reasoning-mode probes. The question
@@ -67,7 +71,7 @@ that standard pre-vs-post-cutoff designs leave empty, breaking the cutoff/correc
 confound that lets a probe predicting "correct" double as a probe predicting "pre-cutoff
 date." ConfabQA, plus 800-item samples of PopQA (Mallen et al.\ 2023) and TriviaQA (Joshi
 et al.\ 2017), are run through three instruction-tuned models in the $1.7$--$3$B range
-(Qwen3-1.7B, Gemma 2 2B, Llama-3.2-3B), with Qwen3-4B as a within-family scaling
+(Qwen3-1.7B, Gemma 2 2B, Llama 3.2 3B), with Qwen3-4B as a within-family scaling
 control. Every probe is reported against both the
 standard majority baseline and a stricter logistic-regression-on-question-text baseline---a control rarely applied in the probing literature, but the one that decides whether the
 hidden state contributed anything.
@@ -77,8 +81,11 @@ and Bengio (2017): fit a linear classifier on the hidden representation at each 
 trained network to test whether a property is linearly decodable. Subsequent
 interpretability work (Belrose et al.\ 2023 on tuned lenses, Burns et al.\ 2023 on
 contrast-consistent probes) has applied probing to large LMs specifically. The present
-work uses the same machinery but with a prompt-feature control baseline, a control rarely
-reported in the probing literature.
+work uses the same machinery but with a prompt-feature control baseline. This is a
+*selectivity control* in the lineage of Hewitt and Liang (2019), who showed that probe
+accuracy without a control task mostly measures the probe rather than the representation;
+Belinkov (2022) surveys the same failure modes. Controls of this kind remain rare in the
+correctness-probing literature.
 
 **Knowledge cutoff and the disconfound.** Several prior probing papers use time-sensitive
 question sets and conflate "post-cutoff" with "model doesn't know." The ConfabQA $4 \times
@@ -104,13 +111,15 @@ single-model, single-dataset study could:
    $+2.2$ Llama 3.2 3B---the margin tracks the headroom each model's abstention policy
    leaves the probe; Section 6.2), and a one-shot residual-stream intervention drives
    the first-token refusal-opener rate to $100\%$ on Qwen3 and Gemma (Sections 5.8 and 6.2). This replicates Arditi et al.'s (2024) single-direction refusal finding on
-   three model families with the cutoff variable controlled by construction. The
+   three model families with the cutoff variable controlled by construction---and in a
+   different regime: theirs is safety refusal on harmful prompts, here it is epistemic
+   abstention on unknown-answer questions. The
    direction is not, however, a single feature: a sparse-autoencoder decomposition
    resolves it into a canonical refusal-opener feature---by itself causally sufficient
    to flip $30/30$ wrong-item next-token argmaxes to refusal openers---plus a dormant
    apology-opener alternative and two content-cue detectors (Section 5.9).
 
-2. *Llama-3.2-3B carries a substantially larger and more general correctness signal than
+2. *Llama 3.2 3B carries a substantially larger and more general correctness signal than
    Qwen3-1.7B or Gemma 2 2B.* On balanced PopQA / TriviaQA subsamples, Llama's probe
    beats the prompt baseline by $+21$--$+25$ pp---$5.7\times$ and $2.2\times$ Qwen's
    margins on the same benchmarks. Three controls localize the source: it is not
@@ -445,7 +454,9 @@ CV at `random_state=0`, peak over all $29$ layers) plus the four prompt baseline
 same folds. The subsample $h_{\rm adds}$ is $\text{probe peak} - \max(\text{baselines})$
 in pp. The reported $\bar h_{\rm adds}$ is the mean across $K$; the 95\% CI is the
 percentile interval $[h_{(0.025K)}, h_{(0.975K)}]$. This controls for class-imbalance
-interactions between probe and baselines and for item-sampling noise within the pool. The
+interactions between probe and baselines and for item-sampling noise within the pool.
+$K=30$ is set by compute (each replicate refits the full $29$-layer $\times$ $5$-fold
+pipeline), and percentile CIs at $K=30$ are correspondingly coarse. The
 protocol is "resampling-of-balanced-subsamples" rather than a true item-level bootstrap;
 the latter would require $K \cdot L \cdot F \approx 4{,}350$ refits per cell, too slow on
 M1-class hardware (see the evaluation-methodology limitation in Section 9).
@@ -908,7 +919,7 @@ the direction* inside the residual stream. A sparse-autoencoder decomposition
 addresses the second question.
 
 **Setup.** I use the publicly released Qwen-Scope residual-stream SAE for
-Qwen3-1.7B-Base (`qwen-scope-3-1.7b-base-w32k-l50`: $32$k features, $L_0=50$
+Qwen3-1.7B-Base, the Qwen analogue of Gemma Scope (Lieberum et al.\ 2024) (`qwen-scope-3-1.7b-base-w32k-l50`: $32$k features, $L_0=50$
 sparsity; Qwen Team, 2025b). Qwen-Scope was trained on the *base* model; the subject here is the
 *Instruct* variant. A reconstruction-quality sanity check on $200$ ConfabQA
 last-prompt-token activations at the refusal-probe peak layer (HF index $28$,
@@ -1026,7 +1037,9 @@ IDs).
 The dose-response is monotonic with a sharp transition between $\alpha=200$
 and $\alpha=750$ on wrong items: from $P=0$ to $P=1$ across one $\log_2$
 step in intervention strength, and from $0/30$ to all $30/30$ argmax
-tokens flipped to refusal openers. The intervention strength at saturation
+tokens flipped to refusal openers (exact Clopper--Pearson $95\%$ CI on the
+flip rate: $[0.88, 1.00]$; $n=30$ is small, so true rates as low as
+$\approx 0.88$ are consistent with the data). The intervention strength at saturation
 ($\alpha=750$, with unit-normalized decoder vector) is essentially the
 same effective magnitude as Section 5.8's recovered-probe-direction
 intervention ($\alpha=2000$ on a recovered direction of $L_2$-norm
@@ -1034,6 +1047,16 @@ $0.374$, giving effective magnitude $\approx 748$). Adding a single SAE
 feature's decoder direction at that magnitude is therefore *causally
 indistinguishable* from adding the original probe direction at its own
 working magnitude.
+
+Two scope notes. Feature 2191 was selected by the three *correlational*
+views of Section 5.9 (encoder assignment, decoder alignment, activation
+differential), computed before any intervention was run; the selection
+never observed flip outcomes, so the $30/30$ evaluation is not circular,
+although the $30$ wrong items are drawn from the same ConfabQA pool the
+selection statistics used. And no random-direction control was run: the
+specificity evidence is the dose-response shape plus the magnitude match
+to the recovered probe direction, and a norm-matched random-vector
+control is future work.
 
 The refusal-item baseline ($\alpha=0$) is already at $P=0.969$ because
 those items are *labeled* as refusals by the judge---the model is
@@ -1230,7 +1253,7 @@ attribution tests use the judge labels instead, which is why their per-class cou
 differ from Table 5's (e.g.\ Llama PopQA: $131$ substring-correct vs.\ $102$
 judge-correct).
 
-![Bootstrap 95\% CIs on $h_{adds}$ across $14$ `(dataset, model, target)` cells. $K=30$ balanced 50/50 subsamples per cell; blue = CI excludes 0. The bottom two rows are the headline positive finding: Llama-3.2-3B on PopQA / TriviaQA recovers $+21$--$+25$ pp over the strongest prompt-feature baseline, where Qwen3-1.7B and Qwen3-4B on the *same* data recover $+4$--$+10$ pp. The Qwen3-4B row labeled "scaling control" rules out parameter count as the dominant driver of the cross-model gap.](figures/bootstrap_forest.png){#fig:bootstrap-forest}
+![Bootstrap 95\% CIs on $h_{adds}$ across $14$ `(dataset, model, target)` cells. $K=30$ balanced 50/50 subsamples per cell; blue = CI excludes 0. The bottom two rows are the headline positive finding: Llama 3.2 3B on PopQA / TriviaQA recovers $+21$--$+25$ pp over the strongest prompt-feature baseline, where Qwen3-1.7B and Qwen3-4B on the *same* data recover $+4$--$+10$ pp. The Qwen3-4B row labeled "scaling control" rules out parameter count as the dominant driver of the cross-model gap.](figures/bootstrap_forest.png){#fig:bootstrap-forest}
 
 ### Table 5: Bootstrap 95% CIs on $h_{adds}$ across 14 cells
 
@@ -1255,7 +1278,9 @@ judge-correct).
 have 95\% CIs that exclude $0$. The Qwen3 and Gemma within-pre / within-obscure cells---the
 disconfounded targets that motivated ConfabQA---remain consistent with zero but with
 positive point estimates in all four cases, so the single-seed "null" reading of Section
-6.1 was borderline rather than emphatic. The headline numbers are the bottom rows.
+6.1 was borderline rather than emphatic. The headline numbers are the bottom rows. The CIs are per-cell and
+unadjusted for multiple comparisons across the fourteen cells; the
+cross-model contrast below does not rest on any single borderline cell.
 
 **Cross-dataset $\times$ cross-model contrast.** On the same PopQA benchmark under the
 same substring-correct criterion (Qwen pooled over three seeds, Llama single-seed;
@@ -1366,7 +1391,7 @@ encodes a content-invariant correctness signal" from "the hidden state encodes
 content-specific patterns that happen to correlate with correctness on each dataset
 separately".
 
-**Protocol.** For each model in $\{$Qwen3-1.7B, Gemma 2 2B, Llama-3.2-3B$\}$ I fit the
+**Protocol.** For each model in $\{$Qwen3-1.7B, Gemma 2 2B, Llama 3.2 3B$\}$ I fit the
 identical StandardScaler $\to$ PCA(16) $\to$ LogisticRegression$(C=1.0)$ pipeline on the
 hidden state at the model's peak-within layer for each of the three datasets ConfabQA,
 PopQA, and TriviaQA, then evaluate each fitted pipeline on every other dataset *without
@@ -1385,7 +1410,7 @@ test-majority) across the 3 within cells and the 6 off-diagonal transfer cells:
 
 | Model         | Peak layer | Avg within margin | Avg transfer margin | Retention | Transfers $>$ majority |
 |:-----------------|-------:|------------:|-------------:|--------:|-----------------:|
-| Llama-3.2-3B  | 14         | $+18.9$ pp        | $+15.2$ pp          | $81\%$    | $5/6$                  |
+| Llama 3.2 3B  | 14         | $+18.9$ pp        | $+15.2$ pp          | $81\%$    | $5/6$                  |
 | Gemma 2 2B    | 13         | $+13.1$ pp        | $-7.0$ pp           | $-54\%$   | $4/6$                  |
 | Qwen3-1.7B    | 18         | $+8.7$ pp         | $-1.2$ pp           | $-14\%$   | $3/6$                  |
 
@@ -1450,7 +1475,7 @@ versions of either.
 **What does not survive from the earlier draft.** The framing "the hidden-state correctness
 probe does not add detectable signal beyond what a prompt-text classifier already recovers,
 at $1.7$B--$3$B scale" was an over-generalization from one model and one fixed question set.
-On balanced 50/50 subsamples of external benchmarks, Llama-3.2-3B's correctness probe adds
+On balanced 50/50 subsamples of external benchmarks, Llama 3.2 3B's correctness probe adds
 $+17$--$+25$ pp over the strongest prompt baseline, with 95\% CIs that exclude $0$ by
 margins of $14$--$17$ pp---well outside the "within per-fold noise" zone the earlier draft
 placed all small-LM correctness probes in. The earlier draft's framing that the refusal
@@ -1508,7 +1533,9 @@ prompt-feature baseline; the disconfound test of removing the cutoff variable is
 but not sufficient. But a stronger lesson: the *result* of that re-evaluation appears to be
 sharply model-dependent. A single-model probing study can plausibly report either "the
 hidden state encodes substantial factual self-knowledge" (Llama) or "the hidden state
-adds nothing over prompt features" (Qwen ConfabQA within-obscure) on identical data and code.
+adds nothing over prompt features" (Qwen ConfabQA within-obscure) on identical data and
+code---consistent with Orgad et al.'s (2024) finding that truthfulness encoding is
+multifaceted rather than universal.
 Headline claims about what *small LMs* do should be checked on at least two architectures
 with different post-training recipes, and ideally with bootstrap CIs on balanced
 subsamples rather than single-seed point estimates.
@@ -1666,7 +1693,35 @@ file.
 
 14. Qwen Team (2025b). *Qwen-Scope: Sparse Autoencoders for Qwen3*. Hugging Face Hub release
     `Qwen/SAE-Res-Qwen3-1.7B-Base-W32K-L0_50` and parallel releases for the 8B and 30B-A3B
-    base models.
+    base models. arXiv:2605.11887.
+
+15. Hewitt, J., and Liang, P. (2019). *Designing and Interpreting Probes with Control
+    Tasks*. EMNLP-IJCNLP 2019. arXiv:1909.03368.
+
+16. Belinkov, Y. (2022). *Probing Classifiers: Promises, Shortcomings, and Advances*.
+    Computational Linguistics 48(1): 207--219.
+
+17. Farquhar, S., Kossen, J., Kuhn, L., and Gal, Y. (2024). *Detecting hallucinations in
+    large language models using semantic entropy*. Nature 630: 625--630.
+
+18. Azaria, A., and Mitchell, T. (2023). *The Internal State of an LLM Knows When It's
+    Lying*. Findings of EMNLP 2023. arXiv:2304.13734.
+
+19. Marks, S., and Tegmark, M. (2024). *The Geometry of Truth: Emergent Linear Structure
+    in Large Language Model Representations of True/False Datasets*. COLM 2024.
+    arXiv:2310.06824.
+
+20. Orgad, H., Toker, M., Gekhman, Z., Reichart, R., Szpektor, I., Kotek, H., and
+    Belinkov, Y. (2024). *LLMs Know More Than They Show: On the Intrinsic Representation
+    of LLM Hallucinations*. arXiv:2410.02707.
+
+21. Manakul, P., Liusie, A., and Gales, M. J. F. (2023). *SelfCheckGPT: Zero-Resource
+    Black-Box Hallucination Detection for Generative Large Language Models*. EMNLP 2023.
+    arXiv:2303.08896.
+
+22. Lieberum, T., Rajamanoharan, S., Conmy, A., Smith, L., Sonnerat, N., Varma, V.,
+    Kramár, J., Dragan, A., Shah, R., and Nanda, N. (2024). *Gemma Scope: Open Sparse
+    Autoencoders Everywhere All At Once on Gemma 2*. BlackboxNLP 2024. arXiv:2408.05147.
 
 # Appendix
 
