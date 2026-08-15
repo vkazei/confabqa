@@ -51,7 +51,7 @@ See [`data/QUESTIONS_v1_CARD.md`](data/QUESTIONS_v1_CARD.md) for the full datase
 ## Repository layout
 
 ```
-paper_confabqa.{md,pdf}                  Main paper (33 pages, xelatex, NeurIPS-style header)
+paper_confabqa.{md,pdf}                  Main paper (xelatex, NeurIPS-style header)
 neurips_header.tex                       NeurIPS-look LaTeX header for pandoc build
 
 01_question_set.py                       ConfabQA generator + validation-prompt emitter

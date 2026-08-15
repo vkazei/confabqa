@@ -38,7 +38,16 @@ if [[ "$MODE" == "arxiv" ]]; then
   "$PY" arxiv_package.py
   (cd arxiv_pkg \
     && xelatex -interaction=nonstopmode paper_confabqa.tex >/dev/null \
-    && xelatex -interaction=nonstopmode paper_confabqa.tex >/dev/null \
+    && xelatex -interaction=nonstopmode paper_confabqa.tex >/dev/null)
+  # A longtable sharing a page with a top float can overfill the page by the
+  # float's height (content runs off the page bottom). Fail loudly if any
+  # page overfills so a reflow never silently reintroduces it.
+  if grep -q "Overfull .vbox" arxiv_pkg/paper_confabqa.log; then
+    echo "ERROR: overfull page (Overfull \\vbox) in the compiled PDF:" >&2
+    grep "Overfull .vbox" arxiv_pkg/paper_confabqa.log >&2
+    exit 1
+  fi
+  (cd arxiv_pkg \
     && rm -f paper_confabqa.aux paper_confabqa.log paper_confabqa.out \
     && tar czf ../arxiv_upload.tar.gz paper_confabqa.tex figures/)
   echo "== arxiv_upload.tar.gz ready; test-compiled PDF at arxiv_pkg/paper_confabqa.pdf =="

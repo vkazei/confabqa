@@ -856,12 +856,32 @@ the probe-direction analysis (Section 5.7).
 
 **Results (`figures/13_intervention_results.json`, n=30 each subset).**
 
-| subset | metric | $\alpha = -2000$ | $-500$ | $0$ | $+500$ | $+1500$ | $+3000$ |
-|:----------------|:-----------------------|----:|----:|----:|----:|----:|----:|
-| originally WRONG | first-token refusal-opener rate | $0\%$ | $3\%$ | $10\%$ | $50\%$ | $97\%$ | $100\%$ |
-| originally WRONG | judge-label REFUSAL rate | $10\%$ | $0\%$ | $0\%$ | $13\%$ | $30\%$ | $30\%$ |
-| originally REFUSAL | first-token refusal-opener rate | $0\%$ | $23\%$ | $100\%$ | $100\%$ | $100\%$ | $100\%$ |
-| originally REFUSAL | judge-label REFUSAL rate | $17\%$ | $40\%$ | $100\%$ | $100\%$ | $100\%$ | $100\%$ |
+<!-- Raw tabular, not a pipe table: pandoc renders pipe tables as longtable,
+and a longtable sharing a page with a committed top float (Figure 8 here)
+hits a longtable/float page-accounting bug that overfills the page by the
+float's height (Figure 9 ran off the page bottom). Column spec mirrors the
+pandoc longtable this replaces. -->
+\begin{center}
+\small
+\begin{tabular}{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.2394}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.3380}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.0704}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.0704}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.0704}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.0704}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.0704}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.0704}}@{}}
+\toprule
+subset & metric & $\alpha = -2000$ & $-500$ & $0$ & $+500$ & $+1500$ & $+3000$ \\
+\midrule
+originally WRONG & first-token refusal-opener rate & $0\%$ & $3\%$ & $10\%$ & $50\%$ & $97\%$ & $100\%$ \\
+originally WRONG & judge-label REFUSAL rate & $10\%$ & $0\%$ & $0\%$ & $13\%$ & $30\%$ & $30\%$ \\
+originally REFUSAL & first-token refusal-opener rate & $0\%$ & $23\%$ & $100\%$ & $100\%$ & $100\%$ & $100\%$ \\
+originally REFUSAL & judge-label REFUSAL rate & $17\%$ & $40\%$ & $100\%$ & $100\%$ & $100\%$ & $100\%$ \\
+\bottomrule
+\end{tabular}
+\end{center}
 
 The intervention is causal in both directions. Pushing along the refusal pole drives originally
 confabulating items to open with refusal vocabulary monotonically from $10\%$ at baseline to
