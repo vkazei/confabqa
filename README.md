@@ -2,7 +2,7 @@
 
 A disconfounded probing benchmark, multi-model multi-dataset bootstrap, refusal-channel attribution, and sparse-autoencoder decomposition for small instruction-tuned LMs (Qwen3-1.7B, Gemma 2 2B, Llama 3.2 3B).
 
-![code license](https://img.shields.io/badge/code-MIT-green) ![data license](https://img.shields.io/badge/data%20%26%20paper-CC%20BY%204.0-blue) ![python](https://img.shields.io/badge/python-3.11%2B-blue) ![tests](https://github.com/vkazei/confabqa/actions/workflows/ci.yml/badge.svg)
+![code license](https://img.shields.io/badge/code-MIT-green) ![data license](https://img.shields.io/badge/data%20%26%20paper-CC%20BY%204.0-blue) ![python](https://img.shields.io/badge/python-3.12--3.14-blue) ![tests](https://github.com/vkazei/confabqa/actions/workflows/ci.yml/badge.svg)
 
 **Paper:** [`paper_confabqa.pdf`](paper_confabqa.pdf)
 **Author:** Vladimir Kazei (Independent Research)
@@ -16,7 +16,7 @@ When a small language model gives a confidently wrong answer — a *confabulatio
 
 This paper applies that protocol systematically across three instruction-tuned models on three benchmarks, with a $K = 30$ balanced-subsample bootstrap across fourteen `(dataset, model, target)` cells. Four findings:
 
-1. **Cross-model gap is large.** Llama-3.2-3B's hidden state adds +21 to +25 pp over the strongest prompt baseline on PopQA and TriviaQA; Qwen3-1.7B adds +4 to +10 pp on the same data.
+1. **Cross-model gap is large.** Llama 3.2 3B's hidden state adds +21 to +25 pp over the strongest prompt baseline on PopQA and TriviaQA; Qwen3-1.7B adds +4 to +10 pp on the same data.
 2. **Not a parameter-count effect.** A within-family scaling control (Qwen3-1.7B vs. Qwen3-4B on PopQA, same family at 2.4× the parameter count) closes the gap with Qwen3-1.7B by less than 2 pp. The cross-model gap tracks model family / post-training recipe, not size.
 3. **Bulk of the signal is genuine correctness self-knowledge, not refusal-channel readout.** Dropping refusals and re-probing correct-vs-wrong on attempted items leaves ~83% of Llama's lead intact. Llama additionally carries an independent linearly-decodable abstention direction.
 4. **The recovered direction is a superposition of mechanistic primitives.** A sparse-autoencoder decomposition of the Qwen3-1.7B refusal direction resolves it into a canonical refusal-opener feature, a dormant apology-opener feature, and two post-cutoff content-cue detectors. Adding the opener feature's decoder vector alone causally flips 30/30 wrong-item next-token argmaxes to refusal openers, at the same intervention magnitude as the broader probe direction.
@@ -25,8 +25,8 @@ This paper applies that protocol systematically across three instruction-tuned m
 
 | cell | h_adds (pp) | 95% CI | excludes 0 |
 |---|--:|---|:--:|
-| PopQA · Llama-3.2-3B | **+24.94** | [+20.57, +29.03] | yes |
-| TriviaQA · Llama-3.2-3B | **+21.25** | [+19.52, +22.89] | yes |
+| PopQA · Llama 3.2 3B | **+24.94** | [+20.57, +29.03] | yes |
+| TriviaQA · Llama 3.2 3B | **+21.25** | [+19.52, +22.89] | yes |
 | TriviaQA · Qwen3-1.7B | +9.57 | [+5.13, +13.75] | yes |
 | PopQA · Qwen3-4B (scaling control) | +5.77 | [+2.34, +11.61] | yes |
 | PopQA · Qwen3-1.7B | +4.35 | [+2.11, +6.50] | yes |
@@ -129,7 +129,7 @@ python popqa_prepare.py
 python triviaqa_prepare.py
 MODEL_ID=Qwen/Qwen3-1.7B          python popqa_evaluate.py
 MODEL_ID=Qwen/Qwen3-1.7B          python triviaqa_evaluate.py
-# (Repeat for Qwen3-4B, Llama-3.2-3B; judge runs separately via popqa_judge_only.py to avoid OOM)
+# (Repeat for Qwen3-4B, Llama 3.2 3B; judge runs separately via popqa_judge_only.py to avoid OOM)
 
 # Bootstrap CIs (14 cells)
 python bootstrap_h_adds.py

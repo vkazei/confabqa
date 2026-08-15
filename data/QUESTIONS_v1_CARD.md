@@ -76,7 +76,7 @@ Lives in the project repository. Versioned by filename (`questions_v0.json`, `qu
 
 - **Anglophone skew.** Best Picture winners, Super Bowls, Booker Prize, UK PMs, US presidents — the well_known and obscure buckets are weighted toward English-language source material and Anglo-American institutions.
 - **Subjective boundary.** Whether a 1970s Best Picture is "well_known" or "obscure" depends on the rater's cultural reference frame.
-- **Same-model judge in downstream pipeline.** `04_regrade.py` uses the subject model (Qwen3-1.7B) to judge its own outputs against this gold. The judge has a measured ~4% error rate on the v0 set (`report.md`). The validation pipeline above addresses gold-side errors; it does not address judge-side errors.
+- **Same-model judge in downstream pipeline.** `04_regrade.py` uses the subject model (Qwen3-1.7B) to judge its own outputs against this gold. Judge calibration on the full 784-item set: agreement 87.0% (Cohen's kappa = 0.78) against an external web-grounded grader (Gemini Deep Research), with all 102 disagreements decomposed in the paper (§4); a second independent LLM grader agrees 30/30 on a stratified sample (error ≤10% at 95% confidence). The validation pipeline above addresses gold-side errors; it does not address judge-side errors.
 - **Post-cutoff scarcity.** Cleanly factual post-cutoff items (single canonical answer, sourced authoritatively) are harder to find at scale than pre-cutoff ones. The cell is under-populated for this reason.
 - **Single-snapshot validation.** "Verified by Deep Research" is a snapshot in time. A 2026 re-validation pass may surface drift in citations or in the underlying facts (e.g. successor records, retracted papers).
 
