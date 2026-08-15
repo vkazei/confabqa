@@ -24,7 +24,6 @@ Caveats reported in output:
 from __future__ import annotations
 
 import argparse
-import importlib.util
 import json
 import os
 import random
@@ -35,14 +34,7 @@ from pathlib import Path
 import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
-# Import 02_evaluate.py (filename starts with a digit -> use importlib).
-_HERE = Path(__file__).parent
-_SPEC = importlib.util.spec_from_file_location("evaluate", _HERE / "02_evaluate.py")
-_EV = importlib.util.module_from_spec(_SPEC)
-sys.modules["evaluate"] = _EV
-_SPEC.loader.exec_module(_EV)
-
-from evaluate import evaluate_question, grade  # type: ignore
+from confabqa.evaluation import evaluate_question, grade
 from judge import judge  # noqa: E402
 from config import MODEL_ID, MODEL_SUBDIR, get_device, set_seeds  # noqa: E402
 

@@ -29,7 +29,6 @@ matches the 5-fold CV-mean reported in data/qwen3_1_7b_summary.json.
 """
 from __future__ import annotations
 
-import importlib.util
 import json
 import re
 import sys
@@ -42,15 +41,8 @@ from sklearn.model_selection import StratifiedKFold, cross_val_score
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
 
-# Import 03_analyze.py as a module (its filename starts with a digit).
-_HERE = Path(__file__).parent
-_SPEC = importlib.util.spec_from_file_location("analyze", _HERE / "03_analyze.py")
-_AN = importlib.util.module_from_spec(_SPEC)
-sys.modules["analyze"] = _AN
-_SPEC.loader.exec_module(_AN)
-
 # Pull in the exact feature definitions from the paper's pipeline:
-from analyze import load_all, prompt_features, prompt_feature_matrix  # type: ignore
+from confabqa.analysis import load_all, prompt_features, prompt_feature_matrix
 from config import FIGURES_DIR
 
 TARGETS = ["correct", "correct_within_pre", "correct_within_obscure"]

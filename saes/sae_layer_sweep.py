@@ -10,7 +10,7 @@ import numpy as np
 import torch
 from sae_lens import SAE
 
-SAE_RELEASE = "qwen-scope-3-1.7b-base-w32k-l50"
+from confabqa.constants import SAE_RELEASE
 LAYERS = [10, 14, 18, 20, 22, 24, 26, 27]
 RESPONSES_DIR = Path("data/responses/qwen3_1_7b")
 ACTIVATIONS_DIR = Path("data/activations/qwen3_1_7b")

@@ -26,7 +26,7 @@ import torch
 from sae_lens import SAE
 
 LAYER = 24
-SAE_RELEASE = "qwen-scope-3-1.7b-base-w32k-l50"
+from confabqa.constants import SAE_RELEASE
 SAE_ID = f"layer{LAYER}"
 RESPONSES_DIR = Path("data/responses/qwen3_1_7b")
 ACTIVATIONS_DIR = Path("data/activations/qwen3_1_7b")

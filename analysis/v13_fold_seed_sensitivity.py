@@ -17,7 +17,6 @@ Writes figures/v13_fold_seed_sensitivity.md
 """
 from __future__ import annotations
 
-import importlib.util
 import json
 import statistics
 import sys
@@ -32,13 +31,7 @@ from sklearn.model_selection import StratifiedKFold, cross_val_score
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
 
-# Import 03_analyze.py (filename starts with a digit)
-_HERE = Path(__file__).parent
-_SPEC = importlib.util.spec_from_file_location("analyze", _HERE / "03_analyze.py")
-_AN = importlib.util.module_from_spec(_SPEC)
-sys.modules["analyze"] = _AN
-_SPEC.loader.exec_module(_AN)
-from analyze import prompt_features, prompt_feature_matrix  # type: ignore
+from confabqa.analysis import prompt_features, prompt_feature_matrix
 
 MODELS = ["qwen3_1_7b", "gemma_2_2b", "llama_3_2_3b"]
 TARGETS = ["correct", "correct_within_pre", "correct_within_obscure"]

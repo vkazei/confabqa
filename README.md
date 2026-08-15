@@ -51,7 +51,7 @@ See [`data/QUESTIONS_v1_CARD.md`](data/QUESTIONS_v1_CARD.md) for the full datase
 ## Repository layout
 
 ```
-paper_confabqa.{md,pdf}                  Main paper (32 pages, xelatex, NeurIPS-style header)
+paper_confabqa.{md,pdf}                  Main paper (33 pages, xelatex, NeurIPS-style header)
 neurips_header.tex                       NeurIPS-look LaTeX header for pandoc build
 
 01_question_set.py                       ConfabQA generator + validation-prompt emitter
@@ -59,33 +59,44 @@ neurips_header.tex                       NeurIPS-look LaTeX header for pandoc bu
 03_analyze.py                            Probes + prompt-feature baselines + figures
 04_regrade.py                            Same-model judge pass over cached responses
 judge.py                                 Three-way correct/refusal/wrong judge
-
-popqa_{prepare,evaluate,analyze}.py      External-dataset extension (PopQA, n=800 per seed)
-triviaqa_{prepare,evaluate,analyze}.py   External-dataset extension (TriviaQA, n=800 per seed)
-popqa_judge_only.py                      Standalone judge (used when subject + judge co-load OOMs)
-
-bootstrap_h_adds.py                      K=30 balanced-subsample bootstrap on ConfabQA
-bootstrap_llama_external.py              Same protocol, Llama × {PopQA, TriviaQA}
-bootstrap_qwen3_4b.py                    Within-family scaling control on PopQA
-refusal_channel_test.py                  Test A (drop refusals) + Test B (probe refusal directly)
-
-sae_test_reconstruction.py               Qwen-Scope SAE base→instruct transfer sanity check
-sae_layer_sweep.py                       Per-layer reconstruction-quality sweep
-sae_decompose_refusal.py                 Three-view SAE decomposition of refusal direction
-sae_causal_ablation.py                   Causal validation: feature 2191 dose-response
-
-figure_bootstrap_forest.py               14-cell forest plot
-cross_dataset_transfer.py                Train-on-A / test-on-B probe transfer (no refit)
-figure_merge_per_layer_probes.py         §5.5 per-layer-probe comparison plot
-figure_{atlas,embeddings,confidence}_merged.py  Multi-channel scatter figures
-figure_sae_features.py                   SAE feature-card figure
-
 config.py                                MODEL_ID / paths / seed / device (CUDA/MPS/CPU)
-reproduce.sh                             One-command reproduction (figures | full)
+reproduce.sh                             One-command reproduction (figures | arxiv | full)
+
+confabqa/                                Package interface to the frozen pipeline scripts
+                                         (confabqa.analysis, confabqa.evaluation) + shared constants
+
+analysis/                                Bootstraps, refusal-channel tests, transfer, probes
+  bootstrap_h_adds.py                      K=30 balanced-subsample bootstrap on ConfabQA
+  bootstrap_llama_external.py              Same protocol, Llama × {PopQA, TriviaQA}
+  bootstrap_qwen3_4b.py                    Within-family scaling control on PopQA
+  refusal_channel_test.py                  Test A (drop refusals) + Test B (probe refusal directly)
+  cross_dataset_transfer.py                Train-on-A / test-on-B probe transfer (no refit)
+  run_all_comparisons.py                   Multi-model pipeline orchestrator
+
+external/                                PopQA / TriviaQA extension
+  popqa_{prepare,evaluate,analyze}.py      PopQA (n=800 per seed)
+  triviaqa_{prepare,evaluate,analyze}.py   TriviaQA (n=800 per seed)
+  popqa_judge_only.py                      Standalone judge (used when subject + judge co-load OOMs)
+
+saes/                                    Sparse-autoencoder experiments (Qwen3-1.7B only)
+  sae_test_reconstruction.py               Qwen-Scope SAE base→instruct transfer sanity check
+  sae_layer_sweep.py                       Per-layer reconstruction-quality sweep
+  sae_decompose_refusal.py                 Three-view SAE decomposition of refusal direction
+  sae_causal_ablation.py                   Causal validation: feature 2191 dose-response
+
+plots/                                   Figure generators
+  figure_bootstrap_forest.py               14-cell forest plot
+  figure_merge_per_layer_probes.py         Per-layer-probe comparison plot (paper §5.5)
+  figure_{atlas,embeddings,confidence}_merged.py  Multi-channel scatter figures
+  figure_sae_features.py                   SAE feature-card figure
+
+tools/                                   Smoke test, judge regression check
 tests/                                   pytest sanity suite (dataset, judge, artifacts)
 data/                                    Question files, judge labels, response JSONs
 figures/                                 All paper figures (PNGs, JSONs, MDs)
 ```
+
+Packaged scripts run from the repo root as modules, e.g. `python -m analysis.bootstrap_h_adds`.
 
 Activations and per-seed external-dataset responses are gitignored (multi-GB) but regenerable from the question files via the scripts above.
 
@@ -125,29 +136,29 @@ MODEL_ID=unsloth/Llama-3.2-3B-Instruct python 02_evaluate.py
 MODEL_ID=Qwen/Qwen3-1.7B          python 04_regrade.py
 
 # External datasets (PopQA, TriviaQA)
-python popqa_prepare.py
-python triviaqa_prepare.py
-MODEL_ID=Qwen/Qwen3-1.7B          python popqa_evaluate.py
-MODEL_ID=Qwen/Qwen3-1.7B          python triviaqa_evaluate.py
-# (Repeat for Qwen3-4B, Llama 3.2 3B; judge runs separately via popqa_judge_only.py to avoid OOM)
+python -m external.popqa_prepare
+python -m external.triviaqa_prepare
+MODEL_ID=Qwen/Qwen3-1.7B          python -m external.popqa_evaluate
+MODEL_ID=Qwen/Qwen3-1.7B          python -m external.triviaqa_evaluate
+# (Repeat for Qwen3-4B, Llama 3.2 3B; judge runs separately via external.popqa_judge_only to avoid OOM)
 
 # Bootstrap CIs (14 cells)
-python bootstrap_h_adds.py
-python bootstrap_llama_external.py
-python bootstrap_qwen3_4b.py
+python -m analysis.bootstrap_h_adds
+python -m analysis.bootstrap_llama_external
+python -m analysis.bootstrap_qwen3_4b
 
 # Refusal-channel attribution
-python refusal_channel_test.py
+python -m analysis.refusal_channel_test
 
 # SAE decomposition + causal ablation (Qwen3-1.7B only)
-python sae_decompose_refusal.py
-python sae_causal_ablation.py
+python -m saes.sae_decompose_refusal
+python -m saes.sae_causal_ablation
 
 # Figures + paper
-python figure_bootstrap_forest.py
-python figure_merge_arch_pipeline.py
-python figure_merge_per_layer_probes.py
-python figure_sae_features.py
+python -m plots.figure_bootstrap_forest
+python -m plots.figure_merge_arch_pipeline
+python -m plots.figure_merge_per_layer_probes
+python -m plots.figure_sae_features
 
 # Build the reference PDF (macOS fonts: Times New Roman / Heiti SC).
 # For an arXiv-compatible build on TeX-Live-only fonts, run: ./reproduce.sh arxiv

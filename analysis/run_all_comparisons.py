@@ -4,13 +4,15 @@ import subprocess
 import sys
 import time
 
+# (label, invocation, args) — run from the repo root. The frozen pipeline
+# scripts live at the root and run as files; packaged scripts run with -m.
 PIPELINE_SCRIPTS = [
-    ("02_evaluate.py", []),
-    ("04_regrade.py", ["--force"]),
-    ("03_analyze.py", []),
-    ("make_robustness_check.py", []),
-    ("make_probe_direction_atlas.py", []),
-    ("make_atlas_figure.py", []),
+    ("02_evaluate.py", ["02_evaluate.py"], []),
+    ("04_regrade.py", ["04_regrade.py"], ["--force"]),
+    ("03_analyze.py", ["03_analyze.py"], []),
+    ("make_robustness_check", ["-m", "analysis.make_robustness_check"], []),
+    ("make_probe_direction_atlas", ["-m", "analysis.make_probe_direction_atlas"], []),
+    ("make_atlas_figure", ["-m", "plots.make_atlas_figure"], []),
 ]
 
 
@@ -23,12 +25,12 @@ def run_pipeline(model_id: str, limit: int = None, skip_eval: bool = False):
     env = os.environ.copy()
     env["MODEL_ID"] = model_id
 
-    for script, args in PIPELINE_SCRIPTS:
+    for script, invocation, args in PIPELINE_SCRIPTS:
         if skip_eval and script == "02_evaluate.py":
             print(f"\n>>> Skipping evaluation step for {model_id}...")
             continue
 
-        cmd = [sys.executable, script] + args
+        cmd = [sys.executable] + invocation + args
         if script == "02_evaluate.py" and limit is not None:
             cmd.extend(["--limit", str(limit)])
 

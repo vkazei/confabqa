@@ -28,7 +28,7 @@ os.environ.setdefault("PYTORCH_MPS_HIGH_WATERMARK_RATIO", "0.0")
 JUDGE_MODEL_ID = "Qwen/Qwen3-1.7B"
 
 _HERE = Path(__file__).parent
-sys.path.insert(0, str(_HERE))
+sys.path.insert(0, str(_HERE.parent))  # repo root: judge.py, config.py
 from judge import judge  # noqa: E402
 from config import get_device  # noqa: E402
 

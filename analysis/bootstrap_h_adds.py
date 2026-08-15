@@ -26,7 +26,6 @@ Writes:
 """
 from __future__ import annotations
 
-import importlib.util
 import json
 import random
 import statistics
@@ -42,15 +41,9 @@ from sklearn.model_selection import StratifiedKFold, cross_val_score
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
 
-_HERE = Path(__file__).parent
-_SPEC = importlib.util.spec_from_file_location("analyze", _HERE / "03_analyze.py")
-_AN = importlib.util.module_from_spec(_SPEC)
-sys.modules["analyze"] = _AN
-_SPEC.loader.exec_module(_AN)
-from analyze import prompt_features, prompt_feature_matrix  # noqa: E402
+from confabqa.analysis import prompt_features, prompt_feature_matrix
 
-K = 30                  # number of bootstrap subsamples per cell
-MAX_PER_CLASS = 400
+from confabqa.constants import BOOTSTRAP_K as K, MAX_PER_CLASS
 OUT_JSON = Path("figures") / "bootstrap_h_adds.json"
 OUT_MD = Path("figures") / "bootstrap_h_adds.md"
 

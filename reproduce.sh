@@ -20,9 +20,9 @@ MODE="${1:-figures}"
 
 if [[ "$MODE" == "figures" ]]; then
   echo "== Rebuilding numeric figures from committed artifacts =="
-  "$PY" figure_bootstrap_forest.py          # 14-cell forest plot  <- bootstrap_*.json
-  "$PY" figure_merge_per_layer_probes.py    # per-layer probe curves <- data/qwen3_1_7b_summary.json
-  "$PY" figure_sae_features.py              # SAE feature card <- figures/sae_decompose_refusal.json
+  "$PY" -m plots.figure_bootstrap_forest          # 14-cell forest plot  <- bootstrap_*.json
+  "$PY" -m plots.figure_merge_per_layer_probes    # per-layer probe curves <- data/qwen3_1_7b_summary.json
+  "$PY" -m plots.figure_sae_features              # SAE feature card <- figures/sae_decompose_refusal.json
   echo "== Done. Rebuilt PNGs are in figures/ =="
   exit 0
 fi
@@ -57,29 +57,29 @@ for M in "Qwen/Qwen3-1.7B" "unsloth/gemma-2-2b-it" "unsloth/Llama-3.2-3B-Instruc
 done
 MODEL_ID=Qwen/Qwen3-1.7B "$PY" 04_regrade.py
 
-"$PY" popqa_prepare.py
-"$PY" triviaqa_prepare.py
-MODEL_ID=Qwen/Qwen3-1.7B "$PY" popqa_evaluate.py
-MODEL_ID=Qwen/Qwen3-1.7B "$PY" triviaqa_evaluate.py
-# Repeat evaluate for Qwen3-4B / Llama-3.2-3B; judge via popqa_judge_only.py
+"$PY" -m external.popqa_prepare
+"$PY" -m external.triviaqa_prepare
+MODEL_ID=Qwen/Qwen3-1.7B "$PY" -m external.popqa_evaluate
+MODEL_ID=Qwen/Qwen3-1.7B "$PY" -m external.triviaqa_evaluate
+# Repeat evaluate for Qwen3-4B / Llama-3.2-3B; judge via external.popqa_judge_only
 # (separate process, avoids subject+judge co-load OOM on 16 GB).
 
-"$PY" bootstrap_h_adds.py
-"$PY" bootstrap_llama_external.py
-"$PY" bootstrap_qwen3_4b.py
-"$PY" refusal_channel_test.py
-"$PY" cross_dataset_transfer.py
+"$PY" -m analysis.bootstrap_h_adds
+"$PY" -m analysis.bootstrap_llama_external
+"$PY" -m analysis.bootstrap_qwen3_4b
+"$PY" -m analysis.refusal_channel_test
+"$PY" -m analysis.cross_dataset_transfer
 
-"$PY" sae_test_reconstruction.py
-"$PY" sae_decompose_refusal.py
-"$PY" sae_causal_ablation.py
+"$PY" -m saes.sae_test_reconstruction
+"$PY" -m saes.sae_decompose_refusal
+"$PY" -m saes.sae_causal_ablation
 
-"$PY" figure_bootstrap_forest.py
-"$PY" figure_merge_per_layer_probes.py
-"$PY" figure_sae_features.py
-"$PY" figure_atlas_merged.py
-"$PY" figure_embeddings_merged.py
-"$PY" figure_confidence_merged.py
+"$PY" -m plots.figure_bootstrap_forest
+"$PY" -m plots.figure_merge_per_layer_probes
+"$PY" -m plots.figure_sae_features
+"$PY" -m plots.figure_atlas_merged
+"$PY" -m plots.figure_embeddings_merged
+"$PY" -m plots.figure_confidence_merged
 
 pandoc paper_confabqa.md -o paper_confabqa.pdf \
   --pdf-engine=xelatex \

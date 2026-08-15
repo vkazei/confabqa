@@ -15,7 +15,6 @@ No new generation -- reuses cached activations from the three seed dirs.
 """
 from __future__ import annotations
 
-import importlib.util
 import json
 import random
 import statistics
@@ -35,12 +34,7 @@ from sklearn.preprocessing import StandardScaler
 from config import MODEL_SUBDIR
 
 # Import prompt_features / prompt_feature_matrix from 03_analyze.py
-_HERE = Path(__file__).parent
-_SPEC = importlib.util.spec_from_file_location("analyze", _HERE / "03_analyze.py")
-_AN = importlib.util.module_from_spec(_SPEC)
-sys.modules["analyze"] = _AN
-_SPEC.loader.exec_module(_AN)
-from analyze import prompt_features, prompt_feature_matrix  # noqa: E402
+from confabqa.analysis import prompt_features, prompt_feature_matrix
 
 SEED_DIRS = ["triviaqa_sample", "triviaqa_sample_seed1", "triviaqa_sample_seed2"]
 SUBSAMPLES = [0, 1, 2, 3, 4]  # 5 balanced subsample seeds

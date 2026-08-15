@@ -1,13 +1,12 @@
-"""Bootstrap h_adds CIs for Qwen3-4B on PopQA (scaling data point).
+"""Bootstrap h_adds CIs for Qwen3-8B on PopQA (scaling data point).
 
 Same K=30 protocol as bootstrap_llama_external.py. Single-seed pool
 (n=800 unique). Writes:
-  figures/bootstrap_qwen3_4b.json
-  figures/bootstrap_qwen3_4b.md
+  figures/bootstrap_qwen3_8b.json
+  figures/bootstrap_qwen3_8b.md
 """
 from __future__ import annotations
 
-import importlib.util
 import json
 import random
 import statistics
@@ -23,20 +22,14 @@ from sklearn.model_selection import StratifiedKFold, cross_val_score
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
 
-_HERE = Path(__file__).parent
-_SPEC = importlib.util.spec_from_file_location("analyze", _HERE / "03_analyze.py")
-_AN = importlib.util.module_from_spec(_SPEC)
-sys.modules["analyze"] = _AN
-_SPEC.loader.exec_module(_AN)
-from analyze import prompt_feature_matrix  # noqa: E402
+from confabqa.analysis import prompt_feature_matrix
 
-K = 30
-MAX_PER_CLASS = 400
-MODEL_SUBDIR = "qwen3_4b"
+from confabqa.constants import BOOTSTRAP_K as K, MAX_PER_CLASS
+MODEL_SUBDIR = "qwen3_8b"
 RESP_DIR = Path(f"data/popqa_sample/responses/{MODEL_SUBDIR}")
 ACT_DIR = Path(f"data/popqa_sample/activations/{MODEL_SUBDIR}")
-OUT_JSON = Path("figures") / "bootstrap_qwen3_4b.json"
-OUT_MD = Path("figures") / "bootstrap_qwen3_4b.md"
+OUT_JSON = Path("figures") / "bootstrap_qwen3_8b.json"
+OUT_MD = Path("figures") / "bootstrap_qwen3_8b.md"
 
 
 def load_pool():

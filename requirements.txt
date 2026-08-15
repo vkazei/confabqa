@@ -7,3 +7,4 @@ jupyter>=1.1.0
 numpy>=2.1.0
 scikit-learn>=1.6.0
 sae-lens>=6.0.0
+datasets>=3.0.0          # PopQA/TriviaQA download (external/*_prepare.py only)

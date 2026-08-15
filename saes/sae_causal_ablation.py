@@ -35,15 +35,14 @@ import torch
 from sae_lens import SAE
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
-HF_LAYER = 28
-SAE_LAYER = 27
-SAE_RELEASE = "qwen-scope-3-1.7b-base-w32k-l50"
+from confabqa.constants import (SAE_RELEASE, SAE_LAYER,
+                                SAE_HF_LAYER as HF_LAYER)
 SAE_ID = f"layer{SAE_LAYER}"
 MODEL_ID = "Qwen/Qwen3-1.7B"
 RESPONSES_DIR = Path("data/responses/qwen3_1_7b")
 ACTIVATIONS_DIR = Path("data/activations/qwen3_1_7b")
 
-FEATURE_ID = 2191
+from confabqa.constants import SAE_FEATURE_ID as FEATURE_ID
 N_ITEMS = 30
 # Alphas matched to Section 6.7 effective magnitude.
 # Section 6.7 used alpha in +/-[2000] with recovered probe direction

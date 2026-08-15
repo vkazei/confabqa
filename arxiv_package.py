@@ -1,4 +1,4 @@
-"""Assemble the arXiv source package.
+r"""Assemble the arXiv source package.
 
 Run by `./reproduce.sh arxiv` after pandoc has written arxiv_pkg/paper_confabqa.tex:
 prepends the xelatex engine hint and copies every asset the .tex references

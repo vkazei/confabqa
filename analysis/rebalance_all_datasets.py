@@ -16,7 +16,6 @@ Writes figures/rebalance_all_datasets.md
 """
 from __future__ import annotations
 
-import importlib.util
 import json
 import random
 import statistics
@@ -33,15 +32,10 @@ from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
 
 # Import prompt_features / prompt_feature_matrix from 03_analyze.py
-_HERE = Path(__file__).parent
-_SPEC = importlib.util.spec_from_file_location("analyze", _HERE / "03_analyze.py")
-_AN = importlib.util.module_from_spec(_SPEC)
-sys.modules["analyze"] = _AN
-_SPEC.loader.exec_module(_AN)
-from analyze import prompt_features, prompt_feature_matrix  # noqa: E402
+from confabqa.analysis import prompt_features, prompt_feature_matrix
 
 SUBSAMPLE_SEEDS = [0, 1, 2, 3, 4]
-MAX_PER_CLASS = 400   # cap (avoids huge runs); use min(MAX, min_class)
+from confabqa.constants import MAX_PER_CLASS  # cap (avoids huge runs); use min(MAX, min_class)
 OUT_MD = Path("figures") / "rebalance_all_datasets.md"
 OUT_JSON = Path("figures") / "rebalance_all_datasets.json"
 

@@ -1,9 +1,9 @@
-"""Phase 2 steps 5-6: the null test + popularity split on TriviaQA, reusing
+"""Phase 2 steps 5-6: the null test + popularity split on PopQA, reusing
 03_analyze.py's probe pipeline and baseline definitions verbatim.
 
 Computes:
   (a) THE NULL TEST: hidden-state correctness probe peak accuracy vs the
-      strongest prompt-feature baseline on the full TriviaQA sample.
+      strongest prompt-feature baseline on the full PopQA sample.
       Question: does the +small-margin-within-noise pattern reproduce on
       external data?
   (b) THE POPULARITY QUESTION: split at the median o_pop into low-/high-
@@ -11,15 +11,15 @@ Computes:
       prompt baseline SEPARATELY in each half. Sharper question: does the
       hidden state add MORE in the low-popularity half, where the prompt
       is less informative?
-  (c) REFUSAL PROBE: only run if >= 30 refusals exist on TriviaQA. TriviaQA is
+  (c) REFUSAL PROBE: only run if >= 30 refusals exist on PopQA. PopQA is
       mostly answerable static facts so refusals are expected to be rare.
 
 This script does NOT modify the paper's pipeline files. It imports the
 existing baseline definitions (prompt_features, prompt_feature_matrix,
 tfidf_baseline_for_target, prompt_baseline_for_target, per_layer_probe)
-from 03_analyze.py by importlib.
+from 03_analyze.py (mirrored verbatim).
 
-Writes figures/{model_subdir}/triviaqa_generalization.md with:
+Writes figures/{model_subdir}/popqa_generalization.md with:
   - stratum / popularity-bin counts
   - judge spot-check pointer
   - the null-test result on external data
@@ -28,7 +28,6 @@ Writes figures/{model_subdir}/triviaqa_generalization.md with:
 """
 from __future__ import annotations
 
-import importlib.util
 import json
 import sys
 from pathlib import Path
@@ -48,31 +47,31 @@ _HERE = Path(__file__).parent
 
 def _paths_for_suffix(suffix: str):
     return {
-        "responses": Path(f"data/triviaqa_sample{suffix}/responses") / MODEL_SUBDIR,
-        "activations": Path(f"data/triviaqa_sample{suffix}/activations") / MODEL_SUBDIR,
-        "spotcheck": Path("figures") / MODEL_SUBDIR / f"triviaqa{suffix}_judge_spotcheck.md",
-        "out_md": Path("figures") / MODEL_SUBDIR / f"triviaqa{suffix}_generalization.md",
-        "out_json": Path("figures") / MODEL_SUBDIR / f"triviaqa{suffix}_generalization.json",
+        "responses": Path(f"data/popqa_sample{suffix}/responses") / MODEL_SUBDIR,
+        "activations": Path(f"data/popqa_sample{suffix}/activations") / MODEL_SUBDIR,
+        "spotcheck": Path("figures") / MODEL_SUBDIR / f"popqa{suffix}_judge_spotcheck.md",
+        "out_md": Path("figures") / MODEL_SUBDIR / f"popqa{suffix}_generalization.md",
+        "out_json": Path("figures") / MODEL_SUBDIR / f"popqa{suffix}_generalization.json",
     }
 
 
 # Module-level defaults (overwritten in main() once --suffix is parsed)
 _PATHS = _paths_for_suffix("")
-TRIVIAQA_RESPONSES_DIR = _PATHS["responses"]
-TRIVIAQA_ACTIVATIONS_DIR = _PATHS["activations"]
+POPQA_RESPONSES_DIR = _PATHS["responses"]
+POPQA_ACTIVATIONS_DIR = _PATHS["activations"]
 SPOTCHECK_PATH = _PATHS["spotcheck"]
 OUT_MD = _PATHS["out_md"]
 OUT_JSON = _PATHS["out_json"]
 
 
-def load_triviaqa_responses():
-    """Load TriviaQA responses + activations into the same dict shape that
+def load_popqa_responses():
+    """Load PopQA responses + activations into the same dict shape that
     03_analyze.py's load_all() returns, so existing functions Just Work."""
     out = []
-    for f in sorted(TRIVIAQA_RESPONSES_DIR.glob("*.json")):
+    for f in sorted(POPQA_RESPONSES_DIR.glob("*.json")):
         with open(f) as fp:
             r = json.load(fp)
-        act_path = TRIVIAQA_ACTIVATIONS_DIR / f"{r['question_id']}.pt"
+        act_path = POPQA_ACTIVATIONS_DIR / f"{r['question_id']}.pt"
         if not act_path.exists():
             continue
         act = torch.load(act_path, weights_only=False)
@@ -127,7 +126,7 @@ def per_layer_refusal_probe(responses):
 
 
 # ---------------------------------------------------------------------------
-# Prompt-feature baselines on TriviaQA -- import the exact definitions from
+# Prompt-feature baselines on PopQA -- import the exact definitions from
 # 03_analyze.py and run them on the y vector from `correct`.
 # ---------------------------------------------------------------------------
 import re as _re
@@ -251,66 +250,61 @@ def main():
     import argparse
     p = argparse.ArgumentParser()
     p.add_argument("--suffix", type=str, default="",
-                   help="Suffix on data/triviaqa_sample{suffix}/ paths")
+                   help="Suffix on data/popqa_sample{suffix}/ paths")
     args = p.parse_args()
-    global _PATHS, TRIVIAQA_RESPONSES_DIR, TRIVIAQA_ACTIVATIONS_DIR
+    global _PATHS, POPQA_RESPONSES_DIR, POPQA_ACTIVATIONS_DIR
     global SPOTCHECK_PATH, OUT_MD, OUT_JSON
     _PATHS = _paths_for_suffix(args.suffix)
-    TRIVIAQA_RESPONSES_DIR = _PATHS["responses"]
-    TRIVIAQA_ACTIVATIONS_DIR = _PATHS["activations"]
+    POPQA_RESPONSES_DIR = _PATHS["responses"]
+    POPQA_ACTIVATIONS_DIR = _PATHS["activations"]
     SPOTCHECK_PATH = _PATHS["spotcheck"]
     OUT_MD = _PATHS["out_md"]
     OUT_JSON = _PATHS["out_json"]
 
-    print(f"Loading TriviaQA responses from {TRIVIAQA_RESPONSES_DIR}...")
-    responses = load_triviaqa_responses()
+    print(f"Loading PopQA responses from {POPQA_RESPONSES_DIR}...")
+    responses = load_popqa_responses()
     print(f"  loaded {len(responses)} responses\n")
     if not responses:
-        print("ERROR: no responses found. Run triviaqa_evaluate.py first.")
+        print("ERROR: no responses found. Run popqa_evaluate.py first.")
         return
 
     # ---- Distribution check ----
     from collections import Counter
     judge_dist = Counter(r["judge_label"] for r in responses)
-    print(f"Judge label distribution: {dict(judge_dist)}")
-    # Answer-word-length distribution (TriviaQA has no popularity axis)
-    alen_dist = Counter(r.get("triviaqa_answer_word_len") for r in responses)
-    print(f"Answer word-length distribution: {dict(sorted(alen_dist.items()))}")
-    correct_by_alen = Counter()
-    n_by_alen = Counter()
+    bin_dist = Counter(r.get("popqa_o_pop_bin") for r in responses)
+    correct_by_bin = {b: 0 for b in range(5)}
+    n_by_bin = {b: 0 for b in range(5)}
     for r in responses:
-        a = r.get("triviaqa_answer_word_len")
-        n_by_alen[a] += 1
-        if r["correct"]:
-            correct_by_alen[a] += 1
-    print(f"Per-answer-length correctness:")
-    for a in sorted(n_by_alen):
-        if n_by_alen[a]:
-            print(f"  word_len={a}: {correct_by_alen[a]}/{n_by_alen[a]} = "
-                  f"{correct_by_alen[a]/n_by_alen[a]*100:.1f}%")
+        b = r.get("popqa_o_pop_bin")
+        if b is not None:
+            n_by_bin[b] += 1
+            if r["correct"]:
+                correct_by_bin[b] += 1
+    print(f"Judge label distribution: {dict(judge_dist)}")
+    print(f"Per-bin correctness:")
+    for b in range(5):
+        if n_by_bin[b]:
+            print(f"  bin {b}: {correct_by_bin[b]}/{n_by_bin[b]} = "
+                  f"{correct_by_bin[b]/n_by_bin[b]*100:.1f}%")
 
     # ---- Null test on full sample ----
-    print("\n=== NULL TEST (full TriviaQA sample) ===")
+    print("\n=== NULL TEST (full PopQA sample) ===")
     null_full = run_null_test("full", responses)
 
-    # ---- Answer-length split (TriviaQA's nearest analogue to PopQA's popularity axis) ----
-    # Shorter answers (1 word) tend to be common entities / well-known facts;
-    # longer multi-word answers tend to be more obscure. Not a perfect proxy
-    # for popularity but it's the only honest continuous-ish axis available
-    # in TriviaQA without joining external data. The median split below.
-    print("\n=== ANSWER-LENGTH SPLIT (TriviaQA has no popularity axis) ===")
-    alens = sorted(r["triviaqa_answer_word_len"] for r in responses)
-    median_alen = alens[len(alens) // 2]
-    print(f"  median answer word-length in sample = {median_alen}")
-    short_ans = [r for r in responses if r["triviaqa_answer_word_len"] <= median_alen]
-    long_ans = [r for r in responses if r["triviaqa_answer_word_len"] > median_alen]
-    null_low = run_null_test("short_answer", short_ans) if short_ans else {"label": "short_answer", "skipped": "empty"}
-    null_high = run_null_test("long_answer", long_ans) if long_ans else {"label": "long_answer", "skipped": "empty"}
+    # ---- Popularity split ----
+    print("\n=== POPULARITY SPLIT (median o_pop) ===")
+    o_pops_sorted = sorted(r["popqa_o_pop"] for r in responses)
+    median_o_pop = o_pops_sorted[len(o_pops_sorted) // 2]
+    print(f"  median o_pop in sample = {median_o_pop}")
+    low_pop = [r for r in responses if r["popqa_o_pop"] < median_o_pop]
+    high_pop = [r for r in responses if r["popqa_o_pop"] >= median_o_pop]
+    null_low = run_null_test("low_o_pop", low_pop)
+    null_high = run_null_test("high_o_pop", high_pop)
 
     # ---- Refusal probe (only if >=30 refusals) ----
     n_refusal = judge_dist.get("refusal", 0)
     print(f"\n=== REFUSAL PROBE ===")
-    print(f"  refusal count on TriviaQA: {n_refusal}")
+    print(f"  refusal count on PopQA: {n_refusal}")
     refusal_result = None
     if n_refusal >= 30:
         print("  >= 30 refusals -- running refusal-vs-wrong probe")
@@ -333,19 +327,19 @@ def main():
         print(f"  strongest baseline = {bl['strongest_name']} = {bl['strongest_value']:.4f}")
         print(f"  h adds vs strongest = {margin:+.2f} pp")
     else:
-        print(f"  < 30 refusals -- refusal probe declared UNDERPOWERED on TriviaQA; skipped.")
+        print(f"  < 30 refusals -- refusal probe declared UNDERPOWERED on PopQA; skipped.")
 
     # ---- Render markdown ----
     summary = {
         "n_total": len(responses),
         "judge_label_distribution": dict(judge_dist),
-        "answer_word_length_distribution": dict(sorted(alen_dist.items())),
-        "per_answer_length_correctness": {a: correct_by_alen[a] / n_by_alen[a]
-                                          for a in n_by_alen if n_by_alen[a]},
+        "per_bin_counts": dict(n_by_bin),
+        "per_bin_correctness": {b: correct_by_bin[b] / n_by_bin[b]
+                                for b in range(5) if n_by_bin[b]},
         "null_test_full": null_full,
-        "null_test_short_answer": null_low,
-        "null_test_long_answer": null_high,
-        "median_answer_word_len": median_alen,
+        "null_test_low_o_pop": null_low,
+        "null_test_high_o_pop": null_high,
+        "median_o_pop": median_o_pop,
         "refusal_probe": refusal_result,
     }
     OUT_JSON.parent.mkdir(parents=True, exist_ok=True)
@@ -355,34 +349,31 @@ def main():
 
     # Markdown
     md = []
-    md.append(f"# TriviaQA generalization check ({MODEL_SUBDIR})\n\n")
-    md.append("Phase 2 follow-up to the PopQA replication. Sample: 800 TriviaQA\n")
-    md.append("`unfiltered.nocontext` validation items, uniform random with\n")
-    md.append("`random.Random(0)`. TriviaQA was the primary closed-book QA dataset\n")
-    md.append("Kadavath et al.\\ (2022) leaned on for their P(IK) calibration probe,\n")
-    md.append("so this is the most directly comparable head-to-head replication of\n")
-    md.append("the null. Pipeline: identical to the v1 paper (greedy decoding,\n")
-    md.append("`enable_thinking=False`, last-prompt-token hidden-state pickoff at\n")
+    md.append(f"# PopQA generalization check ({MODEL_SUBDIR})\n\n")
+    md.append("Phase 2 deliverable. Sample: 800 PopQA test items, stratified into\n")
+    md.append("5 quintile bins by `o_pop` (object Wikipedia pageviews; 160 per bin).\n")
+    md.append("Pipeline: identical to the v1 paper (greedy decoding, "
+              "`enable_thinking=False`, last-prompt-token hidden-state pickoff at\n")
     md.append("every layer, `StandardScaler -> PCA(16) -> LogReg` probe with 5-fold\n")
     md.append("CV, same prompt-feature baselines).\n\n")
     md.append("## Sample composition\n\n")
     md.append(f"- n total: {len(responses)}\n")
     md.append(f"- judge labels: {dict(judge_dist)}\n")
-    md.append(f"- median answer word-length: {median_alen}\n")
-    md.append("- per-answer-length correctness (top 6 most-common lengths):\n\n")
-    md.append("| answer word-length | n | correct | accuracy |\n|--:|--:|--:|--:|\n")
-    top_lens = sorted(n_by_alen, key=lambda a: -n_by_alen[a])[:6]
-    for a in sorted(top_lens):
-        md.append(f"| {a} | {n_by_alen[a]} | {correct_by_alen[a]} | "
-                  f"{correct_by_alen[a]/n_by_alen[a]*100:.1f}% |\n")
+    md.append(f"- median `o_pop`: {median_o_pop}\n")
+    md.append("- per-bin correctness:\n\n")
+    md.append("| bin | n | correct | accuracy |\n|--:|--:|--:|--:|\n")
+    for b in range(5):
+        if n_by_bin[b]:
+            md.append(f"| {b} | {n_by_bin[b]} | {correct_by_bin[b]} | "
+                      f"{correct_by_bin[b]/n_by_bin[b]*100:.1f}% |\n")
     md.append("\n")
 
-    md.append(f"Judge spot-check: see `{SPOTCHECK_PATH.name}`. **Caveat:** the\n")
-    md.append("judge has been calibrated on the v1.0/v1.3 question set (Cohen\n")
-    md.append("$\\kappa = 0.892$ on v1.0, Claude $\\kappa = 1.0$ on v1.3), NOT on\n")
-    md.append("the TriviaQA distribution. TriviaQA's aliases cover many but not\n")
-    md.append("all surface forms; judge errors are unmeasured here and may shift\n")
-    md.append("the correctness count by a few pp.\n\n")
+    md.append(f"Judge spot-check: see `{SPOTCHECK_PATH.name}`. "
+              "**Caveat:** the judge has been calibrated on the v1.0/v1.3 question\n")
+    md.append("set (Cohen $\\kappa = 0.892$ / Claude $\\kappa = 1.0$), NOT on the\n")
+    md.append("PopQA distribution. Judge errors on PopQA -- especially around city-vs-\n")
+    md.append("country gold mismatches and alias coverage -- are unmeasured and may\n")
+    md.append("inflate or deflate the correctness count by a few pp.\n\n")
 
     md.append("## (a) The null test on external data\n\n")
     md.append("Hidden-state correctness probe vs. the strongest prompt-feature\n")
@@ -401,7 +392,7 @@ def main():
                   f"{'yes' if r['within_per_fold_std'] else 'NO'} |\n")
     md.append("\n")
 
-    md.append("**Full baseline table (TriviaQA full sample, correctness target):**\n\n")
+    md.append("**Full baseline table (PopQA full sample, correctness target):**\n\n")
     bl = null_full["baselines"]
     md.append("| metric | value |\n|---|--:|\n")
     md.append(f"| majority baseline | {bl['majority']*100:.2f}% |\n")
@@ -413,30 +404,26 @@ def main():
               f"(L{null_full['probe']['peak_layer']}, $\\pm$ {null_full['probe']['peak_std']*100:.2f} pp) |\n")
     md.append(f"| h adds vs strongest | **{null_full['h_adds_vs_strongest_pp']:+.2f} pp** |\n\n")
 
-    md.append("## (b) Answer-length split (TriviaQA's nearest analogue to PopQA's popularity axis)\n\n")
-    md.append("TriviaQA has no continuous popularity axis. The nearest available\n")
-    md.append("proxy is answer word-length: 1-word answers tend to be common\n")
-    md.append("entities (e.g. `Hitler`, `Beethoven`); multi-word answers tend to\n")
-    md.append("be more obscure (e.g. specific book titles, niche figures). Not as\n")
-    md.append("clean as Wikipedia pageviews, but it's the only continuous-ish\n")
-    md.append("axis the dataset provides without a Wikidata join.\n\n")
+    md.append("## (b) Popularity question\n\n")
+    md.append("Does the hidden state add MORE in the low-popularity half (where the\n")
+    md.append("prompt is less informative)?\n\n")
     if null_low.get("skipped") or null_high.get("skipped"):
         md.append("Skipped (insufficient items in one half).\n\n")
     else:
         delta = (null_low["h_adds_vs_strongest_pp"]
                   - null_high["h_adds_vs_strongest_pp"])
-        md.append(f"- short-answer half (word-length $\\le$ {median_alen}): "
+        md.append(f"- low-popularity half (`o_pop` < {median_o_pop}): "
                   f"h adds = {null_low['h_adds_vs_strongest_pp']:+.2f} pp\n")
-        md.append(f"- long-answer half (word-length $>$ {median_alen}): "
+        md.append(f"- high-popularity half (`o_pop` >= {median_o_pop}): "
                   f"h adds = {null_high['h_adds_vs_strongest_pp']:+.2f} pp\n")
-        md.append(f"- short minus long: {delta:+.2f} pp\n\n")
+        md.append(f"- low minus high: {delta:+.2f} pp\n\n")
 
     md.append("## (c) Refusal probe\n\n")
     if refusal_result is None:
-        md.append(f"Refusal count on TriviaQA = **{n_refusal}** (< 30).\n\n")
-        md.append("Per the protocol caveat: TriviaQA items are mostly answerable static\n")
+        md.append(f"Refusal count on PopQA = **{n_refusal}** (< 30).\n\n")
+        md.append("Per the protocol caveat: PopQA items are mostly answerable static\n")
         md.append("facts, so refusals are expected to be rare. The refusal-vs-wrong\n")
-        md.append("probe is declared **UNDERPOWERED on TriviaQA and skipped**, rather\n")
+        md.append("probe is declared **UNDERPOWERED on PopQA and skipped**, rather\n")
         md.append("than reporting a noisy number from a tiny positive class.\n\n")
     else:
         md.append(f"Refusal count = {n_refusal} ($\\ge 30$), probe run.\n\n")
@@ -450,25 +437,25 @@ def main():
         md.append(f"- h adds vs strongest = {refusal_result['h_adds_vs_strongest_pp']:+.2f} pp\n\n")
 
     md.append("## What transferred / what could not be tested here\n\n")
-    md.append("- **Cutoff disconfound: N/A.** TriviaQA is static trivia; the\n")
-    md.append("  within-pre/within-obscure disconfound tests from the main paper\n")
-    md.append("  cannot be re-run. The full TriviaQA sample is the closest\n")
-    md.append("  analogue to the v1 paper's all-items `correct` target.\n")
-    md.append("- **Surface-form concern: PARTIAL.** TriviaQA is human-written\n")
-    md.append("  trivia, so the question-construction phrasing is less templated\n")
-    md.append("  than PopQA's Wikidata-derived prompts, but the questions still\n")
-    md.append("  have systematic phrasing patterns (\"Who wrote X\", \"Who played\n")
-    md.append("  Y\", etc.) that a TF-IDF baseline can pick up. The point of\n")
-    md.append("  running on TriviaQA specifically is that it's the dataset\n")
-    md.append("  Kadavath et al.\\ (2022) leaned on for their P(IK) probe -- so\n")
-    md.append("  the head-to-head is on the original claim's home turf.\n")
+    md.append("- **Cutoff disconfound: N/A.** PopQA is built from static Wikidata\n")
+    md.append("  triples with no cutoff structure; the within-pre/within-obscure\n")
+    md.append("  disconfound tests from the main paper cannot be re-run on this\n")
+    md.append("  data. The full PopQA sample is the closest analogue to the v1\n")
+    md.append("  paper's all-items `correct` target.\n")
+    md.append("- **Surface-form concern: PARTIAL.** PopQA is itself templated\n")
+    md.append("  from Wikidata triples (e.g. \"What is X's occupation?\"), so it\n")
+    md.append("  does not fully escape the construction-artifact problem flagged\n")
+    md.append("  in Phase 1. Its value is (i) independent construction, (ii) a\n")
+    md.append("  continuous popularity variable (Wikipedia pageviews), and (iii)\n")
+    md.append("  a different distribution from the v1 question set -- not\n")
+    md.append("  template-freeness.\n")
     if refusal_result is None:
-        md.append("- **Refusal probe: NOT TESTED.** TriviaQA items are mostly\n")
+        md.append("- **Refusal probe: NOT TESTED.** PopQA items are mostly\n")
         md.append("  answerable, refusals are rare; the refusal-vs-wrong probe is\n")
         md.append("  underpowered on this data. The v1 paper's refusal positive\n")
         md.append("  result is neither corroborated nor challenged here.\n")
-    md.append("- **Judge calibration on TriviaQA: UNVALIDATED.** The same-model\n")
-    md.append("  judge has been calibrated on v1.0/v1.3 but not on TriviaQA. Spot-\n")
+    md.append("- **Judge calibration on PopQA: UNVALIDATED.** The same-model\n")
+    md.append("  judge has been calibrated on v1.0/v1.3 but not on PopQA. Spot-\n")
     md.append("  check pack provided for visual inspection only.\n")
 
     OUT_MD.write_text("".join(md))

@@ -34,7 +34,6 @@ Outputs:
 """
 from __future__ import annotations
 
-import importlib.util
 import json
 import sys
 from pathlib import Path
@@ -47,9 +46,8 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.preprocessing import StandardScaler
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
-HF_LAYER = 28      # last-prompt-token hidden state index in our paper
-SAE_LAYER = 27     # corresponding SAE id (sae layerN = after transformer block N+1 in 0-indexed)
-SAE_RELEASE = "qwen-scope-3-1.7b-base-w32k-l50"
+from confabqa.constants import (SAE_RELEASE, SAE_LAYER,
+                                SAE_HF_LAYER as HF_LAYER)
 SAE_ID = f"layer{SAE_LAYER}"
 MODEL_ID = "Qwen/Qwen3-1.7B"
 RESPONSES_DIR = Path("data/responses/qwen3_1_7b")

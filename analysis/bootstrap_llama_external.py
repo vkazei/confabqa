@@ -1,13 +1,20 @@
-"""Bootstrap h_adds CIs for Qwen3-4B on PopQA (scaling data point).
+"""Bootstrap 95% CIs on h_adds for Llama-3.2-3B-Instruct on PopQA + TriviaQA.
 
-Same K=30 protocol as bootstrap_llama_external.py. Single-seed pool
-(n=800 unique). Writes:
-  figures/bootstrap_qwen3_8b.json
-  figures/bootstrap_qwen3_8b.md
+Mirrors bootstrap_h_adds.py exactly (K=30 balanced subsamples, same probe
+pipeline and prompt baselines) but for the two new cells produced by the
+Llama generalization runs:
+  - popqa_llama_3_2_3b_full
+  - triviaqa_llama_3_2_3b_full
+
+Writes:
+  figures/bootstrap_llama_external.json
+  figures/bootstrap_llama_external.md
+
+Reusing the same K=30 and percentile-based 95% CI makes results directly
+comparable to bootstrap_h_adds.md.
 """
 from __future__ import annotations
 
-import importlib.util
 import json
 import random
 import statistics
@@ -23,35 +30,54 @@ from sklearn.model_selection import StratifiedKFold, cross_val_score
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
 
-_HERE = Path(__file__).parent
-_SPEC = importlib.util.spec_from_file_location("analyze", _HERE / "03_analyze.py")
-_AN = importlib.util.module_from_spec(_SPEC)
-sys.modules["analyze"] = _AN
-_SPEC.loader.exec_module(_AN)
-from analyze import prompt_feature_matrix  # noqa: E402
+from confabqa.analysis import prompt_features, prompt_feature_matrix
 
-K = 30
-MAX_PER_CLASS = 400
-MODEL_SUBDIR = "qwen3_8b"
-RESP_DIR = Path(f"data/popqa_sample/responses/{MODEL_SUBDIR}")
-ACT_DIR = Path(f"data/popqa_sample/activations/{MODEL_SUBDIR}")
-OUT_JSON = Path("figures") / "bootstrap_qwen3_8b.json"
-OUT_MD = Path("figures") / "bootstrap_qwen3_8b.md"
+from confabqa.constants import BOOTSTRAP_K as K, MAX_PER_CLASS
+MODEL_SUBDIR = "llama_3_2_3b"
+OUT_JSON = Path("figures") / "bootstrap_llama_external.json"
+OUT_MD = Path("figures") / "bootstrap_llama_external.md"
 
 
-def load_pool():
-    out = []
-    for f in sorted(RESP_DIR.glob("*.json")):
-        r = json.load(open(f))
-        if "judge_label" not in r:
+def load_popqa_pool():
+    seen = {}
+    for suffix in ["", "_seed1", "_seed2"]:
+        resp_dir = Path(f"data/popqa_sample{suffix}/responses/{MODEL_SUBDIR}")
+        act_dir = Path(f"data/popqa_sample{suffix}/activations/{MODEL_SUBDIR}")
+        if not resp_dir.exists():
             continue
-        act_path = ACT_DIR / f"{r['question_id']}.pt"
-        if not act_path.exists():
+        for f in sorted(resp_dir.glob("*.json")):
+            r = json.load(open(f))
+            qid = r.get("popqa_id")
+            if qid is None or qid in seen:
+                continue
+            act_path = act_dir / f"{r['question_id']}.pt"
+            if not act_path.exists():
+                continue
+            act = torch.load(act_path, weights_only=False)
+            r["last_prompt_hidden"] = act["last_prompt_hidden"].numpy()
+            seen[qid] = r
+    return list(seen.values())
+
+
+def load_triviaqa_pool():
+    seen = {}
+    for seed_dir in ["triviaqa_sample", "triviaqa_sample_seed1", "triviaqa_sample_seed2"]:
+        resp_dir = Path(f"data/{seed_dir}/responses/{MODEL_SUBDIR}")
+        act_dir = Path(f"data/{seed_dir}/activations/{MODEL_SUBDIR}")
+        if not resp_dir.exists():
             continue
-        act = torch.load(act_path, weights_only=False)
-        r["last_prompt_hidden"] = act["last_prompt_hidden"].numpy()
-        out.append(r)
-    return out
+        for f in sorted(resp_dir.glob("*.json")):
+            r = json.load(open(f))
+            qid = r.get("triviaqa_qid")
+            if qid is None or qid in seen:
+                continue
+            act_path = act_dir / f"{r['question_id']}.pt"
+            if not act_path.exists():
+                continue
+            act = torch.load(act_path, weights_only=False)
+            r["last_prompt_hidden"] = act["last_prompt_hidden"].numpy()
+            seen[qid] = r
+    return list(seen.values())
 
 
 def probe_peak(items, y):
@@ -97,6 +123,7 @@ def bootstrap_cell(items, label):
         return {"label": label, "skipped": f"min-class={n_per_class} < 20"}
     print(f"  [{label}] pool: {len(correct)} correct + {len(wrong)} wrong, "
           f"sampling {n_per_class}+{n_per_class}, K={K}")
+
     h_vals, probe_vals, base_vals = [], [], []
     for k in range(K):
         rng = random.Random(k)
@@ -111,9 +138,11 @@ def bootstrap_cell(items, label):
         h_vals.append(h)
         probe_vals.append(p_acc * 100)
         base_vals.append(b_acc * 100)
-        if (k + 1) % 10 == 0 or k == K - 1:
+        if (k + 1) % 5 == 0 or k == K - 1:
             print(f"    k={k+1}/{K}: h_adds running mean = {statistics.mean(h_vals):+.2f} pp")
+
     mean_h = statistics.mean(h_vals)
+    median_h = statistics.median(h_vals)
     std_h = statistics.stdev(h_vals) if len(h_vals) > 1 else 0
     h_sorted = sorted(h_vals)
     ci_low = h_sorted[int(0.025 * K)]
@@ -125,32 +154,49 @@ def bootstrap_cell(items, label):
     return {
         "label": label, "n_per_class": n_per_class, "K": K,
         "h_adds_pp": h_vals, "probe_pct": probe_vals, "baseline_pct": base_vals,
-        "mean": mean_h, "std": std_h,
+        "mean": mean_h, "median": median_h, "std": std_h,
         "ci_95_low": ci_low, "ci_95_high": ci_high,
         "ci_excludes_zero": ci_excludes_zero,
     }
 
 
 def main():
-    print(f"=== PopQA / {MODEL_SUBDIR} ===")
-    pool = load_pool()
-    print(f"  loaded {len(pool)} items")
-    cell = bootstrap_cell(pool, f"popqa_{MODEL_SUBDIR}_full")
-    results = {f"popqa_{MODEL_SUBDIR}_full": cell}
+    results = {}
+
+    print(f"\n=== PopQA / {MODEL_SUBDIR} ===")
+    pool = load_popqa_pool()
+    print(f"  loaded {len(pool)} unique PopQA items")
+    if pool:
+        results[f"popqa_{MODEL_SUBDIR}_full"] = bootstrap_cell(pool, f"popqa_{MODEL_SUBDIR}_full")
+    else:
+        print("  no items found — skipping")
+
+    print(f"\n=== TriviaQA / {MODEL_SUBDIR} ===")
+    pool = load_triviaqa_pool()
+    print(f"  loaded {len(pool)} unique TriviaQA items")
+    if pool:
+        results[f"triviaqa_{MODEL_SUBDIR}_full"] = bootstrap_cell(pool, f"triviaqa_{MODEL_SUBDIR}_full")
+    else:
+        print("  no items found — skipping")
+
     OUT_JSON.parent.mkdir(parents=True, exist_ok=True)
     with open(OUT_JSON, "w") as fp:
         json.dump(results, fp, indent=2)
     print(f"\nWrote {OUT_JSON}")
-    md = [f"# Bootstrap h_adds — Qwen3-4B on PopQA\n\n",
-          f"K={K} balanced 50/50 subsamples; same protocol as bootstrap_h_adds.md.\n\n",
-          "| cell | n/class | mean h_adds | 95% CI | excl 0? |\n",
-          "|---|--:|--:|---|:--:|\n"]
+
+    md = []
+    md.append(f"# Bootstrap 95% CIs on h_adds — Llama-3.2-3B on external datasets\n\n")
+    md.append(f"Method: K={K} balanced 50/50 subsamples per cell. Same pipeline as "
+              "`bootstrap_h_adds.md`. 95% CI = percentile-based.\n\n")
+    md.append("| cell | n/class | mean h_adds | median | std | 95% CI | excludes 0? |\n")
+    md.append("|---|--:|--:|--:|--:|---|:--:|\n")
     for k, r in results.items():
         if "skipped" in r:
-            md.append(f"| `{k}` | — | (skipped) | | |\n")
+            md.append(f"| `{k}` | — | (skipped: {r['skipped']}) | | | | |\n")
             continue
         flag = "**yes**" if r["ci_excludes_zero"] else "no"
-        md.append(f"| `{k}` | {r['n_per_class']} | **{r['mean']:+.2f}** | "
+        md.append(f"| `{k}` | {r['n_per_class']} | "
+                  f"**{r['mean']:+.2f} pp** | {r['median']:+.2f} | {r['std']:.2f} | "
                   f"[{r['ci_95_low']:+.2f}, {r['ci_95_high']:+.2f}] | {flag} |\n")
     OUT_MD.write_text("".join(md))
     print(f"Wrote {OUT_MD}")

@@ -25,7 +25,7 @@ from sklearn.decomposition import PCA
 from sklearn.preprocessing import StandardScaler
 
 from config import FIGURES_DIR, set_seeds
-from make_atlas_figure import ATLAS_LAYER, fit_two_hyperplanes, load_all
+from plots.make_atlas_figure import ATLAS_LAYER, fit_two_hyperplanes, load_all
 
 LABEL_COLOR = {"correct": "#2ca02c", "refusal": "#1f77b4", "wrong": "#d62728"}
 LABEL_ORDER = ["wrong", "correct", "refusal"]
