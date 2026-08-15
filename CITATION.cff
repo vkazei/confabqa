@@ -24,7 +24,7 @@ license: MIT
 license-url: "https://github.com/vkazei/confabqa/blob/main/LICENSE"
 repository-code: "https://github.com/vkazei/confabqa"
 url: "https://github.com/vkazei/confabqa"
-date-released: 2026-07-11
+date-released: 2026-08-15
 keywords:
   - language-models
   - mechanistic-interpretability

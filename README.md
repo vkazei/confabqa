@@ -149,7 +149,8 @@ python figure_merge_arch_pipeline.py
 python figure_merge_per_layer_probes.py
 python figure_sae_features.py
 
-# Build PDF (requires TeX Live / xelatex)
+# Build the reference PDF (macOS fonts: Times New Roman / Heiti SC).
+# For an arXiv-compatible build on TeX-Live-only fonts, run: ./reproduce.sh arxiv
 pandoc paper_confabqa.md \
   -o paper_confabqa.pdf \
   --pdf-engine=xelatex \

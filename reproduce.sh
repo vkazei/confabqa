@@ -4,6 +4,8 @@
 #   ./reproduce.sh figures   Regenerate the numeric paper figures from the
 #                            committed result artifacts (JSON). Minutes, CPU-only,
 #                            no model downloads.
+#   ./reproduce.sh arxiv     Build + test-compile the arXiv source package
+#                            (TeX-Live-shipped fonts; produces arxiv_upload.tar.gz).
 #   ./reproduce.sh full      The complete pipeline: generation -> judging ->
 #                            probing -> bootstraps -> SAE -> figures.
 #                            ~3 days wall-clock on an M1 Pro 16 GB; needs the
@@ -25,8 +27,26 @@ if [[ "$MODE" == "figures" ]]; then
   exit 0
 fi
 
+if [[ "$MODE" == "arxiv" ]]; then
+  echo "== Building the arXiv source package (TeX-Live fonts only, no macOS fonts) =="
+  rm -rf arxiv_pkg && mkdir -p arxiv_pkg
+  pandoc -s paper_confabqa.md -o arxiv_pkg/paper_confabqa.tex \
+    --pdf-engine=xelatex \
+    -V documentclass=article -V fontsize=10pt -V papersize=letter \
+    -V geometry:textwidth=5.5in -V geometry:textheight=9in -V geometry:centering \
+    --include-in-header=neurips_header_arxiv.tex
+  "$PY" arxiv_package.py
+  (cd arxiv_pkg \
+    && xelatex -interaction=nonstopmode paper_confabqa.tex >/dev/null \
+    && xelatex -interaction=nonstopmode paper_confabqa.tex >/dev/null \
+    && rm -f paper_confabqa.aux paper_confabqa.log paper_confabqa.out \
+    && tar czf ../arxiv_upload.tar.gz paper_confabqa.tex figures/)
+  echo "== arxiv_upload.tar.gz ready; test-compiled PDF at arxiv_pkg/paper_confabqa.pdf =="
+  exit 0
+fi
+
 if [[ "$MODE" != "full" ]]; then
-  echo "usage: ./reproduce.sh [figures|full]" >&2; exit 1
+  echo "usage: ./reproduce.sh [figures|arxiv|full]" >&2; exit 1
 fi
 
 echo "== FULL PIPELINE (this takes days; see README hardware notes) =="
