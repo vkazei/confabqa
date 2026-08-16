@@ -981,7 +981,13 @@ direction in *standardized* coordinates; dividing componentwise by
 $\boldsymbol{\sigma} \in \mathbb{R}^{2048}$, the per-coordinate standard deviations the
 pipeline's StandardScaler learned on the training items, converts it to raw
 hidden-state units, $(\mathbf{w}_{\mathrm{raw}})_i = (V^\top w)_i / \sigma_i$, with the
-sign chosen so the refusal end is positive. Following the logit-lens convention I then
+sign chosen so the refusal end is positive. The $1/\sigma_i$ is the scaler
+differentiated through: as a function of the raw state the probe score is
+$f(h) = \sum_i (V^\top w)_i \,(h_i - \mu_i)/\sigma_i + b$, so
+$\mathbf{w}_{\mathrm{raw}}$ is its gradient, the residual-stream direction along which
+the probe score increases fastest. Raw units matter because both consumers of the
+direction, the model's own RMSNorm/LM head here and the intervention hook of
+Section 6.2, operate on residual-stream coordinates and know nothing about the scaler. Following the logit-lens convention I then
 push $\mathbf{w}_{\mathrm{raw}}$ through the model's final RMSNorm and tied LM head:
 
 $$\ell_v \;=\; \big[\mathrm{LMHead}\!\left(\mathrm{RMSNorm}(\mathbf{w}_{\mathrm{raw}})\right)\big]_v
