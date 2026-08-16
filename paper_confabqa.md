@@ -1016,7 +1016,10 @@ separate semantic feature. None of this is surprising given the behavior: the mo
 refusals near-universally open with "As of my knowledge cutoff in 2023..." or "As of
 January 2025...", so a direction that separates refusals from attempts *should* point
 at the opener vocabulary. What the projection establishes is that the probe is reading
-exactly that output-token commitment, and not something more abstract.
+exactly that output-token commitment, and not something more abstract. An opener is a
+propensity, not a guarantee ("as" can begin an answer as easily as a hedge), which is
+why the causal test that follows scores the strict judge label alongside the
+first-token rate.
 
 **Bottom tokens (wrong / confabulation pole).** The other end of the direction is dominated by
 generic low-frequency tokens (`>Title`, `icum`, `CodeGen`, multi-newline runs, rare Cyrillic
@@ -1081,7 +1084,11 @@ re-judged by the three-way `judge.py`. Two outcome measures: (i) the strict
 final-judge-label refusal rate; (ii) a "first-token refusal-opener" rate, defined as the
 fraction of generations whose first generated token matches one of \{ ` as`, `as`, `As`,
 `作为`, `作為`, `作为一个`, ` There`, ` there` \}, the natural opener vocabulary surfaced by
-the probe-direction analysis (Section 6.1).
+the probe-direction analysis (Section 6.1). The opener rate is deliberately a
+first-token *proxy*, not a refusal measure: an "As..." opening does not commit the
+model to refusing (it can continue "As of 2024, the film was directed by..." and
+assert an answer), which is why the strict judge-label rate is reported alongside it
+and why the two measures diverge.
 
 **Results (`figures/13_intervention_results.json`, n=30 each subset).**
 
