@@ -798,8 +798,8 @@ across the entire 28-layer network are within one fold-standard-deviation of the
 specific "peak layer 7" is not a meaningful per-depth claim; only the overall mean accuracy
 is.
 
-These margins are the ones a previous version of this paper led with. Section 5.6
-explains why every margin in the table is overstated for the correctness probes.
+Taken at face value, these are the margins a single-model probing study would lead
+with. Section 5.6 explains why every correctness margin in the table is overstated.
 
 ### 5.5.1 Refusal-vs-wrong probe under class imbalance
 
@@ -1793,8 +1793,8 @@ At the single-seed level the disconfounded within-stratum margins are small on a
 three models ($+1.7$--$+5.8$ pp against the strongest prompt baseline). The Section 7.1
 bootstrap leaves the Qwen and Gemma cells consistent with zero but flips Llama's
 ConfabQA within-pre / within-obscure cells into positive territory with CIs
-excluding $0$: the negative correctness finding survives for Qwen and Gemma and is
-retracted for Llama. On the external PopQA and TriviaQA benchmarks the same bootstrap
+excluding $0$: the null correctness reading holds for Qwen and Gemma but not for
+Llama. On the external PopQA and TriviaQA benchmarks the same bootstrap
 gives Llama a large correctness margin over the prompt baseline where Qwen recovers only
 a small but reliably positive one. The Section 7.2 refusal-channel attribution then
 partitions Llama's external-dataset margin: most of it is genuine correct-vs-wrong
@@ -1803,19 +1803,18 @@ and Llama also carries an independent clean abstention direction. Llama 3.2 3B's
 state at $3$B carries two linearly-decodable signals; Qwen3-1.7B's carries only weak
 versions of either.
 
-**What does not survive from the earlier draft.** The framing "the hidden-state correctness
-probe does not add detectable signal beyond what a prompt-text classifier already recovers,
-at $1.7$B--$3$B scale" was an over-generalization from one model and one fixed question set.
-On balanced 50/50 subsamples of external benchmarks, Llama 3.2 3B's correctness probe adds
-$+17$--$+25$ pp over the strongest prompt baseline, with 95\% CIs that exclude $0$ by
-margins of $14$--$17$ pp, well outside the "within per-fold noise" zone the earlier draft
-placed all small-LM correctness probes in. The earlier draft's framing that the refusal
-direction was the *only* recoverable structure ("the whole atlas") is similarly
-retracted: at $3$B
-Llama scale, both refusal and correctness directions exist in legible form.
+**A tempting over-generalization, rejected.** The Qwen3-1.7B results alone would
+support the framing "the hidden-state correctness probe does not add detectable signal
+beyond what a prompt-text classifier already recovers, at $1.7$B--$3$B scale." That
+framing over-generalizes from one model and one fixed question set. On balanced 50/50
+subsamples of external benchmarks, Llama 3.2 3B's correctness probe adds $+17$--$+25$ pp
+over the strongest prompt baseline, with 95\% CIs that exclude $0$ by margins of
+$14$--$17$ pp, far outside per-fold noise. The stronger reading that the refusal
+direction is the *only* recoverable structure ("the whole atlas") fails the same way:
+at $3$B Llama scale, both refusal and correctness directions exist in legible form.
 
-**What survives, refined.** The refusal-vs-confabulation probe is still a genuine positive
-result. On the ConfabQA wrong+refusal subset the probe at layer $28$ reaches
+**The robust positive result.** The refusal-vs-confabulation probe is a genuine positive
+result on all three models. On the ConfabQA wrong+refusal subset the probe at layer $28$ reaches
 $\mathrm{AUC} = 0.944$ with balanced accuracy $0.874$, and the margin over the strongest
 prompt baseline widens further on the within-post-cutoff subset where the refusals
 actually live (Section 5.6). The probe is concentrated at the deepest layers of the
