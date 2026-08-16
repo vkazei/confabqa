@@ -53,12 +53,11 @@ abstract: |
 # 1. Introduction
 
 A language model **confabulates** when it produces a fluent, confident answer that is
-factually wrong (the term follows Farquhar et al.\ 2024). Kadavath et al.\ (2022) argued that LLMs “mostly know what they know”: signals internal to the model can predict whether a given answer will be correct. A probing literature has
+factually wrong (the term follows Farquhar et al. 2024). Kadavath et al. (2022) argued that LLMs “mostly know what they know”: signals internal to the model can predict whether a given answer will be correct. A probing literature has
 followed (Azaria and Mitchell 2023; Marks and Tegmark 2024), fitting linear classifiers
 on model hidden states and reporting correctness-prediction accuracies in the
 $80$--$90\%$ range. Behavioral detectors, such as sampling
-consistency (Manakul et al.\ 2023) or semantic entropy (Farquhar et al.\
-2024), work on the outputs instead and are the black-box complement to the white-box probes studied here. Two concurrent
+consistency (Manakul et al. 2023) or semantic entropy (Farquhar et al. 2024), work on the outputs instead and are the black-box complement to the white-box probes studied here. Two concurrent
 2026 studies push back: Singh et al.\ show that above-chance “introspection” probe accuracy
 on small LMs is explained by features of the prompt itself rather than privileged
 self-access; Sahoo et al.\ find the same pattern for reasoning-mode probes. The question
@@ -70,8 +69,8 @@ a probing benchmark structured as 4 domains $\times$ 3 categories (well-known pr
 the model's training data but on which the model is expected to fail) populates the cell
 that standard pre-vs-post-cutoff designs leave empty, breaking the cutoff/correctness
 confound that lets a probe predicting "correct" double as a probe predicting "pre-cutoff
-date." ConfabQA, plus 800-item samples of PopQA (Mallen et al.\ 2023) and TriviaQA (Joshi
-et al.\ 2017), are run through three instruction-tuned models in the $1.7$--$3$B range
+date." ConfabQA, plus 800-item samples of PopQA (Mallen et al. 2023) and TriviaQA (Joshi
+et al. 2017), are run through three instruction-tuned models in the $1.7$--$3$B range
 (Qwen3-1.7B, Gemma 2 2B, Llama 3.2 3B), with Qwen3-4B as a within-family scaling
 control. Every probe is reported against both the
 standard majority baseline and a stricter logistic-regression-on-question-text baseline: a control rarely applied in the probing literature, but the one that decides whether the
@@ -80,7 +79,7 @@ hidden state contributed anything.
 **Linear probing as a tool.** The diagnostic-classifier framework was introduced by Alain
 and Bengio (2017): fit a linear classifier on the hidden representation at each layer of a
 trained network to test whether a property is linearly decodable. Subsequent
-interpretability work (Belrose et al.\ 2023 on tuned lenses, Burns et al.\ 2023 on
+interpretability work (Belrose et al. 2023 on tuned lenses, Burns et al. 2023 on
 contrast-consistent probes) has applied probing to large LMs specifically. The present
 work uses the same machinery but with a prompt-feature control baseline. This is a
 *selectivity control* in the lineage of Hewitt and Liang (2019), who showed that probe
@@ -477,10 +476,10 @@ end-to-end using the same `02_evaluate.py` generation pipeline (greedy decoding,
 `enable_thinking=False`, last-prompt-token hidden-state capture at every layer) and the same
 `judge.py` three-way Qwen3-1.7B judge:
 
-- **PopQA** (Mallen et al.\ 2023): $14$k Wikidata triples templated into natural-language
+- **PopQA** (Mallen et al. 2023): $14$k Wikidata triples templated into natural-language
   questions. Sampled $n=800$ stratified by `o_pop` (object popularity, $5$ quintile bins of
   $160$ items each), reshuffled at `seed` $\in \{0, 1, 2\}$.
-- **TriviaQA** (Joshi et al.\ 2017): `mandarjoshi/trivia_qa unfiltered.nocontext` validation
+- **TriviaQA** (Joshi et al. 2017): `mandarjoshi/trivia_qa unfiltered.nocontext` validation
   split. Sampled $n=800$ uniformly, reshuffled at `seed` $\in \{0, 1, 2\}$.
 
 Running three seeds per `(subject model, dataset)` widens the unique-item pool to
@@ -951,7 +950,7 @@ the direction* inside the residual stream. A sparse-autoencoder decomposition
 addresses the second question.
 
 **Setup.** I use the publicly released Qwen-Scope residual-stream SAE for
-Qwen3-1.7B-Base, the Qwen analogue of Gemma Scope (Lieberum et al.\ 2024) (`qwen-scope-3-1.7b-base-w32k-l50`: $32$k features, $L_0=50$
+Qwen3-1.7B-Base, the Qwen analogue of Gemma Scope (Lieberum et al. 2024) (`qwen-scope-3-1.7b-base-w32k-l50`: $32$k features, $L_0=50$
 sparsity; Qwen Team, 2025b). Qwen-Scope was trained on the *base* model; the subject here is the
 *Instruct* variant. A reconstruction-quality sanity check on $200$ ConfabQA
 last-prompt-token activations at the refusal-probe peak layer (HF index $28$,
@@ -1660,7 +1659,7 @@ Three directions for v2: (i) isolate post-training recipe from model family by s
 the recipe while holding family fixed (e.g.\ a Qwen3-1.7B with Llama-style abstention
 training, or vice versa), and check whether the cross-family $h_{adds}$ gap survives at
 $\gtrsim 7$B; (ii) extend the Section 5.8 one-shot intervention to a per-token steering
-vector (Turner et al.\ 2023) and characterize the $\alpha$ at which sustained pressure flips
+vector (Turner et al. 2023) and characterize the $\alpha$ at which sustained pressure flips
 the full output before fluency degrades; (iii) add an item-level non-parametric bootstrap
 and an independent human annotator on Llama outputs to close the bootstrap and
 judge-generalization gaps.
@@ -1682,7 +1681,7 @@ file.
    probes*. ICLR Workshop. arXiv:1610.01644.
 
 2. Kadavath, S., Conerly, T., Askell, A., Henighan, T., Drain, D., Perez, E., Schiefer, N.,
-   Hatfield-Dodds, Z., DasSarma, N., Tran-Johnson, E., et al.\ (2022). *Language Models (Mostly)
+   Hatfield-Dodds, Z., DasSarma, N., Tran-Johnson, E., et al. (2022). *Language Models (Mostly)
    Know What They Know*. arXiv:2207.05221.
 
 3. Belrose, N., Furman, Z., Smith, L., Halawi, D., Ostrovsky, I., McKinney, L., Biderman, S., and
