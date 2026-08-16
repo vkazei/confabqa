@@ -432,8 +432,19 @@ Claude vs.~Qwen-judge (stratified 30-item sample) & \(30\) & \(30 / 30\)
 \end{tabular}
 \end{table}
 
-Cohen's $\kappa = 0.78$ (DR vs.\ Qwen-judge on all $784$ items) is in the
-"substantial agreement" range (Landis and Koch, 1977). DR is systematically
+Cohen's $\kappa$ corrects the raw agreement rate for the agreement two annotators
+would reach by chance:
+
+\begin{equation}
+\kappa \;=\; \frac{p_o - p_e}{1 - p_e},
+\label{eq:kappa}
+\end{equation}
+
+where $p_o$ is the observed agreement rate and $p_e$ is the rate expected if the two
+annotators labeled independently with their observed marginal label distributions. For
+DR vs.\ the Qwen-judge on all $784$ items, $p_o = 682/784 = 0.870$ and $p_e = 0.409$,
+giving $\kappa = 0.78$, in the "substantial agreement" range (Landis and Koch, 1977).
+DR is systematically
 stricter than the Qwen-judge ($467$ vs.\ $402$ wrong-labels across the benchmark);
 Appendix C.1 decomposes the $102$ disagreements. The stricter Claude vs.\ Qwen-judge $30/30$ agreement on the smaller sample puts the Qwen-judge's disagreement
 with a second independent LLM grader at $0/30$ on typical items ($\le 10\%$ at $95\%$
