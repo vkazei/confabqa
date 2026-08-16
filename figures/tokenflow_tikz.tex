@@ -1,0 +1,48 @@
+% Token flow: conventional autoregressive generation vs. the prefill pass.
+\begin{tikzpicture}[
+  font=\footnotesize,
+  >={Stealth[length=2mm]},
+  node distance=4mm and 5mm,
+  databox/.style = {draw=orange!75!black, fill=orange!8, rounded corners=2pt,
+                    inner sep=4pt, align=center},
+  opbox/.style   = {draw=blue!60!black,   fill=blue!6,   rounded corners=2pt,
+                    inner sep=4pt, align=center},
+  outbox/.style  = {draw=green!50!black,  fill=green!8,  rounded corners=2pt,
+                    inner sep=4pt, align=center},
+  arr/.style     = {->, semithick, gray!50!black},
+  lbl/.style     = {font=\scriptsize\itshape, text=gray!40!black, align=center},
+  panel/.style   = {font=\scriptsize\bfseries, anchor=south west},
+]
+
+% ---- (a) conventional autoregressive generation ----
+\node [databox, text width=2.6cm] (aprompt) at (0,0)
+      {prompt tokens\\$x_1 \ldots x_T$};
+\node [opbox, right=6mm of aprompt, text width=2.3cm] (alm)
+      {LM forward\\pass};
+\node [outbox, right=6mm of alm, text width=2.9cm] (adist)
+      {$p_t(\cdot)$ over $\mathcal{V}$\\$\to$ next token};
+\node [databox, right=6mm of adist, text width=2.5cm] (aout)
+      {answer tokens\\$x_{T+1} \ldots x_{T+T_g}$};
+\draw [arr] (aprompt) -- (alm);
+\draw [arr] (alm) -- (adist);
+\draw [arr] (adist) -- (aout);
+\draw [arr, dashed] (aout.south) .. controls +(-0.2,-0.9) and +(0.2,-0.9) .. (alm.south);
+\node [lbl, below=10mm] at ($(alm.south)!0.5!(aout.south)$)
+      {each emitted token is appended to the input:\\one forward pass per generated token};
+\node [panel] at ($(aprompt.north west)+(0,1mm)$) {(a) conventional generation};
+
+% ---- (b) prefill pass ----
+\node [databox, text width=2.6cm, below=27mm of aprompt] (bprompt)
+      {prompt tokens\\$x_1 \ldots x_T$};
+\node [opbox, right=6mm of bprompt, text width=2.3cm] (blm)
+      {LM forward\\pass (prefill)};
+\node [outbox, right=6mm of blm, text width=5.2cm] (bh)
+      {last-prompt-token hidden states $h^{(\ell)}_T$\\
+       $\ell = 0 \ldots L$: one $(L{+}1) \times d$ tensor};
+\draw [arr] (bprompt) -- (blm);
+\draw [arr] (blm) -- (bh);
+\node [lbl, below=2.5mm] at ($(blm.south)!0.5!(bh.south)$)
+      {single forward pass over the prompt; nothing generated yet};
+\node [panel] at ($(bprompt.north west)+(0,1mm)$) {(b) prefill pass};
+
+\end{tikzpicture}
