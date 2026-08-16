@@ -434,10 +434,8 @@ Claude vs.~Qwen-judge (stratified 30-item sample) & \(30\) & \(30 / 30\)
 
 Cohen's $\kappa = 0.78$ (DR vs.\ Qwen-judge on all $784$ items) is in the
 "substantial agreement" range (Landis and Koch, 1977). DR is systematically
-stricter than the Qwen-judge ($467$ vs.\ $402$ wrong-labels across the benchmark), and the $102$ disagreements decompose as $45$ items DR calls wrong where Qwen-judge calls
-correct (Qwen too lenient on partial-match containment), $38$ DR-wrong / Qwen-refusal
-(DR sees fabrication where Qwen sees hedging), $11$ DR-refusal / Qwen-wrong, $7$
-DR-correct / Qwen-wrong, and $1$ DR-refusal / Qwen-correct. The stricter Claude vs.\ Qwen-judge $30/30$ agreement on the smaller sample puts the Qwen-judge's disagreement
+stricter than the Qwen-judge ($467$ vs.\ $402$ wrong-labels across the benchmark);
+Appendix C.1 decomposes the $102$ disagreements. The stricter Claude vs.\ Qwen-judge $30/30$ agreement on the smaller sample puts the Qwen-judge's disagreement
 with a second independent LLM grader at $0/30$ on typical items ($\le 10\%$ at $95\%$
 confidence by the rule of three); the residual
 disagreement with the web-grounded DR grader ($13\%$) primarily reflects
@@ -579,13 +577,8 @@ and 7 then test what survives a change of model and a change of dataset.
 ## 5.1 Accuracy by stratum
 
 **Overall.** Of 784 items, 235 (30.0%) are graded `correct` by the judge; 147 (18.8%) are
-`refusal`; 402 (51.3%) are `wrong`.
-
-**By cutoff class and category.** The cutoff manipulation works as designed:
-pre-cutoff accuracy is 47.3% (140/296) against 19.5% (95/488) post-cutoff, and the
-$4 \times 3$ design produces the expected ordering, with the obscure-pre-cutoff cell
-sitting cleanly between the well-known and post-cutoff cells
-(Table \ref{tbl:bycategory}).
+`refusal`; 402 (51.3%) are `wrong`; Table \ref{tbl:bycategory} gives the full
+per-category breakdown.
 
 \begin{table}[!htbp]
 \small
@@ -598,9 +591,16 @@ category & n & correct & refusal & wrong & accuracy & mean logprob \\\midrule
 well-known (pre-cutoff) & 143 & 89 & 0 & 54 & 62.2\% & \(-0.120\) \\
 obscure (pre-cutoff) & 153 & 51 & 0 & 102 & 33.3\% & \(-0.149\) \\
 post-cutoff & 488 & 95 & 147 & 246 & 19.5\% & \(-0.145\) \\
+\midrule
+\textbf{total} & 784 & 235 & 147 & 402 & 30.0\% & \(-0.141\) \\
 \bottomrule
 \end{tabular}
 \end{table}
+
+**By cutoff class and category.** The cutoff manipulation works as designed:
+pre-cutoff accuracy is 47.3% (140/296) against 19.5% (95/488) post-cutoff, and the
+$4 \times 3$ design produces the expected ordering, with the obscure-pre-cutoff cell
+sitting cleanly between the well-known and post-cutoff cells.
 
 The obscure-pre-cutoff cell is the benchmark's innovation. The model fails on $\approx 66.7\%$ of items
 whose answers existed in its training data: exactly the population needed to test the cutoff
@@ -709,14 +709,8 @@ string; and because refusals are as confident as confabulations, text-level conf
 cannot separate the two afterward either. Separating them is what the three-way judge of
 Section 4 is for.
 
-**A case study for the validation pipeline.** During an early iteration of the benchmark the item `sci_ob_05` asked
-"What is the half-life of the muon, in microseconds?" The gold, written by the dataset author
-from memory, was $2.197$, which is in fact the muon *mean lifetime* $\tau_\mu$, not the
-half-life $t_{1/2} = \tau_\mu \ln 2 \approx 1.52\ \mu\text{s}$. The external validation pass
-flagged this $30.7\%$ systematic error; the source question was subsequently rewritten to
-ask explicitly for the mean lifetime, eliminating the ambiguity. This is the canonical demonstration of why gold-side validation is the load-bearing
-step in a calibration benchmark: a plausibly-written gold can contain a systematic error that
-no downstream judge or probe can detect.
+A gold-side validation case study (a muon half-life gold error caught and corrected
+by the external validation pass) is in Appendix C.
 
 ## 5.4 Hidden-state geometry at two layers
 
@@ -1085,50 +1079,10 @@ The first-token measure changes monotonically and saturates near $\alpha = \pm 1
 full-judge measure changes more slowly because of autoregressive continuation
 dynamics.](figures/qwen3_1_7b/13_intervention_first_token_flip.png){#fig:intervention}
 
-**Sample generations** (`cin_pc_60`, gold "Jacques Audiard"; baseline says "Luis Llosa", a
-confabulation):
-
-\begin{center}
-\small
-\begin{tabular}{@{}
-  >{\raggedleft\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}@{}}
-\toprule
-\begin{minipage}[b]{\linewidth}\raggedleft
-\(\alpha\)
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-first 100 chars
-\end{minipage} \\\midrule
-\(0\) &
-\texttt{\textquotesingle{}Emilia\ Perez\textquotesingle{}\ (2024),\ a\ Spanish-language\ musical\ crime\ film,\ was\ directed\ by\ **Luis\ Llosa**.} \\
-\(+1500\) &
-\texttt{As\ of\ 2024,\ the\ Spanish-language\ musical\ crime\ film\ **"Emilia\ Perez"**\ was\ directed\ by\ **Miguel\ Ángel\ Martínez**.} \\
-\(+3000\) & (same as \(+1500\)) \\
-\bottomrule
-\end{tabular}
-\end{center}
-
-And `cin_pc_34` (baseline refuses on the 2024 Venice Golden Lion):
-
-\begin{center}
-\small
-\begin{tabular}{@{}
-  >{\raggedleft\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}@{}}
-\toprule
-\begin{minipage}[b]{\linewidth}\raggedleft
-\(\alpha\)
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-first 100 chars
-\end{minipage} \\\midrule
-\(0\) &
-\texttt{As\ of\ my\ knowledge\ cutoff\ in\ 2024,\ there\ is\ no\ official\ announcement\ regarding\ a\ director\ winning\ the\ Golden\ Lion...} \\
-\(-500\) &
-\texttt{The\ 2024\ Venice\ Film\ Festival\ took\ place\ from\ September\ 2\ to\ 14,\ 2024.\ The\ Golden\ Lion,\ the\ highest\ award...} \\
-\(-2000\) & (same as \(-500\)) \\
-\bottomrule
-\end{tabular}
-\end{center}
+**Sample generations.** At $\alpha = +1500$, `cin_pc_60` (gold "Jacques Audiard";
+baseline confabulates "Luis Llosa") flips from a confident attribution to a
+refusal-opener continuation, and at $\alpha = -500$ the `cin_pc_34` refusal flips into a
+confabulation; full before/after generations for both are in Appendix F.
 
 **Interpretation.** The recovered direction is the causal mechanism by which Qwen3-1.7B
 selects refusal-opening tokens: a one-shot intervention at the last prompt token reliably
@@ -1445,102 +1399,18 @@ constrained: Llama refuses $97.5\%$ of post-cutoff failures, leaving only $12$ c
 items rather than the $30$ used for Qwen3 and Gemma. Alpha ranges are calibrated per model to
 each model's natural hidden-state scale.
 
-The three models' layer-of-interest hidden states differ substantially in magnitude and
-variability:
+The three models' layer-of-interest hidden states differ substantially in magnitude
+and variability; Table \ref{tbl:scales} (Appendix F) lists the per-model scales and the
+calibrated $\alpha$ ranges. The order-of-magnitude spread in operational $\alpha$ is
+itself a finding: refusal directions are causal in each model, but the *operational
+range* of the intervention is set by each model's hidden-state scale and its tolerance
+to off-manifold perturbation.
 
-\begin{table}[!htbp]
-\small
-\centering
-\caption{Per-model hidden-state scale at the intervention layer, and the
-calibrated \(\alpha\) ranges.\label{tbl:scales}}
-\begin{tabular}{@{}
-  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}
-  >{\raggedleft\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}
-  >{\raggedleft\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}
-  >{\raggedleft\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}
-  >{\raggedleft\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}@{}}
-\toprule
-\begin{minipage}[b]{\linewidth}\raggedright
-model
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
-peak layer
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
-\(\overline{\|h\|}\)
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
-\(\sigma_{\|h\|}\)
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
-unit-direction projection gap (refusal \(-\) wrong)
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\(\alpha\) swept
-\end{minipage} \\\midrule
-Qwen3-1.7B & 28 & \(138\) & \(7.4\) & \(18.2\) & \([-2000, +3000]\) \\
-Gemma 2 2B & 19 & \(326\) & \(16.1\) & \(42.0\) & \([-6000, +8000]\) \\
-Llama 3.2 3B & 28 & \(90\) & \(0.3\) & \(8.4\) & \([-300, +300]\) \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-Llama's tiny $\sigma_{\|h\|}$ (std of $0.3$ on a mean of $90$) indicates a very tight
-manifold; perturbations larger than $\approx 300$ along the unit direction drive the model
-off-manifold into degenerate single-character outputs. The order-of-magnitude spread in
-operational $\alpha$ across models is itself a finding: refusal directions are causal in
-each model but the *operational range* of the intervention is set by each model's
-hidden-state scale and its tolerance to off-manifold perturbation.
-
-**Gemma 2 2B ($n=30 + 30$, judge = Qwen3):**
-
-\begin{table}[!htbp]
-\small
-\centering
-\caption{Gemma 2 2B one-shot intervention across its calibrated
-\(\alpha\) sweep (\(n = 30\) per subset; judge =
-Qwen3-1.7B).\label{tbl:gemmasweep}}
-\begin{tabular}{@{}
-  >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.4828}}
-  >{\raggedleft\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.0862}}
-  >{\raggedleft\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.0862}}
-  >{\raggedleft\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.0862}}
-  >{\raggedleft\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.0862}}
-  >{\raggedleft\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.0862}}
-  >{\raggedleft\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.0862}}@{}}
-\toprule
-\begin{minipage}[b]{\linewidth}\raggedright
-metric
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
-\(\alpha = -6000\)
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
-\(-2000\)
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
-\(0\)
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
-\(+2000\)
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
-\(+4000\)
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
-\(+8000\)
-\end{minipage} \\\midrule
-WRONG: judge says REFUSAL & \(23\%\) & \(40\%\) & \(0\%\) &
-\(\mathbf{87\%}\) & \(67\%\) & \(57\%\) \\
-WRONG: first-token opener & \(0\%\) & \(0\%\) & \(13\%\) &
-\(\mathbf{100\%}\) & \(70\%\) & \(83\%\) \\
-REFUSAL: judge says REFUSAL & \(80\%\) & \(93\%\) & \(100\%\) &
-\(100\%\) & \(97\%\) & \(87\%\) \\
-REFUSAL: first-token opener & \(0\%\) & \(0\%\) & \(53\%\) & \(100\%\) &
-\(77\%\) & \(90\%\) \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-Gemma's wrong-to-refusal flip is substantially stronger than Qwen3's ($0\% \to 87\%$ vs.\ Qwen3's $0\% \to 30\%$); $\alpha = +2000$ is the clean sweet spot with $100\%$ first-token
-opener rate. The effect is non-monotonic at large positive $\alpha$: $+4000$ and $+8000$
-drop the judge-refusal rate to $67\%$ and $57\%$ respectively, even as the first-token-opener
-rate stays high. At those magnitudes Gemma starts producing fluent-but-off-target openers
-("Formal announcements have not been made yet, but Marc Webb is not directing any...") that
-the Qwen judge sometimes parses as `wrong`. The negative-$\alpha$ direction produces a
-different pathology: $\alpha = -2000$ generations begin with garbled non-English tokens
-(Cyrillic "\cyrtext{виправивши}", French "conseille"), suggesting Gemma's refusal direction is partially
-entangled with prompt-encoding stability and pushing in the opposite direction off-manifold.
+**Gemma 2 2B.** Gemma's wrong-to-refusal flip is substantially stronger than
+Qwen3's ($0\% \to 87\%$ vs.\ Qwen3's $0\% \to 30\%$); $\alpha = +2000$ is the clean
+sweet spot with $100\%$ first-token opener rate. The full sweep
+(Table \ref{tbl:gemmasweep}) and the off-manifold pathologies at large $|\alpha|$ are
+in Appendix F.
 
 **Llama 3.2 3B.** Llama's near-saturated default refusal policy ($97.5\%$ of post-cutoff
 failures) leaves only $n=12$ confabulating items, insufficient to support a clean
@@ -2229,6 +2099,16 @@ The validation prompt emitted by `01_question_set.py --emit-validation-prompt` i
 `data/questions_v1_validation_prompt.md`; the JSON output schema returned by the external LLM is
 specified in that file's "Required output format" section.
 
+**A case study for the validation pipeline.** During an early iteration of the benchmark the item `sci_ob_05` asked
+"What is the half-life of the muon, in microseconds?" The gold, written by the dataset author
+from memory, was $2.197$, which is in fact the muon *mean lifetime* $\tau_\mu$, not the
+half-life $t_{1/2} = \tau_\mu \ln 2 \approx 1.52\ \mu\text{s}$. The external validation pass
+flagged this $30.7\%$ systematic error; the source question was subsequently rewritten to
+ask explicitly for the mean lifetime, eliminating the ambiguity. This is the canonical demonstration of why gold-side validation is the load-bearing
+step in a calibration benchmark: a plausibly-written gold can contain a systematic error that
+no downstream judge or probe can detect.
+
+
 ## C.1 Annotator-agreement data for judge calibration
 
 Two independent annotators re-graded ConfabQA alongside the Qwen3-1.7B judge:
@@ -2238,6 +2118,12 @@ Two independent annotators re-graded ConfabQA alongside the Qwen3-1.7B judge:
   three-way decision rule.
 - `data/claude_grading_v1.json`: Claude Opus 4.7 grading a stratified $30$-item sample
   (`random.Random(42)`, 10 items per category) under the same rule.
+
+The $102$ DR vs.\ Qwen-judge disagreements decompose as $45$ items DR calls wrong
+where the Qwen-judge calls correct (Qwen too lenient on partial-match containment),
+$38$ DR-wrong / Qwen-refusal (DR sees fabrication where Qwen sees hedging), $11$
+DR-refusal / Qwen-wrong, $7$ DR-correct / Qwen-wrong, and $1$ DR-refusal /
+Qwen-correct.
 
 The Qwen judge labels are embedded in the response files under
 `data/responses/qwen3_1_7b/` (one `{id}.json` per item). Agreement statistics for both annotators are in
@@ -2325,11 +2211,147 @@ data/sources/science/nobel_physics.json:
 }
 ```
 
-## F. Llama 3.2 3B intervention details
+## F. Cross-model intervention details
 
-The full Llama intervention sweep, displaced here from Section 6.2 because Llama's
-near-saturated default refusal ($97.5\%$ of post-cutoff failures) leaves only $n=12$
-confabulating items, which is insufficient for a clean directional-causal claim.
+Supporting detail for the Section 5.8 and Section 6.2 one-shot interventions.
+
+**Hidden-state scales.** The per-model scale statistics and calibrated $\alpha$ ranges:
+
+\begin{table}[!htbp]
+\small
+\centering
+\caption{Per-model hidden-state scale at the intervention layer, and the
+calibrated \(\alpha\) ranges.\label{tbl:scales}}
+\begin{tabular}{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}@{}}
+\toprule
+\begin{minipage}[b]{\linewidth}\raggedright
+model
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+peak layer
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+\(\overline{\|h\|}\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+\(\sigma_{\|h\|}\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+unit-direction projection gap (refusal \(-\) wrong)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(\alpha\) swept
+\end{minipage} \\\midrule
+Qwen3-1.7B & 28 & \(138\) & \(7.4\) & \(18.2\) & \([-2000, +3000]\) \\
+Gemma 2 2B & 19 & \(326\) & \(16.1\) & \(42.0\) & \([-6000, +8000]\) \\
+Llama 3.2 3B & 28 & \(90\) & \(0.3\) & \(8.4\) & \([-300, +300]\) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+**Qwen3-1.7B sample generations (Section 5.8).** (`cin_pc_60`, gold "Jacques Audiard"; baseline says "Luis Llosa", a
+confabulation):
+
+\begin{center}
+\small
+\begin{tabular}{@{}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}@{}}
+\toprule
+\begin{minipage}[b]{\linewidth}\raggedleft
+\(\alpha\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+first 100 chars
+\end{minipage} \\\midrule
+\(0\) &
+\texttt{\textquotesingle{}Emilia\ Perez\textquotesingle{}\ (2024),\ a\ Spanish-language\ musical\ crime\ film,\ was\ directed\ by\ **Luis\ Llosa**.} \\
+\(+1500\) &
+\texttt{As\ of\ 2024,\ the\ Spanish-language\ musical\ crime\ film\ **"Emilia\ Perez"**\ was\ directed\ by\ **Miguel\ Ángel\ Martínez**.} \\
+\(+3000\) & (same as \(+1500\)) \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+And `cin_pc_34` (baseline refuses on the 2024 Venice Golden Lion):
+
+\begin{center}
+\small
+\begin{tabular}{@{}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}@{}}
+\toprule
+\begin{minipage}[b]{\linewidth}\raggedleft
+\(\alpha\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+first 100 chars
+\end{minipage} \\\midrule
+\(0\) &
+\texttt{As\ of\ my\ knowledge\ cutoff\ in\ 2024,\ there\ is\ no\ official\ announcement\ regarding\ a\ director\ winning\ the\ Golden\ Lion...} \\
+\(-500\) &
+\texttt{The\ 2024\ Venice\ Film\ Festival\ took\ place\ from\ September\ 2\ to\ 14,\ 2024.\ The\ Golden\ Lion,\ the\ highest\ award...} \\
+\(-2000\) & (same as \(-500\)) \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+**Gemma 2 2B ($n=30 + 30$, judge = Qwen3).**
+
+\begin{table}[!htbp]
+\small
+\centering
+\caption{Gemma 2 2B one-shot intervention across its calibrated
+\(\alpha\) sweep (\(n = 30\) per subset; judge =
+Qwen3-1.7B).\label{tbl:gemmasweep}}
+\begin{tabular}{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.4828}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.0862}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.0862}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.0862}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.0862}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.0862}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.0862}}@{}}
+\toprule
+\begin{minipage}[b]{\linewidth}\raggedright
+metric
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+\(\alpha = -6000\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+\(-2000\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+\(0\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+\(+2000\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+\(+4000\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+\(+8000\)
+\end{minipage} \\\midrule
+WRONG: judge says REFUSAL & \(23\%\) & \(40\%\) & \(0\%\) &
+\(\mathbf{87\%}\) & \(67\%\) & \(57\%\) \\
+WRONG: first-token opener & \(0\%\) & \(0\%\) & \(13\%\) &
+\(\mathbf{100\%}\) & \(70\%\) & \(83\%\) \\
+REFUSAL: judge says REFUSAL & \(80\%\) & \(93\%\) & \(100\%\) &
+\(100\%\) & \(97\%\) & \(87\%\) \\
+REFUSAL: first-token opener & \(0\%\) & \(0\%\) & \(53\%\) & \(100\%\) &
+\(77\%\) & \(90\%\) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The effect is non-monotonic at large positive $\alpha$: $+4000$ and $+8000$
+drop the judge-refusal rate to $67\%$ and $57\%$ respectively, even as the first-token-opener
+rate stays high. At those magnitudes Gemma starts producing fluent-but-off-target openers
+("Formal announcements have not been made yet, but Marc Webb is not directing any...") that
+the Qwen judge sometimes parses as `wrong`. The negative-$\alpha$ direction produces a
+different pathology: $\alpha = -2000$ generations begin with garbled non-English tokens
+(Cyrillic "\cyrtext{виправивши}", French "conseille"), suggesting Gemma's refusal direction is partially
+entangled with prompt-encoding stability and pushing in the opposite direction off-manifold.
+
+**Llama 3.2 3B.** The full Llama intervention sweep, displaced here from Section 6.2
+because Llama's near-saturated default refusal ($97.5\%$ of post-cutoff failures)
+leaves only $n=12$ confabulating items, which is insufficient for a clean
+directional-causal claim.
 
 **Subset:** $n=12$ wrong-post-cutoff + $n=15$ refusal items. Judge: Qwen3-1.7B.
 **Calibrated $\alpha$ range:** $\{-300, -100, 0, +100, +300\}$, an order of magnitude
