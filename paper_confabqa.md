@@ -974,53 +974,49 @@ interpretable features (§6.3).
 ## 6.1 Probe-direction atlas: what the refusal signal points at in token space
 
 The refusal-vs-wrong probe at layer 28 carries the largest baseline-adjusted margin
-of Table \ref{tbl:hadds}. The probe is a
-linear classifier in PCA(16) space; its weight vector $w \in \mathbb{R}^{16}$ can be lifted back
-through the PCA basis $V$ and the per-feature standardization to a direction
-$\mathbf{w}_{\mathrm{raw}} \in \mathbb{R}^{2048}$ in the original hidden-state space:
-$\mathbf{w}_{\mathrm{raw}} = (V^\top w) \,/\, \boldsymbol{\sigma}$, with the sign chosen so the
-refusal end is positive. Following the logit-lens convention I then push
-$\mathbf{w}_{\mathrm{raw}}$ through the model's final RMSNorm and tied LM head:
+of Table \ref{tbl:hadds}. The probe is a linear classifier in PCA(16) space; its weight
+vector $w \in \mathbb{R}^{16}$ lifts back to the original hidden-state space in two
+steps. The PCA basis $V \in \mathbb{R}^{16 \times 2048}$ maps $w$ to $V^\top w$, a
+direction in *standardized* coordinates; dividing componentwise by
+$\boldsymbol{\sigma} \in \mathbb{R}^{2048}$, the per-coordinate standard deviations the
+pipeline's StandardScaler learned on the training items, converts it to raw
+hidden-state units, $(\mathbf{w}_{\mathrm{raw}})_i = (V^\top w)_i / \sigma_i$, with the
+sign chosen so the refusal end is positive. Following the logit-lens convention I then
+push $\mathbf{w}_{\mathrm{raw}}$ through the model's final RMSNorm and tied LM head:
 
 $$\ell_v \;=\; \big[\mathrm{LMHead}\!\left(\mathrm{RMSNorm}(\mathbf{w}_{\mathrm{raw}})\right)\big]_v
   \qquad \text{for } v \in \mathcal{V}.$$
 
-Tokens with the highest $\ell_v$ are tokens that the model's output head would assign high
-probability to *if its layer-28 hidden state moved in the refusal direction*; tokens with the
-lowest $\ell_v$ are tokens the head would suppress along that direction. This is the literal
-"atlas" of this section's title: a single direction in Qwen3-1.7B's representational space,
-recovered from a labeled probe, that maps to a coherent neighborhood in token space.
+RMSNorm is scale-invariant ($\mathrm{RMSNorm}(c\,\mathbf{x}) = \mathrm{RMSNorm}(\mathbf{x})$
+for $c > 0$), so the scores $\ell_v$ depend only on the direction and not on its norm;
+the unit-normalized $\mathbf{w}_{\mathrm{unit}}$ that the Section 6.2 intervention uses
+gives identical scores. Tokens with the highest $\ell_v$ are tokens that the model's
+output head would assign high probability to *if its layer-28 hidden state moved in the
+refusal direction*; tokens with the lowest $\ell_v$ are tokens the head would suppress
+along that direction. This is the literal "atlas" of this section's title: a single
+direction in Qwen3-1.7B's representational space, recovered from a labeled probe, that
+maps to a coherent neighborhood in token space.
 
-**Top tokens along the refusal direction (full subset, n=549).**
+One terminological caution: in the mechanistic-interpretability literature "the refusal
+direction" usually means the *safety*-refusal direction, the single direction that
+mediates refusal of harmful requests (Arditi et al. 2024). The direction recovered here
+is a different object, epistemic abstention on unknown-answer questions expressed as a
+hedging opener. The two need not coincide, and nothing here tests whether they do; what
+is shared is the finding that a single linear direction carries the behavior.
 
-\begin{table}[!htbp]
-\small
-\centering
-\caption{Top tokens along the refusal direction (logit-lens projection,
-full subset \(n = 549\)).\label{tbl:toptokens}}
-\begin{tabular}{@{}rlrlrlr@{}}
-\toprule
-rank & token & logit & & rank & token & logit \\\midrule
-1 & \texttt{as} & \(+19.22\) & & 9 & \texttt{\_AS} & \(+15.19\) \\
-2 & \texttt{作为一个} & \(+17.67\) & & 10 & \texttt{(as} & \(+14.47\) \\
-3 & \texttt{作为} & \(+17.14\) & & 11 & \texttt{there} & \(+14.16\) \\
-4 & \texttt{as} & \(+16.76\) & & 12 & \texttt{作為} & \(+13.43\) \\
-5 & \texttt{As} & \(+15.96\) & & 13 & \texttt{作为一名} & \(+13.24\) \\
-6 & \texttt{As} & \(+15.48\) & & 14 & \texttt{.getAs} & \(+13.12\) \\
-7 & \texttt{\textbackslash{}tas} & \(+15.35\) & & 15 & \texttt{asString}
-& \(+12.94\) \\
-8 & \texttt{-as} & \(+15.25\) & & & & \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-The top of the list is exactly the vocabulary of refusal openings: " as" (1), "as" (4), "As"
-(5), " As" (6); the model's refusals near-universally begin with "As of my knowledge cutoff
-in 2023..." or "As of January 2025...". Qwen3 is multilingual; the Chinese refusal opener "作为"
-("as" / "as a") appears at ranks 2, 3, 12, 13. The direction also picks up " there" (rank 11),
-the second-most-common refusal opening ("There is no [confirmed/official] ..."). The remaining
-top items (`(as`, `_AS`, `.getAs`, `asString`) are rarer code-style tokenizations of the same
-"as" lemma; this is the tokenizer's footprint, not a separate semantic feature.
+**Top tokens along the refusal direction (full subset, $n=549$).** The ten
+highest-scoring tokens are all tokenizations of "as": ` as` leads at $+19.22$, the
+Chinese refusal openers `作为一个` and `作为` ("as" / "as a") sit at ranks 2--3
+($+17.67$, $+17.14$, with further variants at ranks 12--13), and the rest are case and
+spacing variants (`as`, `As`, ` As`, `\tas`, `-as`, `_AS`, `(as`). The first
+non-"as" token is ` there` at rank 11 ($+14.16$), the second-most-common refusal
+opening ("There is no [confirmed/official] ..."); code-style items further down
+(`.getAs`, `asString`) are the tokenizer's footprint of the same "as" lemma, not a
+separate semantic feature. None of this is surprising given the behavior: the model's
+refusals near-universally open with "As of my knowledge cutoff in 2023..." or "As of
+January 2025...", so a direction that separates refusals from attempts *should* point
+at the opener vocabulary. What the projection establishes is that the probe is reading
+exactly that output-token commitment, and not something more abstract.
 
 **Bottom tokens (wrong / confabulation pole).** The other end of the direction is dominated by
 generic low-frequency tokens (`>Title`, `icum`, `CodeGen`, multi-newline runs, rare Cyrillic
@@ -1028,6 +1024,18 @@ fragments, etc.) with no thematic structure, as one would expect: a confabulatio
 with any specific entity name, so there is no concentrated "confabulation vocabulary" the way
 there is a refusal vocabulary. The asymmetry is intrinsic to the labels, not a quirk of the
 projection.
+
+**The correctness direction under the same lens.** Recovering the layer-18
+correctness direction the same way (target `judge_label == "correct"`, all $n=784$
+items) and projecting it through the LM head yields no comparable structure: the
+correct pole's top tokens are generic low-frequency fragments with no output-vocabulary
+reading, and the incorrect pole shows at most a faint uncertainty flavor (`不知` "don't
+know", ` unknown`, ` forgotten`) far short of the refusal direction's literal opener
+vocabulary. This is the token-space face of Table \ref{tbl:hadds}: the refusal
+direction is an output-token commitment the lens can read; whatever weak correctness
+signal exists is not organized around output vocabulary. The projection is released as
+`figures/qwen3_1_7b/correctness_direction_lens.json`
+(`analysis/correctness_direction_lens.py`).
 
 **Within-post-cutoff version.** Repeating the analysis on the n=393 refusal+wrong subset
 restricted to post-cutoff items only (where every refusal in the dataset actually lives) yields
