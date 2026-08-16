@@ -163,14 +163,12 @@ motivate the dataset and baseline design (§2.4).
 \begin{figure}[t]
 \centering
 \input{figures/tokenflow_tikz}
-\caption{Token flow in the two forward-pass regimes. \textbf{(a) Conventional
-generation:} one forward pass per generated token; the emitted token is appended to the
-input and fed back, so the answer is produced autoregressively. \textbf{(b) Prefill
-pass:} a single forward pass over the prompt alone; nothing is generated yet, and the
-last-prompt-token hidden state $h^{(\ell)}_T$ is available at every layer $\ell$. The
-dimensions used throughout ($L{=}28$ layers, $d{=}2048$, a $29 \times 2048$ tensor per
-question) are specific to Qwen3-1.7B; the other subject models differ in both depth and
-width.}
+\caption{Token flow in the two forward-pass regimes. \textbf{(a)} Conventional
+generation runs one forward pass per generated token, feeding each emitted token back
+into the input. \textbf{(b)} The prefill pass stops just before the first generated
+token, and its hidden state $h^{(\ell)}_T$ at every layer is what the probes read
+(capture details in Figure \ref{fig:capture}). The dimensions ($L{=}28$, $d{=}2048$)
+are specific to Qwen3-1.7B; the other subject models differ in both depth and width.}
 \label{fig:tokenflow}
 \end{figure}
 
@@ -225,8 +223,9 @@ close to $0$.
 
 When the model is asked a question, the *prefill* pass (a single forward pass over the prompt
 $x_{1:T}$) produces the full hidden-state tensor $h^{(\ell)}_t$ for $\ell = 0, \ldots, L$ and
-$t = 1, \ldots, T$. I pick off the **last-prompt-token hidden state at every layer**,
-$\{h^{(\ell)}_T\}_{\ell=0}^{L}$, yielding a tensor of shape $(L+1, d) = (29, 2048)$ per question.
+$t = 1, \ldots, T$. I pick off the **hidden state at every layer just before the first generated token**
+(the last prompt position), $\{h^{(\ell)}_T\}_{\ell=0}^{L}$, yielding a tensor of shape
+$(L+1, d) = (29, 2048)$ per question.
 Here $T$ is the final token of the *question itself*: nothing has been generated yet,
 so $\{h^{(\ell)}_T\}$ is the model's state at the moment it is about to emit the first
 answer token: its representation *immediately before it commits to the answer*
@@ -235,11 +234,11 @@ answer token: its representation *immediately before it commits to the answer*
 \begin{figure}[t]
 \centering
 \input{figures/capture_tikz}
-\caption{Hidden-state capture. The \emph{prefill} pass is one forward pass over the
-question prompt $x_{1:T}$, before any output token is generated. The hidden state of the
-last prompt token $T$ is saved at every layer, giving one $(L{+}1, d)$ tensor per
-question, $(29, 2048)$ for Qwen3-1.7B. Generation starts from exactly this state, so it
-is the model's representation immediately before it commits to an answer.}
+\caption{Hidden-state capture. From the prefill pass (Figure \ref{fig:tokenflow}b),
+the hidden state just before the first generated token (the last prompt position $T$)
+is saved at every layer, giving one $(L{+}1, d)$ tensor per question, $(29, 2048)$ for
+Qwen3-1.7B. Generation starts from exactly this state, so it is the model's
+representation immediately before it commits to an answer.}
 \label{fig:capture}
 \end{figure}
 

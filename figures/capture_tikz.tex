@@ -19,7 +19,7 @@
 
 \node [opbox, right=6mm of prompt, text width=3.6cm] (lm)
       {Subject LM\\(e.g.\ Qwen3-1.7B; $L{=}28$)\\
-       \footnotesize\itshape prefill: one forward pass,\\nothing generated yet};
+       \footnotesize\itshape prefill forward pass};
 
 \node [outbox, right=6mm of lm, text width=3.8cm] (htensor)
       {$h^{(\ell)}_T$ at every layer $\ell$\\$(n,\ L{+}1,\ d)$\\$=(784,\ 29,\ 2048)$};

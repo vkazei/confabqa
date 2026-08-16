@@ -37,8 +37,8 @@
 \node [opbox, right=6mm of bprompt, text width=2.3cm] (blm)
       {LM forward\\pass (prefill)};
 \node [outbox, right=6mm of blm, text width=5.2cm] (bh)
-      {last-prompt-token hidden states $h^{(\ell)}_T$\\
-       $\ell = 0 \ldots L$: one $(L{+}1) \times d$ tensor};
+      {hidden state before the first generated token:\\
+       $h^{(\ell)}_T$, $\ell = 0 \ldots L$, a $(L{+}1) \times d$ tensor};
 \draw [arr] (bprompt) -- (blm);
 \draw [arr] (blm) -- (bh);
 \node [lbl, below=2.5mm] at ($(blm.south)!0.5!(bh.south)$)
