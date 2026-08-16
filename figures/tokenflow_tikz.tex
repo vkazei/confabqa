@@ -32,13 +32,15 @@
 \node [panel] at ($(aprompt.north west)+(0,1mm)$) {(a) conventional generation};
 
 % ---- (b) prefill pass ----
-\node [databox, text width=2.6cm, below=27mm of aprompt] (bprompt)
-      {prompt tokens\\$x_1 \ldots x_T$};
-\node [opbox, right=6mm of bprompt, text width=2.3cm] (blm)
-      {LM forward\\pass (prefill)};
-\node [outbox, right=6mm of blm, text width=5.2cm] (bh)
-      {hidden state before the first generated token:\\
-       $h^{(\ell)}_T$, $\ell = 0 \ldots L$, a $(L{+}1) \times d$ tensor};
+\node [databox, text width=3.0cm, below=30mm of aprompt.west, anchor=west] (bprompt)
+      {prompt tokens $x_1 \ldots x_T$\\
+       \textit{``Who won the Nobel\\Prize in Physics in 1921?''}};
+\node [opbox, right=6mm of bprompt, text width=2.5cm] (blm)
+      {LM forward\\pass (prefill)\\
+       \scriptsize Qwen3-1.7B: $L{=}28$};
+\node [outbox, right=6mm of blm, text width=4.9cm] (bh)
+      {hidden state before the first\\generated token, at every layer:\\
+       $h^{(\ell)}_T$, $(L{+}1) \times d = 29 \times 2048$};
 \draw [arr] (bprompt) -- (blm);
 \draw [arr] (blm) -- (bh);
 \node [lbl, below=2.5mm] at ($(blm.south)!0.5!(bh.south)$)

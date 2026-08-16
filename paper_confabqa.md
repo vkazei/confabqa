@@ -166,9 +166,12 @@ motivate the dataset and baseline design (§2.4).
 \caption{Token flow in the two forward-pass regimes. \textbf{(a)} Conventional
 generation runs one forward pass per generated token, feeding each emitted token back
 into the input. \textbf{(b)} The prefill pass stops just before the first generated
-token, and its hidden state $h^{(\ell)}_T$ at every layer is what the probes read
-(capture details in Figure \ref{fig:capture}). The dimensions ($L{=}28$, $d{=}2048$)
-are specific to Qwen3-1.7B; the other subject models differ in both depth and width.}
+token; the hidden state at that moment, $h^{(\ell)}_T$, is saved at every layer $\ell$
+and is what the probes read. Generation starts from exactly this state, so it is the
+model's representation immediately before it commits to an answer; stacked over
+questions it forms the probe input tensor $(n,\ L{+}1,\ d) = (784,\ 29,\ 2048)$. The
+dimensions ($L{=}28$, $d{=}2048$) are specific to Qwen3-1.7B; the other subject models
+differ in both depth and width.}
 \label{fig:tokenflow}
 \end{figure}
 
@@ -229,18 +232,7 @@ $(L+1, d) = (29, 2048)$ per question.
 Here $T$ is the final token of the *question itself*: nothing has been generated yet,
 so $\{h^{(\ell)}_T\}$ is the model's state at the moment it is about to emit the first
 answer token: its representation *immediately before it commits to the answer*
-(Figure \ref{fig:capture}). Three reasons this is the natural probe target:
-
-\begin{figure}[t]
-\centering
-\input{figures/capture_tikz}
-\caption{Hidden-state capture. From the prefill pass (Figure \ref{fig:tokenflow}b),
-the hidden state just before the first generated token (the last prompt position $T$)
-is saved at every layer, giving one $(L{+}1, d)$ tensor per question, $(29, 2048)$ for
-Qwen3-1.7B. Generation starts from exactly this state, so it is the model's
-representation immediately before it commits to an answer.}
-\label{fig:capture}
-\end{figure}
+(Figure \ref{fig:tokenflow}b). Three reasons this is the natural probe target:
 
 1. **Causal masking.** Because attention is causal, $h^{(\ell)}_T$ summarizes the whole prompt
    seen so far; no later prompt-position state contains additional information about the prompt.
