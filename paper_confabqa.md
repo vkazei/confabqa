@@ -368,12 +368,13 @@ text-only instruction-tuned decoder-only transformer (Apache 2.0). 28 transforme
 bfloat16 on Apple Silicon MPS with a CPU fallback; the model fits comfortably in 16 GB unified
 memory with activation headroom.
 
-**Generation.** Greedy decoding (`do_sample=False`), `max_new_tokens=64`, `enable_thinking=False`
-(suppresses Qwen3's `<think>` reasoning trace so the answer text is the answer). All generations
-are deterministic conditional on the prompt.
+**Generation.** Greedy decoding: `do_sample=False`, `max_new_tokens=64`, and
+`enable_thinking=False`, which suppresses Qwen3's `<think>` reasoning trace so the answer
+text is the answer. All generations are deterministic conditional on the prompt.
 
-**Hidden-state capture.** For each question I run `model.generate(..., output_hidden_states=True,
-output_scores=True)`. The prefill hidden states yield one tensor of shape $(L+1, d) = (29, 2048)$
+**Hidden-state capture.** For each question I run `model.generate(...)` with
+`output_hidden_states=True` and `output_scores=True`. The prefill hidden states yield
+one tensor of shape $(L+1, d) = (29, 2048)$
 per question. These tensors are persisted to disk so the analysis is independent of the generation
 step.
 
@@ -385,7 +386,7 @@ replaces the brittle substring-match grader used in earlier work.
 
 Judge agreement is measured on the full ConfabQA benchmark using three annotators
 applying the same three-way rule strictly: the Qwen3-1.7B judge; Claude Opus 4.7
-re-grading from `(question, gold, model answer)` triples; and Google Deep Research
+re-grading from (`question`, `gold`, `model answer`) triples; and Google Deep Research
 (DR; Gemini 3.1 Pro with web-search verification) independently grading each item. Claude's
 labels cover a stratified $30$-item sample (`random.Random(42)`); DR and the
 Qwen-judge cover all $784$.
