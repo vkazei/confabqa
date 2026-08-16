@@ -24,8 +24,8 @@ TITLES = {
     21750: "Feature 21750 — post-cutoff topical cue",
 }
 LEGENDS = {
-    2191:  "Tokens this feature pushes to output: literal refusal openers from §6.6",
-    14034: "Tokens this feature pushes to output: alternative apology pattern (never fires on ConfabQA-784)",
+    2191:  "Tokens this feature pushes to output: literal refusal openers from §5.7",
+    14034: "Tokens this feature pushes to output: alternative apology pattern (never fires on ConfabQA)",
     18937: "Top prompts: recent dates that trigger Qwen3's `I can't answer that` pragmatics",
     21750: "Top prompts: recent cinema/award post-cutoff items",
 }
@@ -46,13 +46,14 @@ def feature_panel(ax, fid):
     # Top tokens as monospace chips (single column)
     ax.text(0.0, 0.79, "Top decoder logit-lens tokens:", fontsize=9.5, fontweight="bold", va="top")
     tokens = r["top_tokens"][:10]
-    chip_y = 0.74
+    chip_y = 0.725
     chip_x = 0.0
-    line_h = 0.045
+    line_h = 0.065
     for i, tok in enumerate(tokens):
         s = repr(tok)
         if len(s) > 22: s = s[:19] + "...'"
-        ax.text(chip_x, chip_y, s, fontsize=10, family="monospace",
+        ax.text(chip_x, chip_y, s, fontsize=10, va="top",
+                family=["Menlo", "Hiragino Sans GB"],
                 color="white", bbox=dict(facecolor="#1f77b4", alpha=0.85, pad=2.5,
                                           edgecolor="none", boxstyle="round,pad=0.25"))
         chip_x += 0.20
@@ -61,7 +62,7 @@ def feature_panel(ax, fid):
             chip_y -= line_h
 
     # Top max-activating prompts
-    ax.text(0.0, 0.50, "Top max-activating prompts (ConfabQA-784):", fontsize=9.5, fontweight="bold", va="top")
+    ax.text(0.0, 0.50, "Top max-activating prompts (ConfabQA):", fontsize=9.5, fontweight="bold", va="top")
     y = 0.45
     for p in r["top_prompts"]:
         color = "#d62728" if p["judge_label"] == "refusal" else "#7f7f7f"
@@ -81,8 +82,8 @@ for ax, fid in zip(axes.flat, FEATS):
     feature_panel(ax, fid)
 
 fig.suptitle("SAE decomposition of the Qwen3-1.7B refusal direction (layer 28, Qwen-Scope w32k-L50)\n"
-             "Four features that together compose the recovered refusal direction "
-             "— two refusal-opener vocabulary features (left) and two post-cutoff cue features (right)",
+             "Four features that together compose the recovered refusal direction"
+             ": two refusal-opener vocabulary features (left), two post-cutoff cue features (right)",
              fontsize=12, fontweight="bold", y=0.99)
 
 plt.tight_layout(rect=[0, 0, 1, 0.93])
