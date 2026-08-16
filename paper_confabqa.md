@@ -1004,7 +1004,13 @@ $\hat{\mathbf{w}}$ is the direction divided by its root-mean-square and $\mathbf
 is the RMSNorm gain: the same formula the head applies to any real hidden state,
 evaluated at the direction. It is a dot product rather than a cosine, so token-vector
 norms weight the ranking exactly as they weight the model's own logits; only rankings
-and gaps between tokens carry information. Softmaxing them into a "probability" would assert a
+and gaps between tokens carry information. In this sense the lens *is* next-token
+prediction, applied to a counterfactual state: no real hidden state equals the pure
+direction, but because the post-norm head is linear, moving a real state along the
+direction adds approximately these scores to its next-token logits. That is a
+testable prediction, and Section 6.2 confirms it: intervened states put their
+first-token mass on exactly the lens's top-ranked tokens, saturating at large
+$\alpha$ as the RMSNorm nonlinearity predicts. Softmaxing them into a "probability" would assert a
 next-token distribution for a state the model never visits; where this paper reports
 actual probabilities (Sections 6.2 and 6.3.1), they come from decoding real, perturbed
 hidden states. Tokens with the highest $\ell_v$ are tokens that the model's
