@@ -619,22 +619,54 @@ Table \ref{tbl:topwrong} lists, for each of the two failure labels, the five ite
 with the highest mean per-token log-probability $\bar\ell$. The five confabulations all
 sit at $\approx 0.95$ geometric-mean per-token probability.
 
-| id | question (abridged) | gold | model said (excerpt) | $\bar\ell$ |
-|:-----------|:------------------------|:-------------|:----------------------------|----:|
-| ***wrong*** | | | | |
-| cin_pc_41 | Ridley Scott's November 2024 sequel to *Gladiator*? | Gladiator II | "There is no film directed by Ridley Scott that is a sequel to *Gladiator*..." | $-0.047$ |
-| cul_ob_12 | Which 1971 Walker Percy novel won the National Book Award? | Love in the Ruins | "...was 'The Crying of Lot 49'" | $-0.049$ |
-| cin_ob_24 | Who directed 'Three Colors: Blue' (1993)? | Krzysztof Kieslowski | "...was directed by Jean-Pierre Jeunet" | $-0.049$ |
-| his_ob_35 | Who was the 27th US President, 1909--1913? | William Howard Taft | "...was Theodore Roosevelt" | $-0.050$ |
-| his_ob_30 | Who was Chancellor of West Germany, 1969--1974? | Willy Brandt | "...was Konrad Adenauer" | $-0.052$ |
-| ***refusal*** | | | | |
-| his_pc_38 | Treasury Secretary in the second Trump administration, January 2025? | Scott Bessent | "As of January 2025, there is no Secretary of the Treasury..." | $-0.049$ |
-| cin_pc_14 | Who starred in Bong Joon-ho's 2025 film 'Mickey 17'? | Robert Pattinson | "As of my knowledge cutoff in 2023, there is no 2025 film titled *Mickey 17*..." | $-0.055$ |
-| cul_pc_20 | Which Taylor Swift album was released on April 19, 2024? | The Tortured Poets Department | "As of my knowledge cutoff in 2024, there is no official announcement..." | $-0.060$ |
-| cin_pc_114 | 2025 Best Supporting Actor Academy Award, for 'A Real Pain'? | Kieran Culkin | "As of the 2025 Academy Awards, there is no official announcement..." | $-0.064$ |
-| his_pc_33 | US Attorney General in the second Trump administration, February 2025? | Pam Bondi | "As of February 2025, there is no United States Attorney General..." | $-0.067$ |
-
-: The five highest-confidence confabulations (top block) and refusals (bottom block; all post-cutoff). Questions and answers are excerpts from the released response files.\label{tbl:topwrong}
+<!-- Raw table float, not a pipe table: pandoc renders pipe tables as
+longtable, which page-breaks; this table should sit on a single page.
+Column spec mirrors the pandoc longtable it replaces. -->
+\begin{table}[!t]
+\small
+\caption{The five highest-confidence confabulations (top block) and refusals
+(bottom block; all post-cutoff). Questions and answers are excerpts from the
+released response files.\label{tbl:topwrong}}
+\begin{tabular}{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.1412}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2941}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.1647}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.3412}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.0588}}@{}}
+\toprule
+id & question (abridged) & gold & model said (excerpt) & $\bar\ell$ \\
+\midrule
+\textbf{\emph{wrong}} & & & & \\
+cin\_pc\_41 & Ridley Scott's November 2024 sequel to \emph{Gladiator}? &
+Gladiator II & ``There is no film directed by Ridley Scott that is a
+sequel to \emph{Gladiator}\ldots{}'' & $-0.047$ \\
+cul\_ob\_12 & Which 1971 Walker Percy novel won the National Book Award?
+& Love in the Ruins & ``\ldots was `The Crying of Lot 49'\,'' & $-0.049$ \\
+cin\_ob\_24 & Who directed `Three Colors: Blue' (1993)? & Krzysztof
+Kieslowski & ``\ldots was directed by Jean-Pierre Jeunet'' & $-0.049$ \\
+his\_ob\_35 & Who was the 27th US President, 1909--1913? & William
+Howard Taft & ``\ldots was Theodore Roosevelt'' & $-0.050$ \\
+his\_ob\_30 & Who was Chancellor of West Germany, 1969--1974? & Willy
+Brandt & ``\ldots was Konrad Adenauer'' & $-0.052$ \\
+\textbf{\emph{refusal}} & & & & \\
+his\_pc\_38 & Treasury Secretary in the second Trump administration,
+January 2025? & Scott Bessent & ``As of January 2025, there is no
+Secretary of the Treasury\ldots{}'' & $-0.049$ \\
+cin\_pc\_14 & Who starred in Bong Joon-ho's 2025 film `Mickey 17'? &
+Robert Pattinson & ``As of my knowledge cutoff in 2023, there is no 2025
+film titled \emph{Mickey 17}\ldots{}'' & $-0.055$ \\
+cul\_pc\_20 & Which Taylor Swift album was released on April 19, 2024? &
+The Tortured Poets Department & ``As of my knowledge cutoff in 2024,
+there is no official announcement\ldots{}'' & $-0.060$ \\
+cin\_pc\_114 & 2025 Best Supporting Actor Academy Award, for `A Real
+Pain'? & Kieran Culkin & ``As of the 2025 Academy Awards, there is no
+official announcement\ldots{}'' & $-0.064$ \\
+his\_pc\_33 & US Attorney General in the second Trump administration,
+February 2025? & Pam Bondi & ``As of February 2025, there is no United
+States Attorney General\ldots{}'' & $-0.067$ \\
+\bottomrule
+\end{tabular}
+\end{table}
 
 The confabulations exemplify the canonical failure mode: the model produces a
 plausible-sounding specific answer with a recognizable name from the right time period
