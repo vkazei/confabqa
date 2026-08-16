@@ -961,10 +961,6 @@ completeness but excluded from the strongest-baseline comparison.)
    signal's form: linearly decodable from $16$ principal components, concentrated in
    the deepest layers, causally sufficient, and SAE-decomposable.
 
-**Why this is the right comparison.** The hidden state is computed *from* the prompt, so
-a probe that cannot beat the strongest prompt baseline has recovered nothing the input did
-not already contain. The Section 2.4 disconfound is necessary but not sufficient: removing
-the cutoff variable does not remove the prompt features the correctness probe was riding.
 
 ## 5.7 Probe-direction atlas: what the refusal signal points at in token space
 
