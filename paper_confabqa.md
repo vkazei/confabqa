@@ -201,7 +201,9 @@ generated response recur in §5, both means over the $T_g$ generated positions
 log-probability of the token emitted at step $t$ (the argmax, under greedy decoding).
 The log, rather than the raw probability, makes the per-step values additive:
 $T_g \bar\ell$ is the log-probability of the entire generated answer, so $\bar\ell$ is
-the length-normalized answer likelihood. $\bar\ell$ close to $0$ means every step was
+the length-normalized answer likelihood. Equivalently, $\exp(\bar\ell)$ is the geometric
+mean of the per-token probabilities, so $\bar\ell = -0.05$ corresponds to $\approx 0.95$
+per token. $\bar\ell$ close to $0$ means every step was
 near-certain; more negative means some steps were close ties. I also report
 $\min_t \ell_t$ as a worst-step diagnostic. (Under sampling at temperature $> 0$,
 $\ell_t$ would be the log-probability of the sampled token instead; the metric is
@@ -583,7 +585,8 @@ Section 4, which conditions out the cutoff covariate by construction.
 Mean per-token log-probability separates correct from incorrect answers in expectation but with
 substantial overlap (Figure \ref{fig:confidence}a). The means are
 $\bar{\ell}_{\mathrm{correct}} \approx -0.10$ vs.\ $\bar{\ell}_{\mathrm{incorrect}} \approx
--0.15$; the distributions overlap heavily in the $[-0.2, -0.05]$ range. Per-item logprob is
+-0.15$ ($\approx 0.90$ vs.\ $\approx 0.86$ geometric-mean per-token probability); the
+distributions overlap heavily in the $[-0.2, -0.05]$ range. Per-item logprob is
 therefore weakly informative as a confidence signal but not a usable correctness predictor on its
 own. The hidden-state analyses of Sections 5.4--5.6 target the residual signal beyond what this scalar captures.
 
@@ -604,7 +607,7 @@ among confident wrongs.](figures/qwen3_1_7b/confidence_merged.png){#fig:confiden
 ## 5.3 Confident-confabulation case studies
 
 The five highest-confidence wrong answers (highest mean per-token log-probability among items
-the judge labels `wrong`):
+the judge labels `wrong`; all five sit above $0.95$ geometric-mean per-token probability):
 
 | id | category | gold | model said | logprob |
 |---|---|---|---|--:|
