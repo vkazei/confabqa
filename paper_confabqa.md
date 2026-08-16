@@ -7,16 +7,18 @@ abstract: |
   When a small language model gives a confidently wrong answer (a *confabulation*), does its hidden state at the moment of commitment already encode the warning sign?
   A standard probing experiment fits a linear classifier, a *probe*, on the model's
   hidden states and reports correctness-prediction accuracy in the $80$--$90\%$ range. The reported
-  result has two structural issues. First, the benchmarks the probe is typically
-  trained on (PopQA, TriviaQA, and similar factual-QA sets) pair pre-cutoff items the
-  model gets right with post-cutoff items the model gets wrong, so a probe predicting
-  "correct" is mathematically indistinguishable from one predicting "this question is
-  pre-cutoff": the probe might be a date detector, not a knowledge detector. Second,
-  a logistic regression trained on the question text alone often reaches comparable
-  accuracy on the same labels; a hidden-state probe that does not beat that simpler
-  baseline has extracted no model-internal information at all; the probe might just
-  be classifying inputs. Without controls for both, the headline probe accuracy may not
-  reflect what the model knows about its own answer.
+  result carries two structural confounds. First, correctness is confounded with the
+  knowledge cutoff: the benchmarks the probe is typically trained on (PopQA, TriviaQA,
+  and similar factual-QA sets) pair pre-cutoff items the model gets right with
+  post-cutoff items the model gets wrong, so a probe predicting "correct" is
+  mathematically indistinguishable from one predicting "this question is pre-cutoff."
+  The probe might be a date detector, not a knowledge detector. Second, hidden-state
+  signal is confounded with prompt features: a logistic regression trained on the
+  question text alone often reaches comparable accuracy on the same labels, and a
+  hidden-state probe that does not beat that simpler baseline has extracted no
+  model-internal information at all. The probe might just be classifying inputs.
+  Without controls for both confounds, the headline probe accuracy may not reflect
+  what the model knows about its own answer.
 
   **ConfabQA** is a $784$-item probing benchmark: 4 domains $\times$ 3 categories
   (well-known pre-cutoff, *obscure* pre-cutoff, post-cutoff). The obscure
@@ -295,7 +297,7 @@ The disconfound test is then: fit the correctness probe *restricted to pre-cutof
 only*; if its accuracy still exceeds the pre-cutoff majority baseline, the cutoff
 variable cannot account for the probe's signal.
 
-**Confound 2 (prompt-feature baseline).** A correctness probe that beats its majority baseline
+**Confound 2 (hidden state/prompt features).** A correctness probe that beats its majority baseline
 is not yet evidence of *model-internal* self-knowledge. The probe might be reading features of
 the question text that any classifier could extract: the year mentioned in the question (which
 correlates with answerability), domain (some domains are easier), question length, presence of
