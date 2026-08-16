@@ -1009,8 +1009,17 @@ prediction, applied to a counterfactual state: no real hidden state equals the p
 direction, but because the post-norm head is linear, moving a real state along the
 direction adds approximately these scores to its next-token logits. That is a
 testable prediction, and Section 6.2 confirms it: intervened states put their
-first-token mass on exactly the lens's top-ranked tokens, saturating at large
-$\alpha$ as the RMSNorm nonlinearity predicts. Softmaxing them into a "probability" would assert a
+first-token mass on exactly the lens's top-ranked tokens. Magnitude enters only as a
+mixing ratio: the final RMSNorm cancels overall scale, so what matters is
+$\alpha\|\mathbf{w}\|$ relative to $\|h\|$, and in the $\alpha \to \infty$ limit
+$\mathrm{RMSNorm}(h + \alpha \mathbf{w}) = \mathrm{RMSNorm}(\mathbf{w})$ exactly.
+The lens scores are therefore the asymptote of the first-token dose-response, which
+is the saturation Sections 6.2 and 6.3.1 observe, and why $\alpha$ ranges must be
+calibrated to each model's hidden-state scale (Table \ref{tbl:scales}). The clean
+asymptotic story holds only when the hook feeds the final RMSNorm directly; when it
+sits below the final layer (Gemma at layer 19, the layer-18 correctness
+intervention), later blocks process the perturbed state, and large $|\alpha|$ is
+genuinely off-manifold rather than asymptotic, the pathology Appendix F records. Softmaxing them into a "probability" would assert a
 next-token distribution for a state the model never visits; where this paper reports
 actual probabilities (Sections 6.2 and 6.3.1), they come from decoding real, perturbed
 hidden states. Tokens with the highest $\ell_v$ are tokens that the model's
