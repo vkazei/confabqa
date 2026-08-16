@@ -1095,6 +1095,25 @@ generic sentence-starters (`As`, `The`, `There`, `In`). Released as
 `figures/qwen3_1_7b/refusal_direction_meandiff.json`
 (`analysis/refusal_direction_meandiff.py`).
 
+Figure \ref{fig:geometry} shows the geometry behind the disagreement. The mean
+difference is by construction the centroid connector, and $96\%$ of its norm lies in
+the top-two-PC plane, the same high-variance axes along which the wrong class's
+covariance ellipse is widest; the probe direction keeps only $47\%$ of its norm
+there. The general point: a centroid connector asks where refusals sit *on average*
+and ignores within-class covariance, while a discriminative fit approximates the
+covariance-whitened difference $\Sigma^{-1}(\bar{h}_{\mathrm{refusal}} -
+\bar{h}_{\mathrm{wrong}})$, tilting away from high-variance content axes toward
+axes that separate the classes item by item.
+
+![Two recoveries of "the" refusal direction, in the top two principal components of
+the layer-28 refusal+wrong hidden states ($n=549$). Stars: class centroids; dashed
+curves: per-class $1\sigma$ covariance ellipses. The class-mean difference (green)
+connects the centroids and lies almost entirely ($96\%$ of its norm) in this
+top-variance plane; the probe direction (purple, in-plane projection) keeps only
+$47\%$ of its norm here, the rest living in lower-variance axes where the classes
+separate cleanly. Full-space cosine between the two:
+$0.46$.](figures/qwen3_1_7b/direction_geometry.png){#fig:geometry}
+
 The 2048-d hidden-state space has a *direction* whose token-level signature is the
 refusal-opening vocabulary. That direction is what the probe detects: not a general
 "self-knowledge" representation, but a late-network commitment to a specific speech act.
