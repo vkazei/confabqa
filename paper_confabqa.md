@@ -465,8 +465,8 @@ subsample refit the full probe pipeline (StandardScaler $\to$ PCA($16$) $\to$ LR
 CV at `random_state=0`, peak over all $29$ layers) plus the four prompt baselines on the
 same folds. The subsample $h_{\rm adds}$ is $\text{probe peak} - \max(\text{baselines})$
 in pp. The reported $\bar h_{\rm adds}$ is the mean across $K$; the 95\% CI is the
-percentile interval $[h_{(0.025K)}, h_{(0.975K)}]$. This controls for class-imbalance
-interactions between probe and baselines and for item-sampling noise within the pool.
+percentile interval $[h_{(0.025K)}, h_{(0.975K)}]$. This controls class-imbalance
+interactions between probe and baselines and item-sampling noise within the pool.
 $K=30$ is set by compute (each replicate refits the full $29$-layer $\times$ $5$-fold
 pipeline), and percentile CIs at $K=30$ are correspondingly coarse. The
 protocol is "resampling-of-balanced-subsamples" rather than a true item-level bootstrap;
@@ -1275,7 +1275,7 @@ replacement, and on each subsample refit the per-layer probe (StandardScaler $\t
 $\to$ LR, $5$-fold CV, peak) plus the four prompt baselines on the same folds. The cell's
 $h_{adds}$ on that subsample is `probe_peak_acc - max(baselines)` in percentage points;
 $\bar h_{adds}$ across the $K$ subsamples is the point estimate; the percentile-based 95\%
-CI is $[h_{(0.025K)}, h_{(0.975K)}]$. The bootstrap controls for both class-imbalance
+CI is $[h_{(0.025K)}, h_{(0.975K)}]$. The bootstrap controls both class-imbalance
 interactions between the probe and the prompt baselines and item-sampling noise within the
 source pool. External-dataset details (PopQA and TriviaQA sampling, three-seed pool
 deduplication, pool sizes $n_{\text{unique}}$) are in Section 4. Probe-target labels:
