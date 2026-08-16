@@ -42,11 +42,12 @@ abstract: |
 
   Cross-dataset transfer answers the portability question for correctness directly: a
   probe trained on one benchmark retains $81\%$ of its margin on unseen benchmarks for
-  Llama 3.2 3B but collapses for Qwen3-1.7B and Gemma 2 2B. **Future research**:
-  whether the refusal direction transfers the same way, whether the cross-family gap
-  survives at $\gtrsim 7$B, and whether swapping the abstention-training recipe while
-  holding the model family fixed reproduces it. I release ConfabQA, the judge, the full
-  analysis code, and the cached hidden-state activations needed to attack all three.
+  Llama 3.2 3B but collapses for Qwen3-1.7B and Gemma 2 2B. Three research questions
+  remain open: whether the refusal direction transfers the same way, whether the
+  cross-family gap survives at $\gtrsim 7$B, and whether swapping the
+  abstention-training recipe while holding the model family fixed reproduces it. I
+  release ConfabQA, the judge, the full analysis code, and the cached hidden-state
+  activations needed to tackle all three.
 ---
 
 # 1. Introduction
