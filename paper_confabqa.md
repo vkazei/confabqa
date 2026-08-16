@@ -482,7 +482,9 @@ increasing leniency:
 - **text + domain**: engineered features plus domain one-hot in $\{$science, history, culture,
   cinema$\}$.
 - **text + domain + category**: full feature set including the human-assigned category dummy in
-  $\{$well_known, obscure, post_cutoff$\}$. The `category` dummy is the *annotator's*
+  $\{$well_known, obscure, post_cutoff$\}$. For the `cutoff` target this baseline is
+  excluded from the strongest-baseline comparison, since `cutoff_class` is derived from
+  `category` and the dummy would be the label itself. The `category` dummy is the *annotator's*
   expected-difficulty label and is therefore the least conservative baseline; comparing the
   hidden-state probe against it asks "does the model know more about specific facts than what
   the annotator's coarse difficulty bucket already predicts."
@@ -861,9 +863,12 @@ construction (the $62.2\%/33.3\%/19.5\%$ base rates of Table \ref{tbl:bycategory
 a hidden-state probe can reach high absolute accuracy by re-encoding nothing more than
 "this is an obscure question." Scoring the probe against the oracle asks the sharper
 question: does the hidden state carry item-level signal beyond the coarse difficulty
-bucket? A probe that merely rediscovers category cannot beat this baseline. Within the
-single-category strata (within-obscure, within-post) the dummy is constant, so there
-the `+category` baseline collapses to `+domain`.
+bucket? A probe that merely rediscovers category cannot beat this baseline. Two
+degenerate cases are handled explicitly: within the single-category strata
+(within-obscure, within-post) the dummy is constant, so the `+category` baseline
+collapses to `+domain`; and for the `cutoff` target the dummy *is* the label
+(`cutoff_class` is derived from `category`), so it is excluded from the
+strongest-baseline comparison there.
 
 \begin{table}[!htbp]
 \small
@@ -900,8 +905,8 @@ text-only
 \end{minipage} \\\midrule
 \texttt{correct} & 0.700 & 0.767 & 0.773 & 0.779 & \textbf{0.800} &
 \(0.824\) & \(+2.4\) \\
-\texttt{cutoff} & 0.622 & 0.940 & 0.952 & 0.952 & \textbf{1.000} &
-\(0.982\) & \(-1.8\) \\
+\texttt{cutoff} & 0.622 & 0.940 & \textbf{0.952} & 0.952 & 1.000\textsuperscript{$\dagger$} &
+\(0.982\) & \(+3.0\) \\
 \texttt{refusal\_vs\_wrong} & 0.732 & \textbf{0.820} & 0.803 & 0.805 &
 0.800 & \(0.894\) & \(\mathbf{+7.4}\) \\
 \texttt{refusal\_vs\_wrong}\texttt{\_within\_post} & 0.626 &
@@ -916,18 +921,24 @@ text-only
 \end{table}
 
 (All baselines are 5-fold CV accuracy with `random_state=0`; the bolded baseline per row is the
-strongest, and "h adds" is the hidden-state peak minus that strongest bolded baseline.)
+strongest, and "h adds" is the hidden-state peak minus that strongest bolded baseline.
+$\dagger$: for the `cutoff` target the category dummy *is* the label, since
+`cutoff_class` is derived from `category`; the tautological $1.000$ is shown for
+completeness but excluded from the strongest-baseline comparison.)
 
 **What the table says.**
 
 1. **Cutoff is trivially prompt-readable: the cutoff probe is a manipulation check, not a
-   result.** With the human-assigned `category` dummy, prompt features reach $100\%$ accuracy
-   at predicting cutoff class; even the strictest TF-IDF baseline reaches $94.0\%$ because the
-   year mentioned in the question is a near-perfect predictor of whether the answer existed at
-   training time. The hidden-state probe at $98.2\%$ in fact underperforms the strongest prompt
-   baseline by $-1.8$ pp. The high accuracy of the cutoff probe should therefore be read as
-   evidence the model encodes a feature it can also extract from the question text directly: useful only as a sanity check that the probe pipeline is functional, not as a substantive
-   finding about model internals.
+   result.** The `+category` cell is tautological here ($1.000$: the dummy *is* the
+   label) and is excluded from the comparison. The legitimate text baselines land
+   within a few points of the probe anyway: the strictest TF-IDF baseline reaches
+   $94.0\%$ and the engineered text features $95.2\%$, because the year mentioned in
+   the question is a near-perfect predictor of whether the answer existed at training
+   time. The hidden-state probe at $98.2\%$ adds only $+3.0$ pp over that. The high
+   accuracy of the cutoff probe should therefore be read as evidence the model encodes
+   a feature it can also extract from the question text directly: useful as a sanity
+   check that the probe pipeline is functional, not as a substantive finding about
+   model internals.
 
 2. **Correctness probes barely beat prompt features.** The all-items correctness probe gains
    $+2.4$ pp over the strongest baseline; the within-pre-cutoff probe (the headline disconfound
