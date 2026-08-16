@@ -1154,7 +1154,14 @@ is approximately $\mathbf{d} \cdot W_{\mathrm{LM}}^\top / \mathrm{RMS}(\mathbf{h
 layer 28 of Qwen3-1.7B $\mathrm{RMS}(\mathbf{h}) \approx 3$. Empirically, on a pre-cutoff
 probe item the natural greedy first token loses to the refusal opener ` As` at
 $\alpha \approx 2000$, and at $\alpha = 5000$ the top six tokens are entirely refusal openers.
-The sweep below covers this empirical range.
+The sweep below covers this empirical range. In relatable units (the translation
+rows of Table \ref{tbl:alpha}): baseline states are nearly orthogonal to the
+direction (mean $\cos = +0.08$; refusal items $+0.19$, wrong $+0.03$, on
+$\overline{\|h\|} \approx 139$), the smallest effective dose $\alpha = +500$ is
+already a perturbation $3.6\times$ the state norm that rotates the state to $0.97$
+alignment, and the first-token flip completes between alignments $0.97$ and $0.996$.
+The one-shot flip is a near-replacement of the state's direction, not a nudge,
+consistent with the $\alpha \to \infty$ asymptote of Section 6.1.
 
 **Sweep:** $\alpha \in \{-2000, -500, 0, 500, 1500, 3000\}$, applied at the last prompt token
 during prefill on each of the 60 subset items, with greedy decoding. Each generation is
@@ -1174,7 +1181,10 @@ and why the two measures diverge.
 \small
 \centering
 \caption{Causal-intervention outcome rates across the $\alpha$ sweep
-($n = 30$ per subset).\label{tbl:alpha}}
+($n = 30$ per subset). The top two rows translate $\alpha$ into relatable units:
+perturbation norm relative to the typical hidden-state norm, and the resulting mean
+alignment of the perturbed state with the direction (averaged over the $n=549$
+subset).\label{tbl:alpha}}
 \begin{tabular}{@{}
   >{\raggedright\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.2394}}
   >{\raggedright\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.3380}}
@@ -1186,6 +1196,9 @@ and why the two measures diverge.
   >{\raggedleft\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.0704}}@{}}
 \toprule
 subset & metric & $\alpha = -2000$ & $-500$ & $0$ & $+500$ & $+1500$ & $+3000$ \\
+\midrule
+\multicolumn{2}{@{}l}{\emph{perturbation} $\|\alpha\hat{\mathbf{w}}\| / \overline{\|h\|}$} & $14.4\times$ & $3.6\times$ & $0$ & $3.6\times$ & $10.8\times$ & $21.5\times$ \\
+\multicolumn{2}{@{}l}{\emph{mean alignment} $\cos\angle(h{+}\alpha\hat{\mathbf{w}},\, \hat{\mathbf{w}})$} & $-.998$ & $-.962$ & $+.076$ & $+.965$ & $+.996$ & $+.999$ \\
 \midrule
 originally WRONG & first-token refusal-opener rate & $0\%$ & $3\%$ & $10\%$ & $50\%$ & $97\%$ & $100\%$ \\
 originally WRONG & judge-label REFUSAL rate & $10\%$ & $0\%$ & $0\%$ & $13\%$ & $30\%$ & $30\%$ \\
@@ -1556,7 +1569,10 @@ all three runs (matching the cross-model evaluation protocol of Section 7.1; Gem
 template lacks a system role and cannot use `judge.py` as a self-judge). Subset sizes are
 constrained: Llama refuses $97.5\%$ of post-cutoff failures, leaving only $12$ confabulating
 items rather than the $30$ used for Qwen3 and Gemma. Alpha ranges are calibrated per model to
-each model's natural hidden-state scale.
+each model's natural hidden-state scale; in perturbation-to-state-norm units the
+real cross-model difference is the tolerated range, topping out near $3\times$ the
+state norm for Llama ($\alpha = 300$ on $\overline{\|h\|} = 90$) versus
+$\approx 20\times$ for Qwen and Gemma.
 
 The three models' layer-of-interest hidden states differ substantially in magnitude
 and variability; Table \ref{tbl:scales} (Appendix F) lists the per-model scales and the
