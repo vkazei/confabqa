@@ -854,6 +854,17 @@ the same folds. The honest comparison is the hidden-state probe vs.\ the *strong
 four baselines, since a hidden-state probe that doesn't beat the strongest baseline isn't
 recovering anything the prompt itself does not already trivially yield.
 
+The `+category` baseline deserves a note, since the category dummy is the annotator's
+label rather than a feature any deployed classifier would see. It is included as a
+*difficulty oracle*. Category explains most of the raw correctness variance by
+construction (the $62.2\%/33.3\%/19.5\%$ base rates of Table \ref{tbl:bycategory}), so
+a hidden-state probe can reach high absolute accuracy by re-encoding nothing more than
+"this is an obscure question." Scoring the probe against the oracle asks the sharper
+question: does the hidden state carry item-level signal beyond the coarse difficulty
+bucket? A probe that merely rediscovers category cannot beat this baseline. Within the
+single-category strata (within-obscure, within-post) the dummy is constant, so there
+the `+category` baseline collapses to `+domain`.
+
 \begin{table}[!htbp]
 \small
 \centering
