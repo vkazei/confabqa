@@ -101,3 +101,9 @@
     \xeCJKDeclareCharClass{Default}{"2018, "2019, "201C, "201D, "2013, "2014}%
   \fi
 }
+
+% Code-heavy paragraphs: with unbreakable \texttt tokens, the default
+% \tolerance=200 makes TeX run tokens into the margin rather than set a
+% loose line. Prefer the loose line.
+\tolerance=2400
+\hbadness=2400

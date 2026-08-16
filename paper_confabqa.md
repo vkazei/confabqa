@@ -426,9 +426,10 @@ to the model's hidden state and report 5-fold CV accuracy on the *same folds*
 (`random_state=0`) so the comparison to the hidden-state probe is direct. Four baselines of
 increasing leniency:
 
-- **TF-IDF (term frequency--inverse document frequency; strictest text-only)**: `TfidfVectorizer(ngram_range=(1,2), min_df=2, max_df=0.95,
-  sublinear_tf=True)` $\to$ `LogisticRegression(max_iter=2000, C=1.0)`, fit on the raw question
-  text. No engineered features, no metadata: the strongest "what could a bag-of-tokens
+- **TF-IDF (term frequency--inverse document frequency; strictest text-only)**:
+  `TfidfVectorizer` (`ngram_range=(1,2)`, `min_df=2`, `max_df=0.95`,
+  `sublinear_tf=True`) $\to$ `LogisticRegression(max_iter=2000, C=1.0)`, fit on the
+  raw question text. No engineered features, no metadata: the strongest "what could a bag-of-tokens
   classifier learn" baseline.
 - **text-only (engineered)**: numeric features only (question character length, word count,
   has-year indicator, year value, number of capitalized words, digits, commas,
@@ -1810,7 +1811,7 @@ Two independent annotators re-graded ConfabQA alongside the Qwen3-1.7B judge:
 - `data/claude_grading_v1.json`: Claude Opus 4.7 grading a stratified $30$-item sample
   (`random.Random(42)`, 10 items per category) under the same rule.
 
-The Qwen judge labels are embedded in each response file at
+The Qwen judge labels are embedded in the response files,
 `data/responses/qwen3_1_7b/{id}.json`. Agreement statistics for both annotators are in
 the Section 4 table; the DR pass additionally web-verified each gold answer
 and flagged three items (`his_pc_09`, `his_pc_56`, `his_pc_90`) with stated-premise

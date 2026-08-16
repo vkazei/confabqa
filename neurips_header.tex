@@ -93,3 +93,9 @@
 
 % Cyrillic passthrough (arXiv header maps this to a fallback font).
 \newcommand{\cyrtext}[1]{#1}
+
+% Code-heavy paragraphs: with unbreakable \texttt tokens, the default
+% \tolerance=200 makes TeX run tokens into the margin rather than set a
+% loose line. Prefer the loose line.
+\tolerance=2400
+\hbadness=2400
