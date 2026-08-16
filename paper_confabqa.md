@@ -852,7 +852,7 @@ positive rate of $33/402 \approx 8.2\%$. The ROC AUC of $0.944$ indicates that t
 separation is genuinely strong: the probe ranks refusals well above confabulations in score
 order.
 
-## 5.6 The prompt-feature baseline: what survives, what does not
+## 5.6 Value of the hidden state compared to prompt features
 
 For each probe target, I fit the four baselines specified in Section 4 (TF-IDF on raw question
 text; engineered text-only; +domain; +domain+category) and report the same 5-fold CV accuracy on
