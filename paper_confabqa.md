@@ -1077,6 +1077,24 @@ point at the same conclusion: the late-layer hidden state carries a discrete pra
 refusal direction, on the full refusal+wrong subset (top) and the within-post subset (bottom).
 Refusals concentrate at large positive projections; wrongs near zero or negative.](figures/qwen3_1_7b/12_probe_score_hist_refusal_vs_wrong_within_post.png)
 
+**Recovery-method check: difference in class means.** The simplest alternative
+recovery is the one safety-refusal work uses (Arditi et al. 2024): the raw difference
+of class means, $\bar{h}_{\mathrm{refusal}} - \bar{h}_{\mathrm{wrong}}$, at the same
+layer. It is *not* the probe direction: cosine $0.46$ on the full subset ($0.36$
+within post-cutoff, against a chance level of $\approx 0.02$ in $2048$ dimensions),
+with only one of its top-ten lens tokens (` as` itself, which it ranks first)
+overlapping the probe's. Its lens instead mixes the opener with a temporal-currency
+vocabulary (` current`, ` currently`, ` present`, `我没有` "I don't have"), and within
+post-cutoff the currency family dominates outright (including its code-identifier
+tokenizations such as `currentTime`). Read against Section 6.3, the two recoveries
+weight the two mechanisms differently: the mean difference absorbs the content-cue
+component (what refusal-triggering questions are *about*), while the discriminatively
+trained probe concentrates the opener-commitment component (what the model is about
+to *say*). A plain average of refusal states, as a control, points at nothing but
+generic sentence-starters (`As`, `The`, `There`, `In`). Released as
+`figures/qwen3_1_7b/refusal_direction_meandiff.json`
+(`analysis/refusal_direction_meandiff.py`).
+
 The 2048-d hidden-state space has a *direction* whose token-level signature is the
 refusal-opening vocabulary. That direction is what the probe detects: not a general
 "self-knowledge" representation, but a late-network commitment to a specific speech act.
