@@ -64,6 +64,12 @@
 \usepackage{caption}
 \captionsetup{font=footnotesize,labelfont=bf,skip=3pt}
 
+% All tables are raw LaTeX (booktabs tabulars); pandoc no longer emits its
+% tables preamble, so load the packages the raw tables need explicitly.
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{calc}
+
 % Tighter table row spacing + smaller table font.
 \renewcommand{\arraystretch}{1.0}
 \AtBeginEnvironment{tabular}{\small}

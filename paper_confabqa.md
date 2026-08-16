@@ -330,15 +330,23 @@ ConfabQA comprises 784 items in a $4 \times 3$ design: 4 domains (science, histo
 cinema) crossed with 3 categories (well-known pre-cutoff, obscure pre-cutoff, post-cutoff).
 Per-cell counts:
 
-| domain  | well-known | obscure | post-cutoff | total |
-|:--------|-----------:|--------:|------------:|------:|
-| science | 42 | 45 | 119 | 206 |
-| history | 33 | 37 | 127 | 197 |
-| culture | 34 | 34 | 121 | 189 |
-| cinema  | 34 | 37 | 121 | 192 |
-| **total** | **143** | **153** | **488** | **784** |
-
-: ConfabQA cell counts: 4 domains $\times$ 3 categories, $n = 784$.\label{tbl:cells}
+\begin{table}[!htbp]
+\small
+\centering
+\caption{ConfabQA cell counts: 4 domains \(\times\) 3 categories,
+\(n = 784\).\label{tbl:cells}}
+\begin{tabular}{@{}lrrrr@{}}
+\toprule
+domain & well-known & obscure & post-cutoff & total \\\midrule
+science & 42 & 45 & 119 & 206 \\
+history & 33 & 37 & 127 & 197 \\
+culture & 34 & 34 & 121 & 189 \\
+cinema & 34 & 37 & 121 & 192 \\
+\textbf{total} & \textbf{143} & \textbf{153} & \textbf{488} &
+\textbf{784} \\
+\bottomrule
+\end{tabular}
+\end{table}
 
 Items are generated from per-domain templated source files; each item carries a provenance URL
 for its gold answer and a validation status field populated by an external LLM with web access.
@@ -393,12 +401,36 @@ re-grading from (`question`, `gold`, `model answer`) triples; and Google Deep Re
 labels cover a stratified $30$-item sample (`random.Random(42)`); DR and the
 Qwen-judge cover all $784$.
 
-| pair                                                    | items  | agree      | rate     | Cohen's $\kappa$ |
-|:---------------------------------------------|------:|----------:|------:|------:|
-| DR vs.\ Qwen-judge (full ConfabQA)                  | $784$  | $682 / 784$ | $87.0\%$ | $0.780$          |
-| Claude vs.\ Qwen-judge (stratified 30-item sample)      | $30$   | $30 / 30$   | $100\%$  | $1.000$          |
-
-: Judge agreement on ConfabQA across three annotators.\label{tbl:judge}
+\begin{table}[!htbp]
+\small
+\centering
+\caption{Judge agreement on ConfabQA across three
+annotators.\label{tbl:judge}}
+\begin{tabular}{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.5897}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.0897}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.1410}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.0897}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.0897}}@{}}
+\toprule
+\begin{minipage}[b]{\linewidth}\raggedright
+pair
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+items
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+agree
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+rate
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+Cohen's \(\kappa\)
+\end{minipage} \\\midrule
+DR vs.~Qwen-judge (full ConfabQA) & \(784\) & \(682 / 784\) & \(87.0\%\)
+& \(0.780\) \\
+Claude vs.~Qwen-judge (stratified 30-item sample) & \(30\) & \(30 / 30\)
+& \(100\%\) & \(1.000\) \\
+\bottomrule
+\end{tabular}
+\end{table}
 
 Cohen's $\kappa = 0.78$ (DR vs.\ Qwen-judge on all $784$ items) is in the
 "substantial agreement" range (Landis and Koch, 1977). DR is systematically
@@ -549,23 +581,26 @@ and 7 then test what survives a change of model and a change of dataset.
 **Overall.** Of 784 items, 235 (30.0%) are graded `correct` by the judge; 147 (18.8%) are
 `refusal`; 402 (51.3%) are `wrong`.
 
-**By cutoff class.** The cutoff manipulation works as designed:
+**By cutoff class and category.** The cutoff manipulation works as designed:
+pre-cutoff accuracy is 47.3% (140/296) against 19.5% (95/488) post-cutoff, and the
+$4 \times 3$ design produces the expected ordering, with the obscure-pre-cutoff cell
+sitting cleanly between the well-known and post-cutoff cells
+(Table \ref{tbl:bycategory}).
 
-| stratum | n | correct | accuracy |
-|---|--:|--:|--:|
-| pre-cutoff | 296 | 140 | 47.3% |
-| post-cutoff | 488 | 95 | 19.5% |
-
-**By category.** The $4 \times 3$ design produces the expected ordering, with the obscure-pre-cutoff cell
-sitting cleanly between the well-known and post-cutoff cells in accuracy:
-
-| category | n | correct | accuracy | mean logprob |
-|---|--:|--:|--:|--:|
-| well-known (pre-cutoff) | 143 | 89 | 62.2% | $-0.120$ |
-| obscure (pre-cutoff) | 153 | 51 | 33.3% | $-0.149$ |
-| post-cutoff | 488 | 95 | 19.5% | $-0.145$ |
-
-: Accuracy and mean per-token log-probability by category.\label{tbl:bycategory}
+\begin{table}[!htbp]
+\small
+\centering
+\caption{Judge-label counts, accuracy, and mean per-token log-probability by
+category.\label{tbl:bycategory}}
+\begin{tabular}{@{}lrrrrrr@{}}
+\toprule
+category & n & correct & refusal & wrong & accuracy & mean logprob \\\midrule
+well-known (pre-cutoff) & 143 & 89 & 0 & 54 & 62.2\% & \(-0.120\) \\
+obscure (pre-cutoff) & 153 & 51 & 0 & 102 & 33.3\% & \(-0.149\) \\
+post-cutoff & 488 & 95 & 147 & 246 & 19.5\% & \(-0.145\) \\
+\bottomrule
+\end{tabular}
+\end{table}
 
 The obscure-pre-cutoff cell is the benchmark's innovation. The model fails on $\approx 66.7\%$ of items
 whose answers existed in its training data: exactly the population needed to test the cutoff
@@ -573,16 +608,9 @@ disconfound. Mean log-probability also stratifies: the model is *least* confiden
 pre-cutoff items, even though it is more confident on post-cutoff items where it more often
 refuses (refusals are themselves fluent and high-confidence; see Section 5.3).
 
-**By judge label.** The three-way distribution and its concentration in the post-cutoff cell:
-
-| label | n | share | all in post-cutoff? |
-|---|--:|--:|--|
-| correct | 235 | 30.0% | no (140 pre, 95 post) |
-| refusal | 147 | 18.8% | **yes (0 pre, 147 post)** |
-| wrong | 402 | 51.3% | no (156 pre, 246 post) |
-
-All 147 refusals fall in the post-cutoff cell; the model never refuses on pre-cutoff items in
-this dataset, suggesting that "refusal" in Qwen3-1.7B is triggered specifically by the
+**By judge label.** The refusal column of Table \ref{tbl:bycategory} carries the
+distribution's key asymmetry: all 147 refusals fall in the post-cutoff cell. The
+model never refuses on pre-cutoff items in this dataset, suggesting that "refusal" in Qwen3-1.7B is triggered specifically by the
 knowledge-cutoff cue ("As of my knowledge cutoff in 2023...") rather than by intrinsic uncertainty
 about the answer. This observation motivates the `refusal_vs_wrong_within_post` probe defined in
 Section 4, which conditions out the cutoff covariate by construction.
@@ -726,16 +754,50 @@ statistically pinned at this sample size.](figures/per_layer_probes_merged.png){
 
 **Probe peak summary (vs.\ majority baseline only):**
 
-| target | n | best layer | 1$\sigma$ layer range | peak acc | majority | margin |
-|:----------------------------------|----:|----:|:------|-------------:|-----:|-----:|
-| `correct` (all items) | 784 | 18 | 10–28 | $0.824 \pm 0.031$ | 0.700 | $+12.4$ |
-| `cutoff` (all items) | 784 | 13 | 10–20 | $0.982 \pm 0.005$ | 0.622 | $+36.0$ |
-| `refusal_vs_wrong` | 549 | 28 | 16–28 | $0.894 \pm 0.019$ | 0.732 | $+16.2$ |
-| `refusal_vs_wrong_within_post` | 393 | 28 | 20–28 | $0.870 \pm 0.022$ | 0.626 | $+24.4$ |
-| `correct_within_pre` | 296 | 18 | 9–28 | $0.848 \pm 0.038$ | 0.527 | $+32.1$ |
-| `correct_within_obscure` | 153 | 7 | 1–28 | $0.805 \pm 0.063$ | 0.667 | $+13.8$ |
-
-: Probe peaks vs. majority baselines (Qwen3-1.7B, ConfabQA).\label{tbl:probepeaks}
+\begin{table}[!htbp]
+\small
+\centering
+\caption{Probe peaks vs.~majority baselines (Qwen3-1.7B,
+ConfabQA).\label{tbl:probepeaks}}
+\begin{tabular}{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.4487}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.0641}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.0641}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.0897}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1795}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.0769}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.0769}}@{}}
+\toprule
+\begin{minipage}[b]{\linewidth}\raggedright
+target
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+n
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+best layer
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+1\(\sigma\) layer range
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+peak acc
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+majority
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+margin
+\end{minipage} \\\midrule
+\texttt{correct} (all items) & 784 & 18 & 10--28 & \(0.824 \pm 0.031\) &
+0.700 & \(+12.4\) \\
+\texttt{cutoff} (all items) & 784 & 13 & 10--20 & \(0.982 \pm 0.005\) &
+0.622 & \(+36.0\) \\
+\texttt{refusal\_vs\_wrong} & 549 & 28 & 16--28 & \(0.894 \pm 0.019\) &
+0.732 & \(+16.2\) \\
+\texttt{refusal\_vs\_wrong\_within\_post} & 393 & 28 & 20--28 &
+\(0.870 \pm 0.022\) & 0.626 & \(+24.4\) \\
+\texttt{correct\_within\_pre} & 296 & 18 & 9--28 & \(0.848 \pm 0.038\) &
+0.527 & \(+32.1\) \\
+\texttt{correct\_within\_obscure} & 153 & 7 & 1--28 &
+\(0.805 \pm 0.063\) & 0.667 & \(+13.8\) \\
+\bottomrule
+\end{tabular}
+\end{table}
 
 The 1$\sigma$ layer-range column matters: for the within-obscure probe at n=153, accuracies
 across the entire 28-layer network are within one fold-standard-deviation of the argmax, so the
@@ -751,14 +813,28 @@ Bare accuracy ($0.894$) is misleading for the `refusal_vs_wrong` target because 
 $147/549 = 26.8\%$ of the wrong+refusal subset: a constant predictor of `wrong` already scores
 $0.732$. The class-imbalance-aware metrics at the peak layer (28):
 
-| metric | value |
-|---|--:|
-| confusion matrix $[[\mathrm{TN}, \mathrm{FP}], [\mathrm{FN}, \mathrm{TP}]]$ | $[[369, 33], [25, 122]]$ |
-| accuracy | $0.894$ |
-| balanced accuracy | $0.874$ |
-| recall on refusals (TPR) | $122/147 = 0.830$ |
-| recall on wrong (TNR) | $369/402 = 0.918$ |
-| ROC AUC | $0.944$ |
+\begin{center}
+\small
+\begin{tabular}{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}@{}}
+\toprule
+\begin{minipage}[b]{\linewidth}\raggedright
+metric
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+value
+\end{minipage} \\\midrule
+confusion matrix
+\([[\mathrm{TN}, \mathrm{FP}], [\mathrm{FN}, \mathrm{TP}]]\) &
+\([[369, 33], [25, 122]]\) \\
+accuracy & \(0.894\) \\
+balanced accuracy & \(0.874\) \\
+recall on refusals (TPR) & \(122/147 = 0.830\) \\
+recall on wrong (TNR) & \(369/402 = 0.918\) \\
+ROC AUC & \(0.944\) \\
+\bottomrule
+\end{tabular}
+\end{center}
 
 The probe is not defaulting to "wrong": it correctly flags 122 of 147 refusals, with a false
 positive rate of $33/402 \approx 8.2\%$. The ROC AUC of $0.944$ indicates that the underlying
@@ -773,16 +849,55 @@ the same folds. The honest comparison is the hidden-state probe vs.\ the *strong
 four baselines, since a hidden-state probe that doesn't beat the strongest baseline isn't
 recovering anything the prompt itself does not already trivially yield.
 
-| target | majority | TF-IDF | text-only | +domain | +category | **hidden state** | **h adds** |
-|:----------------------------------------|-----:|-----:|-----:|-----:|-----:|-----:|-----:|
-| `correct` | 0.700 | 0.767 | 0.773 | 0.779 | **0.800** | $0.824$ | $+2.4$ |
-| `cutoff` | 0.622 | 0.940 | 0.952 | 0.952 | **1.000** | $0.982$ | $-1.8$ |
-| `refusal_vs_wrong` | 0.732 | **0.820** | 0.803 | 0.805 | 0.800 | $0.894$ | $\mathbf{+7.4}$ |
-| `refusal_vs_wrong`<br>`_within_post` | 0.626 | **0.774** | 0.741 | 0.730 | 0.730 | $0.870$ | $\mathbf{+9.6}$ |
-| `correct_within_pre` | 0.527 | 0.797 | 0.811 | 0.811 | **0.818** | $0.848$ | $+3.0$ |
-| `correct_within`<br>`_obscure` | 0.667 | 0.752 | **0.830** | 0.811 | 0.811 | $0.805$ | $-2.5$ |
-
-: Hidden-state probe vs. the four prompt-feature baselines; "h adds" = probe peak $-$ strongest (bolded) baseline.\label{tbl:hadds}
+\begin{table}[!htbp]
+\small
+\centering
+\caption{Hidden-state probe vs.~the four prompt-feature baselines; ``h
+adds'' = probe peak \(-\) strongest (bolded)
+baseline.\label{tbl:hadds}}
+\begin{tabular}{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.4940}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.0723}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.0723}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.0723}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.0723}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.0723}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.0723}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.0723}}@{}}
+\toprule
+\begin{minipage}[b]{\linewidth}\raggedright
+target
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+majority
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+TF-IDF
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+text-only
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
++domain
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
++category
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+\textbf{hidden state}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+\textbf{h adds}
+\end{minipage} \\\midrule
+\texttt{correct} & 0.700 & 0.767 & 0.773 & 0.779 & \textbf{0.800} &
+\(0.824\) & \(+2.4\) \\
+\texttt{cutoff} & 0.622 & 0.940 & 0.952 & 0.952 & \textbf{1.000} &
+\(0.982\) & \(-1.8\) \\
+\texttt{refusal\_vs\_wrong} & 0.732 & \textbf{0.820} & 0.803 & 0.805 &
+0.800 & \(0.894\) & \(\mathbf{+7.4}\) \\
+\texttt{refusal\_vs\_wrong}\texttt{\_within\_post} & 0.626 &
+\textbf{0.774} & 0.741 & 0.730 & 0.730 & \(0.870\) &
+\(\mathbf{+9.6}\) \\
+\texttt{correct\_within\_pre} & 0.527 & 0.797 & 0.811 & 0.811 &
+\textbf{0.818} & \(0.848\) & \(+3.0\) \\
+\texttt{correct\_within}\texttt{\_obscure} & 0.667 & 0.752 &
+\textbf{0.830} & 0.811 & 0.811 & \(0.805\) & \(-2.5\) \\
+\bottomrule
+\end{tabular}
+\end{table}
 
 (All baselines are 5-fold CV accuracy with `random_state=0`; the bolded baseline per row is the
 strongest, and "h adds" is the hidden-state peak minus that strongest bolded baseline.)
@@ -841,18 +956,26 @@ recovered from a labeled probe, that maps to a coherent neighborhood in token sp
 
 **Top tokens along the refusal direction (full subset, n=549).**
 
-| rank | token | logit | | rank | token | logit |
-|--:|---|--:|---|--:|---|--:|
-| 1 | ` as`         | $+19.22$ | | 9 | `_AS`        | $+15.19$ |
-| 2 | `作为一个`     | $+17.67$ | | 10 | `(as`       | $+14.47$ |
-| 3 | `作为`         | $+17.14$ | | 11 | ` there`    | $+14.16$ |
-| 4 | `as`          | $+16.76$ | | 12 | `作為`       | $+13.43$ |
-| 5 | `As`          | $+15.96$ | | 13 | `作为一名`   | $+13.24$ |
-| 6 | ` As`         | $+15.48$ | | 14 | `.getAs`    | $+13.12$ |
-| 7 | `\tas`        | $+15.35$ | | 15 | `asString`  | $+12.94$ |
-| 8 | `-as`         | $+15.25$ | |  |  |  |
-
-: Top tokens along the refusal direction (logit-lens projection, full subset $n = 549$).\label{tbl:toptokens}
+\begin{table}[!htbp]
+\small
+\centering
+\caption{Top tokens along the refusal direction (logit-lens projection,
+full subset \(n = 549\)).\label{tbl:toptokens}}
+\begin{tabular}{@{}rlrlrlr@{}}
+\toprule
+rank & token & logit & & rank & token & logit \\\midrule
+1 & \texttt{as} & \(+19.22\) & & 9 & \texttt{\_AS} & \(+15.19\) \\
+2 & \texttt{作为一个} & \(+17.67\) & & 10 & \texttt{(as} & \(+14.47\) \\
+3 & \texttt{作为} & \(+17.14\) & & 11 & \texttt{there} & \(+14.16\) \\
+4 & \texttt{as} & \(+16.76\) & & 12 & \texttt{作為} & \(+13.43\) \\
+5 & \texttt{As} & \(+15.96\) & & 13 & \texttt{作为一名} & \(+13.24\) \\
+6 & \texttt{As} & \(+15.48\) & & 14 & \texttt{.getAs} & \(+13.12\) \\
+7 & \texttt{\textbackslash{}tas} & \(+15.35\) & & 15 & \texttt{asString}
+& \(+12.94\) \\
+8 & \texttt{-as} & \(+15.25\) & & & & \\
+\bottomrule
+\end{tabular}
+\end{table}
 
 The top of the list is exactly the vocabulary of refusal openings: " as" (1), "as" (4), "As"
 (5), " As" (6); the model's refusals near-universally begin with "As of my knowledge cutoff
@@ -965,19 +1088,47 @@ dynamics.](figures/qwen3_1_7b/13_intervention_first_token_flip.png){#fig:interve
 **Sample generations** (`cin_pc_60`, gold "Jacques Audiard"; baseline says "Luis Llosa", a
 confabulation):
 
-| $\alpha$ | first 100 chars |
-|--:|---|
-| $0$ | `'Emilia Perez' (2024), a Spanish-language musical crime film, was directed by **Luis Llosa**.` |
-| $+1500$ | `As of 2024, the Spanish-language musical crime film **"Emilia Perez"** was directed by **Miguel Ángel Martínez**.` |
-| $+3000$ | (same as $+1500$) |
+\begin{center}
+\small
+\begin{tabular}{@{}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}@{}}
+\toprule
+\begin{minipage}[b]{\linewidth}\raggedleft
+\(\alpha\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+first 100 chars
+\end{minipage} \\\midrule
+\(0\) &
+\texttt{\textquotesingle{}Emilia\ Perez\textquotesingle{}\ (2024),\ a\ Spanish-language\ musical\ crime\ film,\ was\ directed\ by\ **Luis\ Llosa**.} \\
+\(+1500\) &
+\texttt{As\ of\ 2024,\ the\ Spanish-language\ musical\ crime\ film\ **"Emilia\ Perez"**\ was\ directed\ by\ **Miguel\ Ángel\ Martínez**.} \\
+\(+3000\) & (same as \(+1500\)) \\
+\bottomrule
+\end{tabular}
+\end{center}
 
 And `cin_pc_34` (baseline refuses on the 2024 Venice Golden Lion):
 
-| $\alpha$ | first 100 chars |
-|--:|---|
-| $0$ | `As of my knowledge cutoff in 2024, there is no official announcement regarding a director winning the Golden Lion...` |
-| $-500$ | `The 2024 Venice Film Festival took place from September 2 to 14, 2024. The Golden Lion, the highest award...` |
-| $-2000$ | (same as $-500$) |
+\begin{center}
+\small
+\begin{tabular}{@{}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}@{}}
+\toprule
+\begin{minipage}[b]{\linewidth}\raggedleft
+\(\alpha\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+first 100 chars
+\end{minipage} \\\midrule
+\(0\) &
+\texttt{As\ of\ my\ knowledge\ cutoff\ in\ 2024,\ there\ is\ no\ official\ announcement\ regarding\ a\ director\ winning\ the\ Golden\ Lion...} \\
+\(-500\) &
+\texttt{The\ 2024\ Venice\ Film\ Festival\ took\ place\ from\ September\ 2\ to\ 14,\ 2024.\ The\ Golden\ Lion,\ the\ highest\ award...} \\
+\(-2000\) & (same as \(-500\)) \\
+\bottomrule
+\end{tabular}
+\end{center}
 
 **Interpretation.** The recovered direction is the causal mechanism by which Qwen3-1.7B
 selects refusal-opening tokens: a one-shot intervention at the last prompt token reliably
@@ -1105,18 +1256,38 @@ IDs).
 
 ![Causal dose-response of SAE feature 2191. On 30 ConfabQA wrong items (blue), adding $\alpha \cdot \hat W_{\rm dec}[2191]$ to the last-prompt-token residual stream at HF layer 28 induces a sharp transition between $\alpha=200$ and $\alpha=750$ from no refusal-opener probability to 100\% of next-token mass on refusal openers (and 30/30 argmax flips). The 30 ConfabQA refusal items (red) are already saturated at $\alpha=0$.](figures/sae_causal_ablation.png){#fig:sae-causal}
 
-| $\alpha$ | wrong: $P(\rm opener)$ | wrong: argmax-in-opener | refusal: $P(\rm opener)$ |
-|--:|--:|--:|--:|
-| $0$    | $0.000$       | $0/30$  | $0.969$ |
-| $16$   | $0.000$       | $0/30$  | $0.981$ |
-| $64$   | $0.000$       | $0/30$  | $0.998$ |
-| $200$  | $0.000$       | $0/30$  | $1.000$ |
-| $400$  | $\mathbf{0.364}$ | $\mathbf{11/30}$ | $1.000$ |
-| $750$  | $\mathbf{1.000}$ | $\mathbf{30/30}$ | $1.000$ |
-| $1500$ | $1.000$       | $30/30$ | $1.000$ |
-| $3000$ | $1.000$       | $30/30$ | $1.000$ |
-
-: Feature 2191 dose-response: next-token refusal-opener probability under $\alpha \cdot \hat W_{\rm dec}[2191]$.\label{tbl:dose}
+\begin{table}[!htbp]
+\small
+\centering
+\caption{Feature 2191 dose-response: next-token refusal-opener
+probability under
+\(\alpha \cdot \hat W_{\rm dec}[2191]\).\label{tbl:dose}}
+\begin{tabular}{@{}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}@{}}
+\toprule
+\begin{minipage}[b]{\linewidth}\raggedleft
+\(\alpha\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+wrong: \(P(\rm opener)\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+wrong: argmax-in-opener
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+refusal: \(P(\rm opener)\)
+\end{minipage} \\\midrule
+\(0\) & \(0.000\) & \(0/30\) & \(0.969\) \\
+\(16\) & \(0.000\) & \(0/30\) & \(0.981\) \\
+\(64\) & \(0.000\) & \(0/30\) & \(0.998\) \\
+\(200\) & \(0.000\) & \(0/30\) & \(1.000\) \\
+\(400\) & \(\mathbf{0.364}\) & \(\mathbf{11/30}\) & \(1.000\) \\
+\(750\) & \(\mathbf{1.000}\) & \(\mathbf{30/30}\) & \(1.000\) \\
+\(1500\) & \(1.000\) & \(30/30\) & \(1.000\) \\
+\(3000\) & \(1.000\) & \(30/30\) & \(1.000\) \\
+\bottomrule
+\end{tabular}
+\end{table}
 
 The dose-response is monotonic with a sharp transition between $\alpha=200$
 and $\alpha=750$ on wrong items: from $P=0$ to $P=1$ across one $\log_2$
@@ -1175,27 +1346,66 @@ To evaluate the generalizability of the architectural probing results, the entir
 
 Table \ref{tbl:crossmodel} compiles the key model statistics, strata accuracies, and peak linear probe accuracies across Qwen3-1.7B, Gemma 2 2B, and Llama 3.2 3B. Figure \ref{fig:comparative-probes} shows the per-layer probing accuracy curves for all three models.
 
-| Metric / Probe | Qwen3-1.7B | Gemma 2 2B | Llama 3.2 3B |
-|:---| ---: | ---: | ---: |
-| **Dataset Size (n)** | 784 | 784 | 784 |
-| **Overall Accuracy** | 30.0% | 31.9% | 30.6% |
-| **Pre-cutoff Accuracy** | 47.3% | 69.6% | 80.7% |
-| **Post-cutoff Accuracy** | 19.5% | 9.0% | 0.2% |
-| **Refusal Rate on Post-cutoff Failures** | 37.4% (147/393) | 55.2% (245/444) | 97.5% (475/487) |
-|   |   |   |   |
-| *PROBE ACCURACIES (PEAK % [PEAK LAYER] vs BASELINE)* |   |   |   |
-| **Correctness (all items)** | **82.4%** [L18]<br>(base 70.0%, +12.4 pp) | **89.7%** [L14]<br>(base 68.1%, +21.6 pp) | **94.3%** [L13]<br>(base 69.4%, +24.9 pp) |
-| **Cutoff (all items)** | **98.2%** [L13]<br>(base 62.2%, +36.0 pp) | **98.9%** [L14]<br>(base 62.2%, +36.6 pp) | **99.4%** [L25]<br>(base 62.2%, +37.1 pp) |
-| **Refusal-vs-Wrong (subset)** | **89.4%** [L28]<br>(base 73.2%, +16.2 pp) | **83.9%** [L19]<br>(base 53.6%, +30.3 pp) | **95.8%** [L28]<br>(base 91.9%, +3.9 pp) |
-| **Correct within Pre-cutoff** | **84.8%** [L18]<br>(base 52.7%, +32.1 pp) | **91.2%** [L17]<br>(base 69.6%, +21.6 pp) | **85.2%** [L13]<br>(base 80.7%, +4.4 pp) |
-| **Correct within Obscure** | **80.5%** [L7]<br>(base 66.7%, +13.8 pp) | **88.9%** [L24]<br>(base 64.1%, +24.9 pp) | **81.1%** [L13]<br>(base 75.2%, +5.9 pp) |
-|   |   |   |   |
-| *PROMPT FEATURE BASELINE COMPARISONS* |   |   |   |
-| **Correctness vs +category** | Probe **82.4%** vs Base **80.0%**<br>(+2.4 pp) | Probe **89.7%** vs Base **88.0%**<br>(+1.7 pp) | Probe **94.3%** vs Base **91.8%**<br>(+2.4 pp) |
-| **Refusal-vs-Wrong vs TF-IDF** | Probe **89.4%** vs Base **82.0%**<br>(+7.4 pp) | Probe **83.9%** vs Base **67.6%**<br>(+16.3 pp) | Probe **95.8%** vs Base **93.6%**<br>(+2.2 pp) |
-| **Within-Pre Correct vs +category** | Probe **84.8%** vs Base **81.8%**<br>(+3.0 pp) | Probe **91.2%** vs Base **86.1%**<br>(+5.1 pp) | Probe **85.2%** vs Base **79.4%**<br>(+5.8 pp) |
-
-: Cross-model comparison summary.\label{tbl:crossmodel}
+\begin{table}[!htbp]
+\small
+\centering
+\caption{Cross-model comparison
+summary.\label{tbl:crossmodel}}
+\begin{tabular}{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}@{}}
+\toprule
+\begin{minipage}[b]{\linewidth}\raggedright
+Metric / Probe
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+Qwen3-1.7B
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+Gemma 2 2B
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+Llama 3.2 3B
+\end{minipage} \\\midrule
+\textbf{Dataset Size (n)} & 784 & 784 & 784 \\
+\textbf{Overall Accuracy} & 30.0\% & 31.9\% & 30.6\% \\
+\textbf{Pre-cutoff Accuracy} & 47.3\% & 69.6\% & 80.7\% \\
+\textbf{Post-cutoff Accuracy} & 19.5\% & 9.0\% & 0.2\% \\
+\textbf{Refusal Rate on Post-cutoff Failures} & 37.4\% (147/393) &
+55.2\% (245/444) & 97.5\% (475/487) \\
+& & & \\
+\emph{PROBE ACCURACIES (PEAK \% {[}PEAK LAYER{]} vs BASELINE)} & & & \\
+\textbf{Correctness (all items)} & \textbf{82.4\%} {[}L18{]}(base
+70.0\%, +12.4 pp) & \textbf{89.7\%} {[}L14{]}(base 68.1\%, +21.6 pp) &
+\textbf{94.3\%} {[}L13{]}(base 69.4\%, +24.9 pp) \\
+\textbf{Cutoff (all items)} & \textbf{98.2\%} {[}L13{]}(base 62.2\%,
++36.0 pp) & \textbf{98.9\%} {[}L14{]}(base 62.2\%, +36.6 pp) &
+\textbf{99.4\%} {[}L25{]}(base 62.2\%, +37.1 pp) \\
+\textbf{Refusal-vs-Wrong (subset)} & \textbf{89.4\%} {[}L28{]}(base
+73.2\%, +16.2 pp) & \textbf{83.9\%} {[}L19{]}(base 53.6\%, +30.3 pp) &
+\textbf{95.8\%} {[}L28{]}(base 91.9\%, +3.9 pp) \\
+\textbf{Correct within Pre-cutoff} & \textbf{84.8\%} {[}L18{]}(base
+52.7\%, +32.1 pp) & \textbf{91.2\%} {[}L17{]}(base 69.6\%, +21.6 pp) &
+\textbf{85.2\%} {[}L13{]}(base 80.7\%, +4.4 pp) \\
+\textbf{Correct within Obscure} & \textbf{80.5\%} {[}L7{]}(base 66.7\%,
++13.8 pp) & \textbf{88.9\%} {[}L24{]}(base 64.1\%, +24.9 pp) &
+\textbf{81.1\%} {[}L13{]}(base 75.2\%, +5.9 pp) \\
+& & & \\
+\emph{PROMPT FEATURE BASELINE COMPARISONS} & & & \\
+\textbf{Correctness vs +category} & Probe \textbf{82.4\%} vs Base
+\textbf{80.0\%}(+2.4 pp) & Probe \textbf{89.7\%} vs Base
+\textbf{88.0\%}(+1.7 pp) & Probe \textbf{94.3\%} vs Base
+\textbf{91.8\%}(+2.4 pp) \\
+\textbf{Refusal-vs-Wrong vs TF-IDF} & Probe \textbf{89.4\%} vs Base
+\textbf{82.0\%}(+7.4 pp) & Probe \textbf{83.9\%} vs Base
+\textbf{67.6\%}(+16.3 pp) & Probe \textbf{95.8\%} vs Base
+\textbf{93.6\%}(+2.2 pp) \\
+\textbf{Within-Pre Correct vs +category} & Probe \textbf{84.8\%} vs Base
+\textbf{81.8\%}(+3.0 pp) & Probe \textbf{91.2\%} vs Base
+\textbf{86.1\%}(+5.1 pp) & Probe \textbf{85.2\%} vs Base
+\textbf{79.4\%}(+5.8 pp) \\
+\bottomrule
+\end{tabular}
+\end{table}
 
 ![Comparative probing accuracy curves across Qwen3-1.7B, Gemma 2 2B, and Llama 3.2 3B.](figures/comparative_probes.png){#fig:comparative-probes}
 
@@ -1238,13 +1448,38 @@ each model's natural hidden-state scale.
 The three models' layer-of-interest hidden states differ substantially in magnitude and
 variability:
 
-| model | peak layer | $\overline{\|h\|}$ | $\sigma_{\|h\|}$ | unit-direction projection gap (refusal $-$ wrong) | $\alpha$ swept |
-|---|--:|--:|--:|--:|---|
-| Qwen3-1.7B | 28 | $138$ | $7.4$ | $18.2$ | $[-2000, +3000]$ |
-| Gemma 2 2B | 19 | $326$ | $16.1$ | $42.0$ | $[-6000, +8000]$ |
-| Llama 3.2 3B | 28 | $90$ | $0.3$ | $8.4$ | $[-300, +300]$ |
-
-: Per-model hidden-state scale at the intervention layer, and the calibrated $\alpha$ ranges.\label{tbl:scales}
+\begin{table}[!htbp]
+\small
+\centering
+\caption{Per-model hidden-state scale at the intervention layer, and the
+calibrated \(\alpha\) ranges.\label{tbl:scales}}
+\begin{tabular}{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}@{}}
+\toprule
+\begin{minipage}[b]{\linewidth}\raggedright
+model
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+peak layer
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+\(\overline{\|h\|}\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+\(\sigma_{\|h\|}\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+unit-direction projection gap (refusal \(-\) wrong)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(\alpha\) swept
+\end{minipage} \\\midrule
+Qwen3-1.7B & 28 & \(138\) & \(7.4\) & \(18.2\) & \([-2000, +3000]\) \\
+Gemma 2 2B & 19 & \(326\) & \(16.1\) & \(42.0\) & \([-6000, +8000]\) \\
+Llama 3.2 3B & 28 & \(90\) & \(0.3\) & \(8.4\) & \([-300, +300]\) \\
+\bottomrule
+\end{tabular}
+\end{table}
 
 Llama's tiny $\sigma_{\|h\|}$ (std of $0.3$ on a mean of $90$) indicates a very tight
 manifold; perturbations larger than $\approx 300$ along the unit direction drive the model
@@ -1255,14 +1490,47 @@ hidden-state scale and its tolerance to off-manifold perturbation.
 
 **Gemma 2 2B ($n=30 + 30$, judge = Qwen3):**
 
-| metric | $\alpha = -6000$ | $-2000$ | $0$ | $+2000$ | $+4000$ | $+8000$ |
-|:---------------------------|----:|----:|----:|----:|----:|----:|
-| WRONG: judge says REFUSAL | $23\%$ | $40\%$ | $0\%$ | $\mathbf{87\%}$ | $67\%$ | $57\%$ |
-| WRONG: first-token opener | $0\%$ | $0\%$ | $13\%$ | $\mathbf{100\%}$ | $70\%$ | $83\%$ |
-| REFUSAL: judge says REFUSAL | $80\%$ | $93\%$ | $100\%$ | $100\%$ | $97\%$ | $87\%$ |
-| REFUSAL: first-token opener | $0\%$ | $0\%$ | $53\%$ | $100\%$ | $77\%$ | $90\%$ |
-
-: Gemma 2 2B one-shot intervention across its calibrated $\alpha$ sweep ($n = 30$ per subset; judge = Qwen3-1.7B).\label{tbl:gemmasweep}
+\begin{table}[!htbp]
+\small
+\centering
+\caption{Gemma 2 2B one-shot intervention across its calibrated
+\(\alpha\) sweep (\(n = 30\) per subset; judge =
+Qwen3-1.7B).\label{tbl:gemmasweep}}
+\begin{tabular}{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.4828}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.0862}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.0862}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.0862}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.0862}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.0862}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.0862}}@{}}
+\toprule
+\begin{minipage}[b]{\linewidth}\raggedright
+metric
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+\(\alpha = -6000\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+\(-2000\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+\(0\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+\(+2000\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+\(+4000\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+\(+8000\)
+\end{minipage} \\\midrule
+WRONG: judge says REFUSAL & \(23\%\) & \(40\%\) & \(0\%\) &
+\(\mathbf{87\%}\) & \(67\%\) & \(57\%\) \\
+WRONG: first-token opener & \(0\%\) & \(0\%\) & \(13\%\) &
+\(\mathbf{100\%}\) & \(70\%\) & \(83\%\) \\
+REFUSAL: judge says REFUSAL & \(80\%\) & \(93\%\) & \(100\%\) &
+\(100\%\) & \(97\%\) & \(87\%\) \\
+REFUSAL: first-token opener & \(0\%\) & \(0\%\) & \(53\%\) & \(100\%\) &
+\(77\%\) & \(90\%\) \\
+\bottomrule
+\end{tabular}
+\end{table}
 
 Gemma's wrong-to-refusal flip is substantially stronger than Qwen3's ($0\% \to 87\%$ vs.\ Qwen3's $0\% \to 30\%$); $\alpha = +2000$ is the clean sweet spot with $100\%$ first-token
 opener rate. The effect is non-monotonic at large positive $\alpha$: $+4000$ and $+8000$
@@ -1343,24 +1611,66 @@ judge-correct).
 
 ![Bootstrap 95\% CIs on $h_{adds}$ across $14$ `(dataset, model, target)` cells. $K=30$ balanced 50/50 subsamples per cell; blue = CI excludes 0. The bottom two rows are the headline positive finding: Llama 3.2 3B on PopQA / TriviaQA recovers $+21$--$+25$ pp over the strongest prompt-feature baseline, where Qwen3-1.7B and Qwen3-4B on the *same* data recover $+4$--$+10$ pp. The Qwen3-4B row labeled "scaling control" rules out parameter count as the dominant driver of the cross-model gap.](figures/bootstrap_forest.png){#fig:bootstrap-forest}
 
-| dataset | model | target | $n$/class | $\bar h_{adds}$ | 95% CI | excl 0? |
-|:---------------------|:--------------|:--------------|----:|-----:|:---------------|:----:|
-| ConfabQA | Qwen3-1.7B | correct (all) | 235 | $+4.30$ | $[+1.70, +7.45]$ | **yes** |
-| ConfabQA | Qwen3-1.7B | within\_pre | 140 | $+1.25$ | $[-1.07, +3.57]$ | no |
-| ConfabQA | Qwen3-1.7B | within\_obscure | 51 | $+0.95$ | $[-2.05, +6.90]$ | no |
-| ConfabQA | Gemma 2 2B | correct (all) | 250 | $+4.98$ | $[+2.40, +7.20]$ | **yes** |
-| ConfabQA | Gemma 2 2B | within\_pre | 90 | $+2.54$ | $[-0.56, +5.00]$ | no |
-| ConfabQA | Gemma 2 2B | within\_obscure | 55 | $+2.76$ | $[-0.91, +6.36]$ | no |
-| ConfabQA | Llama 3.2 3B | correct (all) | 240 | $+0.94$ | $[+0.21, +1.88]$ | **yes** |
-| ConfabQA | Llama 3.2 3B | within\_pre | 57 | $+11.43$ | $[+5.18, +19.45]$ | **yes** |
-| ConfabQA | Llama 3.2 3B | within\_obscure | 38 | $+12.26$ | $[+2.67, +23.67]$ | **yes** |
-| PopQA | Qwen3-1.7B | correct (full) | 354 | $+4.35$ | $[+2.11, +6.50]$ | **yes** |
-| PopQA | **Qwen3-4B** (within-family scaling) | correct (full) | 129 | $+5.77$ | $[+2.34, +11.61]$ | **yes** |
-| TriviaQA | Qwen3-1.7B | correct (full) | 400 | $+9.57$ | $[+5.13, +13.75]$ | **yes** |
-| **PopQA** | **Llama 3.2 3B** | correct (full) | $131$ | $\mathbf{+24.94}$ | $\mathbf{[+20.57, +29.03]}$ | **yes** |
-| **TriviaQA** | **Llama 3.2 3B** | correct (full) | $356$ | $\mathbf{+21.25}$ | $\mathbf{[+19.52, +22.89]}$ | **yes** |
-
-: Bootstrap 95\% CIs on $h_{adds}$ across the 14 (dataset, model, target) cells.\label{tbl:bootstrap}
+\begin{table}[!htbp]
+\small
+\centering
+\caption{Bootstrap 95\% CIs on \(h_{adds}\) across the 14 (dataset,
+model, target) cells.\label{tbl:bootstrap}}
+\begin{tabular}{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.2588}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1765}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1765}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.0588}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.0706}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1882}}
+  >{\centering\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.0706}}@{}}
+\toprule
+\begin{minipage}[b]{\linewidth}\raggedright
+dataset
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+model
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+target
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+\(n\)/class
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+\(\bar h_{adds}\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+95\% CI
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+excl 0?
+\end{minipage} \\\midrule
+ConfabQA & Qwen3-1.7B & correct (all) & 235 & \(+4.30\) &
+\([+1.70, +7.45]\) & \textbf{yes} \\
+ConfabQA & Qwen3-1.7B & within\_pre & 140 & \(+1.25\) &
+\([-1.07, +3.57]\) & no \\
+ConfabQA & Qwen3-1.7B & within\_obscure & 51 & \(+0.95\) &
+\([-2.05, +6.90]\) & no \\
+ConfabQA & Gemma 2 2B & correct (all) & 250 & \(+4.98\) &
+\([+2.40, +7.20]\) & \textbf{yes} \\
+ConfabQA & Gemma 2 2B & within\_pre & 90 & \(+2.54\) &
+\([-0.56, +5.00]\) & no \\
+ConfabQA & Gemma 2 2B & within\_obscure & 55 & \(+2.76\) &
+\([-0.91, +6.36]\) & no \\
+ConfabQA & Llama 3.2 3B & correct (all) & 240 & \(+0.94\) &
+\([+0.21, +1.88]\) & \textbf{yes} \\
+ConfabQA & Llama 3.2 3B & within\_pre & 57 & \(+11.43\) &
+\([+5.18, +19.45]\) & \textbf{yes} \\
+ConfabQA & Llama 3.2 3B & within\_obscure & 38 & \(+12.26\) &
+\([+2.67, +23.67]\) & \textbf{yes} \\
+PopQA & Qwen3-1.7B & correct (full) & 354 & \(+4.35\) &
+\([+2.11, +6.50]\) & \textbf{yes} \\
+PopQA & \textbf{Qwen3-4B} (within-family scaling) & correct (full) & 129
+& \(+5.77\) & \([+2.34, +11.61]\) & \textbf{yes} \\
+TriviaQA & Qwen3-1.7B & correct (full) & 400 & \(+9.57\) &
+\([+5.13, +13.75]\) & \textbf{yes} \\
+\textbf{PopQA} & \textbf{Llama 3.2 3B} & correct (full) & \(131\) &
+\(\mathbf{+24.94}\) & \(\mathbf{[+20.57, +29.03]}\) & \textbf{yes} \\
+\textbf{TriviaQA} & \textbf{Llama 3.2 3B} & correct (full) & \(356\) &
+\(\mathbf{+21.25}\) & \(\mathbf{[+19.52, +22.89]}\) & \textbf{yes} \\
+\bottomrule
+\end{tabular}
+\end{table}
 
 **Reading the table.** $5$ of the $9$ ConfabQA cells, and $5/5$ external-dataset cells,
 have 95\% CIs that exclude $0$. The Qwen3 and Gemma within-pre / within-obscure cells (the
@@ -1420,18 +1730,57 @@ Llama's hidden state encodes a clean abstention decision, Test B's probe should 
 prompt baselines by a wide margin even though the abstention decision is not predictable from
 the question text alone.
 
-| Test | dataset | model | $n$/class | probe acc | strongest baseline | $h_{adds}$ | 95% CI |
-|:----------------|:--------|:-------------|----:|------:|------:|------:|:---------------|
-| A: drop refusals | PopQA | Qwen3-1.7B | 355 | 79.18% | 75.87% | $+3.31$ | $[+1.55, +6.48]$ |
-| A: drop refusals | PopQA | Llama 3.2 3B | 102 | 82.37% | 61.61% | $\mathbf{+20.76}$ | $\mathbf{[+14.67, +27.94]}$ |
-| A: drop refusals | TriviaQA | Qwen3-1.7B | 400 | 69.40% | 60.04% | $+9.36$ | $[+6.50, +12.87]$ |
-| A: drop refusals | TriviaQA | Llama 3.2 3B | 179 | 74.23% | 56.52% | $\mathbf{+17.71}$ | $\mathbf{[+13.43, +21.78]}$ |
-| B: probe refusal | PopQA | Qwen3-1.7B | $39$ | 86.27% | 76.04% | $+10.24$ | $[\mathit{0.00}, +20.42]$ |
-| B: probe refusal | PopQA | Llama 3.2 3B | 297 | 84.47% | 66.03% | $\mathbf{+18.44}$ | $\mathbf{[+16.16, +21.72]}$ |
-| B: probe refusal | TriviaQA | Qwen3-1.7B | $28$ | 73.34% | 57.37% | $+15.97$ | $[-3.48, +32.27]$ |
-| B: probe refusal | TriviaQA | Llama 3.2 3B | 252 | 90.23% | 64.80% | $\mathbf{+25.43}$ | $\mathbf{[+22.81, +29.76]}$ |
-
-: Refusal-channel attribution: Test A (drop refusals) and Test B (probe refusal directly).\label{tbl:refchannel}
+\begin{table}[!htbp]
+\small
+\centering
+\caption{Refusal-channel attribution: Test A (drop refusals) and Test B
+(probe refusal directly).\label{tbl:refchannel}}
+\begin{tabular}{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.2073}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.1098}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.1707}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.0610}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.0854}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.0854}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.0854}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.1951}}@{}}
+\toprule
+\begin{minipage}[b]{\linewidth}\raggedright
+Test
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+dataset
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+model
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+\(n\)/class
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+probe acc
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+strongest baseline
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+\(h_{adds}\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+95\% CI
+\end{minipage} \\\midrule
+A: drop refusals & PopQA & Qwen3-1.7B & 355 & 79.18\% & 75.87\% &
+\(+3.31\) & \([+1.55, +6.48]\) \\
+A: drop refusals & PopQA & Llama 3.2 3B & 102 & 82.37\% & 61.61\% &
+\(\mathbf{+20.76}\) & \(\mathbf{[+14.67, +27.94]}\) \\
+A: drop refusals & TriviaQA & Qwen3-1.7B & 400 & 69.40\% & 60.04\% &
+\(+9.36\) & \([+6.50, +12.87]\) \\
+A: drop refusals & TriviaQA & Llama 3.2 3B & 179 & 74.23\% & 56.52\% &
+\(\mathbf{+17.71}\) & \(\mathbf{[+13.43, +21.78]}\) \\
+B: probe refusal & PopQA & Qwen3-1.7B & \(39\) & 86.27\% & 76.04\% &
+\(+10.24\) & \([\mathit{0.00}, +20.42]\) \\
+B: probe refusal & PopQA & Llama 3.2 3B & 297 & 84.47\% & 66.03\% &
+\(\mathbf{+18.44}\) & \(\mathbf{[+16.16, +21.72]}\) \\
+B: probe refusal & TriviaQA & Qwen3-1.7B & \(28\) & 73.34\% & 57.37\% &
+\(+15.97\) & \([-3.48, +32.27]\) \\
+B: probe refusal & TriviaQA & Llama 3.2 3B & 252 & 90.23\% & 64.80\% &
+\(\mathbf{+25.43}\) & \(\mathbf{[+22.81, +29.76]}\) \\
+\bottomrule
+\end{tabular}
+\end{table}
 
 (Italicized CI lower bound: 95\% CI includes 0 because the refusal count is too small for the
 $K=30$ percentile bootstrap to be well-resolved.)
@@ -1496,13 +1845,38 @@ the hidden state contributed nothing portable beyond what the question text alre
 **Headline.** At each model's peak-within layer, averaging margins (probe-acc minus
 test-majority) across the 3 within cells and the 6 off-diagonal transfer cells:
 
-| Model         | Peak layer | Avg within margin | Avg transfer margin | Retention | Transfers $>$ majority |
-|:-----------------|-------:|------------:|-------------:|--------:|-----------------:|
-| Llama 3.2 3B  | 14         | $+18.9$ pp        | $+15.2$ pp          | $81\%$    | $5/6$                  |
-| Gemma 2 2B    | 13         | $+13.1$ pp        | $-7.0$ pp           | $-54\%$   | $4/6$                  |
-| Qwen3-1.7B    | 18         | $+8.7$ pp         | $-1.2$ pp           | $-14\%$   | $3/6$                  |
-
-: Cross-dataset transfer at each model's peak-within layer: margin retention without refit.\label{tbl:transfer}
+\begin{table}[!htbp]
+\small
+\centering
+\caption{Cross-dataset transfer at each model's peak-within layer:
+margin retention without refit.\label{tbl:transfer}}
+\begin{tabular}{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.2250}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1000}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1625}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1750}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1125}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.2250}}@{}}
+\toprule
+\begin{minipage}[b]{\linewidth}\raggedright
+Model
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+Peak layer
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+Avg within margin
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+Avg transfer margin
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+Retention
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+Transfers \(>\) majority
+\end{minipage} \\\midrule
+Llama 3.2 3B & 14 & \(+18.9\) pp & \(+15.2\) pp & \(81\%\) & \(5/6\) \\
+Gemma 2 2B & 13 & \(+13.1\) pp & \(-7.0\) pp & \(-54\%\) & \(4/6\) \\
+Qwen3-1.7B & 18 & \(+8.7\) pp & \(-1.2\) pp & \(-14\%\) & \(3/6\) \\
+\bottomrule
+\end{tabular}
+\end{table}
 
 **Llama: content-invariant.** Five of the six off-diagonal transfers beat the test-dataset
 majority, with an average winning margin of $+19.8$ pp, comparable to the within-dataset
@@ -1817,14 +2191,21 @@ file.
 
 ## A. Per-domain accuracy (ConfabQA, 4 domains)
 
-| domain | n | correct | accuracy | pre-cutoff | post-cutoff |
-|---|--:|--:|--:|---|---|
-| science | 206 | 75 | 36.4% | 25/87 (28.7%) | 50/119 (42.0%) |
-| history | 197 | 67 | 34.0% | 54/70 (77.1%) | 13/127 (10.2%) |
-| culture | 189 | 65 | 34.4% | 42/68 (61.8%) | 23/121 (19.0%) |
-| cinema | 192 | 28 | 14.6% | 19/71 (26.8%) | 9/121 (7.4%) |
-
-: Per-domain accuracy, overall and by cutoff class.\label{tbl:appdomain}
+\begin{table}[!htbp]
+\small
+\centering
+\caption{Per-domain accuracy, overall and by cutoff
+class.\label{tbl:appdomain}}
+\begin{tabular}{@{}lrrrll@{}}
+\toprule
+domain & n & correct & accuracy & pre-cutoff & post-cutoff \\\midrule
+science & 206 & 75 & 36.4\% & 25/87 (28.7\%) & 50/119 (42.0\%) \\
+history & 197 & 67 & 34.0\% & 54/70 (77.1\%) & 13/127 (10.2\%) \\
+culture & 189 & 65 & 34.4\% & 42/68 (61.8\%) & 23/121 (19.0\%) \\
+cinema & 192 & 28 & 14.6\% & 19/71 (26.8\%) & 9/121 (7.4\%) \\
+\bottomrule
+\end{tabular}
+\end{table}
 
 History remains the strongest pre-cutoff domain (77.1%); cinema the weakest overall (14.6%).
 Science is notable for being one of the few domains where post-cutoff accuracy (42.0%, 50/119)
@@ -1858,8 +2239,8 @@ Two independent annotators re-graded ConfabQA alongside the Qwen3-1.7B judge:
 - `data/claude_grading_v1.json`: Claude Opus 4.7 grading a stratified $30$-item sample
   (`random.Random(42)`, 10 items per category) under the same rule.
 
-The Qwen judge labels are embedded in the response files,
-`data/responses/qwen3_1_7b/{id}.json`. Agreement statistics for both annotators are in
+The Qwen judge labels are embedded in the response files under
+`data/responses/qwen3_1_7b/` (one `{id}.json` per item). Agreement statistics for both annotators are in
 Table \ref{tbl:judge}; the DR pass additionally web-verified each gold answer
 and flagged three items (`his_pc_09`, `his_pc_56`, `his_pc_90`) with stated-premise
 errors, flagged for source patching in v2.
@@ -1882,19 +2263,47 @@ An earlier iteration of the benchmark included a fifth domain, **sports**, with 
 design applied to MLB World Series, NFL Super Bowl, and Grand Slam tennis questions. On a 26-item
 run of Qwen3-1.7B, this domain produced a uniform failure mode across all three categories:
 
-| domain | well_known | obscure | post_cutoff | overall |
-|---|--:|--:|--:|--:|
-| sports | 0/10 (0.0%) | 0/10 (0.0%) | 0/6 (0.0%) | 0/26 (0.0%) |
-
-: The excluded sports domain: accuracy by category on the 26-item run.\label{tbl:sports}
+\begin{table}[!htbp]
+\small
+\centering
+\caption{The excluded sports domain: accuracy by category on the 26-item
+run.\label{tbl:sports}}
+\begin{tabular}{@{}lrrrr@{}}
+\toprule
+domain & well\_known & obscure & post\_cutoff & overall \\\midrule
+sports & 0/10 (0.0\%) & 0/10 (0.0\%) & 0/6 (0.0\%) & 0/26 (0.0\%) \\
+\bottomrule
+\end{tabular}
+\end{table}
 
 Judge labels: 23 `wrong`, 3 `refusal`, 0 `correct`. Examples of confidently wrong responses:
 
-| question | gold | model said | $\bar\ell$ |
-|---|---|---|--:|
-| Men's 2023 French Open winner | Novak Djokovic | "Alexander Zverev defeated Djokovic in the final" | $-0.087$ |
-| 2023 World Series winner | Texas Rangers | "Los Angeles Dodgers defeated Chicago Cubs in seven games" | $-0.091$ |
-| 2009 World Series winner | New York Yankees | "St. Louis Cardinals defeated the New York Yankees" | $-0.094$ |
+\begin{center}
+\small
+\begin{tabular}{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}@{}}
+\toprule
+\begin{minipage}[b]{\linewidth}\raggedright
+question
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+gold
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+model said
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+\(\bar\ell\)
+\end{minipage} \\\midrule
+Men's 2023 French Open winner & Novak Djokovic & ``Alexander Zverev
+defeated Djokovic in the final'' & \(-0.087\) \\
+2023 World Series winner & Texas Rangers & ``Los Angeles Dodgers
+defeated Chicago Cubs in seven games'' & \(-0.091\) \\
+2009 World Series winner & New York Yankees & ``St.~Louis Cardinals
+defeated the New York Yankees'' & \(-0.094\) \\
+\bottomrule
+\end{tabular}
+\end{center}
 
 The model is not merely weak on sports: it is confidently wrong on even well-known recent
 events. Dropping sports from the main 4-domain analysis is motivated rather than convenient:
@@ -1928,14 +2337,44 @@ smaller than the Qwen3 and Gemma ranges, calibrated to where Llama's outputs rem
 (mean $\|h\|_{L=28} = 90$, std $0.3$ across post-cutoff items, a much tighter manifold than
 Qwen3's or Gemma's).
 
-| metric | $\alpha = -300$ | $-100$ | $0$ | $+100$ | $+300$ |
-|---|--:|--:|--:|--:|--:|
-| WRONG: judge says REFUSAL | $83\%$ | $0\%$ | $0\%$ | $8\%$ | $75\%$ |
-| WRONG: first-token opener | $0\%$ | $100\%$ | $100\%$ | $83\%$ | $0\%$ |
-| REFUSAL: judge says REFUSAL | $80\%$ | $100\%$ | $100\%$ | $100\%$ | $93\%$ |
-| REFUSAL: first-token opener | $0\%$ | $100\%$ | $100\%$ | $93\%$ | $0\%$ |
-
-: Llama 3.2 3B intervention over its calibrated $\alpha$ range ($n=12$ wrong, $n=15$ refusal items).\label{tbl:llamasweep}
+\begin{table}[!htbp]
+\small
+\centering
+\caption{Llama 3.2 3B intervention over its calibrated \(\alpha\) range
+(\(n=12\) wrong, \(n=15\) refusal
+items).\label{tbl:llamasweep}}
+\begin{tabular}{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}@{}}
+\toprule
+\begin{minipage}[b]{\linewidth}\raggedright
+metric
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+\(\alpha = -300\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+\(-100\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+\(0\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+\(+100\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+\(+300\)
+\end{minipage} \\\midrule
+WRONG: judge says REFUSAL & \(83\%\) & \(0\%\) & \(0\%\) & \(8\%\) &
+\(75\%\) \\
+WRONG: first-token opener & \(0\%\) & \(100\%\) & \(100\%\) & \(83\%\) &
+\(0\%\) \\
+REFUSAL: judge says REFUSAL & \(80\%\) & \(100\%\) & \(100\%\) &
+\(100\%\) & \(93\%\) \\
+REFUSAL: first-token opener & \(0\%\) & \(100\%\) & \(100\%\) & \(93\%\)
+& \(0\%\) \\
+\bottomrule
+\end{tabular}
+\end{table}
 
 The wrong-subset row at the baseline ($\alpha=0$) reads $0\%$ refusal but $100\%$
 first-token-opener: items where the text reads refusal-y ("I'm not aware of...") but commits
@@ -1950,9 +2389,28 @@ The cleanest directional signal is the refusal subset at $\alpha = -300$: refusa
 from $100\%$ to $80\%$, three of fifteen previously-refusing items committing to a
 confabulation:
 
-| id | gold | baseline ($\alpha=0$) answer | $\alpha=-300$ answer |
-|---|---|---|---|
-| cin_pc_10 | Deadpool \& Wolverine | "I'm not aware of any information about a Marvel film..." | "X-Men '97" |
+\begin{center}
+\small
+\begin{tabular}{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}@{}}
+\toprule
+\begin{minipage}[b]{\linewidth}\raggedright
+id
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+gold
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+baseline (\(\alpha=0\)) answer
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(\alpha=-300\) answer
+\end{minipage} \\\midrule
+cin\_pc\_10 & Deadpool \& Wolverine & ``I'm not aware of any information
+about a Marvel film\ldots{}'' & ``X-Men '97'' \\
+\bottomrule
+\end{tabular}
+\end{center}
 
 (Two other flips have similar structure; full per-item answers are in
 `figures/llama_3_2_3b/13_intervention_results.json`.)
