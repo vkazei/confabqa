@@ -31,7 +31,7 @@ This paper applies that protocol systematically across three instruction-tuned m
 | PopQA · Qwen3-4B (scaling control) | +5.77 | [+2.34, +11.61] | yes |
 | PopQA · Qwen3-1.7B | +4.35 | [+2.11, +6.50] | yes |
 
-*h_adds = hidden-state probe peak − strongest prompt-feature baseline, on balanced 50/50 subsamples. Full 14-cell table in the paper (§7.1).*
+*h_adds = hidden-state probe peak − strongest prompt-feature baseline, on balanced 50/50 subsamples. Full 14-cell table in the paper (§8.1).*
 
 ## ConfabQA: the benchmark
 

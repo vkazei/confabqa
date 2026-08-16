@@ -24,7 +24,7 @@ TITLES = {
     21750: "Feature 21750 — post-cutoff topical cue",
 }
 LEGENDS = {
-    2191:  "Tokens this feature pushes to output: literal refusal openers from §5.7",
+    2191:  "Tokens this feature pushes to output: literal refusal openers from §6.1",
     14034: "Tokens this feature pushes to output: alternative apology pattern (never fires on ConfabQA)",
     18937: "Top prompts: recent dates that trigger Qwen3's `I can't answer that` pragmatics",
     21750: "Top prompts: recent cinema/award post-cutoff items",

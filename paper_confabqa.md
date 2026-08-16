@@ -98,10 +98,10 @@ feature of the question text still trivially predicts correctness on small LMs.
 **Closest mechanistic analogue.** Ferrando et al.\ (ICLR 2025) identify *entity-recognition
 latents* in Gemma-2 SAEs that causally steer the model between knowledge-grounded answers
 and refusals on factual questions, similar to the Qwen3-1.7B experiment here
-(§5.9). The present work extends that line in two ways: (i) it recovers the same
+(§6.3). The present work extends that line in two ways: (i) it recovers the same
 class of feature via a linear probe + SAE pipeline on a different model family with a
 $4 \times 3$ disconfounded benchmark; and (ii) it adds the cross-dataset transfer
-experiment (§7.3) that asks whether the recovered direction is *content-invariant* (as
+experiment (§8.3) that asks whether the recovered direction is *content-invariant* (as
 the entity-recognition framing suggests) or dataset-local.
 
 **Findings.** Two complementary results emerge from the comprehensive read that no
@@ -112,18 +112,18 @@ single-model, single-dataset study could:
    late-layer probe beats the strongest prompt baseline on every model: $+7.4$ pp on
    Qwen3-1.7B, $+16.3$ on Gemma 2 2B, $+2.2$ on Llama 3.2 3B. The less predictable a
    model's refusals are from the question text alone, the more the probe adds
-   (Section 6.2). That some such signal exists is natural: the refusal-vs-answer label
+   (Section 7.2). That some such signal exists is natural: the refusal-vs-answer label
    is the model's own output decision, and the late hidden state is the computation
    that produces it. The findings are the signal's *form*: a single linear direction
    at the deepest layers, causally sufficient, and decomposable. A one-shot
    residual-stream intervention drives the first-token refusal-opener rate to $100\%$
-   on Qwen3 and Gemma (Sections 5.8 and 6.2). This replicates Arditi et al.'s (2024)
+   on Qwen3 and Gemma (Sections 6.2 and 7.2). This replicates Arditi et al.'s (2024)
    single-direction refusal finding on three model families, with the cutoff variable
    controlled by construction. The regime differs: theirs is safety refusal on harmful
    prompts, here it is epistemic abstention on unknown-answer questions. The direction
    is not, however, a single feature. A sparse-autoencoder decomposition resolves it
    into a canonical refusal-opener feature, a dormant apology-opener alternative, and
-   two content-cue detectors (Section 5.9). The opener feature alone is causally
+   two content-cue detectors (Section 6.3). The opener feature alone is causally
    sufficient to flip $30/30$ wrong-item next-token argmaxes to refusal openers.
 
 2. *Llama 3.2 3B carries a substantially larger and more general correctness signal than
@@ -131,11 +131,11 @@ single-model, single-dataset study could:
    beats the prompt baseline by $+21$--$+25$ pp, $5.7\times$ and $2.2\times$ Qwen's
    margins on the same benchmarks. Three controls localize the source: it is not
    parameter count (a Qwen3-4B within-family scaling control moves the margin by less
-   than $2$ pp; Section 7.1); it is not dataset-specific (Llama's probe keeps
+   than $2$ pp; Section 8.1); it is not dataset-specific (Llama's probe keeps
    $\approx 81\%$ of its margin when transferred across datasets without refit, where
-   Qwen's and Gemma's transfer collapses; Section 7.3); and it is not refusal-channel
+   Qwen's and Gemma's transfer collapses; Section 8.3); and it is not refusal-channel
    readout ($\approx 83\%$ of the margin survives dropping refusals, and an independent
-   refusal probe adds a further $+18$--$+25$ pp gap; Section 7.2). Gemma is intermediate
+   refusal probe adds a further $+18$--$+25$ pp gap; Section 8.2). Gemma is intermediate
    in behavior (refusal rate and refusal-probe margin between the other two), yet
    its correctness probe is the most dataset-local of the three. The most plausible
    single explanation: Llama's heavy calibrated-abstention training forces a
@@ -319,7 +319,7 @@ majority class, and a prompt-text classifier, TF-IDF (term-frequency /
 inverse-document-frequency bag-of-words) plus logistic regression, with engineered
 features and domain/category dummies. A probe is evidence of model-internal information
 only insofar as it beats both; $h_{\rm adds}$ = probe peak $-$ strongest baseline (pp),
-reported throughout \S\S5--7.}
+reported throughout \S\S5--8.}
 \label{fig:baselines}
 \end{figure}
 
@@ -510,7 +510,7 @@ on each target. That is the "h adds" column of Table \ref{tbl:hadds} in Section 
 - `correct_within_obscure`: binary `correct`, restricted to items with `category == "obscure"`
   (n=153). The popularity disconfound test.
 
-**Bootstrap protocol (Sections 7.1, 7.2).** For each `(dataset, model, target)` cell,
+**Bootstrap protocol (Sections 8.1, 8.2).** For each `(dataset, model, target)` cell,
 partition the pool into the two target classes, set $n_{\text{class}} = \min(|\rm pos|,
 |\rm neg|, 400)$, and draw $K = 30$ random 50/50 subsamples without replacement. On each
 subsample refit the full probe pipeline (StandardScaler $\to$ PCA($16$) $\to$ LR, $5$-fold
@@ -523,9 +523,9 @@ $K=30$ is set by compute (each replicate refits the full $29$-layer $\times$ $5$
 pipeline), and percentile CIs at $K=30$ are correspondingly coarse. The
 protocol is "resampling-of-balanced-subsamples" rather than a true item-level bootstrap;
 the latter would require $K \cdot L \cdot F \approx 4{,}350$ refits per cell, too slow on
-M1-class hardware (see the evaluation-methodology limitation in Section 9).
+M1-class hardware (see the evaluation-methodology limitation in Section 10).
 
-**External-dataset evaluation (Section 7.1).** Two external benchmarks are evaluated
+**External-dataset evaluation (Section 8.1).** Two external benchmarks are evaluated
 end-to-end using the same `02_evaluate.py` generation pipeline (greedy decoding,
 `enable_thinking=False`, last-prompt-token hidden-state capture at every layer) and the same
 `judge.py` three-way Qwen3-1.7B judge:
@@ -540,10 +540,10 @@ Running three seeds per `(subject model, dataset)` widens the unique-item pool t
 $n_{\text{unique}} \approx 2{,}200$, from which the $K=30$ balanced bootstrap subsamples are
 drawn (Llama runs are single-seed; Llama pools have $n_{\text{unique}} = 800$). The subject
 model is switched via the `MODEL_ID` environment variable; the judge remains Qwen3-1.7B in
-all runs (Section 9's scope-and-judge-generalization limitation records the
+all runs (Section 10's scope-and-judge-generalization limitation records the
 Qwen-judge-on-Llama-outputs caveat).
 
-**Refusal-channel attribution (Section 7.2).** Two follow-up tests use the same bootstrap
+**Refusal-channel attribution (Section 8.2).** Two follow-up tests use the same bootstrap
 protocol as above, restricted to the four cells with appreciable refusal counts:
 
 - *Test A* (drop refusals): filter the pool to `judge_label` $\in$ \{`correct`, `wrong`\}, then
@@ -586,10 +586,11 @@ simply prompt-readable features is the subject of Section
 
 This section dissects the subject model in two arcs. Sections 5.1--5.3 set the
 behavioral stage: accuracy by stratum, what text-level confidence can and cannot see,
-and the confident-confabulation failure mode. Sections 5.4--5.9 recover the hidden-state
-structure: unsupervised geometry, per-layer probes, the prompt-feature control, and the
-refusal direction's token signature, causal role, and SAE decomposition. Sections 6
-and 7 then test what survives a change of model and a change of dataset.
+and the confident-confabulation failure mode. Sections 5.4--5.6 recover the
+hidden-state structure (unsupervised geometry, per-layer probes) and weigh it against
+prompt features. Section 6 then follows the surviving refusal direction into token
+space; Sections 7 and 8 test what survives a change of model and a change of
+dataset.
 
 ## 5.1 Accuracy by stratum
 
@@ -935,7 +936,7 @@ completeness but excluded from the strongest-baseline comparison.)
 1. **Correctness gains little from the hidden state.** The correctness probes add
    $\approx 3$ pp or less over the strongest baseline ($+2.4$ all items, $+3.0$
    within-pre, $-2.5$ within-obscure), within the per-fold noise ($0.031$--$0.063$)
-   on this single split. The Section 7.1 bootstrap confirms this reading: the small
+   on this single split. The Section 8.1 bootstrap confirms this reading: the small
    all-items margin is real (CI excluding zero), while the disconfounded within-pre
    and within-obscure margins remain consistent with zero.
 
@@ -957,12 +958,20 @@ completeness but excluded from the strongest-baseline comparison.)
    produces that output (Section 2.2), so an encoding must exist and the question text
    only bounds how predictable the decision is from outside. Correctness is a relation
    between the output and the world, and nothing guarantees the model represents it.
-   What is *not* guaranteed, and is the substance of Sections 5.7--5.9, is the refusal
+   What is *not* guaranteed, and is the substance of Section 6, is the refusal
    signal's form: linearly decodable from $16$ principal components, concentrated in
    the deepest layers, causally sufficient, and SAE-decomposable.
 
 
-## 5.7 Probe-direction atlas: what the refusal signal points at in token space
+# 6. From probe to tokens: the Qwen3-1.7B refusal direction
+
+The probes of Section 5 certify that a refusal signal exists beyond prompt features.
+This section asks what the signal *is*, in three passes of increasing mechanistic
+depth: a logit-lens projection of the probe direction onto the vocabulary (§6.1), a
+causal test by direct intervention (§6.2), and a sparse-autoencoder decomposition into
+interpretable features (§6.3).
+
+## 6.1 Probe-direction atlas: what the refusal signal points at in token space
 
 The refusal-vs-wrong probe at layer 28 carries the largest baseline-adjusted margin
 of Table \ref{tbl:hadds}. The probe is a
@@ -1037,9 +1046,9 @@ The 2048-d hidden-state space has a *direction* whose token-level signature is t
 refusal-opening vocabulary. That direction is what the probe detects: not a general
 "self-knowledge" representation, but a late-network commitment to a specific speech act.
 
-## 5.8 Causal validation by direct intervention
+## 6.2 Causal validation by direct intervention
 
-The probe direction of Section 5.7 is *correlational*: it predicts whether a hidden state
+The probe direction of Section 6.1 is *correlational*: it predicts whether a hidden state
 corresponds to a refusal. To test whether it is also *causal* (whether pushing the model's
 hidden state along this direction actually changes the model's output), I intervene directly.
 For each item in a stratified subset (30 wrong post-cutoff items + 30 refusal items), I register
@@ -1064,7 +1073,7 @@ re-judged by the three-way `judge.py`. Two outcome measures: (i) the strict
 final-judge-label refusal rate; (ii) a "first-token refusal-opener" rate, defined as the
 fraction of generations whose first generated token matches one of \{ ` as`, `as`, `As`,
 `作为`, `作為`, `作为一个`, ` There`, ` there` \}, the natural opener vocabulary surfaced by
-the probe-direction analysis (Section 5.7).
+the probe-direction analysis (Section 6.1).
 
 **Results (`figures/13_intervention_results.json`, n=30 each subset).**
 
@@ -1126,9 +1135,9 @@ the opening breaks the whole arc and the model confabulates immediately. The asy
 is what distinguishes a *correlational* direction from a *fully causal* one: the
 direction is necessary but not always sufficient.
 
-## 5.9 SAE feature decomposition of the refusal direction
+## 6.3 SAE feature decomposition of the refusal direction
 
-The logit-lens analysis of Section 5.7 projects the recovered refusal probe
+The logit-lens analysis of Section 6.1 projects the recovered refusal probe
 direction through Qwen3-1.7B's own LM head and recovers the literal opening
 tokens of the model's refusals: ` as`, `As`, `作为`, `\tas`, ` there`. That
 analysis is at the *output-token* end of the model. It tells us *what the
@@ -1171,13 +1180,13 @@ top-$20$ lists, $4$ resolve into clean stories.
 ![Four SAE features that together compose the Qwen3-1.7B refusal direction at layer 28. Left column: two refusal-opener vocabulary features (one canonical, one dormant on ConfabQA). Right column: two post-cutoff cue detectors that empirically discriminate refusal from wrong items.](figures/sae_features_card.png){#fig:sae-features}
 
 - **Feature 2191 (canonical refusal-opener).** Decoder logit-lens top tokens
-  are *exactly* the §5.7 refusal vocabulary: ` as`, `作为`, `作為`, `\tas`,
+  are *exactly* the §6.1 refusal vocabulary: ` as`, `作为`, `作為`, `\tas`,
   ` As`, `as`, `As`, `-as`, `_as`, `作为一个`, `.as`, `(as`. Hit rate on ConfabQA
   is low ($4.1\%$ on refusal items, $0.5\%$ on wrong) but highly selective: when it fires, it fires on a post-cutoff item the model refuses. Top max-
   activating prompts are recent-date items the model declines to answer
   (Nov 2024 Gwen Stefani album, Nov 2024 *Wicked* film, Apr 2024 Taylor Swift
   album). This is the SAE's monosemantic representation of the refusal-opener
-  vocabulary the §5.7 logit lens picked up; the SAE recovers it as a single
+  vocabulary the §6.1 logit lens picked up; the SAE recovers it as a single
   feature with the *same* literal token signature.
 - **Feature 14034 (dormant `Sorry`/`Oops` opener).** Decoder logit-lens top
   tokens are `Sorry`, ` Sorry`, ` Oops`, `Oops`, `sorry`, ` sorry`,
@@ -1200,11 +1209,11 @@ top-$20$ lists, $4$ resolve into clean stories.
   output-token preparation.
 
 **The interpretability story this enables.** The recovered "refusal
-direction" of Section 5.7 is *not* a single monosemantic concept. The SAE
+direction" of Section 6.1 is *not* a single monosemantic concept. The SAE
 decomposes it into (at least) two functionally distinct mechanisms:
 
 1. *Output-token-preparation features* (2191, 14034) that bias the next-token
-   distribution toward refusal-opener vocabulary. These are what the §5.7
+   distribution toward refusal-opener vocabulary. These are what the §6.1
    logit lens directly recovered.
 2. *Content/temporal cue features* (18937, 21750) that fire on the
    pre-decision input cues (recent dates, post-cutoff topics) that trigger
@@ -1221,7 +1230,7 @@ Raw decomposition data, per-feature characterizations, and the feature-card
 figure are released as `figures/sae_decompose_refusal.{json,md}` and
 `figures/sae_features_card.png`.
 
-### 5.9.1 Causal validation of feature 2191
+### 6.3.1 Causal validation of feature 2191
 
 The four-feature decomposition is a *correlational* finding: these four SAE
 features compose the recovered refusal direction either by encoder
@@ -1229,13 +1238,13 @@ assignment (A), decoder alignment (B), or empirical activation (C). To
 sharpen the claim about Feature 2191 specifically (that it is the
 canonical refusal-opener feature, not merely a correlate that happens to
 co-fire with refusals), I run the same one-shot intervention protocol as
-Section 5.8 but substitute the SAE feature's decoder direction for the
+Section 6.2 but substitute the SAE feature's decoder direction for the
 recovered probe direction. On $30$ items the model originally got wrong
 (non-refusals), I add $\alpha \cdot \hat W_{\rm dec}[2191]$ to the
 last-prompt-token residual stream just before the final RMSNorm (HF layer
-$28$, equivalent to the Section 5.8 intervention point), sweep $\alpha$,
+$28$, equivalent to the Section 6.2 intervention point), sweep $\alpha$,
 and read off the next-token probability assigned to refusal-opener tokens
-(the same set the §5.7 logit lens recovered: ` as`, ` As`, `As`, `as`,
+(the same set the §6.1 logit lens recovered: ` as`, ` As`, `As`, `as`,
 ` there`, `作为`, `作为一个`, `作為`, `\tas`, `-as`; $10$ unique token
 IDs).
 
@@ -1281,7 +1290,7 @@ tokens flipped to refusal openers (exact Clopper--Pearson $95\%$ CI on the
 flip rate: $[0.88, 1.00]$; $n=30$ is small, so true rates as low as
 $\approx 0.88$ are consistent with the data). The intervention strength at saturation
 ($\alpha=750$, with unit-normalized decoder vector) is essentially the
-same effective magnitude as Section 5.8's recovered-probe-direction
+same effective magnitude as Section 6.2's recovered-probe-direction
 intervention ($\alpha=2000$ on a recovered direction of $L_2$-norm
 $0.374$, giving effective magnitude $\approx 748$). Adding a single SAE
 feature's decoder direction at that magnitude is therefore *causally
@@ -1289,7 +1298,7 @@ indistinguishable* from adding the original probe direction at its own
 working magnitude.
 
 Two scope notes. Feature 2191 was selected by the three *correlational*
-views of Section 5.9 (encoder assignment, decoder alignment, activation
+views of Section 6.3 (encoder assignment, decoder alignment, activation
 differential), computed before any intervention was run; the selection
 never observed flip outcomes, so the $30/30$ evaluation is not circular,
 although the $30$ wrong items are drawn from the same ConfabQA pool the
@@ -1306,10 +1315,10 @@ $P=0 \to P=1$ transition on wrong items, which establishes that feature
 2191 is causally *sufficient* to induce refusal-opener generation, not
 just a correlate that co-fires during refusal.
 
-**Two consequences.** First, the §5.7 logit-lens story is mechanically grounded: the SAE
+**Two consequences.** First, the §6.1 logit-lens story is mechanically grounded: the SAE
 recovers exactly the refusal-opener vocabulary the logit lens projected to, and that one
 feature suffices to drive Qwen3-1.7B's first-token decision to a refusal. Second, the
-§5.8 causal story sharpens: the probe direction's causal effect runs through feature 2191
+§6.2 causal story sharpens: the probe direction's causal effect runs through feature 2191
 specifically: its neighbors in the decomposition (14034, 18937, 21750) contribute to the
 *correlational* direction, but the causal action is 2191's output-token preparation. The
 direction is real; at the causal level it is mostly one feature's decoder vector, plus
@@ -1318,13 +1327,13 @@ content-cue features that explain *why* it fires.
 Raw intervention data and code are released as
 `saes/sae_causal_ablation.py` and `figures/sae_causal_ablation.{json,md,png}`.
 
-# 6. Cross-model results
+# 7. Cross-model results
 
 Do the Qwen3-1.7B findings survive a change of model? This section reruns the full
 evaluation, judging, and probing pipeline on Gemma 2 2B and Llama 3.2 3B, then reruns
 the causal intervention with each model's own recovered refusal direction.
 
-## 6.1 Comparison (Qwen3-1.7B, Gemma 2 2B, Llama 3.2 3B)
+## 7.1 Comparison (Qwen3-1.7B, Gemma 2 2B, Llama 3.2 3B)
 
 
 To evaluate the generalizability of the architectural probing results, the entire evaluation, grading, and probing pipeline was executed on two additional instruction-tuned models: **Gemma 2 2B** (`unsloth/gemma-2-2b-it`) and **Llama 3.2 3B** (`unsloth/Llama-3.2-3B-Instruct`). All outputs were graded using the same calibrated judge model (Qwen3-1.7B) to maintain a standardized correctness threshold.
@@ -1415,16 +1424,16 @@ back through the hidden state.
 Refusal is the axis on which the three models most cleanly separate. The refusal-vs-wrong
 probe peaks in the deepest layers on Qwen (layer $28$, $89.4\%$) and Llama (layer $28$,
 $95.8\%$), and at layer $19$ on Gemma ($83.9\%$). The consistency of that late-layer
-localization is what the Section 6.2 intervention exploits: by the time the last
+localization is what the Section 7.2 intervention exploits: by the time the last
 transformer block has run, the model's commitment to refuse or answer is a
 linearly-readable direction in the residual stream.
 
-## 6.2 Causal intervention
+## 7.2 Causal intervention
 
-The Section 5.8 intervention protocol applied to Gemma 2 2B and Llama 3.2 3B, using each
+The Section 6.2 intervention protocol applied to Gemma 2 2B and Llama 3.2 3B, using each
 model's own recovered refusal direction at its own refusal-vs-wrong probe peak layer
 (Gemma: layer 19; Llama: layer 28). Subject = the model under test; judge = Qwen3-1.7B for
-all three runs (matching the cross-model evaluation protocol of Section 6.1; Gemma's chat
+all three runs (matching the cross-model evaluation protocol of Section 7.1; Gemma's chat
 template lacks a system role and cannot use `judge.py` as a self-judge). Subset sizes are
 constrained: Llama refuses $97.5\%$ of post-cutoff failures, leaving only $12$ confabulating
 items rather than the $30$ used for Qwen3 and Gemma. Alpha ranges are calibrated per model to
@@ -1451,17 +1460,17 @@ $|\alpha| \ge 300$. The cleanest directional signal is the refusal subset at $\a
 refusal rate drops from $100\%$ to $80\%$, with previously-refusing items committing to a
 confabulation (e.g.\ `cin_pc_10` gold "Deadpool \& Wolverine" $\to$ `"X-Men '97"`). This
 $-20$ pp shift is real but small, consistent with Llama's $+2.2$ pp refusal-probe margin over
-its prompt baseline (Section 6.1): both probe and intervention operate on a small dynamic
+its prompt baseline (Section 7.1): both probe and intervention operate on a small dynamic
 range. Full Llama sweep table and example generations in Appendix F.
 
 **Cross-model summary.** The intervention is causal in all three models at appropriately
 calibrated $\alpha$, but the *manipulability* of the refusal-vs-confabulation decision
-tracks each model's default abstention policy from Section 6.1. Qwen, the
+tracks each model's default abstention policy from Section 7.1. Qwen, the
 default-permissive model, has the largest natural confabulation pool and cleanest
 intermediate dynamics: the wrong-to-refusal flip runs $0\% \to 30\%$ as $\alpha$
 increases, with the first-token opener rate rising $10\% \to 100\%$ in parallel. Gemma,
 whose refusal probe carried the largest margin over its prompt-feature baseline in
-Section 6.1, is the most manipulable of the three; its wrong-to-refusal flip reaches
+Section 7.1, is the most manipulable of the three; its wrong-to-refusal flip reaches
 $0\% \to 87\%$ at the sweet-spot $\alpha = +2000$, with $100\%$ first-token-opener rate.
 Llama's near-saturated default leaves little room for the intervention to *induce*
 refusal on the small residual wrong-subset; the cleanest directional signal is the
@@ -1473,16 +1482,16 @@ refusal-vs-wrong probe and the *operational dynamic range* of a causal intervent
 representation is real in all three architectures, but its practical leverage is set by
 where the model already lives on the refusal-vs-confabulation axis.
 
-# 7. Cross-dataset results
+# 8. Cross-dataset results
 
 Do they survive a change of question distribution? This section moves from ConfabQA to
 PopQA and TriviaQA: bootstrap confidence intervals with a within-family scaling control,
 a refusal-channel attribution, and a no-refit transfer test.
 
-## 7.1 Balanced-subsample bootstrap (ConfabQA, PopQA, TriviaQA)
+## 8.1 Balanced-subsample bootstrap (ConfabQA, PopQA, TriviaQA)
 
-Sections 6.1--6.2 establish what happens on the fixed ConfabQA question set. Two questions
-remained open. First, are the single-seed $h_{adds}$ point estimates of Section 6.1 robust to
+Sections 7.1--7.2 establish what happens on the fixed ConfabQA question set. Two questions
+remained open. First, are the single-seed $h_{adds}$ point estimates of Section 7.1 robust to
 sampling noise, or are some of the small margins artifacts of one favorable 5-fold split?
 Second, do the conclusions transfer to question sets the ConfabQA design was not optimized for, specifically to broader factual benchmarks of the kind the probing literature most often cites?
 
@@ -1505,7 +1514,7 @@ source pool. External-dataset details (PopQA and TriviaQA sampling, three-seed p
 deduplication, pool sizes $n_{\text{unique}}$) are in Section 4. Probe-target labels:
 for the ConfabQA cells the `correct` field is the three-way judge's label (Section
 5); for the external-dataset cells it is the generation-time substring match against
-gold and alternatives (the judge pass post-dates these bootstrap runs). Section 7.2's
+gold and alternatives (the judge pass post-dates these bootstrap runs). Section 8.2's
 attribution tests use the judge labels instead, which is why their per-class counts
 differ from Table \ref{tbl:bootstrap}'s (e.g.\ Llama PopQA: $131$ substring-correct vs.\ $102$
 judge-correct).
@@ -1577,7 +1586,7 @@ TriviaQA & Qwen3-1.7B & correct (full) & 400 & \(+9.57\) &
 have 95\% CIs that exclude $0$. The Qwen3 and Gemma within-pre / within-obscure cells (the
 disconfounded targets that motivated ConfabQA) remain consistent with zero but with
 positive point estimates in all four cases, so the single-seed "null" reading of Section
-6.1 was borderline rather than emphatic. The headline numbers are the bottom rows. The CIs are per-cell and
+7.1 was borderline rather than emphatic. The headline numbers are the bottom rows. The CIs are per-cell and
 unadjusted for multiple comparisons across the fourteen cells; the
 cross-model contrast below does not rest on any single borderline cell.
 
@@ -1610,7 +1619,7 @@ The numerical tables, raw $K=30$ subsample values, and full bootstrap pipeline a
 as `figures/bootstrap_h_adds.{json,md}`,
 `figures/bootstrap_llama_external.{json,md}`, and `figures/bootstrap_qwen3_4b.{json,md}`.
 
-## 7.2 Refusal-channel attribution
+## 8.2 Refusal-channel attribution
 
 The up-to-$5.7\times$ difference in $h_{adds}$ between Llama and Qwen on the same
 external data invites a mechanical explanation: the probe target labels "wrong" together with
@@ -1718,9 +1727,9 @@ second in legible form.
 Raw test code and per-subsample values are released as `analysis/refusal_channel_test.py` and
 `figures/refusal_channel_test.{json,md}`.
 
-## 7.3 Transfer of the correctness probe
+## 8.3 Transfer of the correctness probe
 
-The §6.1 cross-model comparison shows that Llama 3.2 3B's correctness probe peaks
+The §7.1 cross-model comparison shows that Llama 3.2 3B's correctness probe peaks
 substantially above Qwen3-1.7B's and Gemma 2 2B's on every dataset measured. A natural next
 question is *whether the probe direction itself is portable*: does a correctness probe fit
 on dataset $A$ classify correctness on dataset $B$ without refit, or does each within-dataset
@@ -1820,17 +1829,17 @@ baselines, and the prompt-feature baseline matrices are released alongside this 
 `figures/cross_dataset_transfer_<model>.{json,md}`; the generating script is
 `analysis/cross_dataset_transfer.py`.
 
-# 8. Discussion
+# 9. Discussion
 
 The picture is more model-dependent than the ConfabQA single-seed reading suggested.
 At the single-seed level the disconfounded within-stratum margins are small on all
-three models ($+1.7$--$+5.8$ pp against the strongest prompt baseline). The Section 7.1
+three models ($+1.7$--$+5.8$ pp against the strongest prompt baseline). The Section 8.1
 bootstrap leaves the Qwen and Gemma cells consistent with zero but flips Llama's
 ConfabQA within-pre / within-obscure cells into positive territory with CIs
 excluding $0$: the null correctness reading holds for Qwen and Gemma but not for
 Llama. On the external PopQA and TriviaQA benchmarks the same bootstrap
 gives Llama a large correctness margin over the prompt baseline where Qwen recovers only
-a small but reliably positive one. The Section 7.2 refusal-channel attribution then
+a small but reliably positive one. The Section 8.2 refusal-channel attribution then
 partitions Llama's external-dataset margin: most of it is genuine correct-vs-wrong
 discrimination on items the model attempted; a smaller share is refusal-channel readout;
 and Llama also carries an independent clean abstention direction. Llama 3.2 3B's hidden
@@ -1855,8 +1864,8 @@ network, with a $1$-$\sigma$ range spanning only the deepest third of the transf
 The refusal direction's logit-lens projection recovers the literal refusal-opening
 vocabulary in each model (Qwen3: ` as`, `As`, `作为`; Gemma: ` Regret`, `Formal`, ` Alas`;
 Llama: ` I`, ` Given`, ` As`), and the one-shot forward-hook intervention drives the
-first-token refusal-opener rate to $100\%$ on Qwen3 and Gemma (Section 5.8, Section 6.2).
-On the external benchmarks the Section 7.2 refusal probe extends the refusal-atlas
+first-token refusal-opener rate to $100\%$ on Qwen3 and Gemma (Section 6.2, Section 7.2).
+On the external benchmarks the Section 8.2 refusal probe extends the refusal-atlas
 finding from ConfabQA to PopQA and TriviaQA at Llama scale. The qualitative claim
 "refusal is a clean, late-network, linearly-decodable, causally-load-bearing direction in
 the hidden state of these three small LMs" survives the bootstrap and the external
@@ -1873,7 +1882,7 @@ models tested.
 Llama 3.2 3B's instruction tuning includes substantially heavier calibrated-abstention
 training than Qwen3-1.7B's: Llama refuses the large majority of post-cutoff failures
 and a substantial fraction of external-benchmark items where Qwen refuses only a small
-minority of either (Section 6.1; Section 7.2 intro). A model that has been trained to
+minority of either (Section 7.1; Section 8.2 intro). A model that has been trained to
 abstain when uncertain is mechanically required to maintain a distinguishable internal
 "I should hedge" state, which manifests as Llama's Test-B refusal-probe gap. But heavy
 abstention training also creates a richer correctness representation as a *prerequisite*:
@@ -1882,7 +1891,7 @@ shouldn't" before it can abstain selectively. That correctness representation is
 Test A recovers as the residual after refusals are dropped. Qwen3-1.7B, which prefers to
 attempt-and-confabulate, never had pressure to develop a clean abstention classifier or
 its correctness prerequisite, and the probe finds only weak versions of both. **The
-Qwen3-4B within-family scaling control of Section 7.1 directly supports this story:** at
+Qwen3-4B within-family scaling control of Section 8.1 directly supports this story:** at
 $2.4\times$ the parameter count of Qwen3-1.7B, same model family, and the same near-zero
 PopQA refusal rate, Qwen3-4B's $h_{adds}$ stays essentially at Qwen3-1.7B's level (CIs
 overlapping) and far below Llama's. Doubling the Qwen-family parameter count does not
@@ -1904,15 +1913,15 @@ with different post-training recipes, and ideally with bootstrap CIs on balanced
 subsamples rather than single-seed point estimates.
 
 **Beyond discrete tokens.** The judged outputs and the logit-lens vocabulary of Section
-5.7 live in the discrete token space, but a token is only drawn from that discrete set at
+6.1 live in the discrete token space, but a token is only drawn from that discrete set at
 the moment of sampling; before that moment the model's state is a point in a continuous
 representation space, and that is the space the probes and SAE features read (Sections
-5.4--5.9). The refusal direction is a structure of the continuous space that becomes
+5.4--5.6 and 6.1--6.3). The refusal direction is a structure of the continuous space that becomes
 text one token later. A natural extension is to measure calibration directly in that
 space (signed distances to the refusal and correctness hyperplanes as continuous
 confidence scores) rather than through the discrete outputs they produce.
 
-# 9. Limitations
+# 10. Limitations
 
 1. **Benchmark construction.** Four known imperfections in ConfabQA: a rater-subjective
    obscure/well-known boundary; gold answers as a validation snapshot (facts drift, the
@@ -1926,9 +1935,9 @@ confidence scores) rather than through the discrete outputs they produce.
 2. **Evaluation methodology.** $n = 784$ gives only $\approx 157$ items per CV fold, and the
    within-obscure probe's $1\sigma$ layer range spans the entire network. The prompt-feature
    baseline is hand-crafted and likely a *lower* bound on what a generic text classifier
-   could extract. The Sections 7.1 / 7.2 bootstrap resamples balanced subsets but not the
+   could extract. The Sections 8.1 / 8.2 bootstrap resamples balanced subsets but not the
    underlying pool, so reported percentile CIs are subsample CIs, not population CIs. The
-   Section 7.3 cross-dataset transfer matrix provides held-out evaluation for the
+   Section 8.3 cross-dataset transfer matrix provides held-out evaluation for the
    correctness probe across distributions, but the refusal probe has not been given the
    same treatment: on the external runs Gemma produces $\le 5$ refusals and Qwen a few
    dozen (Table \ref{tbl:refchannel}), too few for a stable cross-dataset refusal fit, while Llama's
@@ -1937,15 +1946,15 @@ confidence scores) rather than through the discrete outputs they produce.
    close that gap.
 
 3. **Scope and judge generalization.** Four models in the $1.7$B--$4$B range, no
-   $\gtrsim 7$B replication. The within-Qwen-family scaling control of Section 7.1 rules
+   $\gtrsim 7$B replication. The within-Qwen-family scaling control of Section 8.1 rules
    out parameter count as the dominant driver of the cross-model $h_{adds}$ gap, but model
    family and post-training recipe remain confounded; a clean isolation would swap the
    recipe while holding family fixed. The Qwen judge on Qwen subject (and on Llama outputs
-   in Section 7.2) is partially de-risked by the cross-model intervention runs (Gemma
+   in Section 8.2) is partially de-risked by the cross-model intervention runs (Gemma
    reproduces the Qwen refusal pattern under an external Qwen judge), but an independent or
    human re-grade on a Llama-output subset remains the cleanest remaining check.
 
-# 10. Conclusion and future work
+# 11. Conclusion and future work
 
 I introduce **ConfabQA**, a $784$-item factual-QA probing benchmark structured as 4 domains
 $\times$ 3 categories (well-known pre-cutoff, *obscure* pre-cutoff, post-cutoff) in which
@@ -1990,13 +1999,13 @@ read of the same code could have reported either polarity.
 Three directions for v2: (i) isolate post-training recipe from model family by swapping
 the recipe while holding family fixed (e.g.\ a Qwen3-1.7B with Llama-style abstention
 training, or vice versa), and check whether the cross-family $h_{adds}$ gap survives at
-$\gtrsim 7$B; (ii) extend the Section 5.8 one-shot intervention to a per-token steering
+$\gtrsim 7$B; (ii) extend the Section 6.2 one-shot intervention to a per-token steering
 vector (Turner et al. 2023) and characterize the $\alpha$ at which sustained pressure flips
 the full output before fluency degrades; (iii) add an item-level non-parametric bootstrap
 and an independent human annotator on Llama outputs to close the bootstrap and
 judge-generalization gaps.
 
-# 11. Code and data availability
+# 12. Code and data availability
 
 All code, the ConfabQA benchmark, judge labels, bootstrap outputs, SAE
 artifacts, and the figure-generation pipeline are released at
@@ -2162,14 +2171,14 @@ errors, flagged for source patching in v2.
 
 ## C.2 Authoritative summary
 
-Every Qwen3-1.7B single-model number in Sections 5.1--5.8 is derived from
+Every Qwen3-1.7B single-model number in Sections 5.1--5.6 and 6.1--6.2 is derived from
 `data/qwen3_1_7b_summary.json`, generated by `03_analyze.py` in a single pass over the
 cached responses and activations. The summary file records: per-judge, per-cutoff,
 per-category, and per-domain counts; full per-layer accuracy curves and 1$\sigma$ layer
 ranges for every probe target; class-imbalance metrics at peak for the refusal probe; and
 all three prompt-feature baseline variants. Reproducing those numbers consists of running
-`python 03_analyze.py` and reading the resulting JSON. The SAE numbers (Section 5.9) and
-the cross-model / cross-dataset numbers (Sections 6--7) are recorded in the
+`python 03_analyze.py` and reading the resulting JSON. The SAE numbers (Section 6.3) and
+the cross-model / cross-dataset numbers (Sections 7--8) are recorded in the
 per-experiment artifacts under `figures/` cited in their home sections.
 
 ## D. Sports domain: excluded from main analysis
@@ -2242,7 +2251,7 @@ data/sources/science/nobel_physics.json:
 
 ## F. Cross-model intervention details
 
-Supporting detail for the Section 5.8 and Section 6.2 one-shot interventions.
+Supporting detail for the Section 6.2 and Section 7.2 one-shot interventions.
 
 **Hidden-state scales.** The per-model scale statistics and calibrated $\alpha$ ranges:
 
@@ -2279,7 +2288,7 @@ Llama 3.2 3B & 28 & \(90\) & \(0.3\) & \(8.4\) & \([-300, +300]\) \\
 \end{tabular}
 \end{table}
 
-**Qwen3-1.7B sample generations (Section 5.8).** (`cin_pc_60`, gold "Jacques Audiard"; baseline says "Luis Llosa", a
+**Qwen3-1.7B sample generations (Section 6.2).** (`cin_pc_60`, gold "Jacques Audiard"; baseline says "Luis Llosa", a
 confabulation):
 
 \begin{center}
@@ -2377,7 +2386,7 @@ different pathology: $\alpha = -2000$ generations begin with garbled non-English
 (Cyrillic "\cyrtext{виправивши}", French "conseille"), suggesting Gemma's refusal direction is partially
 entangled with prompt-encoding stability and pushing in the opposite direction off-manifold.
 
-**Llama 3.2 3B.** The full Llama intervention sweep, displaced here from Section 6.2
+**Llama 3.2 3B.** The full Llama intervention sweep, displaced here from Section 7.2
 because Llama's near-saturated default refusal ($97.5\%$ of post-cutoff failures)
 leaves only $n=12$ confabulating items, which is insufficient for a clean
 directional-causal claim.
