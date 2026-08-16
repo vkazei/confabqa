@@ -338,6 +338,8 @@ Per-cell counts:
 | cinema  | 34 | 37 | 121 | 192 |
 | **total** | **143** | **153** | **488** | **784** |
 
+: ConfabQA cell counts: 4 domains $\times$ 3 categories, $n = 784$.\label{tbl:cells}
+
 Items are generated from per-domain templated source files; each item carries a provenance URL
 for its gold answer and a validation status field populated by an external LLM with web access.
 Three iterations of the validation pipeline were run on the source files; the final one,
@@ -396,6 +398,8 @@ Qwen-judge cover all $784$.
 | DR vs.\ Qwen-judge (full ConfabQA)                  | $784$  | $682 / 784$ | $87.0\%$ | $0.780$          |
 | Claude vs.\ Qwen-judge (stratified 30-item sample)      | $30$   | $30 / 30$   | $100\%$  | $1.000$          |
 
+: Judge agreement on ConfabQA across three annotators.\label{tbl:judge}
+
 Cohen's $\kappa = 0.78$ (DR vs.\ Qwen-judge on all $784$ items) is in the
 "substantial agreement" range (Landis and Koch, 1977). DR is systematically
 stricter than the Qwen-judge ($467$ vs.\ $402$ wrong-labels across the benchmark), and the $102$ disagreements decompose as $45$ items DR calls wrong where Qwen-judge calls
@@ -443,7 +447,7 @@ increasing leniency:
   the annotator's coarse difficulty bucket already predicts."
 
 The honest comparison is the hidden-state probe vs.\ the *strongest* of these four baselines
-on each target. That is the "h adds" column in the Section 5.6 table.
+on each target. That is the "h adds" column of Table \ref{tbl:hadds} in Section 5.6.
 
 **Probe targets.**
 
@@ -561,6 +565,8 @@ sitting cleanly between the well-known and post-cutoff cells in accuracy:
 | obscure (pre-cutoff) | 153 | 51 | 33.3% | $-0.149$ |
 | post-cutoff | 488 | 95 | 19.5% | $-0.145$ |
 
+: Accuracy and mean per-token log-probability by category.\label{tbl:bycategory}
+
 The obscure-pre-cutoff cell is the benchmark's innovation. The model fails on $\approx 66.7\%$ of items
 whose answers existed in its training data: exactly the population needed to test the cutoff
 disconfound. Mean log-probability also stratifies: the model is *least* confident on the obscure
@@ -609,36 +615,45 @@ among confident wrongs.](figures/qwen3_1_7b/confidence_merged.png){#fig:confiden
 
 ## 5.3 Confident-confabulation case studies
 
-The five highest-confidence wrong answers (highest mean per-token log-probability among items
-the judge labels `wrong`; all five sit above $0.95$ geometric-mean per-token probability):
+Table \ref{tbl:topwrong} lists the five wrong-labeled items with the highest mean
+per-token log-probability $\bar\ell$; all five sit at $\approx 0.95$ geometric-mean
+per-token probability.
 
-| id | category | gold | model said | logprob |
-|---|---|---|---|--:|
-| cin_pc_41 | cinema-post-cutoff | Gladiator II | "There is no film directed by Ridley Scott that is a sequel..." | $-0.047$ |
-| cin_pc_03 | cinema-post-cutoff | Deadpool & Wolverine | "the Marvel film... [confidently wrong, different fact pattern]" | $-0.049$ |
-| cul_ob_12 | culture-obscure | Love in the Ruins | "Walker Percy's 1971 novel was The Crying of Lot 49" | $-0.049$ |
-| cin_ob_24 | cinema-obscure | Krzysztof Kieslowski | "Three Colors: Blue was directed by Jean-Pierre Jeunet" | $-0.049$ |
-| his_ob_35 | history-obscure | William Howard Taft | "the 27th President... was Theodore Roosevelt" | $-0.050$ |
+| id | question (abridged) | gold | model said (excerpt) | $\bar\ell$ |
+|:-----------|:------------------------|:-------------|:----------------------------|----:|
+| cin_pc_41 | Ridley Scott's November 2024 sequel to *Gladiator*? | Gladiator II | "There is no film directed by Ridley Scott that is a sequel to *Gladiator*..." | $-0.047$ |
+| cul_ob_12 | Which 1971 Walker Percy novel won the National Book Award? | Love in the Ruins | "...was 'The Crying of Lot 49'" | $-0.049$ |
+| cin_ob_24 | Who directed 'Three Colors: Blue' (1993)? | Krzysztof Kieslowski | "...was directed by Jean-Pierre Jeunet" | $-0.049$ |
+| his_ob_35 | Who was the 27th US President, 1909--1913? | William Howard Taft | "...was Theodore Roosevelt" | $-0.050$ |
+| his_ob_30 | Who was Chancellor of West Germany, 1969--1974? | Willy Brandt | "...was Konrad Adenauer" | $-0.052$ |
+
+: The five highest-confidence confabulations. Questions and answers are excerpts from the released response files.\label{tbl:topwrong}
 
 These exemplify the canonical confabulation mode: the model produces a plausible-sounding
 specific answer with a recognizable name from the right time period and category, at high
-text-level confidence. Most are obscure pre-cutoff or post-cutoff items, where the model has
-either no training-data exposure or only partial exposure to the gold answer.
+text-level confidence. Four of the five are obscure pre-cutoff items, where the model had
+partial training-data exposure to the gold answer; the fifth is post-cutoff, where it had
+none.
 
-The five highest-confidence refusals (all in the post-cutoff cell):
+Table \ref{tbl:toprefusal} lists the five highest-confidence refusals; all live in
+the post-cutoff cell.
 
-| id | category | logprob | answer (head) |
-|---|---|--:|---|
-| his_pc_38 | history-post-cutoff | $-0.049$ | "As of January 2025, there is no Secretary of the Treasury..." |
-| cin_pc_14 | cinema-post-cutoff | $-0.055$ | "As of my knowledge cutoff in 2023, there is no 2025 film titled..." |
-| cul_pc_20 | culture-post-cutoff | $-0.060$ | "As of my knowledge cutoff in 2024, there is no official announcement..." |
-| cin_pc_114 | cinema-post-cutoff | $-0.064$ | "As of the 2025 Academy Awards, there is no official announcement..." |
-| his_pc_33 | history-post-cutoff | $-0.067$ | "As of February 2025, there is no United States Attorney General..." |
+| id | question (abridged) | model said (excerpt) | $\bar\ell$ |
+|:-----------|:--------------------------|:----------------------------------|----:|
+| his_pc_38 | Treasury Secretary in the second Trump administration, January 2025? | "As of January 2025, there is no Secretary of the Treasury..." | $-0.049$ |
+| cin_pc_14 | Who starred in Bong Joon-ho's 2025 film 'Mickey 17'? | "As of my knowledge cutoff in 2023, there is no 2025 film titled *Mickey 17*..." | $-0.055$ |
+| cul_pc_20 | Which Taylor Swift album was released on April 19, 2024? | "As of my knowledge cutoff in 2024, there is no official announcement..." | $-0.060$ |
+| cin_pc_114 | 2025 Best Supporting Actor Academy Award, for 'A Real Pain'? | "As of the 2025 Academy Awards, there is no official announcement..." | $-0.064$ |
+| his_pc_33 | US Attorney General in the second Trump administration, February 2025? | "As of February 2025, there is no United States Attorney General..." | $-0.067$ |
+
+: The five highest-confidence refusals; all are post-cutoff items.\label{tbl:toprefusal}
 
 Refusals are paradoxically *high-confidence* text outputs: the model is fluent and assertive
-about its lack of knowledge. This is exactly the case that makes refusal indistinguishable from
-confabulation under a binary substring grader, and the case that motivates the three-way judge
-in Section 4.
+about its lack of knowledge. A binary substring grader lumps both failure modes into the
+same `incorrect` bucket, since neither a refusal nor a confabulation contains the gold
+string; and because refusals are as confident as confabulations, text-level confidence
+cannot separate the two afterward either. Separating them is what the three-way judge of
+Section 4 is for.
 
 **A case study for the validation pipeline.** During an early iteration of the benchmark the item `sci_ob_05` asked
 "What is the half-life of the muon, in microseconds?" The gold, written by the dataset author
@@ -694,6 +709,8 @@ statistically pinned at this sample size.](figures/per_layer_probes_merged.png){
 | `correct_within_pre` | 296 | 18 | 9–28 | $0.848 \pm 0.038$ | 0.527 | $+32.1$ |
 | `correct_within_obscure` | 153 | 7 | 1–28 | $0.805 \pm 0.063$ | 0.667 | $+13.8$ |
 
+: Probe peaks vs. majority baselines (Qwen3-1.7B, ConfabQA).\label{tbl:probepeaks}
+
 The 1$\sigma$ layer-range column matters: for the within-obscure probe at n=153, accuracies
 across the entire 28-layer network are within one fold-standard-deviation of the argmax, so the
 specific "peak layer 7" is not a meaningful per-depth claim; only the overall mean accuracy
@@ -738,6 +755,8 @@ recovering anything the prompt itself does not already trivially yield.
 | `refusal_vs_wrong`<br>`_within_post` | 0.626 | **0.774** | 0.741 | 0.730 | 0.730 | $0.870$ | $\mathbf{+9.6}$ |
 | `correct_within_pre` | 0.527 | 0.797 | 0.811 | 0.811 | **0.818** | $0.848$ | $+3.0$ |
 | `correct_within`<br>`_obscure` | 0.667 | 0.752 | **0.830** | 0.811 | 0.811 | $0.805$ | $-2.5$ |
+
+: Hidden-state probe vs. the four prompt-feature baselines; "h adds" = probe peak $-$ strongest (bolded) baseline.\label{tbl:hadds}
 
 (All baselines are 5-fold CV accuracy with `random_state=0`; the bolded baseline per row is the
 strongest, and "h adds" is the hidden-state peak minus that strongest bolded baseline.)
@@ -806,6 +825,8 @@ recovered from a labeled probe, that maps to a coherent neighborhood in token sp
 | 6 | ` As`         | $+15.48$ | | 14 | `.getAs`    | $+13.12$ |
 | 7 | `\tas`        | $+15.35$ | | 15 | `asString`  | $+12.94$ |
 | 8 | `-as`         | $+15.25$ | |  |  |  |
+
+: Top tokens along the refusal direction (logit-lens projection, full subset $n = 549$).\label{tbl:toptokens}
 
 The top of the list is exactly the vocabulary of refusal openings: " as" (1), "as" (4), "As"
 (5), " As" (6); the model's refusals near-universally begin with "As of my knowledge cutoff
@@ -877,6 +898,7 @@ by the float's height (the intervention figure ran off the page bottom).
 Column spec mirrors the pandoc longtable this replaces. -->
 \begin{center}
 \small
+\captionof{table}{Causal-intervention outcome rates across the $\alpha$ sweep ($n = 30$ per subset).\label{tbl:alpha}}
 \begin{tabular}{@{}
   >{\raggedright\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.2394}}
   >{\raggedright\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.3380}}
@@ -1068,6 +1090,8 @@ IDs).
 | $1500$ | $1.000$       | $30/30$ | $1.000$ |
 | $3000$ | $1.000$       | $30/30$ | $1.000$ |
 
+: Feature 2191 dose-response: next-token refusal-opener probability under $\alpha \cdot \hat W_{\rm dec}[2191]$.\label{tbl:dose}
+
 The dose-response is monotonic with a sharp transition between $\alpha=200$
 and $\alpha=750$ on wrong items: from $P=0$ to $P=1$ across one $\log_2$
 step in intervention strength, and from $0/30$ to all $30/30$ argmax
@@ -1123,9 +1147,7 @@ the causal intervention with each model's own recovered refusal direction.
 
 To evaluate the generalizability of the architectural probing results, the entire evaluation, grading, and probing pipeline was executed on two additional instruction-tuned models: **Gemma 2 2B** (`unsloth/gemma-2-2b-it`) and **Llama 3.2 3B** (`unsloth/Llama-3.2-3B-Instruct`). All outputs were graded using the same calibrated judge model (Qwen3-1.7B) to maintain a standardized correctness threshold.
 
-Table 4 compiles the key model statistics, strata accuracies, and peak linear probe accuracies across Qwen3-1.7B, Gemma 2 2B, and Llama 3.2 3B. Figure \ref{fig:comparative-probes} shows the per-layer probing accuracy curves for all three models.
-
-### Table 4: Cross-Model Comparison Summary
+Table \ref{tbl:crossmodel} compiles the key model statistics, strata accuracies, and peak linear probe accuracies across Qwen3-1.7B, Gemma 2 2B, and Llama 3.2 3B. Figure \ref{fig:comparative-probes} shows the per-layer probing accuracy curves for all three models.
 
 | Metric / Probe | Qwen3-1.7B | Gemma 2 2B | Llama 3.2 3B |
 |:---| ---: | ---: | ---: |
@@ -1146,6 +1168,8 @@ Table 4 compiles the key model statistics, strata accuracies, and peak linear pr
 | **Correctness vs +category** | Probe **82.4%** vs Base **80.0%**<br>(+2.4 pp) | Probe **89.7%** vs Base **88.0%**<br>(+1.7 pp) | Probe **94.3%** vs Base **91.8%**<br>(+2.4 pp) |
 | **Refusal-vs-Wrong vs TF-IDF** | Probe **89.4%** vs Base **82.0%**<br>(+7.4 pp) | Probe **83.9%** vs Base **67.6%**<br>(+16.3 pp) | Probe **95.8%** vs Base **93.6%**<br>(+2.2 pp) |
 | **Within-Pre Correct vs +category** | Probe **84.8%** vs Base **81.8%**<br>(+3.0 pp) | Probe **91.2%** vs Base **86.1%**<br>(+5.1 pp) | Probe **85.2%** vs Base **79.4%**<br>(+5.8 pp) |
+
+: Cross-model comparison summary.\label{tbl:crossmodel}
 
 ![Comparative probing accuracy curves across Qwen3-1.7B, Gemma 2 2B, and Llama 3.2 3B.](figures/comparative_probes.png){#fig:comparative-probes}
 
@@ -1194,6 +1218,8 @@ variability:
 | Gemma 2 2B | 19 | $326$ | $16.1$ | $42.0$ | $[-6000, +8000]$ |
 | Llama 3.2 3B | 28 | $90$ | $0.3$ | $8.4$ | $[-300, +300]$ |
 
+: Per-model hidden-state scale at the intervention layer, and the calibrated $\alpha$ ranges.\label{tbl:scales}
+
 Llama's tiny $\sigma_{\|h\|}$ (std of $0.3$ on a mean of $90$) indicates a very tight
 manifold; perturbations larger than $\approx 300$ along the unit direction drive the model
 off-manifold into degenerate single-character outputs. The order-of-magnitude spread in
@@ -1209,6 +1235,8 @@ hidden-state scale and its tolerance to off-manifold perturbation.
 | WRONG: first-token opener | $0\%$ | $0\%$ | $13\%$ | $\mathbf{100\%}$ | $70\%$ | $83\%$ |
 | REFUSAL: judge says REFUSAL | $80\%$ | $93\%$ | $100\%$ | $100\%$ | $97\%$ | $87\%$ |
 | REFUSAL: first-token opener | $0\%$ | $0\%$ | $53\%$ | $100\%$ | $77\%$ | $90\%$ |
+
+: Gemma 2 2B one-shot intervention across its calibrated $\alpha$ sweep ($n = 30$ per subset; judge = Qwen3-1.7B).\label{tbl:gemmasweep}
 
 Gemma's wrong-to-refusal flip is substantially stronger than Qwen3's ($0\% \to 87\%$ vs.\ Qwen3's $0\% \to 30\%$); $\alpha = +2000$ is the clean sweet spot with $100\%$ first-token
 opener rate. The effect is non-monotonic at large positive $\alpha$: $+4000$ and $+8000$
@@ -1284,12 +1312,10 @@ for the ConfabQA cells the `correct` field is the three-way judge's label (Secti
 5); for the external-dataset cells it is the generation-time substring match against
 gold and alternatives (the judge pass post-dates these bootstrap runs). Section 7.2's
 attribution tests use the judge labels instead, which is why their per-class counts
-differ from Table 5's (e.g.\ Llama PopQA: $131$ substring-correct vs.\ $102$
+differ from Table \ref{tbl:bootstrap}'s (e.g.\ Llama PopQA: $131$ substring-correct vs.\ $102$
 judge-correct).
 
 ![Bootstrap 95\% CIs on $h_{adds}$ across $14$ `(dataset, model, target)` cells. $K=30$ balanced 50/50 subsamples per cell; blue = CI excludes 0. The bottom two rows are the headline positive finding: Llama 3.2 3B on PopQA / TriviaQA recovers $+21$--$+25$ pp over the strongest prompt-feature baseline, where Qwen3-1.7B and Qwen3-4B on the *same* data recover $+4$--$+10$ pp. The Qwen3-4B row labeled "scaling control" rules out parameter count as the dominant driver of the cross-model gap.](figures/bootstrap_forest.png){#fig:bootstrap-forest}
-
-### Table 5: Bootstrap 95% CIs on $h_{adds}$ across 14 cells
 
 | dataset | model | target | $n$/class | $\bar h_{adds}$ | 95% CI | excl 0? |
 |:---------------------|:--------------|:--------------|----:|-----:|:---------------|:----:|
@@ -1307,6 +1333,8 @@ judge-correct).
 | TriviaQA | Qwen3-1.7B | correct (full) | 400 | $+9.57$ | $[+5.13, +13.75]$ | **yes** |
 | **PopQA** | **Llama 3.2 3B** | correct (full) | $131$ | $\mathbf{+24.94}$ | $\mathbf{[+20.57, +29.03]}$ | **yes** |
 | **TriviaQA** | **Llama 3.2 3B** | correct (full) | $356$ | $\mathbf{+21.25}$ | $\mathbf{[+19.52, +22.89]}$ | **yes** |
+
+: Bootstrap 95\% CIs on $h_{adds}$ across the 14 (dataset, model, target) cells.\label{tbl:bootstrap}
 
 **Reading the table.** $5$ of the $9$ ConfabQA cells, and $5/5$ external-dataset cells,
 have 95\% CIs that exclude $0$. The Qwen3 and Gemma within-pre / within-obscure cells (the
@@ -1366,8 +1394,6 @@ Llama's hidden state encodes a clean abstention decision, Test B's probe should 
 prompt baselines by a wide margin even though the abstention decision is not predictable from
 the question text alone.
 
-### Table 6: Refusal-channel attribution
-
 | Test | dataset | model | $n$/class | probe acc | strongest baseline | $h_{adds}$ | 95% CI |
 |:----------------|:--------|:-------------|----:|------:|------:|------:|:---------------|
 | A: drop refusals | PopQA | Qwen3-1.7B | 355 | 79.18% | 75.87% | $+3.31$ | $[+1.55, +6.48]$ |
@@ -1379,10 +1405,12 @@ the question text alone.
 | B: probe refusal | TriviaQA | Qwen3-1.7B | $28$ | 73.34% | 57.37% | $+15.97$ | $[-3.48, +32.27]$ |
 | B: probe refusal | TriviaQA | Llama 3.2 3B | 252 | 90.23% | 64.80% | $\mathbf{+25.43}$ | $\mathbf{[+22.81, +29.76]}$ |
 
+: Refusal-channel attribution: Test A (drop refusals) and Test B (probe refusal directly).\label{tbl:refchannel}
+
 (Italicized CI lower bound: 95\% CI includes 0 because the refusal count is too small for the
 $K=30$ percentile bootstrap to be well-resolved.)
 
-**Reading Test A.** Comparing the drop-refusals row to the unfiltered Table 5 row gives the
+**Reading Test A.** Comparing the drop-refusals row to the unfiltered Table \ref{tbl:bootstrap} row gives the
 share of the headline $h_{adds}$ attributable to the refusal channel. For Llama:
 $+24.94 \to +20.76$ on PopQA (refusal channel accounts for $\approx 17\%$ of the headline);
 $+21.25 \to +17.71$ on TriviaQA ($\approx 17\%$). The bulk ($\approx 83\%$) of Llama's
@@ -1432,7 +1460,7 @@ PopQA, and TriviaQA, then evaluate each fitted pipeline on every other dataset *
 refitting* (the scaler and PCA are held fixed at the source-dataset statistics). The
 transfer sweep uses a fixed four-layer grid per model (Qwen $\{14,18,22,28\}$, Gemma
 $\{6,13,20,26\}$, Llama $\{7,14,21,28\}$); the headline row below reports the grid
-layer closest to each model's Table 4 peak (Qwen $18$, Gemma $13$, Llama $14$), and the full grids are in the released matrices. The
+layer closest to each model's Table \ref{tbl:crossmodel} peak (Qwen $18$, Gemma $13$, Llama $14$), and the full grids are in the released matrices. The
 $3 \times 3$ accuracy matrix has the within-dataset 5-fold CV on the diagonal and pure
 transfer in the off-diagonals. Each cell is compared against the test-dataset majority
 baseline. A prompt-feature-only baseline (TF-IDF on question text) is fit on the same splits
@@ -1447,6 +1475,8 @@ test-majority) across the 3 within cells and the 6 off-diagonal transfer cells:
 | Llama 3.2 3B  | 14         | $+18.9$ pp        | $+15.2$ pp          | $81\%$    | $5/6$                  |
 | Gemma 2 2B    | 13         | $+13.1$ pp        | $-7.0$ pp           | $-54\%$   | $4/6$                  |
 | Qwen3-1.7B    | 18         | $+8.7$ pp         | $-1.2$ pp           | $-14\%$   | $3/6$                  |
+
+: Cross-dataset transfer at each model's peak-within layer: margin retention without refit.\label{tbl:transfer}
 
 **Llama: content-invariant.** Five of the six off-diagonal transfers beat the test-dataset
 majority, with an average winning margin of $+19.8$ pp, comparable to the within-dataset
@@ -1602,7 +1632,7 @@ confidence scores) rather than through the discrete outputs they produce.
    Section 7.3 cross-dataset transfer matrix provides held-out evaluation for the
    correctness probe across distributions, but the refusal probe has not been given the
    same treatment: on the external runs Gemma produces $\le 5$ refusals and Qwen a few
-   dozen (Table 6), too few for a stable cross-dataset refusal fit, while Llama's
+   dozen (Table \ref{tbl:refchannel}), too few for a stable cross-dataset refusal fit, while Llama's
    refusal counts would support one. A Llama refusal-transfer test on the existing data,
    plus a known-unknowns benchmark that elicits refusals from the smaller models, would
    close that gap.
@@ -1770,6 +1800,8 @@ Per-domain totals:
 | culture | 189 | 65 | 34.4% |
 | cinema | 192 | 28 | 14.6% |
 
+: Per-domain accuracy.\label{tbl:appdomain}
+
 Per-domain x cutoff breakdown:
 
 | domain | pre-cutoff | post-cutoff |
@@ -1778,6 +1810,8 @@ Per-domain x cutoff breakdown:
 | history | 54/70 (77.1%) | 13/127 (10.2%) |
 | culture | 42/68 (61.8%) | 23/121 (19.0%) |
 | cinema | 19/71 (26.8%) | 9/121 (7.4%) |
+
+: Per-domain accuracy by cutoff class.\label{tbl:appdomaincutoff}
 
 History remains the strongest pre-cutoff domain (77.1%); cinema the weakest overall (14.6%).
 Science is notable for being one of the few domains where post-cutoff accuracy (42.0%, 50/119)
@@ -1813,7 +1847,7 @@ Two independent annotators re-graded ConfabQA alongside the Qwen3-1.7B judge:
 
 The Qwen judge labels are embedded in the response files,
 `data/responses/qwen3_1_7b/{id}.json`. Agreement statistics for both annotators are in
-the Section 4 table; the DR pass additionally web-verified each gold answer
+Table \ref{tbl:judge}; the DR pass additionally web-verified each gold answer
 and flagged three items (`his_pc_09`, `his_pc_56`, `his_pc_90`) with stated-premise
 errors, flagged for source patching in v2.
 
@@ -1838,6 +1872,8 @@ run of Qwen3-1.7B, this domain produced a uniform failure mode across all three 
 | domain | well_known | obscure | post_cutoff | overall |
 |---|--:|--:|--:|--:|
 | sports | 0/10 (0.0%) | 0/10 (0.0%) | 0/6 (0.0%) | 0/26 (0.0%) |
+
+: The excluded sports domain: accuracy by category on the 26-item run.\label{tbl:sports}
 
 Judge labels: 23 `wrong`, 3 `refusal`, 0 `correct`. Examples of confidently wrong responses:
 
@@ -1885,6 +1921,8 @@ Qwen3's or Gemma's).
 | WRONG: first-token opener | $0\%$ | $100\%$ | $100\%$ | $83\%$ | $0\%$ |
 | REFUSAL: judge says REFUSAL | $80\%$ | $100\%$ | $100\%$ | $100\%$ | $93\%$ |
 | REFUSAL: first-token opener | $0\%$ | $100\%$ | $100\%$ | $93\%$ | $0\%$ |
+
+: Llama 3.2 3B intervention over its calibrated $\alpha$ range ($n=12$ wrong, $n=15$ refusal items).\label{tbl:llamasweep}
 
 The wrong-subset row at the baseline ($\alpha=0$) reads $0\%$ refusal but $100\%$
 first-token-opener: items where the text reads refusal-y ("I'm not aware of...") but commits
