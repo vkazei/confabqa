@@ -997,9 +997,14 @@ RMSNorm is scale-invariant ($\mathrm{RMSNorm}(c\,\mathbf{x}) = \mathrm{RMSNorm}(
 for $c > 0$), so the scores $\ell_v$ depend only on the direction and not on its norm;
 the unit-normalized $\mathbf{w}_{\mathrm{unit}}$ that the Section 6.2 intervention uses
 gives identical scores. The $\ell_v$ are relative alignment scores, not
-log-probabilities: up to the RMSNorm gain, $\ell_v$ is the dot product between token
-$v$'s unembedding vector and the normalized direction, so only rankings and gaps
-between tokens carry information. Softmaxing them into a "probability" would assert a
+log-probabilities. Concretely, with tied embeddings each token $v$ owns one row
+$\mathbf{e}_v \in \mathbb{R}^{2048}$ of the LM head, and
+$\ell_v = \langle \mathbf{e}_v, \mathbf{g} \odot \hat{\mathbf{w}} \rangle$, where
+$\hat{\mathbf{w}}$ is the direction divided by its root-mean-square and $\mathbf{g}$
+is the RMSNorm gain: the same formula the head applies to any real hidden state,
+evaluated at the direction. It is a dot product rather than a cosine, so token-vector
+norms weight the ranking exactly as they weight the model's own logits; only rankings
+and gaps between tokens carry information. Softmaxing them into a "probability" would assert a
 next-token distribution for a state the model never visits; where this paper reports
 actual probabilities (Sections 6.2 and 6.3.1), they come from decoding real, perturbed
 hidden states. Tokens with the highest $\ell_v$ are tokens that the model's
