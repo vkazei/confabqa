@@ -1126,8 +1126,10 @@ oblique axis between the two arrows, and the wrong class's covariance ellipse is
 elongated along the same oblique axis: the centroid connector rides that
 high-variance content spread, while the probe direction is the axis whose marginal
 separates the classes item by item (its $x$-marginal here is, up to an affine map,
-the score histogram of Figure
-\ref{fig:score-hist}).](figures/qwen3_1_7b/direction_geometry.png){#fig:geometry}
+the score histogram of Figure \ref{fig:score-hist}). The dotted vertical line is the
+probe's decision boundary, which is exact in this panel: the separating hyperplane's
+normal is the probe direction itself, so the boundary intersects this plane
+perpendicular to the $x$-axis.](figures/qwen3_1_7b/direction_geometry.png){#fig:geometry}
 
 The 2048-d hidden-state space has a *direction* whose token-level signature is the
 refusal-opening vocabulary. That direction is what the probe detects: not a general

@@ -119,6 +119,20 @@ def main():
                  ha="center")
     ax2.update_datalim(np.array(tips) * 1.15)
     ax2.autoscale_view()
+
+    # probe decision boundary: the hyperplane's normal is u1 itself, so in
+    # this plane the boundary is exactly a vertical line. Locate it via the
+    # fitted pipeline's decision function (flip-proof), which is affine in x.
+    def decision_at(x):
+        h = H.mean(axis=0) + x * u1
+        xs = d["scaler"].transform(h[None, :])
+        return float(d["lr"].decision_function(d["pca"].transform(xs))[0])
+    g0, g1 = decision_at(0.0), decision_at(1.0)
+    x_star = -g0 / (g1 - g0)
+    ax2.axvline(x_star, color="#333333", lw=1.4, ls=":")
+    ax2.text(x_star, ax2.get_ylim()[0] + 2, " probe decision boundary",
+             fontsize=8.5, color="#333333", ha="left", va="bottom",
+             rotation=90)
     ax2.set_xlabel("along probe direction")
     ax2.set_ylabel("orthogonal complement of diff-means")
     ax2.set_title("(b) the plane spanned by both directions")
