@@ -1,0 +1,165 @@
+{
+ "forced_prefix": "As",
+ "n": 30,
+ "rates": {
+  "refusal": 0.36666666666666664,
+  "wrong": 0.6333333333333333
+ },
+ "intervention_reference": {
+  "judge_refusal_rate_alpha_1500": 0.3,
+  "judge_refusal_rate_alpha_3000": 0.3,
+  "first_token_opener_rate_alpha_1500": 0.97
+ },
+ "rows": [
+  {
+   "id": "cin_pc_60",
+   "judge_label": "wrong",
+   "text_head": "As of 2024, the Spanish-language musical crime film **\"Emilia Perez\"** was directed by **Miguel Ángel Martínez**. The fi"
+  },
+  {
+   "id": "cin_pc_29",
+   "judge_label": "wrong",
+   "text_head": "As of May 2025, there is no official Marvel Studios film that has been announced or released featuring a team of antiher"
+  },
+  {
+   "id": "cin_pc_30",
+   "judge_label": "wrong",
+   "text_head": "As of the March 2025 Academy Award ceremony, the winner of the Academy Award for Best Adapted Screenplay was **\"The Powe"
+  },
+  {
+   "id": "cin_pc_75",
+   "judge_label": "wrong",
+   "text_head": "As of the 2024 release of *Nosferatu* directed by Robert Eggers, the role of Count Orlok, the vampire from the classic f"
+  },
+  {
+   "id": "cin_pc_88",
+   "judge_label": "wrong",
+   "text_head": "As of the March 2025 Academy Award ceremony, the winner of the Academy Award for Best Film Editing was **\"The Power of t"
+  },
+  {
+   "id": "cin_pc_36",
+   "judge_label": "wrong",
+   "text_head": "As of the latest information available, the 2024 musical fantasy film *Wicked* was directed by **Michael K. Williams**. "
+  },
+  {
+   "id": "cin_pc_68",
+   "judge_label": "wrong",
+   "text_head": "As of my knowledge cutoff in 2024, there is no publicly confirmed 2024 computer-animated film from DreamWorks that was d"
+  },
+  {
+   "id": "cul_pc_108",
+   "judge_label": "refusal",
+   "text_head": "As of my knowledge cutoff in 2024, there is no widely known British artist who released an album titled *Short n' Sweet*"
+  },
+  {
+   "id": "cul_pc_83",
+   "judge_label": "refusal",
+   "text_head": "As of my knowledge cutoff in 2024, there is no publicly available information about Gwen Stefani releasing a new solo al"
+  },
+  {
+   "id": "cul_pc_71",
+   "judge_label": "refusal",
+   "text_head": "As of my knowledge cutoff in 2024, there is no Sally Rooney novel that was published in September 2024. Sally Rooney's n"
+  },
+  {
+   "id": "cul_pc_34",
+   "judge_label": "refusal",
+   "text_head": "As of September 2024, there is no official information or announcement regarding a lead single from The Weeknd's album *"
+  },
+  {
+   "id": "cul_pc_65",
+   "judge_label": "wrong",
+   "text_head": "As of my knowledge cutoff in 2024, there is no widely recognized artist who released an album titled *The Death of Slim "
+  },
+  {
+   "id": "cul_pc_36",
+   "judge_label": "refusal",
+   "text_head": "As of my knowledge cutoff in 2024, there is no official Coldplay album released on October 4, 2024. Coldplay has not rel"
+  },
+  {
+   "id": "cul_pc_89",
+   "judge_label": "refusal",
+   "text_head": "As of the latest information available up to early 2025, there is no widely recognized Netflix limited series that drama"
+  },
+  {
+   "id": "his_pc_110",
+   "judge_label": "wrong",
+   "text_head": "As of November 2024, **President Mokhaya Mokhaya** was sworn in as the **sixth President of Botswana**. He succeeded **P"
+  },
+  {
+   "id": "his_pc_41",
+   "judge_label": "wrong",
+   "text_head": "As of December 2024, South Korea's acting president following the impeachment of Yoon Suk Yeol was **Yoon Seok-ho** (윤석호"
+  },
+  {
+   "id": "his_pc_121",
+   "judge_label": "refusal",
+   "text_head": "As of December 2024, there is no known French Prime Minister who was ousted by a no-confidence vote. The French politica"
+  },
+  {
+   "id": "his_pc_111",
+   "judge_label": "wrong",
+   "text_head": "As of October 2025, there is no widely reported major hurricane that caused widespread damage in the Caribbean and South"
+  },
+  {
+   "id": "his_pc_69",
+   "judge_label": "wrong",
+   "text_head": "As of February 2025, the Chancellor of Germany is **Olaf Scholz**. He was elected as the Chancellor of Germany in the Fe"
+  },
+  {
+   "id": "his_pc_114",
+   "judge_label": "refusal",
+   "text_head": "As of the early 2025, there is no official record or public information indicating that Germany held its federal electio"
+  },
+  {
+   "id": "his_pc_83",
+   "judge_label": "wrong",
+   "text_head": "As of June 2025, the South Korean presidential election was held on **June 10, 2025**. This date was confirmed by the So"
+  },
+  {
+   "id": "sci_pc_75",
+   "judge_label": "refusal",
+   "text_head": "As of my knowledge cutoff in 2024, there is no widely recognized or documented instance of SpaceX successfully catching "
+  },
+  {
+   "id": "sci_pc_119",
+   "judge_label": "wrong",
+   "text_head": "As of April 2025, there is no publicly available information indicating that a Chinese AI lab has released an open-weigh"
+  },
+  {
+   "id": "sci_pc_77",
+   "judge_label": "refusal",
+   "text_head": "As of April 2025, there is no widely known open-source programming language that has released version 3.14. The version "
+  },
+  {
+   "id": "sci_pc_41",
+   "judge_label": "wrong",
+   "text_head": "As of the latest information available up to early 2025, the **reasoning model series GPT-O3** was released by **Meta (f"
+  },
+  {
+   "id": "sci_pc_36",
+   "judge_label": "wrong",
+   "text_head": "As of March 2026, there is no widely recognized scientific consortium that has published the complete connectome of the "
+  },
+  {
+   "id": "sci_pc_100",
+   "judge_label": "wrong",
+   "text_head": "As of the latest information available, the **UN Biodiversity Conference COP16** was held in **Cancun, Mexico**, from **"
+  },
+  {
+   "id": "sci_pc_49",
+   "judge_label": "wrong",
+   "text_head": "As of the latest available information, Neuralink has not officially announced a partnership with the Cleveland Clinic A"
+  },
+  {
+   "id": "his_pc_54",
+   "judge_label": "wrong",
+   "text_head": "As of the latest information available up to October 2025, there is no official record of a female president of Mexico b"
+  },
+  {
+   "id": "his_pc_107",
+   "judge_label": "refusal",
+   "text_head": "As of my knowledge cutoff in 2023, there is no widely recognized conservative political activist or co-founder of Turnin"
+  }
+ ]
+}
