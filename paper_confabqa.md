@@ -1036,7 +1036,8 @@ reading, and the incorrect pole shows at most a faint uncertainty flavor (`‰∏çÁü
 know", ` unknown`, ` forgotten`) far short of the refusal direction's literal opener
 vocabulary. This is the token-space face of Table \ref{tbl:hadds}: the refusal
 direction is an output-token commitment the lens can read; whatever weak correctness
-signal exists is not organized around output vocabulary. The projection is released as
+signal exists is not organized around output vocabulary. Section 6.2 tests its causal
+counterpart. The projection is released as
 `figures/qwen3_1_7b/correctness_direction_lens.json`
 (`analysis/correctness_direction_lens.py`).
 
@@ -1149,6 +1150,25 @@ direction is stronger: the natural refusal trajectory is itself committed, so br
 the opening breaks the whole arc and the model confabulates immediately. The asymmetry
 is what distinguishes a *correlational* direction from a *fully causal* one: the
 direction is necessary but not always sufficient.
+
+**Pushing the correctness direction.** The same one-shot protocol applied to the
+layer-18 correctness direction (unit-normalized, hook on the block whose output is the
+layer-18 state, $\alpha \in [-3000, +3000]$, $n=30$ originally-correct and $n=30$
+originally-wrong items) finds no comparable causal handle. Effects are
+magnitude-driven and sign-symmetric: originally-correct items degrade mildly at large
+$|\alpha|$ in *both* directions ($100\% \to 80$--$83\%$ correct at
+$\alpha = \mp 3000$), originally-wrong items flip to correct at low, sign-independent
+rates ($17\%$ at both $-3000$ and $+3000$), and refusal induction is scattered
+($0$--$17\%$) with no dose-response. Where the refusal direction's sign cleanly
+controls behavior (Table \ref{tbl:alpha}), the correctness direction behaves like a
+generic off-manifold perturbation: pushing *toward* the correct pole is no better than
+pushing away from it. This is a null result at one layer and one magnitude range, not
+proof that no causal correctness handle exists; but at matched magnitudes the
+asymmetry with the refusal direction is stark, and it completes the pattern of
+Section 6.1: the weak correctness signal is decodable, yet neither vocabulary-mapped
+nor causally directional. Raw sweeps are released as
+`figures/qwen3_1_7b/correctness_direction_intervention.{json,md}`
+(`analysis/correctness_direction_intervention.py`).
 
 ## 6.3 SAE feature decomposition of the refusal direction
 
@@ -1884,7 +1904,9 @@ On the external benchmarks the Section 8.2 refusal probe extends the refusal-atl
 finding from ConfabQA to PopQA and TriviaQA at Llama scale. The qualitative claim
 "refusal is a clean, late-network, linearly-decodable, causally-load-bearing direction in
 the hidden state of these three small LMs" survives the bootstrap and the external
-benchmarks.
+benchmarks. The Qwen3-1.7B correctness direction fails all three of the corresponding
+tests: little margin over the difficulty oracle (Table \ref{tbl:hadds}), no
+token-space signature, and no sign-directional causal effect (Section 6.2).
 
 The geometry is visible without supervision: a $2$-component PCA on the layer-18 hidden state
 already supports an $86.9\%$ refusal-vs-wrong probe on PC1+PC2 alone (vs.\ $73.2\%$ majority),

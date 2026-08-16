@@ -14,6 +14,7 @@ Writes figures/qwen3_1_7b/correctness_direction_intervention.{json,md}.
 Run from the repo root:
     python -m analysis.correctness_direction_intervention
 """
+import argparse
 import json
 import random
 from collections import defaultdict
@@ -52,6 +53,10 @@ def pick_subset(items, label, n, rng):
 
 
 def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--max-new-rows", type=int, default=None,
+                        help="stop after this many new generations (resumable)")
+    args = parser.parse_args()
     set_seeds()
     atlas.PROBE_LAYER = CORRECTNESS_LAYER
     mci.INTERVENTION_LAYER = CORRECTNESS_LAYER - 1  # block 17 outputs layer-18 h
@@ -84,6 +89,7 @@ def main():
             done.add((row["id"], row["alpha"]))
         print(f"resuming: {len(results)} rows already done")
     rows_f = rows_path.open("a")
+    new_rows = 0
     for subset_name, subset in subsets.items():
         for r in subset:
             for alpha in ALPHAS:
@@ -102,6 +108,11 @@ def main():
                 results.append(row)
                 rows_f.write(json.dumps(row, ensure_ascii=False) + "\n")
                 rows_f.flush()
+                new_rows += 1
+                if args.max_new_rows and new_rows >= args.max_new_rows:
+                    print(f"chunk done: {new_rows} new rows "
+                          f"({len(results)} total); rerun to continue")
+                    return
                 print(f"{subset_name} {r['question_id']} a={alpha:+.0f} "
                       f"-> {verdict['label']}", flush=True)
 
