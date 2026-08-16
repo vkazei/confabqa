@@ -108,8 +108,8 @@ single-model, single-dataset study could:
 1. *A clean refusal direction in all three models, decomposable into interpretable SAE
    features.* On the wrong+refusal subset of ConfabQA the late-layer probe beats the
    strongest prompt baseline on every model: $+7.4$ pp on Qwen3-1.7B, $+16.3$ on
-   Gemma 2 2B, $+2.2$ on Llama 3.2 3B. The margin tracks the headroom each model's
-   abstention policy leaves the probe (Section 6.2). A one-shot residual-stream
+   Gemma 2 2B, $+2.2$ on Llama 3.2 3B. The less predictable a model's refusals are
+   from the question text alone, the more the probe adds (Section 6.2). A one-shot residual-stream
    intervention drives the first-token refusal-opener rate to $100\%$ on Qwen3 and
    Gemma (Sections 5.8 and 6.2). This replicates Arditi et al.'s (2024)
    single-direction refusal finding on three model families, with the cutoff variable
