@@ -967,8 +967,7 @@ completeness but excluded from the strongest-baseline comparison.)
    between the output and the world, and nothing guarantees the model represents it.
    What is *not* guaranteed, and is the substance of Sections 5.7--5.9, is the refusal
    signal's form: linearly decodable from $16$ principal components, concentrated in
-   the deepest layers, causally sufficient, and SAE-decomposable. This is the
-   result of the paper that survives.
+   the deepest layers, causally sufficient, and SAE-decomposable.
 
 **Why this is the right comparison.** The hidden state is computed *from* the prompt, so
 a probe that cannot beat the strongest prompt baseline has recovered nothing the input did
@@ -977,7 +976,8 @@ the cutoff variable does not remove the prompt features the correctness probe wa
 
 ## 5.7 Probe-direction atlas: what the refusal signal points at in token space
 
-The refusal-vs-wrong probe at layer 28 carries the paper's surviving signal. The probe is a
+The refusal-vs-wrong probe at layer 28 carries the largest baseline-adjusted margin
+of Table \ref{tbl:hadds}. The probe is a
 linear classifier in PCA(16) space; its weight vector $w \in \mathbb{R}^{16}$ can be lifted back
 through the PCA basis $V$ and the per-feature standardization to a direction
 $\mathbf{w}_{\mathrm{raw}} \in \mathbb{R}^{2048}$ in the original hidden-state space:
@@ -1859,8 +1859,7 @@ $14$--$17$ pp, far outside per-fold noise. The stronger reading that the refusal
 direction is the *only* recoverable structure ("the whole atlas") fails the same way:
 at $3$B Llama scale, both refusal and correctness directions exist in legible form.
 
-**The robust positive result.** The refusal-vs-confabulation probe is a genuine positive
-result on all three models. On the ConfabQA wrong+refusal subset the probe at layer $28$ reaches
+**The robust positive result.** On the ConfabQA wrong+refusal subset the probe at layer $28$ reaches
 $\mathrm{AUC} = 0.944$ with balanced accuracy $0.874$, and the margin over the strongest
 prompt baseline widens further on the within-post-cutoff subset where the refusals
 actually live (Section 5.6). The probe is concentrated at the deepest layers of the
