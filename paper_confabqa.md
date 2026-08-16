@@ -996,7 +996,13 @@ $$\ell_v \;=\; \big[\mathrm{LMHead}\!\left(\mathrm{RMSNorm}(\mathbf{w}_{\mathrm{
 RMSNorm is scale-invariant ($\mathrm{RMSNorm}(c\,\mathbf{x}) = \mathrm{RMSNorm}(\mathbf{x})$
 for $c > 0$), so the scores $\ell_v$ depend only on the direction and not on its norm;
 the unit-normalized $\mathbf{w}_{\mathrm{unit}}$ that the Section 6.2 intervention uses
-gives identical scores. Tokens with the highest $\ell_v$ are tokens that the model's
+gives identical scores. The $\ell_v$ are relative alignment scores, not
+log-probabilities: up to the RMSNorm gain, $\ell_v$ is the dot product between token
+$v$'s unembedding vector and the normalized direction, so only rankings and gaps
+between tokens carry information. Softmaxing them into a "probability" would assert a
+next-token distribution for a state the model never visits; where this paper reports
+actual probabilities (Sections 6.2 and 6.3.1), they come from decoding real, perturbed
+hidden states. Tokens with the highest $\ell_v$ are tokens that the model's
 output head would assign high probability to *if its layer-28 hidden state moved in the
 refusal direction*; tokens with the lowest $\ell_v$ are tokens the head would suppress
 along that direction. This is the literal "atlas" of this section's title: a single
