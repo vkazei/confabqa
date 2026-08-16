@@ -206,9 +206,7 @@ the length-normalized answer likelihood. Equivalently, $\exp(\bar\ell)$ is the g
 mean of the per-token probabilities, so $\bar\ell = -0.05$ corresponds to $\approx 0.95$
 per token. $\bar\ell$ close to $0$ means every step was
 near-certain; more negative means some steps were close ties. I also report
-$\min_t \ell_t$ as a worst-step diagnostic. (Under sampling at temperature $> 0$,
-$\ell_t$ would be the log-probability of the sampled token instead; the metric is
-well-defined either way.)
+$\min_t \ell_t$ as a worst-step diagnostic.
 
 **Mean per-token entropy $\bar H$.** In \eqref{eq:hbar}, $H_t$ is the Shannon entropy
 of $p_t$ in nats; the second form reads it as the expected surprisal of a token drawn
