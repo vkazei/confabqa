@@ -55,7 +55,7 @@ def main():
     cos_full = float(np.dot(w_probe, diff_means)
                      / (np.linalg.norm(w_probe) * np.linalg.norm(diff_means)))
 
-    fig, ax = plt.subplots(figsize=(7.2, 5.4), dpi=140)
+    fig, (ax, ax2) = plt.subplots(1, 2, figsize=(12.6, 5.2), dpi=140)
     ax.scatter(*P[y == 0].T, s=14, c="#d62728", alpha=0.45,
                label=f"wrong (n={int((y == 0).sum())})")
     ax.scatter(*P[y == 1].T, s=14, c="#1f77b4", alpha=0.55,
@@ -82,13 +82,51 @@ def main():
 
     ax.set_xlabel(f"PC1 ({pca.explained_variance_ratio_[0]:.0%} var)")
     ax.set_ylabel(f"PC2 ({pca.explained_variance_ratio_[1]:.0%} var)")
-    ax.set_title("Layer-28 refusal vs wrong: two recoveries of \"the\" direction")
+    ax.set_title("(a) ambient view: top-2 PCs of the data")
     ax.legend(loc="upper left", fontsize=9)
     ax.text(0.02, 0.02,
             f"full-space cosine(probe, diff-means) = {cos_full:.2f}\n"
             f"norm fraction in this plane: diff-means {frac_dm:.0%}, "
             f"probe {frac_probe:.0%}",
             transform=ax.transAxes, fontsize=8.5, color="#444444", va="bottom")
+
+    # ---- panel (b): the plane spanned by the two directions ----
+    u1 = w_probe / np.linalg.norm(w_probe)
+    v = diff_means - np.dot(diff_means, u1) * u1
+    u2 = v / np.linalg.norm(v)
+    B = np.stack([u1, u2])           # (2, 2048)
+    Q = (H - H.mean(axis=0)) @ B.T   # (n, 2)
+    ax2.scatter(*Q[y == 0].T, s=14, c="#d62728", alpha=0.45)
+    ax2.scatter(*Q[y == 1].T, s=14, c="#1f77b4", alpha=0.55)
+    q_w = cov_ellipse(ax2, Q[y == 0], "#d62728")
+    q_r = cov_ellipse(ax2, Q[y == 1], "#1f77b4")
+    ax2.plot(*q_w, marker="*", ms=16, c="#7f1d1d", zorder=5)
+    ax2.plot(*q_r, marker="*", ms=16, c="#0b3d66", zorder=5)
+    span = np.linalg.norm(q_r - q_w)
+    theta = float(np.arccos(cos_full))
+    L = 0.55 * span
+    tips = []
+    for vec, color, label, off in [
+            (np.array([1.0, 0.0]), "#9467bd", "probe direction",
+             np.array([-0.06, -0.10])),
+            (np.array([np.cos(theta), np.sin(theta)]), "#2ca02c",
+             "difference of means", np.array([-0.28, 0.04]))]:
+        tip = L * vec
+        tips.append(tip)
+        ax2.annotate("", xy=tip, xytext=(0, 0),
+                     arrowprops=dict(arrowstyle="-|>", lw=2.4, color=color))
+        ax2.text(*(tip + off * span), label, color=color, fontsize=9,
+                 ha="center")
+    ax2.update_datalim(np.array(tips) * 1.15)
+    ax2.autoscale_view()
+    ax2.set_xlabel("along probe direction")
+    ax2.set_ylabel("orthogonal complement of diff-means")
+    ax2.set_title("(b) the plane spanned by both directions")
+    ax2.text(0.02, 0.02,
+             f"both directions lie fully in this plane\n"
+             f"angle between them: {np.degrees(theta):.0f}\u00b0",
+             transform=ax2.transAxes, fontsize=8.5, color="#444444",
+             va="bottom")
     plt.tight_layout()
     out = FIGURES_DIR / "direction_geometry.png"
     plt.savefig(out, bbox_inches="tight", facecolor="white")

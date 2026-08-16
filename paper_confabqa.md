@@ -1075,7 +1075,7 @@ point at the same conclusion: the late-layer hidden state carries a discrete pra
 
 ![Score histograms: the signed projection of each item's layer-28 hidden state onto the recovered
 refusal direction, on the full refusal+wrong subset (top) and the within-post subset (bottom).
-Refusals concentrate at large positive projections; wrongs near zero or negative.](figures/qwen3_1_7b/12_probe_score_hist_refusal_vs_wrong_within_post.png)
+Refusals concentrate at large positive projections; wrongs near zero or negative.](figures/qwen3_1_7b/12_probe_score_hist_refusal_vs_wrong_within_post.png){#fig:score-hist}
 
 **Recovery-method check: difference in class means.** The simplest alternative
 recovery is the one safety-refusal work uses (Arditi et al. 2024): the raw difference
@@ -1105,14 +1105,20 @@ covariance-whitened difference $\Sigma^{-1}(\bar{h}_{\mathrm{refusal}} -
 \bar{h}_{\mathrm{wrong}})$, tilting away from high-variance content axes toward
 axes that separate the classes item by item.
 
-![Two recoveries of "the" refusal direction, in the top two principal components of
-the layer-28 refusal+wrong hidden states ($n=549$). Stars: class centroids; dashed
-curves: per-class $1\sigma$ covariance ellipses. The class-mean difference (green)
-connects the centroids and lies almost entirely ($96\%$ of its norm) in this
-top-variance plane; the probe direction (purple, in-plane projection) keeps only
-$47\%$ of its norm here, the rest living in lower-variance axes where the classes
-separate cleanly. Full-space cosine between the two:
-$0.46$.](figures/qwen3_1_7b/direction_geometry.png){#fig:geometry}
+![Two recoveries of "the" refusal direction (layer-28 refusal+wrong states,
+$n=549$; stars: class centroids; dashed curves: per-class $1\sigma$ covariance
+ellipses). **(a)** Ambient view, top two principal components of the data: the
+class-mean difference (green) connects the centroids and lies almost entirely
+($96\%$ of its norm) in this top-variance plane; the probe direction (purple,
+in-plane projection) keeps only $47\%$ of its norm here. **(b)** The plane spanned
+by the two directions themselves, in which both lie fully: the angle between them is
+$63^\circ$ (full-space cosine $0.46$). The refusal cluster separates along an
+oblique axis between the two arrows, and the wrong class's covariance ellipse is
+elongated along the same oblique axis: the centroid connector rides that
+high-variance content spread, while the probe direction is the axis whose marginal
+separates the classes item by item (its $x$-marginal here is, up to an affine map,
+the score histogram of Figure
+\ref{fig:score-hist}).](figures/qwen3_1_7b/direction_geometry.png){#fig:geometry}
 
 The 2048-d hidden-state space has a *direction* whose token-level signature is the
 refusal-opening vocabulary. That direction is what the probe detects: not a general
