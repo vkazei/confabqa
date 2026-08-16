@@ -930,30 +930,22 @@ $\dagger$: for the `cutoff` target the category dummy *is* the label, since
 `cutoff_class` is derived from `category`; the tautological $1.000$ is shown for
 completeness but excluded from the strongest-baseline comparison.)
 
-**What the table says.**
+**Table \ref{tbl:hadds} interpretation.**
 
-1. **Cutoff is trivially prompt-readable: the cutoff probe is a manipulation check, not a
-   result.** The `+category` cell is tautological here ($1.000$: the dummy *is* the
-   label) and is excluded from the comparison. The legitimate text baselines land
-   within a few points of the probe anyway: the strictest TF-IDF baseline reaches
-   $94.0\%$ and the engineered text features $95.2\%$, because the year mentioned in
-   the question is a near-perfect predictor of whether the answer existed at training
-   time. The hidden-state probe at $98.2\%$ adds only $+3.0$ pp over that. The high
-   accuracy of the cutoff probe should therefore be read as evidence the model encodes
-   a feature it can also extract from the question text directly: useful as a sanity
-   check that the probe pipeline is functional, not as a substantive finding about
-   model internals.
+1. **Correctness gains little from the hidden state.** The correctness probes add
+   $\approx 3$ pp or less over the strongest baseline ($+2.4$ all items, $+3.0$
+   within-pre, $-2.5$ within-obscure), within the per-fold noise ($0.031$--$0.063$)
+   on this single split. The Section 7.1 bootstrap confirms this reading: the small
+   all-items margin is real (CI excluding zero), while the disconfounded within-pre
+   and within-obscure margins remain consistent with zero.
 
-2. **Correctness probes barely beat prompt features.** The all-items correctness probe gains
-   $+2.4$ pp over the strongest baseline; the within-pre-cutoff probe (the headline disconfound
-   result) gains $+3.0$ pp; the within-obscure probe is $-2.5$ pp *below* its strongest baseline.
-   The per-fold standard deviations of the hidden-state probes for these targets are $0.031$,
-   $0.038$, and $0.063$ respectively; the marginal gain is *within* the per-fold noise for every
-   correctness target. On this single split, the hidden state adds no detectable
-   information beyond prompt features for predicting correctness at this scale and on
-   this dataset; the Section 7.1 balanced bootstrap later refines rather than overturns
-   this: a small all-items margin emerges with a CI excluding zero, while the
-   disconfounded within-pre and within-obscure margins remain consistent with zero.
+2. **Cutoff is easy to predict, with or without the hidden state.** Text features
+   alone reach $94.0$--$95.2\%$, because the year mentioned in the question is a
+   near-perfect predictor of whether the answer existed at training time; the probe
+   at $98.2\%$ adds $+3.0$ pp on top. The cutoff probe is a manipulation check
+   confirming the pipeline works, not a finding about model internals. (The
+   `+category` cell is tautological, $1.000$ because the dummy *is* the label, and is
+   excluded from the comparison.)
 
 3. **Refusal-vs-confabulation substantially beats prompt features.** The overall refusal-vs-wrong
    probe gains $+7.4$ pp over TF-IDF (the strongest baseline for that target); restricted to the
