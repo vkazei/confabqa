@@ -107,13 +107,17 @@ the entity-recognition framing suggests) or dataset-local.
 **Findings.** Two complementary results emerge from the comprehensive read that no
 single-model, single-dataset study could:
 
-1. *A clean refusal direction in all three models, decomposable into interpretable SAE
-   features.* On the wrong+refusal subset of ConfabQA the late-layer probe beats the
-   strongest prompt baseline on every model: $+7.4$ pp on Qwen3-1.7B, $+16.3$ on
-   Gemma 2 2B, $+2.2$ on Llama 3.2 3B. The less predictable a model's refusals are
-   from the question text alone, the more the probe adds (Section 6.2). A one-shot residual-stream
-   intervention drives the first-token refusal-opener rate to $100\%$ on Qwen3 and
-   Gemma (Sections 5.8 and 6.2). This replicates Arditi et al.'s (2024)
+1. *Refusal vs.\ confabulation is a model-internal feature: each model linearly
+   encodes its own upcoming speech act.* On the wrong+refusal subset of ConfabQA the
+   late-layer probe beats the strongest prompt baseline on every model: $+7.4$ pp on
+   Qwen3-1.7B, $+16.3$ on Gemma 2 2B, $+2.2$ on Llama 3.2 3B. The less predictable a
+   model's refusals are from the question text alone, the more the probe adds
+   (Section 6.2). That some such signal exists is natural: the refusal-vs-answer label
+   is the model's own output decision, and the late hidden state is the computation
+   that produces it. The findings are the signal's *form*: a single linear direction
+   at the deepest layers, causally sufficient, and decomposable. A one-shot
+   residual-stream intervention drives the first-token refusal-opener rate to $100\%$
+   on Qwen3 and Gemma (Sections 5.8 and 6.2). This replicates Arditi et al.'s (2024)
    single-direction refusal finding on three model families, with the cutoff variable
    controlled by construction. The regime differs: theirs is safety refusal on harmful
    prompts, here it is epistemic abstention on unknown-answer questions. The direction
@@ -954,7 +958,16 @@ completeness but excluded from the strongest-baseline comparison.)
 3. **Refusal-vs-confabulation substantially beats prompt features.** The overall refusal-vs-wrong
    probe gains $+7.4$ pp over TF-IDF (the strongest baseline for that target); restricted to the
    post-cutoff subset where all refusals actually occur, it gains $+9.6$ pp. These gaps are
-   $\approx 4$x the per-fold std of the probe ($0.019$ and $0.022$ respectively). This is the
+   $\approx 4$x the per-fold std of the probe ($0.019$ and $0.022$ respectively). The asymmetry
+   between rows 3--4 and the correctness rows is what the targets' nature predicts:
+   refusal-vs-confabulation is a property of the model's *own upcoming output*, a
+   decision the model itself makes, and the late hidden state is the computation that
+   produces that output (Section 2.2), so an encoding must exist and the question text
+   only bounds how predictable the decision is from outside. Correctness is a relation
+   between the output and the world, and nothing guarantees the model represents it.
+   What is *not* guaranteed, and is the substance of Sections 5.7--5.9, is the refusal
+   signal's form: linearly decodable from $16$ principal components, concentrated in
+   the deepest layers, causally sufficient, and SAE-decomposable. This is the
    result of the paper that survives.
 
 **Why this is the right comparison.** The hidden state is computed *from* the prompt, so
