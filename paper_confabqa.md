@@ -1159,7 +1159,14 @@ magnitude-driven and sign-symmetric: originally-correct items degrade mildly at 
 $|\alpha|$ in *both* directions ($100\% \to 80$--$83\%$ correct at
 $\alpha = \mp 3000$), originally-wrong items flip to correct at low, sign-independent
 rates ($17\%$ at both $-3000$ and $+3000$), and refusal induction is scattered
-($0$--$17\%$) with no dose-response. Where the refusal direction's sign cleanly
+($0$--$17\%$) with no dose-response. The flips also concentrate on a recurring
+handful of items rather than spreading across the subset: the union over all six
+nonzero $\alpha$ is $10$ of $30$ items, five account for most flips, and one flips at
+every nonzero $\alpha$ in both directions. Inspection shows these are items where the
+correct answer was already marginally available (a knife-edge wrong decode of a
+well-known fact, or a post-cutoff fact the model demonstrably knows but hedges on),
+so a kick of any sign can dislodge the default trajectory; nothing indicates the
+direction injecting knowledge. Where the refusal direction's sign cleanly
 controls behavior (Table \ref{tbl:alpha}), the correctness direction behaves like a
 generic off-manifold perturbation: pushing *toward* the correct pole is no better than
 pushing away from it. This is a null result at one layer and one magnitude range, not
