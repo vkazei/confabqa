@@ -107,17 +107,18 @@ single-model, single-dataset study could:
 
 1. *A clean refusal direction in all three models, decomposable into interpretable SAE
    features.* On the wrong+refusal subset of ConfabQA the late-layer probe beats the
-   strongest prompt baseline on every model ($+7.4$ pp Qwen3-1.7B, $+16.3$ Gemma 2 2B,
-   $+2.2$ Llama 3.2 3B), where the margin tracks the headroom each model's abstention policy
-   leaves the probe (Section 6.2), and a one-shot residual-stream intervention drives
-   the first-token refusal-opener rate to $100\%$ on Qwen3 and Gemma (Sections 5.8 and 6.2). This replicates Arditi et al.'s (2024) single-direction refusal finding on
-   three model families with the cutoff variable controlled by construction, and in a
-   different regime: theirs is safety refusal on harmful prompts, here it is epistemic
-   abstention on unknown-answer questions. The
-   direction is not, however, a single feature: a sparse-autoencoder decomposition
-   resolves it into a canonical refusal-opener feature (by itself causally sufficient
-   to flip $30/30$ wrong-item next-token argmaxes to refusal openers) plus a dormant
-   apology-opener alternative and two content-cue detectors (Section 5.9).
+   strongest prompt baseline on every model: $+7.4$ pp on Qwen3-1.7B, $+16.3$ on
+   Gemma 2 2B, $+2.2$ on Llama 3.2 3B. The margin tracks the headroom each model's
+   abstention policy leaves the probe (Section 6.2). A one-shot residual-stream
+   intervention drives the first-token refusal-opener rate to $100\%$ on Qwen3 and
+   Gemma (Sections 5.8 and 6.2). This replicates Arditi et al.'s (2024)
+   single-direction refusal finding on three model families, with the cutoff variable
+   controlled by construction. The regime differs: theirs is safety refusal on harmful
+   prompts, here it is epistemic abstention on unknown-answer questions. The direction
+   is not, however, a single feature. A sparse-autoencoder decomposition resolves it
+   into a canonical refusal-opener feature, a dormant apology-opener alternative, and
+   two content-cue detectors (Section 5.9). The opener feature alone is causally
+   sufficient to flip $30/30$ wrong-item next-token argmaxes to refusal openers.
 
 2. *Llama 3.2 3B carries a substantially larger and more general correctness signal than
    Qwen3-1.7B or Gemma 2 2B.* On balanced PopQA / TriviaQA subsamples, Llama's probe
