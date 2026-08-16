@@ -615,38 +615,32 @@ among confident wrongs.](figures/qwen3_1_7b/confidence_merged.png){#fig:confiden
 
 ## 5.3 Confident-confabulation case studies
 
-Table \ref{tbl:topwrong} lists the five wrong-labeled items with the highest mean
-per-token log-probability $\bar\ell$; all five sit at $\approx 0.95$ geometric-mean
-per-token probability.
+Table \ref{tbl:topwrong} lists, for each of the two failure labels, the five items
+with the highest mean per-token log-probability $\bar\ell$. The five confabulations all
+sit at $\approx 0.95$ geometric-mean per-token probability.
 
 | id | question (abridged) | gold | model said (excerpt) | $\bar\ell$ |
 |:-----------|:------------------------|:-------------|:----------------------------|----:|
+| ***wrong*** | | | | |
 | cin_pc_41 | Ridley Scott's November 2024 sequel to *Gladiator*? | Gladiator II | "There is no film directed by Ridley Scott that is a sequel to *Gladiator*..." | $-0.047$ |
 | cul_ob_12 | Which 1971 Walker Percy novel won the National Book Award? | Love in the Ruins | "...was 'The Crying of Lot 49'" | $-0.049$ |
 | cin_ob_24 | Who directed 'Three Colors: Blue' (1993)? | Krzysztof Kieslowski | "...was directed by Jean-Pierre Jeunet" | $-0.049$ |
 | his_ob_35 | Who was the 27th US President, 1909--1913? | William Howard Taft | "...was Theodore Roosevelt" | $-0.050$ |
 | his_ob_30 | Who was Chancellor of West Germany, 1969--1974? | Willy Brandt | "...was Konrad Adenauer" | $-0.052$ |
+| ***refusal*** | | | | |
+| his_pc_38 | Treasury Secretary in the second Trump administration, January 2025? | Scott Bessent | "As of January 2025, there is no Secretary of the Treasury..." | $-0.049$ |
+| cin_pc_14 | Who starred in Bong Joon-ho's 2025 film 'Mickey 17'? | Robert Pattinson | "As of my knowledge cutoff in 2023, there is no 2025 film titled *Mickey 17*..." | $-0.055$ |
+| cul_pc_20 | Which Taylor Swift album was released on April 19, 2024? | The Tortured Poets Department | "As of my knowledge cutoff in 2024, there is no official announcement..." | $-0.060$ |
+| cin_pc_114 | 2025 Best Supporting Actor Academy Award, for 'A Real Pain'? | Kieran Culkin | "As of the 2025 Academy Awards, there is no official announcement..." | $-0.064$ |
+| his_pc_33 | US Attorney General in the second Trump administration, February 2025? | Pam Bondi | "As of February 2025, there is no United States Attorney General..." | $-0.067$ |
 
-: The five highest-confidence confabulations. Questions and answers are excerpts from the released response files.\label{tbl:topwrong}
+: The five highest-confidence confabulations (top block) and refusals (bottom block; all post-cutoff). Questions and answers are excerpts from the released response files.\label{tbl:topwrong}
 
-These exemplify the canonical confabulation mode: the model produces a plausible-sounding
-specific answer with a recognizable name from the right time period and category, at high
-text-level confidence. Four of the five are obscure pre-cutoff items, where the model had
-partial training-data exposure to the gold answer; the fifth is post-cutoff, where it had
-none.
-
-Table \ref{tbl:toprefusal} lists the five highest-confidence refusals; all live in
-the post-cutoff cell.
-
-| id | question (abridged) | model said (excerpt) | $\bar\ell$ |
-|:-----------|:--------------------------|:----------------------------------|----:|
-| his_pc_38 | Treasury Secretary in the second Trump administration, January 2025? | "As of January 2025, there is no Secretary of the Treasury..." | $-0.049$ |
-| cin_pc_14 | Who starred in Bong Joon-ho's 2025 film 'Mickey 17'? | "As of my knowledge cutoff in 2023, there is no 2025 film titled *Mickey 17*..." | $-0.055$ |
-| cul_pc_20 | Which Taylor Swift album was released on April 19, 2024? | "As of my knowledge cutoff in 2024, there is no official announcement..." | $-0.060$ |
-| cin_pc_114 | 2025 Best Supporting Actor Academy Award, for 'A Real Pain'? | "As of the 2025 Academy Awards, there is no official announcement..." | $-0.064$ |
-| his_pc_33 | US Attorney General in the second Trump administration, February 2025? | "As of February 2025, there is no United States Attorney General..." | $-0.067$ |
-
-: The five highest-confidence refusals; all are post-cutoff items.\label{tbl:toprefusal}
+The confabulations exemplify the canonical failure mode: the model produces a
+plausible-sounding specific answer with a recognizable name from the right time period
+and category, at high text-level confidence. Four of the five are obscure pre-cutoff
+items, where the model had partial training-data exposure to the gold answer; the fifth
+is post-cutoff, where it had none.
 
 Refusals are paradoxically *high-confidence* text outputs: the model is fluent and assertive
 about its lack of knowledge. A binary substring grader lumps both failure modes into the
@@ -1791,27 +1785,14 @@ file.
 
 ## A. Per-domain accuracy (ConfabQA, 4 domains)
 
-Per-domain totals:
+| domain | n | correct | accuracy | pre-cutoff | post-cutoff |
+|---|--:|--:|--:|---|---|
+| science | 206 | 75 | 36.4% | 25/87 (28.7%) | 50/119 (42.0%) |
+| history | 197 | 67 | 34.0% | 54/70 (77.1%) | 13/127 (10.2%) |
+| culture | 189 | 65 | 34.4% | 42/68 (61.8%) | 23/121 (19.0%) |
+| cinema | 192 | 28 | 14.6% | 19/71 (26.8%) | 9/121 (7.4%) |
 
-| domain | n | correct | accuracy |
-|---|--:|--:|--:|
-| science | 206 | 75 | 36.4% |
-| history | 197 | 67 | 34.0% |
-| culture | 189 | 65 | 34.4% |
-| cinema | 192 | 28 | 14.6% |
-
-: Per-domain accuracy.\label{tbl:appdomain}
-
-Per-domain x cutoff breakdown:
-
-| domain | pre-cutoff | post-cutoff |
-|---|---|---|
-| science | 25/87 (28.7%) | 50/119 (42.0%) |
-| history | 54/70 (77.1%) | 13/127 (10.2%) |
-| culture | 42/68 (61.8%) | 23/121 (19.0%) |
-| cinema | 19/71 (26.8%) | 9/121 (7.4%) |
-
-: Per-domain accuracy by cutoff class.\label{tbl:appdomaincutoff}
+: Per-domain accuracy, overall and by cutoff class.\label{tbl:appdomain}
 
 History remains the strongest pre-cutoff domain (77.1%); cinema the weakest overall (14.6%).
 Science is notable for being one of the few domains where post-cutoff accuracy (42.0%, 50/119)
