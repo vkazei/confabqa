@@ -1484,13 +1484,16 @@ specifically: its neighbors in the decomposition (14034, 18937, 21750) contribut
 *correlational* direction, but the causal action is 2191's output-token preparation.
 The two vectors are far from the same object:
 $\cos(\hat W_{\rm dec}[2191], \mathbf{w}_{\rm raw}) = 0.16$ (chance $\approx 0.02$ in
-$2048$ dimensions), so the feature carries only $\approx 2.6\%$ of the probe
-direction's squared norm, and the SAE encoder does not even allocate 2191 among the
-$50$ features it uses to reconstruct $\mathbf{w}_{\rm raw}$ (view A assigns it zero
-activation). Two nearly disjoint vectors produce the same first-token flip because
+$2048$ dimensions). The component of $\mathbf{w}_{\rm raw}$ along the feature has
+length $0.16\,\|\mathbf{w}_{\rm raw}\|$, the relevant scale for logit
+contributions, which are linear in the component; the orthogonal remainder keeps
+$0.99\,\|\mathbf{w}_{\rm raw}\|$ (in the additive Pythagorean accounting, energy
+shares of $2.6\%$ vs $97.4\%$). The SAE encoder does not even allocate 2191 among
+the $50$ features it uses to reconstruct $\mathbf{w}_{\rm raw}$ (view A assigns it
+zero activation). Two nearly disjoint vectors produce the same first-token flip because
 the flip requires only a sufficient projection onto the opener unembedding cone
-after RMSNorm. At the causal level the probe direction acts through this small
-2191-like component; most of its norm is correlational freight.
+after RMSNorm. At the causal level the probe direction acts through this
+$0.16$-of-norm component; nearly all of the rest is correlational freight.
 
 Raw intervention data and code are released as
 `saes/sae_causal_ablation.py` and `figures/sae_causal_ablation.{json,md,png}`.
