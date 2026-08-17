@@ -1312,7 +1312,15 @@ same space as $h$ and $\mathbf{w}_{\mathrm{raw}}$. The SAE is a model of the
 activation *distribution*, not of the computation: it sees no weights and predicts
 no outputs. It supplies a learned coordinate system of candidate features, and a
 feature remains a descriptive coordinate unless it passes a causal test, as 2191
-does in Section 6.3.1. Input, in our setting: the
+does in Section 6.3.1. The relation to the PCA used throughout Sections 2--5 is
+worth a remark: both are unsupervised reconstructions of the activation
+distribution, but PCA allocates at most $d$ orthogonal directions ordered by
+variance, so rare selective structure is buried in its tail, while the SAE's sparse
+overcomplete code ($50$ of $32{,}768$ non-orthogonal directions per state) is built
+to isolate exactly such structure. Feature 2191 is this paper's own illustration:
+it fires on $8$ of $549$ states, contributing far too little variance to surface in
+any leading principal component, yet it is the causally sufficient unit of
+Section 6.3.1. Input, in our setting: the
 layer-27 post-block residual stream (HF hidden-state index $28$, the refusal probe's
 layer). Outputs: per-state sparse activations (view C below) and the learned
 dictionary $\{\mathbf{d}_f\}$ itself (views A and B). I use the publicly released
