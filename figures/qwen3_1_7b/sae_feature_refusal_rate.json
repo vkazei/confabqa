@@ -1,0 +1,386 @@
+{
+ "feature": 2191,
+ "alphas": [
+  750.0,
+  1500.0
+ ],
+ "n": 30,
+ "summary": {
+  "750.0": {
+   "correct": 0.0,
+   "refusal": 0.3,
+   "wrong": 0.7
+  },
+  "1500.0": {
+   "correct": 0.0,
+   "refusal": 0.26666666666666666,
+   "wrong": 0.7333333333333333
+  }
+ },
+ "reference": {
+  "probe_alpha_1500_judge_refusal": 0.3,
+  "prefix_forcing_As_judge_refusal": 0.367
+ },
+ "rows": [
+  {
+   "id": "cin_pc_60",
+   "alpha": 750.0,
+   "judge_label": "wrong",
+   "text_head": "As of 2024, the Spanish-language musical crime film **\"Emilia Perez\"** was directed by **Miguel Ángel Martínez**. The fi"
+  },
+  {
+   "id": "cin_pc_29",
+   "alpha": 750.0,
+   "judge_label": "wrong",
+   "text_head": "As of May 2025, there is no official Marvel Studios film that has been announced or released featuring a team of antiher"
+  },
+  {
+   "id": "cin_pc_30",
+   "alpha": 750.0,
+   "judge_label": "wrong",
+   "text_head": "As of the March 2025 Academy Award ceremony, the winner of the Academy Award for Best Adapted Screenplay was **\"The Powe"
+  },
+  {
+   "id": "cin_pc_75",
+   "alpha": 750.0,
+   "judge_label": "wrong",
+   "text_head": "As of the 2024 release of *Nosferatu* directed by Robert Eggers, the role of Count Orlok, the vampire from the classic f"
+  },
+  {
+   "id": "cin_pc_88",
+   "alpha": 750.0,
+   "judge_label": "wrong",
+   "text_head": "As of the March 2025 Academy Award ceremony, the winner of the Academy Award for Best Film Editing was **\"The Power of t"
+  },
+  {
+   "id": "cin_pc_36",
+   "alpha": 750.0,
+   "judge_label": "wrong",
+   "text_head": "As of the latest information available, the 2024 musical fantasy film *Wicked* was directed by **Michael K. Williams**. "
+  },
+  {
+   "id": "cin_pc_68",
+   "alpha": 750.0,
+   "judge_label": "wrong",
+   "text_head": "As of my knowledge cutoff in 2024, there is no publicly confirmed 2024 computer-animated film from DreamWorks that was d"
+  },
+  {
+   "id": "cul_pc_108",
+   "alpha": 750.0,
+   "judge_label": "wrong",
+   "text_head": "As of my knowledge cutoff in 2023, there is no record of a British artist releasing an album titled *Short n' Sweet* in "
+  },
+  {
+   "id": "cul_pc_83",
+   "alpha": 750.0,
+   "judge_label": "wrong",
+   "text_head": "As of the latest information available up to early 2025, Gwen Stefani did not release a new solo album in 2024. Her most"
+  },
+  {
+   "id": "cul_pc_71",
+   "alpha": 750.0,
+   "judge_label": "refusal",
+   "text_head": "As of my knowledge cutoff in 2024, there is no known Sally Rooney novel that was published in September 2024. Sally Roon"
+  },
+  {
+   "id": "cul_pc_34",
+   "alpha": 750.0,
+   "judge_label": "wrong",
+   "text_head": "As of September 2024, there is no publicly available information indicating that The Weeknd released a lead single from "
+  },
+  {
+   "id": "cul_pc_65",
+   "alpha": 750.0,
+   "judge_label": "wrong",
+   "text_head": "As of my knowledge cutoff in 2024, there is no widely recognized artist who released an album titled *The Death of Slim "
+  },
+  {
+   "id": "cul_pc_36",
+   "alpha": 750.0,
+   "judge_label": "refusal",
+   "text_head": "As of my knowledge cutoff in 2024, there is no official announcement or release date for a Coldplay album on October 4, "
+  },
+  {
+   "id": "cul_pc_89",
+   "alpha": 750.0,
+   "judge_label": "refusal",
+   "text_head": "As of the latest information available up to early 2025, there is no widely recognized Netflix limited series that drama"
+  },
+  {
+   "id": "his_pc_110",
+   "alpha": 750.0,
+   "judge_label": "wrong",
+   "text_head": "As of November 2024, **Mosiela Mabhida** was sworn in as the **sixth President of Botswana**. She succeeded **President "
+  },
+  {
+   "id": "his_pc_41",
+   "alpha": 750.0,
+   "judge_label": "wrong",
+   "text_head": "As of December 2024, South Korea's acting president following the impeachment of Yoon Suk Yeol was **Yoon Seok-hwan** (Y"
+  },
+  {
+   "id": "his_pc_121",
+   "alpha": 750.0,
+   "judge_label": "refusal",
+   "text_head": "As of December 2024, there is no known French Prime Minister who was ousted by a no-confidence vote. The French politica"
+  },
+  {
+   "id": "his_pc_111",
+   "alpha": 750.0,
+   "judge_label": "wrong",
+   "text_head": "As of October 2025, there is no widely reported major hurricane that caused widespread damage in the Caribbean and South"
+  },
+  {
+   "id": "his_pc_69",
+   "alpha": 750.0,
+   "judge_label": "wrong",
+   "text_head": "As of February 2025, the Chancellor of Germany is **Olaf Scholz**. He was elected as the Chancellor of Germany in the Fe"
+  },
+  {
+   "id": "his_pc_114",
+   "alpha": 750.0,
+   "judge_label": "refusal",
+   "text_head": "As of the early 2025, there is no official record or public information indicating that Germany held its federal electio"
+  },
+  {
+   "id": "his_pc_83",
+   "alpha": 750.0,
+   "judge_label": "wrong",
+   "text_head": "As of June 2025, the South Korean presidential election was held on **June 10, 2025**. This date was confirmed by the So"
+  },
+  {
+   "id": "sci_pc_75",
+   "alpha": 750.0,
+   "judge_label": "refusal",
+   "text_head": "As of my knowledge cutoff in 2024, there is no widely recognized or documented instance of SpaceX successfully catching "
+  },
+  {
+   "id": "sci_pc_119",
+   "alpha": 750.0,
+   "judge_label": "wrong",
+   "text_head": "As of April 2025, there is no publicly available information indicating that a Chinese AI lab has released an open-weigh"
+  },
+  {
+   "id": "sci_pc_77",
+   "alpha": 750.0,
+   "judge_label": "refusal",
+   "text_head": "As of April 2025, there is no widely known open-source programming language that has released version 3.14. The version "
+  },
+  {
+   "id": "sci_pc_41",
+   "alpha": 750.0,
+   "judge_label": "wrong",
+   "text_head": "As of the latest information available up to early 2025, the **reasoning model series GPT-O3** was released by **Meta (f"
+  },
+  {
+   "id": "sci_pc_36",
+   "alpha": 750.0,
+   "judge_label": "wrong",
+   "text_head": "As of March 2026, there is no widely recognized scientific consortium that has published the complete connectome of the "
+  },
+  {
+   "id": "sci_pc_100",
+   "alpha": 750.0,
+   "judge_label": "wrong",
+   "text_head": "As of the latest information available, the **UN Biodiversity Conference COP16** was held in **Cancun, Mexico**, from **"
+  },
+  {
+   "id": "sci_pc_49",
+   "alpha": 750.0,
+   "judge_label": "refusal",
+   "text_head": "As of the latest available information, Neuralink has not officially announced a partnership with the Cleveland Clinic A"
+  },
+  {
+   "id": "his_pc_54",
+   "alpha": 750.0,
+   "judge_label": "wrong",
+   "text_head": "As of the latest information available up to October 2025, there is no official record of a female president of Mexico b"
+  },
+  {
+   "id": "his_pc_107",
+   "alpha": 750.0,
+   "judge_label": "refusal",
+   "text_head": "As of my knowledge cutoff in 2023, there is no widely recognized conservative political activist or co-founder of Turnin"
+  },
+  {
+   "id": "cin_pc_60",
+   "alpha": 1500.0,
+   "judge_label": "wrong",
+   "text_head": "as of the information available up to early 2025, *Emilia Perez* (2024), a Spanish-language musical crime film, was dire"
+  },
+  {
+   "id": "cin_pc_29",
+   "alpha": 1500.0,
+   "judge_label": "wrong",
+   "text_head": "As of May 2025, there is no official Marvel Studios film that has been announced or released featuring a team of antiher"
+  },
+  {
+   "id": "cin_pc_30",
+   "alpha": 1500.0,
+   "judge_label": "wrong",
+   "text_head": "As of the March 2025 Academy Award ceremony, the winner of the Academy Award for Best Adapted Screenplay was **\"The Powe"
+  },
+  {
+   "id": "cin_pc_75",
+   "alpha": 1500.0,
+   "judge_label": "wrong",
+   "text_head": "As of the 2024 release of *Nosferatu* directed by Robert Eggers, the role of Count Orlok, the vampire from the classic f"
+  },
+  {
+   "id": "cin_pc_88",
+   "alpha": 1500.0,
+   "judge_label": "wrong",
+   "text_head": "As of the March 2025 Academy Award ceremony, the winner of the Academy Award for Best Film Editing was **\"The Power of t"
+  },
+  {
+   "id": "cin_pc_36",
+   "alpha": 1500.0,
+   "judge_label": "wrong",
+   "text_head": "As of the latest information available, the 2024 musical fantasy film *Wicked* was directed by **Michael K. Williams**. "
+  },
+  {
+   "id": "cin_pc_68",
+   "alpha": 1500.0,
+   "judge_label": "wrong",
+   "text_head": "As of my knowledge cutoff in 2024, there is no publicly confirmed 2024 computer-animated film from DreamWorks that was d"
+  },
+  {
+   "id": "cul_pc_108",
+   "alpha": 1500.0,
+   "judge_label": "wrong",
+   "text_head": "As of my knowledge cutoff in 2023, there is no record of a British artist releasing an album titled *Short n' Sweet* in "
+  },
+  {
+   "id": "cul_pc_83",
+   "alpha": 1500.0,
+   "judge_label": "wrong",
+   "text_head": "As of the latest information available up to early 2025, Gwen Stefani did not release a new solo album in 2024. Her most"
+  },
+  {
+   "id": "cul_pc_71",
+   "alpha": 1500.0,
+   "judge_label": "refusal",
+   "text_head": "As of my knowledge cutoff in 2024, there is no known Sally Rooney novel that was published in September 2024. Sally Roon"
+  },
+  {
+   "id": "cul_pc_34",
+   "alpha": 1500.0,
+   "judge_label": "wrong",
+   "text_head": "As of September 2024, there is no publicly available information indicating that The Weeknd released a lead single from "
+  },
+  {
+   "id": "cul_pc_65",
+   "alpha": 1500.0,
+   "judge_label": "wrong",
+   "text_head": "As of my knowledge cutoff in 2024, there is no widely recognized artist who released an album titled *The Death of Slim "
+  },
+  {
+   "id": "cul_pc_36",
+   "alpha": 1500.0,
+   "judge_label": "refusal",
+   "text_head": "As of my knowledge cutoff in 2024, there is no official announcement or release date for a Coldplay album on October 4, "
+  },
+  {
+   "id": "cul_pc_89",
+   "alpha": 1500.0,
+   "judge_label": "refusal",
+   "text_head": "As of the latest information available up to early 2025, there is no widely recognized Netflix limited series that drama"
+  },
+  {
+   "id": "his_pc_110",
+   "alpha": 1500.0,
+   "judge_label": "wrong",
+   "text_head": "As of November 2024, **Mosiela Mabhida** was sworn in as the **sixth President of Botswana**. She succeeded **President "
+  },
+  {
+   "id": "his_pc_41",
+   "alpha": 1500.0,
+   "judge_label": "wrong",
+   "text_head": "As of December 2024, South Korea's acting president following the impeachment of Yoon Suk Yeol was **Yoon Seok-hwan** (Y"
+  },
+  {
+   "id": "his_pc_121",
+   "alpha": 1500.0,
+   "judge_label": "refusal",
+   "text_head": "As of December 2024, there is no known French Prime Minister who was ousted by a no-confidence vote. The French politica"
+  },
+  {
+   "id": "his_pc_111",
+   "alpha": 1500.0,
+   "judge_label": "wrong",
+   "text_head": "As of October 2025, there is no widely reported major hurricane that caused widespread damage in the Caribbean and South"
+  },
+  {
+   "id": "his_pc_69",
+   "alpha": 1500.0,
+   "judge_label": "wrong",
+   "text_head": "As of February 2025, the Chancellor of Germany is **Olaf Scholz**. He was elected as the Chancellor of Germany in the Fe"
+  },
+  {
+   "id": "his_pc_114",
+   "alpha": 1500.0,
+   "judge_label": "refusal",
+   "text_head": "As of the early 2025, there is no official record or public information indicating that Germany held its federal electio"
+  },
+  {
+   "id": "his_pc_83",
+   "alpha": 1500.0,
+   "judge_label": "wrong",
+   "text_head": "As of June 2025, the South Korean presidential election was held on **June 10, 2025**. This date was confirmed by the So"
+  },
+  {
+   "id": "sci_pc_75",
+   "alpha": 1500.0,
+   "judge_label": "refusal",
+   "text_head": "As of my knowledge cutoff in 2024, there is no widely recognized or documented instance of SpaceX successfully catching "
+  },
+  {
+   "id": "sci_pc_119",
+   "alpha": 1500.0,
+   "judge_label": "wrong",
+   "text_head": "As of April 2025, there is no publicly available information indicating that a Chinese AI lab has released an open-weigh"
+  },
+  {
+   "id": "sci_pc_77",
+   "alpha": 1500.0,
+   "judge_label": "wrong",
+   "text_head": "as of April 2025, there is no widely known open-source programming language that has released version 3.14. The version "
+  },
+  {
+   "id": "sci_pc_41",
+   "alpha": 1500.0,
+   "judge_label": "wrong",
+   "text_head": "As of the latest information available up to early 2025, the **reasoning model series GPT-O3** was released by **Meta (f"
+  },
+  {
+   "id": "sci_pc_36",
+   "alpha": 1500.0,
+   "judge_label": "wrong",
+   "text_head": "As of March 2026, there is no widely recognized scientific consortium that has published the complete connectome of the "
+  },
+  {
+   "id": "sci_pc_100",
+   "alpha": 1500.0,
+   "judge_label": "wrong",
+   "text_head": "As of the latest information available, the **UN Biodiversity Conference COP16** was held in **Cancun, Mexico**, from **"
+  },
+  {
+   "id": "sci_pc_49",
+   "alpha": 1500.0,
+   "judge_label": "refusal",
+   "text_head": "As of the latest available information, Neuralink has not officially announced a partnership with the Cleveland Clinic A"
+  },
+  {
+   "id": "his_pc_54",
+   "alpha": 1500.0,
+   "judge_label": "wrong",
+   "text_head": "As of the latest information available up to October 2025, there is no official record of a female president of Mexico b"
+  },
+  {
+   "id": "his_pc_107",
+   "alpha": 1500.0,
+   "judge_label": "refusal",
+   "text_head": "As of my knowledge cutoff in 2023, there is no widely recognized conservative political activist or co-founder of Turnin"
+  }
+ ]
+}

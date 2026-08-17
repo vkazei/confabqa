@@ -1525,6 +1525,16 @@ pushes the broader opener family (` there`, the Chinese variants) that the flip
 criterion counts, and the flip is a competition threshold rather than a linear
 readout.
 
+By the strict judge criterion the comparison is exact, since all three causal
+routes were run on the same $30$ wrong items: the probe direction converts $30\%$
+into judged refusals at $\alpha = +1500$, forcing the literal token "As" converts
+$37\%$, and feature 2191 converts $30\%$ at $\alpha = 750$ and $27\%$ at $1500$
+(`figures/qwen3_1_7b/sae_feature_refusal_rate.json`,
+`analysis/sae_feature_refusal_rate.py`). Every route to the opener token, the
+mixture, the single feature, or the token itself, produces the same downstream
+refusal rate of roughly one in three. The mediation is complete, and the
+differences between the two "as" directions end at the first token.
+
 Raw intervention data and code are released as
 `saes/sae_causal_ablation.py` and `figures/sae_causal_ablation.{json,md,png}`.
 
