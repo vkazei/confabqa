@@ -1299,17 +1299,24 @@ direction outputs*; it does not tell us *what computational primitives compose
 the direction* inside the residual stream. A sparse-autoencoder decomposition
 addresses the second question.
 
-**Setup.** I use the publicly released Qwen-Scope residual-stream SAE for
-Qwen3-1.7B-Base, the Qwen analogue of Gemma Scope (Lieberum et al. 2024) (`qwen-scope-3-1.7b-base-w32k-l50`: $32$k features, $L_0=50$
-sparsity; Qwen Team, 2025b). Qwen-Scope was trained on the *base* model; the subject here is the
-*Instruct* variant. A reconstruction-quality sanity check on $200$ ConfabQA
-last-prompt-token activations at the refusal-probe peak layer (HF index $28$,
-$=$ SAE layer$27$, the post-block-27 residual stream) reports explained
-variance $\mathrm{EV}=0.82$ and cosine similarity $0.90$ to the original: acceptable base$\to$instruct transfer (`saes/sae_test_reconstruction.py`,
-`saes/sae_layer_sweep.py`). Earlier layers transfer worse (EV $0.54$--$0.70$);
-the late residual stream where the probe peaks happens to be the regime
-where the base SAE transfers best, consistent with instruction-tuning
-having modified the early layers more than the final residual.
+**What an SAE gives us here.** A sparse autoencoder is trained to reconstruct
+residual-stream states as sparse combinations of learned feature directions: for a
+hidden state $h \in \mathbb{R}^{2048}$,
+
+$$h \;\approx\; \sum_{f \in \mathcal{A}(h)} a_f(h)\, \mathbf{d}_f,
+  \qquad |\mathcal{A}(h)| = L_0 = 50,$$
+
+where the encoder picks the active feature set $\mathcal{A}(h)$ with activations
+$a_f \ge 0$, and each decoder row $\mathbf{d}_f$ is a fixed direction living in the
+same space as $h$ and $\mathbf{w}_{\mathrm{raw}}$. Input, in our setting: the
+layer-27 post-block residual stream (HF hidden-state index $28$, the refusal probe's
+layer). Outputs: per-state sparse activations (view C below) and the learned
+dictionary $\{\mathbf{d}_f\}$ itself (views A and B). I use the publicly released
+Qwen-Scope SAE for Qwen3-1.7B-Base, the Qwen analogue of Gemma Scope (Lieberum
+et al. 2024) (`qwen-scope-3-1.7b-base-w32k-l50`: $32$k features, $L_0 = 50$;
+Qwen Team, 2025b). Qwen-Scope was trained on the *base* model while the subject is
+the *Instruct* variant; the base$\to$instruct reconstruction checks are in
+Appendix H.
 
 **Three orthogonal views of "which features compose the refusal direction".**
 For each of the SAE's $32{,}768$ features I compute:
@@ -2174,6 +2181,18 @@ paper, figures). Activations and per-seed external-dataset responses are gitigno
 python 02_evaluate.py` and `python -m external.*_evaluate` recipes. All experiments ran on a single Apple M1 Pro
 (16 GB unified memory) in bfloat16 with the per-script seeds documented at the top of each
 file.
+
+## H. SAE base-to-instruct reconstruction check
+
+Qwen-Scope was trained on Qwen3-1.7B-Base; the Section 6.3 subject is the Instruct
+variant. A reconstruction-quality check on $200$ ConfabQA last-prompt-token
+activations at the refusal-probe peak layer (HF index $28$, $=$ SAE layer $27$, the
+post-block-27 residual stream) reports explained variance $\mathrm{EV}=0.82$ and
+cosine similarity $0.90$ to the original: acceptable base$\to$instruct transfer
+(`saes/sae_test_reconstruction.py`, `saes/sae_layer_sweep.py`). Earlier layers
+transfer worse (EV $0.54$--$0.70$); the late residual stream where the probe peaks
+happens to be the regime where the base SAE transfers best, consistent with
+instruction-tuning having modified the early layers more than the final residual.
 
 # References
 
