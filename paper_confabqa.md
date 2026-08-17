@@ -271,7 +271,7 @@ training items to fitted parameters at $\approx 19{:}1$ instead of $\approx
 0.15{:}1$. Both the scaler and PCA are fit only on the training fold (`sklearn.Pipeline`
 semantics) so no test-fold leakage occurs. 5-fold stratified CV (each fold preserves
 the class balance) with `random_state=0` produces five held-out evaluations per layer;
-I report the mean and per-fold std of accuracy. Appendix G sweeps
+I report the mean and per-fold std of accuracy. Appendix D.1 sweeps
 $n_{\mathrm{components}}$ over $\{4, 8, 16, 32, 48, 64\}$ to show the headline numbers
 are not specific to 16.
 
@@ -360,7 +360,7 @@ schema, selection criteria, and known limitations are documented in
 `data/QUESTIONS_v1_CARD.md`. A fifth domain (sports) was included in an early iteration
 but produced $0/26$ correct across all three categories on this model, leaving no positive
 examples for the within-pre-cutoff probe; sports is therefore excluded from the main
-analysis and reported separately in Appendix D.
+analysis and reported separately in Appendix A.1.
 
 The third (`obscure`) category is the design innovation. It populates the cell
 "answer-was-in-training-data but model-is-expected-to-fail," which the standard two-cell
@@ -450,7 +450,7 @@ DR vs.\ the Qwen-judge on all $784$ items, $p_o = 682/784 = 0.870$ and $p_e = 0.
 giving $\kappa = 0.78$, in the "substantial agreement" range (Landis and Koch, 1977).
 DR is systematically
 stricter than the Qwen-judge ($467$ vs.\ $402$ wrong-labels across the benchmark);
-Appendix C.1 decomposes the $102$ disagreements. The stricter Claude vs.\ Qwen-judge $30/30$ agreement on the smaller sample puts the Qwen-judge's disagreement
+Appendix B.3 decomposes the $102$ disagreements. The stricter Claude vs.\ Qwen-judge $30/30$ agreement on the smaller sample puts the Qwen-judge's disagreement
 with a second independent LLM grader at $0/30$ on typical items ($\le 10\%$ at $95\%$
 confidence by the rule of three); the residual
 disagreement with the web-grounded DR grader ($13\%$) primarily reflects
@@ -728,7 +728,7 @@ cannot separate the two afterward either. Separating them is what the three-way 
 Section 4 is for.
 
 A gold-side validation case study (a muon half-life gold error caught and corrected
-by the external validation pass) is in Appendix C.
+by the external validation pass) is in Appendix B.2.
 
 ## 5.4 Hidden-state geometry at two layers
 
@@ -1035,7 +1035,7 @@ calibrated to each model's hidden-state scale (Table \ref{tbl:scales}). The clea
 asymptotic story holds only when the hook feeds the final RMSNorm directly; when it
 sits below the final layer (Gemma at layer 19, the layer-18 correctness
 intervention), later blocks process the perturbed state, and large $|\alpha|$ is
-genuinely off-manifold rather than asymptotic, the pathology Appendix F records. Softmaxing them into a "probability" would assert a
+genuinely off-manifold rather than asymptotic, the pathology Appendix C records. Softmaxing them into a "probability" would assert a
 next-token distribution for a state the model never visits; where this paper reports
 actual probabilities (Sections 6.2 and 6.3.1), they come from decoding real, perturbed
 hidden states. Tokens with the highest $\ell_v$ are tokens that the model's
@@ -1244,7 +1244,7 @@ dynamics.](figures/qwen3_1_7b/13_intervention_first_token_flip.png){#fig:interve
 **Sample generations.** At $\alpha = +1500$, `cin_pc_60` (gold "Jacques Audiard";
 baseline confabulates "Luis Llosa") flips from a confident attribution to a
 refusal-opener continuation, and at $\alpha = -500$ the `cin_pc_34` refusal flips into a
-confabulation; full before/after generations for both are in Appendix F.
+confabulation; full before/after generations for both are in Appendix C.
 
 **Interpretation.** The recovered direction is the causal mechanism by which Qwen3-1.7B
 selects refusal-opening tokens: a one-shot intervention at the last prompt token reliably
@@ -1257,7 +1257,7 @@ the opening breaks the whole arc and the model confabulates immediately. The asy
 is what distinguishes a *correlational* direction from a *fully causal* one: the
 direction is necessary but not always sufficient.
 
-A prefix-forcing control (Appendix F) reproduces the intervention's judge-label
+A prefix-forcing control (Appendix C) reproduces the intervention's judge-label
 outcome without touching the hidden state: the direction causally selects the first
 token, and everything after token one is ordinary autoregressive dynamics.
 
@@ -1326,7 +1326,7 @@ SAE dictionary was estimated from a far larger general-text activation corpus
 through the base model (Qwen Team, 2025b) and never saw ConfabQA. That this
 dictionary nonetheless contains the exact opener feature our benchmark activates
 is itself evidence that 2191 is a general unit of the model rather than an
-artifact of this question set; the price is the Appendix H caveat, since the
+artifact of this question set; the price is the Appendix D.2 caveat, since the
 dictionary is tuned to the base model's general distribution rather than to the
 Instruct model or this domain. Input, in our setting: the
 layer-27 post-block residual stream (HF hidden-state index $28$, the refusal probe's
@@ -1336,7 +1336,7 @@ Qwen-Scope SAE for Qwen3-1.7B-Base, the Qwen analogue of Gemma Scope (Lieberum
 et al. 2024) (`qwen-scope-3-1.7b-base-w32k-l50`: $32$k features, $L_0 = 50$;
 Qwen Team, 2025b). Qwen-Scope was trained on the *base* model while the subject is
 the *Instruct* variant; the base$\to$instruct reconstruction checks are in
-Appendix H.
+Appendix D.2.
 
 **Three orthogonal views of "which features compose the refusal direction".**
 For each of the SAE's $32{,}768$ features I compute:
@@ -1554,7 +1554,7 @@ readout.
 By the strict judge criterion the comparison is exact, since all three causal
 routes were run on the same $30$ wrong items: the probe direction converts $30\%$
 into judged refusals at $\alpha = +1500$, forcing the literal token "As" converts
-$37\%$ and forcing "No" converts $27\%$ (Appendix F), and feature 2191 converts
+$37\%$ and forcing "No" converts $27\%$ (Appendix C), and feature 2191 converts
 $30\%$ at $\alpha = 750$ and $27\%$ at $1500$
 (`figures/qwen3_1_7b/sae_feature_refusal_rate.json`,
 `analysis/sae_feature_refusal_rate.py`). Every route to the opener token, the
@@ -1681,7 +1681,7 @@ state norm for Llama ($\alpha = 300$ on $\overline{\|h\|} = 90$) versus
 $\approx 20\times$ for Qwen and Gemma.
 
 The three models' layer-of-interest hidden states differ substantially in magnitude
-and variability; Table \ref{tbl:scales} (Appendix F) lists the per-model scales and the
+and variability; Table \ref{tbl:scales} (Appendix C) lists the per-model scales and the
 calibrated $\alpha$ ranges. The order-of-magnitude spread in operational $\alpha$ is
 itself a finding: refusal directions are causal in each model, but the *operational
 range* of the intervention is set by each model's hidden-state scale and its tolerance
@@ -1691,7 +1691,7 @@ to off-manifold perturbation.
 Qwen3's ($0\% \to 87\%$ vs.\ Qwen3's $0\% \to 30\%$); $\alpha = +2000$ is the clean
 sweet spot with $100\%$ first-token opener rate. The full sweep
 (Table \ref{tbl:gemmasweep}) and the off-manifold pathologies at large $|\alpha|$ are
-in Appendix F.
+in Appendix C.
 
 **Llama 3.2 3B.** Llama's near-saturated default refusal policy ($97.5\%$ of post-cutoff
 failures) leaves only $n=12$ confabulating items, insufficient to support a clean
@@ -1702,7 +1702,7 @@ refusal rate drops from $100\%$ to $80\%$, with previously-refusing items commit
 confabulation (e.g.\ `cin_pc_10` gold "Deadpool \& Wolverine" $\to$ `"X-Men '97"`). This
 $-20$ pp shift is real but small, consistent with Llama's $+2.2$ pp refusal-probe margin over
 its prompt baseline (Section 7.1): both probe and intervention operate on a small dynamic
-range. Full Llama sweep table and example generations in Appendix F.
+range. Full Llama sweep table and example generations in Appendix C.
 
 **Cross-model summary.** The intervention is causal in all three models at appropriately
 calibrated $\alpha$, but the *manipulability* of the refusal-vs-confabulation decision
@@ -2259,17 +2259,6 @@ python 02_evaluate.py` and `python -m external.*_evaluate` recipes. All experime
 (16 GB unified memory) in bfloat16 with the per-script seeds documented at the top of each
 file.
 
-## H. SAE base-to-instruct reconstruction check
-
-Qwen-Scope was trained on Qwen3-1.7B-Base; the Section 6.3 subject is the Instruct
-variant. A reconstruction-quality check on $200$ ConfabQA last-prompt-token
-activations at the refusal-probe peak layer (HF index $28$, $=$ SAE layer $27$, the
-post-block-27 residual stream) reports explained variance $\mathrm{EV}=0.82$ and
-cosine similarity $0.90$ to the original: acceptable base$\to$instruct transfer
-(`saes/sae_test_reconstruction.py`, `saes/sae_layer_sweep.py`). Earlier layers
-transfer worse (EV $0.54$--$0.70$); the late residual stream where the probe peaks
-happens to be the regime where the base SAE transfers best, consistent with
-instruction-tuning having modified the early layers more than the final residual.
 
 # References
 
@@ -2352,7 +2341,7 @@ instruction-tuning having modified the early layers more than the final residual
 
 # Appendix
 
-## A. Per-domain accuracy (ConfabQA, 4 domains)
+## A. Per-domain accuracy and the excluded sports domain
 
 \begin{table}[!htbp]
 \small
@@ -2374,69 +2363,8 @@ History remains the strongest pre-cutoff domain (77.1%); cinema the weakest over
 Science is notable for being one of the few domains where post-cutoff accuracy (42.0%, 50/119)
 is *higher* than pre-cutoff (28.7%), driven by a handful of post-cutoff items about
 Anthropic, OpenAI, and SpaceX that the model has apparently learned via post-training data.
-The sports domain excluded from the main analysis is discussed in Appendix D.
 
-## B. Judge prompt
-
-The full judge system prompt and template are in `judge.py`. The system prompt defines a
-three-way decision rule (`CORRECT` / `REFUSAL` / `WRONG`), gives five worked few-shot examples,
-and instructs the model to emit exactly one line of the form `Label: X`. The user-message
-template embeds the question, the gold answer, the acceptable alternatives, and the model's
-answer in a fixed quoted-block format. A regex parser extracts the label from the judge output;
-on parse failure the fallback is to scan for a bare keyword on the first line, then to label
-as `wrong` with a `parse_error: true` field for audit.
-
-## C. Validation prompt schema
-
-The validation prompt emitted by `01_question_set.py --emit-validation-prompt` is in
-`data/questions_v1_validation_prompt.md`; the JSON output schema returned by the external LLM is
-specified in that file's "Required output format" section.
-
-**A case study for the validation pipeline.** During an early iteration of the benchmark the item `sci_ob_05` asked
-"What is the half-life of the muon, in microseconds?" The gold, written by the dataset author
-from memory, was $2.197$, which is in fact the muon *mean lifetime* $\tau_\mu$, not the
-half-life $t_{1/2} = \tau_\mu \ln 2 \approx 1.52\ \mu\text{s}$. The external validation pass
-flagged this $30.7\%$ systematic error; the source question was subsequently rewritten to
-ask explicitly for the mean lifetime, eliminating the ambiguity. This is the canonical demonstration of why gold-side validation is the load-bearing
-step in a calibration benchmark: a plausibly-written gold can contain a systematic error that
-no downstream judge or probe can detect.
-
-
-## C.1 Annotator-agreement data for judge calibration
-
-Two independent annotators re-graded ConfabQA alongside the Qwen3-1.7B judge:
-
-- `data/gemini_regrade/qwen3_1_7b_dr_labels.jsonl`: DR (Gemini 3.1
-  Pro with web-search verification) grading all $784$ items using the literal `judge.py`
-  three-way decision rule.
-- `data/claude_grading_v1.json`: Claude Opus 4.7 grading a stratified $30$-item sample
-  (`random.Random(42)`, 10 items per category) under the same rule.
-
-The $102$ DR vs.\ Qwen-judge disagreements decompose as $45$ items DR calls wrong
-where the Qwen-judge calls correct (Qwen too lenient on partial-match containment),
-$38$ DR-wrong / Qwen-refusal (DR sees fabrication where Qwen sees hedging), $11$
-DR-refusal / Qwen-wrong, $7$ DR-correct / Qwen-wrong, and $1$ DR-refusal /
-Qwen-correct.
-
-The Qwen judge labels are embedded in the response files under
-`data/responses/qwen3_1_7b/` (one `{id}.json` per item). Agreement statistics for both annotators are in
-Table \ref{tbl:judge}; the DR pass additionally web-verified each gold answer
-and flagged three items (`his_pc_09`, `his_pc_56`, `his_pc_90`) with stated-premise
-errors, flagged for source patching in v2.
-
-## C.2 Authoritative summary
-
-Every Qwen3-1.7B single-model number in Sections 5.1--5.6 and 6.1--6.2 is derived from
-`data/qwen3_1_7b_summary.json`, generated by `03_analyze.py` in a single pass over the
-cached responses and activations. The summary file records: per-judge, per-cutoff,
-per-category, and per-domain counts; full per-layer accuracy curves and 1$\sigma$ layer
-ranges for every probe target; class-imbalance metrics at peak for the refusal probe; and
-all three prompt-feature baseline variants. Reproducing those numbers consists of running
-`python 03_analyze.py` and reading the resulting JSON. The SAE numbers (Section 6.3) and
-the cross-model / cross-dataset numbers (Sections 7--8) are recorded in the
-per-experiment artifacts under `figures/` cited in their home sections.
-
-## D. Sports domain: excluded from main analysis
+### A.1 The excluded sports domain
 
 An earlier iteration of the benchmark included a fifth domain, **sports**, with the same three-category
 design applied to MLB World Series, NFL Super Bowl, and Grand Slam tennis questions. On a 26-item
@@ -2492,7 +2420,70 @@ have zero positive examples, making the disconfound test undefined. The source f
 re-include the domain by reverting one line of `01_question_set.py:DOMAINS`. The 26-item sports
 archive is at `data/responses_v1_133/spo_*.json`.
 
-## E. Sample source-file entry
+## B. Prompts, schemas, and data artifacts
+
+### B.1 Judge prompt
+
+The full judge system prompt and template are in `judge.py`. The system prompt defines a
+three-way decision rule (`CORRECT` / `REFUSAL` / `WRONG`), gives five worked few-shot examples,
+and instructs the model to emit exactly one line of the form `Label: X`. The user-message
+template embeds the question, the gold answer, the acceptable alternatives, and the model's
+answer in a fixed quoted-block format. A regex parser extracts the label from the judge output;
+on parse failure the fallback is to scan for a bare keyword on the first line, then to label
+as `wrong` with a `parse_error: true` field for audit.
+
+### B.2 Validation prompt schema
+
+The validation prompt emitted by `01_question_set.py --emit-validation-prompt` is in
+`data/questions_v1_validation_prompt.md`; the JSON output schema returned by the external LLM is
+specified in that file's "Required output format" section.
+
+**A case study for the validation pipeline.** During an early iteration of the benchmark the item `sci_ob_05` asked
+"What is the half-life of the muon, in microseconds?" The gold, written by the dataset author
+from memory, was $2.197$, which is in fact the muon *mean lifetime* $\tau_\mu$, not the
+half-life $t_{1/2} = \tau_\mu \ln 2 \approx 1.52\ \mu\text{s}$. The external validation pass
+flagged this $30.7\%$ systematic error; the source question was subsequently rewritten to
+ask explicitly for the mean lifetime, eliminating the ambiguity. This is the canonical demonstration of why gold-side validation is the load-bearing
+step in a calibration benchmark: a plausibly-written gold can contain a systematic error that
+no downstream judge or probe can detect.
+
+
+### B.3 Annotator-agreement data for judge calibration
+
+Two independent annotators re-graded ConfabQA alongside the Qwen3-1.7B judge:
+
+- `data/gemini_regrade/qwen3_1_7b_dr_labels.jsonl`: DR (Gemini 3.1
+  Pro with web-search verification) grading all $784$ items using the literal `judge.py`
+  three-way decision rule.
+- `data/claude_grading_v1.json`: Claude Opus 4.7 grading a stratified $30$-item sample
+  (`random.Random(42)`, 10 items per category) under the same rule.
+
+The $102$ DR vs.\ Qwen-judge disagreements decompose as $45$ items DR calls wrong
+where the Qwen-judge calls correct (Qwen too lenient on partial-match containment),
+$38$ DR-wrong / Qwen-refusal (DR sees fabrication where Qwen sees hedging), $11$
+DR-refusal / Qwen-wrong, $7$ DR-correct / Qwen-wrong, and $1$ DR-refusal /
+Qwen-correct.
+
+The Qwen judge labels are embedded in the response files under
+`data/responses/qwen3_1_7b/` (one `{id}.json` per item). Agreement statistics for both annotators are in
+Table \ref{tbl:judge}; the DR pass additionally web-verified each gold answer
+and flagged three items (`his_pc_09`, `his_pc_56`, `his_pc_90`) with stated-premise
+errors, flagged for source patching in v2.
+
+### B.4 Authoritative summary
+
+Every Qwen3-1.7B single-model number in Sections 5.1--5.6 and 6.1--6.2 is derived from
+`data/qwen3_1_7b_summary.json`, generated by `03_analyze.py` in a single pass over the
+cached responses and activations. The summary file records: per-judge, per-cutoff,
+per-category, and per-domain counts; full per-layer accuracy curves and 1$\sigma$ layer
+ranges for every probe target; class-imbalance metrics at peak for the refusal probe; and
+all three prompt-feature baseline variants. Reproducing those numbers consists of running
+`python 03_analyze.py` and reading the resulting JSON. The SAE numbers (Section 6.3) and
+the cross-model / cross-dataset numbers (Sections 7--8) are recorded in the
+per-experiment artifacts under `figures/` cited in their home sections.
+
+
+### B.5 Sample source-file entry
 
 ```
 data/sources/science/nobel_physics.json:
@@ -2504,7 +2495,7 @@ data/sources/science/nobel_physics.json:
 }
 ```
 
-## F. Cross-model intervention details
+## C. Cross-model intervention details
 
 Supporting detail for the Section 6.2 and Section 7.2 one-shot interventions.
 
@@ -2742,11 +2733,13 @@ about a Marvel film\ldots{}'' & ``X-Men '97'' \\
 (Two other flips have similar structure; full per-item answers are in
 `figures/llama_3_2_3b/13_intervention_results.json`.)
 
-## G. Robustness to PCA truncation depth
+## D. Robustness checks
+
+### D.1 Robustness to PCA truncation depth
 
 The headline probe pipeline uses `PCA(n_components=16)`. Sweeping over $\{4, 8, 16, 32, 48,
 64\}$ at each target shows that the peak per-layer accuracies are stable within a
-$\le 5$ pp band across the sweep:
+$\le 5$ pp band across the sweep (Figure \ref{fig:pca-robustness}):
 
 ![Peak per-layer probe accuracy as a function of PCA $n_{\mathrm{components}}$, for each of the
 main probe targets. The paper default ($n=16$) is marked. All targets are stable across the
@@ -2758,3 +2751,16 @@ prompt-feature finding of Section 5.6 in particular is independent of this hyper
 The full sweep data (target $\times$ $n_{\mathrm{components}}$ peak-accuracy table) is at
 `figures/qwen3_1_7b/10_pca_robustness.json`, generated by `analysis/make_robustness_check.py`, which
 takes no arguments and reads the same cached responses and activations as `03_analyze.py`.
+
+### D.2 SAE base-to-instruct reconstruction check
+
+Qwen-Scope was trained on Qwen3-1.7B-Base; the Section 6.3 subject is the Instruct
+variant. A reconstruction-quality check on $200$ ConfabQA last-prompt-token
+activations at the refusal-probe peak layer (HF index $28$, $=$ SAE layer $27$, the
+post-block-27 residual stream) reports explained variance $\mathrm{EV}=0.82$ and
+cosine similarity $0.90$ to the original: acceptable base$\to$instruct transfer
+(`saes/sae_test_reconstruction.py`, `saes/sae_layer_sweep.py`). Earlier layers
+transfer worse (EV $0.54$--$0.70$); the late residual stream where the probe peaks
+happens to be the regime where the base SAE transfers best, consistent with
+instruction-tuning having modified the early layers more than the final residual.
+

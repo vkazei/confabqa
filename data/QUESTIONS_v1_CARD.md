@@ -10,7 +10,7 @@ ConfabQA breaks the confound by introducing a third category: pre-cutoff items t
 
 - **Size:** 784 items (4 domains). Sports was dropped from the main analysis
   after an earlier iteration produced 0/26 correct across all sports categories; see paper
-  Appendix D. Current cell counts (4 domains × 3 categories):
+  Appendix A.1. Current cell counts (4 domains × 3 categories):
   | domain | well_known | obscure | post_cutoff |
   |--------|-----------:|--------:|------------:|
   | science | 42 | 45 | 119 |
