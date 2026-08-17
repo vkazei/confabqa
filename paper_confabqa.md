@@ -1325,7 +1325,17 @@ at most a $0.37$ cosine with the feature's decoder direction, a hard ceiling for
 probe of the Section 2.3 form (the recovered probe sits at $0.16$); half coverage
 takes roughly $60$ variance-ordered components, and even the full
 $549$-dimensional span of the benchmark's activations covers only $0.79$
-(`figures/qwen3_1_7b/pca_coverage_2191.json`). The two decompositions also differ in what estimated them: the PCA
+(`figures/qwen3_1_7b/pca_coverage_2191.json`). The converse question, whether the
+feature could improve the probe's split, closes negative: under the same 5-fold CV,
+blending the unit probe direction with $\hat W_{\rm dec}[2191]$ leaves the
+refusal-vs-wrong AUC flat at $0.944$ for mixing weights up to $0.2$ and degrades
+monotonically beyond, and a two-feature logistic stack over both projections also
+lands at $0.943$: the feature's out-of-subspace mass carries no class information
+the probe has not already extracted. The surprise runs the other way: the raw
+projection onto 2191 alone reaches AUC $0.895$, close to the probe's $0.944$, even
+though the sparse code activates the feature on only $8$ of $549$ states; the
+encoder's threshold discards a strongly separating dense signal
+(`figures/qwen3_1_7b/probe_2191_blend.json`, `analysis/probe_2191_blend.py`). The two decompositions also differ in what estimated them: the PCA
 axes and the probe are fit in-sample on at most $784$ ConfabQA states, while the
 SAE dictionary was estimated from a far larger general-text activation corpus
 through the base model (Qwen Team, 2025b) and never saw ConfabQA. That this
