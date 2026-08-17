@@ -1010,32 +1010,9 @@ direction, but because the post-norm head is linear, moving a real state along t
 direction adds approximately these scores to its next-token logits. That is a
 testable prediction, and Section 6.2 confirms it: intervened states put their
 first-token mass on exactly the lens's top-ranked tokens. Magnitude enters only as a
-mixing ratio. Spelled out, with $\mathrm{rms}(x) = \|x\|/\sqrt{d}$ and
-$\mathrm{RMSNorm}(x) = \mathbf{g} \odot x / \mathrm{rms}(x)$, the intervened head
-input is
-
-$$\mathrm{RMSNorm}(h + \alpha\hat{\mathbf{w}})
-  \;=\; \frac{\sqrt{d}\; \mathbf{g} \odot (h + \alpha\hat{\mathbf{w}})}
-  {\sqrt{\|h\|^{2} + 2\alpha \langle h, \hat{\mathbf{w}} \rangle + \alpha^{2}}},$$
-
-which depends only on the ratios $\alpha / \|h\|$ and
-$\langle h, \hat{\mathbf{w}} \rangle / \|h\|$ and converges to
-$\mathrm{RMSNorm}(\pm\hat{\mathbf{w}})$ as $\alpha \to \pm\infty$. The per-item
-$\mathrm{rms}(h)$ that sets the ratio is tightly concentrated and near-Gaussian
-across all $784$ items: $3.10 \pm 0.17$ ($5.6\%$ coefficient of variation, skew
-$+0.1$), so the single $\overline{\|h\|}$ used in the Table \ref{tbl:alpha}
-translation rows describes every item to within a few percent. Its one structured
-feature: refusal states run smaller and tighter ($2.94 \pm 0.10$) than correct
-($3.17 \pm 0.18$) or wrong ($3.13 \pm 0.15$) states; the templated behavior is
-geometrically stereotyped as well
-(`figures/qwen3_1_7b/hidden_state_norms.json`).
-The lens scores are therefore the asymptote of the first-token dose-response, which
-is the saturation Sections 6.2 and 6.3.1 observe, and why $\alpha$ ranges must be
-calibrated to each model's hidden-state scale (Table \ref{tbl:scales}). The clean
-asymptotic story holds only when the hook feeds the final RMSNorm directly; when it
-sits below the final layer (Gemma at layer 19, the layer-18 correctness
-intervention), later blocks process the perturbed state, and large $|\alpha|$ is
-genuinely off-manifold rather than asymptotic, the pathology Appendix C records. Softmaxing them into a "probability" would assert a
+mixing ratio, and the lens scores are the $\alpha \to \infty$ asymptote of the
+first-token dose-response, the saturation Sections 6.2 and 6.3.1 observe
+(calibration detail in Appendix C). Softmaxing them into a "probability" would assert a
 next-token distribution for a state the model never visits; where this paper reports
 actual probabilities (Sections 6.2 and 6.3.1), they come from decoding real, perturbed
 hidden states. Tokens with the highest $\ell_v$ are tokens that the model's
@@ -1164,20 +1141,11 @@ $\mathbf{w}_{\mathrm{unit}}$ is the recovered refusal direction normalized to un
 Generation steps pass through unmodified, so the intervention is one-shot at the moment of
 commitment to the first output token.
 
-**Choice of $\alpha$ scale.** The natural scale is much larger than the per-fold projection
-variance because RMSNorm dampens the perturbation: the post-norm contribution to the LM head
-is approximately $\mathbf{d} \cdot W_{\mathrm{LM}}^\top / \mathrm{RMS}(\mathbf{h})$, and at
-layer 28 of Qwen3-1.7B $\mathrm{RMS}(\mathbf{h}) \approx 3$. Empirically, on a pre-cutoff
-probe item the natural greedy first token loses to the refusal opener ` As` at
-$\alpha \approx 2000$, and at $\alpha = 5000$ the top six tokens are entirely refusal openers.
-The sweep below covers this empirical range. In relatable units (the translation
-rows of Table \ref{tbl:alpha}): baseline states are nearly orthogonal to the
-direction (mean $\cos = +0.08$; refusal items $+0.19$, wrong $+0.03$, on
-$\overline{\|h\|} \approx 139$), the smallest effective dose $\alpha = +500$ is
-already a perturbation $3.6\times$ the state norm that rotates the state to $0.97$
-alignment, and the first-token flip completes between alignments $0.97$ and $0.996$.
-The one-shot flip is a near-replacement of the state's direction, not a nudge,
-consistent with the $\alpha \to \infty$ asymptote of Section 6.1.
+**Choice of $\alpha$ scale.** RMSNorm sets the natural scale: at layer 28
+$\mathrm{RMS}(\mathbf{h}) \approx 3$ dampens the perturbation, and the smallest
+effective dose $\alpha = +500$ is already a perturbation $3.6\times$ the state
+norm that rotates the state to $0.97$ alignment with the direction. The empirical
+scan that fixed the range and the per-item norm statistics are in Appendix C.
 
 **Sweep:** $\alpha \in \{-2000, -500, 0, 500, 1500, 3000\}$, applied at the last prompt token
 during prefill on each of the 60 subset items, with greedy decoding. Each generation is
@@ -1197,10 +1165,7 @@ and why the two measures diverge.
 \small
 \centering
 \caption{Causal-intervention outcome rates across the $\alpha$ sweep
-($n = 30$ per subset). The top two rows translate $\alpha$ into relatable units:
-perturbation norm relative to the typical hidden-state norm, and the resulting mean
-alignment of the perturbed state with the direction (averaged over the $n=549$
-subset).\label{tbl:alpha}}
+($n = 30$ per subset).\label{tbl:alpha}}
 \begin{tabular}{@{}
   >{\raggedright\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.2394}}
   >{\raggedright\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.3380}}
@@ -1212,9 +1177,6 @@ subset).\label{tbl:alpha}}
   >{\raggedleft\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.0704}}@{}}
 \toprule
 subset & metric & $\alpha = -2000$ & $-500$ & $0$ & $+500$ & $+1500$ & $+3000$ \\
-\midrule
-\multicolumn{2}{@{}l}{\emph{perturbation} $\|\alpha\hat{\mathbf{w}}\| / \overline{\|h\|}$} & $14.4\times$ & $3.6\times$ & $0$ & $3.6\times$ & $10.8\times$ & $21.5\times$ \\
-\multicolumn{2}{@{}l}{\emph{mean alignment} $\cos\angle(h{+}\alpha\hat{\mathbf{w}},\, \hat{\mathbf{w}})$} & $-.998$ & $-.962$ & $+.076$ & $+.965$ & $+.996$ & $+.999$ \\
 \midrule
 originally WRONG & first-token refusal-opener rate & $0\%$ & $3\%$ & $10\%$ & $50\%$ & $97\%$ & $100\%$ \\
 originally WRONG & judge-label REFUSAL rate & $10\%$ & $0\%$ & $0\%$ & $13\%$ & $30\%$ & $30\%$ \\
@@ -1269,13 +1231,8 @@ magnitude-driven and sign-symmetric: originally-correct items degrade mildly at 
 $|\alpha|$ in *both* directions ($100\% \to 80$--$83\%$ correct at
 $\alpha = \mp 3000$), originally-wrong items flip to correct at low, sign-independent
 rates ($17\%$ at both $-3000$ and $+3000$), and refusal induction is scattered
-($0$--$17\%$) with no dose-response. The flips also concentrate on a recurring
-handful of items rather than spreading across the subset: the union over all six
-nonzero $\alpha$ is $10$ of $30$ items, five account for most flips, and one flips at
-every nonzero $\alpha$ in both directions. Inspection shows these are items where the
-correct answer was already marginally available (a knife-edge wrong decode of a
-well-known fact, or a post-cutoff fact the model demonstrably knows but hedges on),
-so a kick of any sign can dislodge the default trajectory; nothing indicates the
+($0$--$17\%$) with no dose-response. The few flips concentrate on a recurring
+handful of marginal items (forensics in Appendix C); nothing indicates the
 direction injecting knowledge. Raw sweeps are released as
 `figures/qwen3_1_7b/correctness_direction_intervention.{json,md}`
 (`analysis/correctness_direction_intervention.py`).
@@ -1450,44 +1407,10 @@ recovered probe direction. On $30$ items the model originally got wrong
 last-prompt-token residual stream just before the final RMSNorm (HF layer
 $28$, equivalent to the Section 6.2 intervention point), sweep $\alpha$,
 and read off the next-token probability assigned to refusal-opener tokens
-(the same set the §6.1 logit lens recovered: ` as`, ` As`, `As`, `as`,
-` there`, `作为`, `作为一个`, `作為`, `\tas`, `-as`; $10$ unique token
-IDs).
+(the Section 6.2 opener set; $10$ unique token IDs).
 
 ![Causal dose-response of SAE feature 2191. On 30 ConfabQA wrong items (blue), adding $\alpha \cdot \hat W_{\rm dec}[2191]$ to the last-prompt-token residual stream at HF layer 28 induces a sharp transition between $\alpha=200$ and $\alpha=750$ from no refusal-opener probability to 100\% of next-token mass on refusal openers (and 30/30 argmax flips). The 30 ConfabQA refusal items (red) are already saturated at $\alpha=0$.](figures/sae_causal_ablation.png){#fig:sae-causal}
 
-\begin{table}[!htbp]
-\small
-\centering
-\caption{Feature 2191 dose-response: next-token refusal-opener
-probability under
-\(\alpha \cdot \hat W_{\rm dec}[2191]\).\label{tbl:dose}}
-\begin{tabular}{@{}
-  >{\raggedleft\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
-  >{\raggedleft\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
-  >{\raggedleft\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
-  >{\raggedleft\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}@{}}
-\toprule
-\begin{minipage}[b]{\linewidth}\raggedleft
-\(\alpha\)
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
-wrong: \(P(\rm opener)\)
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
-wrong: argmax-in-opener
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
-refusal: \(P(\rm opener)\)
-\end{minipage} \\\midrule
-\(0\) & \(0.000\) & \(0/30\) & \(0.969\) \\
-\(16\) & \(0.000\) & \(0/30\) & \(0.981\) \\
-\(64\) & \(0.000\) & \(0/30\) & \(0.998\) \\
-\(200\) & \(0.000\) & \(0/30\) & \(1.000\) \\
-\(400\) & \(\mathbf{0.364}\) & \(\mathbf{11/30}\) & \(1.000\) \\
-\(750\) & \(\mathbf{1.000}\) & \(\mathbf{30/30}\) & \(1.000\) \\
-\(1500\) & \(1.000\) & \(30/30\) & \(1.000\) \\
-\(3000\) & \(1.000\) & \(30/30\) & \(1.000\) \\
-\bottomrule
-\end{tabular}
-\end{table}
 
 The dose-response is monotonic with a sharp transition between $\alpha=200$
 and $\alpha=750$ on wrong items: from $P=0$ to $P=1$ across one $\log_2$
@@ -1529,17 +1452,11 @@ specifically: its neighbors in the decomposition (14034, 18937, 21750) contribut
 *correlational* direction, but the causal action is 2191's output-token preparation.
 The two vectors are far from the same object:
 $\cos(\hat W_{\rm dec}[2191], \mathbf{w}_{\rm raw}) = 0.16$ (chance $\approx 0.02$ in
-$2048$ dimensions). The component of $\mathbf{w}_{\rm raw}$ along the feature has
-length $0.16\,\|\mathbf{w}_{\rm raw}\|$, the relevant scale for logit
-contributions, which are linear in the component; the orthogonal remainder keeps
-$0.99\,\|\mathbf{w}_{\rm raw}\|$ (in the additive Pythagorean accounting, energy
-shares of $2.6\%$ vs $97.4\%$). The SAE encoder does not even allocate 2191 among
-the $50$ features it uses to reconstruct $\mathbf{w}_{\rm raw}$ (view A assigns it
-zero activation). Two nearly disjoint vectors produce the same first-token flip because
-the flip requires only a sufficient projection onto the opener unembedding cone
-after RMSNorm. At the causal level the probe direction acts through this
-$0.16$-of-norm component; nearly all of the rest is correlational freight.
-Figure \ref{fig:probe-sae-plane} shows the plane the two vectors span.
+$2048$ dimensions), and the SAE encoder does not even allocate 2191 among the $50$
+features it uses to reconstruct $\mathbf{w}_{\rm raw}$ (view A assigns it zero
+activation). They produce the same first-token flip anyway.
+Figure \ref{fig:probe-sae-plane} shows the plane the two vectors span (norm
+accounting in Appendix C).
 
 ![The plane spanned by the probe refusal direction and SAE feature 2191's decoder
 vector (layer-28 refusal+wrong states, $n=549$; stars: class centroids; dashed:
@@ -1552,30 +1469,14 @@ sit (six refusal, two wrong: the $4.1\%$/$0.5\%$ hit rates of Figure
 broad discriminative mixture share one causal
 channel.](figures/qwen3_1_7b/probe_sae_plane.png){#fig:probe-sae-plane}
 
-**Which "as" direction is more potent?** The two interventions are directly
-comparable: both add a unit-norm vector, so $\alpha$ is the added norm in both
-sweeps, and both score the same statistic, the first-token argmax landing in the
-opener set (on different $30$-item wrong subsets). Their half-flip doses are
-similar: the probe direction reaches $50\%$ at $\alpha = 500$; feature 2191 is at
-$11/30$ by $\alpha = 400$ and completes $30/30$ by $750$, where the probe needs
-$1500$ for $97\%$. The concentrated feature saturates roughly twice as early. The
-naive projection accounting, under which the probe direction owns only $0.16$ of
-its norm on the 2191 channel and should need $\approx 6\times$ the dose,
-overstates the gap: the probe's remaining norm is not opener-inert, since it also
-pushes the broader opener family (` there`, the Chinese variants) that the flip
-criterion counts, and the flip is a competition threshold rather than a linear
-readout.
-
-By the strict judge criterion the comparison is exact, since all three causal
-routes were run on the same $30$ wrong items: the probe direction converts $30\%$
-into judged refusals at $\alpha = +1500$, forcing the literal token "As" converts
-$37\%$ and forcing "No" converts $27\%$ (Appendix C), and feature 2191 converts
-$30\%$ at $\alpha = 750$ and $27\%$ at $1500$
-(`figures/qwen3_1_7b/sae_feature_refusal_rate.json`,
-`analysis/sae_feature_refusal_rate.py`). Every route to the opener token, the
-mixture, the single feature, or the token itself, produces the same downstream
-refusal rate of roughly one in three. The mediation is complete, and the
-differences between the two "as" directions end at the first token.
+All four causal routes converge on the strict criterion. On the same $30$ wrong
+items, the probe direction converts $30\%$ into judged refusals at
+$\alpha = +1500$, forcing the literal token "As" converts $37\%$, forcing "No"
+converts $27\%$, and feature 2191 converts $30\%$ at $\alpha = 750$ and $27\%$ at
+$1500$ (`figures/qwen3_1_7b/sae_feature_refusal_rate.json`). Every route to the
+opener token produces the same downstream refusal rate of roughly one in three:
+the mediation is complete at the first token. Dose-for-dose potency accounting is
+in Appendix C.
 
 Raw intervention data and code are released as
 `saes/sae_causal_ablation.py` and `figures/sae_causal_ablation.{json,md,png}`.
@@ -2510,9 +2411,136 @@ data/sources/science/nobel_physics.json:
 }
 ```
 
-## C. Cross-model intervention details
+## C. Intervention calibration and details
 
-Supporting detail for the Section 6.2 and Section 7.2 one-shot interventions.
+Calibration and supporting detail for the Section 6.2, Section 6.3.1, and
+Section 7.2 one-shot interventions.
+
+**Magnitude and normalization.** Magnitude enters only as a
+mixing ratio. Spelled out, with $\mathrm{rms}(x) = \|x\|/\sqrt{d}$ and
+$\mathrm{RMSNorm}(x) = \mathbf{g} \odot x / \mathrm{rms}(x)$, the intervened head
+input is
+
+$$\mathrm{RMSNorm}(h + \alpha\hat{\mathbf{w}})
+  \;=\; \frac{\sqrt{d}\; \mathbf{g} \odot (h + \alpha\hat{\mathbf{w}})}
+  {\sqrt{\|h\|^{2} + 2\alpha \langle h, \hat{\mathbf{w}} \rangle + \alpha^{2}}},$$
+
+which depends only on the ratios $\alpha / \|h\|$ and
+$\langle h, \hat{\mathbf{w}} \rangle / \|h\|$ and converges to
+$\mathrm{RMSNorm}(\pm\hat{\mathbf{w}})$ as $\alpha \to \pm\infty$. The per-item
+$\mathrm{rms}(h)$ that sets the ratio is tightly concentrated and near-Gaussian
+across all $784$ items: $3.10 \pm 0.17$ ($5.6\%$ coefficient of variation, skew
+$+0.1$), so the single $\overline{\|h\|}$ used in the Table \ref{tbl:alpha}
+translation rows describes every item to within a few percent. Its one structured
+feature: refusal states run smaller and tighter ($2.94 \pm 0.10$) than correct
+($3.17 \pm 0.18$) or wrong ($3.13 \pm 0.15$) states; the templated behavior is
+geometrically stereotyped as well
+(`figures/qwen3_1_7b/hidden_state_norms.json`).
+The lens scores are therefore the asymptote of the first-token dose-response, which
+is the saturation Sections 6.2 and 6.3.1 observe, and why $\alpha$ ranges must be
+calibrated to each model's hidden-state scale (Table \ref{tbl:scales}). The clean
+asymptotic story holds only when the hook feeds the final RMSNorm directly; when it
+sits below the final layer (Gemma at layer 19, the layer-18 correctness
+intervention), later blocks process the perturbed state, and large $|\alpha|$ is
+genuinely off-manifold rather than asymptotic, the pathology Appendix C records.
+
+**Choice of $\alpha$ scale, in full (Qwen3-1.7B).** **Choice of $\alpha$ scale.** The natural scale is much larger than the per-fold projection
+variance because RMSNorm dampens the perturbation: the post-norm contribution to the LM head
+is approximately $\mathbf{d} \cdot W_{\mathrm{LM}}^\top / \mathrm{RMS}(\mathbf{h})$, and at
+layer 28 of Qwen3-1.7B $\mathrm{RMS}(\mathbf{h}) \approx 3$. Empirically, on a pre-cutoff
+probe item the natural greedy first token loses to the refusal opener ` As` at
+$\alpha \approx 2000$, and at $\alpha = 5000$ the top six tokens are entirely refusal openers.
+The sweep below covers this empirical range. In relatable units (the translation
+rows of Table \ref{tbl:alpha}): baseline states are nearly orthogonal to the
+direction (mean $\cos = +0.08$; refusal items $+0.19$, wrong $+0.03$, on
+$\overline{\|h\|} \approx 139$), the smallest effective dose $\alpha = +500$ is
+already a perturbation $3.6\times$ the state norm that rotates the state to $0.97$
+alignment, and the first-token flip completes between alignments $0.97$ and $0.996$.
+The one-shot flip is a near-replacement of the state's direction, not a nudge,
+consistent with the $\alpha \to \infty$ asymptote of Section 6.1.
+In the units of Table \ref{tbl:alpha}: $\alpha \in \{-2000, -500, 0, +500, +1500,
++3000\}$ corresponds to perturbation-to-state-norm ratios
+$\{14.4, 3.6, 0, 3.6, 10.8, 21.5\}\times$ and mean post-intervention alignments
+$\cos\angle(h{+}\alpha\hat{\mathbf{w}}, \hat{\mathbf{w}}) =
+\{-.998, -.962, +.076, +.965, +.996, +.999\}$ (averaged over the $n=549$ subset).
+
+**Feature 2191 dose-response table.** The Figure \ref{fig:sae-causal} sweep in
+table form:
+
+\begin{table}[!htbp]
+\small
+\centering
+\caption{Feature 2191 dose-response: next-token refusal-opener
+probability under
+\(\alpha \cdot \hat W_{\rm dec}[2191]\).\label{tbl:dose}}
+\begin{tabular}{@{}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}@{}}
+\toprule
+\begin{minipage}[b]{\linewidth}\raggedleft
+\(\alpha\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+wrong: \(P(\rm opener)\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+wrong: argmax-in-opener
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+refusal: \(P(\rm opener)\)
+\end{minipage} \\\midrule
+\(0\) & \(0.000\) & \(0/30\) & \(0.969\) \\
+\(16\) & \(0.000\) & \(0/30\) & \(0.981\) \\
+\(64\) & \(0.000\) & \(0/30\) & \(0.998\) \\
+\(200\) & \(0.000\) & \(0/30\) & \(1.000\) \\
+\(400\) & \(\mathbf{0.364}\) & \(\mathbf{11/30}\) & \(1.000\) \\
+\(750\) & \(\mathbf{1.000}\) & \(\mathbf{30/30}\) & \(1.000\) \\
+\(1500\) & \(1.000\) & \(30/30\) & \(1.000\) \\
+\(3000\) & \(1.000\) & \(30/30\) & \(1.000\) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+**Norm accounting for the probe--2191 pair.** The component of $\mathbf{w}_{\rm raw}$ along feature 2191 has length
+$0.16\,\|\mathbf{w}_{\rm raw}\|$, the relevant scale for logit contributions, which
+are linear in the component; the orthogonal remainder keeps
+$0.99\,\|\mathbf{w}_{\rm raw}\|$ (in the additive Pythagorean accounting, energy
+shares of $2.6\%$ vs $97.4\%$). Two nearly disjoint vectors produce the same
+first-token flip because the flip requires only a sufficient projection onto the
+opener unembedding cone after RMSNorm; at the causal level the probe direction acts
+through its $0.16$-of-norm component.
+
+**Dose-for-dose potency.** **Which "as" direction is more potent?** The two interventions are directly
+comparable: both add a unit-norm vector, so $\alpha$ is the added norm in both
+sweeps, and both score the same statistic, the first-token argmax landing in the
+opener set (on different $30$-item wrong subsets). Their half-flip doses are
+similar: the probe direction reaches $50\%$ at $\alpha = 500$; feature 2191 is at
+$11/30$ by $\alpha = 400$ and completes $30/30$ by $750$, where the probe needs
+$1500$ for $97\%$. The concentrated feature saturates roughly twice as early. The
+naive projection accounting, under which the probe direction owns only $0.16$ of
+its norm on the 2191 channel and should need $\approx 6\times$ the dose,
+overstates the gap: the probe's remaining norm is not opener-inert, since it also
+pushes the broader opener family (` there`, the Chinese variants) that the flip
+criterion counts, and the flip is a competition threshold rather than a linear
+readout.
+
+By the strict judge criterion the comparison is exact, since all three causal
+routes were run on the same $30$ wrong items: the probe direction converts $30\%$
+into judged refusals at $\alpha = +1500$, forcing the literal token "As" converts
+$37\%$ and forcing "No" converts $27\%$ (Appendix C), and feature 2191 converts
+$30\%$ at $\alpha = 750$ and $27\%$ at $1500$
+(`figures/qwen3_1_7b/sae_feature_refusal_rate.json`,
+`analysis/sae_feature_refusal_rate.py`). Every route to the opener token, the
+mixture, the single feature, or the token itself, produces the same downstream
+refusal rate of roughly one in three. The mediation is complete, and the
+differences between the two "as" directions end at the first token.
+
+**Correctness-direction flip forensics.** The correctness-direction flips concentrate on a recurring handful of items rather
+than spreading across the subset: the union over all six nonzero $\alpha$ is $10$ of
+$30$ items, five account for most flips, and one flips at every nonzero $\alpha$ in
+both directions. Inspection shows these are items where the correct answer was
+already marginally available, a knife-edge wrong decode of a well-known fact, or a
+post-cutoff fact the model demonstrably knows but hedges on, so a kick of any sign
+can dislodge the default trajectory.
 
 **Hidden-state scales.** The per-model scale statistics and calibrated $\alpha$ ranges:
 
