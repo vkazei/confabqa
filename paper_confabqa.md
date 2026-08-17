@@ -1494,6 +1494,18 @@ zero activation). Two nearly disjoint vectors produce the same first-token flip 
 the flip requires only a sufficient projection onto the opener unembedding cone
 after RMSNorm. At the causal level the probe direction acts through this
 $0.16$-of-norm component; nearly all of the rest is correlational freight.
+Figure \ref{fig:probe-sae-plane} shows the plane the two vectors span.
+
+![The plane spanned by the probe refusal direction and SAE feature 2191's decoder
+vector (layer-28 refusal+wrong states, $n=549$; stars: class centroids; dashed:
+per-class $1\sigma$ covariance ellipses). The two arrows are $81^\circ$ apart
+(cosine $0.16$). The probe axis carries the class split, and its decision boundary
+(dotted) is again exact in this plane; the feature axis is nearly class-neutral
+except at its upper tail, where the eight ringed items on which 2191 actually fires
+sit (six refusal, two wrong: the $4.1\%$/$0.5\%$ hit rates of Figure
+\ref{fig:sae-features}). A rarely-firing, nearly probe-orthogonal output knob and a
+broad discriminative mixture share one causal
+channel.](figures/qwen3_1_7b/probe_sae_plane.png){#fig:probe-sae-plane}
 
 Raw intervention data and code are released as
 `saes/sae_causal_ablation.py` and `figures/sae_causal_ablation.{json,md,png}`.
