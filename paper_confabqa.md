@@ -1481,9 +1481,16 @@ recovers exactly the refusal-opener vocabulary the logit lens projected to, and 
 feature suffices to drive Qwen3-1.7B's first-token decision to a refusal. Second, the
 §6.2 causal story sharpens: the probe direction's causal effect runs through feature 2191
 specifically: its neighbors in the decomposition (14034, 18937, 21750) contribute to the
-*correlational* direction, but the causal action is 2191's output-token preparation. The
-direction is real; at the causal level it is mostly one feature's decoder vector, plus
-content-cue features that explain *why* it fires.
+*correlational* direction, but the causal action is 2191's output-token preparation.
+The two vectors are far from the same object:
+$\cos(\hat W_{\rm dec}[2191], \mathbf{w}_{\rm raw}) = 0.16$ (chance $\approx 0.02$ in
+$2048$ dimensions), so the feature carries only $\approx 2.6\%$ of the probe
+direction's squared norm, and the SAE encoder does not even allocate 2191 among the
+$50$ features it uses to reconstruct $\mathbf{w}_{\rm raw}$ (view A assigns it zero
+activation). Two nearly disjoint vectors produce the same first-token flip because
+the flip requires only a sufficient projection onto the opener unembedding cone
+after RMSNorm. At the causal level the probe direction acts through this small
+2191-like component; most of its norm is correlational freight.
 
 Raw intervention data and code are released as
 `saes/sae_causal_ablation.py` and `figures/sae_causal_ablation.{json,md,png}`.
