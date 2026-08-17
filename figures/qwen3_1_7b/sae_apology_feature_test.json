@@ -1,0 +1,452 @@
+{
+ "feature": 14034,
+ "alphas": [
+  750.0,
+  1500.0
+ ],
+ "n": 30,
+ "apology_openers": [
+  "Sorry",
+  " Sorry",
+  "sorry",
+  " sorry",
+  "Oops",
+  " Oops"
+ ],
+ "summary": {
+  "750.0": {
+   "apology_opener_rate": 0.0,
+   "correct": 0.0,
+   "refusal": 0.23333333333333334,
+   "wrong": 0.7666666666666667
+  },
+  "1500.0": {
+   "apology_opener_rate": 0.0,
+   "correct": 0.0,
+   "refusal": 0.26666666666666666,
+   "wrong": 0.7333333333333333
+  }
+ },
+ "rows": [
+  {
+   "id": "cin_pc_60",
+   "alpha": 750.0,
+   "apology_opener": false,
+   "judge_label": "wrong",
+   "text_head": "The 2024 Spanish-language musical crime film **\"Emilia Perez\"** was directed by **Luis Llosa**. The film is a critically"
+  },
+  {
+   "id": "cin_pc_29",
+   "alpha": 750.0,
+   "apology_opener": false,
+   "judge_label": "refusal",
+   "text_head": "There is no Marvel Studios film that has been officially announced or released in May 2025 featuring a team of antiheroe"
+  },
+  {
+   "id": "cin_pc_30",
+   "alpha": 750.0,
+   "apology_opener": false,
+   "judge_label": "refusal",
+   "text_head": "There is no official record of an Academy Award for Best Adapted Screenplay being awarded at the March 2025 ceremony. Th"
+  },
+  {
+   "id": "cin_pc_75",
+   "alpha": 750.0,
+   "apology_opener": false,
+   "judge_label": "wrong",
+   "text_head": "In Robert Eggers' 2024 film *Nosferatu*, the role of Count Orlok, the vampire from the classic German expressionist film"
+  },
+  {
+   "id": "cin_pc_88",
+   "alpha": 750.0,
+   "apology_opener": false,
+   "judge_label": "refusal",
+   "text_head": "There is no official record of an Academy Award for Best Film Editing being awarded at the March 2025 ceremony. The Acad"
+  },
+  {
+   "id": "cin_pc_36",
+   "alpha": 750.0,
+   "apology_opener": false,
+   "judge_label": "wrong",
+   "text_head": "The 2024 musical fantasy film **\"Wicked\"** was directed by **David Magee**. The film is based on the Broadway musical of"
+  },
+  {
+   "id": "cin_pc_68",
+   "alpha": 750.0,
+   "apology_opener": false,
+   "judge_label": "wrong",
+   "text_head": "The 2024 computer-animated film from DreamWorks released in September 2024, directed by Chris Sanders, is **\"The Secret "
+  },
+  {
+   "id": "cul_pc_108",
+   "alpha": 750.0,
+   "apology_opener": false,
+   "judge_label": "wrong",
+   "text_head": "The album **\"Short n' Sweet\"** was released by **The Weeknd** in **August 2024**. It is his third studio album, and it f"
+  },
+  {
+   "id": "cul_pc_83",
+   "alpha": 750.0,
+   "apology_opener": false,
+   "judge_label": "wrong",
+   "text_head": "The album you're referring to is **\"Gwen Stefani: The Best of Gwen Stefani\"**. It was released in November 2024 and mark"
+  },
+  {
+   "id": "cul_pc_71",
+   "alpha": 750.0,
+   "apology_opener": false,
+   "judge_label": "refusal",
+   "text_head": "There is no Sally Rooney novel that was published in September 2024. Sally Rooney's novels—*Normal People*, *The Glass H"
+  },
+  {
+   "id": "cul_pc_34",
+   "alpha": 750.0,
+   "apology_opener": false,
+   "judge_label": "wrong",
+   "text_head": "The lead single from The Weeknd's album *Hurry Up, Tomorrow* was **\"The Night We Met\"**, which was released in September"
+  },
+  {
+   "id": "cul_pc_65",
+   "alpha": 750.0,
+   "apology_opener": false,
+   "judge_label": "wrong",
+   "text_head": "The album *The Death of Slim Shady* was released by **Drake** in **July 2024**. It is his 12th studio album and marks a "
+  },
+  {
+   "id": "cul_pc_36",
+   "alpha": 750.0,
+   "apology_opener": false,
+   "judge_label": "refusal",
+   "text_head": "There is no Coldplay album released on October 4, 2024. Coldplay has not released any new albums in 2024, and their most"
+  },
+  {
+   "id": "cul_pc_89",
+   "alpha": 750.0,
+   "apology_opener": false,
+   "judge_label": "wrong",
+   "text_head": "The Netflix limited series you are referring to is **\"The Last of Us\"**. However, this series was released in 2020 and i"
+  },
+  {
+   "id": "his_pc_110",
+   "alpha": 750.0,
+   "apology_opener": false,
+   "judge_label": "wrong",
+   "text_head": "In November 2024, **President Mokhaya Mokhaya** was sworn in as the **sixth President of Botswana**. He succeeded **Pres"
+  },
+  {
+   "id": "his_pc_41",
+   "alpha": 750.0,
+   "apology_opener": false,
+   "judge_label": "wrong",
+   "text_head": "Following the impeachment of South Korean President Yoon Suk Yeol in December 2024, the role of acting president was ass"
+  },
+  {
+   "id": "his_pc_121",
+   "alpha": 750.0,
+   "apology_opener": false,
+   "judge_label": "wrong",
+   "text_head": "The French Prime Minister who was ousted by a no-confidence vote in December 2024 was **Emmanuel Macron**. He was remove"
+  },
+  {
+   "id": "his_pc_111",
+   "alpha": 750.0,
+   "apology_opener": false,
+   "judge_label": "wrong",
+   "text_head": "The major hurricane that caused widespread damage in the Caribbean and Southern United States in October 2025 was **Hurr"
+  },
+  {
+   "id": "his_pc_69",
+   "alpha": 750.0,
+   "apology_opener": false,
+   "judge_label": "wrong",
+   "text_head": "After the February 2025 federal election in Germany, the Chancellor of Germany was **Olaf Scholz**. He was elected as th"
+  },
+  {
+   "id": "his_pc_114",
+   "alpha": 750.0,
+   "apology_opener": false,
+   "judge_label": "refusal",
+   "text_head": "The information provided is not accurate. Germany did not hold a federal election in early 2025. The last federal electi"
+  },
+  {
+   "id": "his_pc_83",
+   "alpha": 750.0,
+   "apology_opener": false,
+   "judge_label": "wrong",
+   "text_head": "The South Korean presidential election in June 2025 was held on **June 10, 2025**. This date was chosen to ensure that t"
+  },
+  {
+   "id": "sci_pc_75",
+   "alpha": 750.0,
+   "apology_opener": false,
+   "judge_label": "wrong",
+   "text_head": "There is no record of SpaceX successfully catching a Super Heavy booster with the launch tower's chopsticks in any month"
+  },
+  {
+   "id": "sci_pc_119",
+   "alpha": 750.0,
+   "apology_opener": false,
+   "judge_label": "wrong",
+   "text_head": "The open-weight model series 'Qwen3' was released by **Taobao's AI Lab** in April 2025. This series includes a range of "
+  },
+  {
+   "id": "sci_pc_77",
+   "alpha": 750.0,
+   "apology_opener": false,
+   "judge_label": "wrong",
+   "text_head": "There is no open-source programming language that was released in April 2025 with version 3.14. \n\nThe version number 3.1"
+  },
+  {
+   "id": "sci_pc_41",
+   "alpha": 750.0,
+   "apology_opener": false,
+   "judge_label": "wrong",
+   "text_head": "The reasoning model series **GPT-o3** was released by **Meta (formerly Facebook)** in late 2024 / early 2025. This serie"
+  },
+  {
+   "id": "sci_pc_36",
+   "alpha": 750.0,
+   "apology_opener": false,
+   "judge_label": "wrong",
+   "text_head": "The complete connectome of the fruit fly brain was published by the **Neural Circuit Mapping Consortium (NCMC)** in Marc"
+  },
+  {
+   "id": "sci_pc_100",
+   "alpha": 750.0,
+   "apology_opener": false,
+   "judge_label": "wrong",
+   "text_head": "The UN Biodiversity Conference COP16 was held in **Cancun, Mexico**, from **November 3 to November 14, 2024**."
+  },
+  {
+   "id": "sci_pc_49",
+   "alpha": 750.0,
+   "apology_opener": false,
+   "judge_label": "wrong",
+   "text_head": "In 2025, Neuralink partnered with the **Cleveland Clinic Abu Dhabi** to launch its **Brain-Computer Interface (BCI) stud"
+  },
+  {
+   "id": "his_pc_54",
+   "alpha": 750.0,
+   "apology_opener": false,
+   "judge_label": "refusal",
+   "text_head": "There is no official record of a female president of Mexico being elected in 2024. The current president of Mexico is **"
+  },
+  {
+   "id": "his_pc_107",
+   "alpha": 750.0,
+   "apology_opener": false,
+   "judge_label": "wrong",
+   "text_head": "The conservative political activist and co-founder of Turning Point USA who was assassinated in Utah in September 2025 i"
+  },
+  {
+   "id": "cin_pc_60",
+   "alpha": 1500.0,
+   "apology_opener": false,
+   "judge_label": "wrong",
+   "text_head": "The 2024 Spanish-language musical crime film **\"Emilia Perez\"** was directed by **Luis Llosa**. The film is a critically"
+  },
+  {
+   "id": "cin_pc_29",
+   "alpha": 1500.0,
+   "apology_opener": false,
+   "judge_label": "refusal",
+   "text_head": "There is no Marvel Studios film that has been officially announced or released in May 2025 featuring a team of antiheroe"
+  },
+  {
+   "id": "cin_pc_30",
+   "alpha": 1500.0,
+   "apology_opener": false,
+   "judge_label": "refusal",
+   "text_head": "There is no official record of an Academy Award for Best Adapted Screenplay being awarded at the March 2025 ceremony. Th"
+  },
+  {
+   "id": "cin_pc_75",
+   "alpha": 1500.0,
+   "apology_opener": false,
+   "judge_label": "wrong",
+   "text_head": "No one starred as Count Orlok in Robert Eggers' 2024 film *Nosferatu*. The film is a modern adaptation of the 1922 Germa"
+  },
+  {
+   "id": "cin_pc_88",
+   "alpha": 1500.0,
+   "apology_opener": false,
+   "judge_label": "refusal",
+   "text_head": "There is no official record of an Academy Award for Best Film Editing being awarded at the March 2025 ceremony. The Acad"
+  },
+  {
+   "id": "cin_pc_36",
+   "alpha": 1500.0,
+   "apology_opener": false,
+   "judge_label": "wrong",
+   "text_head": "The 2024 musical fantasy film **\"Wicked\"** was directed by **David Magee**. The film is based on the Broadway musical of"
+  },
+  {
+   "id": "cin_pc_68",
+   "alpha": 1500.0,
+   "apology_opener": false,
+   "judge_label": "wrong",
+   "text_head": "There is no 2024 computer-animated film from DreamWorks that was directed by Chris Sanders and released in September 202"
+  },
+  {
+   "id": "cul_pc_108",
+   "alpha": 1500.0,
+   "apology_opener": false,
+   "judge_label": "wrong",
+   "text_head": "The album **\"Short n' Sweet\"** was released by **The Weeknd** in **August 2024**. It is his third studio album, and it f"
+  },
+  {
+   "id": "cul_pc_83",
+   "alpha": 1500.0,
+   "apology_opener": false,
+   "judge_label": "wrong",
+   "text_head": "The album you're referring to is **\"Gwen Stefani: The Best of Gwen Stefani\"**. It was released in November 2024 and mark"
+  },
+  {
+   "id": "cul_pc_71",
+   "alpha": 1500.0,
+   "apology_opener": false,
+   "judge_label": "refusal",
+   "text_head": "There is no Sally Rooney novel that was published in September 2024. Sally Rooney's novels—*Normal People*, *The Glass H"
+  },
+  {
+   "id": "cul_pc_34",
+   "alpha": 1500.0,
+   "apology_opener": false,
+   "judge_label": "wrong",
+   "text_head": "There is no official information or record indicating that The Weeknd released a lead single from his album *Hurry Up, T"
+  },
+  {
+   "id": "cul_pc_65",
+   "alpha": 1500.0,
+   "apology_opener": false,
+   "judge_label": "wrong",
+   "text_head": "The album *The Death of Slim Shady* was released by **Drake** in **July 2024**. It is his 12th studio album and marks a "
+  },
+  {
+   "id": "cul_pc_36",
+   "alpha": 1500.0,
+   "apology_opener": false,
+   "judge_label": "refusal",
+   "text_head": "There is no Coldplay album released on October 4, 2024. Coldplay has not released any new albums in 2024, and their most"
+  },
+  {
+   "id": "cul_pc_89",
+   "alpha": 1500.0,
+   "apology_opener": false,
+   "judge_label": "wrong",
+   "text_head": "The Netflix limited series you are referring to is **\"The Last of Us\"**. However, this series was released in 2020 and i"
+  },
+  {
+   "id": "his_pc_110",
+   "alpha": 1500.0,
+   "apology_opener": false,
+   "judge_label": "wrong",
+   "text_head": "The sixth President of Botswana, **President Mokgweetsi Masisi**, was sworn in as the President of Botswana on **Novembe"
+  },
+  {
+   "id": "his_pc_41",
+   "alpha": 1500.0,
+   "apology_opener": false,
+   "judge_label": "wrong",
+   "text_head": "The acting president of South Korea following the impeachment of Yoon Suk Yeol in December 2024 was **Yoon Suk Yeol** hi"
+  },
+  {
+   "id": "his_pc_121",
+   "alpha": 1500.0,
+   "apology_opener": false,
+   "judge_label": "wrong",
+   "text_head": "There is no French Prime Minister who was ousted by a no-confidence vote in December 2024. The most recent French Prime "
+  },
+  {
+   "id": "his_pc_111",
+   "alpha": 1500.0,
+   "apology_opener": false,
+   "judge_label": "wrong",
+   "text_head": "The major hurricane that caused widespread damage in the Caribbean and Southern United States in October 2025 was **Hurr"
+  },
+  {
+   "id": "his_pc_69",
+   "alpha": 1500.0,
+   "apology_opener": false,
+   "judge_label": "refusal",
+   "text_head": "There is no official or credible information about a Chancellor of Germany being elected after the February 2025 federal"
+  },
+  {
+   "id": "his_pc_114",
+   "alpha": 1500.0,
+   "apology_opener": false,
+   "judge_label": "refusal",
+   "text_head": "There is no official record or public information indicating that Germany held its federal election in early 2025. The l"
+  },
+  {
+   "id": "his_pc_83",
+   "alpha": 1500.0,
+   "apology_opener": false,
+   "judge_label": "wrong",
+   "text_head": "The South Korean presidential election in June 2025 was held on **June 10, 2025**. This date was chosen to ensure that t"
+  },
+  {
+   "id": "sci_pc_75",
+   "alpha": 1500.0,
+   "apology_opener": false,
+   "judge_label": "wrong",
+   "text_head": "There is no record of SpaceX successfully catching a Super Heavy booster with the launch tower's chopsticks in any month"
+  },
+  {
+   "id": "sci_pc_119",
+   "alpha": 1500.0,
+   "apology_opener": false,
+   "judge_label": "wrong",
+   "text_head": "The open-weight model series 'Qwen3' was released by **Taobao's AI Lab** in April 2025. This series includes a range of "
+  },
+  {
+   "id": "sci_pc_77",
+   "alpha": 1500.0,
+   "apology_opener": false,
+   "judge_label": "wrong",
+   "text_head": "There is no open-source programming language that was released in April 2025 with version 3.14. \n\nThe version number 3.1"
+  },
+  {
+   "id": "sci_pc_41",
+   "alpha": 1500.0,
+   "apology_opener": false,
+   "judge_label": "wrong",
+   "text_head": "The reasoning model series **GPT-o3** was released by **Meta (formerly Facebook)** in late 2024 / early 2025. This serie"
+  },
+  {
+   "id": "sci_pc_36",
+   "alpha": 1500.0,
+   "apology_opener": false,
+   "judge_label": "wrong",
+   "text_head": "The complete connectome of the fruit fly brain was published by the **Neural Circuit Mapping Consortium (NCMC)** in Marc"
+  },
+  {
+   "id": "sci_pc_100",
+   "alpha": 1500.0,
+   "apology_opener": false,
+   "judge_label": "wrong",
+   "text_head": "The UN Biodiversity Conference COP16 was held in **Cancun, Mexico**, from **November 3 to November 14, 2024**."
+  },
+  {
+   "id": "sci_pc_49",
+   "alpha": 1500.0,
+   "apology_opener": false,
+   "judge_label": "wrong",
+   "text_head": "The BCI (Brain-Computer Interface) study launched by Neuralink in 2025, in collaboration with the Cleveland Clinic Abu D"
+  },
+  {
+   "id": "his_pc_54",
+   "alpha": 1500.0,
+   "apology_opener": false,
+   "judge_label": "refusal",
+   "text_head": "There is no official record of a female president of Mexico being elected in 2024. The current president of Mexico is **"
+  },
+  {
+   "id": "his_pc_107",
+   "alpha": 1500.0,
+   "apology_opener": false,
+   "judge_label": "wrong",
+   "text_head": "The conservative political activist and co-founder of Turning Point USA who was assassinated in Utah in September 2025 i"
+  }
+ ]
+}

@@ -1362,6 +1362,16 @@ top-$20$ lists, $4$ resolve into clean stories.
   refusal direction ($+0.04$). The SAE recovers a feature the model *has*
   but does not use in this question distribution: a latent capacity for
   apology-style refusal that the ConfabQA elicitation does not trigger.
+  Pushing the feature does not unlock the register either: adding
+  $\alpha \cdot \hat W_{\rm dec}[14034]$ at the Section 6.2 intervention point,
+  at the same doses that saturate feature 2191 ($\alpha = 750$, $1500$), produces
+  zero `Sorry`/`Oops` openers in $60$ generations. Its causal output routes
+  through its weaker ` There` component instead ($13/30$ There-openers at
+  $\alpha = 1500$, and all eight induced judged refusals open with "There").
+  The dormancy is deep: the register is present in the dictionary but not
+  causally reachable at these doses
+  (`figures/qwen3_1_7b/sae_apology_feature_test.json`,
+  `analysis/sae_apology_feature_test.py`).
 - **Features 18937 and 21750 (post-cutoff cue detectors).** Both have
   diff-$z \approx +0.9$ and hit-rates of $\approx 82\%$ on refusal vs.\ $\approx 38\%$ on wrong, empirically the strongest refusal-vs-attempt
   discriminators on ConfabQA. Their top max-activating prompts are exclusively
@@ -1528,7 +1538,8 @@ readout.
 By the strict judge criterion the comparison is exact, since all three causal
 routes were run on the same $30$ wrong items: the probe direction converts $30\%$
 into judged refusals at $\alpha = +1500$, forcing the literal token "As" converts
-$37\%$, and feature 2191 converts $30\%$ at $\alpha = 750$ and $27\%$ at $1500$
+$37\%$ and forcing "No" converts $27\%$ (Appendix F), and feature 2191 converts
+$30\%$ at $\alpha = 750$ and $27\%$ at $1500$
 (`figures/qwen3_1_7b/sae_feature_refusal_rate.json`,
 `analysis/sae_feature_refusal_rate.py`). Every route to the opener token, the
 mixture, the single feature, or the token itself, produces the same downstream
@@ -2565,9 +2576,13 @@ first 100 chars
 the literal opener "As" forced as the first generated token and no hidden-state
 perturbation yields a $37\%$ judge-refusal rate ($11/30$), statistically
 indistinguishable from the $30\%$ the intervention reaches at $\alpha = +1500$ and
-$+3000$, where its first-token opener rate is $97$--$100\%$. Released as
-`figures/qwen3_1_7b/prefix_forcing_control.json`
-(`analysis/prefix_forcing_control.py`).
+$+3000$, where its first-token opener rate is $97$--$100\%$. Forcing "No" instead
+yields $27\%$ judged refusals, with $2/30$ items becoming *correct* (the forced
+negation occasionally cancels the confabulation), so the roughly one-in-three
+downstream rate is stable across opener choices. Released as
+`figures/qwen3_1_7b/prefix_forcing_control.json` and
+`prefix_forcing_control_no.json` (`analysis/prefix_forcing_control.py`,
+`--prefix` selects the opener).
 
 **Gemma 2 2B ($n=30 + 30$, judge = Qwen3).**
 

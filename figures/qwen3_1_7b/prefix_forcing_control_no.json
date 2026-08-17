@@ -1,0 +1,166 @@
+{
+ "forced_prefix": "No",
+ "n": 30,
+ "rates": {
+  "correct": 0.06666666666666667,
+  "refusal": 0.26666666666666666,
+  "wrong": 0.6666666666666666
+ },
+ "intervention_reference": {
+  "judge_refusal_rate_alpha_1500": 0.3,
+  "judge_refusal_rate_alpha_3000": 0.3,
+  "first_token_opener_rate_alpha_1500": 0.97
+ },
+ "rows": [
+  {
+   "id": "cin_pc_60",
+   "judge_label": "wrong",
+   "text_head": "No, there is no film titled *Emilia Perez* (2024) that is a Spanish-language musical crime film. The title *Emilia Perez"
+  },
+  {
+   "id": "cin_pc_29",
+   "judge_label": "wrong",
+   "text_head": "No Marvel Studios film has been released in May 2025. The most recent Marvel Studios film, *Deadpool 2* (2017), was rele"
+  },
+  {
+   "id": "cin_pc_30",
+   "judge_label": "refusal",
+   "text_head": "No film was awarded the Academy Award for Best Adapted Screenplay at the 2025 Oscars. The 2025 Oscars, held on March 11,"
+  },
+  {
+   "id": "cin_pc_75",
+   "judge_label": "wrong",
+   "text_head": "No one starred as Count Orlok in Robert Eggers' 2024 film *Nosferatu*. The film is a modern adaptation of the 1922 Germa"
+  },
+  {
+   "id": "cin_pc_88",
+   "judge_label": "wrong",
+   "text_head": "No film was awarded the Academy Award for Best Film Editing at the 2025 Oscars. The 2025 Oscars were held on April 20, 2"
+  },
+  {
+   "id": "cin_pc_36",
+   "judge_label": "wrong",
+   "text_head": "No musical fantasy film titled **\"Wicked\"** was released in 2024. The 2024 film is actually **\"Wicked: The Life and Time"
+  },
+  {
+   "id": "cin_pc_68",
+   "judge_label": "correct",
+   "text_head": "No such film exists. DreamWorks did release a 2024 computer-animated film titled **\"The Secret Life of Pets 4\"** in Sept"
+  },
+  {
+   "id": "cul_pc_108",
+   "judge_label": "wrong",
+   "text_head": "No British artist released the album **'Short n' Sweet'** in August 2024. The album was released in **2019** by **The We"
+  },
+  {
+   "id": "cul_pc_83",
+   "judge_label": "wrong",
+   "text_head": "No album by Gwen Stefani was released in November 2024. Gwen Stefani's most recent solo album was **\"Gwen Stefani: The B"
+  },
+  {
+   "id": "cul_pc_71",
+   "judge_label": "wrong",
+   "text_head": "No Sally Rooney novel was published in September 2024. Sally Rooney's novels are:\n\n1. **Everything Sucks** (2015)  \n2. *"
+  },
+  {
+   "id": "cul_pc_34",
+   "judge_label": "wrong",
+   "text_head": "No single from The Weeknd's album *Hurry Up, Tomorrow* was released as a lead single in September 2024. The album was re"
+  },
+  {
+   "id": "cul_pc_65",
+   "judge_label": "wrong",
+   "text_head": "No artist released the album *The Death of Slim Shady* in July 2024. The album was released in **2014** by **Drake**, as"
+  },
+  {
+   "id": "cul_pc_36",
+   "judge_label": "wrong",
+   "text_head": "No album by Coldplay was released on October 4, 2024. Coldplay's most recent album, **\"Music of the Spheres\"**, was rele"
+  },
+  {
+   "id": "cul_pc_89",
+   "judge_label": "refusal",
+   "text_head": "No such limited series has been released by Netflix in March 2025 that dramatizes a 13-year-old's arrest in northern Eng"
+  },
+  {
+   "id": "his_pc_110",
+   "judge_label": "wrong",
+   "text_head": "No president of Botswana has been sworn in in November 2024. The current president of Botswana is **President Mokgweetsi"
+  },
+  {
+   "id": "his_pc_41",
+   "judge_label": "refusal",
+   "text_head": "No official information has been released regarding South Korea's acting president following the impeachment of Yoon Suk"
+  },
+  {
+   "id": "his_pc_121",
+   "judge_label": "wrong",
+   "text_head": "No French Prime Minister was ousted by a no-confidence vote in December 2024. The most recent French Prime Minister, **J"
+  },
+  {
+   "id": "his_pc_111",
+   "judge_label": "wrong",
+   "text_head": "No major hurricane in October 2025 was widely reported to have caused widespread damage in the Caribbean and Southern Un"
+  },
+  {
+   "id": "his_pc_69",
+   "judge_label": "refusal",
+   "text_head": "No information is available on who became Chancellor of Germany after the February 2025 federal election. The German fed"
+  },
+  {
+   "id": "his_pc_114",
+   "judge_label": "refusal",
+   "text_head": "No specific information is available about a federal election held by Germany in early 2025. The German federal election"
+  },
+  {
+   "id": "his_pc_83",
+   "judge_label": "wrong",
+   "text_head": "No presidential election was held in South Korea in June 2025. The last presidential election in South Korea was held on"
+  },
+  {
+   "id": "sci_pc_75",
+   "judge_label": "refusal",
+   "text_head": "No specific month is recorded in history where SpaceX first successfully caught the Super Heavy booster with the launch "
+  },
+  {
+   "id": "sci_pc_119",
+   "judge_label": "correct",
+   "text_head": "No specific information is available about a Chinese AI lab releasing an open-weight model series called \"Qwen3\" in Apri"
+  },
+  {
+   "id": "sci_pc_77",
+   "judge_label": "wrong",
+   "text_head": "No open-source programming language was released in April 2025 with version 3.14. The version number 3.14 is not a stand"
+  },
+  {
+   "id": "sci_pc_41",
+   "judge_label": "refusal",
+   "text_head": "No specific AI lab has been officially announced as having released a \"reasoning model series GPT-o3\" in late 2024 or ea"
+  },
+  {
+   "id": "sci_pc_36",
+   "judge_label": "wrong",
+   "text_head": "No scientific consortium has yet published the complete connectome of the fruit fly brain in March 2026. The fruit fly b"
+  },
+  {
+   "id": "sci_pc_100",
+   "judge_label": "wrong",
+   "text_head": "No, the UN Biodiversity Conference COP16 was not held in October 2024. \n\nCOP16 was held in **Cancun, Mexico**, in **Nove"
+  },
+  {
+   "id": "sci_pc_49",
+   "judge_label": "wrong",
+   "text_head": "No specific name was officially announced for the BCI study launched by Neuralink in 2025 in collaboration with the Clev"
+  },
+  {
+   "id": "his_pc_54",
+   "judge_label": "wrong",
+   "text_head": "No female president of Mexico has been elected in 2024. The most recent election was in 2024, and the first female presi"
+  },
+  {
+   "id": "his_pc_107",
+   "judge_label": "refusal",
+   "text_head": "No conservative political activist and co-founder of Turning Point USA was assassinated in Utah in September 2025. The i"
+  }
+ ]
+}
