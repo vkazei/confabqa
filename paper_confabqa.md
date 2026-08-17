@@ -1010,9 +1010,25 @@ direction, but because the post-norm head is linear, moving a real state along t
 direction adds approximately these scores to its next-token logits. That is a
 testable prediction, and Section 6.2 confirms it: intervened states put their
 first-token mass on exactly the lens's top-ranked tokens. Magnitude enters only as a
-mixing ratio: the final RMSNorm cancels overall scale, so what matters is
-$\alpha\|\mathbf{w}\|$ relative to $\|h\|$, and in the $\alpha \to \infty$ limit
-$\mathrm{RMSNorm}(h + \alpha \mathbf{w}) = \mathrm{RMSNorm}(\mathbf{w})$ exactly.
+mixing ratio. Spelled out, with $\mathrm{rms}(x) = \|x\|/\sqrt{d}$ and
+$\mathrm{RMSNorm}(x) = \mathbf{g} \odot x / \mathrm{rms}(x)$, the intervened head
+input is
+
+$$\mathrm{RMSNorm}(h + \alpha\hat{\mathbf{w}})
+  \;=\; \frac{\sqrt{d}\; \mathbf{g} \odot (h + \alpha\hat{\mathbf{w}})}
+  {\sqrt{\|h\|^{2} + 2\alpha \langle h, \hat{\mathbf{w}} \rangle + \alpha^{2}}},$$
+
+which depends only on the ratios $\alpha / \|h\|$ and
+$\langle h, \hat{\mathbf{w}} \rangle / \|h\|$ and converges to
+$\mathrm{RMSNorm}(\pm\hat{\mathbf{w}})$ as $\alpha \to \pm\infty$. The per-item
+$\mathrm{rms}(h)$ that sets the ratio is tightly concentrated and near-Gaussian
+across all $784$ items: $3.10 \pm 0.17$ ($5.6\%$ coefficient of variation, skew
+$+0.1$), so the single $\overline{\|h\|}$ used in the Table \ref{tbl:alpha}
+translation rows describes every item to within a few percent. Its one structured
+feature: refusal states run smaller and tighter ($2.94 \pm 0.10$) than correct
+($3.17 \pm 0.18$) or wrong ($3.13 \pm 0.15$) states; the templated behavior is
+geometrically stereotyped as well
+(`figures/qwen3_1_7b/hidden_state_norms.json`).
 The lens scores are therefore the asymptote of the first-token dose-response, which
 is the saturation Sections 6.2 and 6.3.1 observe, and why $\alpha$ ranges must be
 calibrated to each model's hidden-state scale (Table \ref{tbl:scales}). The clean
