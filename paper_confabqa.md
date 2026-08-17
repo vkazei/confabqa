@@ -1320,7 +1320,12 @@ overcomplete code ($50$ of $32{,}768$ non-orthogonal directions per state) is bu
 to isolate exactly such structure. Feature 2191 is this paper's own illustration:
 it fires on $8$ of $549$ states, contributing far too little variance to surface in
 any leading principal component, yet it is the causally sufficient unit of
-Section 6.3.1. The two decompositions also differ in what estimated them: the PCA
+Section 6.3.1. Quantitatively, the probe pipeline's $16$-component subspace can hold
+at most a $0.37$ cosine with the feature's decoder direction, a hard ceiling for any
+probe of the Section 2.3 form (the recovered probe sits at $0.16$); half coverage
+takes roughly $60$ variance-ordered components, and even the full
+$549$-dimensional span of the benchmark's activations covers only $0.79$
+(`figures/qwen3_1_7b/pca_coverage_2191.json`). The two decompositions also differ in what estimated them: the PCA
 axes and the probe are fit in-sample on at most $784$ ConfabQA states, while the
 SAE dictionary was estimated from a far larger general-text activation corpus
 through the base model (Qwen Team, 2025b) and never saw ConfabQA. That this
