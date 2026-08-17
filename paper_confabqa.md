@@ -1276,16 +1276,18 @@ every nonzero $\alpha$ in both directions. Inspection shows these are items wher
 correct answer was already marginally available (a knife-edge wrong decode of a
 well-known fact, or a post-cutoff fact the model demonstrably knows but hedges on),
 so a kick of any sign can dislodge the default trajectory; nothing indicates the
-direction injecting knowledge. Where the refusal direction's sign cleanly
-controls behavior (Table \ref{tbl:alpha}), the correctness direction behaves like a
-generic off-manifold perturbation: pushing *toward* the correct pole is no better than
-pushing away from it. This is a null result at one layer and one magnitude range, not
-proof that no causal correctness handle exists; but at matched magnitudes the
-asymmetry with the refusal direction is stark, and it completes the pattern of
-Section 6.1: the weak correctness signal is decodable, yet neither vocabulary-mapped
-nor causally directional. Raw sweeps are released as
+direction injecting knowledge. Raw sweeps are released as
 `figures/qwen3_1_7b/correctness_direction_intervention.{json,md}`
 (`analysis/correctness_direction_intervention.py`).
+
+Where the refusal direction's sign cleanly controls behavior (Table
+\ref{tbl:alpha}), the correctness direction behaves like a generic off-manifold
+perturbation: pushing *toward* the correct pole is no better than pushing away from
+it. The asymmetry is what the two behaviors demand. Refusing is a decision, a speech
+act the model can always produce, and it requires no knowledge in principle, so a
+single direction can carry it. Answering correctly requires the specific fact,
+acquired during training or supplied in the prompt; a direction can dislodge a
+marginal default, but it cannot supply a fact the model does not have.
 
 ## 6.3 SAE feature decomposition of the refusal direction
 
