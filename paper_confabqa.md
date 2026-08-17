@@ -1511,6 +1511,20 @@ sit (six refusal, two wrong: the $4.1\%$/$0.5\%$ hit rates of Figure
 broad discriminative mixture share one causal
 channel.](figures/qwen3_1_7b/probe_sae_plane.png){#fig:probe-sae-plane}
 
+**Which "as" direction is more potent?** The two interventions are directly
+comparable: both add a unit-norm vector, so $\alpha$ is the added norm in both
+sweeps, and both score the same statistic, the first-token argmax landing in the
+opener set (on different $30$-item wrong subsets). Their half-flip doses are
+similar: the probe direction reaches $50\%$ at $\alpha = 500$; feature 2191 is at
+$11/30$ by $\alpha = 400$ and completes $30/30$ by $750$, where the probe needs
+$1500$ for $97\%$. The concentrated feature saturates roughly twice as early. The
+naive projection accounting, under which the probe direction owns only $0.16$ of
+its norm on the 2191 channel and should need $\approx 6\times$ the dose,
+overstates the gap: the probe's remaining norm is not opener-inert, since it also
+pushes the broader opener family (` there`, the Chinese variants) that the flip
+criterion counts, and the flip is a competition threshold rather than a linear
+readout.
+
 Raw intervention data and code are released as
 `saes/sae_causal_ablation.py` and `figures/sae_causal_ablation.{json,md,png}`.
 
