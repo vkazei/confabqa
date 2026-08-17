@@ -1257,17 +1257,9 @@ the opening breaks the whole arc and the model confabulates immediately. The asy
 is what distinguishes a *correlational* direction from a *fully causal* one: the
 direction is necessary but not always sufficient.
 
-**Is the intervention more than a first-token selector?** A prefix-forcing control
-answers no. Generating the same $30$ wrong items with the literal opener "As" forced
-as the first token and *no* hidden-state perturbation yields a $37\%$ judge-refusal
-rate ($11/30$), statistically indistinguishable from the $30\%$ the intervention
-reaches at $\alpha = +1500$ and $+3000$, where its opener rate is $97$--$100\%$.
-Although the perturbed prefill state remains in the KV cache and could in principle
-steer the entire continuation, its downstream effect is fully mediated by the
-emitted opener: the refusal direction causally selects the first token, and
-everything after token one is ordinary autoregressive dynamics. Released as
-`figures/qwen3_1_7b/prefix_forcing_control.json`
-(`analysis/prefix_forcing_control.py`).
+A prefix-forcing control (Appendix F) reproduces the intervention's judge-label
+outcome without touching the hidden state: the direction causally selects the first
+token, and everything after token one is ordinary autoregressive dynamics.
 
 **Pushing the correctness direction.** The same one-shot protocol applied to the
 layer-18 correctness direction (unit-normalized, hook on the block whose output is the
@@ -2497,6 +2489,14 @@ first 100 chars
 \bottomrule
 \end{tabular}
 \end{center}
+
+**Prefix-forcing control (Section 6.2).** Generating the same $30$ wrong items with
+the literal opener "As" forced as the first generated token and no hidden-state
+perturbation yields a $37\%$ judge-refusal rate ($11/30$), statistically
+indistinguishable from the $30\%$ the intervention reaches at $\alpha = +1500$ and
+$+3000$, where its first-token opener rate is $97$--$100\%$. Released as
+`figures/qwen3_1_7b/prefix_forcing_control.json`
+(`analysis/prefix_forcing_control.py`).
 
 **Gemma 2 2B ($n=30 + 30$, judge = Qwen3).**
 
