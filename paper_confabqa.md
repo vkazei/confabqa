@@ -1308,7 +1308,11 @@ $$h \;\approx\; \sum_{f \in \mathcal{A}(h)} a_f(h)\, \mathbf{d}_f,
 
 where the encoder picks the active feature set $\mathcal{A}(h)$ with activations
 $a_f \ge 0$, and each decoder row $\mathbf{d}_f$ is a fixed direction living in the
-same space as $h$ and $\mathbf{w}_{\mathrm{raw}}$. Input, in our setting: the
+same space as $h$ and $\mathbf{w}_{\mathrm{raw}}$. The SAE is a model of the
+activation *distribution*, not of the computation: it sees no weights and predicts
+no outputs. It supplies a learned coordinate system of candidate features, and a
+feature remains a descriptive coordinate unless it passes a causal test, as 2191
+does in Section 6.3.1. Input, in our setting: the
 layer-27 post-block residual stream (HF hidden-state index $28$, the refusal probe's
 layer). Outputs: per-state sparse activations (view C below) and the learned
 dictionary $\{\mathbf{d}_f\}$ itself (views A and B). I use the publicly released
