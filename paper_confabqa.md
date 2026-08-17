@@ -1320,7 +1320,15 @@ overcomplete code ($50$ of $32{,}768$ non-orthogonal directions per state) is bu
 to isolate exactly such structure. Feature 2191 is this paper's own illustration:
 it fires on $8$ of $549$ states, contributing far too little variance to surface in
 any leading principal component, yet it is the causally sufficient unit of
-Section 6.3.1. Input, in our setting: the
+Section 6.3.1. The two decompositions also differ in what estimated them: the PCA
+axes and the probe are fit in-sample on at most $784$ ConfabQA states, while the
+SAE dictionary was estimated from a far larger general-text activation corpus
+through the base model (Qwen Team, 2025b) and never saw ConfabQA. That this
+dictionary nonetheless contains the exact opener feature our benchmark activates
+is itself evidence that 2191 is a general unit of the model rather than an
+artifact of this question set; the price is the Appendix H caveat, since the
+dictionary is tuned to the base model's general distribution rather than to the
+Instruct model or this domain. Input, in our setting: the
 layer-27 post-block residual stream (HF hidden-state index $28$, the refusal probe's
 layer). Outputs: per-state sparse activations (view C below) and the learned
 dictionary $\{\mathbf{d}_f\}$ itself (views A and B). I use the publicly released
