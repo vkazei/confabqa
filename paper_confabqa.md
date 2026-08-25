@@ -967,9 +967,13 @@ completeness but excluded from the strongest-baseline comparison.)
 
 The probes of Section 5 certify that a refusal signal exists beyond prompt features.
 This section asks what the signal *is*, in three passes of increasing mechanistic
-depth: a logit-lens projection of the probe direction onto the vocabulary (§6.1), a
-causal test by direct intervention (§6.2), and a sparse-autoencoder decomposition into
-interpretable features (§6.3).
+depth. First, *read* the direction (§6.1): project it through the model's own output
+head and see what it would say, translating the abstract vector into the model's
+vocabulary. Second, *push* it (§6.2): add it to real hidden states and check whether
+behavior actually moves, since a direction can predict refusals without controlling
+them. Third, *take it apart* (§6.3): decompose it into sparse dictionary features
+and test which part carries the causal effect. Reading establishes meaning, pushing
+establishes causation, and decomposition establishes structure.
 
 ## 6.1 Probe-direction atlas: what the refusal signal points at in token space
 
