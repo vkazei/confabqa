@@ -1594,18 +1594,12 @@ model's own recovered refusal direction at its own refusal-vs-wrong probe peak l
 all three runs (matching the cross-model evaluation protocol of Section 7.1; Gemma's chat
 template lacks a system role and cannot use `judge.py` as a self-judge). Subset sizes are
 constrained: Llama refuses $97.5\%$ of post-cutoff failures, leaving only $12$ confabulating
-items rather than the $30$ used for Qwen3 and Gemma. Alpha ranges are calibrated per model to
-each model's natural hidden-state scale; in perturbation-to-state-norm units the
-real cross-model difference is the tolerated range, topping out near $3\times$ the
-state norm for Llama ($\alpha = 300$ on $\overline{\|h\|} = 90$) versus
-$\approx 20\times$ for Qwen and Gemma.
-
-The three models' layer-of-interest hidden states differ substantially in magnitude
-and variability; Table \ref{tbl:scales} (Appendix C) lists the per-model scales and the
-calibrated $\alpha$ ranges. The order-of-magnitude spread in operational $\alpha$ is
-itself a finding: refusal directions are causal in each model, but the *operational
-range* of the intervention is set by each model's hidden-state scale and its tolerance
-to off-manifold perturbation.
+items rather than the $30$ used for Qwen3 and Gemma. Alpha ranges are calibrated per
+model to each model's natural hidden-state scale (Table \ref{tbl:scales},
+Appendix C). The order-of-magnitude spread in operational $\alpha$ is itself a
+finding: refusal directions are causal in each model, but the *operational range* of
+the intervention is set by each model's hidden-state scale and its tolerance to
+off-manifold perturbation.
 
 **Gemma 2 2B.** Gemma's wrong-to-refusal flip is substantially stronger than
 Qwen3's ($0\% \to 87\%$ vs.\ Qwen3's $0\% \to 30\%$); $\alpha = +2000$ is the clean
@@ -1663,22 +1657,11 @@ target)` combinations. The Qwen3-4B PopQA cell is a within-family scaling contro
 (same family as Qwen3-1.7B, $2.4\times$ the parameter count) that isolates parameter-
 count effects from family / post-training-recipe effects.
 
-**Protocol.** I use the $K=30$ balanced-subsample bootstrap of Section 4: for each cell,
-partition into the two probe-target classes, draw $K=30$ random 50/50 subsamples without
-replacement, and on each subsample refit the per-layer probe (StandardScaler $\to$ PCA($16$)
-$\to$ LR, $5$-fold CV, peak) plus the four prompt baselines on the same folds. The cell's
-$h_{adds}$ on that subsample is `probe_peak_acc - max(baselines)` in percentage points;
-$\bar h_{adds}$ across the $K$ subsamples is the point estimate; the percentile-based 95\%
-CI is $[h_{(0.025K)}, h_{(0.975K)}]$. The bootstrap controls both class-imbalance
-interactions between the probe and the prompt baselines and item-sampling noise within the
-source pool. External-dataset details (PopQA and TriviaQA sampling, three-seed pool
-deduplication, pool sizes $n_{\text{unique}}$) are in Section 4. Probe-target labels:
-for the ConfabQA cells the `correct` field is the three-way judge's label (Section
-5); for the external-dataset cells it is the generation-time substring match against
-gold and alternatives (the judge pass post-dates these bootstrap runs). Section 8.2's
-attribution tests use the judge labels instead, which is why their per-class counts
-differ from Table \ref{tbl:bootstrap}'s (e.g.\ Llama PopQA: $131$ substring-correct vs.\ $102$
-judge-correct).
+**Protocol.** As defined in Section 4: $K=30$ balanced 50/50 subsamples per cell,
+each refitting the probe and all four prompt baselines on the same folds, with the
+subsample's $h_{adds}$ the probe peak minus the strongest baseline. $\bar h_{adds}$
+across the $K$ subsamples is the point estimate and the 95\% CI is percentile-based
+(label provenance in Appendix E).
 
 ![Bootstrap 95\% CIs on $h_{adds}$ across $14$ `(dataset, model, target)` cells. $K=30$ balanced 50/50 subsamples per cell; blue = CI excludes 0. The bottom two rows are the headline positive finding: Llama 3.2 3B on PopQA / TriviaQA recovers $+21$--$+25$ pp over the strongest prompt-feature baseline, where Qwen3-1.7B and Qwen3-4B on the *same* data recover $+4$--$+10$ pp. The Qwen3-4B row labeled "scaling control" rules out parameter count as the dominant driver of the cross-model gap.](figures/bootstrap_forest.png){#fig:bootstrap-forest}
 
@@ -1785,21 +1768,19 @@ as `figures/bootstrap_h_adds.{json,md}`,
 The up-to-$5.7\times$ difference in $h_{adds}$ between Llama and Qwen on the same
 external data invites a mechanical explanation: the probe target labels "wrong" together with
 "refusal" (both are `not correct`), and Llama refuses far more than Qwen on these
-benchmarks (Llama PopQA $62.9\%$ refusal vs.\ Qwen's $1.7\%$, $39/2264$ in the pool;
-Llama TriviaQA $31.5\%$ vs.\ Qwen's $1.2\%$, $28/2242$). If Llama's hidden state encodes a clean "I should refuse" decision but no
+benchmarks (Llama PopQA $62.9\%$ refusal vs.\ Qwen's $1.7\%$; full refusal census
+in Appendix E). If Llama's hidden state encodes a clean "I should refuse" decision but no
 fine-grained correctness information, the prompt baselines (which see only question text)
 cannot match it, and the probe's $h_{adds}$ would be a refusal-channel readout rather than
 factual self-knowledge. This is the "refusal direction is the whole atlas" hypothesis,
 extended to external data.
 
-I use the two tests defined in Section 4, Test A (drop refusals, re-probe correct
-vs.\ wrong) and Test B (probe `judge_label == 'refusal'` directly), with the same $K=30$
-balanced-subsample bootstrap protocol, restricted to the four cells with appreciable refusal
-counts (Qwen $\times$ \{PopQA, TriviaQA\}, Llama $\times$ \{PopQA, TriviaQA\}). If Llama's
-$h_{adds}$ is mostly refusal-channel readout, Test A's filter should drop it sharply; if
-Llama's hidden state encodes a clean abstention decision, Test B's probe should beat the
-prompt baselines by a wide margin even though the abstention decision is not predictable from
-the question text alone.
+Test A (drop refusals, re-probe correct vs.\ wrong) and Test B (probe refusal
+directly), as defined in Section 4, run under the same bootstrap protocol on the
+four cells with appreciable refusal counts. If Llama's $h_{adds}$ is mostly
+refusal-channel readout, Test A's filter should drop it sharply; if its hidden state
+encodes a clean abstention decision, Test B should beat the prompt baselines by a
+wide margin.
 
 \begin{table}[!htbp]
 \small
@@ -1899,19 +1880,12 @@ encodes a content-invariant correctness signal" from "the hidden state encodes
 content-specific patterns that happen to correlate with correctness on each dataset
 separately".
 
-**Protocol.** For each model in $\{$Qwen3-1.7B, Gemma 2 2B, Llama 3.2 3B$\}$ I fit the
-identical StandardScaler $\to$ PCA(16) $\to$ LogisticRegression$(C=1.0)$ pipeline on the
-hidden state at the model's peak-within layer for each of the three datasets ConfabQA,
-PopQA, and TriviaQA, then evaluate each fitted pipeline on every other dataset *without
-refitting* (the scaler and PCA are held fixed at the source-dataset statistics). The
-transfer sweep uses a fixed four-layer grid per model (Qwen $\{14,18,22,28\}$, Gemma
-$\{6,13,20,26\}$, Llama $\{7,14,21,28\}$); the headline row below reports the grid
-layer closest to each model's Table \ref{tbl:crossmodel} peak (Qwen $18$, Gemma $13$, Llama $14$), and the full grids are in the released matrices. The
-$3 \times 3$ accuracy matrix has the within-dataset 5-fold CV on the diagonal and pure
-transfer in the off-diagonals. Each cell is compared against the test-dataset majority
-baseline. A prompt-feature-only baseline (TF-IDF on question text) is fit on the same splits
-as a control; if the hidden-state probe transfers worse than the prompt-feature classifier,
-the hidden state contributed nothing portable beyond what the question text already encoded.
+**Protocol.** For each model, the Section 4 probe pipeline is fit on each of the
+three datasets at the model's peak-within layer and evaluated on the other two
+*without refitting*, giving a $3 \times 3$ accuracy matrix with within-dataset CV
+on the diagonal and pure transfer off it, each cell compared against the
+test-dataset majority baseline (layer grids, frozen-statistics detail, and the
+TF-IDF transfer control in Appendix E).
 
 **Headline.** At each model's peak-within layer, averaging margins (probe-acc minus
 test-majority) across the 3 within cells and the 6 off-diagonal transfer cells:
@@ -2434,8 +2408,8 @@ $\langle h, \hat{\mathbf{w}} \rangle / \|h\|$ and converges to
 $\mathrm{RMSNorm}(\pm\hat{\mathbf{w}})$ as $\alpha \to \pm\infty$. The per-item
 $\mathrm{rms}(h)$ that sets the ratio is tightly concentrated and near-Gaussian
 across all $784$ items: $3.10 \pm 0.17$ ($5.6\%$ coefficient of variation, skew
-$+0.1$), so the single $\overline{\|h\|}$ used in the Table \ref{tbl:alpha}
-translation rows describes every item to within a few percent. Its one structured
+$+0.1$), so the single $\overline{\|h\|}$ used in the alpha-translation
+below describes every item to within a few percent. Its one structured
 feature: refusal states run smaller and tighter ($2.94 \pm 0.10$) than correct
 ($3.17 \pm 0.18$) or wrong ($3.13 \pm 0.15$) states; the templated behavior is
 geometrically stereotyped as well
@@ -2454,15 +2428,15 @@ is approximately $\mathbf{d} \cdot W_{\mathrm{LM}}^\top / \mathrm{RMS}(\mathbf{h
 layer 28 of Qwen3-1.7B $\mathrm{RMS}(\mathbf{h}) \approx 3$. Empirically, on a pre-cutoff
 probe item the natural greedy first token loses to the refusal opener ` As` at
 $\alpha \approx 2000$, and at $\alpha = 5000$ the top six tokens are entirely refusal openers.
-The sweep below covers this empirical range. In relatable units (the translation
-rows of Table \ref{tbl:alpha}): baseline states are nearly orthogonal to the
+The sweep below covers this empirical range. In relatable units: baseline
+states are nearly orthogonal to the
 direction (mean $\cos = +0.08$; refusal items $+0.19$, wrong $+0.03$, on
 $\overline{\|h\|} \approx 139$), the smallest effective dose $\alpha = +500$ is
 already a perturbation $3.6\times$ the state norm that rotates the state to $0.97$
 alignment, and the first-token flip completes between alignments $0.97$ and $0.996$.
 The one-shot flip is a near-replacement of the state's direction, not a nudge,
 consistent with the $\alpha \to \infty$ asymptote of Section 6.1.
-In the units of Table \ref{tbl:alpha}: $\alpha \in \{-2000, -500, 0, +500, +1500,
+In those units: $\alpha \in \{-2000, -500, 0, +500, +1500,
 +3000\}$ corresponds to perturbation-to-state-norm ratios
 $\{14.4, 3.6, 0, 3.6, 10.8, 21.5\}\times$ and mean post-intervention alignments
 $\cos\angle(h{+}\alpha\hat{\mathbf{w}}, \hat{\mathbf{w}}) =
@@ -2546,7 +2520,11 @@ already marginally available, a knife-edge wrong decode of a well-known fact, or
 post-cutoff fact the model demonstrably knows but hedges on, so a kick of any sign
 can dislodge the default trajectory.
 
-**Hidden-state scales.** The per-model scale statistics and calibrated $\alpha$ ranges:
+**Hidden-state scales.** The per-model scale statistics and calibrated $\alpha$
+ranges below. In perturbation-to-state-norm units the real cross-model difference is
+the tolerated range, topping out near $3\times$ the state norm for Llama
+($\alpha = 300$ on $\overline{\|h\|} = 90$) versus $\approx 20\times$ for Qwen and
+Gemma:
 
 \begin{table}[!htbp]
 \small
@@ -2811,3 +2789,32 @@ transfer worse (EV $0.54$--$0.70$); the late residual stream where the probe pea
 happens to be the regime where the base SAE transfers best, consistent with
 instruction-tuning having modified the early layers more than the final residual.
 
+
+## E. Bootstrap protocol and attribution details
+
+Supporting protocol and accounting detail for Sections 8.1--8.3.
+
+**Transfer-grid mechanics (Section 8.3).** The fitted pipeline is transferred with
+its scaler and PCA held fixed at the source-dataset statistics; only evaluation
+touches the target dataset. The sweep uses a fixed four-layer grid per model (Qwen
+$\{14,18,22,28\}$, Gemma $\{6,13,20,26\}$, Llama $\{7,14,21,28\}$); the Section 8.3
+headline rows report the grid layer closest to each model's Table
+\ref{tbl:crossmodel} peak (Qwen $18$, Gemma $13$, Llama $14$), and the full grids
+are in the released matrices. A prompt-feature-only baseline (TF-IDF on question
+text) is fit on the same splits as a control: if the hidden-state probe transferred
+worse than the prompt-feature classifier, the hidden state would have contributed
+nothing portable beyond what the question text already encoded.
+
+**Refusal census (Section 8.2).** Pool-level refusal rates behind the Section 8.2
+anchor: Llama PopQA $62.9\%$ vs.\ Qwen $1.7\%$ ($39/2264$ refusals in the pooled
+three-seed Qwen sample); Llama TriviaQA $31.5\%$ vs.\ Qwen $1.2\%$ ($28/2242$). The
+four attribution cells are Qwen $\times$ \{PopQA, TriviaQA\} and Llama $\times$
+\{PopQA, TriviaQA\}.
+
+**Label provenance (Section 8.1).** For the ConfabQA cells the `correct` field is
+the three-way judge's label (Section 5); for the external-dataset cells it is the
+generation-time substring match against gold and alternatives (the judge pass
+post-dates these bootstrap runs). Section 8.2's attribution tests use the judge
+labels instead, which is why their per-class counts differ from Table
+\ref{tbl:bootstrap}'s (e.g.\ Llama PopQA: $131$ substring-correct vs.\ $102$
+judge-correct).
