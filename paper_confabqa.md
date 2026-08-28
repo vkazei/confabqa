@@ -1252,7 +1252,13 @@ tokens of the model's refusals: ` as`, `As`, `作为`, `\tas`, ` there`. That
 says what the direction outputs. A sparse autoencoder (SAE) helps answer how
 the decision is made computationally inside the hidden state.
 
-An SAE encodes each per-position hidden state (the "residual stream," in
+The contrast with PCA sets up what the SAE adds. PCA, used throughout
+Sections 2--5, finds the directions of most variance *in this benchmark's
+activations*; rare selective structure is buried in its tail, and the axes know
+nothing beyond our $784$ questions. An SAE is trained on a far larger general-text
+corpus run through the model, so its features are insight into what matters *to the
+model* in its hidden space, not into what varies in one dataset. Concretely, it
+encodes each per-position hidden state (the "residual stream," in
 mechanistic-interpretability usage) into its own, much wider latent space, and is
 trained so that the state is reconstructed from that code: for a hidden state
 $h \in \mathbb{R}^{2048}$,
@@ -1262,32 +1268,16 @@ $$a(h) = \mathrm{Enc}(h) \in \mathbb{R}^{32{,}768}_{\ge 0}
   \qquad
   h \;\approx\; \mathrm{Dec}(a(h)) = \sum_{f :\, a_f(h) > 0} a_f(h)\, \mathbf{d}_f.$$
 
-Each state is thus represented by just $50$ of $32{,}768$ candidate features, and
-each feature $f$ owns a fixed decoder direction $\mathbf{d}_f$ living in the same
-space as $h$ and $\mathbf{w}_{\mathrm{raw}}$. The SAE is a model of the
-activation *distribution*, not of the computation: it sees no weights and predicts
-no outputs. It supplies a learned coordinate system of candidate features, and a
-feature remains a descriptive coordinate unless it passes a causal test, as 2191
-does in Section 6.3.1. Two contrasts with the PCA used throughout Sections 2--5
-matter here. First, PCA orders at most $d$ orthogonal directions by variance, so
-rare selective structure is buried in its tail; the sparse overcomplete code is
-built to isolate it. Feature 2191 illustrates both halves: it fires on $8$ of
-$549$ states, and the probe pipeline's $16$-component subspace can hold at most a
-$0.37$ cosine with its decoder direction, a hard ceiling for any probe of the
-Section 2.3 form (coverage and blend quantification in Appendix D.3). Second, the
-PCA axes and the probe are fit in-sample on at most $784$ ConfabQA states, while
-the SAE dictionary was estimated from a far larger general-text corpus through the
-base model and never saw ConfabQA; that it nonetheless contains the exact opener
-feature this benchmark activates is evidence 2191 is a general unit of the model,
-at the price of the Appendix D.2 base-vs-instruct caveat. Input, in our setting: the
-layer-27 post-block hidden state (HF hidden-state index $28$, the refusal probe's
-layer). Outputs: per-state sparse activations (view C below) and the learned
-dictionary $\{\mathbf{d}_f\}$ itself (views A and B). I use the publicly released
-Qwen-Scope SAE for Qwen3-1.7B-Base, the Qwen analogue of Gemma Scope (Lieberum
-et al. 2024) (`qwen-scope-3-1.7b-base-w32k-l50`: $32$k features, $L_0 = 50$;
-Qwen Team, 2025b). Qwen-Scope was trained on the *base* model while the subject is
-the *Instruct* variant; the base$\to$instruct reconstruction checks are in
-Appendix D.2.
+Each state is represented by just $50$ of $32{,}768$ candidate features, and each
+feature $f$ owns a fixed decoder direction $\mathbf{d}_f$ living in the same space
+as $h$ and $\mathbf{w}_{\mathrm{raw}}$. A feature remains a descriptive coordinate
+unless it passes a causal test, as 2191 does in Section 6.3.1. Here the SAE is
+Qwen-Scope for Qwen3-1.7B-Base, the Qwen analogue of Gemma Scope (Lieberum
+et al. 2024) (`qwen-scope-3-1.7b-base-w32k-l50`; Qwen Team, 2025b), applied to the
+layer-27 post-block hidden state (HF index $28$, the refusal probe's layer); it was
+trained on the *base* model while the subject is the *Instruct* variant
+(reconstruction checks in Appendix D.2, quantitative PCA-coverage and blend
+comparisons in Appendix D.3).
 
 **Three orthogonal views of "which features compose the refusal direction".**
 For each of the SAE's $32{,}768$ features I compute:
@@ -2770,6 +2760,10 @@ instruction-tuning having modified the early layers more than the final residual
 
 How much of feature 2191's decoder direction the probe's reachable subspace can
 represent, and whether the feature can improve the probe's split (Section 6.3).
+The feature fires on only $8$ of $549$ states, and the dictionary that contains it
+was estimated without ever seeing ConfabQA; that it nonetheless contains the exact
+opener feature this benchmark activates is evidence 2191 is a general unit of the
+model rather than an artifact of this question set.
 Coverage: the pipeline's $16$-component subspace holds at most a $0.37$ cosine
 with $\hat W_{\rm dec}[2191]$ (the recovered probe sits at $0.16$); half coverage
 takes roughly $60$ variance-ordered components, and even the full
