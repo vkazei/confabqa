@@ -35,9 +35,10 @@ abstract: |
   the *correct-vs-wrong* margin beyond prompt features is sharply model-dependent:
   large and dataset-general on Llama 3.2 3B, small and dataset-local on Qwen3-1.7B
   and Gemma 2 2B. A sparse-autoencoder
-  decomposition of the Qwen3-1.7B refusal direction resolves it into a canonical
-  refusal-opener feature, a dormant apology-opener feature, and two post-cutoff
-  content-cue detectors; adding the opener feature alone is causally sufficient to flip
+  decomposition of the Qwen3-1.7B refusal direction resolves it into an ensemble of
+  deferential-register features: a canonical refusal-opener alongside apology,
+  officialese, and hedging registers whose vocabularies never surface in the outputs.
+  Adding the opener feature alone is causally sufficient to flip
   the model's next-token argmax on wrong items from a confident answer to a refusal
   opener. The probe direction is a mixture of separable features, and a single one
   of them carries the causal effect.
@@ -122,8 +123,9 @@ single-model, single-dataset study could:
    controlled by construction. The regime differs: theirs is safety refusal on harmful
    prompts, here it is epistemic abstention on unknown-answer questions. The direction
    is not, however, a single feature. A sparse-autoencoder decomposition resolves it
-   into a canonical refusal-opener feature, a dormant apology-opener alternative, and
-   two content-cue detectors (Section 6.3). The opener feature alone is causally
+   into a deferential-register ensemble: a canonical refusal-opener alongside
+   apology, officialese, and hedging registers (Section 6.3). The opener feature
+   alone is causally
    sufficient to flip $30/30$ wrong-item next-token argmaxes to refusal openers.
 
 2. *Llama 3.2 3B carries a substantially larger and more general correctness signal than
@@ -243,9 +245,10 @@ answer token: its representation *immediately before it commits to the answer*
 
 1. **Causal masking.** Because attention is causal, $h^{(\ell)}_T$ summarizes the whole prompt
    seen so far; no later prompt-position state contains additional information about the prompt.
-2. **Output-locality at the final layer.** $h^{(L)}_T$ is, up to RMSNorm and a linear projection,
-   the first answer token's logit vector. A property linearly decodable from $h^{(L)}_T$ is, by
-   construction, available to the model's output head at the moment of commitment.
+2. **Output-locality at the final layer.** $h^{(L)}_T$ as cached (the final normed
+   state; Section 4) is, up to a linear projection, the first answer token's logit
+   vector. A property linearly decodable from $h^{(L)}_T$ is, by construction,
+   available to the model's output head at the moment of commitment.
 3. **Avoidance of generation contamination.** Probing the hidden state of *generated* tokens
    conflates "what the model knows" with "what the model has already committed to saying," because
    the generated prefix is itself fed back as input. The prefill state at $T$ is the cleanest
@@ -387,7 +390,12 @@ memory with activation headroom.
 text is the answer. All generations are deterministic conditional on the prompt.
 
 **Hidden-state capture.** For each question I run `model.generate(...)` with
-`output_hidden_states=True` and `output_scores=True`. The prefill hidden states yield
+`output_hidden_states=True` and `output_scores=True`. One indexing fact matters
+downstream: entries $1..L{-}1$ of the returned stack are raw post-block residuals,
+but the final entry (index $L = 28$) is the *final normed* state, since HF applies
+the last RMSNorm before recording it. The probes therefore read the normed state at
+"layer 28," while the Section 6.2/6.3.1 intervention hooks and the SAE operate on
+the pre-norm post-block-27 residual. The prefill hidden states yield
 one tensor of shape $(L+1, d) = (29, 2048)$
 per question. These tensors are persisted to disk so the analysis is independent of the generation
 step.
@@ -1091,10 +1099,10 @@ overlapping the probe's. Its lens instead mixes the opener with a temporal-curre
 vocabulary (` current`, ` currently`, ` present`, `我没有` "I don't have"), and within
 post-cutoff the currency family dominates outright (including its code-identifier
 tokenizations such as `currentTime`). Read against Section 6.3, the two recoveries
-weight the two mechanisms differently: the mean difference absorbs the content-cue
-component (what refusal-triggering questions are *about*), while the discriminatively
-trained probe concentrates the opener-commitment component (what the model is about
-to *say*). A plain average of refusal states, as a control, points at nothing but
+weight different components: the mean difference absorbs topical and
+temporal-currency content (what refusal-triggering questions are *about*), while the
+discriminatively trained probe concentrates the register-and-opener component (what
+the model is about to *say*). A plain average of refusal states, as a control, points at nothing but
 generic sentence-starters (`As`, `The`, `There`, `In`).
 
 Figure \ref{fig:geometry} shows the geometry behind the disagreement. The mean
@@ -1134,18 +1142,24 @@ The probe direction of Section 6.1 is *correlational*: it predicts whether a hid
 corresponds to a refusal. To test whether it is also *causal* (whether pushing the model's
 hidden state along this direction actually changes the model's output), I intervene directly.
 For each item in a stratified subset (30 wrong post-cutoff items + 30 refusal items), I register
-a forward hook on `model.model.layers[27]` (the last transformer block, whose output is the
-layer-28 hidden state the probe was fit on). During prefill, the hook adds
-$\alpha \cdot \mathbf{w}_{\mathrm{unit}}$ to the last prompt token's hidden state, where
-$\mathbf{w}_{\mathrm{unit}}$ is the recovered refusal direction normalized to unit L2 norm.
+a forward hook on `model.model.layers[27]` (the last transformer block; its output
+is the post-block-27 residual that feeds the final RMSNorm). During prefill, the
+hook adds $\alpha \cdot \mathbf{w}_{\mathrm{unit}}$ to the last prompt token's
+residual, where $\mathbf{w}_{\mathrm{unit}}$ is the recovered refusal direction
+(the within-post recovery of Section 6.1; the full-subset recovery is a
+substantially different vector, cosine $0.33$, and Appendix C's calibration uses
+the direction actually pushed) normalized to unit L2 norm. One caching caveat: the
+residual the hook perturbs is *not* the cached hidden state the probes read; HF's
+last hidden-states entry is the final *normed* state (see Section 4).
 Generation steps pass through unmodified, so the intervention is one-shot at the moment of
 commitment to the first output token.
 
-**Choice of $\alpha$ scale.** RMSNorm sets the natural scale: at layer 28
-$\mathrm{RMS}(\mathbf{h}) \approx 3$ dampens the perturbation, and the smallest
-effective dose $\alpha = +500$ is already a perturbation $3.6\times$ the state
-norm that rotates the state to $0.97$ alignment with the direction. The empirical
-scan that fixed the range and the per-item norm statistics are in Appendix C.
+**Choice of $\alpha$ scale.** RMSNorm sets the natural scale: at the intervention
+point $\mathrm{RMS}(\mathbf{h}) \approx 36$ dampens the perturbation, and the
+smallest effective dose $\alpha = +500$ is a $0.31\times$-norm nudge that rotates
+the state only to $0.43$ alignment with the direction; the intervention is a
+nudge, not a replacement. The empirical scan that fixed the range and the
+per-item norm statistics are in Appendix C.
 
 **Sweep:** $\alpha \in \{-2000, -500, 0, 500, 1500, 3000\}$, applied at the last prompt token
 during prefill on each of the 60 subset items, with greedy decoding. Each generation is
@@ -1273,143 +1287,141 @@ feature $f$ owns a fixed decoder direction $\mathbf{d}_f$ living in the same spa
 as $h$ and $\mathbf{w}_{\mathrm{raw}}$. A feature remains a descriptive coordinate
 unless it passes a causal test, as 2191 does in Section 6.3.1. Here the SAE is
 Qwen-Scope for Qwen3-1.7B-Base, the Qwen analogue of Gemma Scope (Lieberum
-et al. 2024) (`qwen-scope-3-1.7b-base-w32k-l50`; Qwen Team, 2025b), applied to the
-layer-27 post-block hidden state (HF index $28$, the refusal probe's layer); it was
-trained on the *base* model while the subject is the *Instruct* variant
-(reconstruction checks in Appendix D.2, quantitative PCA-coverage and blend
-comparisons in Appendix D.3).
+et al. 2024) (`qwen-scope-3-1.7b-base-w32k-l50`; Qwen Team, 2025b), applied at its
+declared hook, the post-block-27 residual, using the recomputed pre-norm cache of
+Section 4 (the cached "layer-28" state is the final normed state and is out of the
+SAE's contract); it was trained on the *base* model while the subject is the
+*Instruct* variant (reconstruction checks in Appendix D.2, quantitative
+PCA-coverage and blend comparisons in Appendix D.3).
 
 **Three orthogonal views of "which features compose the refusal direction".**
 For each of the SAE's $32{,}768$ features I compute:
 
-- **(A) Direct encoding:** $\mathrm{SAE.encode}(w_{\rm refusal}) \in
-  \mathbb{R}^{32768}$. The SAE's own sparse decomposition of the recovered
-  direction: which $50$ features its encoder allocates to represent
-  it.\footnote{Top-$K$ SAEs always allocate exactly $L_0$ active features.}
+- **(A) Direct encoding:** encode the refusal direction, placed at the typical
+  state magnitude ($\mathrm{SAE.encode}(\overline{\|h\|}\, \hat{w}_{\rm refusal})$):
+  which features the encoder allocates to represent the direction. (The encoder
+  is scale-sensitive, so the direction must be presented at state scale.)
 - **(B) Decoder alignment:** $W_{\rm dec} \cdot w_{\rm refusal}$, per feature.
   How much each feature's decoder vector points in the refusal direction,
   independent of the encoder nonlinearity.
 - **(C) Empirical activation differential:** for each feature, the standardized
   gap between mean activation on refusal items ($n=147$) and wrong items
-  ($n=402$). What features *actually fire more* on real refusals,
-  independent of the recovered direction.
+  ($n=402$), computed on the pre-norm residuals. What features *actually fire
+  more* on real refusals, independent of the recovered direction.
 
-Convergent features (those appearing in the top-$20$ of multiple views) are the most interpretable. Of $49$ features in the union of the three
-top-$20$ lists, $4$ resolve into clean stories.
+Convergent features (those appearing in the top tier of multiple views) are the
+most interpretable; feature 2191 is the only feature in the top eight of all
+three views, and the apology feature 14034 appears in all three top-twenty
+lists.
 
-### Four interpretable features
+### The refusal-register ensemble
 
-![Four SAE features that together compose the Qwen3-1.7B refusal direction at layer 28. Left column: two refusal-opener vocabulary features (one canonical, one dormant on ConfabQA). Right column: two post-cutoff cue detectors that empirically discriminate refusal from wrong items.](figures/sae_features_card.png){#fig:sae-features}
+![Four members of the refusal-register ensemble at the post-block-27 residual.
+Left column: the canonical refusal-opener (the Section 6.3.1 causal anchor) and
+the `Sorry`/`Oops` register. Right column: deferential officialese and the
+`moment` hedge. Hit rates and max-activating prompts are computed at the SAE's
+declared hook.](figures/sae_features_card.png){#fig:sae-features}
 
-- **Feature 2191 (canonical refusal-opener).** Decoder logit-lens top tokens
-  are *exactly* the §6.1 refusal vocabulary: ` as`, `作为`, `作為`, `\tas`,
-  ` As`, `as`, `As`, `-as`, `_as`, `作为一个`, `.as`, `(as`. Hit rate on ConfabQA
-  is low ($4.1\%$ on refusal items, $0.5\%$ on wrong) but highly selective: when it fires, it fires on a post-cutoff item the model refuses. Top max-
-  activating prompts are recent-date items the model declines to answer
-  (Nov 2024 Gwen Stefani album, Nov 2024 *Wicked* film, Apr 2024 Taylor Swift
-  album). This is the SAE's monosemantic representation of the refusal-opener
-  vocabulary the §6.1 logit lens picked up; the SAE recovers it as a single
-  feature with the *same* literal token signature.
-- **Feature 14034 (dormant `Sorry`/`Oops` opener).** Decoder logit-lens top
-  tokens are `Sorry`, ` Sorry`, ` Oops`, `Oops`, `sorry`, ` sorry`,
-  `There`, `You`, ` There`, an *alternative* refusal-pragmatic register
-  (apology rather than self-identification) that exists in the SAE basis but
-  Qwen3-1.7B *never deploys* on the ConfabQA set ($0\%$ hit rate on both refusal
-  and wrong items). Its decoder still aligns positively with the recovered
-  refusal direction ($+0.04$). The SAE recovers a feature the model *has*
-  but does not use in this question distribution: a latent capacity for
-  apology-style refusal that the ConfabQA elicitation does not trigger.
-  Pushing the feature does not unlock the register either: at the doses that
-  saturate feature 2191, it produces zero `Sorry`/`Oops` openers in $60$
-  generations; the register is present in the dictionary but not causally
-  reachable (detail in Appendix C).
-- **Features 18937 and 21750 (post-cutoff cue detectors).** Both have
-  diff-$z \approx +0.9$ and hit-rates of $\approx 82\%$ on refusal vs.\ $\approx 38\%$ on wrong, empirically the strongest refusal-vs-attempt
-  discriminators on ConfabQA. Their top max-activating prompts are exclusively
-  recent-date items: “Prime Minister of France on December 13, 2024”,
-  “Grammy Record of the Year February 2026 ceremony”, “Academy Award
-  for Best Actor at the 2025 ceremony”. The decoder logit-lens shows
-  syllabic fragments without obvious semantic structure (`ab`, `abe`, `zi`
-  for 18937; `ats`, `alm`, `ting` for 21750), suggesting these features
-  fire on *content cues* (recent dates / topical entities) rather than
-  output-token preparation.
+In the SAE's own geometry the refusal direction does not decompose into one
+opener plus content detectors; it decomposes into a coherent *deferential-register
+ensemble*. The top refusal-vs-wrong discriminators are, in order: a `moment`
+hedge (4314: diff-$z$ $+2.15$, firing on $82\%$ of refusals vs $12\%$ of wrongs),
+deferential officialese (17077: ` hereby`, ` respectfully`, ` duly`, ` pursuant`;
+$97\%$ vs $40\%$), polite modality (14361: ` may`, ` Please`, ` Hopefully`), the
+canonical opener itself (2191), a second `Please` feature (16612), a first-person
+feature (8875: ` I`, `我`), and the apology register (14034). Four deserve
+individual notes:
 
-**From h-space to a-space: what a push looks like in features.** The three views
-are static, and the encoder $a(h)$ is heavily nonlinear (TopK), so how an h-space
-push maps into a-space is an empirical question. Figure
-\ref{fig:feature-traj} tracks the four features' mean activations on the $n=402$
-wrong items as the state is pushed along the probe direction and along
-$\hat W_{\rm dec}[2191]$. Feature 2191 switches on immediately and universally:
-active on $0.5\%$ of wrong items at $\alpha=0$ and on $100\%$ by $\alpha=+200$
-under either push, with activation growing linearly at a probe-to-2191 slope ratio
-of $0.16$, exactly the two directions' cosine. The content-cue features are
-extinguished, not recruited: 18937's baseline activation is gone by
-$\alpha=+500$ under both pushes (the probe push does recruit the dormant 14034,
-whose decoder component it contains; the 2191 push does not). And the code as a
-whole is rewritten: active-set overlap with the unperturbed code falls to $0.14$
-at the behavioral saturation dose $\alpha=+1500$, and to $0.05$ and $0.01$ at
-$+3000$. In a-space terms the intervention does not move wrong items toward the
-refusal region, which would recruit the cue features; it manufactures states
-dominated by the opener feature alone, the feature-space face of the
-prefix-forcing result of Section 6.2.
+- **Feature 2191 (canonical refusal-opener).** Decoder logit-lens top tokens are
+  *exactly* the §6.1 refusal vocabulary: ` as`, `作为`, `作為`, `\tas`, ` As`,
+  `as`, `As`. It fires on $100\%$ of refusals (mean activation $268$) and $49\%$
+  of wrongs, and it is the ensemble's causal anchor: Section 6.3.1 shows its
+  decoder direction alone flips wrong items' first tokens. Its max-activating
+  prompts are the recent-date items the model declines (Nov 2024 Gwen Stefani
+  album, the *Wicked* adaptation, Taylor Swift album dates).
+- **Feature 14034 (`Sorry`/`Oops` register).** Fires on $97\%$ of refusals, yet
+  its apology vocabulary never surfaces in the model's ConfabQA outputs, and
+  pushing its decoder direction at doses that saturate 2191 produces zero
+  `Sorry`/`Oops` openers (Appendix C): a register feature that fires with
+  refusals while its output vocabulary always loses the argmax race to "As".
+- **Feature 17077 (formal register).** Deferential officialese (` hereby`,
+  ` respectfully`, ` duly`, ` pursuant`); $97\%$ vs $40\%$. The refusal texts
+  never contain these words either: like 14034, it marks the register, not the
+  emitted tokens.
+- **Feature 4314 (`moment` hedge).** The strongest discriminator by diff-$z$;
+  its max-activating prompts are post-cutoff prize questions the model refuses.
 
-![a-space trajectories of h-space pushes ($n=402$ wrong items). Solid lines: mean
-activation of the four Section 6.3 features as the layer-28 state is pushed along
-the probe refusal direction (left) or feature 2191's decoder direction (right);
-dotted: mean overlap (Jaccard) of the active feature set with the unperturbed
-code. Both pushes recruit 2191 universally by $\alpha=+200$ and extinguish the
-content-cue features; large doses rewrite the code almost
-entirely.](figures/qwen3_1_7b/sae_feature_trajectories.png){#fig:feature-traj}
+**The interpretability story this enables.** The recovered "refusal direction"
+of Section 6.1 is *not* a single monosemantic concept, but neither is it
+opener-plus-content-cues: it is a superposition of register features that jointly
+encode *how the model is about to speak*, of which exactly one (2191) writes the
+opener token that carries the causal effect. The ensemble members' vocabularies
+(sorry, hereby, please, I) are largely *unused* in the actual outputs: the
+register is represented far more richly than it is spoken. This is the kind of
+structure single-direction analyses systematically miss.
 
-**The wrong pole has no feature.** The mirror search, ranking all $32{,}768$
-features by wrong-selectivity, finds nothing like 2191. Against correct items the
-strongest selective feature reaches diff-$z$ $+0.49$ with hit rates of $28\%$ on
-wrong vs.\ $10\%$ on correct and uninterpretable lens tokens, and the
-within-pre-cutoff version, which recency cues cannot inflate, is no better: its
-top discriminators are always-on features shifting in magnitude, or syntactic
-cues such as an "In [date]" opener detector. Against refusals, the top wrong-side
-features are *attempt* features that fire on correct and wrong items alike
-($75\%/71\%$ vs.\ $18\%$ on refusals), with correct answers as their
-max-activating items. The dictionary contains a refusal feature but no
-confabulation feature: in a-space as in token space (Section 6.1), wrongness has
-no concentrated signature. Confabulation is the default attempt pathway missing a
+**From h-space to a-space: what a push looks like in features.** The views are
+static, and the encoder $a(h)$ is heavily nonlinear (TopK), so how an h-space push
+maps into a-space is an empirical question. Figure \ref{fig:feature-traj} tracks
+four ensemble members' mean activations on the $n=402$ wrong items as the
+post-block-27 residual is pushed along the Section 6.2 direction and along
+$\hat W_{\rm dec}[2191]$. Three regularities emerge. First, 2191's activation
+grows smoothly and linearly under both pushes (from its baseline of $93$ on wrong
+items to full coverage by $\alpha \approx +1000$ on the probe push and
+$+200$ on its own), with a probe-to-2191 slope ratio of $0.25$, matching the two
+directions' cosine of $0.25$: the TopK encoder is locally linear along these rays.
+Second, the two pushes differ in what else they recruit: the probe push feeds the
+whole register (17077 rises to a mid-dose peak, 4314 grows steadily), while the
+pure 2191 push crowds the hedge feature out entirely (4314 falls to $0$ by
+$+3000$). The probe direction moves wrong items *toward* refusal-like codes; the
+2191 direction manufactures opener-dominated ones; behaviorally the two are
+indistinguishable (Appendix C), so the ensemble recruitment is not required for
+the flip. Third, the code as a whole is substantially rewritten at behavioral
+doses: active-set overlap with the unperturbed code falls to $0.36$ (probe) and
+$0.26$ (2191) at $\alpha=+1500$, and negative doses extinguish all four features.
+
+![a-space trajectories of h-space pushes ($n=402$ wrong items, pre-norm
+residuals). Solid lines: mean activation of four ensemble features as the state
+is pushed along the Section 6.2 refusal direction (left) or feature 2191's
+decoder direction (right); dotted: mean overlap (Jaccard) of the active feature
+set with the unperturbed code. The probe push recruits the register broadly; the
+2191 push concentrates on the opener and crowds out the
+hedge.](figures/qwen3_1_7b/sae_feature_trajectories.png){#fig:feature-traj}
+
+**The wrong pole has no commitment feature.** The mirror search, ranking all
+$32{,}768$ features by wrong-selectivity on the same pre-norm states, finds
+nothing like 2191. The strongest wrong-vs-correct feature is a *topic* cue, not a
+commitment marker: an award-vocabulary detector (lens ` winning`, `荣获`,
+`获得`) that fires on $22\%$ of wrong items vs.\ $1\%$ of correct and $0\%$ of
+refusals, whose max-activating prompts are the obscure Best Picture years of the
+model's weakest cell; it tops the disconfounded within-pre ranking too
+(diff-$z$ $+1.34$). The runners-up are of the same species: a Nobel-Prize topic
+feature, an "In [date]" phrasing feature, a question-form feature. Against
+refusals, the top wrong-side features are attempt and formatting features that
+fire on correct and wrong items alike. The dictionary contains a refusal register
+but no confabulation marker: the best wrong-selective features are
+prompt-readable content and difficulty cues, the a-space form of the Section 5.6
+prompt-feature story. Confabulation is the default attempt pathway missing a
 fact, not a marked state.
 
-**The interpretability story this enables.** The recovered "refusal
-direction" of Section 6.1 is *not* a single monosemantic concept. The SAE
-decomposes it into (at least) two functionally distinct mechanisms:
-
-1. *Output-token-preparation features* (2191, 14034) that bias the next-token
-   distribution toward refusal-opener vocabulary. These are what the §6.1
-   logit lens directly recovered.
-2. *Content/temporal cue features* (18937, 21750) that fire on the
-   pre-decision input cues (recent dates, post-cutoff topics) that trigger
-   Qwen3's refusal pragmatics in the first place. These are *not* visible
-   in the logit lens because they don't directly project onto output tokens.
-
-The single linear probe was conflating both: the recovered direction is a
-weighted superposition of "I'm about to type ` as`" with "this prompt is
-about a $2024$ event I shouldn't pretend to know". The SAE is what lets us
-see the two components separately. This is the kind of structure single-
-direction analyses systematically miss.
 
 ### 6.3.1 Causal validation of feature 2191
 
-The four-feature decomposition is a *correlational* finding: these four SAE
-features compose the recovered refusal direction either by encoder
-assignment (A), decoder alignment (B), or empirical activation (C). To
-sharpen the claim about Feature 2191 specifically (that it is the
-canonical refusal-opener feature, not merely a correlate that happens to
-co-fire with refusals), I run the same one-shot intervention protocol as
+The ensemble decomposition is a *correlational* finding: these features compose
+the recovered refusal direction by encoder assignment (A), decoder alignment
+(B), or empirical activation (C). To sharpen the claim about Feature 2191
+specifically (that it is the canonical refusal-opener feature, not merely a
+correlate that happens to co-fire with refusals), I run the same one-shot
+intervention protocol as
 Section 6.2 but substitute the SAE feature's decoder direction for the
 recovered probe direction. On $30$ items the model originally got wrong
 (non-refusals), I add $\alpha \cdot \hat W_{\rm dec}[2191]$ to the
-last-prompt-token hidden state just before the final RMSNorm (HF layer
-$28$, equivalent to the Section 6.2 intervention point), sweep $\alpha$,
+last-prompt-token post-block-27 residual, just before the final RMSNorm (the
+Section 6.2 intervention point), sweep $\alpha$,
 and read off the next-token probability assigned to refusal-opener tokens
 (the Section 6.2 opener set; $10$ unique token IDs).
 
-![Causal dose-response of SAE feature 2191. On 30 ConfabQA wrong items (blue), adding $\alpha \cdot \hat W_{\rm dec}[2191]$ to the last-prompt-token hidden state at HF layer 28 induces a sharp transition between $\alpha=200$ and $\alpha=750$ from no refusal-opener probability to 100\% of next-token mass on refusal openers (and 30/30 argmax flips). The 30 ConfabQA refusal items (red) are already saturated at $\alpha=0$.](figures/sae_causal_ablation.png){#fig:sae-causal}
+![Causal dose-response of SAE feature 2191. On 30 ConfabQA wrong items (blue), adding $\alpha \cdot \hat W_{\rm dec}[2191]$ to the last-prompt-token post-block-27 residual induces a sharp transition between $\alpha=200$ and $\alpha=750$ from no refusal-opener probability to 100\% of next-token mass on refusal openers (and 30/30 argmax flips). The 30 ConfabQA refusal items (red) are already saturated at $\alpha=0$.](figures/sae_causal_ablation.png){#fig:sae-causal}
 
 
 The dose-response is monotonic with a sharp transition between $\alpha=200$
@@ -1448,26 +1460,44 @@ just a correlate that co-fires during refusal.
 recovers exactly the refusal-opener vocabulary the logit lens projected to, and that one
 feature suffices to drive Qwen3-1.7B's first-token decision to a refusal. Second, the
 §6.2 causal story sharpens: the probe direction's causal effect runs through feature 2191
-specifically: its neighbors in the decomposition (14034, 18937, 21750) contribute to the
+specifically: its ensemble neighbors (14034, 17077, 4314) contribute to the
 *correlational* direction, but the causal action is 2191's output-token preparation.
 The two vectors are far from the same object:
-$\cos(\hat W_{\rm dec}[2191], \mathbf{w}_{\rm raw}) = 0.16$ (chance $\approx 0.02$ in
-$2048$ dimensions), and the SAE encoder does not even allocate 2191 among the $50$
-features it uses to reconstruct $\mathbf{w}_{\rm raw}$ (view A assigns it zero
-activation). They produce the same first-token flip anyway.
+$\cos(\hat W_{\rm dec}[2191], \mathbf{w}_{\rm raw}) = 0.16$ against the
+Section 6.1 full-subset recovery, and $0.25$ against the within-post direction
+the Section 6.2 sweep actually pushed (chance $\approx 0.02$ in $2048$
+dimensions). They produce the same first-token flip anyway.
 Figure \ref{fig:probe-sae-plane} shows the plane the two vectors span (norm
 accounting in Appendix C).
 
 ![The plane spanned by the probe refusal direction and SAE feature 2191's decoder
-vector (layer-28 refusal+wrong states, $n=549$; stars: class centroids; dashed:
-per-class $1\sigma$ covariance ellipses). The two arrows are $81^\circ$ apart
-(cosine $0.16$). The probe axis carries the class split, and its decision boundary
-(dotted) is again exact in this plane; the feature axis is nearly class-neutral
-except at its upper tail, where the eight ringed items on which 2191 actually fires
-sit (six refusal, two wrong: the $4.1\%$/$0.5\%$ hit rates of Figure
-\ref{fig:sae-features}). A rarely-firing, nearly probe-orthogonal output knob and a
-broad discriminative mixture share one causal
+vector (refusal+wrong states in the probes' representation, $n=549$; stars: class
+centroids; dashed: per-class $1\sigma$ covariance ellipses). The two arrows are
+$81^\circ$ apart (cosine $0.16$), yet the probe axis carries the class split and
+its decision boundary (dotted) is exact in this plane: a nearly probe-orthogonal
+output knob and a broad discriminative mixture share one causal
 channel.](figures/qwen3_1_7b/probe_sae_plane.png){#fig:probe-sae-plane}
+
+**A third recovery: the optimized refusal direction.** The probe and the class-mean
+difference (Section 6.1) both recover the direction from *data*. A third route
+recovers it from the *objective*: treat the intervention vector $\mathbf{v}$ itself
+as the only trainable parameter and maximize the mean log-probability of the
+refusal-opener token set under the final RMSNorm and LM head, on a train half of
+the $402$ wrong pre-norm states, with $\|\mathbf{v}\|$ fixed at the sub-nudge dose
+$\alpha=200$ (the first-token distribution depends on the perturbed state only
+through those two output components, so no full-model backpropagation is needed).
+The optimum is not the probe direction; it lands next to feature 2191: cosine
+$0.64$ to the feature's decoder vector, against $0.22$ to the Section 6.2 probe
+direction and $0.25$ to the mean difference, and its logit lens is a pure opener
+cone (`As`, ` As`, `_as`, `"As`). It is also the most dose-efficient of the four
+recoveries: on the $201$ held-out wrong items it flips $54\%$ of first tokens at
+$\alpha=200$ and saturates by $\alpha=500$, ahead of 2191's decoder direction
+($40\%$ and $91\%$), with the probe direction reaching $92\%$ only at
+$\alpha=1500$ and the mean difference in between. Three recoveries, one ordering:
+the more a recovery is shaped by the output objective rather than by class
+structure in the data, the closer it comes to the opener cone and the less dose it
+needs. What the probe direction adds on top of the opener cone is discriminative
+signal, not causal leverage.
 
 All four causal routes converge on the strict criterion. On the same $30$ wrong
 items, the probe direction converts $30\%$ into judged refusals at
@@ -2369,12 +2399,15 @@ one JSON (with the generating script of the same name under `analysis/` or
 `saes/`) per experiment: `13_intervention_results`,
 `correctness_direction_lens`, `correctness_direction_intervention`,
 `refusal_direction_meandiff`, `pca_coverage_2191`, `probe_2191_blend`,
-`sae_decompose_refusal`, `sae_causal_ablation`, `sae_feature_refusal_rate`,
+`sae_decompose_prenorm`, `optimized_refusal_direction`, `sae_causal_ablation`,
+`sae_feature_refusal_rate`,
 `sae_apology_feature_test`, `sae_feature_trajectories`, `sae_wrong_features`,
 `prefix_forcing_control`,
 `hidden_state_norms`,
 `bootstrap_h_adds`, `bootstrap_llama_external`, `bootstrap_qwen3_4b`,
-`refusal_channel_test`, and `cross_dataset_transfer_<model>`.
+`refusal_channel_test`, and `cross_dataset_transfer_<model>`. The Section 6.3
+scripts read the pre-norm activation cache, rebuilt with `python -m
+analysis.cache_prenorm_states` (Appendix D.2).
 
 
 ### B.5 Sample source-file entry
@@ -2405,15 +2438,15 @@ $$\mathrm{RMSNorm}(h + \alpha\hat{\mathbf{w}})
 
 which depends only on the ratios $\alpha / \|h\|$ and
 $\langle h, \hat{\mathbf{w}} \rangle / \|h\|$ and converges to
-$\mathrm{RMSNorm}(\pm\hat{\mathbf{w}})$ as $\alpha \to \pm\infty$. The per-item
-$\mathrm{rms}(h)$ that sets the ratio is tightly concentrated and near-Gaussian
-across all $784$ items: $3.10 \pm 0.17$ ($5.6\%$ coefficient of variation, skew
-$+0.1$), so the single $\overline{\|h\|}$ used in the alpha-translation
-below describes every item to within a few percent. Its one structured
-feature: refusal states run smaller and tighter ($2.94 \pm 0.10$) than correct
-($3.17 \pm 0.18$) or wrong ($3.13 \pm 0.15$) states; the templated behavior is
-geometrically stereotyped as well
-(`figures/qwen3_1_7b/hidden_state_norms.json`).
+$\mathrm{RMSNorm}(\pm\hat{\mathbf{w}})$ as $\alpha \to \pm\infty$. Here $h$ is the
+post-block-27 residual, the state the hook actually perturbs: its norm across all
+$784$ items is $1640 \pm 220$ ($\mathrm{rms}(h) \approx 36$), so the single
+$\overline{\|h\|}$ used in the alpha-translation below describes typical items to
+within $\sim 15\%$. One structured feature: refusal states are markedly tighter
+($1636 \pm 89$, a $5\%$ coefficient of variation) than correct ($1665 \pm 312$) or
+wrong ($1627 \pm 184$) states; the templated behavior is geometrically stereotyped
+as well (`figures/qwen3_1_7b/hidden_state_norms.json` records both this and the
+final normed state's statistics).
 The lens scores are therefore the asymptote of the first-token dose-response, which
 is the saturation Sections 6.2 and 6.3.1 observe, and why $\alpha$ ranges must be
 calibrated to each model's hidden-state scale (Table \ref{tbl:scales}). The clean
@@ -2422,25 +2455,23 @@ sits below the final layer (Gemma at layer 19, the layer-18 correctness
 intervention), later blocks process the perturbed state, and large $|\alpha|$ is
 genuinely off-manifold rather than asymptotic, the pathology Appendix C records.
 
-**Choice of $\alpha$ scale, in full (Qwen3-1.7B).** **Choice of $\alpha$ scale.** The natural scale is much larger than the per-fold projection
-variance because RMSNorm dampens the perturbation: the post-norm contribution to the LM head
-is approximately $\mathbf{d} \cdot W_{\mathrm{LM}}^\top / \mathrm{RMS}(\mathbf{h})$, and at
-layer 28 of Qwen3-1.7B $\mathrm{RMS}(\mathbf{h}) \approx 3$. Empirically, on a pre-cutoff
-probe item the natural greedy first token loses to the refusal opener ` As` at
-$\alpha \approx 2000$, and at $\alpha = 5000$ the top six tokens are entirely refusal openers.
-The sweep below covers this empirical range. In relatable units: baseline
-states are nearly orthogonal to the
-direction (mean $\cos = +0.08$; refusal items $+0.19$, wrong $+0.03$, on
-$\overline{\|h\|} \approx 139$), the smallest effective dose $\alpha = +500$ is
-already a perturbation $3.6\times$ the state norm that rotates the state to $0.97$
-alignment, and the first-token flip completes between alignments $0.97$ and $0.996$.
-The one-shot flip is a near-replacement of the state's direction, not a nudge,
-consistent with the $\alpha \to \infty$ asymptote of Section 6.1.
-In those units: $\alpha \in \{-2000, -500, 0, +500, +1500,
-+3000\}$ corresponds to perturbation-to-state-norm ratios
-$\{14.4, 3.6, 0, 3.6, 10.8, 21.5\}\times$ and mean post-intervention alignments
-$\cos\angle(h{+}\alpha\hat{\mathbf{w}}, \hat{\mathbf{w}}) =
-\{-.998, -.962, +.076, +.965, +.996, +.999\}$ (averaged over the $n=549$ subset).
+**Choice of $\alpha$ scale, in full (Qwen3-1.7B).** The natural scale is much
+larger than the per-fold projection variance because RMSNorm dampens the
+perturbation: the post-norm contribution to the LM head is approximately
+$\mathbf{d} \cdot W_{\mathrm{LM}}^\top / \mathrm{RMS}(\mathbf{h})$, and at the
+intervention point $\mathrm{RMS}(\mathbf{h}) \approx 36$. Empirically, on a
+pre-cutoff probe item the natural greedy first token loses to the refusal opener
+` As` at $\alpha \approx 2000$, and at $\alpha = 5000$ the top six tokens are
+entirely refusal openers; the sweep covers this range. In relatable units:
+baseline states already lean toward the direction (mean $\cos = +0.36$ on
+refusal items, $+0.10$ on wrong, at $\overline{\|h\|} \approx 1640$), and the
+sweep's doses are sub-norm nudges, not replacements: $\alpha \in \{-2000, -500,
++500, +1500, +3000\}$ corresponds to perturbation-to-state-norm ratios
+$\{1.23, 0.31, 0.31, 0.92, 1.84\}\times$ and mean post-intervention alignments
+$\{-.73, -.13, +.43, +.74, +.90\}$ (averaged over the $n=549$ subset). The
+smallest effective dose $\alpha = +500$ is a $0.31\times$-norm nudge reaching
+only $0.43$ alignment, yet it already flips half the first tokens; even the
+saturating $\alpha = +1500$ is a sub-norm push ($0.92\times$, alignment $0.74$).
 
 **Feature 2191 dose-response table.** The Figure \ref{fig:sae-causal} sweep in
 table form:
@@ -2787,24 +2818,30 @@ takes no arguments and reads the same cached responses and activations as `03_an
 ### D.2 SAE base-to-instruct reconstruction check
 
 Qwen-Scope was trained on Qwen3-1.7B-Base; the Section 6.3 subject is the Instruct
-variant. A reconstruction-quality check on $200$ ConfabQA last-prompt-token
-activations at the refusal-probe peak layer (HF index $28$, $=$ SAE layer $27$, the
-post-block-27 hidden state) reports explained variance $\mathrm{EV}=0.82$ and
-cosine similarity $0.90$ to the original: acceptable base$\to$instruct transfer
-(`saes/sae_test_reconstruction.py`, `saes/sae_layer_sweep.py`). Earlier layers
-transfer worse (EV $0.54$--$0.70$); the late-layer hidden state where the probe peaks
-happens to be the regime where the base SAE transfers best, consistent with
-instruction-tuning having modified the early layers more than the final residual.
+variant. The release declares its input contract explicitly: hook
+`blocks.27.hook_resid_post` with `normalize_activations = none`, i.e.\ the raw
+post-block-27 residual. On that state, recomputed over all $549$ refusal+wrong
+items via a live prefill hook (`analysis/cache_prenorm_states.py`), the
+base$\to$instruct transfer is marginal by reconstruction quality: per-item
+explained variance $0.50$ (median $0.51$) and mean cosine $0.72$
+(`figures/sae_decompose_prenorm.json`). An earlier check
+(`saes/sae_test_reconstruction.py`) reported $\mathrm{EV}=0.82$/cosine $0.90$, but
+it was run at cached hidden-states index $24$, a different (post-block-23)
+residual, and HF's cached index $28$ is the final *normed* state rather than the
+declared hook (Section 4), so neither cached index measures the SAE at its
+contract. The decisive validation of the Section 6.3 features is therefore not
+reconstruction quality but the causal test of Section 6.3.1, which intervenes at
+the correct point and flips $30/30$.
 
 
 ### D.3 PCA coverage and blend tests of feature 2191
 
 How much of feature 2191's decoder direction the probe's reachable subspace can
 represent, and whether the feature can improve the probe's split (Section 6.3).
-The feature fires on only $8$ of $549$ states, and the dictionary that contains it
-was estimated without ever seeing ConfabQA; that it nonetheless contains the exact
-opener feature this benchmark activates is evidence 2191 is a general unit of the
-model rather than an artifact of this question set.
+The dictionary that contains the feature was estimated without ever seeing
+ConfabQA; that it nonetheless contains the exact opener feature this benchmark
+activates is evidence 2191 is a general unit of the model rather than an artifact
+of this question set.
 Coverage: the pipeline's $16$-component subspace holds at most a $0.37$ cosine
 with $\hat W_{\rm dec}[2191]$ (the recovered probe sits at $0.16$); half coverage
 takes roughly $60$ variance-ordered components, and even the full
@@ -2813,10 +2850,9 @@ under 5-fold CV, mixing the unit probe direction with the feature leaves the
 refusal-vs-wrong AUC flat at $0.944$ for mixing weights up to $0.2$ and degrades
 monotonically beyond, and a two-feature logistic stack over both projections also
 lands at $0.943$; the feature's out-of-subspace mass carries no class information
-the probe has not already extracted. The surprise runs the other way: the raw
-projection onto 2191 alone reaches AUC $0.895$, close to the probe's $0.944$, even
-though the sparse code activates the feature on only $8$ of $549$ states; the
-encoder's threshold discards a strongly separating dense signal.
+the probe has not already extracted. The raw projection onto 2191 alone reaches AUC $0.895$, close to the probe's
+$0.944$: the single dictionary direction carries nearly probe-grade class
+information in the probed representation.
 
 ## E. Bootstrap protocol and attribution details
 
