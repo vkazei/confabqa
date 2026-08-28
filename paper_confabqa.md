@@ -109,7 +109,7 @@ single-model, single-dataset study could:
 
 1. *Refusal vs.\ confabulation is a model-internal feature: each model linearly
    encodes its own upcoming speech act.* On the wrong+refusal subset of ConfabQA the
-   late-layer probe beats the strongest prompt baseline on every model: $+7.4$ pp on
+   late-layer probe beats the strongest prompt baseline on every model: $+7.4$% on
    Qwen3-1.7B, $+16.3$ on Gemma 2 2B, $+2.2$ on Llama 3.2 3B. The less predictable a
    model's refusals are from the question text alone, the more the probe adds
    (Section 7.2). That some such signal exists is natural: the refusal-vs-answer label
@@ -128,14 +128,14 @@ single-model, single-dataset study could:
 
 2. *Llama 3.2 3B carries a substantially larger and more general correctness signal than
    Qwen3-1.7B or Gemma 2 2B.* On balanced PopQA / TriviaQA subsamples, Llama's probe
-   beats the prompt baseline by $+21$--$+25$ pp, $5.7\times$ and $2.2\times$ Qwen's
+   beats the prompt baseline by $+21$--$+25$%, $5.7\times$ and $2.2\times$ Qwen's
    margins on the same benchmarks. Three controls localize the source: it is not
    parameter count (a Qwen3-4B within-family scaling control moves the margin by less
-   than $2$ pp; Section 8.1); it is not dataset-specific (Llama's probe keeps
+   than $2$%; Section 8.1); it is not dataset-specific (Llama's probe keeps
    $\approx 81\%$ of its margin when transferred across datasets without refit, where
    Qwen's and Gemma's transfer collapses; Section 8.3); and it is not refusal-channel
    readout ($\approx 83\%$ of the margin survives dropping refusals, and an independent
-   refusal probe adds a further $+18$--$+25$ pp gap; Section 8.2). Gemma is intermediate
+   refusal probe adds a further $+18$--$+25$% gap; Section 8.2). Gemma is intermediate
    in behavior (refusal rate and refusal-probe margin between the other two), yet
    its correctness probe is the most dataset-local of the three. The most plausible
    single explanation: Llama's heavy calibrated-abstention training forces a
@@ -516,7 +516,7 @@ partition the pool into the two target classes, set $n_{\text{class}} = \min(|\r
 subsample refit the full probe pipeline (StandardScaler $\to$ PCA($16$) $\to$ LR, $5$-fold
 CV at `random_state=0`, peak over all $29$ layers) plus the four prompt baselines on the
 same folds. The subsample $h_{\rm adds}$ is $\text{probe peak} - \max(\text{baselines})$
-in pp. The reported $\bar h_{\rm adds}$ is the mean across $K$; the 95\% CI is the
+in%. The reported $\bar h_{\rm adds}$ is the mean across $K$; the 95\% CI is the
 percentile interval $[h_{(0.025K)}, h_{(0.975K)}]$. This controls class-imbalance
 interactions between probe and baselines and item-sampling noise within the pool.
 $K=30$ is set by compute (each replicate refits the full $29$-layer $\times$ $5$-fold
@@ -758,7 +758,7 @@ lines: per-target majority baseline. Dots mark each target's peak layer. **Cutof
 saturates near $98\%$ by layer 13 and stays high through the network. **Refusal-vs-wrong**
 (green, $n=549$) rises monotonically and peaks at the deepest block (layer 28).
 **Correctness** (blue, $n=784$) and the cutoff-disconfounded **correct-within-pre** (red,
-$n=296$) both peak at layer 18, with within-pre showing the headline $+32$ pp margin over
+$n=296$) both peak at layer 18, with within-pre showing the headline $+32$% margin over
 its $52.7\%$ pre-cutoff majority that largely vanishes against the prompt-feature baseline
 of Section 5.6. **Correct-within-obscure** (purple, $n=153$) peaks at layer 7 but the
 $1$-$\sigma$ layer range spans nearly the whole network, so the per-layer peak is not
@@ -934,7 +934,7 @@ completeness but excluded from the strongest-baseline comparison.)
 **Table \ref{tbl:hadds} interpretation.**
 
 1. **Correctness gains little from the hidden state.** The correctness probes add
-   $\approx 3$ pp or less over the strongest baseline ($+2.4$ all items, $+3.0$
+   $\approx 3$% or less over the strongest baseline ($+2.4$ all items, $+3.0$
    within-pre, $-2.5$ within-obscure), within the per-fold noise ($0.031$--$0.063$)
    on this single split. The Section 8.1 bootstrap confirms this reading: the small
    all-items margin is real (CI excluding zero), while the disconfounded within-pre
@@ -943,14 +943,14 @@ completeness but excluded from the strongest-baseline comparison.)
 2. **Cutoff is easy to predict, with or without the hidden state.** Text features
    alone reach $94.0$--$95.2\%$, because the year mentioned in the question is a
    near-perfect predictor of whether the answer existed at training time; the probe
-   at $98.2\%$ adds $+3.0$ pp on top. The cutoff probe is a manipulation check
+   at $98.2\%$ adds $+3.0$% on top. The cutoff probe is a manipulation check
    confirming the pipeline works, not a finding about model internals. (The
    `+category` cell is tautological, $1.000$ because the dummy *is* the label, and is
    excluded from the comparison.)
 
 3. **Refusal-vs-confabulation substantially beats prompt features.** The overall refusal-vs-wrong
-   probe gains $+7.4$ pp over TF-IDF (the strongest baseline for that target); restricted to the
-   post-cutoff subset where all refusals actually occur, it gains $+9.6$ pp. These gaps are
+   probe gains $+7.4$% over TF-IDF (the strongest baseline for that target); restricted to the
+   post-cutoff subset where all refusals actually occur, it gains $+9.6$%. These gaps are
    $\approx 4$x the per-fold std of the probe ($0.019$ and $0.022$ respectively). The asymmetry
    between rows 3--4 and the correctness rows is what the targets' nature predicts:
    refusal-vs-confabulation is a property of the model's *own upcoming output*, a
@@ -1072,7 +1072,7 @@ counterpart.
 restricted to post-cutoff items only (where every refusal in the dataset actually lives) yields
 the same vocabulary in a sharper form: " as" scores $+31.66$, "作为" $+29.63$, "\\tas" $+27.58$,
 " there" $+23.26$. The Chinese and English refusal openers are the two strongest tokens by a
-wide margin. The within-post probe's $+9.6$ pp margin over its strongest prompt baseline
+wide margin. The within-post probe's $+9.6$% margin over its strongest prompt baseline
 (Section 5.6) and the literal "refusal vocabulary" emerging at the top of its direction both
 point at the same conclusion: the late-layer hidden state carries a discrete pragmatic signal
 ("I am about to hedge") that is not extractable from the question text alone.
@@ -1511,7 +1511,6 @@ Gemma 2 2B
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
 Llama 3.2 3B
 \end{minipage} \\\midrule
-\textbf{Dataset Size (n)} & 784 & 784 & 784 \\
 \textbf{Overall Accuracy} & 30.0\% & 31.9\% & 30.6\% \\
 \textbf{Pre-cutoff Accuracy} & 47.3\% & 69.6\% & 80.7\% \\
 \textbf{Post-cutoff Accuracy} & 19.5\% & 9.0\% & 0.2\% \\
@@ -1520,36 +1519,35 @@ Llama 3.2 3B
 & & & \\
 \emph{PROBE ACCURACIES (PEAK \% {[}PEAK LAYER{]} vs BASELINE)} & & & \\
 \textbf{Correctness (all items)} & \textbf{82.4\%} {[}L18{]}(base
-70.0\%, +12.4 pp) & \textbf{89.7\%} {[}L14{]}(base 68.1\%, +21.6 pp) &
-\textbf{94.3\%} {[}L13{]}(base 69.4\%, +24.9 pp) \\
+70.0\%, +12.4\%) & \textbf{89.7\%} {[}L14{]}(base 68.1\%, +21.6\%) &
+\textbf{94.3\%} {[}L13{]}(base 69.4\%, +24.9\%) \\
 \textbf{Cutoff (all items)} & \textbf{98.2\%} {[}L13{]}(base 62.2\%,
-+36.0 pp) & \textbf{98.9\%} {[}L14{]}(base 62.2\%, +36.6 pp) &
-\textbf{99.4\%} {[}L25{]}(base 62.2\%, +37.1 pp) \\
++36.0\%) & \textbf{98.9\%} {[}L14{]}(base 62.2\%, +36.6\%) &
+\textbf{99.4\%} {[}L25{]}(base 62.2\%, +37.1\%) \\
 \textbf{Refusal-vs-Wrong (subset)} & \textbf{89.4\%} {[}L28{]}(base
-73.2\%, +16.2 pp) & \textbf{83.9\%} {[}L19{]}(base 53.6\%, +30.3 pp) &
-\textbf{95.8\%} {[}L28{]}(base 91.9\%, +3.9 pp) \\
+73.2\%, +16.2\%) & \textbf{83.9\%} {[}L19{]}(base 53.6\%, +30.3\%) &
+\textbf{95.8\%} {[}L28{]}(base 91.9\%, +3.9\%) \\
 \textbf{Correct within Pre-cutoff} & \textbf{84.8\%} {[}L18{]}(base
-52.7\%, +32.1 pp) & \textbf{91.2\%} {[}L17{]}(base 69.6\%, +21.6 pp) &
-\textbf{85.2\%} {[}L13{]}(base 80.7\%, +4.4 pp) \\
+52.7\%, +32.1\%) & \textbf{91.2\%} {[}L17{]}(base 69.6\%, +21.6\%) &
+\textbf{85.2\%} {[}L13{]}(base 80.7\%, +4.4\%) \\
 \textbf{Correct within Obscure} & \textbf{80.5\%} {[}L7{]}(base 66.7\%,
-+13.8 pp) & \textbf{88.9\%} {[}L24{]}(base 64.1\%, +24.9 pp) &
-\textbf{81.1\%} {[}L13{]}(base 75.2\%, +5.9 pp) \\
++13.8\%) & \textbf{88.9\%} {[}L24{]}(base 64.1\%, +24.9\%) &
+\textbf{81.1\%} {[}L13{]}(base 75.2\%, +5.9\%) \\
 & & & \\
-\emph{PROMPT FEATURE BASELINE COMPARISONS} & & & \\
-\textbf{Correctness vs +category} & Probe \textbf{82.4\%} vs Base
-\textbf{80.0\%}(+2.4 pp) & Probe \textbf{89.7\%} vs Base
-\textbf{88.0\%}(+1.7 pp) & Probe \textbf{94.3\%} vs Base
-\textbf{91.8\%}(+2.4 pp) \\
-\textbf{Refusal-vs-Wrong vs TF-IDF} & Probe \textbf{89.4\%} vs Base
-\textbf{82.0\%}(+7.4 pp) & Probe \textbf{83.9\%} vs Base
-\textbf{67.6\%}(+16.3 pp) & Probe \textbf{95.8\%} vs Base
-\textbf{93.6\%}(+2.2 pp) \\
-\textbf{Within-Pre Correct vs +category} & Probe \textbf{84.8\%} vs Base
-\textbf{81.8\%}(+3.0 pp) & Probe \textbf{91.2\%} vs Base
-\textbf{86.1\%}(+5.1 pp) & Probe \textbf{85.2\%} vs Base
-\textbf{79.4\%}(+5.8 pp) \\
+\emph{PROMPT FEATURE BASELINES (STRONGEST; MARGIN vs PROBE ABOVE)} & & & \\
+\textbf{Correctness vs +category} & 80.0\% (+2.4) & 88.0\% (+1.7) &
+91.8\% (+2.4) \\
+\textbf{Refusal-vs-Wrong vs TF-IDF} & 82.0\% (+7.4) & 67.6\% (+16.3) &
+93.6\% (+2.2) \\
+\textbf{Within-Pre Correct vs +category} & 81.8\% (+3.0) & 86.1\% (+5.1)
+& 79.4\% (+5.8) \\
 \bottomrule
 \end{tabular}
+
+\smallskip
+\noindent{\footnotesize Margins are computed from unrounded values, so displayed
+operands can differ in the last digit (e.g.\ Llama correctness:
+$94.259 - 91.837 = +2.4$).}
 \end{table}
 
 ![Comparative probing accuracy curves across Qwen3-1.7B, Gemma 2 2B, and Llama 3.2 3B.](figures/comparative_probes.png){#fig:comparative-probes}
@@ -1558,15 +1556,15 @@ The three models reach nearly identical overall accuracy ($30$--$32\%$) but adop
 different abstention policies on post-cutoff questions: Llama refuses almost every
 post-cutoff failure ($97.5\%$, $475/487$), Qwen only about a third ($37.4\%$), and Gemma
 sits between them ($55.2\%$). This behavioral axis, not accuracy, is what the refusal
-probes below track.
+probes below track (Figure \ref{fig:comparative-probes}).
 
 The correctness probe reaches its peak in the same early-to-mid depth band across all
 three architectures: layer $18$ for Qwen ($82.4\%$), layer $14$ for Gemma ($89.7\%$),
 layer $13$ for Llama ($94.3\%$). The absolute peak accuracies, however, hide the confound
 that the Qwen-only picture in Section 5.6 already exposed. Measured against the
 "+category" prompt-feature baseline the correctness-probe margins collapse to a few
-percentage points on all three models ($+2.4$ pp on Qwen, $+1.7$ on Gemma, $+2.4$ on
-Llama) and remain modest within the pre-cutoff stratum ($+3.0$, $+5.1$, $+5.8$ pp).
+percentage points on all three models ($+2.4$% on Qwen, $+1.7$ on Gemma, $+2.4$ on
+Llama) and remain modest within the pre-cutoff stratum ($+3.0$, $+5.1$, $+5.8$%).
 The strongest baseline is the annotator-assigned category dummy, which by construction
 contains the difficulty signal a human curator already sees; a large fraction of what
 looks like model-internal correctness knowledge is that same difficulty signal being read
@@ -1607,7 +1605,7 @@ off-manifold into shorter, judge-accepted-but-vocabulary-degenerate outputs symm
 $|\alpha| \ge 300$. The cleanest directional signal is the refusal subset at $\alpha = -300$:
 refusal rate drops from $100\%$ to $80\%$, with previously-refusing items committing to a
 confabulation (e.g.\ `cin_pc_10` gold "Deadpool \& Wolverine" $\to$ `"X-Men '97"`). This
-$-20$ pp shift is real but small, consistent with Llama's $+2.2$ pp refusal-probe margin over
+$-20$% shift is real but small, consistent with Llama's $+2.2$% refusal-probe margin over
 its prompt baseline (Section 7.1): both probe and intervention operate on a small dynamic
 range. Full Llama sweep table and example generations in Appendix C.
 
@@ -1622,7 +1620,7 @@ Section 7.1, is the most manipulable of the three; its wrong-to-refusal flip rea
 $0\% \to 87\%$ at the sweet-spot $\alpha = +2000$, with $100\%$ first-token-opener rate.
 Llama's near-saturated default leaves little room for the intervention to *induce*
 refusal on the small residual wrong-subset; the cleanest directional signal is the
-reverse, a $-20$ pp drop in refusal on the refusal subset at $\alpha = -300$, matching
+reverse, a $-20$% drop in refusal on the refusal subset at $\alpha = -300$, matching
 the small dynamic range of both its refusal-vs-wrong probe and its causal intervention.
 
 A model's default abstention policy thus bounds both the *signal magnitude* of its
@@ -1656,7 +1654,7 @@ subsample's $h_{adds}$ the probe peak minus the strongest baseline. $\bar h_{add
 across the $K$ subsamples is the point estimate and the 95\% CI is percentile-based
 (label provenance in Appendix E).
 
-![Bootstrap 95\% CIs on $h_{adds}$ across $14$ `(dataset, model, target)` cells. $K=30$ balanced 50/50 subsamples per cell; blue = CI excludes 0. The bottom two rows are the headline positive finding: Llama 3.2 3B on PopQA / TriviaQA recovers $+21$--$+25$ pp over the strongest prompt-feature baseline, where Qwen3-1.7B and Qwen3-4B on the *same* data recover $+4$--$+10$ pp. The Qwen3-4B row labeled "scaling control" rules out parameter count as the dominant driver of the cross-model gap.](figures/bootstrap_forest.png){#fig:bootstrap-forest}
+![Bootstrap 95\% CIs on $h_{adds}$ across $14$ `(dataset, model, target)` cells. $K=30$ balanced 50/50 subsamples per cell; blue = CI excludes 0. The bottom two rows are the headline positive finding: Llama 3.2 3B on PopQA / TriviaQA recovers $+21$--$+25$% over the strongest prompt-feature baseline, where Qwen3-1.7B and Qwen3-4B on the *same* data recover $+4$--$+10$%. The Qwen3-4B row labeled "scaling control" rules out parameter count as the dominant driver of the cross-model gap.](figures/bootstrap_forest.png){#fig:bootstrap-forest}
 
 \begin{table}[!htbp]
 \small
@@ -1729,8 +1727,8 @@ cross-model contrast below does not rest on any single borderline cell.
 
 **Cross-dataset $\times$ cross-model contrast.** On the same PopQA benchmark under the
 same substring-correct criterion (Qwen pooled over three seeds, Llama single-seed;
-Section 4), Llama 3.2 3B's hidden state recovers a $+24.9$ pp correctness margin
-where Qwen3-1.7B recovers $+4.4$ pp, a $5.7\times$ gap on $1.8\times$ the parameter
+Section 4), Llama 3.2 3B's hidden state recovers a $+24.9$% correctness margin
+where Qwen3-1.7B recovers $+4.4$%, a $5.7\times$ gap on $1.8\times$ the parameter
 count. On TriviaQA the gap is $2.2\times$ on the same parameter ratio. The gap is not
 driven by raw accuracy: on PopQA the substring-correct rates are nearly identical
 ($16.4\%$ Llama vs.\ $15.6\%$ Qwen) while the $h_{adds}$ differ $5.7\times$; on TriviaQA
@@ -1742,11 +1740,11 @@ information than Qwen3-1.7B's is.
 
 **Within-family scaling control (Qwen3-4B).** To isolate model-family from parameter count,
 I re-ran the PopQA bootstrap on Qwen3-4B: same Qwen3 family, $2.4\times$ the parameter
-count of Qwen3-1.7B, $\approx 25\%$ more than Llama 3.2 3B. The result, $+5.77$ pp 95\% CI
-$[+2.34, +11.61]$, is statistically indistinguishable from Qwen3-1.7B's $+4.35$ pp and far
-below Llama 3.2 3B's $+24.94$ pp. Doubling parameter count within the Qwen family moves
-$\bar h_{adds}$ by $\approx 1.4$ pp (well within the CIs); switching family at smaller
-parameter count moves it by $\approx 19$ pp. **The cross-model gap is not a parameter-count
+count of Qwen3-1.7B, $\approx 25\%$ more than Llama 3.2 3B. The result, $+5.77$% 95\% CI
+$[+2.34, +11.61]$, is statistically indistinguishable from Qwen3-1.7B's $+4.35$% and far
+below Llama 3.2 3B's $+24.94$%. Doubling parameter count within the Qwen family moves
+$\bar h_{adds}$ by $\approx 1.4$% (well within the CIs); switching family at smaller
+parameter count moves it by $\approx 19$%. **The cross-model gap is not a parameter-count
 effect**; it tracks model family / post-training recipe. Raw accuracies agree: Qwen3-4B's
 PopQA judge breakdown ($14.8\%$ correct / $1.6\%$ refusal / $83.6\%$ wrong) is essentially
 Qwen3-1.7B's, and the family's $\approx 2\%$ refusal rate versus Llama's $63\%$ on the
@@ -1843,9 +1841,9 @@ for refusal-readout to be a substantial confound either way.
 
 **Reading Test B.** Llama's refusal probe reaches $84.5\%$ (PopQA) and $90.2\%$ (TriviaQA)
 absolute accuracy on a balanced 50/50 task, beating the strongest prompt baseline by $+18.4$
-and $+25.4$ pp; both CIs exclude $0$ by wide margins. The hidden state at Llama's
+and $+25.4$%; both CIs exclude $0$ by wide margins. The hidden state at Llama's
 probe-peak layer encodes the abstention decision in a form that the question text alone does
-not predict. Qwen's analogous numbers ($+10.2$ pp PopQA, $+16.0$ pp TriviaQA) are positive
+not predict. Qwen's analogous numbers ($+10.2$% PopQA, $+16.0$% TriviaQA) are positive
 and similarly directed but the refusal counts ($39$ and $28$) leave the CIs straddling $0$;
 this is the test that requires either a larger Qwen evaluation or a benchmark on which
 Qwen3 refuses more (e.g.\ a temporal-cutoff stratum like ConfabQA's post-cutoff items, where
@@ -1909,16 +1907,16 @@ Retention
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
 Transfers \(>\) majority
 \end{minipage} \\\midrule
-Llama 3.2 3B & 14 & \(+18.9\) pp & \(+15.2\) pp & \(81\%\) & \(5/6\) \\
-Gemma 2 2B & 13 & \(+13.1\) pp & \(-7.0\) pp & \(-54\%\) & \(4/6\) \\
-Qwen3-1.7B & 18 & \(+8.7\) pp & \(-1.2\) pp & \(-14\%\) & \(3/6\) \\
+Llama 3.2 3B & 14 & \(+18.9\)\% & \(+15.2\)\% & \(81\%\) & \(5/6\) \\
+Gemma 2 2B & 13 & \(+13.1\)\% & \(-7.0\)\% & \(-54\%\) & \(4/6\) \\
+Qwen3-1.7B & 18 & \(+8.7\)\% & \(-1.2\)\% & \(-14\%\) & \(3/6\) \\
 \bottomrule
 \end{tabular}
 \end{table}
 
 **Llama: content-invariant.** Five of the six off-diagonal transfers beat the test-dataset
-majority, with an average winning margin of $+19.8$ pp, comparable to the within-dataset
-margin of $+18.9$ pp. The single failure is ConfabQA $\to$ PopQA, where the PopQA majority is
+majority, with an average winning margin of $+19.8$%, comparable to the within-dataset
+margin of $+18.9$%. The single failure is ConfabQA $\to$ PopQA, where the PopQA majority is
 $87.3\%$ and the transfer lands at $79.8\%$. Two transfer cells (PopQA $\to$ ConfabQA at
 $94.0\%$, TriviaQA $\to$ ConfabQA at $93.8\%$) actually exceed the within-ConfabQA CV
 accuracy of $93.5\%$, suggesting Llama's correctness representation has *less* overfit when
@@ -1927,16 +1925,16 @@ trained on more diverse data than ConfabQA alone provides.
 **Gemma: strong within, collapsed transfer.** Gemma has the *largest* average
 within-dataset margin of the three models at this layer, but the transfer behavior is the
 worst. Two cells collapse catastrophically: ConfabQA $\to$ PopQA at $38.3\%$ (vs majority
-$80.2\%$, a $-42$ pp gap) and TriviaQA $\to$ PopQA at $46.8\%$ ($-33.5$ pp). Both involve
+$80.2\%$, a $-42$% gap) and TriviaQA $\to$ PopQA at $46.8\%$ ($-33.5$%). Both involve
 PopQA as the target dataset; PopQA's question distribution (templated Wikidata triples,
 heavily long-tail-popularity-stratified) appears to require a representation Gemma's
 ConfabQA-fit and TriviaQA-fit probes both fail to produce. Four cells do beat majority
-(transfers TO ConfabQA and to TriviaQA), with an average winning margin of $+8.3$ pp, substantially smaller than Llama's $+19.8$, but non-trivial. The net signed average across
-all six off-diagonals is $-7.0$ pp; the two PopQA collapses dominate.
+(transfers TO ConfabQA and to TriviaQA), with an average winning margin of $+8.3$%, substantially smaller than Llama's $+19.8$, but non-trivial. The net signed average across
+all six off-diagonals is $-7.0$%; the two PopQA collapses dominate.
 
 **Qwen: weak within, weak transfer.** Qwen3-1.7B's within-dataset margins are the smallest
-of the three to begin with ($+8.7$ pp on average), and only three of six transfers beat
-majority, all by small amounts ($+1.7$ to $+7.7$ pp). Qwen's signed transfer average ($-1.2$
+of the three to begin with ($+8.7$% on average), and only three of six transfers beat
+majority, all by small amounts ($+1.7$ to $+7.7$%). Qwen's signed transfer average ($-1.2$
 pp) is closer to zero than Gemma's not because Qwen transfers better but because Qwen has
 less *within-dataset* signal to lose. The retention ratio ($-14\%$) reflects this: an almost
 flat probe stays almost flat under transfer.
@@ -1961,7 +1959,7 @@ baselines, and the prompt-feature baseline matrices are released alongside this 
 
 The picture is more model-dependent than the ConfabQA single-seed reading suggested.
 At the single-seed level the disconfounded within-stratum margins are small on all
-three models ($+1.7$--$+5.8$ pp against the strongest prompt baseline). The Section 8.1
+three models ($+1.7$--$+5.8$% against the strongest prompt baseline). The Section 8.1
 bootstrap leaves the Qwen and Gemma cells consistent with zero but flips Llama's
 ConfabQA within-pre / within-obscure cells into positive territory with CIs
 excluding $0$: the null correctness reading holds for Qwen and Gemma but not for
@@ -1978,9 +1976,9 @@ versions of either.
 support the framing "the hidden-state correctness probe does not add detectable signal
 beyond what a prompt-text classifier already recovers, at $1.7$B--$3$B scale." That
 framing over-generalizes from one model and one fixed question set. On balanced 50/50
-subsamples of external benchmarks, Llama 3.2 3B's correctness probe adds $+17$--$+25$ pp
+subsamples of external benchmarks, Llama 3.2 3B's correctness probe adds $+17$--$+25$%
 over the strongest prompt baseline, with 95\% CIs that exclude $0$ by margins of
-$14$--$17$ pp, far outside per-fold noise. The stronger reading that the refusal
+$14$--$17$%, far outside per-fold noise. The stronger reading that the refusal
 direction is the *only* recoverable structure ("the whole atlas") fails the same way:
 at $3$B Llama scale, both refusal and correctness directions exist in legible form.
 
@@ -2096,7 +2094,7 @@ across $14$ `(dataset, model, target)` cells. The
 findings:
 
 (i) **The hidden state encodes a refusal-vs-confabulation signal that beats prompt features
-across all three models** (ConfabQA $+7.4$--$+16.3$ pp; concentrated in the deepest layers; logit-
+across all three models** (ConfabQA $+7.4$--$+16.3$%; concentrated in the deepest layers; logit-
 lens projection recovers the literal refusal-opening vocabulary in each model; causal under
 a one-shot forward-hook intervention that drives the first-token refusal-opener rate to
 $100\%$ on Qwen3 and Gemma and is attenuated on Llama by Llama's near-saturated default
@@ -2104,18 +2102,18 @@ refusal policy).
 
 (ii) **The correctness-probe gap is sharply model-dependent**, not the across-the-board null
 that the ConfabQA single-seed picture suggested. On balanced PopQA / TriviaQA subsamples,
-Llama 3.2 3B's hidden state adds $+24.9$ and $+21.3$ pp over the strongest prompt baseline
+Llama 3.2 3B's hidden state adds $+24.9$ and $+21.3$% over the strongest prompt baseline
 (95\% CIs $[20.6, 29.0]$ and $[19.5, 22.9]$), while Qwen3-1.7B on the same data adds
-$+4.4$ and $+9.6$ pp (CIs $[2.1, 5.5]$ and $[5.1, 13.8]$). On Llama's ConfabQA disconfounded
-targets the bootstrap CIs are also positive and exclude $0$ ($+11.4$ pp within-pre,
-$+12.3$ pp within-obscure). The earlier "correctness probe reduces to prompt features at
+$+4.4$ and $+9.6$% (CIs $[2.1, 5.5]$ and $[5.1, 13.8]$). On Llama's ConfabQA disconfounded
+targets the bootstrap CIs are also positive and exclude $0$ ($+11.4$% within-pre,
+$+12.3$% within-obscure). The earlier "correctness probe reduces to prompt features at
 $1.7$--$3$B scale" framing was an over-generalization from one model.
 
 (iii) **Llama's correctness signal is primarily not refusal-channel readout.** A refusal-
 channel attribution test (dropping refusals and re-probing correct-vs-wrong) leaves Llama
-with $+20.8$ pp (PopQA) and $+17.7$ pp (TriviaQA), so $\approx 83\%$ of the headline
+with $+20.8$% (PopQA) and $+17.7$% (TriviaQA), so $\approx 83\%$ of the headline
 $h_{adds}$ is genuine factual self-knowledge among items the model attempted. A direct
-refusal probe on Llama additionally recovers $+18.4$--$+25.4$ pp $h_{adds}$ on the same
+refusal probe on Llama additionally recovers $+18.4$--$+25.4$% $h_{adds}$ on the same
 benchmarks, confirming a clean abstention direction independent of the correctness signal.
 Llama's hidden state at $3$B carries **two** linearly-decodable signals; Qwen3-1.7B's
 carries only weak versions of either at this scale and on these benchmarks.
@@ -2773,11 +2771,11 @@ about a Marvel film\ldots{}'' & ``X-Men '97'' \\
 
 The headline probe pipeline uses `PCA(n_components=16)`. Sweeping over $\{4, 8, 16, 32, 48,
 64\}$ at each target shows that the peak per-layer accuracies are stable within a
-$\le 5$ pp band across the sweep (Figure \ref{fig:pca-robustness}):
+$\le 5$% band across the sweep (Figure \ref{fig:pca-robustness}):
 
 ![Peak per-layer probe accuracy as a function of PCA $n_{\mathrm{components}}$, for each of the
 main probe targets. The paper default ($n=16$) is marked. All targets are stable across the
-sweep within a $\le 5$ pp band, and several peak at $n \ne 16$, meaning the paper default is
+sweep within a $\le 5$% band, and several peak at $n \ne 16$, meaning the paper default is
 conservative rather than tuned.](figures/qwen3_1_7b/10_pca_robustness.png){#fig:pca-robustness}
 
 The choice of $n_{\mathrm{components}}=16$ is not driving any of the reported numbers; the
