@@ -1260,7 +1260,7 @@ $h \in \mathbb{R}^{2048}$,
 $$a(h) = \mathrm{Enc}(h) \in \mathbb{R}^{32{,}768}_{\ge 0}
   \;\;\text{with}\;\; \|a(h)\|_0 = L_0 = 50,
   \qquad
-  h \;\approx\; \sum_{f :\, a_f(h) > 0} a_f(h)\, \mathbf{d}_f.$$
+  h \;\approx\; \mathrm{Dec}(a(h)) = \sum_{f :\, a_f(h) > 0} a_f(h)\, \mathbf{d}_f.$$
 
 Each state is thus represented by just $50$ of $32{,}768$ candidate features, and
 each feature $f$ owns a fixed decoder direction $\mathbf{d}_f$ living in the same
