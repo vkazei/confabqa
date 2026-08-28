@@ -1258,7 +1258,7 @@ tokens of the model's refusals: ` as`, `As`, `作为`, `\tas`, ` there`. That
 says what the direction outputs. A sparse autoencoder (SAE) helps answer how
 the decision is made computationally inside the hidden state.
 
-**What an SAE gives us here.** An SAE is trained to reconstruct
+An SAE is trained to reconstruct
 per-position hidden states (the "residual stream," in mechanistic-interpretability
 usage) as sparse combinations of learned feature directions: for a
 hidden state $h \in \mathbb{R}^{2048}$,
