@@ -1066,9 +1066,7 @@ know", ` unknown`, ` forgotten`) far short of the refusal direction's literal op
 vocabulary. This is the token-space face of Table \ref{tbl:hadds}: the refusal
 direction is an output-token commitment the lens can read; whatever weak correctness
 signal exists is not organized around output vocabulary. Section 6.2 tests its causal
-counterpart. The projection is released as
-`figures/qwen3_1_7b/correctness_direction_lens.json`
-(`analysis/correctness_direction_lens.py`).
+counterpart.
 
 **Within-post-cutoff version.** Repeating the analysis on the n=393 refusal+wrong subset
 restricted to post-cutoff items only (where every refusal in the dataset actually lives) yields
@@ -1097,9 +1095,7 @@ weight the two mechanisms differently: the mean difference absorbs the content-c
 component (what refusal-triggering questions are *about*), while the discriminatively
 trained probe concentrates the opener-commitment component (what the model is about
 to *say*). A plain average of refusal states, as a control, points at nothing but
-generic sentence-starters (`As`, `The`, `There`, `In`). Released as
-`figures/qwen3_1_7b/refusal_direction_meandiff.json`
-(`analysis/refusal_direction_meandiff.py`).
+generic sentence-starters (`As`, `The`, `There`, `In`).
 
 Figure \ref{fig:geometry} shows the geometry behind the disagreement. The mean
 difference is by construction the centroid connector, and $96\%$ of its norm lies in
@@ -1163,7 +1159,7 @@ model to refusing (it can continue "As of 2024, the film was directed by..." and
 assert an answer), which is why the strict judge-label rate is reported alongside it
 and why the two measures diverge.
 
-**Results (`figures/13_intervention_results.json`, n=30 each subset).**
+**Results (n=30 each subset).**
 
 \begin{table}[!htbp]
 \small
@@ -1237,9 +1233,7 @@ $\alpha = \mp 3000$), originally-wrong items flip to correct at low, sign-indepe
 rates ($17\%$ at both $-3000$ and $+3000$), and refusal induction is scattered
 ($0$--$17\%$) with no dose-response. The few flips concentrate on a recurring
 handful of marginal items (forensics in Appendix C); nothing indicates the
-direction injecting knowledge. Raw sweeps are released as
-`figures/qwen3_1_7b/correctness_direction_intervention.{json,md}`
-(`analysis/correctness_direction_intervention.py`).
+direction injecting knowledge.
 
 Where the refusal direction's sign cleanly controls behavior (Table
 \ref{tbl:alpha}), the correctness direction behaves like a generic off-manifold
@@ -1272,38 +1266,18 @@ same space as $h$ and $\mathbf{w}_{\mathrm{raw}}$. The SAE is a model of the
 activation *distribution*, not of the computation: it sees no weights and predicts
 no outputs. It supplies a learned coordinate system of candidate features, and a
 feature remains a descriptive coordinate unless it passes a causal test, as 2191
-does in Section 6.3.1. The relation to the PCA used throughout Sections 2--5 is
-worth a remark: both are unsupervised reconstructions of the activation
-distribution, but PCA allocates at most $d$ orthogonal directions ordered by
-variance, so rare selective structure is buried in its tail, while the SAE's sparse
-overcomplete code ($50$ of $32{,}768$ non-orthogonal directions per state) is built
-to isolate exactly such structure. Feature 2191 is this paper's own illustration:
-it fires on $8$ of $549$ states, contributing far too little variance to surface in
-any leading principal component, yet it is the causally sufficient unit of
-Section 6.3.1. Quantitatively, the probe pipeline's $16$-component subspace can hold
-at most a $0.37$ cosine with the feature's decoder direction, a hard ceiling for any
-probe of the Section 2.3 form (the recovered probe sits at $0.16$); half coverage
-takes roughly $60$ variance-ordered components, and even the full
-$549$-dimensional span of the benchmark's activations covers only $0.79$
-(`figures/qwen3_1_7b/pca_coverage_2191.json`). The converse question, whether the
-feature could improve the probe's split, closes negative: under the same 5-fold CV,
-blending the unit probe direction with $\hat W_{\rm dec}[2191]$ leaves the
-refusal-vs-wrong AUC flat at $0.944$ for mixing weights up to $0.2$ and degrades
-monotonically beyond, and a two-feature logistic stack over both projections also
-lands at $0.943$: the feature's out-of-subspace mass carries no class information
-the probe has not already extracted. The surprise runs the other way: the raw
-projection onto 2191 alone reaches AUC $0.895$, close to the probe's $0.944$, even
-though the sparse code activates the feature on only $8$ of $549$ states; the
-encoder's threshold discards a strongly separating dense signal
-(`figures/qwen3_1_7b/probe_2191_blend.json`, `analysis/probe_2191_blend.py`). The two decompositions also differ in what estimated them: the PCA
-axes and the probe are fit in-sample on at most $784$ ConfabQA states, while the
-SAE dictionary was estimated from a far larger general-text activation corpus
-through the base model (Qwen Team, 2025b) and never saw ConfabQA. That this
-dictionary nonetheless contains the exact opener feature our benchmark activates
-is itself evidence that 2191 is a general unit of the model rather than an
-artifact of this question set; the price is the Appendix D.2 caveat, since the
-dictionary is tuned to the base model's general distribution rather than to the
-Instruct model or this domain. Input, in our setting: the
+does in Section 6.3.1. Two contrasts with the PCA used throughout Sections 2--5
+matter here. First, PCA orders at most $d$ orthogonal directions by variance, so
+rare selective structure is buried in its tail; the sparse overcomplete code is
+built to isolate it. Feature 2191 illustrates both halves: it fires on $8$ of
+$549$ states, and the probe pipeline's $16$-component subspace can hold at most a
+$0.37$ cosine with its decoder direction, a hard ceiling for any probe of the
+Section 2.3 form (coverage and blend quantification in Appendix D.3). Second, the
+PCA axes and the probe are fit in-sample on at most $784$ ConfabQA states, while
+the SAE dictionary was estimated from a far larger general-text corpus through the
+base model and never saw ConfabQA; that it nonetheless contains the exact opener
+feature this benchmark activates is evidence 2191 is a general unit of the model,
+at the price of the Appendix D.2 base-vs-instruct caveat. Input, in our setting: the
 layer-27 post-block hidden state (HF hidden-state index $28$, the refusal probe's
 layer). Outputs: per-state sparse activations (view C below) and the learned
 dictionary $\{\mathbf{d}_f\}$ itself (views A and B). I use the publicly released
@@ -1353,16 +1327,10 @@ top-$20$ lists, $4$ resolve into clean stories.
   refusal direction ($+0.04$). The SAE recovers a feature the model *has*
   but does not use in this question distribution: a latent capacity for
   apology-style refusal that the ConfabQA elicitation does not trigger.
-  Pushing the feature does not unlock the register either: adding
-  $\alpha \cdot \hat W_{\rm dec}[14034]$ at the Section 6.2 intervention point,
-  at the same doses that saturate feature 2191 ($\alpha = 750$, $1500$), produces
-  zero `Sorry`/`Oops` openers in $60$ generations. Its causal output routes
-  through its weaker ` There` component instead ($13/30$ There-openers at
-  $\alpha = 1500$, and all eight induced judged refusals open with "There").
-  The dormancy is deep: the register is present in the dictionary but not
-  causally reachable at these doses
-  (`figures/qwen3_1_7b/sae_apology_feature_test.json`,
-  `analysis/sae_apology_feature_test.py`).
+  Pushing the feature does not unlock the register either: at the doses that
+  saturate feature 2191, it produces zero `Sorry`/`Oops` openers in $60$
+  generations; the register is present in the dictionary but not causally
+  reachable (detail in Appendix C).
 - **Features 18937 and 21750 (post-cutoff cue detectors).** Both have
   diff-$z \approx +0.9$ and hit-rates of $\approx 82\%$ on refusal vs.\ $\approx 38\%$ on wrong, empirically the strongest refusal-vs-attempt
   discriminators on ConfabQA. Their top max-activating prompts are exclusively
@@ -1391,10 +1359,6 @@ weighted superposition of "I'm about to type ` as`" with "this prompt is
 about a $2024$ event I shouldn't pretend to know". The SAE is what lets us
 see the two components separately. This is the kind of structure single-
 direction analyses systematically miss.
-
-Raw decomposition data, per-feature characterizations, and the feature-card
-figure are released as `figures/sae_decompose_refusal.{json,md}` and
-`figures/sae_features_card.png`.
 
 ### 6.3.1 Causal validation of feature 2191
 
@@ -1476,13 +1440,10 @@ All four causal routes converge on the strict criterion. On the same $30$ wrong
 items, the probe direction converts $30\%$ into judged refusals at
 $\alpha = +1500$, forcing the literal token "As" converts $37\%$, forcing "No"
 converts $27\%$, and feature 2191 converts $30\%$ at $\alpha = 750$ and $27\%$ at
-$1500$ (`figures/qwen3_1_7b/sae_feature_refusal_rate.json`). Every route to the
+$1500$. Every route to the
 opener token produces the same downstream refusal rate of roughly one in three:
 the mediation is complete at the first token. Dose-for-dose potency accounting is
 in Appendix C.
-
-Raw intervention data and code are released as
-`saes/sae_causal_ablation.py` and `figures/sae_causal_ablation.{json,md,png}`.
 
 # 7. Cross-model results
 
@@ -2371,9 +2332,16 @@ cached responses and activations. The summary file records: per-judge, per-cutof
 per-category, and per-domain counts; full per-layer accuracy curves and 1$\sigma$ layer
 ranges for every probe target; class-imbalance metrics at peak for the refusal probe; and
 all three prompt-feature baseline variants. Reproducing those numbers consists of running
-`python 03_analyze.py` and reading the resulting JSON. The SAE numbers (Section 6.3) and
-the cross-model / cross-dataset numbers (Sections 7--8) are recorded in the
-per-experiment artifacts under `figures/` cited in their home sections.
+`python 03_analyze.py` and reading the resulting JSON. The Section 6 and
+Sections 7--8 numbers are recorded in per-experiment artifacts under `figures/`,
+one JSON (with the generating script of the same name under `analysis/` or
+`saes/`) per experiment: `13_intervention_results`,
+`correctness_direction_lens`, `correctness_direction_intervention`,
+`refusal_direction_meandiff`, `pca_coverage_2191`, `probe_2191_blend`,
+`sae_decompose_refusal`, `sae_causal_ablation`, `sae_feature_refusal_rate`,
+`sae_apology_feature_test`, `prefix_forcing_control`, `hidden_state_norms`,
+`bootstrap_h_adds`, `bootstrap_llama_external`, `bootstrap_qwen3_4b`,
+`refusal_channel_test`, and `cross_dataset_transfer_<model>`.
 
 
 ### B.5 Sample source-file entry
@@ -2510,6 +2478,13 @@ $30\%$ at $\alpha = 750$ and $27\%$ at $1500$
 mixture, the single feature, or the token itself, produces the same downstream
 refusal rate of roughly one in three. The mediation is complete, and the
 differences between the two "as" directions end at the first token.
+
+**Apology-feature push (Section 6.3).** Adding
+$\alpha \cdot \hat W_{\rm dec}[14034]$ at the Section 6.2 intervention point, at the
+same doses that saturate feature 2191 ($\alpha = 750$, $1500$), produces zero
+`Sorry`/`Oops` openers in $60$ generations; the feature's causal output routes
+through its weaker ` There` component instead ($13/30$ There-openers at
+$\alpha = 1500$, and all eight induced judged refusals open with "There").
 
 **Correctness-direction flip forensics.** The correctness-direction flips concentrate on a recurring handful of items rather
 than spreading across the subset: the union over all six nonzero $\alpha$ is $10$ of
@@ -2788,6 +2763,23 @@ transfer worse (EV $0.54$--$0.70$); the late-layer hidden state where the probe 
 happens to be the regime where the base SAE transfers best, consistent with
 instruction-tuning having modified the early layers more than the final residual.
 
+
+### D.3 PCA coverage and blend tests of feature 2191
+
+How much of feature 2191's decoder direction the probe's reachable subspace can
+represent, and whether the feature can improve the probe's split (Section 6.3).
+Coverage: the pipeline's $16$-component subspace holds at most a $0.37$ cosine
+with $\hat W_{\rm dec}[2191]$ (the recovered probe sits at $0.16$); half coverage
+takes roughly $60$ variance-ordered components, and even the full
+$549$-dimensional span of the benchmark's activations covers only $0.79$. Blend:
+under 5-fold CV, mixing the unit probe direction with the feature leaves the
+refusal-vs-wrong AUC flat at $0.944$ for mixing weights up to $0.2$ and degrades
+monotonically beyond, and a two-feature logistic stack over both projections also
+lands at $0.943$; the feature's out-of-subspace mass carries no class information
+the probe has not already extracted. The surprise runs the other way: the raw
+projection onto 2191 alone reaches AUC $0.895$, close to the probe's $0.944$, even
+though the sparse code activates the feature on only $8$ of $549$ states; the
+encoder's threshold discards a strongly separating dense signal.
 
 ## E. Bootstrap protocol and attribution details
 
