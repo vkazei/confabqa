@@ -116,7 +116,7 @@ single-model, single-dataset study could:
    is the model's own output decision, and the late hidden state is the computation
    that produces it. The findings are the signal's *form*: a single linear direction
    at the deepest layers, causally sufficient, and decomposable. A one-shot
-   residual-stream intervention drives the first-token refusal-opener rate to $100\%$
+   hidden-state intervention drives the first-token refusal-opener rate to $100\%$
    on Qwen3 and Gemma (Sections 6.2 and 7.2). This replicates Arditi et al.'s (2024)
    single-direction refusal finding on three model families, with the cutoff variable
    controlled by construction. The regime differs: theirs is safety refusal on harmful
@@ -988,10 +988,10 @@ hidden-state units, $(\mathbf{w}_{\mathrm{raw}})_i = (V^\top w)_i / \sigma_i$, w
 sign chosen so the refusal end is positive. The $1/\sigma_i$ is the scaler
 differentiated through: as a function of the raw state the probe score is
 $f(h) = \sum_i (V^\top w)_i \,(h_i - \mu_i)/\sigma_i + b$, so
-$\mathbf{w}_{\mathrm{raw}}$ is its gradient, the residual-stream direction along which
+$\mathbf{w}_{\mathrm{raw}}$ is its gradient, the hidden-state direction along which
 the probe score increases fastest. Raw units matter because both consumers of the
 direction, the model's own RMSNorm/LM head here and the intervention hook of
-Section 6.2, operate on residual-stream coordinates and know nothing about the scaler. Following the logit-lens convention I then
+Section 6.2, operate on hidden-state coordinates and know nothing about the scaler. Following the logit-lens convention I then
 push $\mathbf{w}_{\mathrm{raw}}$ through the model's final RMSNorm and tied LM head:
 
 $$\ell_v \;=\; \big[\mathrm{LMHead}\!\left(\mathrm{RMSNorm}(\mathbf{w}_{\mathrm{raw}})\right)\big]_v
@@ -1256,10 +1256,11 @@ The logit-lens analysis of Section 6.1 projects the recovered refusal probe
 direction through Qwen3-1.7B's own LM head and recovers the literal opening
 tokens of the model's refusals: ` as`, `As`, `作为`, `\tas`, ` there`. That
 says what the direction outputs. A sparse autoencoder (SAE) helps answer how
-the decision is made computationally inside the residual stream.
+the decision is made computationally inside the hidden state.
 
 **What an SAE gives us here.** A sparse autoencoder is trained to reconstruct
-residual-stream states as sparse combinations of learned feature directions: for a
+per-position hidden states (the "residual stream," in mechanistic-interpretability
+usage) as sparse combinations of learned feature directions: for a
 hidden state $h \in \mathbb{R}^{2048}$,
 
 $$h \;\approx\; \sum_{f \in \mathcal{A}(h)} a_f(h)\, \mathbf{d}_f,
@@ -1303,7 +1304,7 @@ is itself evidence that 2191 is a general unit of the model rather than an
 artifact of this question set; the price is the Appendix D.2 caveat, since the
 dictionary is tuned to the base model's general distribution rather than to the
 Instruct model or this domain. Input, in our setting: the
-layer-27 post-block residual stream (HF hidden-state index $28$, the refusal probe's
+layer-27 post-block hidden state (HF hidden-state index $28$, the refusal probe's
 layer). Outputs: per-state sparse activations (view C below) and the learned
 dictionary $\{\mathbf{d}_f\}$ itself (views A and B). I use the publicly released
 Qwen-Scope SAE for Qwen3-1.7B-Base, the Qwen analogue of Gemma Scope (Lieberum
@@ -1406,12 +1407,12 @@ co-fire with refusals), I run the same one-shot intervention protocol as
 Section 6.2 but substitute the SAE feature's decoder direction for the
 recovered probe direction. On $30$ items the model originally got wrong
 (non-refusals), I add $\alpha \cdot \hat W_{\rm dec}[2191]$ to the
-last-prompt-token residual stream just before the final RMSNorm (HF layer
+last-prompt-token hidden state just before the final RMSNorm (HF layer
 $28$, equivalent to the Section 6.2 intervention point), sweep $\alpha$,
 and read off the next-token probability assigned to refusal-opener tokens
 (the Section 6.2 opener set; $10$ unique token IDs).
 
-![Causal dose-response of SAE feature 2191. On 30 ConfabQA wrong items (blue), adding $\alpha \cdot \hat W_{\rm dec}[2191]$ to the last-prompt-token residual stream at HF layer 28 induces a sharp transition between $\alpha=200$ and $\alpha=750$ from no refusal-opener probability to 100\% of next-token mass on refusal openers (and 30/30 argmax flips). The 30 ConfabQA refusal items (red) are already saturated at $\alpha=0$.](figures/sae_causal_ablation.png){#fig:sae-causal}
+![Causal dose-response of SAE feature 2191. On 30 ConfabQA wrong items (blue), adding $\alpha \cdot \hat W_{\rm dec}[2191]$ to the last-prompt-token hidden state at HF layer 28 induces a sharp transition between $\alpha=200$ and $\alpha=750$ from no refusal-opener probability to 100\% of next-token mass on refusal openers (and 30/30 argmax flips). The 30 ConfabQA refusal items (red) are already saturated at $\alpha=0$.](figures/sae_causal_ablation.png){#fig:sae-causal}
 
 
 The dose-response is monotonic with a sharp transition between $\alpha=200$
@@ -1582,7 +1583,7 @@ probe peaks in the deepest layers on Qwen (layer $28$, $89.4\%$) and Llama (laye
 $95.8\%$), and at layer $19$ on Gemma ($83.9\%$). The consistency of that late-layer
 localization is what the Section 7.2 intervention exploits: by the time the last
 transformer block has run, the model's commitment to refuse or answer is a
-linearly-readable direction in the residual stream.
+linearly-readable direction in the hidden state.
 
 ## 7.2 Causal intervention
 
@@ -2780,10 +2781,10 @@ takes no arguments and reads the same cached responses and activations as `03_an
 Qwen-Scope was trained on Qwen3-1.7B-Base; the Section 6.3 subject is the Instruct
 variant. A reconstruction-quality check on $200$ ConfabQA last-prompt-token
 activations at the refusal-probe peak layer (HF index $28$, $=$ SAE layer $27$, the
-post-block-27 residual stream) reports explained variance $\mathrm{EV}=0.82$ and
+post-block-27 hidden state) reports explained variance $\mathrm{EV}=0.82$ and
 cosine similarity $0.90$ to the original: acceptable base$\to$instruct transfer
 (`saes/sae_test_reconstruction.py`, `saes/sae_layer_sweep.py`). Earlier layers
-transfer worse (EV $0.54$--$0.70$); the late residual stream where the probe peaks
+transfer worse (EV $0.54$--$0.70$); the late-layer hidden state where the probe peaks
 happens to be the regime where the base SAE transfers best, consistent with
 instruction-tuning having modified the early layers more than the final residual.
 
