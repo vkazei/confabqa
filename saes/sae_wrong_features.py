@@ -1,4 +1,4 @@
-"""Which SAE features fire for wrong (confabulating) responses?
+"""Which SAE features fire for wrong responses? (pre-norm geometry)
 
 Mirror of Section 6.3's view C, which asked what fires for refusals.
 Three contrasts over all 784 ConfabQA layer-28 states, each ranking
@@ -25,7 +25,7 @@ import torch
 from sae_lens import SAE
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
-import analysis.make_probe_direction_atlas as atlas
+from analysis.cache_prenorm_states import load_prenorm
 from saes.sae_decompose_refusal import logit_lens_top_tokens
 from confabqa.constants import SAE_RELEASE, SAE_LAYER
 from config import FIGURES_DIR, MODEL_ID, get_device, set_seeds
@@ -42,8 +42,7 @@ def diff_z(acts, mask_a, mask_b):
 
 def main():
     set_seeds()
-    items = atlas.load_subset({"correct", "refusal", "wrong"})
-    H = np.stack([r["h"] for r in items])
+    items, H = load_prenorm({"correct", "refusal", "wrong"})
     labs = np.array([r["judge_label"] for r in items])
     pre = np.array([r["cutoff_class"] == "pre" for r in items])
 

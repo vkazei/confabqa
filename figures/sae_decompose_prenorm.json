@@ -1,0 +1,579 @@
+{
+ "geometry": "post-block-27 residual (blocks.27.hook_resid_post), normalize_activations=none",
+ "n_refusal": 147,
+ "n_wrong": 402,
+ "reconstruction": {
+  "ev_per_item_mean": 0.502,
+  "ev_per_item_median": 0.5106,
+  "cos_mean": 0.7191
+ },
+ "state_norm_mean": 1629.6,
+ "view_C_top": [
+  4314,
+  17077,
+  14361,
+  2191,
+  16612,
+  8875,
+  14034,
+  27369,
+  22755,
+  9522,
+  8353,
+  9047,
+  7936,
+  1450,
+  22466,
+  7077,
+  19830,
+  25065,
+  25660,
+  17345
+ ],
+ "view_B_top": [
+  8444,
+  2950,
+  2191,
+  21008,
+  9098,
+  14034,
+  20084,
+  1450,
+  8945,
+  57,
+  25660,
+  16612,
+  32487,
+  9894,
+  14361,
+  8353,
+  14967,
+  20779,
+  21615,
+  15638
+ ],
+ "view_Aprime_top": [
+  8485,
+  8444,
+  2191,
+  23494,
+  21008,
+  29490,
+  8353,
+  9899,
+  14034,
+  9098,
+  25660,
+  16612,
+  21615,
+  8875,
+  20084,
+  57,
+  10916,
+  18164,
+  18264,
+  4256
+ ],
+ "features": {
+  "2191": {
+   "diff_z": 1.868,
+   "rank_C": 4,
+   "decoder_alignment": 0.0595,
+   "hit_rate_refusal": 1.0,
+   "hit_rate_wrong": 0.49,
+   "mean_act_refusal": 267.92,
+   "lens_top": [
+    " as",
+    "作为",
+    "作為",
+    "\tas",
+    " As",
+    "as",
+    "As",
+    "-as"
+   ],
+   "max_activating": [
+    {
+     "id": "cul_pc_01",
+     "label": "refusal",
+     "act": 359.0,
+     "q": "Which Gwen Stefani album was released in November 2024?"
+    },
+    {
+     "id": "cul_pc_74",
+     "label": "wrong",
+     "act": 358.0,
+     "q": "Which Taylor Swift album was released in April 2024?"
+    },
+    {
+     "id": "cin_pc_59",
+     "label": "refusal",
+     "act": 341.4,
+     "q": "Who plays Elphaba in the November 2024 film adaptation of 'Wicked'?"
+    },
+    {
+     "id": "cul_pc_20",
+     "label": "refusal",
+     "act": 339.5,
+     "q": "Which Taylor Swift album was released on April 19, 2024?"
+    },
+    {
+     "id": "sci_pc_109",
+     "label": "refusal",
+     "act": 329.8,
+     "q": "Who won the Nobel Prize in Physiology or Medicine in 2024?"
+    }
+   ]
+  },
+  "4314": {
+   "diff_z": 2.146,
+   "rank_C": 1,
+   "decoder_alignment": 0.0169,
+   "hit_rate_refusal": 0.8231,
+   "hit_rate_wrong": 0.1169,
+   "mean_act_refusal": 101.1,
+   "lens_top": [
+    " moment",
+    " momento",
+    "moment",
+    " Moment",
+    " present",
+    "(moment",
+    "Moment",
+    "目前"
+   ],
+   "max_activating": [
+    {
+     "id": "sci_pc_65",
+     "label": "refusal",
+     "act": 198.4,
+     "q": "Who won the Nobel Prize in Chemistry in 2024?"
+    },
+    {
+     "id": "sci_pc_109",
+     "label": "refusal",
+     "act": 196.5,
+     "q": "Who won the Nobel Prize in Physiology or Medicine in 2024?"
+    },
+    {
+     "id": "cul_pc_08",
+     "label": "refusal",
+     "act": 192.6,
+     "q": "Which author won the Booker Prize in November 2025 for the novel 'Flesh'?"
+    },
+    {
+     "id": "sci_pc_62",
+     "label": "refusal",
+     "act": 183.3,
+     "q": "Who won the Nobel Prize in Physics in 2024?"
+    },
+    {
+     "id": "cul_pc_68",
+     "label": "refusal",
+     "act": 181.9,
+     "q": "Who won the Nobel Prize in Literature in October 2024?"
+    }
+   ]
+  },
+  "8875": {
+   "diff_z": 1.858,
+   "rank_C": 6,
+   "decoder_alignment": 0.0242,
+   "hit_rate_refusal": 0.7551,
+   "hit_rate_wrong": 0.1194,
+   "mean_act_refusal": 109.42,
+   "lens_top": [
+    " I",
+    "我",
+    "I",
+    "我在",
+    "我对",
+    "我会",
+    " my",
+    "我没有"
+   ],
+   "max_activating": [
+    {
+     "id": "cin_pc_22",
+     "label": "refusal",
+     "act": 231.9,
+     "q": "Who won the Screen Actors Guild Award for Outstanding Performance by a Female Actor in a L"
+    },
+    {
+     "id": "cin_pc_92",
+     "label": "refusal",
+     "act": 227.5,
+     "q": "Who won the SAG Award for Outstanding Performance by a Male Actor in a Leading Role at the"
+    },
+    {
+     "id": "cul_pc_120",
+     "label": "refusal",
+     "act": 222.1,
+     "q": "Who won the Grammy Award for Best New Artist at the February 2025 ceremony?"
+    },
+    {
+     "id": "cin_pc_11",
+     "label": "refusal",
+     "act": 210.9,
+     "q": "Who won the BAFTA Award for Leading Actor at the February 2025 ceremony?"
+    },
+    {
+     "id": "cin_pc_56",
+     "label": "refusal",
+     "act": 207.5,
+     "q": "Who won the BAFTA Award for Leading Actress at the February 2025 ceremony?"
+    }
+   ]
+  },
+  "14034": {
+   "diff_z": 1.769,
+   "rank_C": 7,
+   "decoder_alignment": 0.0398,
+   "hit_rate_refusal": 0.9728,
+   "hit_rate_wrong": 0.4279,
+   "mean_act_refusal": 175.22,
+   "lens_top": [
+    "Sorry",
+    " Sorry",
+    "Oops",
+    " Oops",
+    "sorry",
+    " sorry",
+    "There",
+    "You"
+   ],
+   "max_activating": [
+    {
+     "id": "cin_pc_21",
+     "label": "refusal",
+     "act": 258.1,
+     "q": "Who directed the 2025 science fiction film 'Mickey 17'?"
+    },
+    {
+     "id": "cin_pc_92",
+     "label": "refusal",
+     "act": 254.3,
+     "q": "Who won the SAG Award for Outstanding Performance by a Male Actor in a Leading Role at the"
+    },
+    {
+     "id": "sci_pc_109",
+     "label": "refusal",
+     "act": 243.6,
+     "q": "Who won the Nobel Prize in Physiology or Medicine in 2024?"
+    },
+    {
+     "id": "cin_pc_66",
+     "label": "refusal",
+     "act": 241.9,
+     "q": "Who won the Academy Award for Best Actor at the 2025 Oscars in March 2025?"
+    },
+    {
+     "id": "sci_pc_65",
+     "label": "refusal",
+     "act": 240.9,
+     "q": "Who won the Nobel Prize in Chemistry in 2024?"
+    }
+   ]
+  },
+  "14361": {
+   "diff_z": 1.912,
+   "rank_C": 3,
+   "decoder_alignment": 0.0302,
+   "hit_rate_refusal": 0.9524,
+   "hit_rate_wrong": 0.291,
+   "mean_act_refusal": 104.95,
+   "lens_top": [
+    " may",
+    " Please",
+    " Hopefully",
+    " Stay",
+    " May",
+    " Thank",
+    " rest",
+    " Let"
+   ],
+   "max_activating": [
+    {
+     "id": "his_pc_81",
+     "label": "refusal",
+     "act": 162.7,
+     "q": "Who was elected Pope in May 2025 to succeed Pope Francis?"
+    },
+    {
+     "id": "sci_pc_109",
+     "label": "refusal",
+     "act": 161.7,
+     "q": "Who won the Nobel Prize in Physiology or Medicine in 2024?"
+    },
+    {
+     "id": "sci_pc_62",
+     "label": "refusal",
+     "act": 160.5,
+     "q": "Who won the Nobel Prize in Physics in 2024?"
+    },
+    {
+     "id": "sci_pc_65",
+     "label": "refusal",
+     "act": 158.3,
+     "q": "Who won the Nobel Prize in Chemistry in 2024?"
+    },
+    {
+     "id": "his_pc_62",
+     "label": "wrong",
+     "act": 149.9,
+     "q": "On what date did Pope Francis pass away in 2025?"
+    }
+   ]
+  },
+  "16612": {
+   "diff_z": 1.865,
+   "rank_C": 5,
+   "decoder_alignment": 0.0307,
+   "hit_rate_refusal": 0.7483,
+   "hit_rate_wrong": 0.1144,
+   "mean_act_refusal": 81.55,
+   "lens_top": [
+    "Please",
+    " Please",
+    " please",
+    " PLEASE",
+    "All",
+    "PLEASE",
+    "请",
+    " You"
+   ],
+   "max_activating": [
+    {
+     "id": "his_pc_89",
+     "label": "wrong",
+     "act": 152.7,
+     "q": "On what date was the general election in Canada held in April 2025?"
+    },
+    {
+     "id": "cin_pc_93",
+     "label": "refusal",
+     "act": 144.9,
+     "q": "Who won the Academy Award for Best Actor at the 2025 ceremony?"
+    },
+    {
+     "id": "cin_pc_66",
+     "label": "refusal",
+     "act": 142.7,
+     "q": "Who won the Academy Award for Best Actor at the 2025 Oscars in March 2025?"
+    },
+    {
+     "id": "cin_pc_86",
+     "label": "refusal",
+     "act": 142.5,
+     "q": "Who won the Academy Award for Best Actress at the 2025 ceremony?"
+    },
+    {
+     "id": "cin_pc_96",
+     "label": "refusal",
+     "act": 142.0,
+     "q": "Who won the Academy Award for Best Supporting Actor at the 2025 Oscars in March 2025?"
+    }
+   ]
+  },
+  "17077": {
+   "diff_z": 1.992,
+   "rank_C": 2,
+   "decoder_alignment": 0.0091,
+   "hit_rate_refusal": 0.9728,
+   "hit_rate_wrong": 0.403,
+   "mean_act_refusal": 135.92,
+   "lens_top": [
+    " hereby",
+    " respectfully",
+    " duly",
+    " pursuant",
+    "谨",
+    " Purs",
+    " unto",
+    " dated"
+   ],
+   "max_activating": [
+    {
+     "id": "his_pc_123",
+     "label": "wrong",
+     "act": 188.8,
+     "q": "Who was appointed as the Director of the Office of Management and Budget in February 2025?"
+    },
+    {
+     "id": "cin_pc_92",
+     "label": "refusal",
+     "act": 187.2,
+     "q": "Who won the SAG Award for Outstanding Performance by a Male Actor in a Leading Role at the"
+    },
+    {
+     "id": "sci_pc_109",
+     "label": "refusal",
+     "act": 183.9,
+     "q": "Who won the Nobel Prize in Physiology or Medicine in 2024?"
+    },
+    {
+     "id": "his_pc_21",
+     "label": "refusal",
+     "act": 183.0,
+     "q": "Who was the United States Vice President from January 2025 onwards?"
+    },
+    {
+     "id": "cin_pc_56",
+     "label": "refusal",
+     "act": 181.6,
+     "q": "Who won the BAFTA Award for Leading Actress at the February 2025 ceremony?"
+    }
+   ]
+  },
+  "18937": {
+   "diff_z": 0.0,
+   "rank_C": 232,
+   "decoder_alignment": 0.0053,
+   "hit_rate_refusal": 0.0,
+   "hit_rate_wrong": 0.0,
+   "mean_act_refusal": 0.0,
+   "lens_top": [
+    "ab",
+    "abe",
+    "zi",
+    "alla",
+    "uma",
+    "ix",
+    "kes",
+    "abb"
+   ],
+   "max_activating": [
+    {
+     "id": "sci_wk_42",
+     "label": "wrong",
+     "act": 0.0,
+     "q": "Who won the Nobel Prize in Physiology or Medicine in 2023?"
+    },
+    {
+     "id": "cul_ob_24",
+     "label": "wrong",
+     "act": 0.0,
+     "q": "Who composed 'The Rite of Spring', which caused a riot at its 1913 Paris premiere?"
+    },
+    {
+     "id": "cul_pc_01",
+     "label": "refusal",
+     "act": 0.0,
+     "q": "Which Gwen Stefani album was released in November 2024?"
+    },
+    {
+     "id": "cul_ob_33",
+     "label": "wrong",
+     "act": 0.0,
+     "q": "Which 1982 album by Marvin Gaye contains the hit 'Sexual Healing'?"
+    },
+    {
+     "id": "cul_ob_31",
+     "label": "wrong",
+     "act": 0.0,
+     "q": "Who wrote the 1990 novel 'Possession: A Romance'?"
+    }
+   ]
+  },
+  "21750": {
+   "diff_z": -0.058,
+   "rank_C": 31854,
+   "decoder_alignment": 0.0008,
+   "hit_rate_refusal": 0.0,
+   "hit_rate_wrong": 0.0025,
+   "mean_act_refusal": 0.0,
+   "lens_top": [
+    "ats",
+    "alm",
+    "ting",
+    "acc",
+    "acco",
+    "TINGS",
+    "leurs",
+    " chí"
+   ],
+   "max_activating": [
+    {
+     "id": "cul_ob_09",
+     "label": "wrong",
+     "act": 83.2,
+     "q": "Who wrote the 1984 novel 'The Unbearable Lightness of Being'?"
+    },
+    {
+     "id": "sci_wk_42",
+     "label": "wrong",
+     "act": 0.0,
+     "q": "Who won the Nobel Prize in Physiology or Medicine in 2023?"
+    },
+    {
+     "id": "cul_ob_24",
+     "label": "wrong",
+     "act": 0.0,
+     "q": "Who composed 'The Rite of Spring', which caused a riot at its 1913 Paris premiere?"
+    },
+    {
+     "id": "cul_pc_01",
+     "label": "refusal",
+     "act": 0.0,
+     "q": "Which Gwen Stefani album was released in November 2024?"
+    },
+    {
+     "id": "cul_ob_33",
+     "label": "wrong",
+     "act": 0.0,
+     "q": "Which 1982 album by Marvin Gaye contains the hit 'Sexual Healing'?"
+    }
+   ]
+  },
+  "27369": {
+   "diff_z": 1.75,
+   "rank_C": 8,
+   "decoder_alignment": 0.0262,
+   "hit_rate_refusal": 0.8571,
+   "hit_rate_wrong": 0.2438,
+   "mean_act_refusal": 91.27,
+   "lens_top": [
+    "任何人",
+    " Unless",
+    " Any",
+    "Unless",
+    "Nothing",
+    " Nothing",
+    "Whenever",
+    "任何"
+   ],
+   "max_activating": [
+    {
+     "id": "his_pc_67",
+     "label": "refusal",
+     "act": 147.2,
+     "q": "Who was elected President of Romania in May 2025 following a re-run of the annulled 2024 e"
+    },
+    {
+     "id": "his_pc_65",
+     "label": "wrong",
+     "act": 142.3,
+     "q": "Who was appointed Secretary of State in the Trump administration in January 2025?"
+    },
+    {
+     "id": "his_pc_63",
+     "label": "refusal",
+     "act": 140.2,
+     "q": "Who won the general election in Japan in October 2024 to remain Prime Minister despite los"
+    },
+    {
+     "id": "his_pc_01",
+     "label": "refusal",
+     "act": 138.4,
+     "q": "Who was appointed as the Taoiseach (Prime Minister) of Ireland on January 23, 2025, follow"
+    },
+    {
+     "id": "his_pc_98",
+     "label": "wrong",
+     "act": 137.2,
+     "q": "Who became South Korea's Prime Minister in 2024 and acted as acting president during the Y"
+    }
+   ]
+  }
+ }
+}

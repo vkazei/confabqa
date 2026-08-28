@@ -21,6 +21,10 @@ import analysis.make_probe_direction_atlas as atlas
 from confabqa.constants import SAE_RELEASE, SAE_LAYER, SAE_FEATURE_ID
 from config import FIGURES_DIR, set_seeds
 from plots.figure_direction_geometry import cov_ellipse
+# Note: the scatter is the probes' representation (the cached final normed
+# state); the two direction arrows are raw 2048-d vectors, so the angle is
+# geometry-independent. Feature-activation markers were removed: encoding
+# these normed states through the SAE is out of contract (Appendix D.2).
 
 
 def main():
@@ -42,18 +46,12 @@ def main():
     y = np.array([1 if r["judge_label"] == "refusal" else 0 for r in items])
     Q = (H - H.mean(axis=0)) @ np.stack([u1, u2]).T
 
-    with torch.no_grad():
-        acts = sae.encode(torch.from_numpy(H).float()).numpy()[:, SAE_FEATURE_ID]
-    fired = acts > 0
 
     fig, ax = plt.subplots(figsize=(7.4, 5.6), dpi=140)
     ax.scatter(*Q[y == 0].T, s=14, c="#d62728", alpha=0.45,
                label=f"wrong (n={int((y == 0).sum())})")
     ax.scatter(*Q[y == 1].T, s=14, c="#1f77b4", alpha=0.55,
                label=f"refusal (n={int((y == 1).sum())})")
-    if fired.any():
-        ax.scatter(*Q[fired].T, s=80, facecolors="none", edgecolors="#000000",
-                   lw=1.3, label=f"feature 2191 fires (n={int(fired.sum())})")
     q_w = cov_ellipse(ax, Q[y == 0], "#d62728")
     q_r = cov_ellipse(ax, Q[y == 1], "#1f77b4")
     ax.plot(*q_w, marker="*", ms=16, c="#7f1d1d", zorder=5)
@@ -93,19 +91,14 @@ def main():
     ax.legend(loc="upper left", fontsize=9)
     ax.text(0.02, 0.02,
             f"cos(probe, 2191) = {cos_full:.2f}  "
-            f"(angle {np.degrees(theta):.0f}°)\n"
-            f"2191 fires on {int(fired[y == 1].sum())}/{int((y == 1).sum())} "
-            f"refusal and {int(fired[y == 0].sum())}/{int((y == 0).sum())} "
-            f"wrong items",
+            f"(angle {np.degrees(theta):.0f}°)",
             transform=ax.transAxes, fontsize=8.5, color="#444444", va="bottom")
     plt.tight_layout()
     out = FIGURES_DIR / "probe_sae_plane.png"
     plt.savefig(out, bbox_inches="tight", facecolor="white")
     print(f"Wrote {out}")
     print(json.dumps({"cos": round(cos_full, 4),
-                      "angle_deg": round(float(np.degrees(theta)), 1),
-                      "fired_refusal": int(fired[y == 1].sum()),
-                      "fired_wrong": int(fired[y == 0].sum())}))
+                      "angle_deg": round(float(np.degrees(theta)), 1)}))
 
 
 if __name__ == "__main__":

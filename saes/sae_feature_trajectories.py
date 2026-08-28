@@ -1,4 +1,4 @@
-"""Feature-space (a-space) trajectories under h-space pushes.
+"""Feature-space (a-space) trajectories under h-space pushes (pre-norm).
 
 The three views of Section 6.3 are static. This experiment adds the
 dynamic view: the encoder a(h) is heavily nonlinear (TopK), so how an
@@ -21,22 +21,22 @@ import torch
 from sae_lens import SAE
 
 import analysis.make_probe_direction_atlas as atlas
+from analysis.cache_prenorm_states import load_prenorm
 from confabqa.constants import SAE_RELEASE, SAE_LAYER
 from config import FIGURES_DIR, set_seeds
 
-FEATURES = [2191, 14034, 18937, 21750]
+FEATURES = [2191, 14034, 17077, 4314]
 ALPHAS = [-2000, -1000, -500, -200, 0, 200, 500, 1000, 1500, 2000, 3000]
 
 
 def main():
     set_seeds()
-    items = atlas.load_subset({"refusal", "wrong"})
-    H = np.stack([r["h"] for r in items])
+    items, H = load_prenorm({"refusal", "wrong"})
     y = np.array([1 if r["judge_label"] == "refusal" else 0 for r in items])
     H_wrong = H[y == 0]
 
-    d = atlas.recover_direction(items, "refusal")
-    w = d["direction_raw"]
+    w = np.load(
+        "figures/qwen3_1_7b/12_probe_direction_refusal_vs_wrong_within_post.npy")
     u_probe = w / np.linalg.norm(w)
 
     sae = SAE.from_pretrained(release=SAE_RELEASE,
@@ -78,9 +78,9 @@ def main():
     print(f"Wrote {out_json}")
 
     fig, axes = plt.subplots(1, 2, figsize=(11, 4.2), dpi=140, sharey=True)
-    colors = {2191: "#ff7f0e", 14034: "#9467bd", 18937: "#2ca02c",
-              21750: "#1f77b4"}
-    titles = {"probe": "push along probe refusal direction",
+    colors = {2191: "#ff7f0e", 14034: "#9467bd", 17077: "#2ca02c",
+              4314: "#1f77b4"}
+    titles = {"probe": "push along probe refusal direction (within-post)",
               "d2191": "push along feature 2191 decoder direction"}
     for ax, name in zip(axes, ["probe", "d2191"]):
         data = out["directions"][name]

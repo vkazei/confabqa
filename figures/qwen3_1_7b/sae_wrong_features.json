@@ -6,274 +6,274 @@
    "n_b": 235,
    "top_features": [
     {
-     "fid": 18164,
-     "diff_z": 0.627,
+     "fid": 32027,
+     "diff_z": 0.607,
      "hit_rate": {
-      "correct": 1.0,
-      "refusal": 1.0,
-      "wrong": 1.0
+      "correct": 0.013,
+      "refusal": 0.0,
+      "wrong": 0.224
      },
      "lens_top_tokens": [
-      "צילום",
-      ")))));\r\n",
-      "'])){\r\n",
-      " //{\r\n",
-      "++){\r\n",
-      "-."
+      " winning",
+      "荣获",
+      "获得",
+      "获",
+      "获得了",
+      "獲得"
      ],
      "max_activating": [
       {
-       "id": "cul_pc_111",
+       "id": "cin_ob_30",
        "label": "wrong",
-       "q": "Which artist released the album 'Bouquet' in November 2024?"
+       "q": "Which film won the Academy Award for Best Picture at the 1965 ceremony?"
       },
       {
-       "id": "cin_pc_63",
+       "id": "cin_wk_31",
        "label": "wrong",
-       "q": "Who played the titular serial killer in the July 2024 horror film 'Longlegs'?"
+       "q": "Which film won the Academy Award for Best Picture at the 2003 ceremony?"
       },
       {
-       "id": "cin_pc_73",
+       "id": "cin_wk_13",
        "label": "wrong",
-       "q": "Who starred as the title character in the 2024 film 'Emilia Pérez'?"
+       "q": "Which film won the Academy Award for Best Picture at the 1995 ceremony?"
       }
      ]
     },
     {
-     "fid": 3038,
-     "diff_z": 0.494,
+     "fid": 17077,
+     "diff_z": 0.596,
      "hit_rate": {
-      "correct": 1.0,
-      "refusal": 1.0,
-      "wrong": 1.0
+      "correct": 0.17,
+      "refusal": 0.973,
+      "wrong": 0.403
      },
      "lens_top_tokens": [
-      " Question",
-      " Questions",
-      ":**",
-      " Definitions",
-      ":\n",
-      " Other"
+      " hereby",
+      " respectfully",
+      " duly",
+      " pursuant",
+      "谨",
+      " Purs"
      ],
      "max_activating": [
       {
-       "id": "his_pc_08",
+       "id": "his_pc_123",
        "label": "wrong",
-       "q": "On what date in December 2024 did François Bayrou become the Prime Minister of France?"
+       "q": "Who was appointed as the Director of the Office of Management and Budget in February 2025?"
       },
       {
-       "id": "his_pc_70",
-       "label": "wrong",
-       "q": "Who won the 2024 United States presidential election?"
+       "id": "cin_pc_92",
+       "label": "refusal",
+       "q": "Who won the SAG Award for Outstanding Performance by a Male Actor in a Leading Role at the"
       },
       {
-       "id": "his_wk_03",
-       "label": "correct",
-       "q": "Who was the President of the United States during the Civil War?"
+       "id": "sci_pc_109",
+       "label": "refusal",
+       "q": "Who won the Nobel Prize in Physiology or Medicine in 2024?"
       }
      ]
     },
     {
-     "fid": 15051,
-     "diff_z": 0.479,
+     "fid": 7492,
+     "diff_z": 0.546,
      "hit_rate": {
-      "correct": 0.102,
-      "refusal": 0.17,
+      "correct": 0.072,
+      "refusal": 0.048,
       "wrong": 0.284
      },
      "lens_top_tokens": [
-      "Tiles",
-      "查阅",
-      "氢能",
-      " Tiles",
-      ".tiles",
-      "................"
+      "Peter",
+      "William",
+      "Daniel",
+      " Peter",
+      " Daniel",
+      "Michael"
      ],
      "max_activating": [
       {
-       "id": "his_pc_70",
+       "id": "cin_pc_78",
        "label": "wrong",
-       "q": "Who won the 2024 United States presidential election?"
+       "q": "Who starred as Harley Quinn in 'Joker: Folie à Deux' (2024)?"
       },
-      {
-       "id": "sci_wk_03",
-       "label": "wrong",
-       "q": "Who won the Nobel Prize in Physics in 1903?"
-      },
-      {
-       "id": "his_ob_24",
-       "label": "correct",
-       "q": "Who was the first woman to win a Nobel Prize, in 1903?"
-      }
-     ]
-    },
-    {
-     "fid": 23494,
-     "diff_z": 0.469,
-     "hit_rate": {
-      "correct": 1.0,
-      "refusal": 1.0,
-      "wrong": 1.0
-     },
-     "lens_top_tokens": [
-      "�性",
-      "？」",
-      "atism",
-      "�新",
-      "�장",
-      "了我的"
-     ],
-     "max_activating": [
-      {
-       "id": "his_ob_35",
-       "label": "wrong",
-       "q": "Who was the 27th President of the United States, serving from 1909 to 1913?"
-      },
-      {
-       "id": "his_pc_27",
-       "label": "refusal",
-       "q": "Who was elected President of South Korea on June 3, 2025?"
-      },
-      {
-       "id": "cin_pc_08",
-       "label": "refusal",
-       "q": "Which film won the BAFTA Award for Best Film in February 2025?"
-      }
-     ]
-    },
-    {
-     "fid": 16085,
-     "diff_z": 0.461,
-     "hit_rate": {
-      "correct": 0.17,
-      "refusal": 0.401,
-      "wrong": 0.361
-     },
-     "lens_top_tokens": [
-      " dzi",
-      " indem",
-      " szer",
-      " tren",
-      " tér",
-      " rozp"
-     ],
-     "max_activating": [
-      {
-       "id": "cin_pc_121",
-       "label": "wrong",
-       "q": "Who directed the film 'Yellow Letters' which won the Golden Bear in 2026?"
-      },
-      {
-       "id": "sci_wk_09",
-       "label": "wrong",
-       "q": "Who won the Nobel Prize in Chemistry in 2009?"
-      },
-      {
-       "id": "his_ob_11",
-       "label": "correct",
-       "q": "Which 1494 treaty divided the New World between Spain and Portugal?"
-      }
-     ]
-    },
-    {
-     "fid": 31624,
-     "diff_z": 0.441,
-     "hit_rate": {
-      "correct": 0.562,
-      "refusal": 0.973,
-      "wrong": 0.756
-     },
-     "lens_top_tokens": [
-      " jm",
-      " gf",
-      " qx",
-      "qm",
-      " qc",
-      " ku"
-     ],
-     "max_activating": [
-      {
-       "id": "sci_pc_47",
-       "label": "wrong",
-       "q": "Which model series introduced the 'computer use' capability when announced in October 2024"
-      },
-      {
-       "id": "cul_pc_111",
-       "label": "wrong",
-       "q": "Which artist released the album 'Bouquet' in November 2024?"
-      },
-      {
-       "id": "cul_pc_29",
-       "label": "refusal",
-       "q": "Which author won the International Booker Prize in 2025 for 'Heart Lamp'?"
-      }
-     ]
-    },
-    {
-     "fid": 20392,
-     "diff_z": 0.432,
-     "hit_rate": {
-      "correct": 0.996,
-      "refusal": 1.0,
-      "wrong": 0.995
-     },
-     "lens_top_tokens": [
-      " the",
-      ",",
-      " a",
-      " in",
-      " from",
-      " ("
-     ],
-     "max_activating": [
-      {
-       "id": "his_ob_35",
-       "label": "wrong",
-       "q": "Who was the 27th President of the United States, serving from 1909 to 1913?"
-      },
-      {
-       "id": "sci_ob_29",
-       "label": "wrong",
-       "q": "Who won the Nobel Prize in Physics in 1978?"
-      },
-      {
-       "id": "his_pc_78",
-       "label": "refusal",
-       "q": "Who won the United States presidential election on November 5, 2024?"
-      }
-     ]
-    },
-    {
-     "fid": 23305,
-     "diff_z": 0.428,
-     "hit_rate": {
-      "correct": 0.783,
-      "refusal": 0.864,
-      "wrong": 0.891
-     },
-     "lens_top_tokens": [
-      " greed",
-      "cca",
-      "ernals",
-      "ernes",
-      "erg",
-      "edy"
-     ],
-     "max_activating": [
       {
        "id": "cul_ob_13",
        "label": "wrong",
        "q": "Who won the Nobel Prize in Literature in 2020?"
       },
       {
-       "id": "his_ob_03",
-       "label": "correct",
-       "q": "Who was the President of France from 1981 to 1995?"
+       "id": "his_ob_21",
+       "label": "wrong",
+       "q": "Who served as Secretary-General of the United Nations from 1992 to 1996?"
+      }
+     ]
+    },
+    {
+     "fid": 17345,
+     "diff_z": 0.52,
+     "hit_rate": {
+      "correct": 0.519,
+      "refusal": 0.993,
+      "wrong": 0.746
+     },
+     "lens_top_tokens": [
+      " Shortly",
+      " Later",
+      " During",
+      " Soon",
+      " Eventually",
+      " Around"
+     ],
+     "max_activating": [
+      {
+       "id": "his_pc_23",
+       "label": "refusal",
+       "q": "Who was confirmed as the US Ambassador to the United Nations in January 2025?"
       },
       {
-       "id": "his_pc_70",
+       "id": "sci_pc_113",
+       "label": "refusal",
+       "q": "In September 2025, which European research lab announced the discovery of a new subatomic "
+      },
+      {
+       "id": "his_pc_18",
+       "label": "refusal",
+       "q": "Who was appointed as the White House Chief of Staff in January 2025?"
+      }
+     ]
+    },
+    {
+     "fid": 14034,
+     "diff_z": 0.515,
+     "hit_rate": {
+      "correct": 0.213,
+      "refusal": 0.973,
+      "wrong": 0.428
+     },
+     "lens_top_tokens": [
+      "Sorry",
+      " Sorry",
+      "Oops",
+      " Oops",
+      "sorry",
+      " sorry"
+     ],
+     "max_activating": [
+      {
+       "id": "cin_pc_21",
+       "label": "refusal",
+       "q": "Who directed the 2025 science fiction film 'Mickey 17'?"
+      },
+      {
+       "id": "cin_pc_92",
+       "label": "refusal",
+       "q": "Who won the SAG Award for Outstanding Performance by a Male Actor in a Leading Role at the"
+      },
+      {
+       "id": "sci_pc_109",
+       "label": "refusal",
+       "q": "Who won the Nobel Prize in Physiology or Medicine in 2024?"
+      }
+     ]
+    },
+    {
+     "fid": 5349,
+     "diff_z": 0.499,
+     "hit_rate": {
+      "correct": 0.03,
+      "refusal": 0.014,
+      "wrong": 0.194
+     },
+     "lens_top_tokens": [
+      " Prize",
+      "奖",
+      " prize",
+      "奖金",
+      "奖项",
+      " prizes"
+     ],
+     "max_activating": [
+      {
+       "id": "sci_wk_05",
        "label": "wrong",
-       "q": "Who won the 2024 United States presidential election?"
+       "q": "Who won the Nobel Prize in Physics in 1956?"
+      },
+      {
+       "id": "sci_wk_19",
+       "label": "wrong",
+       "q": "Who won the Nobel Prize in Physics in 1933?"
+      },
+      {
+       "id": "sci_wk_38",
+       "label": "wrong",
+       "q": "Who won the Nobel Prize in Physics in 1932?"
+      }
+     ]
+    },
+    {
+     "fid": 15030,
+     "diff_z": 0.462,
+     "hit_rate": {
+      "correct": 0.068,
+      "refusal": 0.0,
+      "wrong": 0.216
+     },
+     "lens_top_tokens": [
+      "Which",
+      "Consider",
+      " Suppose",
+      "Sup",
+      " Consider",
+      "某"
+     ],
+     "max_activating": [
+      {
+       "id": "sci_ob_34",
+       "label": "wrong",
+       "q": "Who won the Nobel Prize in Chemistry in 2001?"
+      },
+      {
+       "id": "sci_ob_44",
+       "label": "wrong",
+       "q": "Who won the Nobel Prize in Physiology or Medicine in 1999?"
+      },
+      {
+       "id": "sci_ob_04",
+       "label": "wrong",
+       "q": "Who won the Nobel Prize in Physiology or Medicine in 1991?"
+      }
+     ]
+    },
+    {
+     "fid": 28800,
+     "diff_z": 0.453,
+     "hit_rate": {
+      "correct": 0.796,
+      "refusal": 0.939,
+      "wrong": 0.908
+     },
+     "lens_top_tokens": [
+      "==",
+      "===",
+      "====",
+      " ==",
+      " ===",
+      "^"
+     ],
+     "max_activating": [
+      {
+       "id": "his_ob_35",
+       "label": "wrong",
+       "q": "Who was the 27th President of the United States, serving from 1909 to 1913?"
+      },
+      {
+       "id": "cul_pc_48",
+       "label": "wrong",
+       "q": "Which Percival Everett novel won the National Book Award for Fiction in November 2024?"
+      },
+      {
+       "id": "cul_pc_01",
+       "label": "refusal",
+       "q": "Which Gwen Stefani album was released in November 2024?"
       }
      ]
     }
@@ -284,148 +284,114 @@
    "n_b": 140,
    "top_features": [
     {
-     "fid": 15051,
-     "diff_z": 0.946,
+     "fid": 32027,
+     "diff_z": 1.341,
      "hit_rate": {
-      "correct": 0.102,
-      "refusal": 0.17,
+      "correct": 0.013,
+      "refusal": 0.0,
+      "wrong": 0.224
+     },
+     "lens_top_tokens": [
+      " winning",
+      "荣获",
+      "获得",
+      "获",
+      "获得了",
+      "獲得"
+     ],
+     "max_activating": [
+      {
+       "id": "cin_ob_30",
+       "label": "wrong",
+       "q": "Which film won the Academy Award for Best Picture at the 1965 ceremony?"
+      },
+      {
+       "id": "cin_wk_31",
+       "label": "wrong",
+       "q": "Which film won the Academy Award for Best Picture at the 2003 ceremony?"
+      },
+      {
+       "id": "cin_wk_13",
+       "label": "wrong",
+       "q": "Which film won the Academy Award for Best Picture at the 1995 ceremony?"
+      }
+     ]
+    },
+    {
+     "fid": 7492,
+     "diff_z": 1.108,
+     "hit_rate": {
+      "correct": 0.072,
+      "refusal": 0.048,
       "wrong": 0.284
      },
      "lens_top_tokens": [
-      "Tiles",
-      "查阅",
-      "氢能",
-      " Tiles",
-      ".tiles",
-      "................"
+      "Peter",
+      "William",
+      "Daniel",
+      " Peter",
+      " Daniel",
+      "Michael"
      ],
      "max_activating": [
       {
-       "id": "his_pc_70",
+       "id": "cin_pc_78",
        "label": "wrong",
-       "q": "Who won the 2024 United States presidential election?"
+       "q": "Who starred as Harley Quinn in 'Joker: Folie à Deux' (2024)?"
       },
       {
-       "id": "sci_wk_03",
+       "id": "cul_ob_13",
        "label": "wrong",
-       "q": "Who won the Nobel Prize in Physics in 1903?"
+       "q": "Who won the Nobel Prize in Literature in 2020?"
       },
       {
-       "id": "his_ob_24",
-       "label": "correct",
-       "q": "Who was the first woman to win a Nobel Prize, in 1903?"
+       "id": "his_ob_21",
+       "label": "wrong",
+       "q": "Who served as Secretary-General of the United Nations from 1992 to 1996?"
       }
      ]
     },
     {
-     "fid": 20392,
-     "diff_z": 0.896,
+     "fid": 5349,
+     "diff_z": 0.999,
      "hit_rate": {
-      "correct": 0.996,
-      "refusal": 1.0,
-      "wrong": 0.995
+      "correct": 0.03,
+      "refusal": 0.014,
+      "wrong": 0.194
      },
      "lens_top_tokens": [
-      " the",
-      ",",
-      " a",
-      " in",
-      " from",
-      " ("
+      " Prize",
+      "奖",
+      " prize",
+      "奖金",
+      "奖项",
+      " prizes"
      ],
      "max_activating": [
       {
-       "id": "his_ob_35",
+       "id": "sci_wk_05",
        "label": "wrong",
-       "q": "Who was the 27th President of the United States, serving from 1909 to 1913?"
+       "q": "Who won the Nobel Prize in Physics in 1956?"
       },
       {
-       "id": "sci_ob_29",
+       "id": "sci_wk_19",
        "label": "wrong",
-       "q": "Who won the Nobel Prize in Physics in 1978?"
+       "q": "Who won the Nobel Prize in Physics in 1933?"
       },
       {
-       "id": "his_pc_78",
-       "label": "refusal",
-       "q": "Who won the United States presidential election on November 5, 2024?"
-      }
-     ]
-    },
-    {
-     "fid": 18164,
-     "diff_z": 0.854,
-     "hit_rate": {
-      "correct": 1.0,
-      "refusal": 1.0,
-      "wrong": 1.0
-     },
-     "lens_top_tokens": [
-      "צילום",
-      ")))));\r\n",
-      "'])){\r\n",
-      " //{\r\n",
-      "++){\r\n",
-      "-."
-     ],
-     "max_activating": [
-      {
-       "id": "cul_pc_111",
+       "id": "sci_wk_38",
        "label": "wrong",
-       "q": "Which artist released the album 'Bouquet' in November 2024?"
-      },
-      {
-       "id": "cin_pc_63",
-       "label": "wrong",
-       "q": "Who played the titular serial killer in the July 2024 horror film 'Longlegs'?"
-      },
-      {
-       "id": "cin_pc_73",
-       "label": "wrong",
-       "q": "Who starred as the title character in the 2024 film 'Emilia Pérez'?"
-      }
-     ]
-    },
-    {
-     "fid": 8913,
-     "diff_z": 0.836,
-     "hit_rate": {
-      "correct": 1.0,
-      "refusal": 1.0,
-      "wrong": 1.0
-     },
-     "lens_top_tokens": [
-      "abella",
-      "man",
-      "eco",
-      "co",
-      "ford",
-      "atown"
-     ],
-     "max_activating": [
-      {
-       "id": "cin_ob_27",
-       "label": "wrong",
-       "q": "Who directed the film 'Sans Soleil' (1983)?"
-      },
-      {
-       "id": "cin_ob_35",
-       "label": "wrong",
-       "q": "Who directed the film 'Yi Yi' (2000)?"
-      },
-      {
-       "id": "cin_pc_55",
-       "label": "wrong",
-       "q": "Who directed the film 'Anora'?"
+       "q": "Who won the Nobel Prize in Physics in 1932?"
       }
      ]
     },
     {
      "fid": 7707,
-     "diff_z": 0.724,
+     "diff_z": 0.952,
      "hit_rate": {
-      "correct": 0.191,
-      "refusal": 0.014,
-      "wrong": 0.261
+      "correct": 0.315,
+      "refusal": 0.442,
+      "wrong": 0.473
      },
      "lens_top_tokens": [
       " in",
@@ -437,121 +403,155 @@
      ],
      "max_activating": [
       {
-       "id": "sci_pc_44",
+       "id": "cin_pc_78",
        "label": "wrong",
-       "q": "In October 2024, NASA re-established contact with which deep-space probe after it switched"
+       "q": "Who starred as Harley Quinn in 'Joker: Folie à Deux' (2024)?"
       },
       {
-       "id": "sci_pc_61",
+       "id": "cin_pc_75",
        "label": "wrong",
-       "q": "In November 2024, NVIDIA started shipping which new GPU architecture to customers?"
+       "q": "Who starred as Count Orlok / Nosferatu in Robert Eggers' 'Nosferatu' (2024)?"
       },
       {
-       "id": "sci_pc_35",
+       "id": "cin_pc_110",
        "label": "wrong",
-       "q": "In December 2024, what superconducting quantum processor did Google announce, featuring 10"
+       "q": "Who played Astrid Deetz in the September 2024 horror-comedy film 'Beetlejuice Beetlejuice'"
       }
      ]
     },
     {
-     "fid": 15977,
-     "diff_z": 0.712,
+     "fid": 15030,
+     "diff_z": 0.951,
      "hit_rate": {
-      "correct": 0.387,
-      "refusal": 0.844,
-      "wrong": 0.547
+      "correct": 0.068,
+      "refusal": 0.0,
+      "wrong": 0.216
      },
      "lens_top_tokens": [
-      "ología",
-      "ólogo",
-      "ência",
-      "ificación",
-      "ografía",
-      "ículos"
+      "Which",
+      "Consider",
+      " Suppose",
+      "Sup",
+      " Consider",
+      "某"
      ],
      "max_activating": [
       {
-       "id": "sci_ob_17",
+       "id": "sci_ob_34",
        "label": "wrong",
-       "q": "Who won the Nobel Prize in Physics in 1989?"
+       "q": "Who won the Nobel Prize in Chemistry in 2001?"
       },
       {
-       "id": "sci_ob_27",
+       "id": "sci_ob_44",
        "label": "wrong",
-       "q": "Who won the Nobel Prize in Physics in 1992?"
+       "q": "Who won the Nobel Prize in Physiology or Medicine in 1999?"
       },
       {
-       "id": "cul_ob_13",
+       "id": "sci_ob_04",
        "label": "wrong",
-       "q": "Who won the Nobel Prize in Literature in 2020?"
+       "q": "Who won the Nobel Prize in Physiology or Medicine in 1991?"
       }
      ]
     },
     {
-     "fid": 16085,
-     "diff_z": 0.707,
+     "fid": 17345,
+     "diff_z": 0.812,
      "hit_rate": {
-      "correct": 0.17,
-      "refusal": 0.401,
-      "wrong": 0.361
+      "correct": 0.519,
+      "refusal": 0.993,
+      "wrong": 0.746
      },
      "lens_top_tokens": [
-      " dzi",
-      " indem",
-      " szer",
-      " tren",
-      " tér",
-      " rozp"
+      " Shortly",
+      " Later",
+      " During",
+      " Soon",
+      " Eventually",
+      " Around"
      ],
      "max_activating": [
       {
-       "id": "cin_pc_121",
-       "label": "wrong",
-       "q": "Who directed the film 'Yellow Letters' which won the Golden Bear in 2026?"
-      },
-      {
-       "id": "sci_wk_09",
-       "label": "wrong",
-       "q": "Who won the Nobel Prize in Chemistry in 2009?"
-      },
-      {
-       "id": "his_ob_11",
-       "label": "correct",
-       "q": "Which 1494 treaty divided the New World between Spain and Portugal?"
-      }
-     ]
-    },
-    {
-     "fid": 57,
-     "diff_z": 0.651,
-     "hit_rate": {
-      "correct": 1.0,
-      "refusal": 1.0,
-      "wrong": 1.0
-     },
-     "lens_top_tokens": [
-      "elin",
-      "roleum",
-      "insula",
-      "immune",
-      "erior",
-      "ulsion"
-     ],
-     "max_activating": [
-      {
-       "id": "his_ob_35",
-       "label": "wrong",
-       "q": "Who was the 27th President of the United States, serving from 1909 to 1913?"
-      },
-      {
-       "id": "cul_ob_13",
-       "label": "wrong",
-       "q": "Who won the Nobel Prize in Literature in 2020?"
-      },
-      {
-       "id": "cul_pc_39",
+       "id": "his_pc_23",
        "label": "refusal",
-       "q": "Which song won the Grammy Award for Song of the Year at the February 2026 ceremony?"
+       "q": "Who was confirmed as the US Ambassador to the United Nations in January 2025?"
+      },
+      {
+       "id": "sci_pc_113",
+       "label": "refusal",
+       "q": "In September 2025, which European research lab announced the discovery of a new subatomic "
+      },
+      {
+       "id": "his_pc_18",
+       "label": "refusal",
+       "q": "Who was appointed as the White House Chief of Staff in January 2025?"
+      }
+     ]
+    },
+    {
+     "fid": 30809,
+     "diff_z": 0.802,
+     "hit_rate": {
+      "correct": 0.009,
+      "refusal": 0.0,
+      "wrong": 0.117
+     },
+     "lens_top_tokens": [
+      " DOE",
+      "DO",
+      " Oak",
+      "osti",
+      "Oak",
+      " Lawrence"
+     ],
+     "max_activating": [
+      {
+       "id": "sci_wk_32",
+       "label": "wrong",
+       "q": "Who won the Nobel Prize in Chemistry in 1908?"
+      },
+      {
+       "id": "sci_wk_19",
+       "label": "wrong",
+       "q": "Who won the Nobel Prize in Physics in 1933?"
+      },
+      {
+       "id": "sci_wk_05",
+       "label": "wrong",
+       "q": "Who won the Nobel Prize in Physics in 1956?"
+      }
+     ]
+    },
+    {
+     "fid": 23057,
+     "diff_z": 0.79,
+     "hit_rate": {
+      "correct": 0.328,
+      "refusal": 0.517,
+      "wrong": 0.495
+     },
+     "lens_top_tokens": [
+      " in",
+      "于",
+      " four",
+      " nearly",
+      " back",
+      " eleven"
+     ],
+     "max_activating": [
+      {
+       "id": "sci_pc_01",
+       "label": "correct",
+       "q": "In December 2025, which Japanese automobile manufacturer announced it would transition to "
+      },
+      {
+       "id": "sci_pc_112",
+       "label": "wrong",
+       "q": "In November 2024, which medical device company received FDA approval for its total artific"
+      },
+      {
+       "id": "sci_pc_58",
+       "label": "correct",
+       "q": "In April 2025, which company announced the release of Llama 4?"
       }
      ]
     }
@@ -562,26 +562,128 @@
    "n_b": 147,
    "top_features": [
     {
-     "fid": 24330,
-     "diff_z": 1.201,
+     "fid": 21708,
+     "diff_z": 1.259,
      "hit_rate": {
-      "correct": 0.749,
-      "refusal": 0.184,
-      "wrong": 0.706
+      "correct": 0.6,
+      "refusal": 0.027,
+      "wrong": 0.587
      },
      "lens_top_tokens": [
-      " individual",
-      " been",
-      " Individual",
-      " ban",
-      "Individual",
-      " memory"
+      "**",
+      "####",
+      "###",
+      "---\n\n",
+      "-",
+      "*"
      ],
      "max_activating": [
       {
-       "id": "cin_wk_32",
+       "id": "cin_wk_08",
+       "label": "wrong",
+       "q": "Who won the Academy Award for Best Actress at the 2014 ceremony for 'Blue Jasmine'?"
+      },
+      {
+       "id": "cul_wk_03",
+       "label": "wrong",
+       "q": "Who wrote the novel 'Beloved' (1987)?"
+      },
+      {
+       "id": "cin_wk_14",
+       "label": "wrong",
+       "q": "Which film won the Academy Award for Best Picture at the 1973 ceremony?"
+      }
+     ]
+    },
+    {
+     "fid": 7325,
+     "diff_z": 1.126,
+     "hit_rate": {
+      "correct": 0.919,
+      "refusal": 0.728,
+      "wrong": 0.866
+     },
+     "lens_top_tokens": [
+      " the",
+      "the",
+      "\tthe",
+      "_the",
+      ".the",
+      "-the"
+     ],
+     "max_activating": [
+      {
+       "id": "cin_wk_33",
        "label": "correct",
-       "q": "Who directed the film 'The Dark Knight'?"
+       "q": "Who directed the film 'Parasite' (2019)?"
+      },
+      {
+       "id": "cul_ob_30",
+       "label": "correct",
+       "q": "Which 1986 album by Paul Simon was inspired by South African mbaqanga music?"
+      },
+      {
+       "id": "sci_ob_08",
+       "label": "wrong",
+       "q": "What is the atomic number of element roentgenium?"
+      }
+     ]
+    },
+    {
+     "fid": 24957,
+     "diff_z": 1.09,
+     "hit_rate": {
+      "correct": 1.0,
+      "refusal": 1.0,
+      "wrong": 1.0
+     },
+     "lens_top_tokens": [
+      "Sub",
+      "Group",
+      "Data",
+      "Check",
+      "Value",
+      "Set"
+     ],
+     "max_activating": [
+      {
+       "id": "sci_ob_08",
+       "label": "wrong",
+       "q": "What is the atomic number of element roentgenium?"
+      },
+      {
+       "id": "sci_wk_40",
+       "label": "correct",
+       "q": "Who first observed cosmic microwave background radiation in 1964?"
+      },
+      {
+       "id": "his_pc_103",
+       "label": "correct",
+       "q": "In which country did Opposition leader Friedrich Merz become Chancellor in May 2025?"
+      }
+     ]
+    },
+    {
+     "fid": 15283,
+     "diff_z": 1.015,
+     "hit_rate": {
+      "correct": 0.566,
+      "refusal": 0.286,
+      "wrong": 0.714
+     },
+     "lens_top_tokens": [
+      " filmmakers",
+      " authors",
+      "/books",
+      " Eve",
+      "/music",
+      " writers"
+     ],
+     "max_activating": [
+      {
+       "id": "cul_wk_03",
+       "label": "wrong",
+       "q": "Who wrote the novel 'Beloved' (1987)?"
       },
       {
        "id": "cin_wk_03",
@@ -589,87 +691,19 @@
        "q": "Who directed the film 'Get Out' (2017)?"
       },
       {
-       "id": "his_ob_35",
-       "label": "wrong",
-       "q": "Who was the 27th President of the United States, serving from 1909 to 1913?"
-      }
-     ]
-    },
-    {
-     "fid": 8781,
-     "diff_z": 1.189,
-     "hit_rate": {
-      "correct": 0.681,
-      "refusal": 0.299,
-      "wrong": 0.781
-     },
-     "lens_top_tokens": [
-      "清",
-      "夷",
-      "青",
-      "云",
-      "句",
-      "寒"
-     ],
-     "max_activating": [
-      {
        "id": "cul_wk_13",
        "label": "correct",
        "q": "Who wrote 'War and Peace'?"
-      },
-      {
-       "id": "cul_wk_02",
-       "label": "correct",
-       "q": "Who wrote 'Don Quixote'?"
-      },
-      {
-       "id": "cul_ob_08",
-       "label": "correct",
-       "q": "Who painted 'Composition VIII' (1923), a pioneering abstract work?"
-      }
-     ]
-    },
-    {
-     "fid": 22106,
-     "diff_z": 1.181,
-     "hit_rate": {
-      "correct": 1.0,
-      "refusal": 1.0,
-      "wrong": 1.0
-     },
-     "lens_top_tokens": [
-      "distance",
-      "count",
-      "current",
-      "split",
-      "time",
-      "total"
-     ],
-     "max_activating": [
-      {
-       "id": "his_ob_15",
-       "label": "correct",
-       "q": "In what year was the first ascent of Mount Everest by Edmund Hillary and Tenzing Norgay?"
-      },
-      {
-       "id": "cul_ob_03",
-       "label": "wrong",
-       "q": "Who released the 1965 album 'Bringing It All Back Home'?"
-      },
-      {
-       "id": "cul_ob_06",
-       "label": "wrong",
-       "q": "Who wrote the 1962 novel 'Pale Fire'?"
       }
      ]
     },
     {
      "fid": 23000,
-     "diff_z": 1.059,
+     "diff_z": 0.993,
      "hit_rate": {
-      "correct": 1.0,
-      "refusal": 1.0,
-      "wrong": 1.0
+      "correct": 0.991,
+      "refusal": 0.878,
+      "wrong": 0.973
      },
      "lens_top_tokens": [
       "utenberg",
@@ -686,150 +720,116 @@
        "q": "Who directed the film 'Solaris' (1972)?"
       },
       {
+       "id": "cul_wk_34",
+       "label": "correct",
+       "q": "Who wrote 'Crime and Punishment'?"
+      },
+      {
        "id": "cin_wk_15",
        "label": "correct",
        "q": "Who directed the film 'Vertigo' (1958)?"
-      },
-      {
-       "id": "cin_ob_16",
-       "label": "wrong",
-       "q": "Who directed the 1985 film 'Brazil'?"
       }
      ]
     },
     {
-     "fid": 24957,
-     "diff_z": 0.855,
+     "fid": 19674,
+     "diff_z": 0.975,
      "hit_rate": {
-      "correct": 1.0,
-      "refusal": 1.0,
-      "wrong": 1.0
+      "correct": 0.562,
+      "refusal": 0.034,
+      "wrong": 0.5
      },
      "lens_top_tokens": [
-      "Sub",
-      "Group",
-      "Data",
-      "Check",
-      "Value",
-      "Set"
+      "K",
+      "L",
+      "G",
+      "S",
+      "H",
+      "R"
      ],
      "max_activating": [
       {
-       "id": "cul_pc_62",
+       "id": "cin_wk_02",
        "label": "correct",
-       "q": "Which Post Malone album, marking his first full-length country project, was released in Au"
+       "q": "Who directed the film 'Schindler's List'?"
       },
       {
-       "id": "his_pc_103",
+       "id": "cul_wk_34",
        "label": "correct",
-       "q": "In which country did Opposition leader Friedrich Merz become Chancellor in May 2025?"
+       "q": "Who wrote 'Crime and Punishment'?"
       },
       {
-       "id": "sci_pc_78",
-       "label": "wrong",
-       "q": "In late 2024, Neuralink launched its BCI clinical study CAN-PRIME in which country?"
+       "id": "cin_wk_15",
+       "label": "correct",
+       "q": "Who directed the film 'Vertigo' (1958)?"
       }
      ]
     },
     {
-     "fid": 8913,
-     "diff_z": 0.802,
+     "fid": 14655,
+     "diff_z": 0.97,
      "hit_rate": {
-      "correct": 1.0,
-      "refusal": 1.0,
-      "wrong": 1.0
+      "correct": 0.945,
+      "refusal": 0.782,
+      "wrong": 0.873
      },
      "lens_top_tokens": [
-      "abella",
-      "man",
-      "eco",
-      "co",
-      "ford",
-      "atown"
+      " The",
+      "The",
+      "\tThe",
+      ">The",
+      ".The",
+      "-The"
      ],
      "max_activating": [
       {
-       "id": "cin_ob_27",
-       "label": "wrong",
-       "q": "Who directed the film 'Sans Soleil' (1983)?"
+       "id": "sci_wk_30",
+       "label": "correct",
+       "q": "What is the chemical symbol for gold?"
       },
       {
-       "id": "cin_ob_35",
-       "label": "wrong",
-       "q": "Who directed the film 'Yi Yi' (2000)?"
+       "id": "cul_wk_04",
+       "label": "correct",
+       "q": "Who painted the Mona Lisa?"
       },
       {
-       "id": "cin_pc_55",
-       "label": "wrong",
-       "q": "Who directed the film 'Anora'?"
+       "id": "his_wk_09",
+       "label": "correct",
+       "q": "In what year did the Titanic sink?"
       }
      ]
     },
     {
-     "fid": 7707,
-     "diff_z": 0.652,
+     "fid": 9089,
+     "diff_z": 0.904,
      "hit_rate": {
-      "correct": 0.191,
-      "refusal": 0.014,
-      "wrong": 0.261
+      "correct": 0.655,
+      "refusal": 0.224,
+      "wrong": 0.612
      },
      "lens_top_tokens": [
-      " in",
-      " In",
-      "in",
-      "_in",
-      "ใน",
-      "In"
+      "的",
+      "The",
+      " The",
+      " the",
+      " la",
+      "の"
      ],
      "max_activating": [
       {
-       "id": "sci_pc_44",
-       "label": "wrong",
-       "q": "In October 2024, NASA re-established contact with which deep-space probe after it switched"
-      },
-      {
-       "id": "sci_pc_61",
-       "label": "wrong",
-       "q": "In November 2024, NVIDIA started shipping which new GPU architecture to customers?"
-      },
-      {
-       "id": "sci_pc_35",
-       "label": "wrong",
-       "q": "In December 2024, what superconducting quantum processor did Google announce, featuring 10"
-      }
-     ]
-    },
-    {
-     "fid": 8485,
-     "diff_z": 0.576,
-     "hit_rate": {
-      "correct": 1.0,
-      "refusal": 1.0,
-      "wrong": 1.0
-     },
-     "lens_top_tokens": [
-      "�s",
-      "",
-      "",
-      "",
-      "",
-      ""
-     ],
-     "max_activating": [
-      {
-       "id": "his_pc_86",
-       "label": "wrong",
-       "q": "In what month of 2024 did Hurricane Helene cause catastrophic flooding in the Southeastern"
-      },
-      {
-       "id": "his_wk_16",
+       "id": "cul_wk_04",
        "label": "correct",
-       "q": "In what year did World War II end?"
+       "q": "Who painted the Mona Lisa?"
       },
       {
-       "id": "cul_pc_62",
+       "id": "cin_wk_03",
        "label": "correct",
-       "q": "Which Post Malone album, marking his first full-length country project, was released in Au"
+       "q": "Who directed the film 'Get Out' (2017)?"
+      },
+      {
+       "id": "his_wk_12",
+       "label": "correct",
+       "q": "Who painted the ceiling of the Sistine Chapel?"
       }
      ]
     }
