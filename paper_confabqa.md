@@ -1252,17 +1252,19 @@ tokens of the model's refusals: ` as`, `As`, `作为`, `\tas`, ` there`. That
 says what the direction outputs. A sparse autoencoder (SAE) helps answer how
 the decision is made computationally inside the hidden state.
 
-An SAE is trained to reconstruct
-per-position hidden states (the "residual stream," in mechanistic-interpretability
-usage) as sparse combinations of learned feature directions: for a
-hidden state $h \in \mathbb{R}^{2048}$,
+An SAE encodes each per-position hidden state (the "residual stream," in
+mechanistic-interpretability usage) into its own, much wider latent space, and is
+trained so that the state is reconstructed from that code: for a hidden state
+$h \in \mathbb{R}^{2048}$,
 
-$$h \;\approx\; \sum_{f \in \mathcal{A}(h)} a_f(h)\, \mathbf{d}_f,
-  \qquad |\mathcal{A}(h)| = L_0 = 50,$$
+$$a(h) = \mathrm{Enc}(h) \in \mathbb{R}^{32{,}768}_{\ge 0}
+  \;\;\text{with}\;\; \|a(h)\|_0 = L_0 = 50,
+  \qquad
+  h \;\approx\; \sum_{f :\, a_f(h) > 0} a_f(h)\, \mathbf{d}_f.$$
 
-where the encoder picks the active feature set $\mathcal{A}(h)$ with activations
-$a_f \ge 0$, and each decoder row $\mathbf{d}_f$ is a fixed direction living in the
-same space as $h$ and $\mathbf{w}_{\mathrm{raw}}$. The SAE is a model of the
+Each state is thus represented by just $50$ of $32{,}768$ candidate features, and
+each feature $f$ owns a fixed decoder direction $\mathbf{d}_f$ living in the same
+space as $h$ and $\mathbf{w}_{\mathrm{raw}}$. The SAE is a model of the
 activation *distribution*, not of the computation: it sees no weights and predicts
 no outputs. It supplies a learned coordinate system of candidate features, and a
 feature remains a descriptive coordinate unless it passes a causal test, as 2191
