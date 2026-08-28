@@ -1255,10 +1255,8 @@ marginal default, but it cannot supply a fact the model does not have.
 The logit-lens analysis of Section 6.1 projects the recovered refusal probe
 direction through Qwen3-1.7B's own LM head and recovers the literal opening
 tokens of the model's refusals: ` as`, `As`, `作为`, `\tas`, ` there`. That
-analysis is at the *output-token* end of the model. It tells us *what the
-direction outputs*; it does not tell us *what computational primitives compose
-the direction* inside the residual stream. A sparse-autoencoder decomposition
-addresses the second question.
+says what the direction outputs. A sparse autoencoder (SAE) helps answer how
+the decision is made computationally inside the residual stream.
 
 **What an SAE gives us here.** A sparse autoencoder is trained to reconstruct
 residual-stream states as sparse combinations of learned feature directions: for a
