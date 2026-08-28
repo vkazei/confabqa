@@ -30,18 +30,26 @@ def describe(r):
 
 def main():
     set_seeds()
+    from analysis.cache_prenorm_states import load_prenorm
     items = atlas.load_subset({"correct", "refusal", "wrong"})
-    H = np.stack([r["h"] for r in items])
+    H_post = np.stack([r["h"] for r in items])
     labs = np.array([r["judge_label"] for r in items])
-    rms = np.linalg.norm(H, axis=1) / np.sqrt(H.shape[1])
+    items_pre, H_pre = load_prenorm({"correct", "refusal", "wrong"})
+    labs_pre = np.array([r["judge_label"] for r in items_pre])
+
+    def block(H, lab_arr):
+        rms = np.linalg.norm(H, axis=1) / np.sqrt(H.shape[1])
+        return {
+            "rms_overall": describe(rms),
+            "rms_by_label": {lab: describe(rms[lab_arr == lab])
+                             for lab in ("correct", "refusal", "wrong")},
+            "norm_mean": round(float(np.linalg.norm(H, axis=1).mean()), 2),
+        }
 
     out = {
-        "layer": int(atlas.PROBE_LAYER),
-        "d": int(H.shape[1]),
-        "rms_overall": describe(rms),
-        "rms_by_label": {lab: describe(rms[labs == lab])
-                         for lab in ("correct", "refusal", "wrong")},
-        "norm_mean": round(float(np.linalg.norm(H, axis=1).mean()), 2),
+        "d": int(H_post.shape[1]),
+        "final_normed_state_hf_index_28": block(H_post, labs),
+        "prenorm_residual_post_block_27": block(H_pre, labs_pre),
     }
     out_path = FIGURES_DIR / "hidden_state_norms.json"
     with open(out_path, "w") as f:
