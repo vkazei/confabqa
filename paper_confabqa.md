@@ -1361,6 +1361,20 @@ code. Both pushes recruit 2191 universally by $\alpha=+200$ and extinguish the
 content-cue features; large doses rewrite the code almost
 entirely.](figures/qwen3_1_7b/sae_feature_trajectories.png){#fig:feature-traj}
 
+**The wrong pole has no feature.** The mirror search, ranking all $32{,}768$
+features by wrong-selectivity, finds nothing like 2191. Against correct items the
+strongest selective feature reaches diff-$z$ $+0.49$ with hit rates of $28\%$ on
+wrong vs.\ $10\%$ on correct and uninterpretable lens tokens, and the
+within-pre-cutoff version, which recency cues cannot inflate, is no better: its
+top discriminators are always-on features shifting in magnitude, or syntactic
+cues such as an "In [date]" opener detector. Against refusals, the top wrong-side
+features are *attempt* features that fire on correct and wrong items alike
+($75\%/71\%$ vs.\ $18\%$ on refusals), with correct answers as their
+max-activating items. The dictionary contains a refusal feature but no
+confabulation feature: in a-space as in token space (Section 6.1), wrongness has
+no concentrated signature. Confabulation is the default attempt pathway missing a
+fact, not a marked state.
+
 **The interpretability story this enables.** The recovered "refusal
 direction" of Section 6.1 is *not* a single monosemantic concept. The SAE
 decomposes it into (at least) two functionally distinct mechanisms:
@@ -2358,7 +2372,8 @@ one JSON (with the generating script of the same name under `analysis/` or
 `correctness_direction_lens`, `correctness_direction_intervention`,
 `refusal_direction_meandiff`, `pca_coverage_2191`, `probe_2191_blend`,
 `sae_decompose_refusal`, `sae_causal_ablation`, `sae_feature_refusal_rate`,
-`sae_apology_feature_test`, `sae_feature_trajectories`, `prefix_forcing_control`,
+`sae_apology_feature_test`, `sae_feature_trajectories`, `sae_wrong_features`,
+`prefix_forcing_control`,
 `hidden_state_norms`,
 `bootstrap_h_adds`, `bootstrap_llama_external`, `bootstrap_qwen3_4b`,
 `refusal_channel_test`, and `cross_dataset_transfer_<model>`.
