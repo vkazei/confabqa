@@ -1334,6 +1334,33 @@ top-$20$ lists, $4$ resolve into clean stories.
   fire on *content cues* (recent dates / topical entities) rather than
   output-token preparation.
 
+**From h-space to a-space: what a push looks like in features.** The three views
+are static, and the encoder $a(h)$ is heavily nonlinear (TopK), so how an h-space
+push maps into a-space is an empirical question. Figure
+\ref{fig:feature-traj} tracks the four features' mean activations on the $n=402$
+wrong items as the state is pushed along the probe direction and along
+$\hat W_{\rm dec}[2191]$. Feature 2191 switches on immediately and universally:
+active on $0.5\%$ of wrong items at $\alpha=0$ and on $100\%$ by $\alpha=+200$
+under either push, with activation growing linearly at a probe-to-2191 slope ratio
+of $0.16$, exactly the two directions' cosine. The content-cue features are
+extinguished, not recruited: 18937's baseline activation is gone by
+$\alpha=+500$ under both pushes (the probe push does recruit the dormant 14034,
+whose decoder component it contains; the 2191 push does not). And the code as a
+whole is rewritten: active-set overlap with the unperturbed code falls to $0.14$
+at the behavioral saturation dose $\alpha=+1500$, and to $0.05$ and $0.01$ at
+$+3000$. In a-space terms the intervention does not move wrong items toward the
+refusal region, which would recruit the cue features; it manufactures states
+dominated by the opener feature alone, the feature-space face of the
+prefix-forcing result of Section 6.2.
+
+![a-space trajectories of h-space pushes ($n=402$ wrong items). Solid lines: mean
+activation of the four Section 6.3 features as the layer-28 state is pushed along
+the probe refusal direction (left) or feature 2191's decoder direction (right);
+dotted: mean overlap (Jaccard) of the active feature set with the unperturbed
+code. Both pushes recruit 2191 universally by $\alpha=+200$ and extinguish the
+content-cue features; large doses rewrite the code almost
+entirely.](figures/qwen3_1_7b/sae_feature_trajectories.png){#fig:feature-traj}
+
 **The interpretability story this enables.** The recovered "refusal
 direction" of Section 6.1 is *not* a single monosemantic concept. The SAE
 decomposes it into (at least) two functionally distinct mechanisms:
@@ -2331,7 +2358,8 @@ one JSON (with the generating script of the same name under `analysis/` or
 `correctness_direction_lens`, `correctness_direction_intervention`,
 `refusal_direction_meandiff`, `pca_coverage_2191`, `probe_2191_blend`,
 `sae_decompose_refusal`, `sae_causal_ablation`, `sae_feature_refusal_rate`,
-`sae_apology_feature_test`, `prefix_forcing_control`, `hidden_state_norms`,
+`sae_apology_feature_test`, `sae_feature_trajectories`, `prefix_forcing_control`,
+`hidden_state_norms`,
 `bootstrap_h_adds`, `bootstrap_llama_external`, `bootstrap_qwen3_4b`,
 `refusal_channel_test`, and `cross_dataset_transfer_<model>`.
 
