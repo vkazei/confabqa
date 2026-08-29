@@ -1,0 +1,486 @@
+{
+ "features": {
+  "2191": {
+   "raw_cos": [
+    {
+     "fid": 23636,
+     "sim": 0.403,
+     "lens": [
+      " as",
+      "作为",
+      " sebagai"
+     ]
+    },
+    {
+     "fid": 18706,
+     "sim": 0.373,
+     "lens": [
+      " as",
+      "\tas",
+      "作为"
+     ]
+    },
+    {
+     "fid": 26650,
+     "sim": 0.372,
+     "lens": [
+      " as",
+      "作为",
+      "作為"
+     ]
+    },
+    {
+     "fid": 14967,
+     "sim": 0.314,
+     "lens": [
+      " as",
+      "作为",
+      "!"
+     ]
+    },
+    {
+     "fid": 8905,
+     "sim": 0.263,
+     "lens": [
+      " as",
+      "作为",
+      "作為"
+     ]
+    },
+    {
+     "fid": 32059,
+     "sim": 0.258,
+     "lens": [
+      "为核心",
+      "为目标",
+      "为中心"
+     ]
+    }
+   ],
+   "dual_cos": [
+    {
+     "fid": 23636,
+     "sim": 0.415,
+     "lens": [
+      " as",
+      "作为",
+      " sebagai"
+     ]
+    },
+    {
+     "fid": 26650,
+     "sim": 0.378,
+     "lens": [
+      " as",
+      "作为",
+      "作為"
+     ]
+    },
+    {
+     "fid": 18706,
+     "sim": 0.377,
+     "lens": [
+      " as",
+      "\tas",
+      "作为"
+     ]
+    },
+    {
+     "fid": 14967,
+     "sim": 0.305,
+     "lens": [
+      " as",
+      "作为",
+      "!"
+     ]
+    },
+    {
+     "fid": 8905,
+     "sim": 0.285,
+     "lens": [
+      " as",
+      "作为",
+      "作為"
+     ]
+    },
+    {
+     "fid": 32059,
+     "sim": 0.255,
+     "lens": [
+      "为核心",
+      "为目标",
+      "为中心"
+     ]
+    }
+   ]
+  },
+  "14034": {
+   "raw_cos": [
+    {
+     "fid": 9533,
+     "sim": 0.312,
+     "lens": [
+      "错误",
+      " error",
+      " Error"
+     ]
+    },
+    {
+     "fid": 23433,
+     "sim": 0.258,
+     "lens": [
+      " there",
+      " we",
+      "there"
+     ]
+    },
+    {
+     "fid": 3247,
+     "sim": 0.241,
+     "lens": [
+      " Too",
+      " too",
+      "Too"
+     ]
+    },
+    {
+     "fid": 6856,
+     "sim": 0.229,
+     "lens": [
+      " cannot",
+      " invalid",
+      " unexpected"
+     ]
+    },
+    {
+     "fid": 30627,
+     "sim": 0.216,
+     "lens": [
+      " failed",
+      " Failed",
+      " couldn"
+     ]
+    },
+    {
+     "fid": 21409,
+     "sim": 0.213,
+     "lens": [
+      "Hi",
+      "Hello",
+      " Hi"
+     ]
+    }
+   ],
+   "dual_cos": [
+    {
+     "fid": 9533,
+     "sim": 0.259,
+     "lens": [
+      "错误",
+      " error",
+      " Error"
+     ]
+    },
+    {
+     "fid": 23433,
+     "sim": 0.223,
+     "lens": [
+      " there",
+      " we",
+      "there"
+     ]
+    },
+    {
+     "fid": 30627,
+     "sim": 0.219,
+     "lens": [
+      " failed",
+      " Failed",
+      " couldn"
+     ]
+    },
+    {
+     "fid": 6856,
+     "sim": 0.219,
+     "lens": [
+      " cannot",
+      " invalid",
+      " unexpected"
+     ]
+    },
+    {
+     "fid": 3247,
+     "sim": 0.216,
+     "lens": [
+      " Too",
+      " too",
+      "Too"
+     ]
+    },
+    {
+     "fid": 5934,
+     "sim": 0.185,
+     "lens": [
+      " HttpNotFound",
+      ".BadRequest",
+      " BadRequest"
+     ]
+    }
+   ]
+  },
+  "17077": {
+   "raw_cos": [
+    {
+     "fid": 19761,
+     "sim": 0.22,
+     "lens": [
+      "兹",
+      "如下",
+      " hereby"
+     ]
+    },
+    {
+     "fid": 32200,
+     "sim": 0.214,
+     "lens": [
+      " pursuant",
+      " Defendant",
+      " Defendants"
+     ]
+    },
+    {
+     "fid": 17901,
+     "sim": 0.209,
+     "lens": [
+      " shall",
+      "或者其他",
+      "或者"
+     ]
+    },
+    {
+     "fid": 2942,
+     "sim": 0.189,
+     "lens": [
+      " substantially",
+      " approximately",
+      "本基金"
+     ]
+    },
+    {
+     "fid": 19657,
+     "sim": 0.189,
+     "lens": [
+      " unto",
+      " forever",
+      " eternal"
+     ]
+    },
+    {
+     "fid": 8981,
+     "sim": 0.183,
+     "lens": [
+      " et",
+      " v",
+      " ex"
+     ]
+    }
+   ],
+   "dual_cos": [
+    {
+     "fid": 19761,
+     "sim": 0.189,
+     "lens": [
+      "兹",
+      "如下",
+      " hereby"
+     ]
+    },
+    {
+     "fid": 32200,
+     "sim": 0.172,
+     "lens": [
+      " pursuant",
+      " Defendant",
+      " Defendants"
+     ]
+    },
+    {
+     "fid": 17901,
+     "sim": 0.17,
+     "lens": [
+      " shall",
+      "或者其他",
+      "或者"
+     ]
+    },
+    {
+     "fid": 8981,
+     "sim": 0.163,
+     "lens": [
+      " et",
+      " v",
+      " ex"
+     ]
+    },
+    {
+     "fid": 27852,
+     "sim": 0.153,
+     "lens": [
+      "¶",
+      "AFF",
+      " The"
+     ]
+    },
+    {
+     "fid": 22527,
+     "sim": 0.147,
+     "lens": [
+      "附件",
+      "序",
+      "法定代表"
+     ]
+    }
+   ]
+  },
+  "4314": {
+   "raw_cos": [
+    {
+     "fid": 18029,
+     "sim": 0.21,
+     "lens": [
+      " today",
+      "现在",
+      "现在的"
+     ]
+    },
+    {
+     "fid": 3052,
+     "sim": 0.205,
+     "lens": [
+      " right",
+      " now",
+      " currently"
+     ]
+    },
+    {
+     "fid": 19494,
+     "sim": 0.157,
+     "lens": [
+      " current",
+      "current",
+      "(current"
+     ]
+    },
+    {
+     "fid": 299,
+     "sim": 0.142,
+     "lens": [
+      " actual",
+      "actual",
+      " Actual"
+     ]
+    },
+    {
+     "fid": 10268,
+     "sim": 0.135,
+     "lens": [
+      " present",
+      " invention",
+      "present"
+     ]
+    },
+    {
+     "fid": 12567,
+     "sim": 0.129,
+     "lens": [
+      " moment",
+      " instant",
+      "瞬间"
+     ]
+    }
+   ],
+   "dual_cos": [
+    {
+     "fid": 3052,
+     "sim": 0.206,
+     "lens": [
+      " right",
+      " now",
+      " currently"
+     ]
+    },
+    {
+     "fid": 18029,
+     "sim": 0.197,
+     "lens": [
+      " today",
+      "现在",
+      "现在的"
+     ]
+    },
+    {
+     "fid": 19494,
+     "sim": 0.153,
+     "lens": [
+      " current",
+      "current",
+      "(current"
+     ]
+    },
+    {
+     "fid": 12567,
+     "sim": 0.141,
+     "lens": [
+      " moment",
+      " instant",
+      "瞬间"
+     ]
+    },
+    {
+     "fid": 30387,
+     "sim": 0.128,
+     "lens": [
+      " at",
+      "At",
+      " At"
+     ]
+    },
+    {
+     "fid": 10268,
+     "sim": 0.126,
+     "lens": [
+      " present",
+      " invention",
+      "present"
+     ]
+    }
+   ]
+  }
+ },
+ "as_family_hit_rates": {
+  "2191": {
+   "refusal": 1.0,
+   "wrong": 0.49
+  },
+  "23636": {
+   "refusal": 0.0,
+   "wrong": 0.0
+  },
+  "18706": {
+   "refusal": 0.0,
+   "wrong": 0.0
+  },
+  "26650": {
+   "refusal": 0.0,
+   "wrong": 0.0
+  },
+  "14967": {
+   "refusal": 0.0,
+   "wrong": 0.0
+  }
+ },
+ "as_family_union": {
+  "refusal": 1.0,
+  "wrong": 0.49
+ }
+}
