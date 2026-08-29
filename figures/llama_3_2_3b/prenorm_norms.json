@@ -1,0 +1,9 @@
+{
+ "model": "unsloth/Llama-3.2-3B-Instruct",
+ "hook": "layers[27] output",
+ "n": 150,
+ "norm_mean": 39.1,
+ "norm_std": 3.8,
+ "p5": 34.0,
+ "p95": 45.5
+}

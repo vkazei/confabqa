@@ -1,0 +1,68 @@
+{
+ "prenorm_refit": {
+  "cv_acc_prenorm": 0.8889,
+  "cv_acc_normed": 0.8944,
+  "cos_prenorm_vs_normed_full": 0.4922,
+  "cos_prenorm_vs_within_post": 0.4129,
+  "cos_prenorm_vs_2191": 0.1223,
+  "cos_prenorm_vs_optimized": 0.0885,
+  "heldout_flips_prenorm_dir": {
+   "50": 0.1244,
+   "100": 0.1294,
+   "200": 0.1493,
+   "350": 0.1891,
+   "500": 0.204,
+   "750": 0.2637,
+   "1500": 0.408
+  },
+  "heldout_flips_within_post_dir": {
+   "50": 0.1294,
+   "100": 0.1692,
+   "200": 0.2189,
+   "350": 0.2935,
+   "500": 0.3483,
+   "750": 0.4478,
+   "1500": 0.9204
+  }
+ },
+ "dr_sensitivity": {
+  "refusal_vs_wrong_L28": {
+   "judge": {
+    "n": 549,
+    "n_pos": 147,
+    "probe_acc": 0.8944,
+    "tfidf_acc": 0.8178
+   },
+   "dr": {
+    "n": 588,
+    "n_pos": 121,
+    "probe_acc": 0.8707,
+    "tfidf_acc": 0.8316
+   }
+  },
+  "correct_all_L18": {
+   "judge": {
+    "n": 784,
+    "n_pos": 235,
+    "probe_acc": 0.824,
+    "tfidf_acc": 0.7641
+   },
+   "dr": {
+    "n": 784,
+    "n_pos": 196,
+    "probe_acc": 0.8762,
+    "tfidf_acc": 0.778
+   }
+  }
+ },
+ "sae_residual_probe": {
+  "refusal_vs_wrong": {
+   "resid_acc": 0.9034,
+   "full_acc": 0.8889
+  },
+  "correct_vs_wrong": {
+   "resid_acc": 0.763,
+   "full_acc": 0.7645
+  }
+ }
+}
