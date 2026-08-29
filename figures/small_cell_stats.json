@@ -1,0 +1,125 @@
+{
+ "item_bootstrap": {
+  "llama_within_pre": {
+   "n": 296,
+   "n_pos": 239,
+   "layer": 13,
+   "point_margin": 0.0475,
+   "B": 400,
+   "ci95": [
+    -0.0203,
+    0.0847
+   ]
+  },
+  "llama_within_obscure": {
+   "n": 153,
+   "n_pos": 115,
+   "layer": 13,
+   "point_margin": 0.0654,
+   "B": 400,
+   "ci95": [
+    -0.0325,
+    0.1182
+   ]
+  },
+  "llama_all": {
+   "n": 784,
+   "n_pos": 240,
+   "layer": 13,
+   "point_margin": 0.0995,
+   "B": 400,
+   "ci95": [
+    0.0293,
+    0.0791
+   ]
+  },
+  "qwen_within_obscure": {
+   "n": 153,
+   "n_pos": 51,
+   "layer": 7,
+   "point_margin": 0.0458,
+   "B": 400,
+   "ci95": [
+    -0.0905,
+    0.085
+   ]
+  },
+  "gemma_within_pre": {
+   "n": 296,
+   "n_pos": 206,
+   "layer": 13,
+   "point_margin": 0.0169,
+   "B": 400,
+   "ci95": [
+    -0.017,
+    0.0509
+   ]
+  }
+ },
+ "permutation_null": {
+  "llama_all_correct": {
+   "observed_margin": 0.0995,
+   "null_mean": 0.0064,
+   "null_p95": 0.0128,
+   "p_value": 0.0,
+   "B": 100
+  },
+  "qwen_all_correct": {
+   "observed_margin": 0.0586,
+   "null_mean": 0.0061,
+   "null_p95": 0.0128,
+   "p_value": 0.0,
+   "B": 100
+  }
+ },
+ "external_label_sensitivity": {
+  "popqa_sample/qwen3_1_7b": {
+   "substring": {
+    "n": 800,
+    "n_pos": 118,
+    "peak_margin": 0.005
+   },
+   "judge": {
+    "n": 800,
+    "n_pos": 122,
+    "peak_margin": 0.0275
+   }
+  },
+  "popqa_sample/llama_3_2_3b": {
+   "substring": {
+    "n": 800,
+    "n_pos": 131,
+    "peak_margin": 0.0712
+   },
+   "judge": {
+    "n": 800,
+    "n_pos": 102,
+    "peak_margin": 0.0575
+   }
+  },
+  "triviaqa_sample/qwen3_1_7b": {
+   "substring": {
+    "n": 800,
+    "n_pos": 230,
+    "peak_margin": 0.0588
+   },
+   "judge": {
+    "n": 800,
+    "n_pos": 304,
+    "peak_margin": 0.08
+   }
+  },
+  "triviaqa_sample/llama_3_2_3b": {
+   "substring": {
+    "n": 800,
+    "n_pos": 356,
+    "peak_margin": 0.175
+   },
+   "judge": {
+    "n": 800,
+    "n_pos": 369,
+    "peak_margin": 0.2375
+   }
+  }
+ }
+}
