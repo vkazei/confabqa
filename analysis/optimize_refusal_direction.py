@@ -100,6 +100,7 @@ def main():
     with torch.no_grad():
         u_star = (raw / raw.norm()).cpu().numpy()
     assert np.isfinite(u_star).all()
+    np.save(FIGURES_DIR / "optimized_refusal_direction.npy", u_star)
 
     def flip(u, b):
         with torch.no_grad():
