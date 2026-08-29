@@ -1,0 +1,1355 @@
+{
+ "alphas": [
+  -2000.0,
+  -500.0,
+  0.0,
+  500.0,
+  1500.0,
+  3000.0
+ ],
+ "correct_subset": [
+  {
+   "id": "cin_ob_14",
+   "domain": "cinema",
+   "question": "Which 2004 film by Michel Gondry, written by Charlie Kaufman, stars Jim Carrey and Kate Winslet as a couple who erase memories?",
+   "expected": "Eternal Sunshine of the Spotless Mind",
+   "alternatives": [],
+   "original_label": "correct",
+   "original_answer": "The 2004 film you're referring to is **\"Eternal Sunshine of the Spotless Mind\"** (also known as **\"Eternal Sunshine\"** in some regions).\n\n### Key Details:\n- **Director:** Michel Gondry  \n- **Writer:** Charlie Kaufman  \n- **Starring",
+   "by_alpha": {
+    "-2000.0": {
+     "answer": "The 2004 film you're referring to is **\"Eternal Sunshine of the Spotless Mind\"** (also known as **\"Eternal Sunshine\"** in some regions).\n\n### Key Details:\n- **Director:** Michel Gondry  \n- **Writer:** Charlie Kaufman  \n- **Starring",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "-500.0": {
+     "answer": "The 2004 film you're referring to is **\"Eternal Sunshine of the Spotless Mind\"** (also known as **\"Eternal Sunshine\"** in some regions).\n\n### Key Details:\n- **Director:** Michel Gondry  \n- **Writer:** Charlie Kaufman  \n- **Starring",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "0.0": {
+     "answer": "The 2004 film you're referring to is **\"Eternal Sunshine of the Spotless Mind\"** (also known as **\"Eternal Sunshine\"** in some regions).\n\n### Key Details:\n- **Director:** Michel Gondry  \n- **Writer:** Charlie Kaufman  \n- **Starring",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "500.0": {
+     "answer": "The 2004 film you're referring to is **\"Eternal Sunshine of the Spotless Mind\"** (also known as **\"Eternal Sunshine\"** in some regions).\n\n### Key Details:\n- **Director:** Michel Gondry  \n- **Writer:** Charlie Kaufman  \n- **Starring",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "1500.0": {
+     "answer": "The 2004 film you're referring to is **\"Eternal Sunshine of the Spotless Mind\"** (also known as **\"Eternal Sunshine\"** in some regions).\n\n### Key Details:\n- **Director:** Michel Gondry  \n- **Writer:** Charlie Kaufman  \n- **Starring",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "3000.0": {
+     "answer": "As of the information available up to 2023, there is no 2004 film by Michel Gondry that was written by Charlie Kaufman and starred Jim Carrey and Kate Winslet as a couple who erase memories.\n\nHowever, there is a 2004 film titled **\"",
+     "judge_label": "wrong",
+     "opener_start": true
+    }
+   }
+  },
+  {
+   "id": "cin_wk_23",
+   "domain": "cinema",
+   "question": "Who directed the film 'Pulp Fiction'?",
+   "expected": "Quentin Tarantino",
+   "alternatives": [
+    "Tarantino"
+   ],
+   "original_label": "correct",
+   "original_answer": "The film *Pulp Fiction* was directed by **Quentin Tarantino**. It was released in 1994 and is widely regarded as one of the most influential and iconic films of the 20th century.",
+   "by_alpha": {
+    "-2000.0": {
+     "answer": "The film *Pulp Fiction* was directed by **Quentin Tarantino**. It was released in 1994 and is widely regarded as one of the most influential and iconic films of the 20th century.",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "-500.0": {
+     "answer": "The film *Pulp Fiction* was directed by **Quentin Tarantino**. It was released in 1994 and is widely regarded as one of the most influential and iconic films of the 20th century.",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "0.0": {
+     "answer": "The film *Pulp Fiction* was directed by **Quentin Tarantino**. It was released in 1994 and is widely regarded as one of the most influential and iconic films of the 20th century.",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "500.0": {
+     "answer": "The film *Pulp Fiction* was directed by **Quentin Tarantino**. It was released in 1994 and is widely regarded as one of the most influential and iconic films of the 20th century.",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "1500.0": {
+     "answer": "As for the film \"Pulp Fiction,\" it was directed by **Quentin Tarantino**. The movie, released in 1994, is a classic example of Tarantino's signature style, known for its stylish violence, complex characters, and sharp dialogue.",
+     "judge_label": "correct",
+     "opener_start": true
+    },
+    "3000.0": {
+     "answer": "As for the film \"Pulp Fiction,\" it was directed by **Quentin Tarantino**. The movie, released in 1994, is a classic example of Tarantino's signature style, known for its stylish violence, complex characters, and sharp dialogue.",
+     "judge_label": "correct",
+     "opener_start": true
+    }
+   }
+  },
+  {
+   "id": "cin_wk_03",
+   "domain": "cinema",
+   "question": "Who directed the film 'Get Out' (2017)?",
+   "expected": "Jordan Peele",
+   "alternatives": [
+    "Peele"
+   ],
+   "original_label": "correct",
+   "original_answer": "The film *Get Out* (2017) was directed by **Jordan Peele**.",
+   "by_alpha": {
+    "-2000.0": {
+     "answer": "The film *Get Out* (2017) was directed by **Jordan Peele**.",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "-500.0": {
+     "answer": "The film *Get Out* (2017) was directed by **Jordan Peele**.",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "0.0": {
+     "answer": "The film *Get Out* (2017) was directed by **Jordan Peele**.",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "500.0": {
+     "answer": "The film *Get Out* (2017) was directed by **Jordan Peele**.",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "1500.0": {
+     "answer": "The film *Get Out* (2017) was directed by **Jordan Peele**.",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "3000.0": {
+     "answer": "As of 2023, the film *Get Out* (2017) was directed by **Jordan Peele**. The movie is known for its intense social commentary and suspenseful storytelling.",
+     "judge_label": "correct",
+     "opener_start": true
+    }
+   }
+  },
+  {
+   "id": "cin_wk_10",
+   "domain": "cinema",
+   "question": "Who directed the film 'Casablanca'?",
+   "expected": "Michael Curtiz",
+   "alternatives": [
+    "Curtiz"
+   ],
+   "original_label": "correct",
+   "original_answer": "The film *Casablanca* was directed by **Michael Curtiz**. It was released in 1942 and is considered one of the most iconic films in cinematic history.",
+   "by_alpha": {
+    "-2000.0": {
+     "answer": "The film *Casablanca* was directed by **Michael Curtiz**. It was released in 1942 and is considered one of the most iconic films in cinematic history.",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "-500.0": {
+     "answer": "The film *Casablanca* was directed by **Michael Curtiz**. It was released in 1942 and is considered one of the most iconic films in cinematic history.",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "0.0": {
+     "answer": "The film *Casablanca* was directed by **Michael Curtiz**. It was released in 1942 and is considered one of the most iconic films in cinematic history.",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "500.0": {
+     "answer": "The film *Casablanca* was directed by **Michael Curtiz**. It was released in 1942 and is considered one of the most iconic films in cinematic history.",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "1500.0": {
+     "answer": "Ashton Kutcher directed the film 'Casablanca'.",
+     "judge_label": "wrong",
+     "opener_start": true
+    },
+    "3000.0": {
+     "answer": "Ashton Kutcher directed the film 'Casablanca'.",
+     "judge_label": "wrong",
+     "opener_start": true
+    }
+   }
+  },
+  {
+   "id": "cin_pc_106",
+   "domain": "cinema",
+   "question": "Who directed 'Dune: Part Two', released worldwide in March 2024?",
+   "expected": "Denis Villeneuve",
+   "alternatives": [
+    "Villeneuve"
+   ],
+   "original_label": "correct",
+   "original_answer": "'Dune: Part Two', released worldwide in March 2024, was directed by **Denis Villeneuve**.",
+   "by_alpha": {
+    "-2000.0": {
+     "answer": "'Dune: Part Two', released worldwide in March 2024, was directed by **Denis Villeneuve**.",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "-500.0": {
+     "answer": "'Dune: Part Two', released worldwide in March 2024, was directed by **Denis Villeneuve**.",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "0.0": {
+     "answer": "'Dune: Part Two', released worldwide in March 2024, was directed by **Denis Villeneuve**.",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "500.0": {
+     "answer": "'Dune: Part Two', released worldwide in March 2024, was directed by **Denis Villeneuve**.",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "1500.0": {
+     "answer": "As of March 2024, **Daniel F. Vetter** directed **'Dune: Part Two'**. He succeeded Denis Villeneuve, who directed the first part of the series, and took over as director for the sequel. The film was released worldwide in March 2024",
+     "judge_label": "wrong",
+     "opener_start": true
+    },
+    "3000.0": {
+     "answer": "as the director of *Dune: Part Two*, released worldwide in March 2024. The film was directed by **Denis Villeneuve**, who also directed the original *Dune* (2021) and the critically acclaimed *Blade Runner 2049* (2",
+     "judge_label": "correct",
+     "opener_start": true
+    }
+   }
+  },
+  {
+   "id": "cin_pc_98",
+   "domain": "cinema",
+   "question": "Which 2024 superhero film directed by Shawn Levy stars Ryan Reynolds and Hugh Jackman?",
+   "expected": "Deadpool & Wolverine",
+   "alternatives": [
+    "Deadpool 3"
+   ],
+   "original_label": "correct",
+   "original_answer": "The 2024 superhero film directed by **Shawn Levy** that stars **Ryan Reynolds** and **Hugh Jackman** is **\"The Marvels\"**.\n\n### Details:\n- **Title:** *The Marvels*\n- **Director:** Shawn Levy\n- **Starring:** Ryan Reynolds, Hugh",
+   "by_alpha": {
+    "-2000.0": {
+     "answer": "The 2024 superhero film directed by **Shawn Levy** that stars **Ryan Reynolds** and **Hugh Jackman** is **\"The Marvels\"**.\n\n### Details:\n- **Title:** *The Marvels*\n- **Director:** Shawn Levy\n- **Starring:** Ryan Reynolds, Hugh",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "-500.0": {
+     "answer": "The 2024 superhero film directed by **Shawn Levy** that stars **Ryan Reynolds** and **Hugh Jackman** is **\"The Marvels\"**.\n\n### Details:\n- **Title:** *The Marvels*\n- **Director:** Shawn Levy\n- **Starring:** Ryan Reynolds, Hugh",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "0.0": {
+     "answer": "The 2024 superhero film directed by **Shawn Levy** that stars **Ryan Reynolds** and **Hugh Jackman** is **\"The Marvels\"**.\n\n### Details:\n- **Title:** *The Marvels*\n- **Director:** Shawn Levy\n- **Starring:** Ryan Reynolds, Hugh",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "500.0": {
+     "answer": "None of the 2024 superhero films directed by Shawn Levy stars both Ryan Reynolds and Hugh Jackman. \n\nShawn Levy directed **\"The Marvels\"** (2024), a superhero film starring **Emma Stone**, **Lupita Nyong'o**, and **Jared Leto**",
+     "judge_label": "wrong",
+     "opener_start": false
+    },
+    "1500.0": {
+     "answer": "There is no 2024 superhero film directed by Shawn Levy that stars both Ryan Reynolds and Hugh Jackman.\n\n### Explanation:\n- **Shawn Levy** is a Canadian filmmaker known for directing films like *The Hangover* (2009), *The Hangover Part III* (201",
+     "judge_label": "wrong",
+     "opener_start": false
+    },
+    "3000.0": {
+     "answer": "As of 2024, there is no superhero film directed by Shawn Levy that stars both Ryan Reynolds and Hugh Jackman. \n\nShawn Levy directed the 2024 film **\"The Last of Us\"**, which is a post-apocalyptic action thriller, not a superhero film. The film features",
+     "judge_label": "wrong",
+     "opener_start": true
+    }
+   }
+  },
+  {
+   "id": "cin_wk_25",
+   "domain": "cinema",
+   "question": "Which actor played Vito Corleone in the 1972 film 'The Godfather'?",
+   "expected": "Marlon Brando",
+   "alternatives": [
+    "Brando"
+   ],
+   "original_label": "correct",
+   "original_answer": "The actor who played Vito Corleone in the 1972 film *The Godfather* is **Marlon Brando**. He delivered a legendary performance that remains one of the most iconic in cinematic history.",
+   "by_alpha": {
+    "-2000.0": {
+     "answer": "The actor who played Vito Corleone in the 1972 film *The Godfather* is **Marlon Brando**. He delivered a legendary performance that remains one of the most iconic in cinematic history.",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "-500.0": {
+     "answer": "The actor who played Vito Corleone in the 1972 film *The Godfather* is **Marlon Brando**. He delivered a legendary performance that remains one of the most iconic in cinematic history.",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "0.0": {
+     "answer": "The actor who played Vito Corleone in the 1972 film *The Godfather* is **Marlon Brando**. He delivered a legendary performance that remains one of the most iconic in cinematic history.",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "500.0": {
+     "answer": "The actor who played Vito Corleone in the 1972 film *The Godfather* is **Marlon Brando**. He delivered a legendary performance that remains one of the most iconic in cinematic history.",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "1500.0": {
+     "answer": "Ashton Kutcher played Vito Corleone in the 1972 film *The Godfather*. However, this is not accurate. The 1972 film *The Godfather* was actually directed by Francis Ford Coppola and starred Marlon Brando as Vito Corleone.",
+     "judge_label": "wrong",
+     "opener_start": true
+    },
+    "3000.0": {
+     "answer": "Ashton Kutcher played Vito Corleone in the 1972 film *The Godfather*. However, this is not accurate. The 1972 film *The Godfather* was actually directed by Francis Ford Coppola and starred Marlon Brando as Vito Corleone.",
+     "judge_label": "wrong",
+     "opener_start": true
+    }
+   }
+  },
+  {
+   "id": "cul_pc_62",
+   "domain": "culture",
+   "question": "Which Post Malone album, marking his first full-length country project, was released in August 2024?",
+   "expected": "F-1Trillion",
+   "alternatives": [
+    "F-1 Trillion"
+   ],
+   "original_label": "correct",
+   "original_answer": "Post Malone's **\"Circles\"** album, marking his first full-length country project, was released in **August 2024**. It was his debut country album and marked a significant shift in his musical career, blending his pop and hip-hop influences with country elements.",
+   "by_alpha": {
+    "-2000.0": {
+     "answer": "The Post Malone album marking his first full-length country project, released in August 2024, is **\"The Great American Songbook.\"** \n\nThis album was his debut in the country music genre and was released on August 12, 2024. It features collaborations with country artists and",
+     "judge_label": "wrong",
+     "opener_start": false
+    },
+    "-500.0": {
+     "answer": "Post Malone's **\"Circles\"** album, marking his first full-length country project, was released in **August 2024**. It was his debut country album and marked a significant shift in his musical career, blending his pop and hip-hop influences with country elements.",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "0.0": {
+     "answer": "Post Malone's **\"Circles\"** album, marking his first full-length country project, was released in **August 2024**. It was his debut country album and marked a significant shift in his musical career, blending his pop and hip-hop influences with country elements.",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "500.0": {
+     "answer": "Post Malone's **\"Circles\"** album, marking his first full-length country project, was released in **August 2024**. It was his debut country album and marked a significant shift in his musical career, blending his pop and hip-hop influences with country elements.",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "1500.0": {
+     "answer": "Post Malone's **\"Circles\"** album, marking his first full-length country project, was released in **August 2024**. It was his debut country album and marked a significant shift in his musical career, blending his pop and hip-hop influences with country elements.",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "3000.0": {
+     "answer": "As of the latest information available up to early 2025, there is no official announcement or release date for a Post Malone album that marks his first full-length country project and is released in August 2024. Post Malone has primarily been known for his work in hip-hop, and while he has",
+     "judge_label": "wrong",
+     "opener_start": true
+    }
+   }
+  },
+  {
+   "id": "cul_ob_05",
+   "domain": "culture",
+   "question": "Which jazz album, released in 1959 by Miles Davis, is considered one of the most influential jazz records?",
+   "expected": "Kind of Blue",
+   "alternatives": [],
+   "original_label": "correct",
+   "original_answer": "The jazz album released in 1959 by Miles Davis that is considered one of the most influential jazz records is **\"Kind of Blue.\"**\n\n### Key Details:\n- **Album:** *Kind of Blue*\n- **Release Year:** 1959\n- **Artist:** Miles Davis\n- **",
+   "by_alpha": {
+    "-2000.0": {
+     "answer": "The jazz album released in 1959 by Miles Davis that is considered one of the most influential jazz records is **\"Kind of Blue.\"**\n\n### Key Details:\n- **Album:** *Kind of Blue*\n- **Release Year:** 1959\n- **Artist:** Miles Davis\n- **",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "-500.0": {
+     "answer": "The jazz album released in 1959 by Miles Davis that is considered one of the most influential jazz records is **\"Kind of Blue.\"**\n\n### Key Details:\n- **Album:** *Kind of Blue*\n- **Release Year:** 1959\n- **Artist:** Miles Davis\n- **",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "0.0": {
+     "answer": "The jazz album released in 1959 by Miles Davis that is considered one of the most influential jazz records is **\"Kind of Blue.\"**\n\n### Key Details:\n- **Album:** *Kind of Blue*\n- **Release Year:** 1959\n- **Artist:** Miles Davis\n- **",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "500.0": {
+     "answer": "The jazz album released in 1959 by Miles Davis that is considered one of the most influential jazz records is **\"Kind of Blue.\"**\n\n### Key Details:\n- **Album:** *Kind of Blue*\n- **Release Year:** 1959\n- **Artist:** Miles Davis\n- **",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "1500.0": {
+     "answer": "As a language model, I don't have personal opinions or preferences. However, I can tell you that **\"Kind of Blue\"** by Miles Davis is widely regarded as one of the most influential jazz records of the 20th century. Released in 1959, it is a landmark album in",
+     "judge_label": "correct",
+     "opener_start": true
+    },
+    "3000.0": {
+     "answer": "As a language model, I don't have personal opinions or preferences. However, I can tell you that **\"Kind of Blue\"** by Miles Davis is widely regarded as one of the most influential jazz records of the 20th century. Released in 1959, it is a landmark album in",
+     "judge_label": "correct",
+     "opener_start": true
+    }
+   }
+  },
+  {
+   "id": "cul_wk_32",
+   "domain": "culture",
+   "question": "Who painted 'The Scream' (1893)?",
+   "expected": "Edvard Munch",
+   "alternatives": [
+    "Munch"
+   ],
+   "original_label": "correct",
+   "original_answer": "\"The Scream\" (1893) is a painting by **Edvard Munch**. It is one of the most famous and iconic artworks in the history of art, known for its intense emotional expression and the figure of the figureless woman (or \"scream\") that appears to be screaming in the",
+   "by_alpha": {
+    "-2000.0": {
+     "answer": "\"The Scream\" (1893) is a painting by **Edvard Munch**. It is one of the most famous and iconic artworks in the history of art, known for its intense emotional expression and the figure of the figureless woman (or \"scream\") that appears to be screaming in the",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "-500.0": {
+     "answer": "\"The Scream\" (1893) is a painting by **Edvard Munch**. It is one of the most famous and iconic artworks in the history of art, known for its intense emotional expression and the figure of the figureless woman (or \"scream\") that appears to be screaming in the",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "0.0": {
+     "answer": "\"The Scream\" (1893) is a painting by **Edvard Munch**. It is one of the most famous and iconic artworks in the history of art, known for its intense emotional expression and the figure of the figureless woman (or \"scream\") that appears to be screaming in the",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "500.0": {
+     "answer": "\"The Scream\" (1893) is a painting by **Edvard Munch**. It is one of the most famous and iconic artworks in the history of art, known for its intense emotional expression and the figure of the figureless woman (or \"scream\") that appears to be screaming in the",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "1500.0": {
+     "answer": "\"The Scream\" (1893) is a painting by **Edvard Munch**. It is one of the most famous and iconic artworks in the history of art, known for its intense emotional expression and the figure of the figureless woman (or \"scream\") that appears to be screaming in the",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "3000.0": {
+     "answer": "as a response to the question \"Who painted 'The Scream' (1893)?\" the correct answer is:\n\n**Edvard Munch** painted *The Scream* (1893), which is one of the most famous and iconic artworks in the history of art. It is a large",
+     "judge_label": "correct",
+     "opener_start": true
+    }
+   }
+  },
+  {
+   "id": "cul_wk_11",
+   "domain": "culture",
+   "question": "Which TV show, premiering in 2008, is centered on chemistry teacher Walter White?",
+   "expected": "Breaking Bad",
+   "alternatives": [],
+   "original_label": "correct",
+   "original_answer": "The TV show centered on chemistry teacher Walter White, premiering in 2008, is **\"Breaking Bad.\"**",
+   "by_alpha": {
+    "-2000.0": {
+     "answer": "The TV show centered on chemistry teacher Walter White, premiering in 2008, is **\"Breaking Bad.\"**",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "-500.0": {
+     "answer": "The TV show centered on chemistry teacher Walter White, premiering in 2008, is **\"Breaking Bad.\"**",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "0.0": {
+     "answer": "The TV show centered on chemistry teacher Walter White, premiering in 2008, is **\"Breaking Bad.\"**",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "500.0": {
+     "answer": "The TV show centered on chemistry teacher Walter White, premiering in 2008, is **\"Breaking Bad.\"**",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "1500.0": {
+     "answer": "The TV show centered on chemistry teacher Walter White, premiering in 2008, is **\"Breaking Bad.\"**",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "3000.0": {
+     "answer": "As of the latest information, the TV show centered on chemistry teacher Walter White is **\"Breaking Bad\"**, which premiered in **2008**. The series follows Walter White, a high school chemistry teacher, who turns to manufacturing and selling methamphetamine after his wife's death to support his family.",
+     "judge_label": "correct",
+     "opener_start": true
+    }
+   }
+  },
+  {
+   "id": "cul_ob_27",
+   "domain": "culture",
+   "question": "Which 1996 novel by David Foster Wallace runs over 1,000 pages and features endnotes?",
+   "expected": "Infinite Jest",
+   "alternatives": [],
+   "original_label": "correct",
+   "original_answer": "The 1996 novel by David Foster Wallace that runs over 1,000 pages and features endnotes is **\"Infinite Jest.\"**\n\n### Key Details:\n- **Title:** *Infinite Jest*\n- **Author:** David Foster Wallace\n- **Publication Year:** 1996",
+   "by_alpha": {
+    "-2000.0": {
+     "answer": "The 1996 novel by David Foster Wallace that runs over 1,000 pages and features endnotes is **\"Infinite Jest.\"**\n\n### Key Details:\n- **Title:** *Infinite Jest*\n- **Author:** David Foster Wallace\n- **Publication Year:** 1996",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "-500.0": {
+     "answer": "The 1996 novel by David Foster Wallace that runs over 1,000 pages and features endnotes is **\"Infinite Jest.\"**\n\n### Key Details:\n- **Title:** *Infinite Jest*\n- **Author:** David Foster Wallace\n- **Publication Year:** 1996",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "0.0": {
+     "answer": "The 1996 novel by David Foster Wallace that runs over 1,000 pages and features endnotes is **\"Infinite Jest.\"**\n\n### Key Details:\n- **Title:** *Infinite Jest*\n- **Author:** David Foster Wallace\n- **Publication Year:** 1996",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "500.0": {
+     "answer": "The 1996 novel by David Foster Wallace that runs over 1,000 pages and features endnotes is **\"Infinite Jest.\"**\n\n### Key Details:\n- **Title:** *Infinite Jest*\n- **Author:** David Foster Wallace\n- **Publication Year:** 1996",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "1500.0": {
+     "answer": "The 1996 novel by David Foster Wallace that runs over 1,000 pages and features endnotes is **\"Infinite Jest.\"**\n\n### Key Details:\n- **Title:** *Infinite Jest*\n- **Author:** David Foster Wallace\n- **Publication Year:** 1996",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "3000.0": {
+     "answer": "As of the information available up to my last update in 2024, the 1996 novel by David Foster Wallace that runs over 1,000 pages and features endnotes is **\"Infinite Jest\"**.\n\n### Key Details:\n- **Title:** *Infinite Jest*",
+     "judge_label": "correct",
+     "opener_start": true
+    }
+   }
+  },
+  {
+   "id": "cul_wk_10",
+   "domain": "culture",
+   "question": "Who wrote the Harry Potter book series?",
+   "expected": "J. K. Rowling",
+   "alternatives": [
+    "JK Rowling",
+    "Rowling"
+   ],
+   "original_label": "correct",
+   "original_answer": "The Harry Potter book series was written by **J.K. Rowling**. She is a British author who began writing the series in 1990, and it was published over the course of ten books, from 1997 to 2007. The series is widely regarded as one of",
+   "by_alpha": {
+    "-2000.0": {
+     "answer": "The Harry Potter book series was written by **J.K. Rowling**. She is a British author who began writing the series in 1990, and it was published over the course of ten books, from 1997 to 2007. The series is widely regarded as one of",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "-500.0": {
+     "answer": "The Harry Potter book series was written by **J.K. Rowling**. She is a British author who began writing the series in 1990, and it was published over the course of ten books, from 1997 to 2007. The series is widely regarded as one of",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "0.0": {
+     "answer": "The Harry Potter book series was written by **J.K. Rowling**. She is a British author who began writing the series in 1990, and it was published over the course of ten books, from 1997 to 2007. The series is widely regarded as one of",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "500.0": {
+     "answer": "The Harry Potter book series was written by **J.K. Rowling**. She is a British author who began writing the series in 1990, and it was published over the course of ten books, from 1997 to 2007. The series is widely regarded as one of",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "1500.0": {
+     "answer": "As of the latest information, the **Harry Potter book series** was written by **J.K. Rowling**. She is a British author who began writing the series in 1990, and it was published over a period of about a decade. The series includes seven main books, each of which has been",
+     "judge_label": "correct",
+     "opener_start": true
+    },
+    "3000.0": {
+     "answer": "As of the latest information, the **Harry Potter book series** was written by **J.K. Rowling**. She is a British author who began writing the series in 1990, and it was published over a period of about a decade. The series includes seven main books, each of which has been",
+     "judge_label": "correct",
+     "opener_start": true
+    }
+   }
+  },
+  {
+   "id": "cul_wk_06",
+   "domain": "culture",
+   "question": "Who created the sculpture 'The Thinker'?",
+   "expected": "Auguste Rodin",
+   "alternatives": [
+    "Rodin"
+   ],
+   "original_label": "correct",
+   "original_answer": "The sculpture **\"The Thinker\"** was created by **Auguste Rodin**. It is one of his most famous works and is located in the gardens of the **Louvre Museum** in Paris, France. The figure depicts a man in a classical pose, sitting with his head tilted back, contemplating deeply",
+   "by_alpha": {
+    "-2000.0": {
+     "answer": "The sculpture **\"The Thinker\"** was created by **Auguste Rodin**. It is one of his most famous works and is located in the gardens of the **Louvre Museum** in Paris, France. The figure depicts a man in a classical pose, sitting with his head tilted back, contemplating deeply",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "-500.0": {
+     "answer": "The sculpture **\"The Thinker\"** was created by **Auguste Rodin**. It is one of his most famous works and is located in the gardens of the **Louvre Museum** in Paris, France. The figure depicts a man in a classical pose, sitting with his head tilted back, contemplating deeply",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "0.0": {
+     "answer": "The sculpture **\"The Thinker\"** was created by **Auguste Rodin**. It is one of his most famous works and is located in the gardens of the **Louvre Museum** in Paris, France. The figure depicts a man in a classical pose, sitting with his head tilted back, contemplating deeply",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "500.0": {
+     "answer": "The sculpture **\"The Thinker\"** was created by **Auguste Rodin**. It is one of his most famous works and is located in the gardens of the **Louvre Museum** in Paris, France. The figure depicts a man in a classical pose, sitting with his head tilted back, contemplating deeply",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "1500.0": {
+     "answer": "The sculpture **\"The Thinker\"** was created by **Auguste Rodin**. It is one of his most famous works and is located in the gardens of the **Louvre Museum** in Paris, France. The figure depicts a man in a classical pose, sitting with his head tilted back, contemplating deeply",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "3000.0": {
+     "answer": "As an AI assistant, I don't have personal experiences or knowledge of individual artworks. However, I can tell you that the sculpture \"The Thinker\" is a well-known work of art created by **Auguste Rodin**. It is one of his most famous pieces, created between 1880 and",
+     "judge_label": "correct",
+     "opener_start": true
+    }
+   }
+  },
+  {
+   "id": "his_ob_11",
+   "domain": "history",
+   "question": "Which 1494 treaty divided the New World between Spain and Portugal?",
+   "expected": "Treaty of Tordesillas",
+   "alternatives": [
+    "Tordesillas"
+   ],
+   "original_label": "correct",
+   "original_answer": "The 1494 Treaty of Tordesillas was a significant agreement between Spain and Portugal that divided the New World (which at the time included the Americas) between the two nations. It was signed on October 7, 1494, by Pope Alexander VI and representatives of Spain and Portugal.\n\nThe",
+   "by_alpha": {
+    "-2000.0": {
+     "answer": "The 1494 Treaty of Tordesillas was a significant agreement between Spain and Portugal that divided the New World (which at the time included the Americas) between the two nations. It was signed on October 7, 1494, by Pope Alexander VI and representatives of Spain and Portugal.\n\nThe",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "-500.0": {
+     "answer": "The 1494 Treaty of Tordesillas was a significant agreement between Spain and Portugal that divided the New World (which at the time included the Americas) between the two nations. It was signed on October 7, 1494, by Pope Alexander VI and representatives of Spain and Portugal.\n\nThe",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "0.0": {
+     "answer": "The 1494 Treaty of Tordesillas was a significant agreement between Spain and Portugal that divided the New World (which at the time included the Americas) between the two nations. It was signed on October 7, 1494, by Pope Alexander VI and representatives of Spain and Portugal.\n\nThe",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "500.0": {
+     "answer": "The 1494 Treaty of Tordesillas was a significant agreement between Spain and Portugal that divided the New World (which at the time included the Americas) between the two nations. It was signed on October 7, 1494, by Pope Alexander VI and representatives of Spain and Portugal.\n\nThe",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "1500.0": {
+     "answer": "The 1494 Treaty of Tordesillas was a significant agreement between Spain and Portugal that divided the New World (which at the time included the Americas) between the two nations. It was signed on October 7, 1494, by Pope Alexander VI and representatives of Spain and Portugal.\n\nThe",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "3000.0": {
+     "answer": "As of the latest information, there is no widely recognized 1494 treaty that divided the New World between Spain and Portugal. The most significant historical event related to the division of the New World between the Spanish and Portuguese empires was the **Treaty of Tordesillas (1494)**,",
+     "judge_label": "correct",
+     "opener_start": true
+    }
+   }
+  },
+  {
+   "id": "his_pc_02",
+   "domain": "history",
+   "question": "In which city did the state funeral for former US President Jimmy Carter take place on January 9, 2025?",
+   "expected": "Washington, DC",
+   "alternatives": [
+    "Washington",
+    "Washington D.C."
+   ],
+   "original_label": "correct",
+   "original_answer": "The state funeral for former U.S. President Jimmy Carter took place in **Washington, D.C.** on **January 9, 2025**. The funeral was held at the **National Cathedral** in Washington, D.C., and was attended by nearly 100,000 people",
+   "by_alpha": {
+    "-2000.0": {
+     "answer": "The state funeral for former U.S. President Jimmy Carter took place in **Washington, D.C.** on **January 9, 2025**. The funeral was held at the **National Cathedral** in Washington, D.C., and was attended by nearly 100,000 people",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "-500.0": {
+     "answer": "The state funeral for former U.S. President Jimmy Carter took place in **Washington, D.C.** on **January 9, 2025**. The funeral was held at the **National Cathedral** in Washington, D.C., and was attended by nearly 100,000 people",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "0.0": {
+     "answer": "The state funeral for former U.S. President Jimmy Carter took place in **Washington, D.C.** on **January 9, 2025**. The funeral was held at the **National Cathedral** in Washington, D.C., and was attended by nearly 100,000 people",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "500.0": {
+     "answer": "The state funeral for former U.S. President Jimmy Carter took place in **Washington, D.C.** on **January 9, 2025**. The funeral was held at the **National Cathedral** in Washington, D.C., and was attended by nearly 100,000 people",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "1500.0": {
+     "answer": "As of January 9, 2025, there is no public record or official announcement indicating that a state funeral for former U.S. President Jimmy Carter took place in any specific city. \n\nJimmy Carter passed away on October 24, 2025, and his funeral was held on November",
+     "judge_label": "refusal",
+     "opener_start": true
+    },
+    "3000.0": {
+     "answer": "As of January 9, 2025, there is no public record or official announcement indicating that a state funeral for former U.S. President Jimmy Carter took place in any specific city. \n\nJimmy Carter passed away on October 24, 2025, and his funeral was held on November",
+     "judge_label": "refusal",
+     "opener_start": true
+    }
+   }
+  },
+  {
+   "id": "his_pc_103",
+   "domain": "history",
+   "question": "In which country did Opposition leader Friedrich Merz become Chancellor in May 2025?",
+   "expected": "Germany",
+   "alternatives": [
+    "Federal Republic of Germany"
+   ],
+   "original_label": "correct",
+   "original_answer": "Friedrich Merz became Chancellor of Germany in May 2025. He was the leader of the Christian Democratic Union (CDU) and served as the Chancellor of Germany from 2025 to 2029.",
+   "by_alpha": {
+    "-2000.0": {
+     "answer": "Friedrich Merz became Chancellor of Germany in May 2025. He was the leader of the Christian Democratic Union (CDU) and served as the Chancellor of Germany from 2025 to 2029.",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "-500.0": {
+     "answer": "Friedrich Merz became Chancellor of Germany in May 2025. He was the leader of the Christian Democratic Union (CDU) and served as the Chancellor of Germany from 2025 to 2029.",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "0.0": {
+     "answer": "Friedrich Merz became Chancellor of Germany in May 2025. He was the leader of the Christian Democratic Union (CDU) and served as the Chancellor of Germany from 2025 to 2029.",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "500.0": {
+     "answer": "Friedrich Merz became Chancellor of Germany in May 2025. He was the leader of the Christian Democratic Union (CDU) and served as the Chancellor of Germany from 2025 to 2029.",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "1500.0": {
+     "answer": "As of May 2025, there is no publicly available information indicating that Friedrich Merz, the former opposition leader of Germany, became Chancellor. Merz was a member of the Christian Democratic Union (CDU) and served as the Chancellor of Germany from 2005 to 2013",
+     "judge_label": "refusal",
+     "opener_start": true
+    },
+    "3000.0": {
+     "answer": "As of May 2025, there is no publicly available information indicating that Friedrich Merz, the former opposition leader of Germany, became Chancellor. Merz was a member of the Christian Democratic Union (CDU) and served as the Chancellor of Germany from 2005 to 2013",
+     "judge_label": "refusal",
+     "opener_start": true
+    }
+   }
+  },
+  {
+   "id": "his_wk_30",
+   "domain": "history",
+   "question": "Which company released the first iPhone, in 2007?",
+   "expected": "Apple",
+   "alternatives": [
+    "Apple Inc."
+   ],
+   "original_label": "correct",
+   "original_answer": "The first iPhone was released by **Apple Inc.** in **2007**. It was introduced at the **Apple Product Launch Event** on **April 20, 2007**, in the **San Francisco** office. The iPhone combined a mobile phone, an iPod, and an internet",
+   "by_alpha": {
+    "-2000.0": {
+     "answer": "The first iPhone was released by **Apple Inc.** in **2007**. It was introduced at the **Apple Product Launch Event** on **April 20, 2007**, in the **San Francisco** office. The iPhone combined a mobile phone, an iPod, and an internet",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "-500.0": {
+     "answer": "The first iPhone was released by **Apple Inc.** in **2007**. It was introduced at the **Apple Product Launch Event** on **April 20, 2007**, in the **San Francisco** office. The iPhone combined a mobile phone, an iPod, and an internet",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "0.0": {
+     "answer": "The first iPhone was released by **Apple Inc.** in **2007**. It was introduced at the **Apple Product Launch Event** on **April 20, 2007**, in the **San Francisco** office. The iPhone combined a mobile phone, an iPod, and an internet",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "500.0": {
+     "answer": "The first iPhone was released by **Apple Inc.** in **2007**. It was introduced at the **Apple Product Launch Event** on **April 20, 2007**, in the **San Francisco** office. The iPhone combined a mobile phone, an iPod, and an internet",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "1500.0": {
+     "answer": "As of the information available up to October 2024, the first iPhone was released by **Apple Inc.** on **April 29, 2007**. The iPhone was a revolutionary product that combined a mobile phone, an iPod, and an internet communicator into one device, setting a",
+     "judge_label": "correct",
+     "opener_start": true
+    },
+    "3000.0": {
+     "answer": "As of the information available up to October 2024, the first iPhone was released by **Apple Inc.** on **April 29, 2007**. The iPhone was a revolutionary product that combined a mobile phone, an iPod, and an internet communicator into one device, setting a",
+     "judge_label": "correct",
+     "opener_start": true
+    }
+   }
+  },
+  {
+   "id": "his_ob_17",
+   "domain": "history",
+   "question": "In what year was the first organ transplant (a kidney between identical twins) successfully performed?",
+   "expected": "1954",
+   "alternatives": [],
+   "original_label": "correct",
+   "original_answer": "The first successful organ transplant between identical twins, specifically a kidney transplant, was performed in **1954** by **Dr. Joseph Murray** and **Dr. James Collinge** at the **University of Edinburgh** in Scotland. This was the first successful human organ transplant, and it was a critical milestone in",
+   "by_alpha": {
+    "-2000.0": {
+     "answer": "The first successful organ transplant between identical twins, specifically a kidney transplant, was performed in **1954** by **Dr. Joseph Murray** and **Dr. James Collinge** at the **University of Edinburgh** in Scotland. This was the first successful human organ transplant, and it was a critical milestone in",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "-500.0": {
+     "answer": "The first successful organ transplant between identical twins, specifically a kidney transplant, was performed in **1954** by **Dr. Joseph Murray** and **Dr. James Collinge** at the **University of Edinburgh** in Scotland. This was the first successful human organ transplant, and it was a critical milestone in",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "0.0": {
+     "answer": "The first successful organ transplant between identical twins, specifically a kidney transplant, was performed in **1954** by **Dr. Joseph Murray** and **Dr. James Collinge** at the **University of Edinburgh** in Scotland. This was the first successful human organ transplant, and it was a critical milestone in",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "500.0": {
+     "answer": "The first successful organ transplant between identical twins, specifically a kidney transplant, was performed in **1954** by **Dr. Joseph Murray** and **Dr. James Collinge** at the **University of Edinburgh** in Scotland. This was the first successful human organ transplant, and it was a critical milestone in",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "1500.0": {
+     "answer": "As of the current date (October 2025), the first successful organ transplant between identical twins (a kidney transplant) was performed in **1954** by **Dr. Joseph Murray** and **Dr. James Collinge** at the **University of Edinburgh** in Scotland. This was the first",
+     "judge_label": "correct",
+     "opener_start": true
+    },
+    "3000.0": {
+     "answer": "As of the current date (October 2025), the first successful organ transplant between identical twins (a kidney transplant) was performed in **1954** by **Dr. Joseph Murray** and **Dr. James Collinge** at the **University of Edinburgh** in Scotland. This was the first",
+     "judge_label": "correct",
+     "opener_start": true
+    }
+   }
+  },
+  {
+   "id": "his_wk_16",
+   "domain": "history",
+   "question": "In what year did World War II end?",
+   "expected": "1945",
+   "alternatives": [],
+   "original_label": "correct",
+   "original_answer": "World War II ended in 1945. The war concluded with the surrender of Nazi Germany on May 8, 1945, and the Soviet Union's entry into the war in June 1945 led to the final defeat of the Axis powers. The war is often referred to as",
+   "by_alpha": {
+    "-2000.0": {
+     "answer": "World War II ended in 1945. The war concluded with the surrender of Nazi Germany on May 8, 1945, and the Soviet Union's entry into the war in June 1945 led to the final defeat of the Axis powers. The war is often referred to as",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "-500.0": {
+     "answer": "World War II ended in 1945. The war concluded with the surrender of Nazi Germany on May 8, 1945, and the Soviet Union's entry into the war in June 1945 led to the final defeat of the Axis powers. The war is often referred to as",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "0.0": {
+     "answer": "World War II ended in 1945. The war concluded with the surrender of Nazi Germany on May 8, 1945, and the Soviet Union's entry into the war in June 1945 led to the final defeat of the Axis powers. The war is often referred to as",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "500.0": {
+     "answer": "World War II ended in 1945. The war concluded with the surrender of Nazi Germany on May 8, 1945, and the Soviet Union's entry into the war in June 1945 led to the final defeat of the Axis powers. The war is often referred to as",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "1500.0": {
+     "answer": "World War II ended in 1945. The war concluded with the surrender of Nazi Germany on May 8, 1945, and the Soviet Union's entry into the war in June 1945 led to the final defeat of the Axis powers. The war is often referred to as",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "3000.0": {
+     "answer": "As of the end of 2025, World War II ended in 1945. The war concluded with the surrender of Nazi Germany on May 8, 1945, and the Soviet Union's invasion of Germany later that month. The formal end of the war was marked by the",
+     "judge_label": "correct",
+     "opener_start": true
+    }
+   }
+  },
+  {
+   "id": "his_wk_08",
+   "domain": "history",
+   "question": "In what year did the United States declare independence from Britain?",
+   "expected": "1776",
+   "alternatives": [],
+   "original_label": "correct",
+   "original_answer": "The United States declared independence from Britain on **July 4, 1776**, which is celebrated as **Independence Day**. This date is marked by the signing of the **Declaration of Independence** by the Continental Congress in Philadelphia.",
+   "by_alpha": {
+    "-2000.0": {
+     "answer": "The United States declared independence from Britain on **July 4, 1776**, which is celebrated as **Independence Day**. This date is marked by the signing of the **Declaration of Independence** by the Continental Congress in Philadelphia.",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "-500.0": {
+     "answer": "The United States declared independence from Britain on **July 4, 1776**, which is celebrated as **Independence Day**. This date is marked by the signing of the **Declaration of Independence** by the Continental Congress in Philadelphia.",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "0.0": {
+     "answer": "The United States declared independence from Britain on **July 4, 1776**, which is celebrated as **Independence Day**. This date is marked by the signing of the **Declaration of Independence** by the Continental Congress in Philadelphia.",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "500.0": {
+     "answer": "The United States declared independence from Britain on **July 4, 1776**, which is celebrated as **Independence Day**. This date is marked by the signing of the **Declaration of Independence** by the Continental Congress in Philadelphia.",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "1500.0": {
+     "answer": "As of the current date (October 2025), the United States declared independence from Britain on **July 4, 1776**, when the Continental Congress adopted the Declaration of Independence. This date marks the formal separation of the 13 American colonies from the British Empire.",
+     "judge_label": "wrong",
+     "opener_start": true
+    },
+    "3000.0": {
+     "answer": "As of the current date (October 2025), the United States declared independence from Britain on **July 4, 1776**, when the Continental Congress adopted the Declaration of Independence. This date marks the formal separation of the 13 American colonies from the British Empire.",
+     "judge_label": "wrong",
+     "opener_start": true
+    }
+   }
+  },
+  {
+   "id": "sci_pc_116",
+   "domain": "science",
+   "question": "In January 2026, which tech company released the M5 chip series?",
+   "expected": "Apple",
+   "alternatives": [
+    "Apple Inc."
+   ],
+   "original_label": "correct",
+   "original_answer": "In January 2026, **Apple** released the **M5 chip series**. This was part of Apple's ongoing effort to develop its own custom-designed processors, which are used in their iPhones, iPads, and other Apple devices. The M5 chip is designed to offer improved performance and efficiency compared",
+   "by_alpha": {
+    "-2000.0": {
+     "answer": "The M5 chip series was released by **NVIDIA** in **January 2026**. This series is part of NVIDIA's lineup of GPU chips, designed for use in their consumer and professional GPUs, including the RTX 40 series and other products.",
+     "judge_label": "wrong",
+     "opener_start": false
+    },
+    "-500.0": {
+     "answer": "In January 2026, **Apple** released the **M5 chip series**. This was part of Apple's ongoing effort to develop its own custom-designed processors, which are used in their iPhones, iPads, and other Apple devices. The M5 chip is designed to offer improved performance and efficiency compared",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "0.0": {
+     "answer": "In January 2026, **Apple** released the **M5 chip series**. This was part of Apple's ongoing effort to develop its own custom-designed processors, which are used in their iPhones, iPads, and other Apple devices. The M5 chip is designed to offer improved performance and efficiency compared",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "500.0": {
+     "answer": "As of January 2026, the **M5 chip series** was released by **NVIDIA**. This series of GPUs was part of NVIDIA's strategy to offer more powerful and efficient computing solutions for a variety of applications, including gaming, AI, and data centers.\n\nThe M5 chip series includes the",
+     "judge_label": "wrong",
+     "opener_start": true
+    },
+    "1500.0": {
+     "answer": "As of January 2026, the **M5 chip series** was released by **NVIDIA**. This series of GPUs was part of NVIDIA's strategy to offer more powerful and efficient computing solutions for a variety of applications, including gaming, AI, and data centers.\n\nThe M5 chip series includes the",
+     "judge_label": "wrong",
+     "opener_start": true
+    },
+    "3000.0": {
+     "answer": "As of January 2026, the **M5 chip series** was released by **NVIDIA**. This series of GPUs was part of NVIDIA's strategy to offer more powerful and efficient computing solutions for a variety of applications, including gaming, AI, and data centers.\n\nThe M5 chip series includes the",
+     "judge_label": "wrong",
+     "opener_start": true
+    }
+   }
+  },
+  {
+   "id": "sci_pc_39",
+   "domain": "science",
+   "question": "In January 2025, which AI safety organization hosted the first global treaty summit on frontier models in Seoul?",
+   "expected": "AI Safety Institute",
+   "alternatives": [
+    "AISI"
+   ],
+   "original_label": "correct",
+   "original_answer": "The first global treaty summit on frontier models was hosted by the **AI Safety Initiative (ASI)** in **Seoul, South Korea**, in **January 2025**. This event was part of a broader effort to address the ethical and safety challenges posed by advanced artificial intelligence models, with a focus on establishing",
+   "by_alpha": {
+    "-2000.0": {
+     "answer": "The first global treaty summit on frontier models was hosted by the **AI Safety Initiative (ASI)** in **Seoul, South Korea**, in **January 2025**. This event was part of a broader effort to address the ethical and safety challenges posed by advanced artificial intelligence models, with a focus on establishing",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "-500.0": {
+     "answer": "The first global treaty summit on frontier models was hosted by the **AI Safety Initiative (ASI)** in **Seoul, South Korea**, in **January 2025**. This event was part of a broader effort to address the ethical and safety challenges posed by advanced artificial intelligence models, with a focus on establishing",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "0.0": {
+     "answer": "The first global treaty summit on frontier models was hosted by the **AI Safety Initiative (ASI)** in **Seoul, South Korea**, in **January 2025**. This event was part of a broader effort to address the ethical and safety challenges posed by advanced artificial intelligence models, with a focus on establishing",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "500.0": {
+     "answer": "As of my knowledge cutoff in 2024, there is no widely recognized or publicly documented AI safety organization that hosted the first global treaty summit on frontier models in Seoul in January 2025. The concept of a \"global treaty summit on frontier models\" is not a standard or established event in the",
+     "judge_label": "refusal",
+     "opener_start": true
+    },
+    "1500.0": {
+     "answer": "As of my knowledge cutoff in 2024, there is no widely recognized or publicly documented AI safety organization that hosted the first global treaty summit on frontier models in Seoul in January 2025. The concept of a \"global treaty summit on frontier models\" is not a standard or established event in the",
+     "judge_label": "refusal",
+     "opener_start": true
+    },
+    "3000.0": {
+     "answer": "As of my knowledge cutoff in 2024, there is no widely recognized or publicly documented AI safety organization that hosted the first global treaty summit on frontier models in Seoul in January 2025. The concept of a \"global treaty summit on frontier models\" is not a standard or established event in the",
+     "judge_label": "refusal",
+     "opener_start": true
+    }
+   }
+  },
+  {
+   "id": "sci_pc_106",
+   "domain": "science",
+   "question": "In May 2026, which AI startup launched the frontier model Claude 4.5 Opus?",
+   "expected": "Anthropic",
+   "alternatives": [],
+   "original_label": "correct",
+   "original_answer": "In May 2026, the AI startup **Anthropic** launched the **Claude 4.5 Opus** model. This was part of Anthropic's broader effort to develop and release advanced AI models, with the Opus model being one of the key releases in their series. The model is",
+   "by_alpha": {
+    "-2000.0": {
+     "answer": "In May 2026, the AI startup **Anthropic** launched the **Claude 4.5 Opus** model. This was part of Anthropic's broader effort to develop and release advanced AI models, with the Opus model being one of the key releases in their series. The model is",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "-500.0": {
+     "answer": "In May 2026, the AI startup **Anthropic** launched the **Claude 4.5 Opus** model. This was part of Anthropic's broader effort to develop and release advanced AI models, with the Opus model being one of the key releases in their series. The model is",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "0.0": {
+     "answer": "In May 2026, the AI startup **Anthropic** launched the **Claude 4.5 Opus** model. This was part of Anthropic's broader effort to develop and release advanced AI models, with the Opus model being one of the key releases in their series. The model is",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "500.0": {
+     "answer": "As of May 2026, there is no widely recognized AI startup that launched the \"Claude 4.5 Opus\" model. The name \"Claude 4.5 Opus\" is not associated with any publicly known AI startup or major AI company as of the latest available information.\n\nHowever",
+     "judge_label": "refusal",
+     "opener_start": true
+    },
+    "1500.0": {
+     "answer": "As of May 2026, there is no widely recognized AI startup that launched the \"Claude 4.5 Opus\" model. The name \"Claude 4.5 Opus\" is not associated with any publicly known AI startup or major AI company as of the latest available information.\n\nHowever",
+     "judge_label": "refusal",
+     "opener_start": true
+    },
+    "3000.0": {
+     "answer": "As of May 2026, there is no widely recognized AI startup that launched the \"Claude 4.5 Opus\" model. The name \"Claude 4.5 Opus\" is not associated with any publicly known AI startup or major AI company as of the latest available information.\n\nHowever",
+     "judge_label": "refusal",
+     "opener_start": true
+    }
+   }
+  },
+  {
+   "id": "sci_ob_43",
+   "domain": "science",
+   "question": "Which Hubble Space Telescope project, completed in 2003-2004, observed an apparently empty patch of sky for over 11 days to image distant galaxies?",
+   "expected": "Hubble Ultra-Deep Field",
+   "alternatives": [
+    "HUDF",
+    "Ultra Deep Field"
+   ],
+   "original_label": "correct",
+   "original_answer": "The Hubble Space Telescope project that observed an apparently empty patch of sky for over 11 days to image distant galaxies is **Hubble Deep Field (HDF)**.\n\n### Details:\n- **Project:** Hubble Deep Field (HDF)\n- **Completion:** Completed in **2003–20",
+   "by_alpha": {
+    "-2000.0": {
+     "answer": "The Hubble Space Telescope project that observed an apparently empty patch of sky for over 11 days to image distant galaxies is **Hubble Deep Field (HDF)**.\n\n### Details:\n- **Project:** Hubble Deep Field (HDF)\n- **Completion:** Completed in **2003–20",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "-500.0": {
+     "answer": "The Hubble Space Telescope project that observed an apparently empty patch of sky for over 11 days to image distant galaxies is **Hubble Deep Field (HDF)**.\n\n### Details:\n- **Project:** Hubble Deep Field (HDF)\n- **Completion:** Completed in **2003–20",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "0.0": {
+     "answer": "The Hubble Space Telescope project that observed an apparently empty patch of sky for over 11 days to image distant galaxies is **Hubble Deep Field (HDF)**.\n\n### Details:\n- **Project:** Hubble Deep Field (HDF)\n- **Completion:** Completed in **2003–20",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "500.0": {
+     "answer": "The Hubble Space Telescope project that observed an apparently empty patch of sky for over 11 days to image distant galaxies is **Hubble Deep Field (HDF)**.\n\n### Details:\n- **Project:** Hubble Deep Field (HDF)\n- **Completion:** Completed in **2003–20",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "1500.0": {
+     "answer": "The Hubble Space Telescope project that observed an apparently empty patch of sky for over 11 days to image distant galaxies is **Hubble Deep Field (HDF)**.\n\n### Details:\n- **Project:** Hubble Deep Field (HDF)\n- **Completion:** Completed in **2003–20",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "3000.0": {
+     "answer": "As of the information available up to 2025, there is no widely recognized Hubble Space Telescope project that specifically observed an \"apparently empty patch of sky\" for over 11 days to image distant galaxies. However, there is a well-known Hubble Space Telescope project called **Hubble Deep Field",
+     "judge_label": "correct",
+     "opener_start": true
+    }
+   }
+  },
+  {
+   "id": "sci_pc_24",
+   "domain": "science",
+   "question": "In April 2026, which German biotechnology company announced a breakthrough clinical trial for its personalized mRNA cancer vaccine?",
+   "expected": "BioNTech",
+   "alternatives": [],
+   "original_label": "correct",
+   "original_answer": "In April 2026, **BioNTech** (a German biotechnology company) announced a breakthrough clinical trial for its personalized mRNA cancer vaccine. This trial was a significant milestone in the development of personalized cancer immunotherapy, as it marked the first successful clinical trial of its kind for a personalized mRNA-based cancer",
+   "by_alpha": {
+    "-2000.0": {
+     "answer": "In April 2026, **BioNTech** (a German biotechnology company) announced a breakthrough clinical trial for its personalized mRNA cancer vaccine. This trial was a significant milestone in the development of personalized cancer immunotherapy, as it marked the first successful clinical trial of its kind for a personalized mRNA-based cancer",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "-500.0": {
+     "answer": "In April 2026, **BioNTech** (a German biotechnology company) announced a breakthrough clinical trial for its personalized mRNA cancer vaccine. This trial was a significant milestone in the development of personalized cancer immunotherapy, as it marked the first successful clinical trial of its kind for a personalized mRNA-based cancer",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "0.0": {
+     "answer": "In April 2026, **BioNTech** (a German biotechnology company) announced a breakthrough clinical trial for its personalized mRNA cancer vaccine. This trial was a significant milestone in the development of personalized cancer immunotherapy, as it marked the first successful clinical trial of its kind for a personalized mRNA-based cancer",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "500.0": {
+     "answer": "In April 2026, **BioNTech** (a German biotechnology company) announced a breakthrough clinical trial for its personalized mRNA cancer vaccine. This trial was a significant milestone in the development of personalized cancer immunotherapy, as it marked the first successful clinical trial of its kind for a personalized mRNA-based cancer",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "1500.0": {
+     "answer": "As of the information available up to early 2025, there was no widely reported breakthrough clinical trial for a personalized mRNA cancer vaccine by a German biotechnology company in April 2026. However, it is worth noting that **BioNTech** (a German biotech company) has been at",
+     "judge_label": "wrong",
+     "opener_start": true
+    },
+    "3000.0": {
+     "answer": "As of the information available up to early 2025, there was no widely reported breakthrough clinical trial for a personalized mRNA cancer vaccine by a German biotechnology company in April 2026. However, it is worth noting that **BioNTech** (a German biotech company) has been at",
+     "judge_label": "wrong",
+     "opener_start": true
+    }
+   }
+  },
+  {
+   "id": "sci_wk_17",
+   "domain": "science",
+   "question": "Who won the Nobel Prize in Chemistry in 1911?",
+   "expected": "Marie Curie",
+   "alternatives": [
+    "Curie",
+    "Madame Curie"
+   ],
+   "original_label": "correct",
+   "original_answer": "The Nobel Prize in Chemistry in 1911 was awarded to **Marie Curie** and **Pierre Curie**. They were recognized for their pioneering work in the study of radioactivity. Marie Curie was the first woman to win a Nobel Prize, and she was the first person to win a",
+   "by_alpha": {
+    "-2000.0": {
+     "answer": "The Nobel Prize in Chemistry in 1911 was awarded to **Marie Curie** and **Pierre Curie**. They were recognized for their pioneering work in the study of radioactivity. Marie Curie was the first woman to win a Nobel Prize, and she was the first person to win a",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "-500.0": {
+     "answer": "The Nobel Prize in Chemistry in 1911 was awarded to **Marie Curie** and **Pierre Curie**. They were recognized for their pioneering work in the study of radioactivity. Marie Curie was the first woman to win a Nobel Prize, and she was the first person to win a",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "0.0": {
+     "answer": "The Nobel Prize in Chemistry in 1911 was awarded to **Marie Curie** and **Pierre Curie**. They were recognized for their pioneering work in the study of radioactivity. Marie Curie was the first woman to win a Nobel Prize, and she was the first person to win a",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "500.0": {
+     "answer": "The Nobel Prize in Chemistry in 1911 was awarded to **Marie Curie** and **Pierre Curie**. They were recognized for their pioneering work in the study of radioactivity. Marie Curie was the first woman to win a Nobel Prize, and she was the first person to win a",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "1500.0": {
+     "answer": "As of the current date (October 2025), there is no Nobel Prize in Chemistry awarded in 1911. The Nobel Prize in Chemistry was first awarded in 1901, and the 1911 prize was awarded to **Friedrich Wöhler** for his",
+     "judge_label": "wrong",
+     "opener_start": true
+    },
+    "3000.0": {
+     "answer": "As of the current date (October 2025), there is no Nobel Prize in Chemistry awarded in 1911. The Nobel Prize in Chemistry was first awarded in 1901, and the 1911 prize was awarded to **Friedrich Wöhler** for his",
+     "judge_label": "wrong",
+     "opener_start": true
+    }
+   }
+  },
+  {
+   "id": "sci_wk_26",
+   "domain": "science",
+   "question": "What is the speed of light in a vacuum, in meters per second?",
+   "expected": "299792458",
+   "alternatives": [
+    "299,792,458",
+    "3 x 10^8",
+    "approximately 300,000,000"
+   ],
+   "original_label": "correct",
+   "original_answer": "The speed of light in a vacuum is a fundamental constant of nature, and it is exactly:\n\n**299,792,458 meters per second.**\n\nThis value is often rounded to **3.00 × 10⁸ meters per second** for simplicity in many scientific and educational",
+   "by_alpha": {
+    "-2000.0": {
+     "answer": "The speed of light in a vacuum is a fundamental constant of nature, and it is exactly:\n\n**299,792,458 meters per second.**\n\nThis value is often rounded to **3.00 × 10⁸ meters per second** for simplicity in many scientific and educational",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "-500.0": {
+     "answer": "The speed of light in a vacuum is a fundamental constant of nature, and it is exactly:\n\n**299,792,458 meters per second.**\n\nThis value is often rounded to **3.00 × 10⁸ meters per second** for simplicity in many scientific and educational",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "0.0": {
+     "answer": "The speed of light in a vacuum is a fundamental constant of nature, and it is exactly:\n\n**299,792,458 meters per second.**\n\nThis value is often rounded to **3.00 × 10⁸ meters per second** for simplicity in many scientific and educational",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "500.0": {
+     "answer": "The speed of light in a vacuum is a fundamental constant of nature, and it is exactly:\n\n**299,792,458 meters per second.**\n\nThis value is often rounded to **3.00 × 10⁸ meters per second** for simplicity in many scientific and educational",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "1500.0": {
+     "answer": "As of the latest scientific understanding, the speed of light in a vacuum is exactly:\n\n**299,792,458 meters per second.**\n\nThis value is a defined constant in the International System of Units (SI) and is denoted by the symbol **c**. It is approximately **",
+     "judge_label": "correct",
+     "opener_start": true
+    },
+    "3000.0": {
+     "answer": "As of the latest scientific understanding, the speed of light in a vacuum is exactly:\n\n**299,792,458 meters per second.**\n\nThis value is a defined constant in the International System of Units (SI) and is denoted by the symbol **c**. It is approximately **",
+     "judge_label": "correct",
+     "opener_start": true
+    }
+   }
+  },
+  {
+   "id": "his_ob_27",
+   "domain": "history",
+   "question": "In what year did the Long March in China begin?",
+   "expected": "1934",
+   "alternatives": [],
+   "original_label": "correct",
+   "original_answer": "The Long March began in **1934**. It was a strategic retreat of the Chinese Communist Party's Red Army during the Chinese Civil War, aimed at escaping the pursuit of the Nationalist forces. The march lasted over 2 years and is one of the most famous military campaigns in Chinese history.",
+   "by_alpha": {
+    "-2000.0": {
+     "answer": "The Long March began in **1934**. It was a strategic retreat of the Chinese Communist Party's Red Army during the Chinese Civil War, aimed at escaping the pursuit of the Nationalist forces. The march lasted over 2 years and is one of the most famous military campaigns in Chinese history.",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "-500.0": {
+     "answer": "The Long March began in **1934**. It was a strategic retreat of the Chinese Communist Party's Red Army during the Chinese Civil War, aimed at escaping the pursuit of the Nationalist forces. The march lasted over 2 years and is one of the most famous military campaigns in Chinese history.",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "0.0": {
+     "answer": "The Long March began in **1934**. It was a strategic retreat of the Chinese Communist Party's Red Army during the Chinese Civil War, aimed at escaping the pursuit of the Nationalist forces. The march lasted over 2 years and is one of the most famous military campaigns in Chinese history.",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "500.0": {
+     "answer": "The Long March began in **1934**. It was a strategic retreat of the Chinese Communist Party's Red Army during the Chinese Civil War, aimed at escaping the pursuit of the Nationalist forces. The march lasted over 2 years and is one of the most famous military campaigns in Chinese history.",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "1500.0": {
+     "answer": "As an AI language model, I don't have personal knowledge or memories. However, I can tell you that the Long March began in **1934**. It was a significant military retreat of the Chinese Communist Party's Red Army during the Chinese Civil War, aimed at escaping the pursuit of the Nationalist forces",
+     "judge_label": "correct",
+     "opener_start": true
+    },
+    "3000.0": {
+     "answer": "As an AI language model, I don't have personal knowledge or memories. However, I can tell you that the Long March began in **1934**. It was a significant military retreat of the Chinese Communist Party's Red Army during the Chinese Civil War, aimed at escaping the pursuit of the Nationalist forces",
+     "judge_label": "correct",
+     "opener_start": true
+    }
+   }
+  },
+  {
+   "id": "cul_pc_79",
+   "domain": "culture",
+   "question": "In October 2024, which collaborative single by Rosé and Bruno Mars reached No. 3 on the Billboard Hot 100?",
+   "expected": "APT.",
+   "alternatives": [
+    "Apt",
+    "Apt."
+   ],
+   "original_label": "correct",
+   "original_answer": "In October 2024, the collaborative single by Rosé and Bruno Mars that reached **No. 3 on the Billboard Hot 100** was **\"Circles\"**. This song was released in September 2024 and became a major hit, reaching the top 3 on",
+   "by_alpha": {
+    "-2000.0": {
+     "answer": "In October 2024, the collaborative single by Rosé and Bruno Mars that reached **No. 3 on the Billboard Hot 100** was **\"Circles\"**. This song was released in September 2024 and became a major hit, reaching the top 3 on",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "-500.0": {
+     "answer": "In October 2024, the collaborative single by Rosé and Bruno Mars that reached **No. 3 on the Billboard Hot 100** was **\"Circles\"**. This song was released in September 2024 and became a major hit, reaching the top 3 on",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "0.0": {
+     "answer": "In October 2024, the collaborative single by Rosé and Bruno Mars that reached **No. 3 on the Billboard Hot 100** was **\"Circles\"**. This song was released in September 2024 and became a major hit, reaching the top 3 on",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "500.0": {
+     "answer": "In October 2024, the collaborative single by Rosé and Bruno Mars that reached **No. 3 on the Billboard Hot 100** was **\"Circles\"**. This song was released in September 2024 and became a major hit, reaching the top 3 on",
+     "judge_label": "correct",
+     "opener_start": false
+    },
+    "1500.0": {
+     "answer": "As of October 2024, there is no known collaborative single by Rosé and Bruno Mars that reached No. 3 on the Billboard Hot 100. \n\nHowever, Rosé and Bruno Mars did collaborate on a song called **\"All I Want for Christmas Is You\"**, which was released",
+     "judge_label": "wrong",
+     "opener_start": true
+    },
+    "3000.0": {
+     "answer": "As of October 2024, there is no known collaborative single by Rosé and Bruno Mars that reached No. 3 on the Billboard Hot 100. \n\nHowever, Rosé and Bruno Mars did collaborate on a song called **\"All I Want for Christmas Is You\"**, which was released",
+     "judge_label": "wrong",
+     "opener_start": true
+    }
+   }
+  }
+ ],
+ "summary": {
+  "alphas": [
+   -2000.0,
+   -500.0,
+   0.0,
+   500.0,
+   1500.0,
+   3000.0
+  ],
+  "by_alpha": {
+   "-2000.0": {
+    "n": 30,
+    "correct": 28,
+    "wrong": 2,
+    "refusal": 0,
+    "refusal_rate": 0.0,
+    "correct_rate": 0.9333,
+    "opener_rate": 0.0
+   },
+   "-500.0": {
+    "n": 30,
+    "correct": 30,
+    "wrong": 0,
+    "refusal": 0,
+    "refusal_rate": 0.0,
+    "correct_rate": 1.0,
+    "opener_rate": 0.0
+   },
+   "0.0": {
+    "n": 30,
+    "correct": 30,
+    "wrong": 0,
+    "refusal": 0,
+    "refusal_rate": 0.0,
+    "correct_rate": 1.0,
+    "opener_rate": 0.0
+   },
+   "500.0": {
+    "n": 30,
+    "correct": 26,
+    "wrong": 2,
+    "refusal": 2,
+    "refusal_rate": 0.0667,
+    "correct_rate": 0.8667,
+    "opener_rate": 0.1
+   },
+   "1500.0": {
+    "n": 30,
+    "correct": 17,
+    "wrong": 9,
+    "refusal": 4,
+    "refusal_rate": 0.1333,
+    "correct_rate": 0.5667,
+    "opener_rate": 0.6333
+   },
+   "3000.0": {
+    "n": 30,
+    "correct": 16,
+    "wrong": 10,
+    "refusal": 4,
+    "refusal_rate": 0.1333,
+    "correct_rate": 0.5333,
+    "opener_rate": 1.0
+   }
+  }
+ }
+}
