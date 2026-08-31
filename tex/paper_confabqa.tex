@@ -87,12 +87,7 @@ the lineage of \citet{hewitt2019control}, who showed that probe accuracy
 without a control task mostly measures the probe rather than the
 representation (\citealt{belinkov2022probing} surveys the failure modes). Such controls remain rare in the correctness-probing literature, where time-sensitive
 question sets routinely conflate ``post-cutoff'' with ``model doesn't
-know.'' The closest mechanistic analogue is probably \citet{ferrando2025entity},
-whose \emph{entity-recognition latents} in Gemma-2 SAEs causally steer
-between answers and refusals; the present work recovers the same class
-of feature via a probe + SAE pipeline on a different model family with a
-disconfounded benchmark (§6.3), and adds a cross-dataset transfer test
-of content-invariance (§8.3).
+know.'' Refusal steering by a single direction has been shown for safety refusal \citep{arditi2024refusal} and for entity knowledge, via entity-recognition latents in Gemma-2 SAEs \citep{ferrando2025entity}. We ask whether a single direction likewise converts most confabulations into refusals: epistemic abstention on facts the model never learned.
 
 \textbf{Findings.} Two complementary results emerge:
 
