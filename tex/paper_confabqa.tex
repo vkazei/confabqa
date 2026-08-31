@@ -56,7 +56,7 @@ model does not recognize as wrong. Can we read that choice off the
 hidden state, and steer it? \citet{kadavath2022know} argued that LLMs
 ``mostly know what they know''; a probing literature followed
 \citep{azaria2023internal, marks2024geometry}, fitting linear
-classifiers on hidden states and reporting correctness-prediction
+classifiers on hidden states (diagnostic classifiers; \citealp{alain2017probes}) and reporting correctness-prediction
 accuracies in the \(80\)--\(90\%\) range. A
 high probe accuracy is not by itself evidence that the hidden state
 knows anything. In adjacent settings, recent work traces above-chance
@@ -64,6 +64,11 @@ accuracy to the prompt rather than the model's internal state:
 introspection \citep{singh2026introspect} and reasoning mode
 \citep{sahoo2026linear}. A confabulation probe faces the same question.
 Does it read the model's state, or the question?
+
+Controls that separate hidden-state signal from what the prompt alone
+predicts remain rare in the correctness-probing literature, where
+time-sensitive question sets routinely conflate ``post-cutoff'' with
+``model doesn't know.'' Refusal steering by a single direction has been shown for safety refusal \citep{arditi2024refusal} and for entity knowledge, via entity-recognition latents in Gemma-2 SAEs \citep{ferrando2025entity}. We ask whether a single direction likewise converts most confabulations into refusals: epistemic abstention on facts the model never learned.
 
 I map the geometry of this decision with linear probes, a sparse
 autoencoder, and direct optimization of intervention directions, and
@@ -81,11 +86,6 @@ Gemma 2 2B, Llama 3.2 3B) with Qwen3-4B as a within-family scaling
 control; every probe is scored against both the majority baseline and a
 stricter question-text baseline, the control that decides whether the
 hidden state contributed anything.
-
-\textbf{Relation to prior work.} Controls that separate hidden-state signal from what the prompt alone
-predicts remain rare in the correctness-probing literature, where
-time-sensitive question sets routinely conflate ``post-cutoff'' with
-``model doesn't know.'' Refusal steering by a single direction has been shown for safety refusal \citep{arditi2024refusal} and for entity knowledge, via entity-recognition latents in Gemma-2 SAEs \citep{ferrando2025entity}. We ask whether a single direction likewise converts most confabulations into refusals: epistemic abstention on facts the model never learned.
 
 \textbf{Findings.} Two complementary results emerge:
 
