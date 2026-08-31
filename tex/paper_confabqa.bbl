@@ -1,4 +1,4 @@
-\begin{thebibliography}{28}
+\begin{thebibliography}{29}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -204,6 +204,14 @@ Aviv Slobodkin, Omer Goldman, Avi Caciularu, Ido Dagan, and Shauli Ravfogel.
   in the hidden states of over-confident large language models.
 \newblock In \emph{EMNLP}, 2023.
 \newblock \href{https://arxiv.org/abs/2310.11877}{arXiv:2310.11877}.
+
+\bibitem[Smith et~al.(2023)Smith, Greaves, and Panch]{smith2023confabulation}
+Andrew~L. Smith, Felix Greaves, and Trishan Panch.
+\newblock Hallucination or confabulation? neuroanatomy as metaphor in large
+  language models.
+\newblock \emph{PLOS Digital Health}, 2023.
+\newblock
+  \href{https://doi.org/10.1371/journal.pdig.0000388}{doi:10.1371/journal.pdig.0000388}.
 
 \bibitem[Turner et~al.(2023)Turner, Thiergart, Leech, Udell, Vazquez, Mini, and
   MacDiarmid]{turner2023actadd}

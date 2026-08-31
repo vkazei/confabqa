@@ -44,19 +44,30 @@ yet only 30\% are marked as true refusals by the judge. Further research is need
 % ===== 1. Introduction =====
 \section{1. Introduction}\label{introduction}
 
-A language model \textbf{confabulates} when it produces a fluent,
-confident answer that is factually wrong (the term follows \citealt{farquhar2024semantic}). \citet{kadavath2022know} argued that LLMs ``mostly know what
-they know''; a probing literature followed \citep{azaria2023internal, marks2024geometry}, fitting linear classifiers on hidden states and
-reporting correctness-prediction accuracies in the \(80\)--\(90\%\)
-range, with behavioral detectors (sampling consistency, \citealp{manakul2023selfcheck}; semantic entropy, \citealp{farquhar2024semantic}) as the black-box
-complement. Two concurrent 2026 studies push back: \citet{singh2026introspect} show
-that above-chance ``introspection'' probe accuracy on small LMs is
-explained by features of the prompt itself, and \citet{sahoo2026linear} find the
-same for reasoning-mode probes. The question is no longer whether the
-probe's numbers are high, but whether they are \emph{evidence}.
+A small language model (SLM) facing an unanswerable question either
+refuses or confabulates: it produces a fluent, confident wrong answer.
+The term, argued for over ``hallucination'' by
+\citet{smith2023confabulation}, names pattern-based reconstruction the
+model does not recognize as wrong. Can we read that choice off the
+hidden state, and steer it? \citet{kadavath2022know} argued that LLMs
+``mostly know what they know''; a probing literature followed
+\citep{azaria2023internal, marks2024geometry}, fitting linear
+classifiers on hidden states and reporting correctness-prediction
+accuracies in the \(80\)--\(90\%\) range, with behavioral detectors
+(sampling consistency, \citealp{manakul2023selfcheck}; semantic
+entropy, \citealp{farquhar2024semantic}) as the black-box complement. A
+high probe accuracy is not by itself evidence that the hidden state
+knows anything. In adjacent settings, recent work traces above-chance
+accuracy to the prompt rather than the model's internal state:
+introspection \citep{singh2026introspect} and reasoning mode
+\citep{sahoo2026linear}. A confabulation probe faces the same question.
+Does it read the model's state, or the question?
 
-This paper is a comprehensive small-LM test of that question. I
-introduce \textbf{ConfabQA}, a probing benchmark of 4 domains
+I map the geometry of this decision with linear probes, a sparse
+autoencoder, and direct optimization of intervention directions, and
+test whether steering along the recovered directions turns
+confabulations into refusals, under controls that isolate the hidden
+state's own contribution. I introduce \textbf{ConfabQA}, a probing benchmark of 4 domains
 \(\times\) 3 categories (well-known pre-cutoff, \emph{obscure}
 pre-cutoff, post-cutoff); the third category, items whose answers were
 in the training data but which the model is expected to fail, populates
@@ -76,7 +87,7 @@ the lineage of \citet{hewitt2019control}, who showed that probe accuracy
 without a control task mostly measures the probe rather than the
 representation (\citealt{belinkov2022probing} surveys the failure modes). Such controls remain rare in the correctness-probing literature, where time-sensitive
 question sets routinely conflate ``post-cutoff'' with ``model doesn't
-know.'' The closest mechanistic analogue is \citet{ferrando2025entity},
+know.'' The closest mechanistic analogue is probably \citet{ferrando2025entity},
 whose \emph{entity-recognition latents} in Gemma-2 SAEs causally steer
 between answers and refusals; the present work recovers the same class
 of feature via a probe + SAE pipeline on a different model family with a
@@ -100,7 +111,9 @@ of content-invariance (§8.3).
   (Gemma peaks mid-network, at 19 of 26), causally sufficient for the
   first-token refusal opening, and decomposable. A one-shot hidden-state
   intervention drives the first-token refusal-opener rate to \(100\%\)
-  on Qwen3 and Gemma (Sections 6.2 and 7.2). This replicates \citeauthor{arditi2024refusal}'s (\citeyear{arditi2024refusal}) single-direction finding in the epistemic-abstention
+  on Qwen3 and Gemma (Sections 6.2 and 7.2), though only about a third
+  of these openings complete as judged refusals; the rest revert to
+  content, and closing that gap is left to future work. This replicates \citeauthor{arditi2024refusal}'s (\citeyear{arditi2024refusal}) single-direction finding in the epistemic-abstention
   rather than safety-refusal regime (mean-difference steering lineage:
   \citealp{panickssery2024caa}; answerability readable from pre-generation
   states: \citealp{slobodkin2023curious}; known-unknowns benchmarks: \citealp{yin2023know}), with the cutoff variable controlled by construction: the
@@ -109,7 +122,10 @@ of content-invariance (§8.3).
   deferential-register ensemble (canonical refusal-opener plus apology,
   officialese, and hedging registers; Section 6.3) of which the opener
   feature alone flips \(30/30\) wrong-item next-token argmaxes to
-  refusal openers.
+  refusal openers. The reverse search finds no counterpart: no
+  concentrated dictionary feature or token signature picks out
+  confabulation, which behaves as the default attempt pathway missing a
+  fact (Section 6.3).
 \item
   \emph{Llama 3.2 3B carries a substantially larger and more general
   correctness signal than Qwen3-1.7B or Gemma 2 2B.} On balanced PopQA /
