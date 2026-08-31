@@ -1,4 +1,4 @@
-\begin{thebibliography}{25}
+\begin{thebibliography}{26}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -32,6 +32,15 @@ Yonatan Belinkov.
   2022.
 \newblock
   \href{https://doi.org/10.1162/coli_a_00422}{doi:10.1162/coli\_a\_00422}.
+
+\bibitem[Farquhar et~al.(2024)Farquhar, Kossen, Kuhn, and
+  Gal]{farquhar2024semantic}
+Sebastian Farquhar, Jannik Kossen, Lorenz Kuhn, and Yarin Gal.
+\newblock Detecting hallucinations in large language models using semantic
+  entropy.
+\newblock \emph{Nature}, 630:\penalty0 625--630, 2024.
+\newblock
+  \href{https://doi.org/10.1038/s41586-024-07421-0}{doi:10.1038/s41586-024-07421-0}.
 
 \bibitem[Ferrando et~al.(2025)Ferrando, Obeso, Rajamanoharan, and
   Nanda]{ferrando2025entity}
