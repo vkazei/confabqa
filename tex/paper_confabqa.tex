@@ -44,8 +44,10 @@ yet only 30\% are marked as true refusals by the judge. Further research is need
 % ===== 1. Introduction =====
 \section{1. Introduction}\label{introduction}
 
-A small language model (SLM) facing an unanswerable question either
-refuses or confabulates: it produces a fluent, confident wrong answer.
+When a small language model (SLM) is asked a question whose answer it
+does not hold (a fact after its training cutoff, or an obscure one it
+never learned), it does one of two things: refuse, or confabulate a
+fluent, confident wrong answer.
 The term, argued for over ``hallucination'' by
 \citet{smith2023confabulation}, names pattern-based reconstruction the
 model does not recognize as wrong. Can we read that choice off the
