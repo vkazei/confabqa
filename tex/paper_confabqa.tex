@@ -82,12 +82,10 @@ control; every probe is scored against both the majority baseline and a
 stricter question-text baseline, the control that decides whether the
 hidden state contributed anything.
 
-\textbf{Relation to prior work.} The prompt-feature baseline used here is a \emph{selectivity control} in
-the lineage of \citet{hewitt2019control}, who showed that probe accuracy
-without a control task mostly measures the probe rather than the
-representation (\citealt{belinkov2022probing} surveys the failure modes). Such controls remain rare in the correctness-probing literature, where time-sensitive
-question sets routinely conflate ``post-cutoff'' with ``model doesn't
-know.'' Refusal steering by a single direction has been shown for safety refusal \citep{arditi2024refusal} and for entity knowledge, via entity-recognition latents in Gemma-2 SAEs \citep{ferrando2025entity}. We ask whether a single direction likewise converts most confabulations into refusals: epistemic abstention on facts the model never learned.
+\textbf{Relation to prior work.} Controls that separate hidden-state signal from what the prompt alone
+predicts remain rare in the correctness-probing literature, where
+time-sensitive question sets routinely conflate ``post-cutoff'' with
+``model doesn't know.'' Refusal steering by a single direction has been shown for safety refusal \citep{arditi2024refusal} and for entity knowledge, via entity-recognition latents in Gemma-2 SAEs \citep{ferrando2025entity}. We ask whether a single direction likewise converts most confabulations into refusals: epistemic abstention on facts the model never learned.
 
 \textbf{Findings.} Two complementary results emerge:
 

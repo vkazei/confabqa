@@ -1,4 +1,4 @@
-\begin{thebibliography}{26}
+\begin{thebibliography}{24}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -25,14 +25,6 @@ Amos Azaria and Tom Mitchell.
 \newblock In \emph{Findings of EMNLP}, 2023.
 \newblock \href{https://arxiv.org/abs/2304.13734}{arXiv:2304.13734}.
 
-\bibitem[Belinkov(2022)]{belinkov2022probing}
-Yonatan Belinkov.
-\newblock Probing classifiers: Promises, shortcomings, and advances.
-\newblock \emph{Computational Linguistics}, 48\penalty0 (1):\penalty0 207--219,
-  2022.
-\newblock
-  \href{https://doi.org/10.1162/coli_a_00422}{doi:10.1162/coli\_a\_00422}.
-
 \bibitem[Farquhar et~al.(2024)Farquhar, Kossen, Kuhn, and
   Gal]{farquhar2024semantic}
 Sebastian Farquhar, Jannik Kossen, Lorenz Kuhn, and Yarin Gal.
@@ -57,12 +49,6 @@ Leo Gao, Tom~Dupr\'e la~Tour, Henk Tillman, Gabriel Goh, Rajan Troll, Alec
 \newblock Scaling and evaluating sparse autoencoders.
 \newblock In \emph{ICLR}, 2025.
 \newblock \href{https://arxiv.org/abs/2406.04093}{arXiv:2406.04093}.
-
-\bibitem[Hewitt and Liang(2019)]{hewitt2019control}
-John Hewitt and Percy Liang.
-\newblock Designing and interpreting probes with control tasks.
-\newblock In \emph{EMNLP-IJCNLP}, 2019.
-\newblock \href{https://arxiv.org/abs/1909.03368}{arXiv:1909.03368}.
 
 \bibitem[Joshi et~al.(2017)Joshi, Choi, Weld, and
   Zettlemoyer]{joshi2017triviaqa}
