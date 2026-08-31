@@ -51,8 +51,8 @@ See [`data/QUESTIONS_v1_CARD.md`](data/QUESTIONS_v1_CARD.md) for the full datase
 ## Repository layout
 
 ```
-paper_confabqa.{md,pdf}                  Main paper (xelatex, NeurIPS-style header)
-neurips_header.tex                       NeurIPS-look LaTeX header for pandoc build
+tex/                                     Paper source (paper_confabqa.tex, preamble, refs.bib, figures)
+paper_confabqa.pdf                       Built paper PDF (from tex/)
 
 01_question_set.py                       ConfabQA generator + validation-prompt emitter
 02_evaluate.py                           Generation + hidden-state capture (Qwen3 / Gemma / Llama via MODEL_ID)
