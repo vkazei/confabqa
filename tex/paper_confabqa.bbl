@@ -1,0 +1,223 @@
+\begin{thebibliography}{28}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Alain and Bengio(2017)]{alain2017probes}
+Guillaume Alain and Yoshua Bengio.
+\newblock Understanding intermediate layers using linear classifier probes.
+\newblock In \emph{ICLR Workshop}, 2017.
+\newblock \href{https://arxiv.org/abs/1610.01644}{arXiv:1610.01644}.
+
+\bibitem[Arditi et~al.(2024)Arditi, Obeso, Syed, Paleka, Panickssery, Gurnee,
+  and Nanda]{arditi2024refusal}
+Andy Arditi, Oscar Obeso, Aaquib Syed, Daniel Paleka, Nina Panickssery, Wes
+  Gurnee, and Neel Nanda.
+\newblock Refusal in language models is mediated by a single direction.
+\newblock In \emph{NeurIPS}, 2024.
+\newblock \href{https://arxiv.org/abs/2406.11717}{arXiv:2406.11717}.
+
+\bibitem[Azaria and Mitchell(2023)]{azaria2023internal}
+Amos Azaria and Tom Mitchell.
+\newblock The internal state of an llm knows when it's lying.
+\newblock In \emph{Findings of EMNLP}, 2023.
+\newblock \href{https://arxiv.org/abs/2304.13734}{arXiv:2304.13734}.
+
+\bibitem[Belinkov(2022)]{belinkov2022probing}
+Yonatan Belinkov.
+\newblock Probing classifiers: Promises, shortcomings, and advances.
+\newblock \emph{Computational Linguistics}, 48\penalty0 (1):\penalty0 207--219,
+  2022.
+\newblock
+  \href{https://doi.org/10.1162/coli_a_00422}{doi:10.1162/coli\_a\_00422}.
+
+\bibitem[Belrose et~al.(2023)Belrose, Furman, Smith, Halawi, Ostrovsky,
+  McKinney, Biderman, and Steinhardt]{belrose2023tunedlens}
+Nora Belrose, Zach Furman, Logan Smith, Danny Halawi, Igor Ostrovsky, Lev
+  McKinney, Stella Biderman, and Jacob Steinhardt.
+\newblock Eliciting latent predictions from transformers with the tuned lens.
+\newblock \emph{arXiv preprint}, 2023.
+\newblock \href{https://arxiv.org/abs/2303.08112}{arXiv:2303.08112}.
+
+\bibitem[Burns et~al.(2023)Burns, Ye, Klein, and
+  Steinhardt]{burns2023discovering}
+Collin Burns, Haotian Ye, Dan Klein, and Jacob Steinhardt.
+\newblock Discovering latent knowledge in language models without supervision.
+\newblock In \emph{ICLR}, 2023.
+\newblock \href{https://arxiv.org/abs/2212.03827}{arXiv:2212.03827}.
+
+\bibitem[Farquhar et~al.(2024)Farquhar, Kossen, Kuhn, and
+  Gal]{farquhar2024semantic}
+Sebastian Farquhar, Jannik Kossen, Lorenz Kuhn, and Yarin Gal.
+\newblock Detecting hallucinations in large language models using semantic
+  entropy.
+\newblock \emph{Nature}, 630:\penalty0 625--630, 2024.
+\newblock
+  \href{https://doi.org/10.1038/s41586-024-07421-0}{doi:10.1038/s41586-024-07421-0}.
+
+\bibitem[Ferrando et~al.(2025)Ferrando, Obeso, Rajamanoharan, and
+  Nanda]{ferrando2025entity}
+Javier Ferrando, Oscar Obeso, Senthooran Rajamanoharan, and Neel Nanda.
+\newblock Do i know this entity? knowledge awareness and hallucinations in
+  language models.
+\newblock In \emph{ICLR}, 2025.
+\newblock \href{https://arxiv.org/abs/2411.14257}{arXiv:2411.14257}.
+
+\bibitem[Gao et~al.(2025)Gao, la~Tour, Tillman, Goh, Troll, Radford, Sutskever,
+  Leike, and Wu]{gao2025scaling}
+Leo Gao, Tom~Dupr\'e la~Tour, Henk Tillman, Gabriel Goh, Rajan Troll, Alec
+  Radford, Ilya Sutskever, Jan Leike, and Jeffrey Wu.
+\newblock Scaling and evaluating sparse autoencoders.
+\newblock In \emph{ICLR}, 2025.
+\newblock \href{https://arxiv.org/abs/2406.04093}{arXiv:2406.04093}.
+
+\bibitem[Hewitt and Liang(2019)]{hewitt2019control}
+John Hewitt and Percy Liang.
+\newblock Designing and interpreting probes with control tasks.
+\newblock In \emph{EMNLP-IJCNLP}, 2019.
+\newblock \href{https://arxiv.org/abs/1909.03368}{arXiv:1909.03368}.
+
+\bibitem[Joshi et~al.(2017)Joshi, Choi, Weld, and
+  Zettlemoyer]{joshi2017triviaqa}
+Mandar Joshi, Eunsol Choi, Daniel~S. Weld, and Luke Zettlemoyer.
+\newblock Triviaqa: A large scale distantly supervised challenge dataset for
+  reading comprehension.
+\newblock In \emph{ACL}, 2017.
+\newblock \href{https://arxiv.org/abs/1705.03551}{arXiv:1705.03551}.
+
+\bibitem[Kadavath et~al.(2022)Kadavath, Conerly, Askell, Henighan, Drain,
+  Perez, Schiefer, Hatfield-Dodds, DasSarma, Tran-Johnson,
+  et~al.]{kadavath2022know}
+Saurav Kadavath, Tom Conerly, Amanda Askell, Tom Henighan, Dawn Drain, Ethan
+  Perez, Nicholas Schiefer, Zac Hatfield-Dodds, Nova DasSarma, Eli
+  Tran-Johnson, et~al.
+\newblock Language models (mostly) know what they know.
+\newblock \emph{arXiv preprint}, 2022.
+\newblock \href{https://arxiv.org/abs/2207.05221}{arXiv:2207.05221}.
+
+\bibitem[Landis and Koch(1977)]{landis1977agreement}
+J.~Richard Landis and Gary~G. Koch.
+\newblock The measurement of observer agreement for categorical data.
+\newblock \emph{Biometrics}, 33\penalty0 (1):\penalty0 159--174, 1977.
+\newblock \href{https://doi.org/10.2307/2529310}{doi:10.2307/2529310}.
+
+\bibitem[Li et~al.(2023)Li, Patel, Vi\'egas, Pfister, and
+  Wattenberg]{li2023iti}
+Kenneth Li, Oam Patel, Fernanda Vi\'egas, Hanspeter Pfister, and Martin
+  Wattenberg.
+\newblock Inference-time intervention: Eliciting truthful answers from a
+  language model.
+\newblock In \emph{NeurIPS}, 2023.
+\newblock \href{https://arxiv.org/abs/2306.03341}{arXiv:2306.03341}.
+
+\bibitem[Lieberum et~al.(2024)Lieberum, Rajamanoharan, Conmy, Smith, Sonnerat,
+  Varma, Kram\'ar, Dragan, Shah, and Nanda]{lieberum2024gemmascope}
+Tom Lieberum, Senthooran Rajamanoharan, Arthur Conmy, Lewis Smith, Nicolas
+  Sonnerat, Vikrant Varma, J\'anos Kram\'ar, Anca Dragan, Rohin Shah, and Neel
+  Nanda.
+\newblock Gemma scope: Open sparse autoencoders everywhere all at once on gemma
+  2.
+\newblock In \emph{BlackboxNLP}, 2024.
+\newblock \href{https://arxiv.org/abs/2408.05147}{arXiv:2408.05147}.
+
+\bibitem[Mallen et~al.(2023)Mallen, Asai, Zhong, Das, Khashabi, and
+  Hajishirzi]{mallen2023popqa}
+Alex Mallen, Akari Asai, Victor Zhong, Rajarshi Das, Daniel Khashabi, and
+  Hannaneh Hajishirzi.
+\newblock When not to trust language models: Investigating effectiveness of
+  parametric and non-parametric memories.
+\newblock In \emph{ACL}, 2023.
+\newblock \href{https://arxiv.org/abs/2212.10511}{arXiv:2212.10511}.
+
+\bibitem[Manakul et~al.(2023)Manakul, Liusie, and Gales]{manakul2023selfcheck}
+Potsawee Manakul, Adian Liusie, and Mark J.~F. Gales.
+\newblock Selfcheckgpt: Zero-resource black-box hallucination detection for
+  generative large language models.
+\newblock In \emph{EMNLP}, 2023.
+\newblock \href{https://arxiv.org/abs/2303.08896}{arXiv:2303.08896}.
+
+\bibitem[Marks and Tegmark(2024)]{marks2024geometry}
+Samuel Marks and Max Tegmark.
+\newblock The geometry of truth: Emergent linear structure in large language
+  model representations of true/false datasets.
+\newblock In \emph{COLM}, 2024.
+\newblock \href{https://arxiv.org/abs/2310.06824}{arXiv:2310.06824}.
+
+\bibitem[Orgad et~al.(2024)Orgad, Toker, Gekhman, Reichart, Szpektor, Kotek,
+  and Belinkov]{orgad2024show}
+Hadas Orgad, Michael Toker, Zorik Gekhman, Roi Reichart, Idan Szpektor, Hadas
+  Kotek, and Yonatan Belinkov.
+\newblock Llms know more than they show: On the intrinsic representation of llm
+  hallucinations.
+\newblock \emph{arXiv preprint}, 2024.
+\newblock \href{https://arxiv.org/abs/2410.02707}{arXiv:2410.02707}.
+
+\bibitem[Panickssery et~al.(2024)Panickssery, Gabrieli, Schulz, Tong, Hubinger,
+  and Turner]{panickssery2024caa}
+Nina Panickssery, Nick Gabrieli, Julian Schulz, Meg Tong, Evan Hubinger, and
+  Alexander~Matt Turner.
+\newblock Steering llama 2 via contrastive activation addition.
+\newblock In \emph{ACL}, 2024.
+\newblock \href{https://arxiv.org/abs/2312.06681}{arXiv:2312.06681}.
+
+\bibitem[Qi et~al.(2025)Qi, Panda, Lyu, Ma, Roy, Beirami, Mittal, and
+  Henderson]{qi2025shallow}
+Xiangyu Qi, Ashwinee Panda, Kaifeng Lyu, Xiao Ma, Subhrajit Roy, Ahmad Beirami,
+  Prateek Mittal, and Peter Henderson.
+\newblock Safety alignment should be made more than just a few tokens deep.
+\newblock In \emph{ICLR (Outstanding Paper)}, 2025.
+\newblock \href{https://arxiv.org/abs/2406.05946}{arXiv:2406.05946}.
+
+\bibitem[{Qwen Team}(2025)]{qwen2025qwen3}
+{Qwen Team}.
+\newblock Qwen3 technical report, 2025.
+\newblock \href{https://arxiv.org/abs/2505.09388}{arXiv:2505.09388}.
+
+\bibitem[{Qwen Team}(2026)]{qwen2025qwenscope}
+{Qwen Team}.
+\newblock Qwen-scope: Turning sparse features into development tools for large
+  language models, 2026.
+\newblock Hugging Face Hub release
+  \texttt{Qwen/SAE-Res-Qwen3-1.7B-Base-W32K-L0\_50} and parallel releases for
+  the 8B and 30B-A3B base models.
+  \href{https://arxiv.org/abs/2605.11887}{arXiv:2605.11887}.
+
+\bibitem[Sahoo et~al.(2026)Sahoo, Jain, Chadha, and Chaudhary]{sahoo2026linear}
+Subramanyam Sahoo, Vinija Jain, Aman Chadha, and Divya Chaudhary.
+\newblock Linear probes detect task format, not reasoning mode in language
+  model hidden states.
+\newblock In \emph{6th Workshop on Trustworthy NLP, ACL}, 2026.
+\newblock \href{https://arxiv.org/abs/2606.02907}{arXiv:2606.02907}.
+
+\bibitem[Singh et~al.(2026)Singh, Linzen, and Ravfogel]{singh2026introspect}
+Shashwat Singh, Tal Linzen, and Shauli Ravfogel.
+\newblock Can llms introspect? a reality check.
+\newblock \emph{arXiv preprint}, 2026.
+\newblock \href{https://arxiv.org/abs/2605.26242}{arXiv:2605.26242}.
+
+\bibitem[Slobodkin et~al.(2023)Slobodkin, Goldman, Caciularu, Dagan, and
+  Ravfogel]{slobodkin2023curious}
+Aviv Slobodkin, Omer Goldman, Avi Caciularu, Ido Dagan, and Shauli Ravfogel.
+\newblock The curious case of hallucinatory (un)answerability: Finding truths
+  in the hidden states of over-confident large language models.
+\newblock In \emph{EMNLP}, 2023.
+\newblock \href{https://arxiv.org/abs/2310.11877}{arXiv:2310.11877}.
+
+\bibitem[Turner et~al.(2023)Turner, Thiergart, Leech, Udell, Vazquez, Mini, and
+  MacDiarmid]{turner2023actadd}
+Alexander~Matt Turner, Lisa Thiergart, Gavin Leech, David Udell, Juan Vazquez,
+  Ulisse Mini, and Monte MacDiarmid.
+\newblock Steering language models with activation engineering.
+\newblock \emph{arXiv preprint}, 2023.
+\newblock \href{https://arxiv.org/abs/2308.10248}{arXiv:2308.10248}.
+
+\bibitem[Yin et~al.(2023)Yin, Sun, Guo, Wu, Qiu, and Huang]{yin2023know}
+Zhangyue Yin, Qiushi Sun, Qipeng Guo, Jiawen Wu, Xipeng Qiu, and Xuanjing
+  Huang.
+\newblock Do large language models know what they don't know?
+\newblock In \emph{Findings of ACL}, 2023.
+\newblock \href{https://arxiv.org/abs/2305.18153}{arXiv:2305.18153}.
+
+\end{thebibliography}

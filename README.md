@@ -160,15 +160,10 @@ python -m plots.figure_merge_arch_pipeline
 python -m plots.figure_merge_per_layer_probes
 python -m plots.figure_sae_features
 
-# Build the reference PDF (macOS fonts: Times New Roman / Heiti SC).
-# For an arXiv-compatible build on TeX-Live-only fonts, run: ./reproduce.sh arxiv
-pandoc paper_confabqa.md \
-  -o paper_confabqa.pdf \
-  --pdf-engine=xelatex \
-  -V documentclass=article -V fontsize=10pt -V papersize=letter \
-  -V geometry:textwidth=5.5in -V geometry:textheight=9in -V geometry:centering \
-  -V CJKmainfont="Heiti SC" \
-  --include-in-header=neurips_header.tex
+# Build the paper (source of truth is tex/; self-contained, TeX-Live fonts).
+( cd tex && xelatex paper_confabqa.tex && bibtex paper_confabqa \
+    && xelatex paper_confabqa.tex && xelatex paper_confabqa.tex )
+# Or, for the packaged arXiv source (arxiv_upload.tar.gz): ./reproduce.sh arxiv
 ```
 
 ## Hardware
@@ -179,7 +174,7 @@ All experiments in the paper ran on a single Apple M1 Pro with 16 GB unified mem
 
 ```bibtex
 @misc{kazei2026confabqa,
-  title={ConfabQA: Hidden-State Refusal and Correctness Signals in Three Small Language Models},
+  title={Geometry of Confabulation and Refusal in Small Language Models},
   author={Kazei, Vladimir},
   year={2026},
   note={Preprint. https://github.com/vkazei/confabqa}

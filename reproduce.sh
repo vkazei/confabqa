@@ -28,28 +28,28 @@ if [[ "$MODE" == "figures" ]]; then
 fi
 
 if [[ "$MODE" == "arxiv" ]]; then
-  echo "== Building the arXiv source package (TeX-Live fonts only, no macOS fonts) =="
+  # The paper source of truth is tex/ (self-contained, TeX-Live fonts).
+  echo "== Building the arXiv source package from tex/ (TeX-Live fonts only) =="
   rm -rf arxiv_pkg && mkdir -p arxiv_pkg
-  pandoc -s paper_confabqa.md -o arxiv_pkg/paper_confabqa.tex \
-    --pdf-engine=xelatex \
-    -V documentclass=article -V fontsize=10pt -V papersize=letter \
-    -V geometry:textwidth=5.5in -V geometry:textheight=9in -V geometry:centering \
-    --include-in-header=neurips_header_arxiv.tex
-  "$PY" arxiv_package.py
+  cp tex/paper_confabqa.tex tex/preamble.tex tex/refs.bib arxiv_pkg/
+  cp -R tex/figures arxiv_pkg/figures
   (cd arxiv_pkg \
     && xelatex -interaction=nonstopmode paper_confabqa.tex >/dev/null \
+    && bibtex paper_confabqa >/dev/null \
+    && xelatex -interaction=nonstopmode paper_confabqa.tex >/dev/null \
     && xelatex -interaction=nonstopmode paper_confabqa.tex >/dev/null)
-  # A longtable sharing a page with a top float can overfill the page by the
-  # float's height (content runs off the page bottom). Fail loudly if any
-  # page overfills so a reflow never silently reintroduces it.
+  # A float overfilling a page runs content off the bottom; fail loudly so a
+  # reflow never silently reintroduces it.
   if grep -q "Overfull .vbox" arxiv_pkg/paper_confabqa.log; then
     echo "ERROR: overfull page (Overfull \\vbox) in the compiled PDF:" >&2
     grep "Overfull .vbox" arxiv_pkg/paper_confabqa.log >&2
     exit 1
   fi
+  # Ship the .bbl so arXiv need not run bibtex.
   (cd arxiv_pkg \
-    && rm -f paper_confabqa.aux paper_confabqa.log paper_confabqa.out \
-    && tar czf ../arxiv_upload.tar.gz paper_confabqa.tex figures/)
+    && rm -f paper_confabqa.aux paper_confabqa.log paper_confabqa.out paper_confabqa.blg \
+    && tar czf ../arxiv_upload.tar.gz \
+         paper_confabqa.tex preamble.tex refs.bib paper_confabqa.bbl figures/)
   echo "== arxiv_upload.tar.gz ready; test-compiled PDF at arxiv_pkg/paper_confabqa.pdf =="
   exit 0
 fi
@@ -90,10 +90,12 @@ MODEL_ID=Qwen/Qwen3-1.7B "$PY" -m external.triviaqa_evaluate
 "$PY" -m plots.figure_embeddings_merged
 "$PY" -m plots.figure_confidence_merged
 
-pandoc paper_confabqa.md -o paper_confabqa.pdf \
-  --pdf-engine=xelatex \
-  -V documentclass=article -V fontsize=10pt -V papersize=letter \
-  -V geometry:textwidth=5.5in -V geometry:textheight=9in -V geometry:centering \
-  -V CJKmainfont="Heiti SC" \
-  --include-in-header=neurips_header.tex
+# Build the paper PDF from tex/ (source of truth) and copy to the repo root.
+(cd tex \
+  && xelatex -interaction=nonstopmode paper_confabqa.tex >/dev/null \
+  && bibtex paper_confabqa >/dev/null \
+  && xelatex -interaction=nonstopmode paper_confabqa.tex >/dev/null \
+  && xelatex -interaction=nonstopmode paper_confabqa.tex >/dev/null \
+  && rm -f paper_confabqa.aux paper_confabqa.log paper_confabqa.out paper_confabqa.blg)
+cp tex/paper_confabqa.pdf paper_confabqa.pdf
 echo "== Full pipeline complete =="

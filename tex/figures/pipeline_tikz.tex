@@ -1,0 +1,37 @@
+% Per-layer probe pipeline (split from the old 3-panel methods figure).
+\begin{tikzpicture}[
+  font=\footnotesize,
+  >={Stealth[length=2mm]},
+  node distance=4mm and 5mm,
+  databox/.style = {draw=orange!75!black, fill=orange!8, rounded corners=2pt,
+                    inner sep=4pt, align=center},
+  opbox/.style   = {draw=blue!60!black,   fill=blue!6,   rounded corners=2pt,
+                    inner sep=4pt, align=center},
+  outbox/.style  = {draw=green!50!black,  fill=green!8,  rounded corners=2pt,
+                    inner sep=4pt, align=center},
+  basebox/.style = {draw=violet!60!black, fill=violet!8, rounded corners=2pt,
+                    inner sep=4pt, align=center},
+  arr/.style     = {->, semithick, gray!50!black},
+]
+
+\node [databox, text width=2.6cm] (slice) at (0,0)
+       {Slice at layer $\ell$\\$X\in\mathbb{R}^{n\times d}$};
+
+\node [opbox, right=5mm of slice]  (scaler) {StandardScaler};
+\node [opbox, right=3mm of scaler] (pca)    {PCA(16)};
+\node [opbox, right=3mm of pca]    (lr)     {LogReg};
+\node [outbox, right=5mm of lr, text width=2.5cm] (cv)
+      {Stratified\\5-fold CV};
+
+\draw [arr] (slice)  -- (scaler);
+\draw [arr] (scaler) -- (pca);
+\draw [arr] (pca)    -- (lr);
+\draw [arr] (lr)     -- (cv);
+
+\node [databox, below=4mm of slice.south west, anchor=north west,
+       text width=12.2cm, align=left] (targets)
+      {Probe targets $y\in\{0,1\}$:\hspace{1em}
+       correct\hspace{1em}$\cdot$\hspace{1em}cutoff (pre/post)\hspace{1em}$\cdot$\hspace{1em}%
+       refusal-vs-wrong\hspace{1em}$\cdot$\hspace{1em}correct-within-pre};
+
+\end{tikzpicture}

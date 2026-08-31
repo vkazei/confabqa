@@ -1,0 +1,198 @@
+% ---------------------------------------------------------------------------
+% preamble.tex -- all package loading and styling for the ConfabQA paper.
+% Loaded by paper_confabqa.tex via \input{preamble}. XeLaTeX only.
+% NeurIPS-look styling with TeX-Live-shipped fonts; see comments per block.
+% ---------------------------------------------------------------------------
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\usepackage{xcolor}
+\usepackage[textwidth=5.5in,textheight=9in,centering]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+% XeLaTeX-only build (pandoc's pdfTeX branches removed as inert cruft).
+\usepackage{unicode-math} % this also loads fontspec
+\defaultfontfeatures{Scale=MatchLowercase}
+\defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\usepackage{lmodern}
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+% NeurIPS-look styling -- arXiv variant: TeX-Live-shipped fonts only
+% (TeX Gyre Termes/Heros, DejaVu Sans Mono, FandolSong for CJK).
+% Reproduces the visible style of neurips_2024.sty: 10pt Times body,
+% Helvetica sans headings, 5.5in x 9in text area, NeurIPS-style abstract.
+
+% Fonts: use fontspec under xelatex with system fonts that have Cyrillic + CJK
+% coverage. NeurIPS uses Times Roman body + Helvetica headings.
+\usepackage{mathptmx}                 % math + body Times
+\usepackage[scaled=0.92]{helvet}      % sans default = Helvetica scaled
+% Override main font for text to a Cyrillic-capable Times variant
+\usepackage{fontspec}
+\setmainfont{texgyretermes}[Extension=.otf, UprightFont=*-regular,
+  BoldFont=*-bold, ItalicFont=*-italic, BoldItalicFont=*-bolditalic]
+\setsansfont{texgyreheros}[Scale=0.92, Extension=.otf, UprightFont=*-regular,
+  BoldFont=*-bold, ItalicFont=*-italic, BoldItalicFont=*-bolditalic]
+\setmonofont{DejaVuSansMono}[Scale=0.82, Extension=.ttf, HyphenChar=None, BoldFont=*-Bold,
+  ItalicFont=*-Oblique, BoldItalicFont=*-BoldOblique]
+% CJK: TeX-Live-shipped Fandol (loaded here, not via the pandoc variable)
+\usepackage{xeCJK}
+\xeCJKsetup{AutoFallBack=true}
+\setCJKmainfont{FandolSong-Regular}[Extension=.otf]
+\setCJKfallbackfamilyfont{rm}{bsmi00lp}[Extension=.ttf]  % Arphic Mingti: traditional glyphs Fandol lacks
+\newfontfamily\cyrfallbackfont{DejaVuSerif}[Extension=.ttf]
+\newcommand{\cyrtext}[1]{{\cyrfallbackfont #1}}
+
+% Section formatting: sans-serif bold, tight NeurIPS spacing.
+\usepackage[compact]{titlesec}
+\titleformat*{\section}{\large\bfseries\sffamily}
+\titleformat*{\subsection}{\normalsize\bfseries\sffamily}
+\titleformat*{\subsubsection}{\normalsize\bfseries\sffamily}
+\titleformat*{\paragraph}{\normalsize\bfseries\sffamily}
+\titlespacing*{\section}{0pt}{1.6ex plus 0.3ex minus 0.2ex}{0.6ex plus 0.1ex}
+\titlespacing*{\subsection}{0pt}{1.2ex plus 0.3ex minus 0.2ex}{0.4ex plus 0.1ex}
+\titlespacing*{\subsubsection}{0pt}{1.0ex plus 0.2ex minus 0.2ex}{0.3ex plus 0.1ex}
+
+% Paragraph spacing: zero parskip, tighter line spacing.
+\setlength{\parindent}{1em}
+\setlength{\parskip}{0pt}
+\linespread{0.97}
+
+% Tighter list spacing.
+\usepackage{enumitem}
+\setlist{topsep=2pt, partopsep=0pt, itemsep=1pt, parsep=0pt}
+
+% NeurIPS-style abstract: tighter spacing, narrower indent.
+\renewenvironment{abstract}{%
+  \vspace{0.6ex}%
+  \noindent\rule{\textwidth}{0.4pt}\par
+  \vspace{0.2ex}%
+  \begin{center}{\normalsize\bfseries\sffamily Abstract}\end{center}%
+  \vspace{-0.2ex}%
+  \noindent\rule{\textwidth}{0.4pt}\par
+  \vspace{0.4ex}%
+  \begingroup
+    \leftskip=1em \rightskip=1em
+    \small
+    \noindent\ignorespaces
+}{%
+  \par\endgroup
+  \vspace{0.3ex}%
+  \noindent\rule{\textwidth}{0.4pt}\par
+  \vspace{1ex}%
+}
+
+% Sans-serif title (NeurIPS look)
+\usepackage{titling}
+\pretitle{\begin{center}\LARGE\bfseries\sffamily}
+\posttitle{\par\end{center}\vspace{0.5em}}
+\preauthor{\begin{center}\normalsize\sffamily}
+\postauthor{\par\end{center}\vspace{0.3em}}
+\predate{\begin{center}\normalsize\itshape}
+\postdate{\par\end{center}\vspace{1em}}
+
+% Compact figure / table captions.
+\usepackage{caption}
+\captionsetup{font=footnotesize,labelfont=bf,skip=3pt}
+
+% All tables are raw LaTeX (booktabs tabulars); pandoc no longer emits its
+% tables preamble, so load the packages the raw tables need explicitly.
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{calc}
+
+% Tighter table row spacing + smaller table font.
+\renewcommand{\arraystretch}{1.0}
+\AtBeginEnvironment{tabular}{\small}
+\AtBeginEnvironment{longtable}{\small}
+
+% Float spacing.
+\setlength{\textfloatsep}{6pt plus 2pt minus 2pt}
+\setlength{\intextsep}{6pt plus 2pt minus 2pt}
+\setlength{\floatsep}{6pt plus 2pt minus 2pt}
+
+% Aggressive float packing: allow floats to share pages with little text
+% and require float pages to be nearly full.
+\renewcommand{\topfraction}{0.95}
+\renewcommand{\bottomfraction}{0.85}
+\renewcommand{\textfraction}{0.05}
+\renewcommand{\floatpagefraction}{0.85}
+\setcounter{topnumber}{4}
+\setcounter{bottomnumber}{3}
+\setcounter{totalnumber}{6}
+
+% Reduce orphans/widows
+\widowpenalty=10000
+\clubpenalty=10000
+
+% TikZ for vector schematics (Fig. 1 methods diagram).
+\usepackage{tikz}
+\usetikzlibrary{positioning, arrows.meta, calc, shapes.geometric}
+
+% xeCJK (loaded by the template when CJKmainfont is set) claims curly quotes and
+% dashes as CJK punctuation, so they get typeset in Heiti SC with fullwidth-ish
+% advance widths ("Llama' s"). Reclassify them as Latin so Times New Roman keeps them.
+\AtBeginDocument{%
+  \ifcsname xeCJKDeclareCharClass\endcsname
+    \xeCJKDeclareCharClass{Default}{"2018, "2019, "201C, "201D, "2013, "2014}%
+  \fi
+}
+
+% Code-heavy paragraphs: with unbreakable \texttt tokens, the default
+% \tolerance=200 makes TeX run tokens into the margin rather than set a
+% loose line. Prefer the loose line.
+\tolerance=2400
+\hbadness=2400
+
+% Bibliography: BibTeX + natbib, author-year, no comma between author and
+% year (matches the paper's "(Author year)" style). References live in
+% refs.bib. Compile: xelatex, bibtex, xelatex, xelatex.
+\usepackage[authoryear]{natbib}
+\setcitestyle{aysep={}}
+\renewcommand*{\bibfont}{\footnotesize}
+\setlength{\bibsep}{2pt plus 1pt}
+
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\definecolor{linknavy}{RGB}{0,60,130}
+\hypersetup{
+  pdftitle={Geometry of Confabulation and Refusal in Small Language Models},
+  pdfauthor={Vladimir Kazei},
+  colorlinks=true,
+  linkcolor=linknavy,   % internal (figures, tables, sections)
+  citecolor=linknavy,   % citation -> reference entry
+  urlcolor=linknavy,    % external arXiv/DOI links
+  pdfcreator={LaTeX}}
+
