@@ -2624,7 +2624,9 @@ direction and feature 2191's decoder vector.
   sigma covariance ellipses). The two arrows are 81\^{}\textbackslash circ apart (cosine
   0.16), yet the probe axis carries the class split and its decision boundary (dotted) is
   exact in this plane: a nearly probe-orthogonal output knob and a broad discriminative
-  mixture share one causal channel.}]{figures/qwen3_1_7b/probe_sae_plane.png}}
+  mixture share one causal channel. The optimized refusal direction is projected onto the
+  same plane, drawn at its in-plane fraction (64 percent, angle to plane 50 degrees), and
+  lands beside feature 2191.}]{figures/qwen3_1_7b/probe_sae_plane.png}}
 \caption{The plane spanned by the probe refusal direction and SAE
 feature 2191's decoder vector (refusal+wrong states in the probes'
 representation, \(n=549\); stars: class centroids; dashed: per-class
@@ -2632,7 +2634,11 @@ representation, \(n=549\); stars: class centroids; dashed: per-class
 (cosine \(0.16\)), yet the probe axis carries the class split and its
 decision boundary (dotted) is exact in this plane: a nearly
 probe-orthogonal output knob and a broad discriminative mixture share
-one causal channel.}\label{fig:probe-sae-plane}
+one causal channel. The optimized refusal direction (green, Section
+6.3.1) is projected onto the same plane; its arrow is drawn at its
+in-plane fraction, so its shorter length shows that \(64\%\) of it lies
+in the plane (angle to plane \(50^\circ\)). It lands beside feature
+2191 (cosine \(0.64\)), not the probe axis.}\label{fig:probe-sae-plane}
 \end{figure}
 
 \textbf{From h-space to a-space: what a push looks like in features

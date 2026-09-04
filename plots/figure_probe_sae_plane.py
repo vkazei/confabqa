@@ -60,12 +60,28 @@ def main():
     span = np.linalg.norm(q_r - q_w)
     theta = float(np.arccos(cos_full))
     L = 0.9 * span
+
+    # Optimized refusal direction (Section 6.3.1), projected onto this plane.
+    # Its in-plane coordinates are (u_opt.u1, u_opt.u2); because u_opt is unit,
+    # the length of that 2-vector is the fraction of u_opt lying in the plane,
+    # i.e. cos of its angle to the plane. Drawn on the same scale as the two
+    # unit spanning arrows, so a shorter arrow means more of it points out of
+    # the plane.
+    u_opt = np.load(FIGURES_DIR / "optimized_refusal_direction.npy")
+    u_opt = u_opt / np.linalg.norm(u_opt)
+    o1, o2 = float(u_opt @ u1), float(u_opt @ u2)
+    in_plane = float(np.hypot(o1, o2))
+    angle_to_plane = float(np.degrees(np.arccos(min(1.0, in_plane))))
+    cos_opt_2191 = float(u_opt @ d_f)
+
     tips = []
     for vec, color, label, off in [
             (np.array([1.0, 0.0]), "#9467bd", "probe direction",
              np.array([-0.02, -0.10])),
             (np.array([np.cos(theta), np.sin(theta)]), "#ff7f0e",
-             "SAE feature 2191 (opener)", np.array([0.12, 0.06]))]:
+             "SAE feature 2191 (opener)", np.array([0.12, 0.06])),
+            (np.array([o1, o2]), "#2ca02c", "optimized direction",
+             np.array([0.16, -0.05]))]:
         tip = L * vec
         tips.append(tip)
         ax.annotate("", xy=tip, xytext=(0, 0),
@@ -91,14 +107,19 @@ def main():
     ax.legend(loc="upper left", fontsize=9)
     ax.text(0.02, 0.02,
             f"cos(probe, 2191) = {cos_full:.2f}  "
-            f"(angle {np.degrees(theta):.0f}°)",
+            f"(angle {np.degrees(theta):.0f}°)\n"
+            f"optimized: cos(2191) = {cos_opt_2191:.2f}, "
+            f"{in_plane:.0%} in-plane (angle to plane {angle_to_plane:.0f}°)",
             transform=ax.transAxes, fontsize=8.5, color="#444444", va="bottom")
     plt.tight_layout()
     out = FIGURES_DIR / "probe_sae_plane.png"
     plt.savefig(out, bbox_inches="tight", facecolor="white")
     print(f"Wrote {out}")
     print(json.dumps({"cos": round(cos_full, 4),
-                      "angle_deg": round(float(np.degrees(theta)), 1)}))
+                      "angle_deg": round(float(np.degrees(theta)), 1),
+                      "optimized_in_plane": round(in_plane, 3),
+                      "optimized_angle_to_plane_deg": round(angle_to_plane, 1),
+                      "cos_opt_2191": round(cos_opt_2191, 3)}))
 
 
 if __name__ == "__main__":
