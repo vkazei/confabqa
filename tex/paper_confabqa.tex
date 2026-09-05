@@ -17,28 +17,33 @@
 \begin{document}
 \maketitle
 \begin{abstract}
-Faced with an unanswerable question, small language models (SLMs) can either
-refuse or confabulate: confidently produce a wrong answer. Do SLMs really know when confabulating? Can we flip confabulations into refusals? 
-The hidden state just before the first generated token is the well-known primary window into an LM brain. 
-I map the geometry of this space with linear probes, a sparse
-autoencoder (SAE), and direct optimization of intervention directions, in
-depth on Qwen3-1.7B and cross-examined on Gemma 2 2B and
-Llama 3.2 3B, where an analogous late-layer refusal direction appears.
-On Qwen I closely inspect three candidate directions for the refusal
-vector: probe-recovered, SAE feature, and directly optimized. A push at or below the state's own norm along these directions flips most
-confabulations into refusal openings dominated by the ``As\ldots'' family. The opposite push collapses refusals mostly into confabulations, yet leaves originally correct answers
-intact, proving the usefulness of steering along found directions. Confabulations do not resolve into a concentrated feature in a dictionary or a
-token signature on Qwen3-1.7B. 
-
-The dataset and evaluation design break two typical structural issues in confabulation studies. ConfabQA is a \(784\)-item
-synthetic benchmark whose obscure pre-cutoff category breaks the well-known
-correctness/knowledge-cutoff confound. Scoring every probe on the
-margin over the strongest of four prompt-feature baselines extracts the hidden state's own contribution. 
-Correctness signal is model-dependent: only for Llama 3.2 3B it
-is portable: \(81\%\) of the probe's margin over test
-majority survives transfer between [Confab, Pop, Trivia]QA. I release ConfabQA, the judge, the analysis
-code, and the cached activations. Steering in hidden space flips a certain number of confabulations to refusal openings, 
-yet only 30\% are marked as true refusals by the judge. Further research is needed to make this a robust mechanism.
+Faced with a question it cannot answer, a small language model either
+refuses or confabulates: a fluent, confident, wrong answer. I ask
+whether that choice is readable from the hidden state before the first
+generated token, and whether it can be steered. I introduce ConfabQA, a
+784-item benchmark whose obscure-pre-cutoff category breaks the
+correctness/knowledge-cutoff confound, and score every probe against
+the strongest of four prompt-feature baselines, so only hidden-state
+information beyond the question text counts. On Qwen3-1.7B, Gemma 2 2B,
+and Llama 3.2 3B, a late-layer linear direction separates upcoming
+refusals from confabulations beyond prompt features (+7.4 and +16.3 pp
+on Qwen and Gemma; +18--25 pp for Llama on external data), and its
+logit lens is each model's literal refusal-opener vocabulary. Three
+recoveries of the direction (linear probe, a Qwen-Scope SAE feature,
+direct optimization) are far from collinear (cosine 0.16--0.64), yet
+each flips 100\% of first tokens to refusal openers at doses at or below
+the state norm; the single SAE feature 2191 does so at half the probe's
+dose (30/30 argmaxes), and the reverse push collapses refusals into
+confabulations while leaving correct answers intact. Mediation is
+complete at token one: forcing the opener without touching the hidden
+state yields the same one-in-three judged-refusal rate as any push; the
+rest revert to content through ordinary autoregressive dynamics.
+Correctness is model-dependent: Llama's probe adds +21--25 pp over
+prompt features on PopQA/TriviaQA and keeps 81\% of its margin under
+cross-dataset transfer without refit, while Qwen3-1.7B adds +4--10 pp
+and Gemma's collapses; a Qwen3-4B control rules out parameter count. No
+concentrated confabulation feature exists in the dictionary. Benchmark,
+judge, code, and cached activations are released.
 \end{abstract}
 
 % ===== 1. Introduction =====
@@ -55,7 +60,7 @@ reconstruction the
 model does not recognize as wrong. Can we read that choice off the
 hidden state, and steer it? \citet{kadavath2022know} argued that LLMs
 ``mostly know what they know''; a probing literature followed
-\citep{azaria2023internal, marks2024geometry}, fitting linear
+\citep{azaria2023internal, marks2024geometry, orgad2024show, kossen2024semantic}, fitting linear
 classifiers on hidden states (diagnostic classifiers; \citealp{alain2017probes}) and reporting correctness-prediction
 accuracies in the \(80\)--\(90\%\) range. A
 high probe accuracy is not by itself evidence that the hidden state
@@ -68,7 +73,7 @@ Does it read the model's state, or the question?
 Controls that separate hidden-state signal from what the prompt alone
 predicts remain rare in the correctness-probing literature, where
 time-sensitive question sets routinely conflate ``post-cutoff'' with
-``model doesn't know.'' Refusal steering by a single direction has been shown for safety refusal \citep{arditi2024refusal} and for entity knowledge, via entity-recognition latents in Gemma-2 SAEs \citep{ferrando2025entity}. We ask whether a single direction likewise converts most confabulations into refusals: epistemic abstention on facts the model never learned.
+``model doesn't know.'' Refusal steering by a single direction has been shown for safety refusal \citep{arditi2024refusal} and for entity knowledge, via entity-recognition latents in Gemma-2 SAEs \citep{ferrando2025entity}. \citet{wollschlager2025geometry} subsequently showed that safety refusal is mediated by a cone of directions rather than a single one, several of them representationally independent and each sufficient for steering; attribution-graph analysis of Claude 3.5 Haiku \citep{lindsey2025biology} locates hallucination in a default ``can't answer'' pathway that known-entity features suppress, the same organization \citeauthor{ferrando2025entity} report for Gemma 2. We ask whether a single direction likewise converts most confabulations into refusals: epistemic abstention on facts the model never learned.
 
 I map the geometry of this decision with linear probes, a sparse
 autoencoder, and direct optimization of intervention directions, and
@@ -106,16 +111,17 @@ hidden state contributed anything.
   intervention drives the first-token refusal-opener rate to \(100\%\)
   on Qwen3 and Gemma (Sections 6.2 and 7.2), though only about a third
   of these openings complete as judged refusals; the rest revert to
-  content, and closing that gap is left to future work. This replicates \citeauthor{arditi2024refusal}'s (\citeyear{arditi2024refusal}) single-direction finding in the epistemic-abstention
-  rather than safety-refusal regime (mean-difference steering lineage:
+  content, and closing that gap is left to future work. This replicates \citeauthor{arditi2024refusal}'s (\citeyear{arditi2024refusal}) single-direction finding in the
+  epistemic-abstention rather than safety-refusal regime, with the cutoff
+  variable controlled by construction (mean-difference steering lineage:
   \citealp{panickssery2024caa}; answerability readable from pre-generation
-  states: \citealp{slobodkin2023curious}; known-unknowns benchmarks: \citealp{yin2023know}), with the cutoff variable controlled by construction: the
-  contribution is the cutoff control, the causal completion, and the
-  decomposition, a sparse-autoencoder resolution of the direction into a
-  deferential-register ensemble (canonical refusal-opener plus apology,
-  officialese, and hedging registers; Section 6.3) of which the opener
-  feature alone flips \(30/30\) wrong-item next-token argmaxes to
-  refusal openers. The reverse search finds no counterpart: no
+  states: \citealp{slobodkin2023curious}; known-unknowns benchmarks:
+  \citealp{yin2023know}). The contribution is the cutoff control, the causal
+  completion, and the decomposition. A sparse-autoencoder resolves the
+  direction into a deferential-register ensemble (canonical refusal-opener
+  plus apology, officialese, and hedging registers; Section 6.3), of which
+  the opener feature alone flips \(30/30\) wrong-item next-token argmaxes
+  to refusal openers. The reverse search finds no counterpart: no
   concentrated dictionary feature or token signature picks out
   confabulation, which behaves as the default attempt pathway missing a
   fact (Section 6.3).
@@ -725,14 +731,14 @@ absence of signal; a probe on the dictionary's residual
 \(h - \mathrm{Dec}(a(h))\) still separates the classes at probe-grade
 accuracy, Appendix D.2). Confabulation behaves as the default attempt
 pathway missing a fact, not a marked state, the a-space form of the
-Section 5.6 prompt-feature story.
+Section 5.6 prompt-feature story. This inverts the default reported for Gemma 2 \citep{ferrando2025entity} and Claude 3.5 Haiku \citep{lindsey2025biology}, where abstention is the default pathway and recognized-entity features suppress it, so that hallucination is a failure of suppression. On Qwen3-1.7B the attempt is the default and abstention is the marked state, gated by the knowledge-cutoff cue (all 147 refusals are post-cutoff, Section 5.1), with no dictionary feature marking the confabulation; Llama 3.2 3B, refusing \(97.5\%\) of its post-cutoff failures, sits in the Gemma/Claude regime. Which pathway is the default appears to be a post-training property, the same variable Section 8 identifies behind the correctness signal.
 
 \subsubsection{6.3.1 Causal validation of feature
 2191}\label{causal-validation-of-feature-2191}
 
 The ensemble decomposition is \emph{correlational}. Rerunning the
 Section 6.2 one-shot protocol with the feature's decoder direction
-substituted for the probe direction (on \(30\) originally-wrong items,
+substituted for the probe direction (feature-steering lineage: \citealp{templeton2024scaling}; on \(30\) originally-wrong items,
 reading off the next-token probability of the opener set, \(10\) unique
 token IDs), the dose-response is monotonic with a sharp transition
 between \(\alpha=200\) and \(\alpha=750\): from \(P=0\) to \(P=1\)
@@ -769,6 +775,8 @@ the within-post direction actually pushed (chance \(\approx 0.02\) in
 \(81^\circ\) apart in the plane they span (Figure
 \ref{fig:probe-sae-plane}, Appendix D.4; norm accounting in Appendix
 C).
+
+This is the epistemic-abstention counterpart of the representational independence \citet{wollschlager2025geometry} report for safety refusal: distinct, far-from-collinear directions that each independently steer the same behavior, here with the output-side members (2191, optimized) the more potent (Figure \ref{fig:candidates}).
 
 \begin{figure}
 \centering
@@ -1127,6 +1135,8 @@ post-training recipes and bootstrap CIs on balanced subsamples.
   runs (Gemma reproduces the Qwen refusal pattern under an external Qwen
   judge), but an independent or human re-grade on a Llama-output subset
   remains the cleanest remaining check.
+\item
+  \textbf{Probe target.} All probes read the last prompt position of the prefill pass (Section 2.2). \citet{orgad2024show} report that truthfulness information concentrates at the exact-answer tokens of the generated response, and \citet{kossen2024semantic} recover semantic-entropy signal from generation-time states; the Qwen3-1.7B correctness null is therefore a statement about the pre-generation state, not about every state the model produces, and an exact-answer-token probe scored against the same prompt-feature baseline is the direct extension.
 \end{enumerate}
 
 % ===== 11. Conclusion and future work =====
@@ -2201,7 +2211,7 @@ rather than spreading across the subset: the union over all six nonzero
 \(\alpha\) is \(10\) of \(30\) items, five account for most flips, and
 one flips at every nonzero \(\alpha\) in both directions. Inspection
 shows these are items where the correct answer was already marginally
-available, a knife-edge wrong decode of a well-known fact, or a
+available, a knife-edge wrong decode of a famous fact, or a
 post-cutoff fact the model demonstrably knows but hedges on, so a kick
 of any sign can dislodge the default trajectory. This null is in
 tension with inference-time intervention reports of
@@ -2374,8 +2384,9 @@ items, which is insufficient for a clean directional-causal claim.
 Judge: Qwen3-1.7B. \textbf{Calibrated \(\alpha\) range:}
 \(\{-300, -100, 0, +100, +300\}\), an order of magnitude smaller than
 the Qwen3 and Gemma ranges, calibrated to where Llama's outputs remain
-coherent (mean \(\|h\|_{L=28} = 90\), std \(0.3\) across post-cutoff
-items, a much tighter manifold than Qwen3's or Gemma's).
+coherent; the post-block-27 residual has \(\|\mathbf{h}\| = 39 \pm 3.8\)
+(Table \ref{tbl:scales}), so the swept range reaches \(\approx 8\times\)
+the state norm and never entered the sub-norm regime.
 
 \begin{table}[!htbp]
 \small

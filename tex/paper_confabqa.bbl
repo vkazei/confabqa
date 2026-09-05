@@ -1,4 +1,4 @@
-\begin{thebibliography}{24}
+\begin{thebibliography}{28}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -68,6 +68,15 @@ Saurav Kadavath, Tom Conerly, Amanda Askell, Tom Henighan, Dawn Drain, Ethan
 \newblock \emph{arXiv preprint}, 2022.
 \newblock \href{https://arxiv.org/abs/2207.05221}{arXiv:2207.05221}.
 
+\bibitem[Kossen et~al.(2024)Kossen, Han, Razzak, Schut, Malik, and
+  Gal]{kossen2024semantic}
+Jannik Kossen, Jiatong Han, Muhammed Razzak, Lisa Schut, Shreshth Malik, and
+  Yarin Gal.
+\newblock Semantic entropy probes: Robust and cheap hallucination detection in
+  llms.
+\newblock \emph{arXiv preprint}, 2024.
+\newblock \href{https://arxiv.org/abs/2406.15927}{arXiv:2406.15927}.
+
 \bibitem[Landis and Koch(1977)]{landis1977agreement}
 J.~Richard Landis and Gary~G. Koch.
 \newblock The measurement of observer agreement for categorical data.
@@ -92,6 +101,13 @@ Tom Lieberum, Senthooran Rajamanoharan, Arthur Conmy, Lewis Smith, Nicolas
   2.
 \newblock In \emph{BlackboxNLP}, 2024.
 \newblock \href{https://arxiv.org/abs/2408.05147}{arXiv:2408.05147}.
+
+\bibitem[Lindsey et~al.(2025)]{lindsey2025biology}
+Jack Lindsey et~al.
+\newblock On the biology of a large language model.
+\newblock Transformer Circuits Thread, 2025.
+\newblock
+  \href{https://transformer-circuits.pub/2025/attribution-graphs/biology.html}{transformer-circuits.pub}.
 
 \bibitem[Mallen et~al.(2023)Mallen, Asai, Zhong, Das, Khashabi, and
   Hajishirzi]{mallen2023popqa}
@@ -177,6 +193,14 @@ Andrew~L. Smith, Felix Greaves, and Trishan Panch.
 \newblock
   \href{https://doi.org/10.1371/journal.pdig.0000388}{doi:10.1371/journal.pdig.0000388}.
 
+\bibitem[Templeton et~al.(2024)]{templeton2024scaling}
+Adly Templeton et~al.
+\newblock Scaling monosemanticity: Extracting interpretable features from
+  claude 3 sonnet.
+\newblock Transformer Circuits Thread, 2024.
+\newblock
+  \href{https://transformer-circuits.pub/2024/scaling-monosemanticity/}{transformer-circuits.pub}.
+
 \bibitem[Turner et~al.(2023)Turner, Thiergart, Leech, Udell, Vazquez, Mini, and
   MacDiarmid]{turner2023actadd}
 Alexander~Matt Turner, Lisa Thiergart, Gavin Leech, David Udell, Juan Vazquez,
@@ -184,6 +208,15 @@ Alexander~Matt Turner, Lisa Thiergart, Gavin Leech, David Udell, Juan Vazquez,
 \newblock Steering language models with activation engineering.
 \newblock \emph{arXiv preprint}, 2023.
 \newblock \href{https://arxiv.org/abs/2308.10248}{arXiv:2308.10248}.
+
+\bibitem[Wollschl\"ager et~al.(2025)Wollschl\"ager, Elstner, Geisler,
+  Cohen-Addad, G\"unnemann, and Gasteiger]{wollschlager2025geometry}
+Tom Wollschl\"ager, Jannes Elstner, Simon Geisler, Vincent Cohen-Addad, Stephan
+  G\"unnemann, and Johannes Gasteiger.
+\newblock The geometry of refusal in large language models: Concept cones and
+  representational independence.
+\newblock In \emph{ICML}, 2025.
+\newblock \href{https://arxiv.org/abs/2502.17420}{arXiv:2502.17420}.
 
 \bibitem[Yin et~al.(2023)Yin, Sun, Guo, Wu, Qiu, and Huang]{yin2023know}
 Zhangyue Yin, Qiushi Sun, Qipeng Guo, Jiawen Wu, Xipeng Qiu, and Xuanjing

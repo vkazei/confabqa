@@ -6,5 +6,5 @@ pandas>=2.2.0
 jupyter>=1.1.0
 numpy>=2.1.0
 scikit-learn>=1.6.0
-sae-lens>=6.0.0
+sae-lens>=6.0.0          # SAE decomposition (saes/*, Section 6.3); tested with 6.44.4
 datasets>=3.0.0          # PopQA/TriviaQA download (external/*_prepare.py only)
