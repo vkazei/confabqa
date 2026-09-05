@@ -37,3 +37,6 @@ ARXIV_SUBMISSION.md
 # arXiv build artifacts (local only)
 arxiv_pkg/
 arxiv_upload.tar.gz
+
+# local latexdiff review artifacts (not tracked)
+tex/paper_confabqa_diff.*
