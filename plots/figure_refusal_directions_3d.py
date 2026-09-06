@@ -190,15 +190,22 @@ def main():
     print(f"Wrote {png_path}")
 
     # --- Rotating 360-degree GIF ---------------------------------------------
-    n_frames = 60
+    # A full azimuth turn with a gentle two-beat elevation bob, so the thin
+    # cloud tips toward and away from the camera instead of doing a flat spin.
+    # Integer azimuth turn (1) and elevation periods (2) keep the loop seamless.
+    n_frames = 72
+    az0, elev0, elev_amp = -72.0, 22.0, 12.0
 
     def update(i):
-        ax.view_init(elev=elev, azim=-72 + (360.0 * i / n_frames))
+        frac = i / n_frames
+        ax.view_init(elev=elev0 + elev_amp * np.sin(2 * np.pi * 2 * frac),
+                     azim=az0 + 360.0 * frac)
         return []
 
-    anim = FuncAnimation(fig, update, frames=n_frames, interval=50, blit=False)
+    anim = FuncAnimation(fig, update, frames=n_frames, interval=1000 / 24,
+                         blit=False)
     gif_path = FIGURES_DIR / "refusal_directions_3d.gif"
-    anim.save(gif_path, writer=PillowWriter(fps=20), dpi=100,
+    anim.save(gif_path, writer=PillowWriter(fps=24), dpi=100,
               savefig_kwargs={"facecolor": "white"})
     size_mb = gif_path.stat().st_size / 1e6
     print(f"Wrote {gif_path} ({size_mb:.2f} MB)")
