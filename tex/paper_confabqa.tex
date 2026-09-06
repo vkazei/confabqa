@@ -22,7 +22,7 @@ Can the hidden state before the first generated token provide a clue?
 Can we flip confabulations into refusals?
 I introduce ConfabQA, a 784-item benchmark whose obscure-pre-cutoff category breaks the typical correctness/knowledge-cutoff confound
 and map the geometry of the hidden state with linear probes, a sparse autoencoder (SAE), and direct optimization of intervention directions.
-On Qwen3-1.7B, Gemma 2 2B, and Llama 3.2 3B, the probe separates upcoming refusals from confabulations beyond prompt features.
+On Qwen3-1.7B and Gemma 2 2B the probe separates upcoming refusals from confabulations well beyond prompt features (+7.4 and +16.3 pp); on Llama 3.2 3B the ConfabQA margin is within fold-to-fold spread, but a direct refusal probe on PopQA and TriviaQA recovers +18--25 pp.
 On Qwen I closely inspect three candidate directions for the refusal vector: probe-recovered, Qwen-Scope SAE feature, and directly optimized.
 While the directions are over \(45^\circ\) different a push at or below the state's own norm along any of these directions flips most confabulations into refusal openings dominated by the ``As\ldots'' family.
 Forcing the opener without touching the hidden state yields the same one-in-three judged-refusal rate as any push.
