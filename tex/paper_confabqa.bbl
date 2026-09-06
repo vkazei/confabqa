@@ -1,4 +1,4 @@
-\begin{thebibliography}{28}
+\begin{thebibliography}{29}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -24,6 +24,15 @@ Amos Azaria and Tom Mitchell.
 \newblock The internal state of an llm knows when it's lying.
 \newblock In \emph{Findings of EMNLP}, 2023.
 \newblock \href{https://arxiv.org/abs/2304.13734}{arXiv:2304.13734}.
+
+\bibitem[Chanin et~al.(2025)Chanin, Wilken-Smith, Dulka, Bhatnagar, Golechha,
+  and Bloom]{chanin2025absorption}
+David Chanin, James Wilken-Smith, Tom\'a\v{s} Dulka, Hardik Bhatnagar, Satvik
+  Golechha, and Joseph Bloom.
+\newblock A is for absorption: Studying feature splitting and absorption in
+  sparse autoencoders.
+\newblock In \emph{NeurIPS}, 2025.
+\newblock \href{https://arxiv.org/abs/2409.14507}{arXiv:2409.14507}.
 
 \bibitem[Farquhar et~al.(2024)Farquhar, Kossen, Kuhn, and
   Gal]{farquhar2024semantic}
