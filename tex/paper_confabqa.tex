@@ -26,7 +26,7 @@ On Qwen3-1.7B and Gemma 2 2B the probe separates upcoming refusals from confabul
 On Qwen I closely inspect three candidate directions for the refusal vector: probe-recovered, Qwen-Scope SAE feature, and directly optimized.
 While the directions are over \(45^\circ\) different a push at or below the state's own norm along any of these directions flips most confabulations into refusal openings dominated by the ``As\ldots'' family.
 Forcing the opener without touching the hidden state yields the same one-in-three judged-refusal rate as any push.
-The opposite push collapses refusals mostly into confabulations, yet leaves originally correct answers intact, proving the usefulness of steering along found directions.
+The opposite push collapses refusals mostly into confabulations, yet leaves originally correct answers intact, so the direction gates the opening speech act rather than the knowledge behind it.
 Confabulations do not resolve into a concentrated feature in a dictionary or a token signature on Qwen3-1.7B.
 Scoring every probe on the margin over the strongest of four prompt-feature baselines extracts the hidden state's own contribution.
 Correctness signal is model-dependent: only for Llama 3.2 3B it is portable: \(81\%\) of the probe's margin over test majority survives transfer between [Confab, Pop, Trivia]QA.
