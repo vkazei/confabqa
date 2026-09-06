@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "If you use this software, dataset, or paper, please cite as below."
-title: "ConfabQA: Hidden-State Refusal and Correctness Signals in Three Small Language Models"
+title: "Geometry of Confabulation and Refusal in Small Language Models"
 abstract: >-
   When a small language model gives a confidently wrong answer (a confabulation),
   does its hidden state at the moment of commitment already encode the warning sign?
@@ -37,7 +37,7 @@ keywords:
   - small-language-models
 preferred-citation:
   type: article
-  title: "ConfabQA: Hidden-State Refusal and Correctness Signals in Three Small Language Models"
+  title: "Geometry of Confabulation and Refusal in Small Language Models"
   authors:
     - family-names: Kazei
       given-names: Vladimir
