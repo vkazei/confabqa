@@ -2545,16 +2545,14 @@ recovered refusal direction.
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={Score histograms: the signed
+\pandocbounded{\includegraphics[keepaspectratio,alt={Score histogram: the signed
   projection of each item's layer-28 hidden state onto the recovered refusal direction, on
-  the full refusal+wrong subset (top) and the within-post subset (bottom). Refusals
-  concentrate at large positive projections; wrongs near zero or
-  negative.}]{figures/qwen3_1_7b/12_probe_score_hist_refusal_vs_wrong_within_post.png}}
-\caption{Score histograms: the signed projection of each item's layer-28
-hidden state onto the recovered refusal direction, on the full
-refusal+wrong subset (top) and the within-post subset (bottom). Refusals
-concentrate at large positive projections; wrongs near zero or
-negative.}\label{fig:score-hist}
+  the within-post subset (n = 393). Refusals concentrate at large positive projections;
+  wrongs near zero or negative.}]{figures/qwen3_1_7b/12_probe_score_hist_refusal_vs_wrong_within_post.png}}
+\caption{Score histogram: the signed projection of each item's layer-28
+hidden state onto the recovered refusal direction, on the within-post
+subset (\(n = 393\)). Refusals concentrate at large positive
+projections; wrongs near zero or negative.}\label{fig:score-hist}
 \end{figure}
 
 \textbf{Refusal-direction lens scores (Section 6.1).} The lift
