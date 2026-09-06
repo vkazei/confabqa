@@ -12,7 +12,7 @@
 \title{Geometry of Confabulation and Refusal in Small Language Models}
 \author{Vladimir Kazei (Independent Research, \texttt{vkazei@gmail.com})
 --- Code \& data: \url{https://github.com/vkazei/confabqa}}
-\date{2026-08-30}
+\date{\today}
 
 \begin{document}
 \maketitle
@@ -29,7 +29,7 @@ Forcing the opener without touching the hidden state yields the same one-in-thre
 The opposite push collapses refusals mostly into confabulations, yet leaves originally correct answers intact, so the direction gates the opening speech act rather than the knowledge behind it.
 Confabulations do not resolve into a concentrated feature in a dictionary or a token signature on Qwen3-1.7B.
 Scoring every probe on the margin over the strongest of four prompt-feature baselines extracts the hidden state's own contribution.
-Correctness signal is model-dependent: only for Llama 3.2 3B it is portable: \(81\%\) of the probe's margin over test majority survives transfer between [Confab, Pop, Trivia]QA.
+Correctness signal is model-dependent and portable only for Llama 3.2 3B: \(81\%\) of the probe's margin over test majority survives transfer between ConfabQA, PopQA, and TriviaQA.
 Benchmark, judge, code, and cached activations are released.
 \end{abstract}
 
@@ -60,7 +60,7 @@ Does it read the model's state, or the question?
 Controls that separate hidden-state signal from what the prompt alone
 predicts remain rare in the correctness-probing literature, where
 time-sensitive question sets routinely conflate ``post-cutoff'' with
-``model doesn't know.'' Refusal steering by a single direction has been shown for safety refusal \citep{arditi2024refusal} and for entity knowledge, via entity-recognition latents in Gemma-2 SAEs \citep{ferrando2025entity}. \citet{wollschlager2025geometry} subsequently showed that safety refusal is mediated by a cone of directions rather than a single one, several of them representationally independent and each sufficient for steering; attribution-graph analysis of Claude 3.5 Haiku \citep{lindsey2025biology} locates hallucination in a default ``can't answer'' pathway that known-entity features suppress, the same organization \citeauthor{ferrando2025entity} report for Gemma 2. We ask whether a single direction likewise converts most confabulations into refusals: epistemic abstention on facts the model never learned.
+``model doesn't know.'' Refusal steering by a single direction has been shown for safety refusal \citep{arditi2024refusal} and for entity knowledge, via entity-recognition latents in Gemma-2 SAEs \citep{ferrando2025entity}. \citet{wollschlager2025geometry} subsequently showed that safety refusal is mediated by a cone of directions rather than a single one, several of them representationally independent and each sufficient for steering; attribution-graph analysis of Claude 3.5 Haiku \citep{lindsey2025biology} locates hallucination in a default ``can't answer'' pathway that known-entity features suppress, the same organization \citeauthor{ferrando2025entity} report for Gemma 2. I ask whether a single direction likewise converts most confabulations into refusals: epistemic abstention on facts the model never learned.
 
 I map the geometry of this decision with linear probes, a sparse
 autoencoder, and direct optimization of intervention directions, and
@@ -96,9 +96,7 @@ hidden state contributed anything.
   (Gemma peaks mid-network, at 19 of 26), causally sufficient for the
   first-token refusal opening, and decomposable. A one-shot hidden-state
   intervention drives the first-token refusal-opener rate to \(100\%\)
-  on Qwen3 and Gemma (Sections 6.2 and 7.2), though only about a third
-  of these openings complete as judged refusals; the rest revert to
-  content, and closing that gap is left to future work. This replicates \citeauthor{arditi2024refusal}'s (\citeyear{arditi2024refusal}) single-direction finding in the
+  on Qwen3 and Gemma (Sections 6.2 and 7.2), though on Qwen3 only about a third of these openings complete as judged refusals, the rest reverting to content (Gemma completes \(87\%\) at a super-norm dose and \(30\)--\(40\%\) at sub-norm); closing that gap is left to future work. This replicates \citeauthor{arditi2024refusal}'s (\citeyear{arditi2024refusal}) single-direction finding in the
   epistemic-abstention rather than safety-refusal regime, with the cutoff
   variable controlled by construction (mean-difference steering lineage:
   \citealp{panickssery2024caa}; answerability readable from pre-generation
@@ -307,8 +305,7 @@ baseline; for the \texttt{cutoff} target it is excluded from the
 strongest-baseline comparison, since the dummy would be the label
 itself). Full feature lists and hyperparameters are in Appendix B.7. The
 honest comparison is the hidden-state probe vs.~the \emph{strongest} of
-the four on each target: the ``h adds'' column of Table \ref{tbl:hadds}
-in Section 5.6.
+the four on each target: the ``h adds'' column of Table \ref{tbl:hadds} in Appendix A.5.
 
 \textbf{Probe targets.} \texttt{correct} (all 784 items);
 \texttt{cutoff} (post vs.~pre, all 784); \texttt{refusal\_vs\_wrong}
@@ -713,9 +710,7 @@ cues, not commitment markers (ranked features and hit rates in Appendix
 D.7); the dictionary contains a refusal register but no confabulation
 marker. The claim is scoped to what was searched (one dictionary at one
 hook, per-item EV \(0.50\), so absence of a dictionary feature is not
-absence of signal; a probe on the dictionary's residual
-\(h - \mathrm{Dec}(a(h))\) still separates the classes at probe-grade
-accuracy, Appendix D.2). Confabulation behaves as the default attempt
+absence of signal). Confabulation behaves as the default attempt
 pathway missing a fact, not a marked state, the a-space form of the
 Section 5.6 prompt-feature story. This inverts the default reported for Gemma 2 \citep{ferrando2025entity} and Claude 3.5 Haiku \citep{lindsey2025biology}, where abstention is the default pathway and recognized-entity features suppress it, so that hallucination is a failure of suppression. On Qwen3-1.7B the attempt is the default and abstention is the marked state, gated by the knowledge-cutoff cue (all 147 refusals are post-cutoff, Section 5.1), with no dictionary feature marking the confabulation; Llama 3.2 3B, refusing \(97.5\%\) of its post-cutoff failures, sits in the Gemma/Claude regime. Which pathway is the default appears to be a post-training property, the same variable Section 8 identifies behind the correctness signal.
 
@@ -1061,7 +1056,7 @@ results alone would support the framing ``the hidden-state correctness
 probe adds nothing beyond a prompt-text classifier at \(1.7\)B--\(3\)B
 scale''; on balanced external subsamples Llama's correctness probe adds
 \(+17\)--\(+25\) pp over the strongest prompt baseline, 95\% CIs
-excluding \(0\) by \(14\)--\(17\) pp. The stronger reading that the
+excluding \(0\) by \(13\)--\(21\) pp. The stronger reading that the
 refusal direction is the \emph{only} recoverable structure fails the
 same way: at \(3\)B Llama scale, both refusal and correctness directions
 exist in legible form.
@@ -1106,7 +1101,7 @@ post-training recipes and bootstrap CIs on balanced subsamples.
   balanced subsets, not the underlying pool, so its percentile CIs are
   subsample CIs, not population CIs; and the Section 8.3 transfer matrix
   covers the correctness probe only (Gemma's \(\le 5\) and Qwen's few
-  dozen external refusals, Table \ref{tbl:refchannel}, are too few for a
+  dozen external refusals are too few for a
   cross-dataset refusal fit, while Llama's counts would support one; a
   Llama refusal-transfer test plus a known-unknowns benchmark eliciting
   refusals from the smaller models would close the gap).
@@ -2154,9 +2149,7 @@ doses are similar: the probe direction reaches \(50\%\) at
 \(\alpha = 500\); feature 2191 is at \(11/30\) by \(\alpha = 400\) and
 completes \(30/30\) by \(750\), where the probe needs \(1500\) for
 \(97\%\). The concentrated feature saturates roughly twice as early. The
-naive projection accounting, under which the probe direction owns only
-\(0.16\) of its norm on the 2191 channel and should need
-\(\approx 6\times\) the dose, overstates the gap: the probe's remaining
+naive projection accounting, under which the probe direction owns only \(0.25\) of its norm on the 2191 channel and should need \(\approx 4\times\) the dose, overstates the gap: the probe's remaining
 norm is not opener-inert, since it also pushes the broader opener family
 (\texttt{there}, the Chinese variants) that the flip criterion counts,
 and the flip is a competition threshold rather than a linear readout.
