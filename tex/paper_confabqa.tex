@@ -24,7 +24,7 @@ I introduce ConfabQA, a 784-item benchmark whose obscure-pre-cutoff category bre
 and map the geometry of the hidden state with linear probes, a sparse autoencoder (SAE), and direct optimization of intervention directions.
 On Qwen3-1.7B and Gemma 2 2B the probe separates upcoming refusals from confabulations well beyond prompt features (+7.4 and +16.3 pp); on Llama 3.2 3B the ConfabQA margin is within fold-to-fold spread, but a direct refusal probe on PopQA and TriviaQA recovers +18--25 pp.
 On Qwen I closely inspect three candidate directions for the refusal vector: probe-recovered, Qwen-Scope SAE feature, and directly optimized.
-While the directions are over \(45^\circ\) different a push at or below the state's own norm along any of these directions flips most confabulations into refusal openings dominated by the ``As\ldots'' family.
+Although the three directions are pairwise 50--81\(^\circ\) apart, a push at or below the state's own norm along any of them flips most confabulations into refusal openings dominated by the ``As\ldots'' family.
 Forcing the opener without touching the hidden state yields the same one-in-three judged-refusal rate as any push.
 The opposite push collapses refusals mostly into confabulations, yet leaves originally correct answers intact, so the direction gates the opening speech act rather than the knowledge behind it.
 Confabulations do not resolve into a concentrated feature in a dictionary or a token signature on Qwen3-1.7B.
