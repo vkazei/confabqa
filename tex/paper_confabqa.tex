@@ -87,8 +87,8 @@ hidden state contributed anything.
   \emph{Refusal vs.~confabulation is a model-internal feature: each
   model linearly encodes its own upcoming speech act.} On the
   wrong+refusal subset of ConfabQA the late-layer probe beats the
-  strongest prompt baseline on every model: \(+7.4\)\% on Qwen3-1.7B,
-  \(+16.3\)\% on Gemma 2 2B, \(+2.2\)\% on Llama 3.2 3B (the Llama margin
+  strongest prompt baseline on every model: \(+7.4\) pp on Qwen3-1.7B,
+  \(+16.3\) pp on Gemma 2 2B, \(+2.2\) pp on Llama 3.2 3B (the Llama margin
   is within fold-to-fold spread; its powered counterpart is the
   Section 8.2 refusal-channel gap). That some such signal exists is
   natural (the label is the model's own output decision); the findings
@@ -116,14 +116,14 @@ hidden state contributed anything.
   \emph{Llama 3.2 3B carries a substantially larger and more general
   correctness signal than Qwen3-1.7B or Gemma 2 2B.} On balanced PopQA /
   TriviaQA subsamples, Llama's probe beats the prompt baseline by
-  \(+21\)--\(+25\)\%, \(5.7\times\) and \(2.2\times\) Qwen's margins on
+  \(+21\)--\(+25\) pp, \(5.7\times\) and \(2.2\times\) Qwen's margins on
   the same benchmarks. Three controls localize the source: not parameter
   count (the Qwen3-4B scaling control moves the margin by less than
-  \(2\)\%; Section 8.1); not dataset-specific overfit (Llama keeps
+  \(2\) pp; Section 8.1); not dataset-specific overfit (Llama keeps
   \(\approx 81\%\) of its margin under cross-dataset transfer without
   refit, where Qwen's and Gemma's transfer collapses; Section 8.3); not
   refusal-channel readout (\(\approx 83\%\) survives dropping refusals,
-  and an independent refusal probe adds a further \(+18\)--\(+25\)\%
+  and an independent refusal probe adds a further \(+18\)--\(+25\) pp
   gap; Section 8.2). Gemma is behaviorally intermediate, yet its
   correctness probe is the most dataset-local of the three; the most
   plausible single explanation is Llama's heavy calibrated-abstention
@@ -403,7 +403,7 @@ baselines}\label{per-layer-linear-probes-against-majority-baselines}
   98\textbackslash\% by layer 13 and stays high through the network. Refusal-vs-wrong
   (green, n=549) rises monotonically and peaks at the deepest block (layer 28).
   Correctness (blue, n=784) and the cutoff-disconfounded correct-within-pre (red, n=296)
-  both peak at layer 18, with within-pre showing the headline +32\% margin over its
+  both peak at layer 18, with within-pre showing the headline +32 pp margin over its
   52.7\textbackslash\% pre-cutoff majority that largely vanishes against the
   prompt-feature baseline of Section 5.6. Correct-within-obscure (purple, n=153) peaks at
   layer 7 but the 1-\textbackslash sigma layer range spans nearly the whole network, so
@@ -454,17 +454,17 @@ the label; the tautological \(1.000\) is shown for completeness but
 excluded from the strongest-baseline comparison.)
 
 \textbf{Table \ref{tbl:hadds} interpretation.} (1)~\emph{Correctness
-gains little from the hidden state}: \(\approx 3\)\% or less over the
-strongest baseline (\(+2.4\)\% all items, \(+3.0\)\% within-pre, \(-2.5\)\%
+gains little from the hidden state}: \(\approx 3\) pp or less over the
+strongest baseline (\(+2.4\) pp all items, \(+3.0\) pp within-pre, \(-2.5\) pp
 within-obscure), within per-fold noise (\(0.031\)--\(0.063\)); the
 Section 8.1 bootstrap confirms the reading (all-items margin real,
 disconfounded within-stratum margins consistent with zero).
 (2)~\emph{Cutoff is easy to predict either way}: text features alone
 reach \(94.0\)--\(95.2\%\) (the year mentioned is a near-perfect
-predictor), the probe at \(98.2\%\) adds \(+3.0\)\%; a manipulation
+predictor), the probe at \(98.2\%\) adds \(+3.0\) pp; a manipulation
 check, not a finding about internals.
 (3)~\emph{Refusal-vs-confabulation substantially beats prompt
-features}: \(+7.4\)\% over TF-IDF overall, \(+9.6\)\% within
+features}: \(+7.4\) pp over TF-IDF overall, \(+9.6\) pp within
 post-cutoff where all refusals occur, gaps \(\approx 4\)x the per-fold
 std (\(0.019\), \(0.022\)). The asymmetry is what the targets' nature
 predicts: refusal-vs-confabulation is a decision the model itself makes
@@ -525,7 +525,7 @@ Appendix D.4); Section 6.2 tests its causal counterpart.
 
 The n=393 within-post recovery (where every refusal actually lives)
 yields the same vocabulary in sharper form (Appendix D.4); with the
-within-post probe's \(+9.6\)\% margin (Section 5.6), the late-layer
+within-post probe's \(+9.6\) pp margin (Section 5.6), the late-layer
 state carries a discrete pragmatic signal (``I am about to hedge'') not
 extractable from the question text (score histograms in Figure
 \ref{fig:score-hist}, Appendix D.4). A recovery-method check (Appendix
@@ -862,8 +862,8 @@ The correctness margins collapse to a few percentage points against the
 ``+category'' baseline on all three models (Section 5.6's confound,
 cross-model; depth-band detail in Appendix D.5), while refusal is the
 axis on which the three most cleanly separate: the refusal-vs-wrong
-probe beats the strongest prompt baseline by \(+7.4\)\% (Qwen),
-\(+16.3\)\% (Gemma), and \(+2.2\)\% (Llama), peaking in the deepest
+probe beats the strongest prompt baseline by \(+7.4\) pp (Qwen),
+\(+16.3\) pp (Gemma), and \(+2.2\) pp (Llama), peaking in the deepest
 layers on Qwen and Llama (layer \(28\)) and at layer \(19\) on Gemma,
 the late-layer localization the Section 7.2 intervention exploits.
 
@@ -893,8 +893,8 @@ opener rate (sweep and off-manifold pathologies in Table
 items, insufficient for a clean directional-causal claim. Its tightly normalized hidden state goes off-manifold symmetrically at
 \(|\alpha| \ge 300\). The cleanest directional signal is the reverse: the refusal rate drops from \(100\%\) to \(80\%\) at
 \(\alpha = -300\) (\(3/15\) previously-refusing items committing to a
-confabulation), a \(-20\)\% shift that is real but small, consistent
-with Llama's \(+2.2\)\% refusal-probe margin (full sweep,
+confabulation), a \(-20\) pp shift that is real but small, consistent
+with Llama's \(+2.2\) pp refusal-probe margin (full sweep,
 pathologies, and examples in Appendix C). Because the recorded Gemma sweep ran at \(6\)--\(25\times\) its
 residual scale, a sub-norm rerun with controls was added. At
 \(0.31\times\)/\(0.92\times\) of Gemma's state norm the real direction
@@ -941,7 +941,7 @@ but with positive point estimates in all four cases, so the single-seed
 per-cell and unadjusted for multiple comparisons; the cross-model
 contrast rests on no single borderline cell. Two protocol checks
 calibrate them (Appendix E): a label-permutation null shows
-\(\approx 1\)\%-range margins should not be read as evidence while the
+\(\approx 1\) pp-range margins should not be read as evidence while the
 all-items margins sit far above the null, and an item-level bootstrap
 leaves both Llama within-stratum cells consistent with zero, so those
 two positive CIs should be read as point estimates.
@@ -949,7 +949,7 @@ two positive CIs should be read as point estimates.
 \textbf{Cross-dataset \(\times\) cross-model contrast.} On the same
 PopQA data under the same substring-correct criterion (Qwen pooled over
 three seeds, Llama single-seed; Section 4), Llama recovers a
-\(+24.9\)\% correctness margin where Qwen3-1.7B recovers \(+4.4\)\%, a
+\(+24.9\) pp correctness margin where Qwen3-1.7B recovers \(+4.4\) pp, a
 \(5.7\times\) gap on \(1.8\times\) the parameter count; on TriviaQA the
 gap is \(2.2\times\), and it is driven neither by raw accuracy nor by
 the prompt-baseline floor (accounting in Appendix E): Llama's hidden
@@ -958,12 +958,12 @@ information.
 
 \textbf{Within-family scaling control (Qwen3-4B).} Qwen3-4B (same
 family, \(2.4\times\) Qwen3-1.7B's parameter count, \(\approx 25\%\)
-more than Llama 3.2 3B) lands at \(+5.77\)\%, 95\% CI
+more than Llama 3.2 3B) lands at \(+5.77\) pp, 95\% CI
 \([+2.34, +11.61]\): statistically indistinguishable from Qwen3-1.7B's
-\(+4.35\)\% and far below Llama's \(+24.94\)\%. Doubling parameter count
-within the Qwen family moves \(\bar h_{adds}\) by \(\approx 1.4\)\%;
+\(+4.35\) pp and far below Llama's \(+24.94\) pp. Doubling parameter count
+within the Qwen family moves \(\bar h_{adds}\) by \(\approx 1.4\) pp;
 switching family at smaller parameter count moves it by
-\(\approx 19\)\%: \textbf{the cross-model gap is not a parameter-count
+\(\approx 19\) pp: \textbf{the cross-model gap is not a parameter-count
 effect}; it tracks model family / post-training recipe (corroborating
 raw accuracies in Appendix E; artifact list in Appendix B.4).
 
@@ -996,7 +996,7 @@ headline and the bulk (\(\approx 83\%\)) is real correct-vs-wrong
 discrimination on attempted items, while the Qwen rows are essentially
 unchanged (Qwen refuses too rarely here for the confound to bite).
 Probed directly, Llama's refusal target beats the strongest prompt
-baseline by \(+18.44\) (PopQA) and \(+25.43\)\% (TriviaQA) with CIs
+baseline by \(+18.44\) (PopQA) and \(+25.43\) pp (TriviaQA) with CIs
 excluding \(0\) by wide margins; Qwen's analogous margins are positive
 but under-powered. One caveat: the ratio's numerator is judge-labeled
 and its denominator substring-labeled, and a label-sensitivity rerun
@@ -1025,7 +1025,7 @@ E).
 \textbf{Headline.} Averaging margins (probe-acc minus test-majority)
 across the 3 within cells and the 6 transfer cells (Table
 \ref{tbl:transfer}, Appendix E): Llama retains \(81\%\) of its
-within-dataset margin under transfer (\(+18.9\)\% within, \(+15.2\)\%
+within-dataset margin under transfer (\(+18.9\) pp within, \(+15.2\) pp
 transferred, \(5/6\) transfers beating the test majority), while
 Gemma's retention is \(-54\%\) (the largest within margin of the three,
 but two catastrophic collapses with PopQA as target) and Qwen's is
@@ -1060,8 +1060,8 @@ clean abstention direction besides.
 results alone would support the framing ``the hidden-state correctness
 probe adds nothing beyond a prompt-text classifier at \(1.7\)B--\(3\)B
 scale''; on balanced external subsamples Llama's correctness probe adds
-\(+17\)--\(+25\)\% over the strongest prompt baseline, 95\% CIs
-excluding \(0\) by \(14\)--\(17\)\%. The stronger reading that the
+\(+17\)--\(+25\) pp over the strongest prompt baseline, 95\% CIs
+excluding \(0\) by \(14\)--\(17\) pp. The stronger reading that the
 refusal direction is the \emph{only} recoverable structure fails the
 same way: at \(3\)B Llama scale, both refusal and correctness directions
 exist in legible form.
@@ -1139,7 +1139,7 @@ scaling control, with \(K=30\) balanced-subsample bootstrap CIs across
 \item
   \textbf{The hidden state encodes a refusal-vs-confabulation signal
   that beats prompt features across all three models} (ConfabQA
-  \(+7.4\)--\(+16.3\)\%; deepest layers; the logit lens recovers each
+  \(+7.4\)--\(+16.3\) pp; deepest layers; the logit lens recovers each
   model's literal refusal-opening vocabulary; causal under a one-shot
   forward-hook intervention on Qwen and Gemma; on Llama the sweep ran at
   \(\approx 8\times\) its remeasured state norm and is directional
@@ -1147,21 +1147,21 @@ scaling control, with \(K=30\) balanced-subsample bootstrap CIs across
 \item
   \textbf{The correctness-probe gap is sharply model-dependent.} On
   balanced PopQA / TriviaQA subsamples Llama 3.2 3B adds \(+24.9\) and
-  \(+21.3\)\% over the strongest prompt baseline (95\% CIs
+  \(+21.3\) pp over the strongest prompt baseline (95\% CIs
   \([20.6, 29.0]\), \([19.5, 22.9]\)) where Qwen3-1.7B adds \(+4.4\) and
-  \(+9.6\)\% (CIs \([2.1, 6.5]\), \([5.1, 13.8]\)); Llama's ConfabQA
-  disconfounded point estimates are also positive (\(+11.4\)\%
-  within-pre, \(+12.3\)\% within-obscure) though an item-level bootstrap
+  \(+9.6\) pp (CIs \([2.1, 6.5]\), \([5.1, 13.8]\)); Llama's ConfabQA
+  disconfounded point estimates are also positive (\(+11.4\) pp
+  within-pre, \(+12.3\) pp within-obscure) though an item-level bootstrap
   leaves both consistent with zero (Section 8.1). The ``correctness
   probe reduces to prompt features at \(1.7\)--\(3\)B scale'' framing
   was an over-generalization from one model.
 \item
   \textbf{Llama's correctness signal is primarily not refusal-channel
-  readout:} dropping refusals leaves \(+20.8\)\% (PopQA) and
-  \(+17.7\)\% (TriviaQA), so \(\approx 83\%\) of the headline
+  readout:} dropping refusals leaves \(+20.8\) pp (PopQA) and
+  \(+17.7\) pp (TriviaQA), so \(\approx 83\%\) of the headline
   \(h_{adds}\) is genuine factual self-knowledge among attempted items,
   and a direct refusal probe additionally recovers
-  \(+18.4\)--\(+25.4\)\%, an independent clean abstention direction.
+  \(+18.4\)--\(+25.4\) pp, an independent clean abstention direction.
   Llama at \(3\)B carries \textbf{two} linearly-decodable signals;
   Qwen3-1.7B carries only weak versions of either at this scale and on
   these benchmarks.
@@ -1746,8 +1746,8 @@ DR's stricter containment rule and independent gold verification, not
 judge miscalibration. A sensitivity rerun under the DR labels keeps the
 picture: the refusal-vs-wrong probe reaches \(87.1\%\) (vs.~\(89.4\%\)
 under the judge labels; margin over a TF-IDF question-text baseline
-\(+3.9\) vs.~\(+7.7\)\%), and the layer-18 correctness probe
-\emph{rises} to \(87.6\%\) (margin \(+9.8\) vs.~\(+6.0\)\%); artifact
+\(+3.9\) vs.~\(+7.7\) pp), and the layer-18 correctness probe
+\emph{rises} to \(87.6\%\) (margin \(+9.8\) vs.~\(+6.0\) pp); artifact
 \texttt{revision\_analyses}. The three flagged stated-premise items
 (\(3/784 \approx 0.4\%\)) are retained because dropping them does not
 shift any headline number; v2 will patch them at the source.
@@ -2464,7 +2464,7 @@ depth}\label{d.1-robustness-to-pca-truncation-depth}
 The headline probe pipeline uses \texttt{PCA(n\_components=16)}.
 Sweeping over \(\{4, 8, 16, 32, 48,
 64\}\) at each target shows that the peak per-layer accuracies are
-stable within a \(\le 5\)\% band across the sweep (Figure
+stable within a \(\le 5\) pp band across the sweep (Figure
 \ref{fig:pca-robustness}):
 
 \begin{figure}
@@ -2472,13 +2472,13 @@ stable within a \(\le 5\)\% band across the sweep (Figure
 \pandocbounded{\includegraphics[keepaspectratio,alt={Peak per-layer probe accuracy as a
   function of PCA n\_\{\textbackslash mathrm\{components\}\}, for each of the main probe
   targets. The paper default (n=16) is marked. All targets are stable across the sweep
-  within a \textbackslash le 5\% band, and several peak at n \textbackslash ne 16, meaning
+  within a \textbackslash le 5 pp band, and several peak at n \textbackslash ne 16, meaning
   the paper default is conservative rather than
   tuned.}]{figures/qwen3_1_7b/10_pca_robustness.png}}
 \caption{Peak per-layer probe accuracy as a function of PCA
 \(n_{\mathrm{components}}\), for each of the main probe targets. The
 paper default (\(n=16\)) is marked. All targets are stable across the
-sweep within a \(\le 5\)\% band, and several peak at \(n \ne 16\),
+sweep within a \(\le 5\) pp band, and several peak at \(n \ne 16\),
 meaning the paper default is conservative rather than
 tuned.}\label{fig:pca-robustness}
 \end{figure}
@@ -2717,20 +2717,20 @@ Llama 3.2 3B
 \midrule
 \emph{Probe accuracies (peak \% {[}peak layer{]} vs baseline)} & & & \\
 \textbf{Correctness (all items)} & \textbf{82.4\%} {[}L18{]}(base
-70.0\%, +12.4\%) & \textbf{89.7\%} {[}L14{]}(base 68.1\%, +21.6\%) &
-\textbf{94.3\%} {[}L13{]}(base 69.4\%, +24.9\%) \\
+70.0\%, +12.4 pp) & \textbf{89.7\%} {[}L14{]}(base 68.1\%, +21.6 pp) &
+\textbf{94.3\%} {[}L13{]}(base 69.4\%, +24.9 pp) \\
 \textbf{Cutoff (all items)} & \textbf{98.2\%} {[}L13{]}(base 62.2\%,
-+36.0\%) & \textbf{98.9\%} {[}L14{]}(base 62.2\%, +36.6\%) &
-\textbf{99.4\%} {[}L25{]}(base 62.2\%, +37.1\%) \\
++36.0 pp) & \textbf{98.9\%} {[}L14{]}(base 62.2\%, +36.6 pp) &
+\textbf{99.4\%} {[}L25{]}(base 62.2\%, +37.1 pp) \\
 \textbf{Refusal-vs-Wrong (subset)} & \textbf{89.4\%} {[}L28{]}(base
-73.2\%, +16.2\%) & \textbf{83.9\%} {[}L19{]}(base 53.6\%, +30.3\%) &
-\textbf{95.8\%} {[}L28{]}(base 91.9\%, +3.9\%) \\
+73.2\%, +16.2 pp) & \textbf{83.9\%} {[}L19{]}(base 53.6\%, +30.3 pp) &
+\textbf{95.8\%} {[}L28{]}(base 91.9\%, +3.9 pp) \\
 \textbf{Correct within Pre-cutoff} & \textbf{84.8\%} {[}L18{]}(base
-52.7\%, +32.1\%) & \textbf{91.2\%} {[}L17{]}(base 69.6\%, +21.6\%) &
-\textbf{85.2\%} {[}L13{]}(base 80.7\%, +4.4\%) \\
+52.7\%, +32.1 pp) & \textbf{91.2\%} {[}L17{]}(base 69.6\%, +21.6 pp) &
+\textbf{85.2\%} {[}L13{]}(base 80.7\%, +4.4 pp) \\
 \textbf{Correct within Obscure} & \textbf{80.5\%} {[}L7{]}(base 66.7\%,
-+13.8\%) & \textbf{88.9\%} {[}L24{]}(base 64.1\%, +24.9\%) &
-\textbf{81.1\%} {[}L13{]}(base 75.2\%, +5.9\%) \\
++13.8 pp) & \textbf{88.9\%} {[}L24{]}(base 64.1\%, +24.9 pp) &
+\textbf{81.1\%} {[}L13{]}(base 75.2\%, +5.9 pp) \\
 \midrule
 \emph{Prompt-feature baselines (strongest; margin vs probe above)} & & & \\
 \textbf{Correctness vs +category} & 80.0\% (+2.4) & 88.0\% (+1.7) &
@@ -2907,17 +2907,17 @@ TriviaQA & Qwen3-1.7B & correct (full) & 400 & \(+9.57\) &
 \pandocbounded{\includegraphics[keepaspectratio,alt={Bootstrap 95\% CIs on h\_\{adds\}
   across 14 (dataset, model, target) cells. K=30 balanced 50/50 subsamples per cell; blue
   = CI excludes 0. The bottom two rows are the headline positive finding: Llama 3.2 3B on
-  PopQA / TriviaQA recovers +21--+25\% over the strongest prompt-feature baseline, where
-  Qwen3-1.7B and Qwen3-4B on the same data recover +4--+10\%. The Qwen3-4B row labeled
+  PopQA / TriviaQA recovers +21--+25 pp over the strongest prompt-feature baseline, where
+  Qwen3-1.7B and Qwen3-4B on the same data recover +4--+10 pp. The Qwen3-4B row labeled
   ``scaling control'' rules out parameter count as the dominant driver of the cross-model
   gap.}]{figures/bootstrap_forest.png}}
 \caption{Forest plot of the Table \ref{tbl:bootstrap} bootstrap 95\% CIs
 on \(h_{adds}\) across \(14\) \protect\texttt{(dataset,\ model,\ target)}
 cells. \(K=30\) balanced 50/50 subsamples per cell; blue = CI excludes
 0. The bottom two rows are the headline positive finding: Llama 3.2 3B
-on PopQA / TriviaQA recovers \(+21\)--\(+25\)\% over the strongest
+on PopQA / TriviaQA recovers \(+21\)--\(+25\) pp over the strongest
 prompt-feature baseline, where Qwen3-1.7B and Qwen3-4B on the
-\emph{same} data recover \(+4\)--\(+10\)\%. The Qwen3-4B ``scaling
+\emph{same} data recover \(+4\)--\(+10\) pp. The Qwen3-4B ``scaling
 control'' row rules out parameter count as the dominant driver of the
 cross-model gap.}\label{fig:bootstrap-forest}
 \end{figure}
@@ -2941,8 +2941,8 @@ M1-class hardware (see the evaluation-methodology limitation in Section
 (artifact \texttt{small\_cell\_stats}; fixed layer, TF-IDF baseline, so
 absolute values are not comparable to the table). First, a
 label-permutation null of the peak-over-all-layers margin measures the
-layer-selection bias directly: null mean \(+0.6\)\%, 95th percentile
-\(+1.3\)\% on both models, so margins in the \(\approx 1\)\% range
+layer-selection bias directly: null mean \(+0.6\) pp, 95th percentile
+\(+1.3\) pp on both models, so margins in the \(\approx 1\) pp range
 (e.g.\ Llama ConfabQA correct, \(+0.94\)) should not be read as
 evidence, while the all-items margins sit far above the null
 (\(p < 0.01\)). Second, an item-level bootstrap (\(B = 400\)) keeps the
@@ -3007,16 +3007,16 @@ Retention
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
 Transfers \(>\) majority
 \end{minipage} \\\midrule
-Llama 3.2 3B & 14 & \(+18.9\)\% & \(+15.2\)\% & \(81\%\) & \(5/6\) \\
-Gemma 2 2B & 13 & \(+13.1\)\% & \(-7.0\)\% & \(-54\%\) & \(4/6\) \\
-Qwen3-1.7B & 18 & \(+8.7\)\% & \(-1.2\)\% & \(-14\%\) & \(3/6\) \\
+Llama 3.2 3B & 14 & \(+18.9\) pp & \(+15.2\) pp & \(81\%\) & \(5/6\) \\
+Gemma 2 2B & 13 & \(+13.1\) pp & \(-7.0\) pp & \(-54\%\) & \(4/6\) \\
+Qwen3-1.7B & 18 & \(+8.7\) pp & \(-1.2\) pp & \(-14\%\) & \(3/6\) \\
 \bottomrule
 \end{tabular}
 \end{table}
 
 \textbf{Llama: content-invariant.} Five of six off-diagonal transfers
 beat the test-dataset majority, with an average winning margin of
-\(+19.8\)\%, comparable to the within-dataset \(+18.9\)\%. The single
+\(+19.8\) pp, comparable to the within-dataset \(+18.9\) pp. The single
 failure is ConfabQA \(\to\) PopQA (majority \(87.3\%\), transfer
 \(79.8\%\)). Two transfer cells (PopQA \(\to\) ConfabQA at \(94.0\%\),
 TriviaQA \(\to\) ConfabQA at \(93.8\%\)) actually exceed the
@@ -3027,16 +3027,16 @@ trained on more diverse data than ConfabQA alone provides.
 \emph{largest} average within-dataset margin of the three at this layer
 but the worst transfer. Two cells collapse catastrophically, both with
 PopQA as target: ConfabQA \(\to\) PopQA at \(38.3\%\) (vs majority
-\(80.2\%\), a \(-42\)\% gap) and TriviaQA \(\to\) PopQA at \(46.8\%\)
-(\(-33.5\)\%). Four cells do beat majority (transfers to ConfabQA and
-TriviaQA), average winning margin \(+8.3\)\%, well below Llama's
-\(+19.8\); the net signed average is \(-7.0\)\%, dominated by the PopQA
+\(80.2\%\), a \(-42\) pp gap) and TriviaQA \(\to\) PopQA at \(46.8\%\)
+(\(-33.5\) pp). Four cells do beat majority (transfers to ConfabQA and
+TriviaQA), average winning margin \(+8.3\) pp, well below Llama's
+\(+19.8\); the net signed average is \(-7.0\) pp, dominated by the PopQA
 collapses.
 
 \textbf{Qwen: weak within, weak transfer.} Qwen3-1.7B's within-dataset
-margins are the smallest to begin with (\(+8.7\)\% average); three of
+margins are the smallest to begin with (\(+8.7\) pp average); three of
 six transfers beat majority, all by small amounts (\(+1.7\) to
-\(+7.7\)\%). Its signed transfer average (\(-1.2\) pp) is closer to zero
+\(+7.7\) pp). Its signed transfer average (\(-1.2\) pp) is closer to zero
 than Gemma's not because Qwen transfers better but because an almost
 flat probe stays almost flat under transfer (retention \(-14\%\)).
 
@@ -3132,9 +3132,9 @@ Llama-vs-Qwen ordering is unchanged on both external datasets.
 \textbf{Reading Test B.} Llama's refusal probe reaches \(84.5\%\)
 (PopQA) and \(90.2\%\) (TriviaQA) absolute accuracy on a balanced 50/50
 task, beating the strongest prompt baseline by \(+18.4\) and
-\(+25.4\)\%, CIs excluding \(0\) by wide margins: the hidden state
+\(+25.4\) pp, CIs excluding \(0\) by wide margins: the hidden state
 encodes the abstention decision in a form the question text does not
-predict. Qwen's analogous margins (\(+10.2\)\% PopQA, \(+16.0\)\%
+predict. Qwen's analogous margins (\(+10.2\) pp PopQA, \(+16.0\) pp
 TriviaQA) are positive but the refusal counts (\(39\) and \(28\)) leave
 the CIs straddling \(0\); this test needs either a larger Qwen
 evaluation or a benchmark on which Qwen3 refuses more (Qwen refuses
