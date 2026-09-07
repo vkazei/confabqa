@@ -4,22 +4,21 @@ set}\label{sourcing-and-curation-of-the-confabqa-question-set}
 
 ConfabQA comprises 784 items in a \(4 \times 3\) design: 4 domains
 (science, history, culture, cinema) crossed with 3 categories
-(well-known pre-cutoff, obscure pre-cutoff, post-cutoff), totalling 143
-well-known, 153 obscure, and 488 post-cutoff items (per-cell counts in
-Table \ref{tbl:cells}, Appendix A). Items are generated from per-domain
-templated source files; each carries a provenance URL for its gold
-answer and a validation status field populated by an external LLM with
-web access, and the third of three validation iterations,
-\textbf{ConfabQA} (\(n=784\)), is what the paper analyzes (full design
-in \texttt{data/QUESTIONS\_v1\_CARD.md}; pipeline reproducibility and a
-sample source entry in Appendix B.2 and B.5). A fifth domain (sports)
-produced \(0/26\) correct, leaving no positive examples for the
-within-pre-cutoff probe; it is excluded and reported in Appendix A.1.
+(well-known pre-cutoff, obscure pre-cutoff, post-cutoff). Across domains
+the categories hold 143 well-known, 153 obscure, and 488 post-cutoff
+items (per-cell counts in Table \ref{tbl:cells}, Appendix A). I generate
+items from per-domain templated source files. Each carries a provenance
+URL for its gold answer and a validation-status field populated by an
+external LLM with web access. The paper analyzes the third of three
+validation iterations, \textbf{ConfabQA} (\(n=784\)); the full design is
+in \texttt{data/QUESTIONS\_v1\_CARD.md}, and pipeline reproducibility and
+a sample source entry are in Appendix B.2 and B.5. A fifth domain
+(sports) produced \(0/26\) correct, leaving no positive examples for the
+within-pre-cutoff probe, so I exclude it (Appendix A.1).
 
-The third (\texttt{obscure}) category is the design innovation: it
+The third (\texttt{obscure}) category is the design innovation. It
 populates the cell ``answer-was-in-training-data but
 model-is-expected-to-fail,'' which the standard two-cell design leaves
 structurally empty. A typical obscure item asks who won the Best Actor
 Academy Award at the 1968 ceremony (gold: Rod Steiger, on the public
-record); Qwen3-1.7B confidently answers with the wrong actor.
-
+record). Qwen3-1.7B confidently answers with the wrong actor.

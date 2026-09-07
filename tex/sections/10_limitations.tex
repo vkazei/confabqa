@@ -4,40 +4,16 @@
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \item
-  \textbf{Benchmark construction.} Four known imperfections in ConfabQA,
-  none of which affect the prompt-feature baseline (it conditions on
-  text): a rater-subjective obscure/well-known boundary; gold answers as
-  a validation snapshot (facts drift, the pipeline must be re-run);
-  Anglophone source skew; and a fuzzy pre/post-cutoff boundary in the
-  science domain, where Qwen3's post-training corpus apparently included
-  a handful of post-cutoff OpenAI/Anthropic/SpaceX items, so the
-  near-perfect cutoff probe partly recovers ``what kind of entity''
-  rather than a clean date discriminator.
+  \textbf{Benchmark construction.} Four known imperfections in ConfabQA, none of which affect the prompt-feature baseline (it conditions on text). First, a rater-subjective obscure/well-known boundary. Second, gold answers are a validation snapshot (facts drift, so the pipeline must be re-run). Third, Anglophone source skew. Fourth, a fuzzy pre/post-cutoff boundary in the science domain, where Qwen3's post-training corpus apparently included a handful of post-cutoff OpenAI/Anthropic/SpaceX items, so the near-perfect cutoff probe partly recovers ``what kind of entity'' rather than a clean date discriminator.
 \item
-  \textbf{Evaluation methodology.} \(n = 784\) gives only
-  \(\approx 157\) items per CV fold, and the within-obscure probe's
-  \(1\sigma\) layer range spans the entire network; the prompt-feature
-  baseline is hand-crafted and likely a \emph{lower} bound on what a
-  generic text classifier could extract; the bootstrap resamples
-  balanced subsets, not the underlying pool, so its percentile CIs are
-  subsample CIs, not population CIs; and the Section 8.3 transfer matrix
-  covers the correctness probe only (Gemma's \(\le 5\) and Qwen's few
-  dozen external refusals are too few for a
-  cross-dataset refusal fit, while Llama's counts would support one; a
-  Llama refusal-transfer test plus a known-unknowns benchmark eliciting
-  refusals from the smaller models would close the gap).
+  \textbf{Evaluation methodology.} \(n = 784\) gives only \(\approx 157\) items per CV fold, and the within-obscure probe's \(1\sigma\) layer range spans the entire network. The prompt-feature baseline is hand-crafted and likely a \emph{lower} bound on what a generic text classifier could extract. The bootstrap resamples balanced subsets, not the underlying pool, so its percentile CIs are subsample CIs, not population CIs. The Section 8.3 transfer matrix covers the correctness probe only: Gemma's \(\le 5\) and Qwen's few dozen external refusals are too few for a cross-dataset refusal fit, while Llama's counts would support one. A Llama refusal-transfer test plus a known-unknowns benchmark eliciting refusals from the smaller models would close the gap.
 \item
-  \textbf{Scope and judge generalization.} Four models in the
-  \(1.7\)B--\(4\)B range, no \(\gtrsim 7\)B replication; the scaling
-  control rules out parameter count as the dominant driver of the
-  cross-model \(h_{adds}\) gap, but family and post-training recipe
-  remain confounded, and a clean isolation would swap the recipe holding
-  family fixed. The Qwen judge on Qwen subject (and on Llama outputs in
+  \textbf{Scope and judge generalization.} Four models in the \(1.7\)B--\(4\)B range, no \(\gtrsim 7\)B replication. The scaling control rules out parameter count as the dominant driver of the cross-model \(h_{adds}\) gap, but family and post-training recipe remain confounded, and a clean isolation would swap the recipe holding family fixed. The Qwen judge on Qwen subject (and on Llama outputs in
   Section 8.2) is partially de-risked by the cross-model intervention
   runs (Gemma reproduces the Qwen refusal pattern under an external Qwen
   judge), but an independent or human re-grade on a Llama-output subset
   remains the cleanest remaining check.
 \item
-  \textbf{Probe target.} All probes read the last prompt position of the prefill pass (Section 2.2). \citet{orgad2024show} report that truthfulness information concentrates at the exact-answer tokens of the generated response, and \citet{kossen2024semantic} recover semantic-entropy signal from generation-time states; the Qwen3-1.7B correctness null is therefore a statement about the pre-generation state, not about every state the model produces, and an exact-answer-token probe scored against the same prompt-feature baseline is the direct extension.
+  \textbf{Probe target.} All probes read the last prompt position of the prefill pass (Section 2.2). \citet{orgad2024show} report that truthfulness information concentrates at the exact-answer tokens of the generated response, and \citet{kossen2024semantic} recover semantic-entropy signal from generation-time states. The Qwen3-1.7B correctness null is therefore a statement about the pre-generation state, not about every state the model produces, and an exact-answer-token probe scored against the same prompt-feature baseline is the direct extension.
 \end{enumerate}
 

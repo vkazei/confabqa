@@ -3,23 +3,23 @@
 
 The picture is more model-dependent than the ConfabQA single-seed
 reading suggested. The disconfounded within-stratum margins are small on
-all three models (single digits against the strongest prompt baseline,
-one cell negative); the bootstrap leaves the Qwen and Gemma cells
+all three models: single digits against the strongest prompt baseline,
+one cell negative. The bootstrap leaves the Qwen and Gemma cells
 consistent with zero, and Llama's within-stratum cells are suggestive
 rather than established (Section 8.1). Llama's powered evidence is the
 external-dataset margins, whose CIs sit far from zero under either label
-regime, partitioned by Section 8.2 into mostly genuine correct-vs-wrong
+regime. Section 8.2 partitions them into mostly genuine correct-vs-wrong
 discrimination, a smaller refusal-channel share, and an independent
 clean abstention direction besides.
 
 \textbf{A tempting over-generalization, rejected.} The Qwen3-1.7B
 results alone would support the framing ``the hidden-state correctness
 probe adds nothing beyond a prompt-text classifier at \(1.7\)B--\(3\)B
-scale''; on balanced external subsamples Llama's correctness probe adds
-\(+17\)--\(+25\) pp over the strongest prompt baseline, 95\% CIs
-excluding \(0\) by \(13\)--\(21\) pp. The stronger reading that the
-refusal direction is the \emph{only} recoverable structure fails the
-same way: at \(3\)B Llama scale, both refusal and correctness directions
+scale.'' But on balanced external subsamples Llama's correctness probe
+adds \(+17\)--\(+25\) pp over the strongest prompt baseline, with 95\%
+CIs excluding \(0\) by \(13\)--\(21\) pp. The stronger reading, that the
+refusal direction is the \emph{only} recoverable structure, fails the
+same way: at \(3\)B Llama scale both refusal and correctness directions
 exist in legible form.
 
 \textbf{The robust positive result} (consolidated in Appendix F): the
@@ -27,14 +27,13 @@ refusal direction's logit lens recovers each model's literal
 refusal-opening vocabulary, the one-shot intervention saturates the
 first-token opener rate on Qwen3 and Gemma, the Section 8.2 refusal
 probe extends the finding to PopQA and TriviaQA at Llama scale, and the
-geometry is visible in unsupervised PCA, while the Qwen3-1.7B
-correctness direction fails all three corresponding tests. \textbf{Why
-two atlases on Llama and one on Qwen} (Appendix F): the most plausible
-mechanism is Llama's heavier calibrated-abstention training, with the
-Qwen3-4B control ruling out parameter count. \textbf{Implication}
-(expanded in Appendix F): probes reporting \(\sim 80\)--\(90\%\)
-correctness prediction should be re-evaluated against a prompt-feature
-baseline, and the outcome is sharply model-dependent, so headline
-small-LM claims need at least two architectures with different
-post-training recipes and bootstrap CIs on balanced subsamples.
-
+geometry is visible in unsupervised PCA. The Qwen3-1.7B correctness
+direction fails all three corresponding tests. \textbf{Why two atlases
+on Llama and one on Qwen} (Appendix F): the most plausible mechanism is
+Llama's heavier calibrated-abstention training, with the Qwen3-4B
+control ruling out parameter count. \textbf{Implication} (expanded in
+Appendix F): probes reporting \(\sim 80\)--\(90\%\) correctness
+prediction should be re-evaluated against a prompt-feature baseline. The
+outcome is sharply model-dependent, so headline small-LM claims need at
+least two architectures with different post-training recipes and
+bootstrap CIs on balanced subsamples.

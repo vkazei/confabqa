@@ -1,14 +1,14 @@
 % ===== 2. Theoretical background =====
 \section{2. Theoretical background}\label{theoretical-background}
 
-The subject models are decoder-only transformers with causal attention:
-the final-layer state at the last position is projected through the
+The subject models are decoder-only transformers with causal attention.
+The final-layer state at the last position is projected through the
 language-model (LM) head onto the vocabulary \(\mathcal{V}\), and
 generation feeds each emitted token back as input (Figure
-\ref{fig:tokenflow}a, Appendix B.6); the \emph{prefill} pass (Figure
-\ref{fig:tokenflow}b), the single forward pass over the prompt alone
-before any token is generated, is the pass the probes read. Qwen3-1.7B
-instantiates this with \(L = 28\) blocks, hidden size \(d = 2048\), and
+\ref{fig:tokenflow}a, Appendix B.6). The probes read the \emph{prefill}
+pass (Figure \ref{fig:tokenflow}b): the single forward pass over the
+prompt alone, before any token is generated. Qwen3-1.7B instantiates
+this with \(L = 28\) blocks, hidden size \(d = 2048\), and
 \(|\mathcal{V}| \approx 152{,}000\) tokens with tied input/output
 embeddings (checkpoint and settings in §4).
 
@@ -17,26 +17,26 @@ embeddings (checkpoint and settings in §4).
 entropy}\label{confidence-metrics-log-probability-and-entropy}
 
 Two scalar confidence summaries of the generated response recur in §5,
-both means over the generated positions: \(\bar\ell\), the mean
-log-probability of the emitted (argmax) tokens, so that
-\(\exp(\bar\ell)\) is the geometric mean of the per-token probabilities
-(\(\bar\ell = -0.05\) corresponds to \(\approx 0.95\) per token), and
-\(\bar H\), the mean Shannon entropy of the next-token distribution;
-all generation is greedy (\texttt{do\_sample=False}, deterministic), so
-the emitted token is the mode. Formal definitions (Eq.~\eqref{eq:lbar}),
-the worst-step diagnostic \(\min_t \ell_t\), and the empirical
-anti-correlation of the two are in Appendix B.6.
+both means over the generated positions. \(\bar\ell\) is the mean
+log-probability of the emitted (argmax) tokens, so \(\exp(\bar\ell)\) is
+the geometric mean of the per-token probabilities (\(\bar\ell = -0.05\)
+corresponds to \(\approx 0.95\) per token). \(\bar H\) is the mean
+Shannon entropy of the next-token distribution. All generation is greedy
+(\texttt{do\_sample=False}, deterministic), so the emitted token is the
+mode. Formal definitions (Eq.~\eqref{eq:lbar}), the worst-step
+diagnostic \(\min_t \ell_t\), and the empirical anti-correlation of the
+two are in Appendix B.6.
 
 % ----- 2.2 The prefill hidden state as the canonical going-in representation -----
 \subsection{2.2 The prefill hidden state as the canonical going-in
 representation}\label{the-prefill-hidden-state-as-the-canonical-going-in-representation}
 
 The \emph{prefill} pass over the prompt \(x_{1:T}\) produces the full
-hidden-state tensor; I pick off the \textbf{hidden state at every layer
+hidden-state tensor. I pick off the \textbf{hidden state at every layer
 at the last prompt position}, \(\{h^{(\ell)}_T\}_{\ell=0}^{L}\), of
 shape \((L+1, d) = (29, 2048)\) per question. Nothing has been generated
 yet, so this is the model's representation \emph{immediately before it
-commits to the answer} (Figure \ref{fig:tokenflow}b): it summarizes the
+commits to the answer} (Figure \ref{fig:tokenflow}b). It summarizes the
 whole prompt, sits one linear projection from the first answer token's
 logits (Section 4), and avoids the contamination of probing generated
 tokens' states (expanded rationale in Appendix B.6).
@@ -46,13 +46,13 @@ tokens' states (expanded rationale in Appendix B.6).
 use)}\label{why-a-linear-probe-and-the-specific-pipeline-i-use}
 
 Following \citet{alain2017probes}, I fit at each layer \(\ell\) a binary
-linear classifier on \(\{h^{(\ell)}_T\}\); accuracy substantially above
+linear classifier on \(\{h^{(\ell)}_T\}\). Accuracy substantially above
 the appropriate baseline implies a hyperplane separates the property at
-depth \(\ell\), while whether the model \emph{uses} that direction is a
+depth \(\ell\). Whether the model \emph{uses} that direction is a
 separate question. The pipeline is
 \texttt{StandardScaler\ -\textgreater{}\ PCA(n\_components=16)\ -\textgreater{}\ LogisticRegression(max\_iter=2000,\ C=1.0)}
 under 5-fold stratified CV with \texttt{random\_state=0}, reported as
-mean and per-fold std of accuracy; scaler and PCA are fit only on the
+mean and per-fold std of accuracy. Scaler and PCA are fit only on the
 training fold, so no test-fold leakage occurs (overfit rationale and
 schematic in Appendix B.6/B.7, Figure \ref{fig:pipeline}). Appendix D.1
 sweeps \(n_{\mathrm{components}}\) over \(\{4, 8, 16, 32, 48, 64\}\) to
@@ -66,23 +66,22 @@ evidence}\label{the-two-confounds-and-what-counts-as-evidence}
 pre-cutoff plus post-cutoff questions makes ``correct'' and
 ``pre-cutoff'' nearly the same label, so a correctness classifier is in
 effect a cutoff classifier (``this question mentions 2025''). ConfabQA
-disconfounds with \emph{obscure pre-cutoff} questions (facts in the
-training data the model still gets wrong), so pre-cutoff no longer
+disconfounds with \emph{obscure pre-cutoff} questions, facts in the
+training data the model still gets wrong, so pre-cutoff no longer
 implies correct (keeping only pre-cutoff questions would also remove the
-refusals; Section 5.1); the disconfound test fits the correctness probe
+refusals; Section 5.1). The disconfound test fits the correctness probe
 restricted to pre-cutoff items, where accuracy above the pre-cutoff
 majority cannot be explained by the cutoff variable.
 
 \textbf{Confound 2 (hidden state/prompt features).} A probe that beats
 its majority baseline might still be reading question-text features any
 classifier could extract: year, domain, length, keywords. The honest
-baseline is a logistic regression on prompt-side features alone
-(roster in Section 4, specification in Appendix B.7, schematic in
-Figure \ref{fig:baselines}, Appendix B.6); a hidden-state probe is
-evidence of model-internal information only to the extent it beats this
-baseline outside per-fold noise (\(h_{\rm adds}\) = probe peak \(-\)
-strongest baseline, in pp, reported throughout \S\S5--8). This is the
-control the probing literature most often omits: it distinguishes ``the
-hidden state encodes self-knowledge'' from ``the hidden state encodes
-the prompt, which encodes the answer.''
-
+baseline is a logistic regression on prompt-side features alone (roster
+in Section 4, specification in Appendix B.7, schematic in Figure
+\ref{fig:baselines}, Appendix B.6). A hidden-state probe is evidence of
+model-internal information only to the extent it beats this baseline
+outside per-fold noise (\(h_{\rm adds}\) = probe peak \(-\) strongest
+baseline, in pp, reported throughout \S\S5--8). This is the control the
+probing literature most often omits: it distinguishes ``the hidden state
+encodes self-knowledge'' from ``the hidden state encodes the prompt,
+which encodes the answer.''

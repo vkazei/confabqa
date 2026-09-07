@@ -42,9 +42,7 @@ scaling control, with \(K=30\) balanced-subsample bootstrap CIs across
 
 The methodological contribution is the joint use of a prompt-feature
 baseline, \(50/50\) class-balanced subsampling, percentile-CI bootstraps
-over \(K=30\) such subsamples, and cross-model plus cross-dataset
-evaluation; a single-model, single-seed, class-imbalanced read of the
-same code could have reported either polarity. Directions for v2: (i)
+over \(K=30\) such subsamples, and cross-model plus cross-dataset evaluation. A single-model, single-seed, class-imbalanced read of the same code could have reported either polarity. Directions for v2: (i)
 swap the post-training recipe holding family fixed and check whether the
 cross-family \(h_{adds}\) gap survives at \(\gtrsim 7\)B; (ii) extend
 the one-shot intervention to a per-token steering vector \citep{turner2023actadd} and characterize the \(\alpha\) at which sustained pressure
@@ -55,9 +53,6 @@ outputs to close the bootstrap and judge-generalization gaps.
 \textbf{Code and data availability.}
 All code, the ConfabQA benchmark, judge labels, bootstrap outputs, SAE
 artifacts, and the figure-generation pipeline are released at
-\url{https://github.com/vkazei/confabqa} under MIT (code) and CC BY 4.0
-(data, paper, figures); activations and per-seed external-dataset
-responses are gitignored (multi-GB) but regenerable via the documented
-recipes. All experiments ran on a single Apple M1 Pro (16 GB) in
+\url{https://github.com/vkazei/confabqa} under MIT (code) and CC BY 4.0 (data, paper, figures). Activations and per-seed external-dataset responses are gitignored (multi-GB) but regenerable via the documented recipes. All experiments ran on a single Apple M1 Pro (16 GB) in
 bfloat16 with per-script seeds documented at the top of each file.
 
