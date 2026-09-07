@@ -13,7 +13,7 @@ model does not recognize as wrong. Can we read that choice off the
 hidden state, and steer it? \citet{kadavath2022know} argued that LLMs
 ``mostly know what they know''; a probing literature followed
 \citep{azaria2023internal, marks2024geometry, orgad2024show, kossen2024semantic}, fitting linear
-classifiers on hidden states (diagnostic classifiers; \citealp{alain2017probes}) and reporting correctness-prediction
+classifiers, or \emph{probes}, on the hidden state to predict a label (diagnostic classifiers; \citealp{alain2017probes}), and reporting correctness-prediction
 accuracies in the \(80\)--\(90\%\) range. A
 high probe accuracy is not by itself evidence that the hidden state
 knows anything. In adjacent settings, recent work traces above-chance
@@ -27,7 +27,7 @@ predicts remain rare in the correctness-probing literature, where
 time-sensitive question sets routinely conflate ``post-cutoff'' with
 ``model doesn't know.'' Refusal steering by a single direction has been shown for safety refusal \citep{arditi2024refusal} and for entity knowledge, via entity-recognition latents in Gemma-2 SAEs \citep{ferrando2025entity}. \citet{wollschlager2025geometry} subsequently showed that safety refusal is mediated by a cone of directions rather than a single one, several of them representationally independent and each sufficient for steering; attribution-graph analysis of Claude 3.5 Haiku \citep{lindsey2025biology} locates hallucination in a default ``can't answer'' pathway that known-entity features suppress, the same organization \citeauthor{ferrando2025entity} report for Gemma 2. I ask whether a single direction likewise converts most confabulations into refusals: epistemic abstention on facts the model never learned.
 
-I map the geometry of this decision with linear probes, a sparse
+I map the geometry of this decision with these probes, a sparse
 autoencoder, and direct optimization of intervention directions, and
 test whether steering along the recovered directions turns
 confabulations into refusals, under controls that isolate the hidden
