@@ -1,0 +1,95 @@
+% ===== 4. Methods =====
+\section{4. Methods}\label{methods}
+
+\textbf{Subject model and generation.} Qwen3-1.7B
+(\texttt{Qwen/Qwen3-1.7B}; \citealp{qwen2025qwen3}), a 1.72B-parameter
+text-only instruction-tuned decoder-only transformer (Apache 2.0), 28
+blocks, hidden dimension 2048, run in bfloat16 on Apple Silicon MPS in
+16 GB unified memory; greedy decoding throughout
+(\texttt{do\_sample=False}, \texttt{max\_new\_tokens=64},
+\texttt{enable\_thinking=False}, suppressing Qwen3's
+\texttt{\textless{}think\textgreater{}} trace), so all generations are
+deterministic conditional on the prompt.
+
+\textbf{Hidden-state capture.} Each question runs
+\texttt{model.generate(...)} with \texttt{output\_hidden\_states=True}
+and \texttt{output\_scores=True}, persisting one \((L+1, d) =
+(29, 2048)\) prefill tensor per question. One indexing fact matters
+downstream: entries \(1..L{-}1\) of the returned stack are raw
+post-block residuals, but the final entry (index \(L = 28\)) is the
+\emph{final normed} state (HF applies the last RMSNorm before recording
+it), so the probes read the normed state at ``layer 28'' while the
+Section 6.2/6.3.1 hooks and the SAE operate on the pre-norm
+post-block-27 residual.
+
+\textbf{Same-model judge.} Each generated answer is labeled by
+Qwen3-1.7B itself, called separately with a structured prompt
+(\texttt{judge.py}) asking for one of \texttt{correct},
+\texttt{refusal}, or \texttt{wrong} (decision rule, worked examples, and
+parser in Appendix B.1); the judge replaces the brittle substring-match
+grader used in earlier work.
+
+Judge agreement is measured on the full benchmark by three LLM
+annotators applying the same three-way rule strictly (Table
+\ref{tbl:judge}, Appendix B.3): the Qwen3-1.7B judge, Claude Opus 4.7 on
+a stratified \(30\)-item sample, and Google Deep Research (DR; Gemini
+3.1 Pro with web-search verification) covering all \(784\). DR vs.~the
+Qwen-judge gives \(\kappa = 0.78\), ``substantial agreement'' \citep{landis1977agreement}; Claude agrees \(30/30\), bounding the Qwen-judge's
+disagreement with a second independent grader at \(\le 10\%\) at
+\(95\%\) confidence by the rule of three; DR is systematically
+stricter, reflecting its containment rule and gold verification rather
+than judge miscalibration (decomposition and retained flagged-premise
+items in Appendix B.3). A sensitivity rerun under the DR labels keeps
+the picture, and a blind Claude-family regrade of the Section 6
+intervened generations agrees with the self-judge without inflating flip
+rates (both in Appendix B.3).
+
+\textbf{Hidden-state probe pipeline.} For each binary target and layer,
+the Section 2.3 pipeline is fit on the last-prompt-token states at that
+depth, reported as mean and std of fold accuracy plus a ``layer range'',
+the set of layers within \(1\sigma\) of the peak.
+
+\textbf{Prompt-feature baseline pipeline.} For each target, I also fit
+baselines with no access to the hidden state, reporting 5-fold CV
+accuracy on the \emph{same folds} (\texttt{random\_state=0}). Four
+baselines of increasing leniency: \textbf{TF-IDF} (bag-of-tokens
+logistic regression on the raw question text); \textbf{text-only}
+(engineered numeric features); \textbf{text + domain} (adds the domain
+one-hot); and \textbf{text + domain + category} (adds the
+\emph{annotator's} expected-difficulty dummy, the least conservative
+baseline; for the \texttt{cutoff} target it is excluded from the
+strongest-baseline comparison, since the dummy would be the label
+itself). Full feature lists and hyperparameters are in Appendix B.7. The
+honest comparison is the hidden-state probe vs.~the \emph{strongest} of
+the four on each target: the ``h adds'' column of Table \ref{tbl:hadds} in Appendix A.5.
+
+\textbf{Probe targets.} \texttt{correct} (all 784 items);
+\texttt{cutoff} (post vs.~pre, all 784); \texttt{refusal\_vs\_wrong}
+(the \texttt{\{refusal,\ wrong\}} subset, n=549);
+\texttt{refusal\_vs\_wrong\_within\_post} (n=393; all 147 refusals are
+post-cutoff, so this conditions out the cutoff covariate);
+\texttt{correct\_within\_pre} (n=296, the cutoff disconfound test); and
+\texttt{correct\_within\_obscure} (n=153, the popularity disconfound
+test).
+
+\textbf{Bootstrap protocol (Sections 8.1, 8.2).} For each
+\texttt{(dataset,\ model,\ target)} cell, draw \(K = 30\) random 50/50
+class-balanced subsamples without replacement; each refits the full
+probe pipeline (peak over all \(29\) layers) plus the four prompt
+baselines on the same folds, and \(\bar h_{\rm adds}\) is reported with
+a percentile 95\% CI (class-size rule, CI construction, and compute
+bounds in Appendix E). One asymmetry when reading small margins: the
+probe side maximizes over \(29\) correlated layers, the baseline side
+over four, so under a no-signal null the expected \(h_{\rm adds}\) is
+slightly positive; margins within a couple of points of zero carry this
+selection bias.
+
+\textbf{External-dataset evaluation (Section 8.1).} \textbf{PopQA}
+\citep{mallen2023popqa} and \textbf{TriviaQA} \citep{joshi2017triviaqa} run
+end-to-end through the same generation pipeline and three-way
+Qwen3-1.7B judge, \(n=800\) per seed (splits, strata, seeds in Appendix
+E); three seeds per \texttt{(subject\ model,\ dataset)} widen the pool
+to \(n_{\text{unique}} \approx 2{,}200\), Llama runs are single-seed
+(\(n_{\text{unique}} = 800\)), and the judge remains Qwen3-1.7B in all
+runs (Section 10 records the Qwen-judge-on-Llama-outputs caveat).
+

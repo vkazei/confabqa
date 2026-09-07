@@ -1,0 +1,63 @@
+% ===== 11. Conclusion and future work =====
+\section{11. Conclusion and future
+work}\label{conclusion-and-future-work}
+
+I introduce \textbf{ConfabQA} and apply it, plus PopQA and TriviaQA
+samples, to three instruction-tuned models and a Qwen3-4B within-family
+scaling control, with \(K=30\) balanced-subsample bootstrap CIs across
+\(14\) \texttt{(dataset,\ model,\ target)} cells. Findings:
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  \textbf{The hidden state encodes a refusal-vs-confabulation signal
+  that beats prompt features across all three models} (ConfabQA
+  \(+7.4\)--\(+16.3\) pp; deepest layers; the logit lens recovers each
+  model's literal refusal-opening vocabulary; causal under a one-shot
+  forward-hook intervention on Qwen and Gemma; on Llama the sweep ran at
+  \(\approx 8\times\) its remeasured state norm and is directional
+  evidence only).
+\item
+  \textbf{The correctness-probe gap is sharply model-dependent.} On
+  balanced PopQA / TriviaQA subsamples Llama 3.2 3B adds \(+24.9\) and
+  \(+21.3\) pp over the strongest prompt baseline (95\% CIs
+  \([20.6, 29.0]\), \([19.5, 22.9]\)) where Qwen3-1.7B adds \(+4.4\) and
+  \(+9.6\) pp (CIs \([2.1, 6.5]\), \([5.1, 13.8]\)); Llama's ConfabQA
+  disconfounded point estimates are also positive (\(+11.4\) pp
+  within-pre, \(+12.3\) pp within-obscure) though an item-level bootstrap
+  leaves both consistent with zero (Section 8.1). The ``correctness
+  probe reduces to prompt features at \(1.7\)--\(3\)B scale'' framing
+  was an over-generalization from one model.
+\item
+  \textbf{Llama's correctness signal is primarily not refusal-channel
+  readout:} dropping refusals leaves \(+20.8\) pp (PopQA) and
+  \(+17.7\) pp (TriviaQA), so \(\approx 83\%\) of the headline
+  \(h_{adds}\) is genuine factual self-knowledge among attempted items,
+  and a direct refusal probe additionally recovers
+  \(+18.4\)--\(+25.4\) pp, an independent clean abstention direction.
+  Llama at \(3\)B carries \textbf{two} linearly-decodable signals;
+  Qwen3-1.7B carries only weak versions of either at this scale and on
+  these benchmarks.
+\end{enumerate}
+
+The methodological contribution is the joint use of a prompt-feature
+baseline, \(50/50\) class-balanced subsampling, percentile-CI bootstraps
+over \(K=30\) such subsamples, and cross-model plus cross-dataset
+evaluation; a single-model, single-seed, class-imbalanced read of the
+same code could have reported either polarity. Directions for v2: (i)
+swap the post-training recipe holding family fixed and check whether the
+cross-family \(h_{adds}\) gap survives at \(\gtrsim 7\)B; (ii) extend
+the one-shot intervention to a per-token steering vector \citep{turner2023actadd} and characterize the \(\alpha\) at which sustained pressure
+flips the full output before fluency degrades; (iii) add an item-level
+non-parametric bootstrap and an independent human annotator on Llama
+outputs to close the bootstrap and judge-generalization gaps.
+
+\textbf{Code and data availability.}
+All code, the ConfabQA benchmark, judge labels, bootstrap outputs, SAE
+artifacts, and the figure-generation pipeline are released at
+\url{https://github.com/vkazei/confabqa} under MIT (code) and CC BY 4.0
+(data, paper, figures); activations and per-seed external-dataset
+responses are gitignored (multi-GB) but regenerable via the documented
+recipes. All experiments ran on a single Apple M1 Pro (16 GB) in
+bfloat16 with per-script seeds documented at the top of each file.
+

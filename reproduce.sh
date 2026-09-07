@@ -33,6 +33,7 @@ if [[ "$MODE" == "arxiv" ]]; then
   rm -rf arxiv_pkg && mkdir -p arxiv_pkg
   cp tex/paper_confabqa.tex tex/preamble.tex tex/refs.bib arxiv_pkg/
   cp -R tex/figures arxiv_pkg/figures
+  cp -R tex/sections arxiv_pkg/sections   # per-section \input files
   (cd arxiv_pkg \
     && xelatex -interaction=nonstopmode paper_confabqa.tex >/dev/null \
     && bibtex paper_confabqa >/dev/null \
@@ -49,7 +50,7 @@ if [[ "$MODE" == "arxiv" ]]; then
   (cd arxiv_pkg \
     && rm -f paper_confabqa.aux paper_confabqa.log paper_confabqa.out paper_confabqa.blg \
     && tar czf ../arxiv_upload.tar.gz \
-         paper_confabqa.tex preamble.tex refs.bib paper_confabqa.bbl figures/)
+         paper_confabqa.tex preamble.tex refs.bib paper_confabqa.bbl sections/ figures/)
   echo "== arxiv_upload.tar.gz ready; test-compiled PDF at arxiv_pkg/paper_confabqa.pdf =="
   exit 0
 fi

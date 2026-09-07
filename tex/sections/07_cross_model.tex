@@ -1,0 +1,76 @@
+% ===== 7. Cross-model results =====
+\section{7. Cross-model results}\label{cross-model-results}
+
+Do the Qwen3-1.7B findings survive a change of model? This section
+reruns the full pipeline on \textbf{Gemma 2 2B}
+(\texttt{unsloth/gemma-2-2b-it}) and \textbf{Llama 3.2 3B}
+(\texttt{unsloth/Llama-3.2-3B-Instruct}), then the causal intervention
+with each model's own recovered refusal direction.
+
+% ----- 7.1 Comparison (Qwen3-1.7B, Gemma 2 2B, Llama 3.2 3B) -----
+\subsection{7.1 Comparison (Qwen3-1.7B, Gemma 2 2B, Llama 3.2
+3B)}\label{comparison-qwen3-1.7b-gemma-2-2b-llama-3.2-3b}
+
+All outputs are graded by the same judge (Qwen3-1.7B) for a
+standardized correctness threshold; Table \ref{tbl:crossmodel}
+(Appendix D.5) compiles the key statistics, alongside the per-layer
+probe curves for all three models (Figure
+\ref{fig:comparative-probes}).
+
+The three models reach nearly identical overall accuracy
+(\(30\)--\(32\%\)) but adopt sharply different abstention policies on
+post-cutoff questions: Llama refuses almost every post-cutoff failure
+(\(97.5\%\), \(475/487\)), Qwen only about a third, Gemma in between;
+this behavioral axis, not accuracy, is what the refusal probes track.
+The correctness margins collapse to a few percentage points against the
+``+category'' baseline on all three models (Section 5.6's confound,
+cross-model; depth-band detail in Appendix D.5), while refusal is the
+axis on which the three most cleanly separate: the refusal-vs-wrong
+probe beats the strongest prompt baseline by \(+7.4\) pp (Qwen),
+\(+16.3\) pp (Gemma), and \(+2.2\) pp (Llama), peaking in the deepest
+layers on Qwen and Llama (layer \(28\)) and at layer \(19\) on Gemma,
+the late-layer localization the Section 7.2 intervention exploits.
+
+
+% ----- 7.2 Causal intervention -----
+\subsection{7.2 Causal intervention}\label{causal-intervention}
+
+The Section 6.2 protocol applied to Gemma 2 2B and Llama 3.2 3B, using
+each model's own recovered refusal direction at its own probe peak layer
+(Gemma: 19; Llama: 28); judge = Qwen3-1.7B for all three runs (Gemma's
+chat template lacks a system role and cannot self-judge), and \(\alpha\)
+ranges are calibrated per model to its hidden-state scale (Table
+\ref{tbl:scales}, Appendix C). The order-of-magnitude spread in
+operational \(\alpha\) is itself a finding: the refusal direction is
+causal in each model, but its operational range is set by the model's
+hidden-state scale and tolerance to off-manifold perturbation.
+
+\textbf{Gemma 2 2B}, whose refusal probe carried the largest margin
+over its prompt baseline, is also the most manipulable: the
+wrong-to-refusal flip reaches \(0\% \to 87\%\) (vs.~Qwen3's
+\(0\% \to 30\%\)) at the sweet-spot \(\alpha = +2000\) with \(100\%\)
+opener rate (sweep and off-manifold pathologies in Table
+\ref{tbl:gemmasweep}, Appendix C).
+
+\textbf{Llama 3.2 3B}'s near-saturated default refusal policy
+(\(97.5\%\) of post-cutoff failures) leaves only \(n=12\) confabulating
+items, insufficient for a clean directional-causal claim. Its tightly normalized hidden state goes off-manifold symmetrically at
+\(|\alpha| \ge 300\). The cleanest directional signal is the reverse: the refusal rate drops from \(100\%\) to \(80\%\) at
+\(\alpha = -300\) (\(3/15\) previously-refusing items committing to a
+confabulation), a \(-20\) pp shift that is real but small, consistent
+with Llama's \(+2.2\) pp refusal-probe margin (full sweep,
+pathologies, and examples in Appendix C). Because the recorded Gemma sweep ran at \(6\)--\(25\times\) its
+residual scale, a sub-norm rerun with controls was added. At
+\(0.31\times\)/\(0.92\times\) of Gemma's state norm the real direction
+converts \(30\%\)/\(40\%\) of wrong items to judged refusals,
+monotonically in dose, versus \(3\)--\(20\%\) for two norm-matched
+random directions (cleanest at \(0.31\times\): \(30\%\) vs.\
+\(3\)--\(7\%\)). Gemma's refusals themselves resist sub-norm
+de-refusal (\(26\)--\(30/30\) hold; artifact
+\texttt{17\_intervention\_gemma\_subnorm}). The intervention is thus
+causal in Qwen and Gemma at doses at or below their state norms, with
+random-direction controls on both, and directionally suggestive on
+Llama; a model's default abstention policy bounds both the
+\emph{signal magnitude} of its refusal-vs-wrong probe and the
+\emph{operational dynamic range} of the intervention.
+

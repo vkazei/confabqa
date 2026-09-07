@@ -51,7 +51,7 @@ See [`data/QUESTIONS_v1_CARD.md`](data/QUESTIONS_v1_CARD.md) for the full datase
 ## Repository layout
 
 ```
-tex/                                     Paper source (paper_confabqa.tex, preamble, refs.bib, figures)
+tex/                                     Paper source (paper_confabqa.tex main file, sections/, preamble, refs.bib, figures)
 paper_confabqa.pdf                       Built paper PDF (from tex/)
 
 01_question_set.py                       ConfabQA generator + validation-prompt emitter

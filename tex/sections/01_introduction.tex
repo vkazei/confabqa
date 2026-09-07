@@ -1,0 +1,96 @@
+% ===== 1. Introduction =====
+\section{1. Introduction}\label{introduction}
+
+When a small language model (SLM) is asked a factual question about
+something it never learned, it either refuses or answers anyway. A
+fraction of those answers happen to be correct; the rest are
+confabulations: fluent, confident, and wrong.
+The term, argued for over ``hallucination'' by
+\citet{smith2023confabulation} and adopted in the machine-learning
+literature by \citet{farquhar2024semantic}, names pattern-based
+reconstruction the
+model does not recognize as wrong. Can we read that choice off the
+hidden state, and steer it? \citet{kadavath2022know} argued that LLMs
+``mostly know what they know''; a probing literature followed
+\citep{azaria2023internal, marks2024geometry, orgad2024show, kossen2024semantic}, fitting linear
+classifiers on hidden states (diagnostic classifiers; \citealp{alain2017probes}) and reporting correctness-prediction
+accuracies in the \(80\)--\(90\%\) range. A
+high probe accuracy is not by itself evidence that the hidden state
+knows anything. In adjacent settings, recent work traces above-chance
+accuracy to the prompt rather than the model's internal state:
+introspection \citep{singh2026introspect} and reasoning mode
+\citep{sahoo2026linear}. A confabulation probe faces the same question.
+Does it read the model's state, or the question?
+
+Controls that separate hidden-state signal from what the prompt alone
+predicts remain rare in the correctness-probing literature, where
+time-sensitive question sets routinely conflate ``post-cutoff'' with
+``model doesn't know.'' Refusal steering by a single direction has been shown for safety refusal \citep{arditi2024refusal} and for entity knowledge, via entity-recognition latents in Gemma-2 SAEs \citep{ferrando2025entity}. \citet{wollschlager2025geometry} subsequently showed that safety refusal is mediated by a cone of directions rather than a single one, several of them representationally independent and each sufficient for steering; attribution-graph analysis of Claude 3.5 Haiku \citep{lindsey2025biology} locates hallucination in a default ``can't answer'' pathway that known-entity features suppress, the same organization \citeauthor{ferrando2025entity} report for Gemma 2. I ask whether a single direction likewise converts most confabulations into refusals: epistemic abstention on facts the model never learned.
+
+I map the geometry of this decision with linear probes, a sparse
+autoencoder, and direct optimization of intervention directions, and
+test whether steering along the recovered directions turns
+confabulations into refusals, under controls that isolate the hidden
+state's own contribution. I introduce \textbf{ConfabQA}, a probing benchmark of 4 domains
+\(\times\) 3 categories (well-known pre-cutoff, \emph{obscure}
+pre-cutoff, post-cutoff); the third category, items whose answers were
+in the training data but which the model is expected to fail, populates
+the cell standard pre-vs-post-cutoff designs leave empty, breaking the
+cutoff/correctness confound. ConfabQA, plus 800-item samples of PopQA
+\citep{mallen2023popqa} and TriviaQA \citep{joshi2017triviaqa}, run through three
+instruction-tuned models in the \(1.7\)--\(3\)B range (Qwen3-1.7B,
+Gemma 2 2B, Llama 3.2 3B) with Qwen3-4B as a within-family scaling
+control; every probe is scored against both the majority baseline and a
+stricter question-text baseline, the control that decides whether the
+hidden state contributed anything.
+
+\textbf{Findings.} Two complementary results emerge:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \emph{Refusal vs.~confabulation is a model-internal feature: each
+  model linearly encodes its own upcoming speech act.} On the
+  wrong+refusal subset of ConfabQA the late-layer probe beats the
+  strongest prompt baseline on every model: \(+7.4\) pp on Qwen3-1.7B,
+  \(+16.3\) pp on Gemma 2 2B, \(+2.2\) pp on Llama 3.2 3B (the Llama margin
+  is within fold-to-fold spread; its powered counterpart is the
+  Section 8.2 refusal-channel gap). That some such signal exists is
+  natural (the label is the model's own output decision); the findings
+  are its \emph{form}: a single linear direction in the late layers
+  (Gemma peaks mid-network, at 19 of 26), causally sufficient for the
+  first-token refusal opening, and decomposable. A one-shot hidden-state
+  intervention drives the first-token refusal-opener rate to \(100\%\)
+  on Qwen3 and Gemma (Sections 6.2 and 7.2), though on Qwen3 only about a third of these openings complete as judged refusals, the rest reverting to content (Gemma completes \(87\%\) at a super-norm dose and \(30\)--\(40\%\) at sub-norm); closing that gap is left to future work. This replicates \citeauthor{arditi2024refusal}'s (\citeyear{arditi2024refusal}) single-direction finding in the
+  epistemic-abstention rather than safety-refusal regime, with the cutoff
+  variable controlled by construction (mean-difference steering lineage:
+  \citealp{panickssery2024caa}; answerability readable from pre-generation
+  states: \citealp{slobodkin2023curious}; known-unknowns benchmarks:
+  \citealp{yin2023know}). The contribution is the cutoff control, the causal
+  completion, and the decomposition. A sparse-autoencoder resolves the
+  direction into a deferential-register ensemble (canonical refusal-opener
+  plus apology, officialese, and hedging registers; Section 6.3), of which
+  the opener feature alone flips \(30/30\) wrong-item next-token argmaxes
+  to refusal openers. The reverse search finds no counterpart: no
+  concentrated dictionary feature or token signature picks out
+  confabulation, which behaves as the default attempt pathway missing a
+  fact (Section 6.3).
+\item
+  \emph{Llama 3.2 3B carries a substantially larger and more general
+  correctness signal than Qwen3-1.7B or Gemma 2 2B.} On balanced PopQA /
+  TriviaQA subsamples, Llama's probe beats the prompt baseline by
+  \(+21\)--\(+25\) pp, \(5.7\times\) and \(2.2\times\) Qwen's margins on
+  the same benchmarks. Three controls localize the source: not parameter
+  count (the Qwen3-4B scaling control moves the margin by less than
+  \(2\) pp; Section 8.1); not dataset-specific overfit (Llama keeps
+  \(\approx 81\%\) of its margin under cross-dataset transfer without
+  refit, where Qwen's and Gemma's transfer collapses; Section 8.3); not
+  refusal-channel readout (\(\approx 83\%\) survives dropping refusals,
+  and an independent refusal probe adds a further \(+18\)--\(+25\) pp
+  gap; Section 8.2). Gemma is behaviorally intermediate, yet its
+  correctness probe is the most dataset-local of the three; the most
+  plausible single explanation is Llama's heavy calibrated-abstention
+  training forcing a content-invariant ``model is uncertain''
+  representation that neither Qwen3's nor Gemma's training developed.
+\end{enumerate}
+
