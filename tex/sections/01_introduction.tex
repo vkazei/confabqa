@@ -1,22 +1,20 @@
 % ===== 1. Introduction =====
 \section{1. Introduction}\label{introduction}
 
-When a small language model (SLM) is asked a factual question about
-something it never learned, it either refuses or answers anyway. A
-fraction of those answers happen to be correct; the rest are
+Confabulation is pattern-based reconstruction the not recognized as wrong, 
+term better expressing nature of answers of language models (LMs) then "hallucination" \citep{smith2023confabulation, farquhar2024semantic}. 
+When a small LM (SLM) is asked a factual question about
+something it never learned, it has a \emph{choice} to refuse or answers anyway.
+A fraction of those answers happen to be correct; the rest are
 confabulations: fluent, confident, and wrong.
-The term, argued for over ``hallucination'' by
-\citet{smith2023confabulation} and adopted in the machine-learning
-literature by \citet{farquhar2024semantic}, names pattern-based
-reconstruction the
-model does not recognize as wrong. Can we read that choice off the
+Can we read that \emph{choice} off the
 hidden state, and steer it? \citet{alain2017probes} introduced diagnostic linear classifiers, or
 \emph{probes}, to evaluate what a hidden state encodes. \citet{kadavath2022know}
 argued that LLMs ``mostly know what they know,'' and a correctness-probing
 literature followed
 \citep{azaria2023internal, marks2024geometry, orgad2024show, kossen2024semantic}, fitting probes to predict
-whether an answer will be right and reporting accuracies in the \(80\)--\(90\%\) range. A
-high probe accuracy is not by itself evidence that the hidden state
+whether an answer will be right and reporting accuracies in the \(80\)--\(90\%\) range.
+High probe accuracy is not by itself evidence that the hidden state
 knows anything. In adjacent settings, recent work traces above-chance
 accuracy to the prompt rather than the model's internal state:
 introspection \citep{singh2026introspect} and reasoning mode
@@ -26,9 +24,13 @@ Does it read the model's state, or the question?
 Controls that separate hidden-state signal from what the prompt alone
 predicts remain rare in the correctness-probing literature, where
 time-sensitive question sets routinely conflate ``post-cutoff'' with
-``model doesn't know.'' Refusal steering by a single direction has been shown for safety refusal \citep{arditi2024refusal} and for entity knowledge, via entity-recognition latents in Gemma-2 SAEs \citep{ferrando2025entity}. \citet{wollschlager2025geometry} subsequently showed that safety refusal is mediated by a cone of directions rather than a single one, several of them representationally independent and each sufficient for steering; attribution-graph analysis of Claude 3.5 Haiku \citep{lindsey2025biology} locates hallucination in a default ``can't answer'' pathway that known-entity features suppress, the same organization \citeauthor{ferrando2025entity} report for Gemma 2. I ask whether a single direction likewise converts most confabulations into refusals: epistemic abstention on facts the model never learned.
+``model doesn't know.'' Refusal steering by a single direction has been shown for safety refusal \citep{arditi2024refusal}.
+\citet{wollschlager2025geometry} showed that safety refusal can be steered by a set of directions. 
+For knowledge-based refusals, \citet{ferrando2025entity} found features corresponding to known entities suppress refusals on Gemma 2. 
+\citep{lindsey2025biology} confirmed this for Haiku 3.5 and further investigated the multi-step mechanics triggered by these features.
+I ask whether a single direction likewise converts most confabulations into refusals for the facts the model never learned.
 
-I map the geometry of this decision with these probes, a sparse
+I map the geometry of this decision with the probes, a sparse
 autoencoder, and direct optimization of intervention directions, and
 test whether steering along the recovered directions turns
 confabulations into refusals, under controls that isolate the hidden
