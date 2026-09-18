@@ -30,6 +30,27 @@ fi
 if [[ "$MODE" == "arxiv" ]]; then
   # The paper source of truth is tex/ (self-contained, TeX-Live fonts).
   echo "== Building the arXiv source package from tex/ (TeX-Live fonts only) =="
+
+  # Guard: every \cite key must resolve to a refs.bib entry. xelatex's
+  # "undefined" grep misses citations typed as literal text (the Chanin 2025
+  # incident), so diff keys used in the source against keys defined in refs.bib
+  # and fail loudly on any dangling citation.
+  used_keys=$(grep -rhoE '\\cite[a-zA-Z]*\*?(\[[^]]*\])*\{[^}]*\}' \
+                tex/paper_confabqa.tex tex/sections/*.tex \
+              | grep -oE '\{[^}]*\}$' | tr -d '{}' | tr ',' '\n' \
+              | sed 's/[[:space:]]//g' | grep -v '^$' | sort -u)
+  def_keys=$(grep -oE '^@[a-zA-Z]+\{[^,]+,' tex/refs.bib \
+             | sed -E 's/^@[a-zA-Z]+\{//; s/,[[:space:]]*$//' | sort -u)
+  missing=$(comm -23 <(printf '%s\n' "$used_keys") <(printf '%s\n' "$def_keys"))
+  if [[ -n "$missing" ]]; then
+    echo "ERROR: \\cite keys with no refs.bib entry (dangling citation):" >&2
+    printf '  %s\n' $missing >&2
+    exit 1
+  fi
+  unused=$(comm -13 <(printf '%s\n' "$used_keys") <(printf '%s\n' "$def_keys"))
+  [[ -n "$unused" ]] && { echo "note: refs.bib entries never cited:"; printf '  %s\n' $unused; }
+  echo "== citation-key check passed =="
+
   rm -rf arxiv_pkg && mkdir -p arxiv_pkg
   cp tex/paper_confabqa.tex tex/preamble.tex tex/refs.bib arxiv_pkg/
   cp -R tex/figures arxiv_pkg/figures
