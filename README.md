@@ -65,32 +65,82 @@ reproduce.sh                             One-command reproduction (figures | arx
 confabqa/                                Package interface to the frozen pipeline scripts
                                          (confabqa.analysis, confabqa.evaluation) + shared constants
 
-analysis/                                Bootstraps, refusal-channel tests, transfer, probes
+analysis/                                Bootstraps, attribution, transfer, direction recovery, interventions
+  # bootstraps, attribution, transfer (§8, App. E)
   bootstrap_h_adds.py                      K=30 balanced-subsample bootstrap on ConfabQA
   bootstrap_llama_external.py              Same protocol, Llama × {PopQA, TriviaQA}
   bootstrap_qwen3_4b.py                    Within-family scaling control on PopQA
   refusal_channel_test.py                  Test A (drop refusals) + Test B (probe refusal directly)
   cross_dataset_transfer.py                Train-on-A / test-on-B probe transfer (no refit)
+  small_cell_stats.py                      Item-level bootstrap + label-permutation null (App. E)
   run_all_comparisons.py                   Multi-model pipeline orchestrator
+  compile_comparison.py                    Cross-model probe curves + summary table (§7.1)
+  # refusal direction: recovery and lens (§6.1, App. D.4)
+  make_probe_direction_atlas.py            Probe direction in raw 2048-d units + logit lens
+  refusal_direction_meandiff.py            Difference-in-means recovery, compared with the probe
+  optimize_refusal_direction.py            Third recovery: direct optimization (§6.3.1)
+  correctness_direction_lens.py            Logit lens of the layer-18 correctness direction
+  # causal interventions and controls (§6.2, §7.2, App. C)
+  make_causal_intervention.py              One-shot push along the refusal direction (steering matrix)
+  analyze_intervention_results.py          Post-hoc analysis of the intervention sweep
+  intervene_correct_subset.py              Steering matrix on originally-correct items
+  intervene_three_directions.py            Parity rerun with the SAE-2191 and optimized directions
+  intervene_random_controls.py             Norm-matched random-direction + shuffled-probe controls
+  prefix_forcing_control.py                Force the opener without touching the hidden state
+  correctness_direction_intervention.py    Same protocol on the correctness direction (null result)
+  gemma_subnorm_sweep.py                   Gemma 2 2B sub-norm dose sweep + random controls
+  hidden_state_norms.py                    Layer-28 state-norm distribution (dose calibration)
+  llama_prenorm_norms.py                   Llama 3.2 3B pre-norm norms at its intervention hook
+  cache_prenorm_states.py                  Cache the true pre-norm layer-28 residuals (App. D.2)
+  # SAE follow-ups (§6.3, App. C / D.3)
+  sae_feature_refusal_rate.py              Judged refusal rate under the feature-2191 push
+  sae_apology_feature_test.py              Push the dormant apology feature 14034
+  pca_coverage_2191.py                     How much of feature 2191 the probe's PCA subspace sees
+  probe_2191_blend.py                      Does blending the probe with 2191 improve separation?
+  # robustness and sensitivity
+  make_robustness_check.py                 PCA-components sweep for the per-layer probe (App. D.1)
+  revision_analyses.py                     Pre-norm probe refit, DR-label sensitivity, SAE-residual probe
+  inspect_baselines.py                     Descriptive inspection of the prompt-feature baselines
+  rebalance_all_datasets.py                50/50 class-balanced rebalance test, all datasets
+  triviaqa_rebalance_50_50.py              Same, TriviaQA only
+  v13_fold_seed_sensitivity.py             CV fold-seed sensitivity across the three models
 
 external/                                PopQA / TriviaQA extension
   popqa_{prepare,evaluate,analyze}.py      PopQA (n=800 per seed)
   triviaqa_{prepare,evaluate,analyze}.py   TriviaQA (n=800 per seed)
   popqa_judge_only.py                      Standalone judge (used when subject + judge co-load OOMs)
+  triviaqa_judge_only.py                   Same, for TriviaQA responses
+  qwen3_4b_judge_only.py                   Judge-only pass for the Qwen3-4B PopQA run
+  triviaqa_compare_seeds.py                Seed-0 vs seed-1 TriviaQA runs side by side
+  triviaqa_compare_all.py                  Multi-seed TriviaQA comparison
 
 saes/                                    Sparse-autoencoder experiments (Qwen3-1.7B only)
   sae_test_reconstruction.py               Qwen-Scope SAE base→instruct transfer sanity check
   sae_layer_sweep.py                       Per-layer reconstruction-quality sweep
   sae_decompose_refusal.py                 Three-view SAE decomposition of refusal direction
+  sae_decompose_prenorm.py                 Same decomposition in the SAE's own (pre-norm) geometry
   sae_causal_ablation.py                   Causal validation: feature 2191 dose-response
+  sae_feature_neighbors.py                 Decoder-space neighbors of the §6.3 ensemble features
+  sae_feature_trajectories.py              Feature-space trajectories under hidden-state pushes
+  sae_wrong_features.py                    Which features fire on wrong responses (App. D.7)
 
 plots/                                   Figure generators
   figure_bootstrap_forest.py               14-cell forest plot
   figure_merge_per_layer_probes.py         Per-layer-probe comparison plot (paper §5.5)
   figure_{atlas,embeddings,confidence}_merged.py  Multi-channel scatter figures
   figure_sae_features.py                   SAE feature-card figure
+  make_atlas_figure.py                     Confabulation Atlas (supervised 2-D projection)
+  figure_direction_geometry.py             Two recoveries of the refusal direction in PCA(2)
+  figure_probe_sae_plane.py                Plane spanned by the probe direction and feature 2191
+  figure_direction_candidates.py           Six refusal-direction candidates: cosines + flip curves
+  figure_refusal_directions_3d.py          3-D view of the three recoveries + rotating GIF
+  figure_methods.py                        Three-panel methods schematic
+  figure_merge_arch_pipeline.py            Merge the architecture and probe-pipeline schematics
+  make_schematic_figures.py                Architecture + pipeline schematic figures
 
-tools/                                   Smoke test, judge regression check
+tools/                                   Developer checks
+  smoke_test.py                            Load the model, generate once, capture a hidden state
+  judge_regression.py                      Regression tests for the judge
 tests/                                   pytest sanity suite (dataset, judge, artifacts)
 data/                                    Question files, judge labels, response JSONs
 figures/                                 All paper figures (PNGs, JSONs, MDs)
