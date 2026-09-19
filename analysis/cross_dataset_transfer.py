@@ -25,7 +25,6 @@ Outputs:
 from __future__ import annotations
 
 import json
-import sys
 from pathlib import Path
 
 import numpy as np
@@ -191,7 +190,7 @@ def main():
         results["transfer"][f"layer{layer}"] = cross_matrix
 
     # Prompt-feature baseline cross-dataset (layer-independent — uses question text)
-    print(f"\n=== prompt-feature baseline (TF-IDF, layer-independent) ===")
+    print("\n=== prompt-feature baseline (TF-IDF, layer-independent) ===")
     prompt_cross = {}
     for tr_name, tr_items in datasets.items():
         prompt_cross[tr_name] = {}

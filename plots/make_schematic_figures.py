@@ -5,7 +5,6 @@
   figures/09_probe_pipeline.png      -- per-layer hidden-state extraction +
                                        StandardScaler -> PCA -> LogReg + 5-fold CV
 """
-import matplotlib.patches as mpatches
 import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib.patches import FancyArrowPatch, FancyBboxPatch, Rectangle

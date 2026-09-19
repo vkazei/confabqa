@@ -29,10 +29,7 @@ matches the 5-fold CV-mean reported in data/qwen3_1_7b_summary.json.
 """
 from __future__ import annotations
 
-import json
 import re
-import sys
-from pathlib import Path
 
 import numpy as np
 from sklearn.feature_extraction.text import TfidfVectorizer
@@ -199,7 +196,7 @@ def inspect_engineered(sub, y, target, include_domain, include_category, tag):
 def fmt_tfidf_table(result, side="positive"):
     rows = result["top_positive"] if side == "positive" else result["top_negative"]
     sign = "+" if side == "positive" else "-"
-    lines = [f"| rank | token | coef | tag |", f"|--:|---|--:|---|"]
+    lines = ["| rank | token | coef | tag |", "|--:|---|--:|---|"]
     for i, (tok, c, tag) in enumerate(rows, start=1):
         # escape pipes inside tokens
         safe = tok.replace("|", "\\|").replace("`", "\\`")
@@ -209,7 +206,7 @@ def fmt_tfidf_table(result, side="positive"):
 
 
 def fmt_engineered_table(result):
-    lines = [f"| feature | coef (standardized) | |coef| |", f"|---|--:|--:|"]
+    lines = ["| feature | coef (standardized) | |coef| |", "|---|--:|--:|"]
     for name, c in result["coef_by_magnitude"]:
         lines.append(f"| `{name}` | {c:+.4f} | {abs(c):.4f} |")
     return "\n".join(lines)
@@ -252,11 +249,11 @@ def render_markdown(tfidf_results, eng_results):
         tag_counts_neg = {}
         for _, _, tag in tfres["top_negative"]:
             tag_counts_neg[tag] = tag_counts_neg.get(tag, 0) + 1
-        out.append(f"**Tag distribution in top 30 positive tokens:** ")
+        out.append("**Tag distribution in top 30 positive tokens:** ")
         out.append(", ".join(f"{k}={v}" for k, v in sorted(tag_counts_pos.items(),
                                                             key=lambda kv: -kv[1])))
         out.append("\n\n")
-        out.append(f"**Tag distribution in top 30 negative tokens:** ")
+        out.append("**Tag distribution in top 30 negative tokens:** ")
         out.append(", ".join(f"{k}={v}" for k, v in sorted(tag_counts_neg.items(),
                                                             key=lambda kv: -kv[1])))
         out.append("\n\n")

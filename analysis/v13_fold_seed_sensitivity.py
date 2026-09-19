@@ -19,7 +19,6 @@ from __future__ import annotations
 
 import json
 import statistics
-import sys
 from pathlib import Path
 
 import numpy as np
@@ -31,7 +30,7 @@ from sklearn.model_selection import StratifiedKFold, cross_val_score
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
 
-from confabqa.analysis import prompt_features, prompt_feature_matrix
+from confabqa.analysis import prompt_feature_matrix
 
 MODELS = ["qwen3_1_7b", "gemma_2_2b", "llama_3_2_3b"]
 TARGETS = ["correct", "correct_within_pre", "correct_within_obscure"]

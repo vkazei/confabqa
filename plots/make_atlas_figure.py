@@ -25,7 +25,6 @@ probe uses to discriminate. Whatever separation is visible in the figure is the
 separation the probe sees, up to the small noise from orthogonalizing Y.
 """
 import json
-from pathlib import Path
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -147,7 +146,6 @@ def main():
 
     X = np.stack([r["last_prompt_hidden"][ATLAS_LAYER] for r in responses])
     y_correct = np.array([r["correct"] for r in responses], dtype=int)
-    y_refusal = np.array([r["judge_label"] == "refusal" for r in responses], dtype=int)
     y_judge = np.array([r["judge_label"] for r in responses])
     y_cat = np.array([r.get("category") or "unknown" for r in responses])
     y_dom = np.array([r["domain"] for r in responses])
@@ -181,7 +179,6 @@ def main():
         fontsize=12.5, y=0.995)
 
     bool_correct = y_correct.astype(bool)
-    bool_refusal = y_refusal.astype(bool)
 
     xlabel = (f"signed distance from correctness hyperplane "
               f"(5-fold CV acc {acc_x:.1%})")

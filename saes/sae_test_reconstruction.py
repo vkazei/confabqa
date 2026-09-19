@@ -74,7 +74,7 @@ def main():
     ev_per_item = 1 - mse / (var + 1e-9)
     cos = torch.nn.functional.cosine_similarity(X_t, recon, dim=1)
 
-    print(f"\n=== reconstruction quality ===")
+    print("\n=== reconstruction quality ===")
     print(f"  explained variance: mean={ev_per_item.mean().item():.4f}, "
           f"median={ev_per_item.median().item():.4f}, "
           f"min={ev_per_item.min().item():.4f}, max={ev_per_item.max().item():.4f}")
@@ -84,7 +84,7 @@ def main():
 
     # Sparsity
     active = (features > 0).float().sum(dim=1)
-    print(f"\n=== sparsity ===")
+    print("\n=== sparsity ===")
     print(f"  L0 (active features per item): mean={active.mean().item():.1f}, "
           f"median={active.median().item():.1f}, "
           f"max={active.max().item():.0f}, min={active.min().item():.0f}")
@@ -94,17 +94,16 @@ def main():
 
     # Verdict
     ev_mean = ev_per_item.mean().item()
-    cos_mean = cos.mean().item()
-    print(f"\n=== verdict ===")
+    print("\n=== verdict ===")
     if ev_mean >= 0.75:
         print(f"  PASS: explained variance {ev_mean:.2f} >= 0.75 threshold")
-        print(f"  Base->Instruct SAE transfer is acceptable. Proceed to feature attribution.")
+        print("  Base->Instruct SAE transfer is acceptable. Proceed to feature attribution.")
     elif ev_mean >= 0.5:
         print(f"  MARGINAL: explained variance {ev_mean:.2f} in [0.5, 0.75)")
-        print(f"  Transfer is partial. Try a different layer or accept a noisier decomposition.")
+        print("  Transfer is partial. Try a different layer or accept a noisier decomposition.")
     else:
         print(f"  FAIL: explained variance {ev_mean:.2f} < 0.5")
-        print(f"  Base->Instruct shift dominates. Pivot to gemma-scope on Gemma 2 2B or train custom.")
+        print("  Base->Instruct shift dominates. Pivot to gemma-scope on Gemma 2 2B or train custom.")
 
 
 if __name__ == "__main__":

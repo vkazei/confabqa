@@ -31,7 +31,6 @@ import argparse
 import json
 import time
 from collections import defaultdict
-from pathlib import Path
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -171,14 +170,14 @@ def main():
     JUDGE_MODEL_ID = "Qwen/Qwen3-1.7B"
     if MODEL_ID == JUDGE_MODEL_ID:
         judge_tokenizer, judge_model = tokenizer, model
-        print(f"Using subject model as judge (Qwen3-1.7B is the standard judge).")
+        print("Using subject model as judge (Qwen3-1.7B is the standard judge).")
     else:
         print(f"Loading separate judge model {JUDGE_MODEL_ID}...")
         judge_tokenizer = AutoTokenizer.from_pretrained(JUDGE_MODEL_ID)
         judge_model = AutoModelForCausalLM.from_pretrained(
             JUDGE_MODEL_ID, dtype=torch.bfloat16, device_map=device)
         judge_model.eval()
-        print(f"  judge loaded.")
+        print("  judge loaded.")
 
     direction_t = torch.tensor(direction, dtype=torch.float32, device=device)
     # Normalize the direction so alpha has comparable scale across runs:
@@ -281,7 +280,7 @@ def main():
         ax.legend(loc="best", fontsize=9)
     axes[0].set_ylabel("rate over subset")
     fig.suptitle("Causal intervention: layer-28 refusal direction "
-                  f"(prefill-only, last prompt token)", fontsize=12)
+                  "(prefill-only, last prompt token)", fontsize=12)
     fig.tight_layout(rect=[0, 0, 1, 0.96])
     fig.savefig(OUT_PNG, dpi=140, bbox_inches="tight")
     plt.close(fig)

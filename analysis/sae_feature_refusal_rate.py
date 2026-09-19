@@ -19,7 +19,6 @@ import torch
 from sae_lens import SAE
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
-import analysis.make_causal_intervention as mci
 from analysis.make_causal_intervention import generate_with_intervention
 from confabqa.constants import SAE_RELEASE, SAE_LAYER, SAE_FEATURE_ID
 from config import FIGURES_DIR, MODEL_ID, get_device, set_seeds

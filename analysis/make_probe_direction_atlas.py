@@ -35,7 +35,6 @@ import numpy as np
 import torch
 from sklearn.decomposition import PCA
 from sklearn.linear_model import LogisticRegression
-from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
 from transformers import AutoModelForCausalLM, AutoTokenizer
 

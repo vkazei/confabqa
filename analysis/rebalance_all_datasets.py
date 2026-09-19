@@ -19,7 +19,6 @@ from __future__ import annotations
 import json
 import random
 import statistics
-import sys
 from pathlib import Path
 
 import numpy as np
@@ -32,7 +31,7 @@ from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
 
 # Import prompt_features / prompt_feature_matrix from 03_analyze.py
-from confabqa.analysis import prompt_features, prompt_feature_matrix
+from confabqa.analysis import prompt_feature_matrix
 
 SUBSAMPLE_SEEDS = [0, 1, 2, 3, 4]
 from confabqa.constants import MAX_PER_CLASS  # cap (avoids huge runs); use min(MAX, min_class)
@@ -183,7 +182,7 @@ def main():
             results[label] = rebalance_test(sub, label)
 
     # PopQA pool across 3 seeds
-    print(f"\n=== PopQA (pool seed 0/1/2) ===")
+    print("\n=== PopQA (pool seed 0/1/2) ===")
     popqa_pool = load_popqa_pool()
     print(f"  loaded {len(popqa_pool)} unique PopQA items")
     results["popqa_qwen3_1_7b_full"] = rebalance_test(popqa_pool, "popqa_qwen3_1_7b_full")

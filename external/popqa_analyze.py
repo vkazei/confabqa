@@ -29,7 +29,6 @@ Writes figures/{model_subdir}/popqa_generalization.md with:
 from __future__ import annotations
 
 import json
-import sys
 from pathlib import Path
 
 import numpy as np
@@ -271,7 +270,6 @@ def main():
     # ---- Distribution check ----
     from collections import Counter
     judge_dist = Counter(r["judge_label"] for r in responses)
-    bin_dist = Counter(r.get("popqa_o_pop_bin") for r in responses)
     correct_by_bin = {b: 0 for b in range(5)}
     n_by_bin = {b: 0 for b in range(5)}
     for r in responses:
@@ -281,7 +279,7 @@ def main():
             if r["correct"]:
                 correct_by_bin[b] += 1
     print(f"Judge label distribution: {dict(judge_dist)}")
-    print(f"Per-bin correctness:")
+    print("Per-bin correctness:")
     for b in range(5):
         if n_by_bin[b]:
             print(f"  bin {b}: {correct_by_bin[b]}/{n_by_bin[b]} = "
@@ -303,7 +301,7 @@ def main():
 
     # ---- Refusal probe (only if >=30 refusals) ----
     n_refusal = judge_dist.get("refusal", 0)
-    print(f"\n=== REFUSAL PROBE ===")
+    print("\n=== REFUSAL PROBE ===")
     print(f"  refusal count on PopQA: {n_refusal}")
     refusal_result = None
     if n_refusal >= 30:
@@ -327,7 +325,7 @@ def main():
         print(f"  strongest baseline = {bl['strongest_name']} = {bl['strongest_value']:.4f}")
         print(f"  h adds vs strongest = {margin:+.2f} pp")
     else:
-        print(f"  < 30 refusals -- refusal probe declared UNDERPOWERED on PopQA; skipped.")
+        print("  < 30 refusals -- refusal probe declared UNDERPOWERED on PopQA; skipped.")
 
     # ---- Render markdown ----
     summary = {

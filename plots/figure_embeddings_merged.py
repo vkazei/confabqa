@@ -14,7 +14,6 @@ Reads the same cached responses + activations 03_analyze.py uses; writes
 figures/qwen3_1_7b/embeddings_pca_merged.png. Does not modify any frozen script.
 """
 import json
-from pathlib import Path
 
 import matplotlib.pyplot as plt
 import numpy as np

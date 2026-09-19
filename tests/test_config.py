@@ -1,5 +1,4 @@
 """Device/seed plumbing (needs torch)."""
-import os
 import torch
 
 import config

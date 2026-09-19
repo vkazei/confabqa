@@ -80,7 +80,7 @@ def main():
         if r.get("judge_label"):
             all_labels[r["judge_label"]] += 1
     total = sum(all_labels.values())
-    print(f"\n=== Judge summary ===")
+    print("\n=== Judge summary ===")
     print(f"  judged: {total}/{len(files)}")
     for lbl in ("correct", "refusal", "wrong"):
         n = all_labels[lbl]

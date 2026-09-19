@@ -14,7 +14,6 @@ import json
 
 import matplotlib.pyplot as plt
 import numpy as np
-import torch
 from sae_lens import SAE
 
 import analysis.make_probe_direction_atlas as atlas

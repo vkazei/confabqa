@@ -27,7 +27,6 @@ import argparse
 import json
 import os
 import random
-import sys
 import time
 from pathlib import Path
 
@@ -156,7 +155,7 @@ def main():
               f"{result['answer_text'][:80]!r}  (rate {rate:.2f}/s, eta {eta:.1f} min)")
 
     elapsed = time.perf_counter() - t_overall
-    print(f"\n=== Generation summary ===")
+    print("\n=== Generation summary ===")
     print(f"  evaluated: {n_done}/{len(questions)}")
     print(f"  substring-correct: {n_correct}/{n_done}  ({n_correct/max(n_done,1)*100:.1f}%)")
     print(f"  generation time: {elapsed/60:.1f} min ({elapsed/max(n_done,1):.1f}s/item)")
@@ -210,7 +209,7 @@ def main():
             print(f"  [{i}/{len(questions)}] labels so far: {dict(labels)}  "
                   f"(eta {eta:.1f} min)")
     elapsed = time.perf_counter() - t_judge
-    print(f"\n=== Judge summary ===")
+    print("\n=== Judge summary ===")
     print(f"  judged: {n_judged}/{len(questions)}")
     for lbl in ("correct", "refusal", "wrong"):
         n = labels[lbl]
@@ -223,9 +222,9 @@ def main():
     sample = rng.sample(response_files, min(20, len(response_files)))
     md = ["# TriviaQA judge spot-check (20 random items)\n\n"]
     md.append(f"Judge: {JUDGE_MODEL_ID} self-judge (same model as v1.3 paper).\n")
-    md.append(f"Caveat: judge has NOT been independently validated on the TriviaQA distribution. ")
-    md.append(f"Cohen kappa = 0.892 on v1.0 sample, 1.0 on v1.3 sample (both v1 paper data). ")
-    md.append(f"TriviaQA = closed-book trivia (the dataset Kadavath et al.\\ 2022 leaned on most).\n\n")
+    md.append("Caveat: judge has NOT been independently validated on the TriviaQA distribution. ")
+    md.append("Cohen kappa = 0.892 on v1.0 sample, 1.0 on v1.3 sample (both v1 paper data). ")
+    md.append("TriviaQA = closed-book trivia (the dataset Kadavath et al.\\ 2022 leaned on most).\n\n")
     for f in sample:
         r = json.load(open(f))
         md.append(f"---\n\n**{r['question_id']}**  "

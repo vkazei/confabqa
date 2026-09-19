@@ -29,7 +29,6 @@ Writes figures/{model_subdir}/triviaqa_generalization.md with:
 from __future__ import annotations
 
 import json
-import sys
 from pathlib import Path
 
 import numpy as np
@@ -282,7 +281,7 @@ def main():
         n_by_alen[a] += 1
         if r["correct"]:
             correct_by_alen[a] += 1
-    print(f"Per-answer-length correctness:")
+    print("Per-answer-length correctness:")
     for a in sorted(n_by_alen):
         if n_by_alen[a]:
             print(f"  word_len={a}: {correct_by_alen[a]}/{n_by_alen[a]} = "
@@ -308,7 +307,7 @@ def main():
 
     # ---- Refusal probe (only if >=30 refusals) ----
     n_refusal = judge_dist.get("refusal", 0)
-    print(f"\n=== REFUSAL PROBE ===")
+    print("\n=== REFUSAL PROBE ===")
     print(f"  refusal count on TriviaQA: {n_refusal}")
     refusal_result = None
     if n_refusal >= 30:
@@ -332,7 +331,7 @@ def main():
         print(f"  strongest baseline = {bl['strongest_name']} = {bl['strongest_value']:.4f}")
         print(f"  h adds vs strongest = {margin:+.2f} pp")
     else:
-        print(f"  < 30 refusals -- refusal probe declared UNDERPOWERED on TriviaQA; skipped.")
+        print("  < 30 refusals -- refusal probe declared UNDERPOWERED on TriviaQA; skipped.")
 
     # ---- Render markdown ----
     summary = {

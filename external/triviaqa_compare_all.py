@@ -99,7 +99,7 @@ def main():
         a = runs["seed=0"]["null_test_full"]
         b = runs["seed=0 rerun"]["null_test_full"]
         lines.append("\n## Determinism check (seed=0 vs seed=0 rerun)\n\n")
-        lines.append(f"Same 800 question IDs in both runs; differences below are "
+        lines.append("Same 800 question IDs in both runs; differences below are "
                      "from BF16/MPS forward-pass non-determinism propagating "
                      "through generation, judge, and probe.\n\n")
         diffs = [
@@ -115,7 +115,7 @@ def main():
         max_swing = max(abs(d * sc) for _, d, _, sc in diffs)
         if max_swing < 0.5:
             lines.append("\n**Pipeline is effectively deterministic** "
-                         f"(max metric swing < 0.5 pp). Forward-pass non-determinism is\n"
+                         "(max metric swing < 0.5 pp). Forward-pass non-determinism is\n"
                          "not driving any of the inter-seed differences below.\n")
         elif max_swing < 1.5:
             lines.append(f"\n**Modest pipeline non-determinism** (max swing "

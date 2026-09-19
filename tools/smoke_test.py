@@ -97,12 +97,12 @@ def main():
 
     answer = tokenizer.decode(output_ids[0][input_len:], skip_special_tokens=True)
     print(f"\nAnswer: {answer}")
-    print(f"\n--- Performance ---")
+    print("\n--- Performance ---")
     print(f"Total generation time: {t_gen_total:.2f}s")
     print(f"New tokens: {new_tokens}")
     print(f"Tokens/sec: {tokens_per_sec:.1f}")
 
-    print(f"\n--- Hidden State Capture ---")
+    print("\n--- Hidden State Capture ---")
     if "tensor" in captured_hidden:
         shape = captured_hidden["tensor"].shape
         print(f"Captured hidden state from layer {mid_layer}: {shape}")
@@ -111,7 +111,6 @@ def main():
         print("WARNING: No hidden state captured!")
 
     handle.remove()
-    del captured_hidden
 
     print("\nSmoke test passed.")
 

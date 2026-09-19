@@ -31,7 +31,6 @@ from __future__ import annotations
 import json
 import random
 import statistics
-import sys
 from pathlib import Path
 
 import numpy as np
@@ -43,7 +42,7 @@ from sklearn.model_selection import StratifiedKFold, cross_val_score
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
 
-from confabqa.analysis import prompt_features, prompt_feature_matrix
+from confabqa.analysis import prompt_feature_matrix
 
 from confabqa.constants import BOOTSTRAP_K as K, MAX_PER_CLASS
 OUT_JSON = Path("figures") / "refusal_channel_test.json"

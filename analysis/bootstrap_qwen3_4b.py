@@ -10,7 +10,6 @@ from __future__ import annotations
 import json
 import random
 import statistics
-import sys
 from pathlib import Path
 
 import numpy as np
@@ -134,7 +133,7 @@ def main():
     with open(OUT_JSON, "w") as fp:
         json.dump(results, fp, indent=2)
     print(f"\nWrote {OUT_JSON}")
-    md = [f"# Bootstrap h_adds — Qwen3-4B on PopQA\n\n",
+    md = ["# Bootstrap h_adds — Qwen3-4B on PopQA\n\n",
           f"K={K} balanced 50/50 subsamples; same protocol as bootstrap_h_adds.md.\n\n",
           "| cell | n/class | mean h_adds | 95% CI | excl 0? |\n",
           "|---|--:|--:|---|:--:|\n"]

@@ -18,7 +18,6 @@ from __future__ import annotations
 import json
 import random
 import statistics
-import sys
 from pathlib import Path
 
 import numpy as np
@@ -30,7 +29,7 @@ from sklearn.model_selection import StratifiedKFold, cross_val_score
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
 
-from confabqa.analysis import prompt_features, prompt_feature_matrix
+from confabqa.analysis import prompt_feature_matrix
 
 from confabqa.constants import BOOTSTRAP_K as K, MAX_PER_CLASS
 MODEL_SUBDIR = "llama_3_2_3b"
@@ -185,7 +184,7 @@ def main():
     print(f"\nWrote {OUT_JSON}")
 
     md = []
-    md.append(f"# Bootstrap 95% CIs on h_adds — Llama-3.2-3B on external datasets\n\n")
+    md.append("# Bootstrap 95% CIs on h_adds — Llama-3.2-3B on external datasets\n\n")
     md.append(f"Method: K={K} balanced 50/50 subsamples per cell. Same pipeline as "
               "`bootstrap_h_adds.md`. 95% CI = percentile-based.\n\n")
     md.append("| cell | n/class | mean h_adds | median | std | 95% CI | excludes 0? |\n")

@@ -26,7 +26,7 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 import analysis.make_probe_direction_atlas as atlas
 from analysis.cache_prenorm_states import load_prenorm
 from confabqa.constants import SAE_RELEASE, SAE_LAYER, SAE_FEATURE_ID
-from config import FIGURES_DIR, MODEL_ID, get_device, set_seeds
+from config import FIGURES_DIR, MODEL_ID, set_seeds
 from saes.sae_causal_ablation import REFUSAL_OPENER_STRS
 
 BUDGET = 200.0

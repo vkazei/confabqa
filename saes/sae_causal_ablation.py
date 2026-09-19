@@ -129,7 +129,7 @@ def main():
     print(f"Loading SAE {SAE_RELEASE} / {SAE_ID}...")
     sae = SAE.from_pretrained(release=SAE_RELEASE, sae_id=SAE_ID, device="cpu")
 
-    print(f"Loading Qwen3-1.7B model...")
+    print("Loading Qwen3-1.7B model...")
     tokenizer = AutoTokenizer.from_pretrained(MODEL_ID)
     model = AutoModelForCausalLM.from_pretrained(MODEL_ID, dtype=torch.bfloat16, device_map="cpu")
     model.eval()
@@ -192,9 +192,9 @@ def main():
     # Markdown summary
     md = []
     md.append("# Causal intervention via SAE feature 2191\n\n")
-    md.append(f"**Hypothesis:** Feature 2191's decoder direction is the canonical refusal-opener\n")
+    md.append("**Hypothesis:** Feature 2191's decoder direction is the canonical refusal-opener\n")
     md.append(f"direction in Qwen3-1.7B at HF layer {HF_LAYER}. Adding $\\alpha \\cdot \\hat W_{{dec}}[2191]$ to\n")
-    md.append(f"the last-prompt-token hidden state should induce refusal-opener generation.\n\n")
+    md.append("the last-prompt-token hidden state should induce refusal-opener generation.\n\n")
     md.append(f"**Items:** {N_ITEMS} wrong + {N_ITEMS} refusal (baseline from v1.3, judge_label-labeled).\n")
     md.append(f"**Opener token set:** {', '.join(repr(s) for s in REFUSAL_OPENER_STRS)} (decoded to {len(opener_ids)} unique token IDs).\n\n")
     md.append("## Dose-response\n\n")

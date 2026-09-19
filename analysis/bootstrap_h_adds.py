@@ -29,7 +29,6 @@ from __future__ import annotations
 import json
 import random
 import statistics
-import sys
 from pathlib import Path
 
 import numpy as np
@@ -41,7 +40,7 @@ from sklearn.model_selection import StratifiedKFold, cross_val_score
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
 
-from confabqa.analysis import prompt_features, prompt_feature_matrix
+from confabqa.analysis import prompt_feature_matrix
 
 from confabqa.constants import BOOTSTRAP_K as K, MAX_PER_CLASS
 OUT_JSON = Path("figures") / "bootstrap_h_adds.json"
@@ -207,13 +206,13 @@ def main():
             results[key] = bootstrap_cell(sub, key)
 
     # PopQA Qwen3
-    print(f"\n=== PopQA / qwen3_1_7b ===")
+    print("\n=== PopQA / qwen3_1_7b ===")
     pool = load_popqa_pool()
     print(f"  loaded {len(pool)} unique PopQA items")
     results["popqa_qwen3_1_7b_full"] = bootstrap_cell(pool, "popqa_qwen3_1_7b_full")
 
     # TriviaQA Qwen3
-    print(f"\n=== TriviaQA / qwen3_1_7b ===")
+    print("\n=== TriviaQA / qwen3_1_7b ===")
     pool = load_triviaqa_pool()
     print(f"  loaded {len(pool)} unique TriviaQA items")
     results["triviaqa_qwen3_1_7b_full"] = bootstrap_cell(pool, "triviaqa_qwen3_1_7b_full")
@@ -225,7 +224,7 @@ def main():
 
     # Markdown
     md = []
-    md.append(f"# Bootstrap 95% CIs on h_adds (probe − strongest prompt baseline)\n\n")
+    md.append("# Bootstrap 95% CIs on h_adds (probe − strongest prompt baseline)\n\n")
     md.append(f"Method: K={K} balanced 50/50 subsamples per cell. Each subsample: "
               "refit probe (StandardScaler→PCA(16)→LR, 5-fold CV, peak across 29 "
               "layers) and 4 prompt baselines on identical folds. 95% CI = percentile-"

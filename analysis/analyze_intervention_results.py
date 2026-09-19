@@ -18,10 +18,8 @@ Writes:
 """
 import json
 import re
-from pathlib import Path
 
 import matplotlib.pyplot as plt
-import numpy as np
 
 from config import FIGURES_DIR
 
@@ -101,7 +99,7 @@ def main():
     # print table
     for subset_name, sub in by_sub.items():
         print(f"\n=== {subset_name} ===")
-        print(f"  alpha    refusal%   correct%   wrong%   first-token-refusal-opener%")
+        print("  alpha    refusal%   correct%   wrong%   first-token-refusal-opener%")
         for alpha in alphas:
             akey = str(alpha)
             p = sub[akey]

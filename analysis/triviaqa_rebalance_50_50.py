@@ -18,8 +18,6 @@ from __future__ import annotations
 import json
 import random
 import statistics
-import sys
-from collections import defaultdict
 from pathlib import Path
 
 import numpy as np
@@ -34,7 +32,7 @@ from sklearn.preprocessing import StandardScaler
 from config import MODEL_SUBDIR
 
 # Import prompt_features / prompt_feature_matrix from 03_analyze.py
-from confabqa.analysis import prompt_features, prompt_feature_matrix
+from confabqa.analysis import prompt_feature_matrix
 
 SEED_DIRS = ["triviaqa_sample", "triviaqa_sample_seed1", "triviaqa_sample_seed2"]
 SUBSAMPLES = [0, 1, 2, 3, 4]  # 5 balanced subsample seeds

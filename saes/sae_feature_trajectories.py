@@ -20,7 +20,6 @@ import numpy as np
 import torch
 from sae_lens import SAE
 
-import analysis.make_probe_direction_atlas as atlas
 from analysis.cache_prenorm_states import load_prenorm
 from confabqa.constants import SAE_RELEASE, SAE_LAYER
 from config import FIGURES_DIR, set_seeds
