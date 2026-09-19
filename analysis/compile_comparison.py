@@ -1,9 +1,17 @@
+"""Cross-model comparison: per-layer probe curves and summary table.
+
+Reads data/{model}_summary.json for Qwen3-1.7B, Gemma 2 2B, and Llama 3.2 3B
+and writes figures/comparative_probes.png (paper Section 7.1) and
+data/comparison_table.md.
+
+Run from the repo root: python -m analysis.compile_comparison
+"""
 import json
 from pathlib import Path
 import matplotlib.pyplot as plt
 import numpy as np
 
-PROJECT_DIR = Path(__file__).parent
+PROJECT_DIR = Path(__file__).resolve().parent.parent  # repo root (this file lives in analysis/)
 DATA_DIR = PROJECT_DIR / "data"
 FIGURES_DIR = PROJECT_DIR / "figures"
 FIGURES_DIR.mkdir(exist_ok=True)

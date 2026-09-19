@@ -1,3 +1,8 @@
+"""Smoke test: load the subject model, generate one answer, and capture a
+mid-layer hidden state through a forward hook.
+
+Run from the repo root: python -m tools.smoke_test
+"""
 import os
 import time
 
