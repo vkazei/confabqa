@@ -5,8 +5,8 @@ responses written to disk). Avoids the OOM trap of co-loading large subject +
 judge models on a 16GB unified-memory M1 Pro.
 
 Usage:
-  venv/bin/python popqa_judge_only.py --subdir qwen3_8b
-  venv/bin/python popqa_judge_only.py --subdir qwen3_8b --sample-suffix _seed1
+  python -m external.popqa_judge_only --subdir qwen3_4b
+  python -m external.popqa_judge_only --subdir qwen3_4b --sample-suffix _seed1
 
 Skips items that already have judge_label set.
 """
