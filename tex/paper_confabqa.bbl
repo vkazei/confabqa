@@ -11,10 +11,8 @@ Guillaume Alain and Yoshua Bengio.
 \newblock In \emph{ICLR Workshop}, 2017.
 \newblock \href{https://arxiv.org/abs/1610.01644}{arXiv:1610.01644}.
 
-\bibitem[Arditi et~al.(2024)Arditi, Obeso, Syed, Paleka, Panickssery, Gurnee,
-  and Nanda]{arditi2024refusal}
-Andy Arditi, Oscar Obeso, Aaquib Syed, Daniel Paleka, Nina Panickssery, Wes
-  Gurnee, and Neel Nanda.
+\bibitem[Arditi et~al.(2024)Arditi, Obeso, Syed, Paleka, Panickssery, Gurnee, and Nanda]{arditi2024refusal}
+Andy Arditi, Oscar Obeso, Aaquib Syed, Daniel Paleka, Nina Panickssery, Wes Gurnee, and Neel Nanda.
 \newblock Refusal in language models is mediated by a single direction.
 \newblock In \emph{NeurIPS}, 2024.
 \newblock \href{https://arxiv.org/abs/2406.11717}{arXiv:2406.11717}.
@@ -25,72 +23,50 @@ Amos Azaria and Tom Mitchell.
 \newblock In \emph{Findings of EMNLP}, 2023.
 \newblock \href{https://arxiv.org/abs/2304.13734}{arXiv:2304.13734}.
 
-\bibitem[Chanin et~al.(2025)Chanin, Wilken-Smith, Dulka, Bhatnagar, Golechha,
-  and Bloom]{chanin2025absorption}
-David Chanin, James Wilken-Smith, Tom\'a\v{s} Dulka, Hardik Bhatnagar, Satvik
-  Golechha, and Joseph Bloom.
-\newblock A is for absorption: Studying feature splitting and absorption in
-  sparse autoencoders.
+\bibitem[Chanin et~al.(2025)Chanin, Wilken-Smith, Dulka, Bhatnagar, Golechha, and Bloom]{chanin2025absorption}
+David Chanin, James Wilken-Smith, Tom\'a\v{s} Dulka, Hardik Bhatnagar, Satvik Golechha, and Joseph Bloom.
+\newblock A is for absorption: Studying feature splitting and absorption in sparse autoencoders.
 \newblock In \emph{NeurIPS}, 2025.
 \newblock \href{https://arxiv.org/abs/2409.14507}{arXiv:2409.14507}.
 
-\bibitem[Farquhar et~al.(2024)Farquhar, Kossen, Kuhn, and
-  Gal]{farquhar2024semantic}
+\bibitem[Farquhar et~al.(2024)Farquhar, Kossen, Kuhn, and Gal]{farquhar2024semantic}
 Sebastian Farquhar, Jannik Kossen, Lorenz Kuhn, and Yarin Gal.
-\newblock Detecting hallucinations in large language models using semantic
-  entropy.
+\newblock Detecting hallucinations in large language models using semantic entropy.
 \newblock \emph{Nature}, 630:\penalty0 625--630, 2024.
-\newblock
-  \href{https://doi.org/10.1038/s41586-024-07421-0}{doi:10.1038/s41586-024-07421-0}.
+\newblock \href{https://doi.org/10.1038/s41586-024-07421-0}{doi:10.1038/s41586-024-07421-0}.
 
-\bibitem[Ferrando et~al.(2025)Ferrando, Obeso, Rajamanoharan, and
-  Nanda]{ferrando2025entity}
+\bibitem[Ferrando et~al.(2025)Ferrando, Obeso, Rajamanoharan, and Nanda]{ferrando2025entity}
 Javier Ferrando, Oscar Obeso, Senthooran Rajamanoharan, and Neel Nanda.
-\newblock Do i know this entity? knowledge awareness and hallucinations in
-  language models.
+\newblock Do i know this entity? knowledge awareness and hallucinations in language models.
 \newblock In \emph{ICLR}, 2025.
 \newblock \href{https://arxiv.org/abs/2411.14257}{arXiv:2411.14257}.
 
-\bibitem[Gao et~al.(2025)Gao, la~Tour, Tillman, Goh, Troll, Radford, Sutskever,
-  Leike, and Wu]{gao2025scaling}
-Leo Gao, Tom~Dupr\'e la~Tour, Henk Tillman, Gabriel Goh, Rajan Troll, Alec
-  Radford, Ilya Sutskever, Jan Leike, and Jeffrey Wu.
+\bibitem[Gao et~al.(2025)Gao, la~Tour, Tillman, Goh, Troll, Radford, Sutskever, Leike, and Wu]{gao2025scaling}
+Leo Gao, Tom~Dupr\'e la~Tour, Henk Tillman, Gabriel Goh, Rajan Troll, Alec Radford, Ilya Sutskever, Jan Leike, and Jeffrey Wu.
 \newblock Scaling and evaluating sparse autoencoders.
 \newblock In \emph{ICLR}, 2025.
 \newblock \href{https://arxiv.org/abs/2406.04093}{arXiv:2406.04093}.
 
-\bibitem[Grattafiori et~al.(2024)Grattafiori, Dubey, Jauhri, Pandey, Kadian,
-  Al-Dahle, Letman, Mathur, Schelten, Vaughan, et~al.]{grattafiori2024llama}
-Aaron Grattafiori, Abhimanyu Dubey, Abhinav Jauhri, Abhinav Pandey, Abhishek
-  Kadian, Ahmad Al-Dahle, Aiesha Letman, Akhil Mathur, Alan Schelten, Alex
-  Vaughan, et~al.
-\newblock The llama 3 herd of models.
+\bibitem[Grattafiori et~al.(2024)Grattafiori, Dubey, Jauhri, Pandey, Kadian, Al-Dahle, Letman, Mathur, Schelten, Vaughan, et~al.]{grattafiori2024llama}
+Aaron Grattafiori, Abhimanyu Dubey, Abhinav Jauhri, Abhinav Pandey, Abhishek Kadian, Ahmad Al-Dahle, Aiesha Letman, Akhil Mathur, Alan Schelten, Alex Vaughan, et~al.
+\newblock The {Llama} 3 herd of models.
 \newblock \emph{arXiv preprint arXiv:2407.21783}, 2024.
 
-\bibitem[Joshi et~al.(2017)Joshi, Choi, Weld, and
-  Zettlemoyer]{joshi2017triviaqa}
+\bibitem[Joshi et~al.(2017)Joshi, Choi, Weld, and Zettlemoyer]{joshi2017triviaqa}
 Mandar Joshi, Eunsol Choi, Daniel~S. Weld, and Luke Zettlemoyer.
-\newblock Triviaqa: A large scale distantly supervised challenge dataset for
-  reading comprehension.
+\newblock Triviaqa: A large scale distantly supervised challenge dataset for reading comprehension.
 \newblock In \emph{ACL}, 2017.
 \newblock \href{https://arxiv.org/abs/1705.03551}{arXiv:1705.03551}.
 
-\bibitem[Kadavath et~al.(2022)Kadavath, Conerly, Askell, Henighan, Drain,
-  Perez, Schiefer, Hatfield-Dodds, DasSarma, Tran-Johnson,
-  et~al.]{kadavath2022know}
-Saurav Kadavath, Tom Conerly, Amanda Askell, Tom Henighan, Dawn Drain, Ethan
-  Perez, Nicholas Schiefer, Zac Hatfield-Dodds, Nova DasSarma, Eli
-  Tran-Johnson, et~al.
+\bibitem[Kadavath et~al.(2022)Kadavath, Conerly, Askell, Henighan, Drain, Perez, Schiefer, Hatfield-Dodds, DasSarma, Tran-Johnson, et~al.]{kadavath2022know}
+Saurav Kadavath, Tom Conerly, Amanda Askell, Tom Henighan, Dawn Drain, Ethan Perez, Nicholas Schiefer, Zac Hatfield-Dodds, Nova DasSarma, Eli Tran-Johnson, et~al.
 \newblock Language models (mostly) know what they know.
 \newblock \emph{arXiv preprint}, 2022.
 \newblock \href{https://arxiv.org/abs/2207.05221}{arXiv:2207.05221}.
 
-\bibitem[Kossen et~al.(2024)Kossen, Han, Razzak, Schut, Malik, and
-  Gal]{kossen2024semantic}
-Jannik Kossen, Jiatong Han, Muhammed Razzak, Lisa Schut, Shreshth Malik, and
-  Yarin Gal.
-\newblock Semantic entropy probes: Robust and cheap hallucination detection in
-  llms.
+\bibitem[Kossen et~al.(2024)Kossen, Han, Razzak, Schut, Malik, and Gal]{kossen2024semantic}
+Jannik Kossen, Jiatong Han, Muhammed Razzak, Lisa Schut, Shreshth Malik, and Yarin Gal.
+\newblock Semantic entropy probes: Robust and cheap hallucination detection in llms.
 \newblock \emph{arXiv preprint}, 2024.
 \newblock \href{https://arxiv.org/abs/2406.15927}{arXiv:2406.15927}.
 
@@ -100,22 +76,15 @@ J.~Richard Landis and Gary~G. Koch.
 \newblock \emph{Biometrics}, 33\penalty0 (1):\penalty0 159--174, 1977.
 \newblock \href{https://doi.org/10.2307/2529310}{doi:10.2307/2529310}.
 
-\bibitem[Li et~al.(2023)Li, Patel, Vi\'egas, Pfister, and
-  Wattenberg]{li2023iti}
-Kenneth Li, Oam Patel, Fernanda Vi\'egas, Hanspeter Pfister, and Martin
-  Wattenberg.
-\newblock Inference-time intervention: Eliciting truthful answers from a
-  language model.
+\bibitem[Li et~al.(2023)Li, Patel, Vi\'egas, Pfister, and Wattenberg]{li2023iti}
+Kenneth Li, Oam Patel, Fernanda Vi\'egas, Hanspeter Pfister, and Martin Wattenberg.
+\newblock Inference-time intervention: Eliciting truthful answers from a language model.
 \newblock In \emph{NeurIPS}, 2023.
 \newblock \href{https://arxiv.org/abs/2306.03341}{arXiv:2306.03341}.
 
-\bibitem[Lieberum et~al.(2024)Lieberum, Rajamanoharan, Conmy, Smith, Sonnerat,
-  Varma, Kram\'ar, Dragan, Shah, and Nanda]{lieberum2024gemmascope}
-Tom Lieberum, Senthooran Rajamanoharan, Arthur Conmy, Lewis Smith, Nicolas
-  Sonnerat, Vikrant Varma, J\'anos Kram\'ar, Anca Dragan, Rohin Shah, and Neel
-  Nanda.
-\newblock Gemma scope: Open sparse autoencoders everywhere all at once on gemma
-  2.
+\bibitem[Lieberum et~al.(2024)Lieberum, Rajamanoharan, Conmy, Smith, Sonnerat, Varma, Kram\'ar, Dragan, Shah, and Nanda]{lieberum2024gemmascope}
+Tom Lieberum, Senthooran Rajamanoharan, Arthur Conmy, Lewis Smith, Nicolas Sonnerat, Vikrant Varma, J\'anos Kram\'ar, Anca Dragan, Rohin Shah, and Neel Nanda.
+\newblock Gemma scope: Open sparse autoencoders everywhere all at once on gemma 2.
 \newblock In \emph{BlackboxNLP}, 2024.
 \newblock \href{https://arxiv.org/abs/2408.05147}{arXiv:2408.05147}.
 
@@ -123,38 +92,28 @@ Tom Lieberum, Senthooran Rajamanoharan, Arthur Conmy, Lewis Smith, Nicolas
 Jack Lindsey et~al.
 \newblock On the biology of a large language model.
 \newblock Transformer Circuits Thread, 2025.
-\newblock
-  \href{https://transformer-circuits.pub/2025/attribution-graphs/biology.html}{transformer-circuits.pub}.
+\newblock \href{https://transformer-circuits.pub/2025/attribution-graphs/biology.html}{transformer-circuits.pub}.
 
-\bibitem[Mallen et~al.(2023)Mallen, Asai, Zhong, Das, Khashabi, and
-  Hajishirzi]{mallen2023popqa}
-Alex Mallen, Akari Asai, Victor Zhong, Rajarshi Das, Daniel Khashabi, and
-  Hannaneh Hajishirzi.
-\newblock When not to trust language models: Investigating effectiveness of
-  parametric and non-parametric memories.
+\bibitem[Mallen et~al.(2023)Mallen, Asai, Zhong, Das, Khashabi, and Hajishirzi]{mallen2023popqa}
+Alex Mallen, Akari Asai, Victor Zhong, Rajarshi Das, Daniel Khashabi, and Hannaneh Hajishirzi.
+\newblock When not to trust language models: Investigating effectiveness of parametric and non-parametric memories.
 \newblock In \emph{ACL}, 2023.
 \newblock \href{https://arxiv.org/abs/2212.10511}{arXiv:2212.10511}.
 
 \bibitem[Marks and Tegmark(2024)]{marks2024geometry}
 Samuel Marks and Max Tegmark.
-\newblock The geometry of truth: Emergent linear structure in large language
-  model representations of true/false datasets.
+\newblock The geometry of truth: Emergent linear structure in large language model representations of true/false datasets.
 \newblock In \emph{COLM}, 2024.
 \newblock \href{https://arxiv.org/abs/2310.06824}{arXiv:2310.06824}.
 
-\bibitem[Orgad et~al.(2024)Orgad, Toker, Gekhman, Reichart, Szpektor, Kotek,
-  and Belinkov]{orgad2024show}
-Hadas Orgad, Michael Toker, Zorik Gekhman, Roi Reichart, Idan Szpektor, Hadas
-  Kotek, and Yonatan Belinkov.
-\newblock Llms know more than they show: On the intrinsic representation of llm
-  hallucinations.
+\bibitem[Orgad et~al.(2024)Orgad, Toker, Gekhman, Reichart, Szpektor, Kotek, and Belinkov]{orgad2024show}
+Hadas Orgad, Michael Toker, Zorik Gekhman, Roi Reichart, Idan Szpektor, Hadas Kotek, and Yonatan Belinkov.
+\newblock Llms know more than they show: On the intrinsic representation of llm hallucinations.
 \newblock \emph{arXiv preprint}, 2024.
 \newblock \href{https://arxiv.org/abs/2410.02707}{arXiv:2410.02707}.
 
-\bibitem[Qi et~al.(2025)Qi, Panda, Lyu, Ma, Roy, Beirami, Mittal, and
-  Henderson]{qi2025shallow}
-Xiangyu Qi, Ashwinee Panda, Kaifeng Lyu, Xiao Ma, Subhrajit Roy, Ahmad Beirami,
-  Prateek Mittal, and Peter Henderson.
+\bibitem[Qi et~al.(2025)Qi, Panda, Lyu, Ma, Roy, Beirami, Mittal, and Henderson]{qi2025shallow}
+Xiangyu Qi, Ashwinee Panda, Kaifeng Lyu, Xiao Ma, Subhrajit Roy, Ahmad Beirami, Prateek Mittal, and Peter Henderson.
 \newblock Safety alignment should be made more than just a few tokens deep.
 \newblock In \emph{ICLR (Outstanding Paper)}, 2025.
 \newblock \href{https://arxiv.org/abs/2406.05946}{arXiv:2406.05946}.
@@ -166,17 +125,12 @@ Xiangyu Qi, Ashwinee Panda, Kaifeng Lyu, Xiao Ma, Subhrajit Roy, Ahmad Beirami,
 
 \bibitem[{Qwen Team}(2026)]{qwen2025qwenscope}
 {Qwen Team}.
-\newblock Qwen-scope: Turning sparse features into development tools for large
-  language models, 2026.
-\newblock Hugging Face Hub release
-  \texttt{Qwen/SAE-Res-Qwen3-1.7B-Base-W32K-L0\_50} and parallel releases for
-  the 8B and 30B-A3B base models.
-  \href{https://arxiv.org/abs/2605.11887}{arXiv:2605.11887}.
+\newblock Qwen-scope: Turning sparse features into development tools for large language models, 2026.
+\newblock Hugging Face Hub release \texttt{Qwen/SAE-Res-Qwen3-1.7B-Base-W32K-L0\_50} and parallel releases for the 8B and 30B-A3B base models. \href{https://arxiv.org/abs/2605.11887}{arXiv:2605.11887}.
 
 \bibitem[Sahoo et~al.(2026)Sahoo, Jain, Chadha, and Chaudhary]{sahoo2026linear}
 Subramanyam Sahoo, Vinija Jain, Aman Chadha, and Divya Chaudhary.
-\newblock Linear probes detect task format, not reasoning mode in language
-  model hidden states.
+\newblock Linear probes detect task format, not reasoning mode in language model hidden states.
 \newblock In \emph{6th Workshop on Trustworthy NLP, ACL}, 2026.
 \newblock \href{https://arxiv.org/abs/2606.02907}{arXiv:2606.02907}.
 
@@ -188,34 +142,25 @@ Shashwat Singh, Tal Linzen, and Shauli Ravfogel.
 
 \bibitem[Smith et~al.(2023)Smith, Greaves, and Panch]{smith2023confabulation}
 Andrew~L. Smith, Felix Greaves, and Trishan Panch.
-\newblock Hallucination or confabulation? neuroanatomy as metaphor in large
-  language models.
+\newblock Hallucination or confabulation? neuroanatomy as metaphor in large language models.
 \newblock \emph{PLOS Digital Health}, 2023.
-\newblock
-  \href{https://doi.org/10.1371/journal.pdig.0000388}{doi:10.1371/journal.pdig.0000388}.
+\newblock \href{https://doi.org/10.1371/journal.pdig.0000388}{doi:10.1371/journal.pdig.0000388}.
 
 \bibitem[Templeton et~al.(2024)]{templeton2024scaling}
 Adly Templeton et~al.
-\newblock Scaling monosemanticity: Extracting interpretable features from
-  claude 3 sonnet.
+\newblock Scaling monosemanticity: Extracting interpretable features from claude 3 sonnet.
 \newblock Transformer Circuits Thread, 2024.
-\newblock
-  \href{https://transformer-circuits.pub/2024/scaling-monosemanticity/}{transformer-circuits.pub}.
+\newblock \href{https://transformer-circuits.pub/2024/scaling-monosemanticity/}{transformer-circuits.pub}.
 
-\bibitem[Turner et~al.(2023)Turner, Thiergart, Leech, Udell, Vazquez, Mini, and
-  MacDiarmid]{turner2023actadd}
-Alexander~Matt Turner, Lisa Thiergart, Gavin Leech, David Udell, Juan Vazquez,
-  Ulisse Mini, and Monte MacDiarmid.
+\bibitem[Turner et~al.(2023)Turner, Thiergart, Leech, Udell, Vazquez, Mini, and MacDiarmid]{turner2023actadd}
+Alexander~Matt Turner, Lisa Thiergart, Gavin Leech, David Udell, Juan Vazquez, Ulisse Mini, and Monte MacDiarmid.
 \newblock Steering language models with activation engineering.
 \newblock \emph{arXiv preprint}, 2023.
 \newblock \href{https://arxiv.org/abs/2308.10248}{arXiv:2308.10248}.
 
-\bibitem[Wollschl\"ager et~al.(2025)Wollschl\"ager, Elstner, Geisler,
-  Cohen-Addad, G\"unnemann, and Gasteiger]{wollschlager2025geometry}
-Tom Wollschl\"ager, Jannes Elstner, Simon Geisler, Vincent Cohen-Addad, Stephan
-  G\"unnemann, and Johannes Gasteiger.
-\newblock The geometry of refusal in large language models: Concept cones and
-  representational independence.
+\bibitem[Wollschl\"ager et~al.(2025)Wollschl\"ager, Elstner, Geisler, Cohen-Addad, G\"unnemann, and Gasteiger]{wollschlager2025geometry}
+Tom Wollschl\"ager, Jannes Elstner, Simon Geisler, Vincent Cohen-Addad, Stephan G\"unnemann, and Johannes Gasteiger.
+\newblock The geometry of refusal in large language models: Concept cones and representational independence.
 \newblock In \emph{ICML}, 2025.
 \newblock \href{https://arxiv.org/abs/2502.17420}{arXiv:2502.17420}.
 

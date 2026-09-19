@@ -4,10 +4,8 @@ direction}\label{from-probe-to-tokens-the-qwen3-1.7b-refusal-direction}
 
 The probes of Section 5 certify that a refusal signal exists beyond prompt features. This section asks what the signal \emph{is}. I \emph{read} the direction through the model's own output head (§6.1), \emph{push} it onto real hidden states to test causation (§6.2), and \emph{take it apart} into sparse dictionary features to test which part carries the causal effect (§6.3).
 
-% ----- 6.1 Probe-direction atlas: what the refusal signal points at in token space -----
-\subsection{6.1 Probe-direction atlas: what the refusal signal points at
-in token
-space}\label{probe-direction-atlas-what-the-refusal-signal-points-at-in-token-space}
+% ----- 6.1 Probe-direction atlas: the refusal signal in token space -----
+\subsection{6.1 Probe-direction atlas: the refusal signal in token space}\label{probe-direction-atlas-what-the-refusal-signal-points-at-in-token-space}
 
 The refusal-vs-wrong probe at layer 28 carries the largest
 baseline-adjusted margin of Table \ref{tbl:hadds}. Its weight vector

@@ -1,35 +1,33 @@
-% ===== 2. Theoretical background =====
+% ===== 2. Theoretical background ===
 \section{2. Theoretical background}\label{theoretical-background}
 
-The subject models are decoder-only transformers with causal attention.
+All three SLMs in the study are decoder-only transformers with causal attention.
 The final-layer state at the last position is projected through the
-language-model (LM) head onto the vocabulary \(\mathcal{V}\), and
+LM head onto the vocabulary \(\mathcal{V}\), and
 generation feeds each emitted token back as input (Figure
 \ref{fig:tokenflow}a, Appendix B.6). The probes read the \emph{prefill}
 pass (Figure \ref{fig:tokenflow}b): the single forward pass over the
 prompt alone, before any token is generated. Qwen3-1.7B instantiates
 this with \(L = 28\) blocks, hidden size \(d = 2048\), and
 \(|\mathcal{V}| \approx 152{,}000\) tokens with tied input/output
-embeddings (checkpoint and settings in §4).
+embeddings.
 
 % ----- 2.1 Confidence metrics: log-probability and entropy -----
 \subsection{2.1 Confidence metrics: log-probability and
 entropy}\label{confidence-metrics-log-probability-and-entropy}
 
-Two scalar confidence summaries of the generated response recur in §5,
-both means over the generated positions. \(\bar\ell\) is the mean
-log-probability of the emitted (argmax) tokens, so \(\exp(\bar\ell)\) is
-the geometric mean of the per-token probabilities (\(\bar\ell = -0.05\)
-corresponds to \(\approx 0.95\) per token). \(\bar H\) is the mean
-Shannon entropy of the next-token distribution. All generation is greedy
-(\texttt{do\_sample=False}, deterministic), so the emitted token is the
-mode. Formal definitions (Eq.~\eqref{eq:lbar}), the worst-step
+All generation is greedy deterministic, 
+so each emitted token is the mode at that position, two metrics track confidence.
+\(\bar\ell\) is the mean
+log-probability of the emitted (argmax) tokens, (\(\bar\ell = -0.05\)
+corresponds to \(\exp(\bar\ell)=\approx 0.95\) mean geometric probability per token). \(\bar H\) is the mean
+Shannon entropy of the next-token distribution.  
+Formal definitions (Eq.~\eqref{eq:lbar}), the worst-step
 diagnostic \(\min_t \ell_t\), and the empirical anti-correlation of the
 two are in Appendix B.6.
 
-% ----- 2.2 The prefill hidden state as the canonical going-in representation -----
-\subsection{2.2 The prefill hidden state as the canonical going-in
-representation}\label{the-prefill-hidden-state-as-the-canonical-going-in-representation}
+% ----- 2.2 The prefill hidden state -----
+\subsection{2.2 The prefill hidden state}\label{the-prefill-hidden-state-as-the-canonical-going-in-representation}
 
 The \emph{prefill} pass over the prompt \(x_{1:T}\) produces the full
 hidden-state tensor. I pick off the \textbf{hidden state at every layer
@@ -42,8 +40,7 @@ logits (Section 4), and avoids the contamination of probing generated
 tokens' states (expanded rationale in Appendix B.6).
 
 % ----- 2.3 Why a linear probe (and the specific pipeline I use) -----
-\subsection{2.3 Why a linear probe (and the specific pipeline I
-use)}\label{why-a-linear-probe-and-the-specific-pipeline-i-use}
+\subsection{2.3 Linear probe and its pipeline}\label{why-a-linear-probe-and-the-specific-pipeline-i-use}
 
 Following \citet{alain2017probes}, I fit at each layer \(\ell\) a binary
 linear classifier on \(\{h^{(\ell)}_T\}\). Accuracy substantially above
