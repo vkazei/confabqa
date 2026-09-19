@@ -40,3 +40,13 @@ arxiv_upload.tar.gz
 
 # local latexdiff review artifacts (not tracked)
 tex/paper_confabqa_diff.*
+
+# LaTeX build artifacts (the committed PDF and .bbl are tracked deliberately)
+tex/*.aux
+tex/*.log
+tex/*.out
+tex/*.blg
+tex/*.fls
+tex/*.fdb_latexmk
+tex/*.synctex.gz
+tex/*.xdv

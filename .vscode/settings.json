@@ -1,0 +1,23 @@
+{
+  "//": "ConfabQA paper needs XeLaTeX (fontspec + unicode-math); pdflatex fails. One xelatex recipe, used by default. -cd builds inside tex/ so sections/ and figures/ resolve; latexmk runs bibtex automatically.",
+  "latex-workshop.latex.tools": [
+    {
+      "name": "latexmk-xelatex",
+      "command": "latexmk",
+      "args": [
+        "-xelatex",
+        "-cd",
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "%DOC%"
+      ]
+    }
+  ],
+  "latex-workshop.latex.recipes": [
+    { "name": "latexmk (xelatex)", "tools": ["latexmk-xelatex"] }
+  ],
+  "//synctex": "-cd records source paths with a /./ segment that the default (external-binary) SyncTeX cannot match, so click-to-jump does nothing. The JS parser normalizes the paths and fixes forward/inverse search.",
+  "latex-workshop.synctex.synctexjs.enabled": true,
+  "latex-workshop.view.pdf.viewer": "tab"
+}
