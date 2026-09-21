@@ -434,8 +434,7 @@ dataset author from memory, was \(2.197\), which is in fact the muon
 \(t_{1/2} = \tau_\mu \ln 2 \approx 1.52\ \mu\text{s}\). The external
 validation pass flagged this \(30.7\%\) systematic error; the source
 question was subsequently rewritten to ask explicitly for the mean
-lifetime, eliminating the ambiguity. This is the canonical demonstration
-of why gold-side validation is the load-bearing step in a calibration
+lifetime, eliminating the ambiguity. This case shows why gold-side validation is essential in a calibration
 benchmark: a plausibly-written gold can contain a systematic error that
 no downstream judge or probe can detect.
 
@@ -800,8 +799,7 @@ opener set is \{ \texttt{as}, \texttt{as}, \texttt{As}, \texttt{作为},
 residuals dissociates the two roles of the direction: the native
 recovery reads the class split equally well (\(88.9\%\) vs.\
 \(89.4\%\) CV accuracy) but is a substantially different vector
-(cosine \(0.49\) to the normed-space recovery) with half the causal
-leverage (\(41\%\) vs.~\(92\%\) held-out first-token flips at the
+(cosine \(0.49\) to the normed-space recovery) with half the causal effect (\(41\%\) vs.~\(92\%\) held-out first-token flips at the
 \(0.9\times\) dose; artifact \texttt{revision\_analyses}).
 
 \textbf{Steering-matrix parity block (Section 6.2).} Table
@@ -930,8 +928,7 @@ directly optimized & \(22\%\) & \(34\%\) & \(54\%\) & \(97\%\) & \(100\%\) & \(1
 \end{tabular}
 \end{table}
 
-\textbf{Dose-for-dose potency.} \textbf{Which ``as'' direction is more
-potent?} The two interventions are directly comparable: both add a
+\textbf{Dose-for-dose potency.} The two interventions are directly comparable: both add a
 unit-norm vector, so \(\alpha\) is the added norm in both sweeps, and
 both score the same statistic, the first-token argmax landing in the
 opener set (on different \(30\)-item wrong subsets). Their half-flip
@@ -1208,7 +1205,7 @@ refusal-coded text but without using its standard opener vocabulary
 perturbation-magnitude effect, not a directional refusal-direction
 causal signal.
 
-The cleanest directional signal is the refusal subset at
+The clearest directional effect is the refusal subset at
 \(\alpha = -300\): refusal rate drops from \(100\%\) to \(80\%\), three
 of fifteen previously-refusing items committing to a confabulation:
 
@@ -1947,9 +1944,9 @@ gap either.
 % ----- F. Extended discussion -----
 \subsection{F. Extended discussion}\label{f.-extended-discussion}
 
-The Section 9 readings in full.
+Extended form of the Section 9 discussion.
 
-\textbf{The robust positive result.} The refusal direction's logit lens
+\textbf{Refusal findings.} The refusal direction's logit lens
 recovers the literal refusal-opening vocabulary in each model (Qwen3:
 \texttt{as}, \texttt{As}, \texttt{作为}; Gemma: \texttt{Regret},
 \texttt{Formal}, \texttt{Alas}; Llama: \texttt{I}, \texttt{Given},
@@ -1957,15 +1954,13 @@ recovers the literal refusal-opening vocabulary in each model (Qwen3:
 rate to \(100\%\) on Qwen3 and Gemma (Sections 6.2, 7.2), and the
 Section 8.2 refusal probe extends the finding to PopQA and TriviaQA at
 Llama scale; the claim ``refusal is a clean, late-network,
-linearly-decodable, causally-load-bearing direction in these three small
-LMs'' survives the bootstrap and the external benchmarks, and is no
-supervised artifact, being visible in unsupervised PCA (Figure
-\ref{fig:atlas}b, Figure \ref{fig:embeddings}). The Qwen3-1.7B
+linearly-decodable direction that causally controls the opener in these three small LMs'' survives the bootstrap and the external benchmarks, and is no
+supervised artifact (visible in unsupervised PCA; Figure \ref{fig:atlas}b, Figure \ref{fig:embeddings}). The Qwen3-1.7B
 correctness direction fails all three corresponding tests: little margin
 over the difficulty oracle (Table \ref{tbl:hadds}), no token-space
 signature, no sign-directional causal effect (Section 6.2).
 
-\textbf{Why two atlases on Llama, one on Qwen.} A plausible mechanism:
+\textbf{Two atlases on Llama vs.~one on Qwen.} A plausible mechanism:
 Llama's heavier calibrated-abstention training requires a
 distinguishable internal ``I should hedge'' state (the Test-B gap) and a
 richer correctness representation as its \emph{prerequisite} (what Test
@@ -1977,7 +1972,7 @@ is family / post-training recipe, not scale; a fully clean ablation
 would still need a recipe swap holding family fixed, which is future
 work.
 
-\textbf{Implication for the probing literature.} Probing papers
+\textbf{Consequence for the probing literature.} Probing papers
 reporting ``the hidden state predicts correctness at
 \(\sim 80\)--\(90\%\)'' should be re-evaluated against a prompt-feature
 baseline (removing the cutoff variable is necessary but not sufficient),
@@ -1986,7 +1981,7 @@ report either ``substantial factual self-knowledge'' (Llama) or
 ``nothing over prompt features'' (Qwen ConfabQA within-obscure) on
 identical data and code, consistent with \citeauthor{orgad2024show}'s (\citeyear{orgad2024show}) finding
 that truthfulness encoding is multifaceted rather than universal.
-Headline small-LM claims should be checked on at least two architectures
+Small-LM claims should be checked on at least two architectures
 with different post-training recipes, with bootstrap CIs on balanced
 subsamples rather than single-seed point estimates. Finally, the refusal
 direction is a structure of the continuous representation space that

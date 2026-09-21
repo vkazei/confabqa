@@ -2,7 +2,7 @@
 \section{6. From probe to tokens: the Qwen3-1.7B refusal
 direction}\label{from-probe-to-tokens-the-qwen3-1.7b-refusal-direction}
 
-The probes of Section 5 certify that a refusal signal exists beyond prompt features. This section asks what the signal \emph{is}. I \emph{read} the direction through the model's own output head (§6.1), \emph{push} it onto real hidden states to test causation (§6.2), and \emph{take it apart} into sparse dictionary features to test which part carries the causal effect (§6.3).
+Section 5 shows a refusal signal beyond prompt features. Here I read the direction through the model's output head (§6.1), intervene on real hidden states (§6.2), and decompose it into sparse dictionary features to locate the causal component (§6.3).
 
 % ----- 6.1 Probe-direction atlas: the refusal signal in token space -----
 \subsection{6.1 Probe-direction atlas: the refusal signal in token space}\label{probe-direction-atlas-what-the-refusal-signal-points-at-in-token-space}
@@ -14,7 +14,7 @@ lifts back to raw hidden-state units,
 \(V \in \mathbb{R}^{16 \times 2048}\), scaler stds \(\sigma\), sign
 chosen so the refusal end is positive), and passes through the model's final RMSNorm and tied LM head:
 \(\ell_v = \big[\mathrm{LMHead}(\mathrm{RMSNorm}(\mathbf{w}_{\mathrm{raw}}))\big]_v\)
-for \(v \in \mathcal{V}\). RMSNorm is scale-invariant, so the \(\ell_v\) depend only on the direction. This is the same linear readout the head applies to any real state, so moving a state along the direction adds approximately these scores to its next-token logits, a prediction Section 6.2 confirms, with the lens scores as the \(\alpha \to \infty\) asymptote of the dose-response (calibration in Appendix C). One caution: this is \emph{epistemic} abstention expressed as a hedging opener, a different object from the \emph{safety}-refusal direction of \citet{arditi2024refusal}. The two need not coincide, and nothing here tests whether they do.
+for \(v \in \mathcal{V}\). RMSNorm is scale-invariant, so the \(\ell_v\) depend only on the direction. This is the same linear readout the head applies to any real state, so moving a state along the direction adds approximately these scores to its next-token logits, a prediction Section 6.2 confirms, with the lens scores as the \(\alpha \to \infty\) asymptote of the dose-response (calibration in Appendix C). This is \emph{epistemic} abstention expressed as a hedging opener, distinct from the \emph{safety}-refusal direction of \citet{arditi2024refusal}; whether the two coincide is untested here.
 
 \textbf{Top tokens (full subset, \(n=549\)).} The ten highest-scoring
 tokens are all tokenizations of ``as'', and the first non-``as'' token,
@@ -30,7 +30,7 @@ extractable from the question text (score histograms in Figure
 D.4, Figure \ref{fig:geometry}) shows the raw class-mean difference used
 by safety-refusal work is \emph{not} this direction: it absorbs topical
 and temporal-currency content where the probe concentrates the
-register-and-opener component. In sum, this is a direction whose token-level signature is the refusal-opening vocabulary, a late-network commitment to a specific speech act, not a general ``self-knowledge'' representation.
+register-and-opener component. The direction's token-level signature is the refusal-opening vocabulary: a late-network commitment to a specific speech act, rather than a general ``self-knowledge'' representation.
 
 % ----- 6.2 Causal validation by direct intervention -----
 \subsection{6.2 Causal validation by direct
@@ -42,7 +42,7 @@ whether it is also \emph{causal}, a forward hook adds
 post-block-27 residual during prefill on a stratified subset (30 wrong
 post-cutoff + 30 refusal items), where \(\mathbf{w}_{\mathrm{unit}}\) is
 the unit-normalized within-post recovery of Section 6.1 (hook detail in Appendix C). Generation passes through unmodified, one-shot at the moment of commitment. The perturbed residual is \emph{not} the cached normed state the probes read (Section 4). A coordinate-dissociation check refitting the probe natively on pre-norm residuals finds equal
-discriminative accuracy but half the causal leverage (Appendix C), so
+discriminative accuracy but half the causal effect (Appendix C), so
 the normed representation, one linear map from the output head, is where
 the potent direction lives. RMSNorm sets the natural \(\alpha\) scale, and working doses run from a third of the pushed state's own norm to about twice it (dose ratios and calibration scan in Appendix C). \textbf{Sweep:} \(\alpha \in \{-2000, -500, 0, 500, 1500, 3000\}\) on the 60 items, greedy, re-judged three-way. Outcomes are the strict judge-label refusal rate and a first-token refusal-opener rate over the Section 6.1 opener set (listed in Appendix C). The opener rate is
 deliberately a first-token \emph{proxy} (an ``As\ldots{}'' opening does
@@ -91,32 +91,27 @@ Table~\ref{tbl:alpha} is the steering matrix. Pushed toward refusal,
 wrong items open with refusal vocabulary almost without exception from a
 \(0.9\times\) dose, yet only a third of full generations convert: the
 autoregressive continuation pulls back to content. Pulled away, refusing items collapse into attempts that are overwhelmingly confabulations. Correct items are untouched by the pull and largely resist the push, about half still delivering the fact through a forced refusal opening.
-Suppressing the refusal decision does not unlock knowledge, and pushing
+Suppressing the refusal decision does not surface latent knowledge, and pushing
 toward refusal does not reliably erase it: the direction gates the
 opening speech act, and whether the fact is present decides what
 follows. The matrix is a property of the refusal axis, not of one recovery. Rerun with the SAE-2191 and directly optimized directions, it reproduces the same plateaus row for row (parity block, Table \ref{tbl:alphaparity}, Appendix C).
 
-\textbf{Interpretation.} The direction is a causal handle on the
+The direction is a causal handle on the
 refusal-opening \emph{readout}: it localizes where the commitment is
-written, not the upstream circuitry computing it (transported
-earlier-layer pushes are future work). The full outcome is \emph{co-determined} by autoregressive dynamics the one-shot push does not touch: a model can open ``As of 2024\ldots{}'' and still commit to a fact, hence the \(30\%\) vs.~\(100\%\) gap on wrong items. The reverse direction is stronger because the natural refusal trajectory is itself committed. A prefix-forcing control (Appendix C) reproduces the
-judge-label outcome without touching the hidden state: the direction
-causally selects the first token, and everything after token one is
-ordinary autoregressive dynamics (sample generations in Appendix C).
-This is the epistemic-abstention counterpart of \emph{shallow safety
-alignment} \citep{qi2025shallow}, where the safety-alignment delta concentrates in the first few output tokens. Here the abstention decision is likewise written, and steerable, at token one.
+written, not the upstream circuitry computing it (earlier-layer pushes are future work). The full outcome is \emph{co-determined} by autoregressive dynamics the one-shot push does not touch: a model can open ``As of 2024\ldots{}'' and still commit to a fact, hence the \(30\%\) vs.~\(100\%\) gap on wrong items. The reverse direction is stronger because the natural refusal trajectory is itself committed. A prefix-forcing control (Appendix C) reproduces the
+judge-label outcome without touching the hidden state: the direction selects the first token, and everything after is ordinary autoregressive dynamics (sample generations in Appendix C).
+Parallel to \emph{shallow safety alignment} \citep{qi2025shallow}, the abstention decision is written, and steerable, at token one.
 
 \textbf{Pushing the correctness direction} the same way finds no
 comparable causal handle: effects are magnitude-driven and
 sign-symmetric, the few flips concentrate on a recurring handful of
-marginal items, and nothing indicates the direction injecting knowledge. This correctness-direction null (protocol, rates, flip forensics, and the tension with truthfulness-steering reports) is detailed in Appendix C. The asymmetry with Table \ref{tbl:alpha} is what the two behaviors
-demand: refusing is a speech act the model can always produce, so a single direction can carry it. Answering correctly requires the specific fact, which a direction can at most dislodge from a marginal default, not supply.
+marginal items, with no sign that the direction injects knowledge. This correctness-direction null (protocol, rates, flip forensics, and the tension with truthfulness-steering reports) is detailed in Appendix C. The asymmetry with Table \ref{tbl:alpha} matches the two behaviors: refusing is a speech act the model can always produce, so a single direction can carry it; answering correctly requires the specific fact, which a direction can at most dislodge from a marginal default.
 
 % ----- 6.3 SAE feature decomposition of the refusal direction -----
 \subsection{6.3 SAE feature decomposition of the refusal
 direction}\label{sae-feature-decomposition-of-the-refusal-direction}
 
-The logit lens says what the direction outputs. A sparse autoencoder (SAE), trained on a far larger general-text corpus run through the model (so its features reflect what matters \emph{to the model}, not what varies in one dataset), helps answer how the decision is composed. For a
+A sparse autoencoder (SAE), trained on a far larger general-text corpus run through the model (features reflect what matters \emph{to the model}, not what varies in one dataset), decomposes how the decision is composed. For a
 hidden state \(h \in \mathbb{R}^{2048}\), the TopK SAE \citep{gao2025scaling} computes
 
 \[a(h) = \mathrm{Enc}(h) \in \mathbb{R}^{32{,}768}_{\ge 0},
@@ -158,7 +153,7 @@ cues, not commitment markers (ranked features and hit rates in Appendix D.7). Th
 hook, per-item EV \(0.50\), so absence of a dictionary feature is not
 absence of signal). Confabulation behaves as the default attempt
 pathway missing a fact, not a marked state, the a-space form of the
-Section 5.6 prompt-feature story. This inverts the default reported for Gemma 2 \citep{ferrando2025entity} and Claude 3.5 Haiku \citep{lindsey2025biology}, where abstention is the default pathway and recognized-entity features suppress it, so that hallucination is a failure of suppression. On Qwen3-1.7B the attempt is the default and abstention is the marked state, gated by the knowledge-cutoff cue (all 147 refusals are post-cutoff, Section 5.1), with no dictionary feature marking the confabulation. Llama 3.2 3B, refusing \(97.5\%\) of its post-cutoff failures, sits in the Gemma/Claude regime. Which pathway is the default appears to be a post-training property, the same variable Section 8 identifies behind the correctness signal.
+Section 5.6 prompt-feature story. This inverts the default reported for Gemma 2 \citep{ferrando2025entity} and Claude 3.5 Haiku \citep{lindsey2025biology}, where abstention is the default pathway and recognized-entity features suppress it, so that hallucination is a failure of suppression. On Qwen3-1.7B the attempt is the default and abstention is the marked state, gated by the knowledge-cutoff cue (all 147 refusals are post-cutoff, Section 5.1), with no dictionary feature marking the confabulation. Llama 3.2 3B, refusing \(97.5\%\) of its post-cutoff failures, sits in the Gemma/Claude regime. Which pathway is default appears to be a post-training property, the same variable Section 8 identifies behind the correctness signal.
 
 \subsubsection{6.3.1 Causal validation of feature
 2191}\label{causal-validation-of-feature-2191}
@@ -180,17 +175,13 @@ refusals at a super-norm dose, so super-norm doses can act by magnitude
 alone, which is why the working regime stays at or below the state
 norm).
 
-\textbf{Two consequences.} The §6.1 lens story is mechanically grounded
-(the SAE recovers exactly the opener vocabulary the lens projected to),
-and the probe direction's causal effect runs through 2191 specifically. Its ensemble neighbors (14034, 17077, 4314) contribute to the \emph{correlational} direction only. The two vectors are far from the
-same object, cosine \(0.16\) to the full-subset recovery and \(0.25\) to
-the within-post direction actually pushed (chance \(\approx 0.02\) in
-\(2048\) dimensions), yet produce the same first-token flip,
+The §6.1 lens story is mechanically grounded (the SAE recovers the opener vocabulary the lens projected to),
+and the probe direction's causal effect runs through 2191 specifically. Its ensemble neighbors (14034, 17077, 4314) contribute to the \emph{correlational} direction only. The two vectors are far from the same object (cosine \(0.16\) to the full-subset recovery and \(0.25\) to the within-post direction actually pushed; chance \(\approx 0.02\) in \(2048\) dimensions) yet produce the same first-token flip,
 \(81^\circ\) apart in the plane they span (Figure
 \ref{fig:probe-sae-plane}, Appendix D.4; norm accounting in Appendix
 C).
 
-This is the epistemic-abstention counterpart of the representational independence \citet{wollschlager2025geometry} report for safety refusal: distinct, far-from-collinear directions that each independently steer the same behavior, here with the output-side members (2191, optimized) the more potent (Figure \ref{fig:candidates}).
+As in the representational independence \citet{wollschlager2025geometry} report for safety refusal, distinct far-from-collinear directions each steer the same behavior; here the output-side members (2191, optimized) are the more dose-efficient (Figure \ref{fig:candidates}).
 
 \begin{figure}
 \centering
@@ -227,14 +218,11 @@ direction itself.}\label{fig:geometry}
 \end{figure}
 
 
-\textbf{A third recovery: the optimized refusal direction.} Where the
+\textbf{Optimized refusal direction.} Where the
 probe and the class-mean difference recover the direction from
-\emph{data}, a third route recovers it from the \emph{objective},
-maximizing the opener log-probability under the final RMSNorm and LM
+\emph{data}, a third route recovers it from the \emph{objective}: maximizing the opener log-probability under the final RMSNorm and LM
 head with the vector as the only trainable parameter (setup, cosines,
-and lens in Appendix C). The optimum lands next to feature 2191, not the probe direction, and is the most dose-efficient of the three (Table~\ref{tbl:threedirs}). The ordering optimized, then SAE feature, then probe matches how directly each recovery is shaped by the output objective, and what the probe direction adds on top of the opener cone
-is discriminative signal, not causal leverage. Figure
-\ref{fig:candidates} shows the whole geometry at once.
+and lens in Appendix C). The optimum lands next to feature 2191, not the probe direction, and is the most dose-efficient of the three (Table~\ref{tbl:threedirs}). The ordering optimized, then SAE feature, then probe tracks how directly each recovery is shaped by the output objective; the probe direction adds discriminative signal rather than causal potency (Figure \ref{fig:candidates}).
 
 \begin{figure}
 \centering
@@ -247,8 +235,7 @@ weakly coupled (\(0.09\)--\(0.27\); chance \(\approx 0.02\) in
 \(2048\)-d). \textbf{(b)} Held-out first-token flip curves, doses as
 fractions of the mean state norm: causal potency tracks output-family
 membership, not discriminative quality. The native pre-norm probe
-separates the classes as well as any recovery (Appendix C) yet carries
-the least leverage.}\label{fig:candidates}
+separates the classes as well as any recovery (Appendix C) yet carries the least causal effect.}\label{fig:candidates}
 \end{figure}
 
 All four causal routes converge on the strict criterion: on the same

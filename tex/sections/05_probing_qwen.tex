@@ -83,9 +83,7 @@ Table \ref{tbl:probepeaks} (Appendix A.5) tabulates peaks, layer
 ranges, and margins over the majority baselines for all five targets,
 with the \(1\sigma\) layer-range caveat (the within-obscure range spans
 the whole network, so its per-layer peak is not a per-depth claim).
-Taken at face value these are the margins a single-model study would
-lead with. Section 5.6 explains why every correctness margin among them
-is overstated. Imbalance-aware metrics at the refusal-vs-wrong peak
+Majority-baseline margins alone overstate the correctness signal; Section 5.6 scores each against prompt features. Imbalance-aware metrics at the refusal-vs-wrong peak
 (balanced accuracy \(0.874\), ROC AUC \(0.944\); confusion matrix in
 Appendix D.6) show the probe is not defaulting to ``wrong''.
 
@@ -119,17 +117,13 @@ Section 8.1 bootstrap confirms the reading: the all-items margin is real,
 the disconfounded within-stratum margins consistent with zero.
 (2)~\emph{Cutoff is easy to predict either way}: text features alone
 reach \(94.0\)--\(95.2\%\) (the year mentioned is a near-perfect
-predictor), and the probe at \(98.2\%\) adds \(+3.0\) pp. This is a
-manipulation check, not a finding about internals.
+predictor), and the probe at \(98.2\%\) adds \(+3.0\) pp (a manipulation check on the cutoff cue, not evidence of internals).
 (3)~\emph{Refusal-vs-confabulation substantially beats prompt
 features}: \(+7.4\) pp over TF-IDF overall, \(+9.6\) pp within
 post-cutoff where all refusals occur, gaps \(\approx 4\)x the per-fold
-std (\(0.019\), \(0.022\)). The asymmetry is what the targets' nature
-predicts. Refusal-vs-confabulation is a decision the model itself makes,
+std (\(0.019\), \(0.022\)). Refusal-vs-confabulation is a decision the model itself makes,
 and the late hidden state is the computation producing it (Section
 2.2), so an encoding must exist. Correctness is a relation between
-output and world, and nothing guarantees the model represents it. What
-is not guaranteed, and is the substance of Section 6, is the signal's
-form: linearly decodable from \(16\) principal components, concentrated
+output and world that the model need not represent. Section 6 tests whether the refusal signal is linearly decodable from \(16\) principal components, concentrated
 late, causally sufficient for the first-token opening, and
 SAE-decomposable.

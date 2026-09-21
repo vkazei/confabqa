@@ -41,7 +41,7 @@ Qwen-judge's disagreement with a second independent grader at
 systematically stricter, reflecting its containment rule and gold
 verification rather than judge miscalibration (decomposition and
 retained flagged-premise items in Appendix B.3). A sensitivity rerun
-under the DR labels keeps the picture, and a blind Claude-family regrade
+under the DR labels leaves the conclusions unchanged, and a blind Claude-family regrade
 of the Section 6 intervened generations agrees with the self-judge
 without inflating flip rates (both in Appendix B.3).
 
@@ -79,10 +79,7 @@ class-balanced subsamples without replacement. Each refits the full
 probe pipeline (peak over all \(29\) layers) plus the four prompt
 baselines on the same folds, and I report \(\bar h_{\rm adds}\) with a
 percentile 95\% CI (class-size rule, CI construction, and compute bounds
-in Appendix E). One asymmetry matters when reading small margins: the
-probe side maximizes over \(29\) correlated layers, the baseline side
-over four. Under a no-signal null the expected \(h_{\rm adds}\) is
-therefore slightly positive, so margins within a couple of points of
+in Appendix E). When reading small margins, note that the probe side maximizes over \(29\) correlated layers and the baseline side over four, so under a no-signal null the expected \(h_{\rm adds}\) is slightly positive; margins within a couple of points of
 zero carry this selection bias.
 
 \textbf{External-dataset evaluation (Section 8.1).} \textbf{PopQA}

@@ -26,8 +26,7 @@ scaling control, with \(K=30\) balanced-subsample bootstrap CIs across
   disconfounded point estimates are also positive (\(+11.4\) pp
   within-pre, \(+12.3\) pp within-obscure) though an item-level bootstrap
   leaves both consistent with zero (Section 8.1). The ``correctness
-  probe reduces to prompt features at \(1.7\)--\(3\)B scale'' framing
-  was an over-generalization from one model.
+  probe reduces to prompt features at \(1.7\)--\(3\)B scale'' framing does not hold beyond that one model.
 \item
   \textbf{Llama's correctness signal is primarily not refusal-channel
   readout:} dropping refusals leaves \(+20.8\) pp (PopQA) and
@@ -40,8 +39,7 @@ scaling control, with \(K=30\) balanced-subsample bootstrap CIs across
   these benchmarks.
 \end{enumerate}
 
-The methodological contribution is the joint use of a prompt-feature
-baseline, \(50/50\) class-balanced subsampling, percentile-CI bootstraps
+Methodologically, the paper combines a prompt-feature baseline, \(50/50\) class-balanced subsampling, percentile-CI bootstraps
 over \(K=30\) such subsamples, and cross-model plus cross-dataset evaluation. A single-model, single-seed, class-imbalanced read of the same code could have reported either polarity. Directions for v2: (i)
 swap the post-training recipe holding family fixed and check whether the
 cross-family \(h_{adds}\) gap survives at \(\gtrsim 7\)B; (ii) extend
