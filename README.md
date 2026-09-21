@@ -143,6 +143,7 @@ plots/                                   Figure generators
 tools/                                   Developer checks
   smoke_test.py                            Load the model, generate once, capture a hidden state
   judge_regression.py                      Regression tests for the judge
+  prose_audit.py                           Check that a paper edit changed wording only (numbers, cites, refs, units, math)
 tests/                                   pytest sanity suite (dataset, judge, artifacts)
 data/                                    Question files, judge labels, response JSONs
 figures/                                 All paper figures (PNGs, JSONs, MDs)
