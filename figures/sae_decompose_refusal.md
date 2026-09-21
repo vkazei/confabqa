@@ -1,7 +1,7 @@
 # SAE feature decomposition of the Qwen3-1.7B refusal direction
 
 - **Model:** Qwen/Qwen3-1.7B (Instruct)
-- **SAE:** qwen-scope-3-1.7b-base-w32k-l50 (trained on Qwen3-1.7B-Base; transfer EV=0.82 at this layer)
+- **SAE:** qwen-scope-3-1.7b-base-w32k-l50 (trained on Qwen3-1.7B-Base; base-to-instruct reconstruction at the declared hook: EV 0.50, cosine 0.72, paper Appendix D.2)
 - **Layer:** HF index 28 (= SAE layer27; refusal-vs-wrong probe peak)
 - **d_in=2048, d_sae=32768**
 - **n items:** 549 (147 refusal + 402 wrong)

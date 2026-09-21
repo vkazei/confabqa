@@ -24,8 +24,11 @@ Three orthogonal views are reported:
 
 The SAE is qwen-scope-3-1.7b-base-w32k-l50, trained on Qwen3-1.7B-Base. Our
 subject model is Qwen3-1.7B-Instruct. Reconstruction quality on Instruct
-activations at layer 27 (=HF idx 28, our probe peak) is EV=0.82, cos=0.90 —
-acceptable transfer (`sae_layer_sweep.py`).
+activations at the SAE's declared hook (raw post-block-27 residual) is marginal:
+per-item EV 0.50, mean cosine 0.72 (`figures/sae_decompose_prenorm.json`, paper
+Appendix D.2). An earlier EV=0.82 / cos=0.90 reading was taken at a different
+cached hidden-state index and is superseded; the features are validated by the
+causal test (paper Section 6.3.1), not by reconstruction quality.
 
 Outputs:
   figures/sae_decompose_refusal.{json,md}
@@ -231,7 +234,7 @@ def main():
     md = []
     md.append("# SAE feature decomposition of the Qwen3-1.7B refusal direction\n\n")
     md.append(f"- **Model:** {MODEL_ID} (Instruct)\n")
-    md.append(f"- **SAE:** {SAE_RELEASE} (trained on Qwen3-1.7B-Base; transfer EV=0.82 at this layer)\n")
+    md.append(f"- **SAE:** {SAE_RELEASE} (trained on Qwen3-1.7B-Base; base-to-instruct reconstruction at the declared hook: EV 0.50, cosine 0.72, paper Appendix D.2)\n")
     md.append(f"- **Layer:** HF index {HF_LAYER} (= SAE layer{SAE_LAYER}; refusal-vs-wrong probe peak)\n")
     md.append(f"- **d_in={sae.cfg.d_in}, d_sae={sae.cfg.d_sae}**\n")
     md.append(f"- **n items:** {len(items)} ({int(is_refusal.sum())} refusal + {int((~is_refusal).sum())} wrong)\n\n")
