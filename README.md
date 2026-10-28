@@ -214,8 +214,8 @@ python -m plots.figure_merge_per_layer_probes
 python -m plots.figure_sae_features
 
 # Build the paper (source of truth is tex/; self-contained, TeX-Live fonts).
-( cd tex && xelatex paper_confabqa.tex && bibtex paper_confabqa \
-    && xelatex paper_confabqa.tex && xelatex paper_confabqa.tex )
+( cd tex && pdflatex paper_confabqa.tex && bibtex paper_confabqa \
+    && pdflatex paper_confabqa.tex && pdflatex paper_confabqa.tex )
 # Or, for the packaged arXiv source (arxiv_upload.tar.gz): ./reproduce.sh arxiv
 ```
 

@@ -1,6 +1,6 @@
 % ---------------------------------------------------------------------------
 % preamble.tex -- all package loading and styling for the ConfabQA paper.
-% Loaded by paper_confabqa.tex via \input{preamble}. XeLaTeX only.
+% Loaded by paper_confabqa.tex via \input{preamble}. pdfLaTeX.
 % NeurIPS-look styling with TeX-Live-shipped fonts; see comments per block.
 % ---------------------------------------------------------------------------
 % Options for packages loaded elsewhere
@@ -10,11 +10,9 @@
 \usepackage[textwidth=5.5in,textheight=9in,centering]{geometry}
 \usepackage{amsmath,amssymb}
 \setcounter{secnumdepth}{-\maxdimen} % remove section numbering
-% XeLaTeX-only build (pandoc's pdfTeX branches removed as inert cruft).
-\usepackage{unicode-math} % this also loads fontspec
-\defaultfontfeatures{Scale=MatchLowercase}
-\defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
-\usepackage{lmodern}
+\usepackage[T2A,T1]{fontenc}  % T1 for Latin text; T2A for the one Cyrillic word
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}            % Latin Modern: math (and the default families)
 % Use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 \IfFileExists{microtype.sty}{% use microtype if available
@@ -49,30 +47,20 @@
 \setlength{\emergencystretch}{3em} % prevent overfull lines
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
-% NeurIPS-look styling -- arXiv variant: TeX-Live-shipped fonts only
-% (TeX Gyre Termes/Heros, DejaVu Sans Mono, FandolSong for CJK).
+% NeurIPS-look styling with TeX-Live-shipped Type 1 fonts.
 % Reproduces the visible style of neurips_2024.sty: 10pt Times body,
 % Helvetica sans headings, 5.5in x 9in text area, NeurIPS-style abstract.
+\usepackage{tgtermes}                    % TeX Gyre Termes (Times) body
+\usepackage[scale=0.92]{tgheros}         % TeX Gyre Heros (Helvetica) sans
+\usepackage[scaled=0.82]{DejaVuSansMono} % monospace token lists
 
-% Fonts: use fontspec under xelatex with system fonts that have Cyrillic + CJK
-% coverage. NeurIPS uses Times Roman body + Helvetica headings.
-\usepackage{mathptmx}                 % math + body Times
-\usepackage[scaled=0.92]{helvet}      % sans default = Helvetica scaled
-% Override main font for text to a Cyrillic-capable Times variant
-\usepackage{fontspec}
-\setmainfont{texgyretermes}[Extension=.otf, UprightFont=*-regular,
-  BoldFont=*-bold, ItalicFont=*-italic, BoldItalicFont=*-bolditalic]
-\setsansfont{texgyreheros}[Scale=0.92, Extension=.otf, UprightFont=*-regular,
-  BoldFont=*-bold, ItalicFont=*-italic, BoldItalicFont=*-bolditalic]
-\setmonofont{DejaVuSansMono}[Scale=0.82, Extension=.ttf, HyphenChar=None, BoldFont=*-Bold,
-  ItalicFont=*-Oblique, BoldItalicFont=*-BoldOblique]
-% CJK: TeX-Live-shipped Fandol (loaded here, not via the pandoc variable)
-\usepackage{xeCJK}
-\xeCJKsetup{AutoFallBack=true}
-\setCJKmainfont{FandolSong-Regular}[Extension=.otf]
-\setCJKfallbackfamilyfont{rm}{bsmi00lp}[Extension=.ttf]  % Arphic Mingti: traditional glyphs Fandol lacks
-\newfontfamily\cyrfallbackfont{DejaVuSerif}[Extension=.ttf]
-\newcommand{\cyrtext}[1]{{\cyrfallbackfont #1}}
+% Non-Latin tokens quoted in the text (model vocabulary): Chinese via CJKutf8
+% (Arphic gbsn simplified, bsmi for the traditional form), one Cyrillic word
+% via T2A. The body wraps each Chinese token in \zhs{} or \zht{}.
+\usepackage{CJKutf8}
+\newcommand{\zhs}[1]{\begin{CJK}{UTF8}{gbsn}#1\end{CJK}}
+\newcommand{\zht}[1]{\begin{CJK}{UTF8}{bsmi}#1\end{CJK}}
+\newcommand{\cyrtext}[1]{{\fontencoding{T2A}\fontfamily{cmr}\selectfont #1}}
 
 % Section formatting: sans-serif bold, tight NeurIPS spacing.
 \usepackage[compact]{titlesec}
@@ -160,15 +148,6 @@
 \usepackage{tikz}
 \usetikzlibrary{positioning, arrows.meta, calc, shapes.geometric}
 
-% xeCJK (loaded by the template when CJKmainfont is set) claims curly quotes and
-% dashes as CJK punctuation, so they get typeset in Heiti SC with fullwidth-ish
-% advance widths ("Llama' s"). Reclassify them as Latin so Times New Roman keeps them.
-\AtBeginDocument{%
-  \ifcsname xeCJKDeclareCharClass\endcsname
-    \xeCJKDeclareCharClass{Default}{"2018, "2019, "201C, "201D, "2013, "2014}%
-  \fi
-}
-
 % Code-heavy paragraphs: with unbreakable \texttt tokens, the default
 % \tolerance=200 makes TeX run tokens into the margin rather than set a
 % loose line. Prefer the loose line.
@@ -177,7 +156,7 @@
 
 % Bibliography: BibTeX + natbib, author-year, no comma between author and
 % year (matches the paper's "(Author year)" style). References live in
-% refs.bib. Compile: xelatex, bibtex, xelatex, xelatex.
+% refs.bib. Compile: pdflatex, bibtex, pdflatex, pdflatex.
 \usepackage[authoryear]{natbib}
 \setcitestyle{aysep={}}
 \renewcommand*{\bibfont}{\footnotesize}

@@ -5,7 +5,7 @@
 #                            committed result artifacts (JSON). Minutes, CPU-only,
 #                            no model downloads.
 #   ./reproduce.sh arxiv     Build + test-compile the arXiv source package
-#                            (TeX-Live-shipped fonts; produces arxiv_upload.tar.gz).
+#                            (pdfLaTeX, TeX-Live fonts; produces arxiv_upload.tar.gz).
 #   ./reproduce.sh full      The complete pipeline: generation -> judging ->
 #                            probing -> bootstraps -> SAE -> figures.
 #                            ~3 days wall-clock on an M1 Pro 16 GB; needs the
@@ -28,10 +28,10 @@ if [[ "$MODE" == "figures" ]]; then
 fi
 
 if [[ "$MODE" == "arxiv" ]]; then
-  # The paper source of truth is tex/ (self-contained, TeX-Live fonts).
-  echo "== Building the arXiv source package from tex/ (TeX-Live fonts only) =="
+  # The paper source of truth is tex/ (self-contained, pdfLaTeX, TeX-Live fonts).
+  echo "== Building the arXiv source package from tex/ (pdfLaTeX, TeX-Live fonts) =="
 
-  # Guard: every \cite key must resolve to a refs.bib entry. xelatex's
+  # Guard: every \cite key must resolve to a refs.bib entry. The build's
   # "undefined" grep misses citations typed as literal text (the Chanin 2025
   # incident), so diff keys used in the source against keys defined in refs.bib
   # and fail loudly on any dangling citation.
@@ -56,10 +56,10 @@ if [[ "$MODE" == "arxiv" ]]; then
   cp -R tex/figures arxiv_pkg/figures
   cp -R tex/sections arxiv_pkg/sections   # per-section \input files
   (cd arxiv_pkg \
-    && xelatex -interaction=nonstopmode paper_confabqa.tex >/dev/null \
+    && pdflatex -interaction=nonstopmode paper_confabqa.tex >/dev/null \
     && bibtex paper_confabqa >/dev/null \
-    && xelatex -interaction=nonstopmode paper_confabqa.tex >/dev/null \
-    && xelatex -interaction=nonstopmode paper_confabqa.tex >/dev/null)
+    && pdflatex -interaction=nonstopmode paper_confabqa.tex >/dev/null \
+    && pdflatex -interaction=nonstopmode paper_confabqa.tex >/dev/null)
   # A float overfilling a page runs content off the bottom; fail loudly so a
   # reflow never silently reintroduces it.
   if grep -q "Overfull .vbox" arxiv_pkg/paper_confabqa.log; then
@@ -67,7 +67,8 @@ if [[ "$MODE" == "arxiv" ]]; then
     grep "Overfull .vbox" arxiv_pkg/paper_confabqa.log >&2
     exit 1
   fi
-  # Ship the .bbl so arXiv need not run bibtex.
+  # Ship the .bbl so arXiv need not run bibtex. pdflatex is arXiv's default
+  # processor, so no 00README is needed.
   (cd arxiv_pkg \
     && rm -f paper_confabqa.aux paper_confabqa.log paper_confabqa.out paper_confabqa.blg \
     && tar czf ../arxiv_upload.tar.gz \
@@ -114,10 +115,10 @@ MODEL_ID=Qwen/Qwen3-1.7B "$PY" -m external.triviaqa_evaluate
 
 # Build the paper PDF from tex/ (source of truth) and copy to the repo root.
 (cd tex \
-  && xelatex -interaction=nonstopmode paper_confabqa.tex >/dev/null \
+  && pdflatex -interaction=nonstopmode paper_confabqa.tex >/dev/null \
   && bibtex paper_confabqa >/dev/null \
-  && xelatex -interaction=nonstopmode paper_confabqa.tex >/dev/null \
-  && xelatex -interaction=nonstopmode paper_confabqa.tex >/dev/null \
+  && pdflatex -interaction=nonstopmode paper_confabqa.tex >/dev/null \
+  && pdflatex -interaction=nonstopmode paper_confabqa.tex >/dev/null \
   && rm -f paper_confabqa.aux paper_confabqa.log paper_confabqa.out paper_confabqa.blg)
 cp tex/paper_confabqa.pdf paper_confabqa.pdf
 echo "== Full pipeline complete =="

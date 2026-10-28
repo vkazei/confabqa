@@ -791,8 +791,8 @@ on \texttt{model.model.layers{[}27{]}}, whose output is the
 post-block-27 residual feeding the final RMSNorm; the pushed vector is
 the unit-normalized within-post recovery (the full-subset recovery is a
 substantially different vector, cosine \(0.33\)). The first-token
-opener set is \{ \texttt{as}, \texttt{as}, \texttt{As}, \texttt{作为},
-\texttt{作為}, \texttt{作为一个}, \texttt{There}, \texttt{there} \}.
+opener set is \{ \texttt{as}, \texttt{as}, \texttt{As}, \texttt{\zhs{作为}},
+\texttt{\zht{作為}}, \texttt{\zhs{作为一个}}, \texttt{There}, \texttt{there} \}.
 
 \textbf{Coordinate dissociation: normed vs.~pre-norm recovery (Section
 6.2).} Refitting the same probe pipeline natively on the pre-norm
@@ -1346,18 +1346,18 @@ relative alignment scores, not log-probabilities: with tied embeddings,
 (token row \(\mathbf{e}_v\), RMSNorm gain \(\mathbf{g}\),
 \(\hat{\mathbf{w}}\) the direction divided by its root-mean-square).
 Full subset (\(n=549\)): \texttt{as} leads at \(+19.22\), the Chinese refusal
-openers \texttt{作为一个} and \texttt{作为} (``as'' / ``as a'') sit at
+openers \texttt{\zhs{作为一个}} and \texttt{\zhs{作为}} (``as'' / ``as a'') sit at
 ranks 2--3 (\(+17.67\), \(+17.14\), with further variants at ranks
 12--13), the rest of the top ten are case and spacing variants, and
 \texttt{there} at rank 11 scores \(+14.16\). The within-post recovery's
 lens yields the same vocabulary in a sharper form: '' as'' scores
-\(+31.66\), ``作为'' \(+29.63\), ``\textbackslash tas'' \(+27.58\),
+\(+31.66\), ``\zhs{作为}'' \(+29.63\), ``\textbackslash tas'' \(+27.58\),
 '' there'' \(+23.26\). The confabulation pole of the refusal direction
 is dominated by generic low-frequency tokens with no thematic structure,
 as expected: a confabulation can begin with any entity name, so there is
 no concentrated ``confabulation vocabulary.'' The layer-18 correctness
 direction under the same lens yields generic low-frequency fragments at
-the correct pole and at most a faint uncertainty flavor (\texttt{不知}
+the correct pole and at most a faint uncertainty flavor (\texttt{\zhs{不知}}
 ``don't know'', \texttt{unknown}, \texttt{forgotten}) at the incorrect
 pole.
 
@@ -1369,7 +1369,7 @@ subset (\(0.36\) within post-cutoff, against a chance level of
 \(\approx 0.02\) in \(2048\) dimensions), with only one of its top-ten
 lens tokens (\texttt{as} itself, ranked first) overlapping the probe's.
 Its lens instead mixes the opener with a temporal-currency vocabulary
-(\texttt{current}, \texttt{currently}, \texttt{present}, \texttt{我没有}
+(\texttt{current}, \texttt{currently}, \texttt{present}, \texttt{\zhs{我没有}}
 ``I don't have''), which dominates outright within post-cutoff. The two
 recoveries weight different components: the mean difference absorbs
 topical and temporal-currency content, the discriminatively trained
@@ -1594,14 +1594,14 @@ post-cutoff prize questions the model refuses; officialese 17077
 wrongs; the
 polite-modality feature 14361 reads \texttt{may}, \texttt{Please},
 \texttt{Hopefully}; the first-person feature 8875 reads \texttt{I},
-\texttt{我}; 14034 is a register feature whose output vocabulary always
+\texttt{\zhs{我}}; 14034 is a register feature whose output vocabulary always
 loses the argmax race to ``As''; and 2191's max-activating prompts are
 the recent-date items the model declines (Nov 2024 Gwen Stefani album,
 the \emph{Wicked} adaptation, Taylor Swift album dates).
 
 The strongest wrong-vs-correct feature in the Section 6.3 mirror search
 is a \emph{topic} cue, not a commitment marker: an award-vocabulary
-detector (lens \texttt{winning}, \texttt{荣获}, \texttt{获得}) firing
+detector (lens \texttt{winning}, \texttt{\zhs{荣获}}, \texttt{\zhs{获得}}) firing
 on \(22\%\) of wrong items vs.~\(1\%\) of correct and \(0\%\) of
 refusals, whose max-activating prompts are the obscure Best Picture
 years of the model's weakest cell; it tops the disconfounded within-pre
@@ -1948,7 +1948,7 @@ Extended form of the Section 9 discussion.
 
 \textbf{Refusal findings.} The refusal direction's logit lens
 recovers the literal refusal-opening vocabulary in each model (Qwen3:
-\texttt{as}, \texttt{As}, \texttt{作为}; Gemma: \texttt{Regret},
+\texttt{as}, \texttt{As}, \texttt{\zhs{作为}}; Gemma: \texttt{Regret},
 \texttt{Formal}, \texttt{Alas}; Llama: \texttt{I}, \texttt{Given},
 \texttt{As}), the one-shot intervention drives the first-token opener
 rate to \(100\%\) on Qwen3 and Gemma (Sections 6.2, 7.2), and the
