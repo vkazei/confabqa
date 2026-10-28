@@ -112,7 +112,7 @@ def bootstrap_cell(items, label):
     ci_high = h_sorted[int(0.975 * K)]
     ci_excludes_zero = ci_low > 0 or ci_high < 0
     print(f"  -> {label}: h_adds = {mean_h:+.2f} ± {std_h:.2f} pp  "
-          f"95% CI [{ci_low:+.2f}, {ci_high:+.2f}]  "
+          f"range [{ci_low:+.2f}, {ci_high:+.2f}]  "
           f"{'EXCLUDES 0' if ci_excludes_zero else 'includes 0'}")
     return {
         "label": label, "n_per_class": n_per_class, "K": K,
@@ -135,7 +135,7 @@ def main():
     print(f"\nWrote {OUT_JSON}")
     md = ["# Bootstrap h_adds — Qwen3-4B on PopQA\n\n",
           f"K={K} balanced 50/50 subsamples; same protocol as bootstrap_h_adds.md.\n\n",
-          "| cell | n/class | mean h_adds | 95% CI | excl 0? |\n",
+          "| cell | n/class | mean h_adds | range | excl 0? |\n",
           "|---|--:|--:|---|:--:|\n"]
     for k, r in results.items():
         if "skipped" in r:

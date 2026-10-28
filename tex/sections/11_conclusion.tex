@@ -4,7 +4,7 @@ work}\label{conclusion-and-future-work}
 
 I introduce \textbf{ConfabQA} and apply it, plus PopQA and TriviaQA
 samples, to three instruction-tuned models and a Qwen3-4B within-family
-scaling control, with \(K=30\) balanced-subsample bootstrap CIs across
+scaling control, with \(K=30\) balanced-subsample bootstrap ranges across
 \(14\) \texttt{(dataset,\ model,\ target)} cells. Findings:
 
 \begin{enumerate}
@@ -20,9 +20,9 @@ scaling control, with \(K=30\) balanced-subsample bootstrap CIs across
 \item
   \textbf{The correctness-probe gap is sharply model-dependent.} On
   balanced PopQA / TriviaQA subsamples Llama 3.2 3B adds \(+24.9\) and
-  \(+21.3\) pp over the strongest prompt baseline (95\% CIs
+  \(+21.3\) pp over the strongest prompt baseline (subsample ranges
   \([20.6, 29.0]\), \([19.5, 22.9]\)) where Qwen3-1.7B adds \(+4.4\) and
-  \(+9.6\) pp (CIs \([2.1, 6.5]\), \([5.1, 13.8]\)); Llama's ConfabQA
+  \(+9.6\) pp (ranges \([2.1, 6.5]\), \([5.1, 13.8]\)); Llama's ConfabQA
   disconfounded point estimates are also positive (\(+11.4\) pp
   within-pre, \(+12.3\) pp within-obscure) though an item-level bootstrap
   leaves both consistent with zero (Section 8.1). The ``correctness
@@ -39,7 +39,7 @@ scaling control, with \(K=30\) balanced-subsample bootstrap CIs across
   these benchmarks.
 \end{enumerate}
 
-Methodologically, the paper combines a prompt-feature baseline, \(50/50\) class-balanced subsampling, percentile-CI bootstraps
+Methodologically, the paper combines a prompt-feature baseline, \(50/50\) class-balanced subsampling, bootstrap ranges
 over \(K=30\) such subsamples, and cross-model plus cross-dataset evaluation. A single-model, single-seed, class-imbalanced read of the same code could have reported either polarity. Directions for v2: (i)
 swap the post-training recipe holding family fixed and check whether the
 cross-family \(h_{adds}\) gap survives at \(\gtrsim 7\)B; (ii) extend

@@ -23,9 +23,9 @@ The paper maps the geometry of that decision with linear probes, a sparse autoen
 
 Labels come from a three-way Qwen3-1.7B judge (correct / refusal / wrong), checked against Gemini 3.1 Pro in Deep Research mode on all 784 items (κ = 0.78) and against Claude Opus 4.7 on a stratified 30-item sample (30/30 agreement).
 
-![Bootstrap 95% CIs on h_adds across 14 (dataset, model, target) cells](figures/bootstrap_forest.png)
+![Bootstrap ranges (min to max over K=30 subsamples) on h_adds across 14 (dataset, model, target) cells](figures/bootstrap_forest.png)
 
-| cell | h_adds (pp) | 95% CI | excludes 0 |
+| cell | h_adds (pp) | range, K=30 | excludes 0 |
 |---|--:|---|:--:|
 | PopQA · Llama 3.2 3B | **+24.94** | [+20.57, +29.03] | yes |
 | TriviaQA · Llama 3.2 3B | **+21.25** | [+19.52, +22.89] | yes |

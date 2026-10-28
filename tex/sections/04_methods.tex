@@ -77,9 +77,9 @@ test).
 \texttt{(dataset,\ model,\ target)} cell, I draw \(K = 30\) random 50/50
 class-balanced subsamples without replacement. Each refits the full
 probe pipeline (peak over all \(29\) layers) plus the four prompt
-baselines on the same folds, and I report \(\bar h_{\rm adds}\) with a
-percentile 95\% CI (class-size rule, CI construction, and compute bounds
-in Appendix E). When reading small margins, note that the probe side maximizes over \(29\) correlated layers and the baseline side over four, so under a no-signal null the expected \(h_{\rm adds}\) is slightly positive; margins within a couple of points of
+baselines on the same folds, and I report \(\bar h_{\rm adds}\) with the range of the \(K\) values, from minimum
+to maximum. At \(K = 30\) the 2.5th/97.5th-percentile rule selects exactly these two values, so I call it a range, not a
+95\% CI. It measures subsample-to-subsample spread, not item-sampling uncertainty (class-size rule, interval construction, compute bounds, and an item-level bootstrap in Appendix E). When reading small margins, note that the probe side maximizes over \(29\) correlated layers and the baseline side over four, so under a no-signal null the expected \(h_{\rm adds}\) is slightly positive; margins within a couple of points of
 zero carry this selection bias.
 
 \textbf{External-dataset evaluation (Section 8.1).} \textbf{PopQA}

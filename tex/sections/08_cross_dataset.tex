@@ -18,17 +18,15 @@ plus \textbf{five} external-dataset cells (PopQA \(\times\)
 \texttt{(dataset,\ model,\ target)} combinations (label provenance in
 Appendix E). The Qwen3-4B PopQA cell is the within-family scaling control, which separates parameter count from family / post-training recipe.
 
-Of the fourteen cells (Table \ref{tbl:bootstrap} and forest plot, Appendix E), \(5\) of the \(9\) ConfabQA cells and \(5/5\) external-dataset cells have 95\% CIs excluding \(0\). The Qwen3
+Of the fourteen cells (Table \ref{tbl:bootstrap} and forest plot, Appendix E), \(5\) of the \(9\) ConfabQA cells and \(5/5\) external-dataset cells have subsample ranges excluding \(0\). The Qwen3
 and Gemma disconfounded within-stratum cells remain consistent with zero
 but carry positive point estimates in all four cases. Thus the single-seed
-``null'' was borderline. The CIs are
-per-cell and unadjusted for multiple comparisons. The cross-model
+``null'' was borderline. The ranges are per-cell and unadjusted for multiple comparisons. The cross-model
 contrast rests on no single borderline cell. Two protocol checks
 calibrate them (Appendix E). A label-permutation null shows
 \(\approx 1\) pp-range margins should not be read as evidence, while the
 all-items margins sit far above the null. An item-level bootstrap leaves
-both Llama within-stratum cells consistent with zero, so those two
-positive CIs should be read as point estimates.
+both Llama within-stratum cells consistent with zero, so those two positive ranges should be read as point estimates.
 
 \textbf{Cross-dataset \(\times\) cross-model contrast.} On the same
 PopQA data under the same substring-correct criterion (Qwen pooled over
@@ -41,7 +39,7 @@ is qualitatively richer in linearly-decodable correctness information.
 
 \textbf{Within-family scaling control (Qwen3-4B).} Qwen3-4B (same
 family, \(2.4\times\) Qwen3-1.7B's parameter count, \(\approx 25\%\)
-more than Llama 3.2 3B) lands at \(+5.77\) pp, 95\% CI
+more than Llama 3.2 3B) lands at \(+5.77\) pp, range
 \([+2.34, +11.61]\): statistically indistinguishable from Qwen3-1.7B's
 \(+4.35\) pp and far below Llama's \(+24.94\) pp. Doubling parameter
 count within the Qwen family moves \(\bar h_{adds}\) by \(\approx 1.4\)
@@ -74,7 +72,7 @@ Dropping refusals leaves Llama's margin largely
 intact (\(+24.94 \to +20.76\) on PopQA, \(+21.25 \to +17.71\) on
 TriviaQA): the refusal channel accounts for \(\approx 17\%\) of Llama's margin, and \(\approx 83\%\) is correct-vs-wrong discrimination on attempted items. The Qwen rows are essentially unchanged (Qwen refuses too rarely here for the confound to bite).
 Probed directly, Llama's refusal target beats the strongest prompt
-baseline by \(+18.44\) (PopQA) and \(+25.43\) pp (TriviaQA), with CIs
+baseline by \(+18.44\) (PopQA) and \(+25.43\) pp (TriviaQA), with ranges
 excluding \(0\) by wide margins; Qwen's analogous margins are positive
 but under-powered. One caveat: the ratio's numerator is judge-labeled
 and its denominator substring-labeled; a label-sensitivity rerun shows the contrast is not a label artifact (full table and rerun in Appendix E, Table \ref{tbl:refchannel}).

@@ -7,7 +7,7 @@ K=30 balanced 50/50 bootstrap subsamples per cell. Same probe + baseline pipelin
 If Llama's headline +25 pp was mostly refusal-readout, this collapses.
 For reference, the unfiltered numbers are: Qwen-PopQA +4.35, Llama-PopQA **+24.94**, Qwen-TriviaQA +9.57, Llama-TriviaQA **+21.25**.
 
-| cell | n/class | probe acc | baseline | h_adds | 95% CI |
+| cell | n/class | probe acc | baseline | h_adds | range |
 |---|--:|--:|--:|--:|---|
 | `popqa_qwen3_1_7b_drop_refusals` | 355 | 79.18% | 75.87% | **+3.31 pp** | [+1.55, +6.48] |
 | `popqa_llama_3_2_3b_drop_refusals` | 102 | 82.37% | 61.61% | **+20.76 pp** | [+14.67, +27.94] |
@@ -18,7 +18,7 @@ For reference, the unfiltered numbers are: Qwen-PopQA +4.35, Llama-PopQA **+24.9
 
 Target = judge_label == 'refusal'. Probe absolute accuracy is the interesting number here — if Llama's probe scores high and the baselines stay near 50% (majority of a 50/50 sample), refusal is the readable signal in the hidden state.
 
-| cell | n/class | probe acc | baseline | h_adds | 95% CI |
+| cell | n/class | probe acc | baseline | h_adds | range |
 |---|--:|--:|--:|--:|---|
 | `popqa_qwen3_1_7b_refusal_vs_rest` | 39 | 86.27% | 76.04% | **+10.24 pp** | [+0.00, +20.42] |
 | `popqa_llama_3_2_3b_refusal_vs_rest` | 297 | 84.47% | 66.03% | **+18.44 pp** | [+16.16, +21.72] |

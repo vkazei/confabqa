@@ -1,4 +1,4 @@
-"""Forest plot of bootstrap 95% CIs on h_adds across the 13 cells.
+"""Forest plot of bootstrap ranges (min to max over K=30) on h_adds across the 13 cells.
 
 Reads:
   figures/bootstrap_h_adds.json     (11 v1.3 + Qwen-external cells)
@@ -89,8 +89,8 @@ def main():
     ax.set_xlim(-7, 36)
     ax.set_ylim(-0.6, len(order) - 0.4)
 
-    ax.set_title("Bootstrap 95% CIs on $h_{adds}$ across 14 (dataset × model × target) cells\n"
-                 r"K=30 balanced 50/50 subsamples per cell; blue = CI excludes 0",
+    ax.set_title("Bootstrap ranges (min to max over K=30 subsamples) on $h_{adds}$ across 14 (dataset × model × target) cells\n"
+                 r"K=30 balanced 50/50 subsamples per cell; blue = range excludes 0",
                  fontsize=11, pad=12)
 
     sep_ys = [ys[2] - 0.5, ys[5] - 0.5, ys[8] - 0.5, ys[11] - 0.5]

@@ -156,7 +156,7 @@ def bootstrap_cell(pos_items, neg_items, label):
     mean_base = statistics.mean(base_vals)
     print(f"  -> {label}: probe {mean_probe:.2f}%, baseline {mean_base:.2f}%, "
           f"h_adds {mean_h:+.2f} ± {std_h:.2f} pp  "
-          f"95% CI [{ci_low:+.2f}, {ci_high:+.2f}]  "
+          f"range [{ci_low:+.2f}, {ci_high:+.2f}]  "
           f"{'EXCLUDES 0' if ci_excludes_zero else 'includes 0'}")
     return {
         "label": label, "n_per_class": n_per_class, "K": K,
@@ -217,7 +217,7 @@ def main():
     md.append("If Llama's headline +25 pp was mostly refusal-readout, this collapses.\n")
     md.append("For reference, the unfiltered numbers are: Qwen-PopQA +4.35, "
               "Llama-PopQA **+24.94**, Qwen-TriviaQA +9.57, Llama-TriviaQA **+21.25**.\n\n")
-    md.append("| cell | n/class | probe acc | baseline | h_adds | 95% CI |\n")
+    md.append("| cell | n/class | probe acc | baseline | h_adds | range |\n")
     md.append("|---|--:|--:|--:|--:|---|\n")
     for k, r in results["test_a_drop_refusals"].items():
         if "skipped" in r:
@@ -233,7 +233,7 @@ def main():
               "interesting number here — if Llama's probe scores high and the "
               "baselines stay near 50% (majority of a 50/50 sample), refusal is "
               "the readable signal in the hidden state.\n\n")
-    md.append("| cell | n/class | probe acc | baseline | h_adds | 95% CI |\n")
+    md.append("| cell | n/class | probe acc | baseline | h_adds | range |\n")
     md.append("|---|--:|--:|--:|--:|---|\n")
     for k, r in results["test_b_refusal_probe"].items():
         if "skipped" in r:

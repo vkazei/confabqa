@@ -1,4 +1,4 @@
-"""Bootstrap 95% CIs on h_adds for Llama-3.2-3B-Instruct on PopQA + TriviaQA.
+"""Bootstrap ranges (min to max over K=30 subsamples) on h_adds for Llama-3.2-3B-Instruct on PopQA + TriviaQA.
 
 Mirrors bootstrap_h_adds.py exactly (K=30 balanced subsamples, same probe
 pipeline and prompt baselines) but for the two new cells produced by the
@@ -10,7 +10,7 @@ Writes:
   figures/bootstrap_llama_external.json
   figures/bootstrap_llama_external.md
 
-Reusing the same K=30 and percentile-based 95% CI makes results directly
+Reusing the same K=30 and min-max range makes results directly
 comparable to bootstrap_h_adds.md.
 """
 from __future__ import annotations
@@ -148,7 +148,7 @@ def bootstrap_cell(items, label):
     ci_high = h_sorted[int(0.975 * K)]
     ci_excludes_zero = ci_low > 0 or ci_high < 0
     print(f"  -> {label}: h_adds = {mean_h:+.2f} ± {std_h:.2f} pp  "
-          f"95% CI [{ci_low:+.2f}, {ci_high:+.2f}]  "
+          f"range [{ci_low:+.2f}, {ci_high:+.2f}]  "
           f"{'EXCLUDES 0' if ci_excludes_zero else 'includes 0'}")
     return {
         "label": label, "n_per_class": n_per_class, "K": K,
@@ -184,10 +184,10 @@ def main():
     print(f"\nWrote {OUT_JSON}")
 
     md = []
-    md.append("# Bootstrap 95% CIs on h_adds — Llama-3.2-3B on external datasets\n\n")
+    md.append("# Bootstrap ranges (min to max over K=30 subsamples) on h_adds — Llama-3.2-3B on external datasets\n\n")
     md.append(f"Method: K={K} balanced 50/50 subsamples per cell. Same pipeline as "
-              "`bootstrap_h_adds.md`. 95% CI = percentile-based.\n\n")
-    md.append("| cell | n/class | mean h_adds | median | std | 95% CI | excludes 0? |\n")
+              "`bootstrap_h_adds.md`. Range = min to max of the K values (not a 95% CI).\n\n")
+    md.append("| cell | n/class | mean h_adds | median | std | range | excludes 0? |\n")
     md.append("|---|--:|--:|--:|--:|---|:--:|\n")
     for k, r in results.items():
         if "skipped" in r:

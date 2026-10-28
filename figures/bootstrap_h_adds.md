@@ -1,8 +1,8 @@
-# Bootstrap 95% CIs on h_adds (probe − strongest prompt baseline)
+# Bootstrap ranges (min to max over K=30 subsamples) on h_adds (probe − strongest prompt baseline)
 
-Method: K=30 balanced 50/50 subsamples per cell. Each subsample: refit probe (StandardScaler→PCA(16)→LR, 5-fold CV, peak across 29 layers) and 4 prompt baselines on identical folds. 95% CI = percentile-based on the K h_adds values.
+Method: K=30 balanced 50/50 subsamples per cell. Each subsample: refit probe (StandardScaler→PCA(16)→LR, 5-fold CV, peak across 29 layers) and 4 prompt baselines on identical folds. Range = min to max of the K h_adds values (not a 95% CI).
 
-| cell | n/class | mean h_adds | median | std | 95% CI | excludes 0? |
+| cell | n/class | mean h_adds | median | std | range | excludes 0? |
 |---|--:|--:|--:|--:|---|:--:|
 | `v13_qwen3_1_7b_correct` | 235 | **+4.30 pp** | +4.15 | 1.47 | [+1.70, +7.45] | **yes** |
 | `v13_qwen3_1_7b_correct_within_pre` | 140 | **+1.25 pp** | +1.07 | 1.26 | [-1.07, +3.57] | no |
@@ -16,6 +16,6 @@ Method: K=30 balanced 50/50 subsamples per cell. Each subsample: refit probe (St
 | `popqa_qwen3_1_7b_full` | 354 | **+4.35 pp** | +4.38 | 0.94 | [+2.11, +6.50] | **yes** |
 | `triviaqa_qwen3_1_7b_full` | 400 | **+9.57 pp** | +9.56 | 1.91 | [+5.13, +13.75] | **yes** |
 
-**7/11** cells have a 95% CI that excludes 0 — i.e., the
+**7/11** cells have a range that excludes 0 — i.e., the
 hidden-state-over-strongest-prompt-baseline margin is statistically
 distinguishable from zero at the conventional bar.

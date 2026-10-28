@@ -1625,7 +1625,7 @@ Figure \ref{fig:bootstrap-forest} is its forest plot.
 \begin{table}[!htbp]
 \small
 \centering
-\caption{Bootstrap 95\% CIs on \(h_{adds}\) across the 14 (dataset,
+\caption{Bootstrap ranges (minimum to maximum over \(K=30\) subsamples) on \(h_{adds}\) across the 14 (dataset,
 model, target) cells; forest plot in Appendix E (Figure
 \ref{fig:bootstrap-forest}).\label{tbl:bootstrap}}
 \begin{tabular}{@{}
@@ -1648,7 +1648,7 @@ target
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
 \(\bar h_{adds}\)
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-95\% CI
+range
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
 excl 0?
 \end{minipage} \\\midrule
@@ -1687,17 +1687,15 @@ TriviaQA & Qwen3-1.7B & correct (full) & 400 & \(+9.57\) &
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={Bootstrap 95\% CIs on h\_\{adds\}
-  across 14 (dataset, model, target) cells. K=30 balanced 50/50 subsamples per cell; blue
-  = CI excludes 0. The bottom two rows are the headline positive finding: Llama 3.2 3B on
+\pandocbounded{\includegraphics[keepaspectratio,alt={Bootstrap ranges on h\_\{adds\}
+  across 14 (dataset, model, target) cells. K=30 balanced 50/50 subsamples per cell; blue = range excludes 0. The bottom two rows are the headline positive finding: Llama 3.2 3B on
   PopQA / TriviaQA recovers +21--+25 pp over the strongest prompt-feature baseline, where
   Qwen3-1.7B and Qwen3-4B on the same data recover +4--+10 pp. The Qwen3-4B row labeled
   ``scaling control'' rules out parameter count as the dominant driver of the cross-model
   gap.}]{figures/bootstrap_forest.png}}
-\caption{Forest plot of the Table \ref{tbl:bootstrap} bootstrap 95\% CIs
+\caption{Forest plot of the Table \ref{tbl:bootstrap} bootstrap ranges
 on \(h_{adds}\) across \(14\) \protect\texttt{(dataset,\ model,\ target)}
-cells. \(K=30\) balanced 50/50 subsamples per cell; blue = CI excludes
-0. The bottom two rows are the headline positive finding: Llama 3.2 3B
+cells. \(K=30\) balanced 50/50 subsamples per cell; blue = range excludes 0. The bottom two rows are the headline positive finding: Llama 3.2 3B
 on PopQA / TriviaQA recovers \(+21\)--\(+25\) pp over the strongest
 prompt-feature baseline, where Qwen3-1.7B and Qwen3-4B on the
 \emph{same} data recover \(+4\)--\(+10\) pp. The Qwen3-4B ``scaling
@@ -1709,18 +1707,18 @@ cross-model gap.}\label{fig:bootstrap-forest}
 \(n_{\text{class}} = \min(|\rm pos|, |\rm neg|, 400)\); each subsample's
 \(h_{\rm adds}\) is \(\text{probe peak} - \max(\text{baselines})\)
 in\,\%, the reported \(\bar h_{\rm adds}\) is the mean across \(K\), and
-the 95\% CI is the percentile interval
-\([h_{(0.025K)}, h_{(0.975K)}]\). \(K=30\) is set by
+the reported interval is
+\([h_{(\lfloor 0.025K\rfloor)}, h_{(\lfloor 0.975K\rfloor)}]\) on the sorted, zero-indexed values.
+At \(K=30\) these are the minimum and maximum, so the paper calls it a range rather than a 95\% CI. \(K=30\) is set by
 compute (each replicate refits the full \(29\)-layer \(\times\)
-\(5\)-fold pipeline), and percentile CIs at \(K=30\) are correspondingly
-coarse. The protocol is ``resampling-of-balanced-subsamples'' rather
+\(5\)-fold pipeline), and the range is correspondingly coarse. The protocol is ``resampling-of-balanced-subsamples'' rather
 than a true item-level bootstrap; the latter would require
 \(K \cdot L \cdot F \approx 4{,}350\) refits per cell, too slow on
 M1-class hardware (see the evaluation-methodology limitation in Section
 10).
 
 \textbf{Permutation-null and item-level-bootstrap calibrations (Section
-8.1).} Two protocol checks calibrate the Table \ref{tbl:bootstrap} CIs
+8.1).} Two protocol checks calibrate the Table \ref{tbl:bootstrap} ranges
 (artifact \texttt{small\_cell\_stats}; fixed layer, TF-IDF baseline, so
 absolute values are not comparable to the table). First, a
 label-permutation null of the peak-over-all-layers margin measures the
@@ -1732,7 +1730,7 @@ evidence, while the all-items margins sit far above the null
 Llama all-items margin positive (CI excluding zero) but leaves
 \emph{both} Llama within-stratum cells consistent with zero (within-pre
 \([-2.0, +8.5]\), within-obscure \([-3.3, +11.8]\)): the subsample
-protocol's positive CIs for those two cells understate item-sampling
+protocol's positive ranges for those two cells understate item-sampling
 uncertainty and should be read as point estimates.
 
 \textbf{External-dataset sampling (Section 4).} Both external datasets
@@ -1869,7 +1867,7 @@ strongest baseline
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
 \(h_{adds}\)
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-95\% CI
+range
 \end{minipage} \\\midrule
 A: drop refusals & PopQA & Qwen3-1.7B & 355 & 79.18\% & 75.87\% &
 \(+3.31\) & \([+1.55, +6.48]\) \\
@@ -1891,8 +1889,8 @@ B: probe refusal & TriviaQA & Llama 3.2 3B & 252 & 90.23\% & 64.80\% &
 \end{tabular}
 \end{table}
 
-(Italicized CI lower bound: 95\% CI includes 0 because the refusal count
-is too small for the \(K=30\) percentile bootstrap to be well-resolved.)
+(Italicized lower bound: the range includes 0 because the refusal count
+is too small for the \(K=30\) bootstrap to be well-resolved.)
 
 \textbf{Reading Test A.} Comparing the drop-refusals rows to the
 unfiltered Table \ref{tbl:bootstrap} rows: for Llama,
@@ -1915,11 +1913,11 @@ Llama-vs-Qwen ordering is unchanged on both external datasets.
 \textbf{Reading Test B.} Llama's refusal probe reaches \(84.5\%\)
 (PopQA) and \(90.2\%\) (TriviaQA) absolute accuracy on a balanced 50/50
 task, beating the strongest prompt baseline by \(+18.4\) and
-\(+25.4\) pp, CIs excluding \(0\) by wide margins: the hidden state
+\(+25.4\) pp, ranges excluding \(0\) by wide margins: the hidden state
 encodes the abstention decision in a form the question text does not
 predict. Qwen's analogous margins (\(+10.2\) pp PopQA, \(+16.0\) pp
 TriviaQA) are positive but the refusal counts (\(39\) and \(28\)) leave
-the CIs straddling \(0\); this test needs either a larger Qwen
+the ranges straddling \(0\); this test needs either a larger Qwen
 evaluation or a benchmark on which Qwen3 refuses more (Qwen refuses
 \(37.4\%\) on ConfabQA's post-cutoff stratum).
 

@@ -9,7 +9,10 @@ the categories hold 143 well-known, 153 obscure, and 488 post-cutoff
 items (per-cell counts in Table \ref{tbl:cells}, Appendix A). I generate
 items from per-domain templated source files. Each carries a provenance
 URL for its gold answer and a validation-status field populated by an
-external LLM with web access. The paper analyzes the third of three
+external LLM with web access. That check verified 384 gold answers. The other 400, all
+post-cutoff items from the dense post-cutoff source files, remain unverified. A wrong gold
+answer can move an item between correct and wrong but not into or out of refusal, and the
+web-verified regrade of all 784 labels (Section 4) gives an independent check. The paper analyzes the third of three
 validation iterations, \textbf{ConfabQA} (\(n=784\)). The full design is
 in \texttt{data/QUESTIONS\_v1\_CARD.md}, and pipeline reproducibility and
 a sample source entry are in Appendix B.2 and B.5. A fifth domain

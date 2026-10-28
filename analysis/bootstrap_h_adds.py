@@ -1,4 +1,4 @@
-"""Bootstrap 95% CIs on h_adds (probe vs strongest prompt baseline) for every
+"""Bootstrap ranges (min to max over K=30 subsamples) on h_adds (probe vs strongest prompt baseline) for every
 (dataset, model, target) balanced cell.
 
 Method: for each cell, run K=30 random balanced subsamples (N correct + N wrong,
@@ -9,8 +9,9 @@ LR, 5-fold CV at every layer, peak), refit 4 prompt baselines, compute
 
 Report:
   - mean, median, std across K subsamples
-  - percentile-based 95% CI: 2.5th / 97.5th percentile of the K h_adds values
-  - "CI excludes 0?" flag
+  - interval: sorted values at int(0.025K) and int(0.975K); at K=30 that is the
+    min and max, so it is reported as a range, not a 95% CI
+  - "range excludes 0?" flag
   - per-subsample h_adds list (for further analysis)
 
 This is a proper sampling-distribution estimate of h_adds (under the assumption
@@ -182,7 +183,7 @@ def bootstrap_cell(items, label):
     ci_high = h_sorted[int(0.975 * K)]
     ci_excludes_zero = ci_low > 0 or ci_high < 0
     print(f"  -> {label}: h_adds = {mean_h:+.2f} ± {std_h:.2f} pp  "
-          f"95% CI [{ci_low:+.2f}, {ci_high:+.2f}]  "
+          f"range [{ci_low:+.2f}, {ci_high:+.2f}]  "
           f"{'EXCLUDES 0' if ci_excludes_zero else 'includes 0'}")
     return {
         "label": label, "n_per_class": n_per_class, "K": K,
@@ -224,12 +225,12 @@ def main():
 
     # Markdown
     md = []
-    md.append("# Bootstrap 95% CIs on h_adds (probe − strongest prompt baseline)\n\n")
+    md.append("# Bootstrap ranges (min to max over K=30 subsamples) on h_adds (probe − strongest prompt baseline)\n\n")
     md.append(f"Method: K={K} balanced 50/50 subsamples per cell. Each subsample: "
               "refit probe (StandardScaler→PCA(16)→LR, 5-fold CV, peak across 29 "
-              "layers) and 4 prompt baselines on identical folds. 95% CI = percentile-"
-              "based on the K h_adds values.\n\n")
-    md.append("| cell | n/class | mean h_adds | median | std | 95% CI | excludes 0? |\n")
+              "layers) and 4 prompt baselines on identical folds. Range = min to max of "
+              "the K h_adds values (not a 95% CI).\n\n")
+    md.append("| cell | n/class | mean h_adds | median | std | range | excludes 0? |\n")
     md.append("|---|--:|--:|--:|--:|---|:--:|\n")
     for k, r in results.items():
         if "skipped" in r:
@@ -241,7 +242,7 @@ def main():
                   f"[{r['ci_95_low']:+.2f}, {r['ci_95_high']:+.2f}] | {flag} |\n")
     n_excludes = sum(1 for r in results.values() if r.get("ci_excludes_zero"))
     n_total = sum(1 for r in results.values() if "skipped" not in r)
-    md.append(f"\n**{n_excludes}/{n_total}** cells have a 95% CI that excludes 0 — i.e., the\n")
+    md.append(f"\n**{n_excludes}/{n_total}** cells have a range that excludes 0 — i.e., the\n")
     md.append("hidden-state-over-strongest-prompt-baseline margin is statistically\n")
     md.append("distinguishable from zero at the conventional bar.\n")
 
