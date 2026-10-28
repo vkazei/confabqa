@@ -30,7 +30,7 @@ authors:
   - family-names: Kazei
     given-names: Vladimir
     email: vkazei@gmail.com
-    affiliation: "Independent Research"
+    orcid: "https://orcid.org/0000-0003-1214-3175"
 license: MIT
 license-url: "https://github.com/vkazei/confabqa/blob/main/LICENSE"
 repository-code: "https://github.com/vkazei/confabqa"
@@ -53,6 +53,7 @@ preferred-citation:
     - family-names: Kazei
       given-names: Vladimir
       email: vkazei@gmail.com
+      orcid: "https://orcid.org/0000-0003-1214-3175"
   year: 2026
   url: "https://github.com/vkazei/confabqa"
   notes: "Preprint. Update with arXiv ID once posted."

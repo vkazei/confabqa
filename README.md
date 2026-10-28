@@ -5,7 +5,7 @@ A disconfounded probing benchmark, multi-model multi-dataset bootstrap, refusal-
 ![code license](https://img.shields.io/badge/code-MIT-green) ![data license](https://img.shields.io/badge/data%20%26%20paper-CC%20BY%204.0-blue) ![python](https://img.shields.io/badge/python-3.12--3.14-blue) ![tests](https://github.com/vkazei/confabqa/actions/workflows/ci.yml/badge.svg)
 
 **Paper:** [`paper_confabqa.pdf`](paper_confabqa.pdf)
-**Author:** Vladimir Kazei (Independent Research)
+**Author:** Vladimir Kazei ([ORCID 0000-0003-1214-3175](https://orcid.org/0000-0003-1214-3175))
 **License:** MIT (code), CC BY 4.0 (benchmark and paper)
 
 ---
@@ -221,7 +221,7 @@ python -m plots.figure_sae_features
 
 ## Hardware
 
-All experiments in the paper ran on a single Apple M1 Pro with 16 GB unified memory. Total compute budget: ~3 days of wall-clock time across all four models and three datasets. Activations are cached to disk so analysis scripts are CPU-bound and re-runnable.
+All experiments in the paper ran on a single Apple M1 Pro with 16 GB unified memory. This work was carried out in a personal capacity, independently of the author's employer, on personal equipment. Total compute budget: ~3 days of wall-clock time across all four models and three datasets. Activations are cached to disk so analysis scripts are CPU-bound and re-runnable.
 
 ## Citation
 
