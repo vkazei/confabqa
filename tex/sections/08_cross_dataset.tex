@@ -20,9 +20,9 @@ Appendix E). The Qwen3-4B PopQA cell is the within-family scaling control, which
 
 Of the fourteen cells (Table \ref{tbl:bootstrap} and forest plot, Appendix E), \(5\) of the \(9\) ConfabQA cells and \(5/5\) external-dataset cells have 95\% CIs excluding \(0\). The Qwen3
 and Gemma disconfounded within-stratum cells remain consistent with zero
-but carry positive point estimates in all four cases, so the single-seed
+but carry positive point estimates in all four cases. Thus the single-seed
 ``null'' was borderline. The CIs are
-per-cell and unadjusted for multiple comparisons; the cross-model
+per-cell and unadjusted for multiple comparisons. The cross-model
 contrast rests on no single borderline cell. Two protocol checks
 calibrate them (Appendix E). A label-permutation null shows
 \(\approx 1\) pp-range margins should not be read as evidence, while the
@@ -72,7 +72,7 @@ beyond prompt-text predictability.
 
 Dropping refusals leaves Llama's margin largely
 intact (\(+24.94 \to +20.76\) on PopQA, \(+21.25 \to +17.71\) on
-TriviaQA): the refusal channel accounts for \(\approx 17\%\) of the headline margin, and \(\approx 83\%\) is correct-vs-wrong discrimination on attempted items. The Qwen rows are essentially unchanged (Qwen refuses too rarely here for the confound to bite).
+TriviaQA): the refusal channel accounts for \(\approx 17\%\) of Llama's margin, and \(\approx 83\%\) is correct-vs-wrong discrimination on attempted items. The Qwen rows are essentially unchanged (Qwen refuses too rarely here for the confound to bite).
 Probed directly, Llama's refusal target beats the strongest prompt
 baseline by \(+18.44\) (PopQA) and \(+25.43\) pp (TriviaQA), with CIs
 excluding \(0\) by wide margins; Qwen's analogous margins are positive
@@ -106,7 +106,6 @@ Within-dataset peak performance (Llama \(>\) Gemma
 \(>\) Qwen) and transfer portability (Llama \(\gg\) Gemma \(\approx\)
 Qwen) are \emph{different orderings}: Gemma decodes dataset-specific
 content patterns, while a Llama direction found on any pool classifies
-the others nearly as well as the source. This matches §1's finding 2: Llama's heavy calibrated-abstention training
-imposes a content-invariant ``the model is uncertain'' representation
-the other two trainings did not produce (full \(3 \times 3\) matrices
+the others nearly as well as the source. This matches Finding 2: Llama 3 has a factuality / refusal stage
+that Qwen3 and Gemma reports do not describe (full \(3 \times 3\) matrices
 released; Appendix B.4).

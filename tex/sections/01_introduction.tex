@@ -62,8 +62,7 @@ hidden state contributed anything.
   the rest reverting to content (Gemma completes \(87\%\) at a super-norm dose and \(30\)--\(40\%\) at sub-norm); 
   closing that gap is left to future work. This replicates \citeauthor{arditi2024refusal}'s (\citeyear{arditi2024refusal}) 
   single-direction finding in the epistemic-abstention rather than safety-refusal regime.  
-  The contribution is the cutoff control, the causal
-  completion, and the decomposition via a sparse-autoencoder (SAE). The SAE resolves the
+  The SAE resolves the
   direction into a deferential-register ensemble (canonical refusal-opener
   plus apology, officialese, and hedging registers; Section 6.3). The opener 
   feature alone flips \(30/30\) wrong-item next-token argmaxes
@@ -76,7 +75,7 @@ hidden state contributed anything.
   correctness signal than Qwen3-1.7B or Gemma 2 2B.} On balanced PopQA /
   TriviaQA subsamples, Llama's probe beats the prompt baseline by
   \(+21\)--\(+25\) pp, \(5.7\times\) and \(2.2\times\) Qwen's margins on
-  the same benchmarks. Three suspects for this behavior are ruled out as primary factors: parameter
+  the same benchmarks. Three alternatives do not explain it: parameter
   count (the Qwen3-4B scaling control moves the margin by less than
   \(2\) pp; Section~8.1), dataset-specific overfit (Llama keeps
   \(\approx 81\%\) of its margin after cross-dataset transfer without
@@ -84,11 +83,9 @@ hidden state contributed anything.
   refusal detection (\(\approx 83\%\) of the margin survives dropping
   refusals in evaluation; Section~8.2). 
   Gemma is behaviorally intermediate, yet its
-  correctness probe is the most dataset-local of the three. The most plausible single explanation is the calibrated-abstention training in
-  the Llama 3 line, whose post-training includes a factuality stage that
+  correctness probe is the most dataset-local of the three. Llama 3 post-training includes a factuality stage that
   generates refusals for questions the model answers confidently and
-  incorrectly under knowledge probing \citep[\S4.3.6]{grattafiori2024llama},
-  forcing a content-invariant ``model is uncertain'' representation that
-  the Qwen3 and Gemma reports describe no analogue of.
+  incorrectly under knowledge probing \citep[\S4.3.6]{grattafiori2024llama}.
+  Qwen3 and Gemma reports describe no analogue.
 \end{enumerate}
 

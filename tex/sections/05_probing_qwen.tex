@@ -15,8 +15,7 @@ Of 784 items, 235 (30.0\%) are graded \texttt{correct}, 147 (18.8\%)
 \texttt{refusal}, and 402 (51.3\%) \texttt{wrong} (breakdowns in
 Appendix A, Table \ref{tbl:bycategory}). The cutoff manipulation works
 as designed: pre-cutoff accuracy is 47.3\% (140/296) against 19.5\%
-(95/488) post-cutoff. In the obscure-pre-cutoff cell, the benchmark's
-innovation, the model fails on \(\approx 66.7\%\) of items whose answers
+(95/488) post-cutoff. In the obscure-pre-cutoff cell, the model fails on \(\approx 66.7\%\) of items whose answers
 existed in its training data, exactly the population the cutoff
 disconfound needs. All 147 refusals fall in the post-cutoff cell, so
 refusal is triggered by the knowledge-cutoff cue rather than intrinsic
@@ -61,7 +60,7 @@ baselines}\label{per-layer-linear-probes-against-majority-baselines}
   98\textbackslash\% by layer 13 and stays high through the network. Refusal-vs-wrong
   (green, n=549) rises monotonically and peaks at the deepest block (layer 28).
   Correctness (blue, n=784) and the cutoff-disconfounded correct-within-pre (red, n=296)
-  both peak at layer 18, with within-pre showing the headline +32 pp margin over its
+  both peak at layer 18, with within-pre showing the +32 pp margin over its
   52.7\textbackslash\% pre-cutoff majority that largely vanishes against the
   prompt-feature baseline of Section 5.6. Correct-within-obscure (purple, n=153) peaks at
   layer 7 but the 1-\textbackslash sigma layer range spans nearly the whole network, so
@@ -73,7 +72,7 @@ lines: per-target majority baselines; dots: peak layers (values in Table
 \ref{tbl:probepeaks}, Appendix A.5). Cutoff saturates early and stays
 high; refusal-vs-wrong rises monotonically and peaks at the deepest
 block; correctness and correct-within-pre peak mid-network, with
-within-pre's headline margin over its pre-cutoff majority largely
+within-pre's margin over its pre-cutoff majority largely
 vanishing against the prompt-feature baseline of Section 5.6;
 correct-within-obscure has a \(1\)-\(\sigma\) layer range spanning
 nearly the whole network.}\label{fig:per-layer-probes}
@@ -109,7 +108,7 @@ Table~\ref{tbl:hadds} (Appendix A.5).
 the label; the tautological \(1.000\) is shown for completeness but
 excluded from the strongest-baseline comparison.)
 
-\textbf{Table \ref{tbl:hadds} interpretation.} (1)~\emph{Correctness
+Table \ref{tbl:hadds} shows three results. (1)~\emph{Correctness
 gains little from the hidden state}: \(\approx 3\) pp or less over the
 strongest baseline (\(+2.4\) pp all items, \(+3.0\) pp within-pre, \(-2.5\) pp
 within-obscure), within per-fold noise (\(0.031\)--\(0.063\)). The
@@ -124,6 +123,4 @@ post-cutoff where all refusals occur, gaps \(\approx 4\)x the per-fold
 std (\(0.019\), \(0.022\)). Refusal-vs-confabulation is a decision the model itself makes,
 and the late hidden state is the computation producing it (Section
 2.2), so an encoding must exist. Correctness is a relation between
-output and world that the model need not represent. Section 6 tests whether the refusal signal is linearly decodable from \(16\) principal components, concentrated
-late, causally sufficient for the first-token opening, and
-SAE-decomposable.
+output and world that the model need not represent. Section 6 asks what form the refusal signal takes.

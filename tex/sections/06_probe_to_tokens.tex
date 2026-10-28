@@ -30,7 +30,7 @@ extractable from the question text (score histograms in Figure
 D.4, Figure \ref{fig:geometry}) shows the raw class-mean difference used
 by safety-refusal work is \emph{not} this direction: it absorbs topical
 and temporal-currency content where the probe concentrates the
-register-and-opener component. The direction's token-level signature is the refusal-opening vocabulary: a late-network commitment to a specific speech act, rather than a general ``self-knowledge'' representation.
+register-and-opener component. The direction's token-level signature is the refusal-opening vocabulary: a late-layer commitment to the refusal opener, rather than a general ``self-knowledge'' representation.
 
 % ----- 6.2 Causal validation by direct intervention -----
 \subsection{6.2 Causal validation by direct
@@ -93,19 +93,19 @@ wrong items open with refusal vocabulary almost without exception from a
 autoregressive continuation pulls back to content. Pulled away, refusing items collapse into attempts that are overwhelmingly confabulations. Correct items are untouched by the pull and largely resist the push, about half still delivering the fact through a forced refusal opening.
 Suppressing the refusal decision does not surface latent knowledge, and pushing
 toward refusal does not reliably erase it: the direction gates the
-opening speech act, and whether the fact is present decides what
+opening, and whether the fact is present decides what
 follows. The matrix is a property of the refusal axis, not of one recovery. Rerun with the SAE-2191 and directly optimized directions, it reproduces the same plateaus row for row (parity block, Table \ref{tbl:alphaparity}, Appendix C).
 
 The direction is a causal handle on the
 refusal-opening \emph{readout}: it localizes where the commitment is
 written, not the upstream circuitry computing it (earlier-layer pushes are future work). The full outcome is \emph{co-determined} by autoregressive dynamics the one-shot push does not touch: a model can open ``As of 2024\ldots{}'' and still commit to a fact, hence the \(30\%\) vs.~\(100\%\) gap on wrong items. The reverse direction is stronger because the natural refusal trajectory is itself committed. A prefix-forcing control (Appendix C) reproduces the
 judge-label outcome without touching the hidden state: the direction selects the first token, and everything after is ordinary autoregressive dynamics (sample generations in Appendix C).
-Parallel to \emph{shallow safety alignment} \citep{qi2025shallow}, the abstention decision is written, and steerable, at token one.
+\citet{qi2025shallow} find safety-alignment changes concentrated in the first output tokens. Here the abstention decision is likewise written, and steerable, at token one.
 
 \textbf{Pushing the correctness direction} the same way finds no
 comparable causal handle: effects are magnitude-driven and
 sign-symmetric, the few flips concentrate on a recurring handful of
-marginal items, with no sign that the direction injects knowledge. This correctness-direction null (protocol, rates, flip forensics, and the tension with truthfulness-steering reports) is detailed in Appendix C. The asymmetry with Table \ref{tbl:alpha} matches the two behaviors: refusing is a speech act the model can always produce, so a single direction can carry it; answering correctly requires the specific fact, which a direction can at most dislodge from a marginal default.
+marginal items, with no sign that the direction injects knowledge. This correctness-direction null (protocol, rates, flip forensics, and the tension with truthfulness-steering reports) is detailed in Appendix C. The asymmetry with Table \ref{tbl:alpha} matches the two behaviors: refusing is an opening the model can always produce, so a single direction can carry it; answering correctly requires the specific fact, which a direction can at most dislodge from a marginal default.
 
 % ----- 6.3 SAE feature decomposition of the refusal direction -----
 \subsection{6.3 SAE feature decomposition of the refusal
@@ -128,8 +128,7 @@ analogue of Gemma Scope; \citealp{lieberum2024gemmascope}), applied at its decla
 three top-twenty lists.
 
 In the SAE's own geometry the refusal direction decomposes not into one
-opener plus content detectors but into a coherent
-\emph{deferential-register ensemble} (feature card in Figure
+opener plus content detectors but into a set of register features (feature card in Figure
 \ref{fig:sae-features}, Appendix D.7, with per-feature hit rates and
 vocabularies): a \texttt{moment} hedge (4314, the strongest
 discriminator), deferential officialese (17077), polite modality
@@ -141,7 +140,7 @@ decoder lens is \emph{exactly} the §6.1 refusal vocabulary (\texttt{as},
 \texttt{as}, \texttt{As}). It fires on \(100\%\) of refusals (mean activation \(268\)) and \(49\%\) of wrongs, and it is the ensemble's causal anchor (Section 6.3.1). \textbf{Feature 14034}
 (\texttt{Sorry}/\texttt{Oops} register) fires on \(97\%\) of refusals,
 yet its apology vocabulary never surfaces in the outputs, and pushing
-its decoder direction at doses that saturate 2191 produces zero \texttt{Sorry}/\texttt{Oops} openers (Appendix C). 17077 behaves the same way: register markers, not emitted tokens. The ``refusal direction'' is thus a superposition of register features jointly encoding \emph{how the model is about to speak}, of which exactly one (2191) writes the opener token that carries the causal effect. The register is represented far more richly than it is spoken. The reading
+its decoder direction at doses that saturate 2191 produces zero \texttt{Sorry}/\texttt{Oops} openers (Appendix C). 17077 behaves the same way: register markers, not emitted tokens. The ``refusal direction'' is thus a set of register features of which exactly one (2191) writes the opener token that carries the causal effect. The reading
 beyond 2191 is correlational (only the opener member is causally
 tested), and under a dictionary reconstructing these states at EV
 \(0.50\) feature identities carry splitting and absorption risk \citep{chanin2025absorption}. How an h-space push maps into a-space is analyzed in Appendix D.4.
@@ -175,13 +174,13 @@ refusals at a super-norm dose, so super-norm doses can act by magnitude
 alone, which is why the working regime stays at or below the state
 norm).
 
-The §6.1 lens story is mechanically grounded (the SAE recovers the opener vocabulary the lens projected to),
+Feature 2191's decoder matches the lens opener vocabulary,
 and the probe direction's causal effect runs through 2191 specifically. Its ensemble neighbors (14034, 17077, 4314) contribute to the \emph{correlational} direction only. The two vectors are far from the same object (cosine \(0.16\) to the full-subset recovery and \(0.25\) to the within-post direction actually pushed; chance \(\approx 0.02\) in \(2048\) dimensions) yet produce the same first-token flip,
 \(81^\circ\) apart in the plane they span (Figure
 \ref{fig:probe-sae-plane}, Appendix D.4; norm accounting in Appendix
 C).
 
-As in the representational independence \citet{wollschlager2025geometry} report for safety refusal, distinct far-from-collinear directions each steer the same behavior; here the output-side members (2191, optimized) are the more dose-efficient (Figure \ref{fig:candidates}).
+\citet{wollschlager2025geometry} report distinct, far-from-collinear directions for safety refusal. The same pattern appears here: 2191 and the optimized direction are the more dose-efficient (Figure \ref{fig:candidates}).
 
 \begin{figure}
 \centering
