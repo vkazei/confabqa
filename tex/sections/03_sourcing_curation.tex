@@ -8,8 +8,8 @@ ConfabQA comprises 784 items in a \(4 \times 3\) design: 4 domains
 the categories hold 143 well-known, 153 obscure, and 488 post-cutoff
 items (per-cell counts in Table \ref{tbl:cells}, Appendix A). I generate
 items from per-domain templated source files. Each carries a provenance
-URL for its gold answer and a validation-status field populated by an
-external LLM with web access. That check verified 384 gold answers. The other 400, all
+URL for its gold answer and a validation-status field. The 384 items marked verified were marked
+from source-file provenance only, with no independent check of the gold answer. The other 400, all
 post-cutoff items from the dense post-cutoff source files, remain unverified. A wrong gold
 answer can move an item between correct and wrong but not into or out of refusal, and the
 web-verified regrade of all 784 labels (Section 4) gives an independent check. The paper analyzes the third of three
