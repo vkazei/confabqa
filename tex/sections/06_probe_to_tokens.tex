@@ -179,41 +179,6 @@ C).
 
 \citet{wollschlager2025geometry} report distinct, far-from-collinear directions for safety refusal. The same pattern appears here: 2191 and the optimized direction are the more dose-efficient (Figure \ref{fig:candidates}).
 
-\begin{figure}
-\centering
-\pandocbounded{\includegraphics[keepaspectratio,alt={Two recoveries of ``the'' refusal
-  direction (layer-28 refusal+wrong states, n=549; stars: class centroids; dashed curves:
-  per-class 1\textbackslash sigma covariance ellipses). (a) Ambient view, top two
-  principal components of the data: the class-mean difference (green) connects the
-  centroids and lies almost entirely (96\textbackslash\% of its norm) in this top-variance
-  plane; the probe direction (purple, in-plane projection) keeps only 47\textbackslash\%
-  of its norm here. (b) The plane spanned by the two directions themselves, in which both
-  lie fully: the angle between them is 63\^{}\textbackslash circ (full-space cosine 0.46).
-  The refusal cluster separates along an oblique axis between the two arrows, and the
-  wrong class's covariance ellipse is elongated along the same oblique axis: the centroid
-  connector rides that high-variance content spread, while the probe direction is the axis
-  whose marginal separates the classes item by item (its x-marginal here is, up to an
-  affine map, the score histograms of Appendix D.4). The dotted vertical line is the probe's
-  decision boundary, which is exact in this panel: the separating hyperplane's normal is
-  the probe direction itself, so the boundary intersects this plane perpendicular to the
-  x-axis.},width=0.9\linewidth]{figures/qwen3_1_7b/direction_geometry.png}}
-\caption{Two recoveries of ``the'' refusal direction (layer-28
-refusal+wrong states, \(n=549\); stars: class centroids; dashed curves:
-per-class \(1\sigma\) covariance ellipses). \textbf{(a)} Ambient view,
-top two principal components: the class-mean difference (green) connects
-the centroids and lies almost entirely in this top-variance plane; the
-probe direction (purple, in-plane projection) does not. \textbf{(b)} The
-plane spanned by the two directions, in which both lie fully: the angle
-between them is \(63^\circ\). The wrong class's covariance ellipse is
-elongated along the same oblique axis the centroid connector rides,
-while the probe direction is the axis whose marginal separates the
-classes item by item (score histograms in Figure
-\ref{fig:score-hist}). The dotted vertical line is the probe's decision
-boundary, exact in this panel because the hyperplane normal is the probe
-direction itself.}\label{fig:geometry}
-\end{figure}
-
-
 \textbf{Optimized refusal direction.} Where the
 probe and the class-mean difference recover the direction from
 \emph{data}, a third route recovers it from the \emph{objective}: maximizing the opener log-probability under the final RMSNorm and LM

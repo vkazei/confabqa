@@ -1,6 +1,40 @@
 % ===== 1. Introduction =====
 \section{1. Introduction}\label{introduction}
 
+\begin{figure}[t]
+\centering
+\pandocbounded{\includegraphics[keepaspectratio,alt={Two recoveries of ``the'' refusal
+  direction (layer-28 refusal+wrong states, n=549; stars: class centroids; dashed curves:
+  per-class 1\textbackslash sigma covariance ellipses). (a) Ambient view, top two
+  principal components of the data: the class-mean difference (green) connects the
+  centroids and lies almost entirely (96\textbackslash\% of its norm) in this top-variance
+  plane; the probe direction (purple, in-plane projection) keeps only 47\textbackslash\%
+  of its norm here. (b) The plane spanned by the two directions themselves, in which both
+  lie fully: the angle between them is 63\^{}\textbackslash circ (full-space cosine 0.46).
+  The refusal cluster separates along an oblique axis between the two arrows, and the
+  wrong class's covariance ellipse is elongated along the same oblique axis: the centroid
+  connector rides that high-variance content spread, while the probe direction is the axis
+  whose marginal separates the classes item by item (its x-marginal here is, up to an
+  affine map, the score histograms of Appendix D.4). The dotted vertical line is the probe's
+  decision boundary, which is exact in this panel: the separating hyperplane's normal is
+  the probe direction itself, so the boundary intersects this plane perpendicular to the
+  x-axis.},width=0.9\linewidth]{figures/qwen3_1_7b/direction_geometry.png}}
+\caption{Two recoveries of ``the'' refusal direction (layer-28
+refusal+wrong states, \(n=549\); stars: class centroids; dashed curves:
+per-class \(1\sigma\) covariance ellipses). \textbf{(a)} Ambient view,
+top two principal components: the class-mean difference (green) connects
+the centroids and lies almost entirely in this top-variance plane; the
+probe direction (purple, in-plane projection) does not. \textbf{(b)} The
+plane spanned by the two directions, in which both lie fully: the angle
+between them is \(63^\circ\). The wrong class's covariance ellipse is
+elongated along the same oblique axis the centroid connector rides,
+while the probe direction is the axis whose marginal separates the
+classes item by item (score histograms in Figure
+\ref{fig:score-hist}). The dotted vertical line is the probe's decision
+boundary, exact in this panel because the hyperplane normal is the probe
+direction itself.}\label{fig:geometry}
+\end{figure}
+
 Confabulation is pattern-based reconstruction the model does not recognize as wrong, 
 a term that expresses the nature of language-model (LM) answers better than ``hallucination'', which implies a false perception \citep{smith2023confabulation, farquhar2024semantic}. 
 When a small LM (SLM) is asked a factual question about
@@ -50,7 +84,7 @@ hidden state contributed anything.
 \def\labelenumi{\arabic{enumi}.}
 \item
   \emph{Refusal vs.~confabulation is a model-internal feature:} On the
-  wrong+refusal subset of ConfabQA the late-layer probe beats the strongest prompt baseline on Qwen3-1.7B (\(+7.4\) pp) and Gemma 2 2B (\(+16.3\) pp); on Llama 3.2 3B the \(+2.2\) pp margin is within fold-to-fold spread. On Qwen3 and Gemma a single late-layer linear direction is causally sufficient for the first-token refusal opening. 
+  wrong+refusal subset of ConfabQA the late-layer probe (Figure \ref{fig:geometry}) beats the strongest prompt baseline on Qwen3-1.7B (\(+7.4\) pp) and Gemma 2 2B (\(+16.3\) pp); on Llama 3.2 3B the \(+2.2\) pp margin is within fold-to-fold spread. On Qwen3 and Gemma a single late-layer linear direction is causally sufficient for the first-token refusal opening. 
   A one-shot hidden-state intervention drives the first-token refusal-opener rate to \(100\%\)
   on Qwen3 and Gemma (Sections 6.2 and 7.2), though on Qwen3 only about a third of these openings complete as judged refusals, 
   the rest reverting to content (Gemma completes \(87\%\) at a super-norm dose and \(30\)--\(40\%\) at sub-norm); 
