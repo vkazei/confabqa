@@ -23,21 +23,17 @@ that asks for one of \texttt{correct}, \texttt{refusal}, or
 B.1). This judge replaces the brittle substring-match grader used in
 earlier work.
 
-Three LLM annotators measure judge agreement on the full benchmark,
-applying the same three-way rule strictly (Table \ref{tbl:judge},
-Appendix B.3): the Qwen3-1.7B judge, Claude Opus 4.7 on a stratified
-\(30\)-item sample, and Google Deep Research (DR; Gemini 3.1 Pro with
-web-search verification) covering all \(784\). DR vs.~the Qwen-judge
-gives \(\kappa = 0.78\), ``substantial agreement''
-\citep{landis1977agreement}. Claude agrees \(30/30\), which bounds the
-Qwen-judge's disagreement with a second independent grader at
-\(\le 10\%\) at \(95\%\) confidence by the rule of three. DR is
-systematically stricter, reflecting its containment rule and gold
-verification rather than judge miscalibration (decomposition and
-retained flagged-premise items in Appendix B.3). A sensitivity rerun
-under the DR labels leaves the conclusions unchanged, and a blind Claude-family regrade
-of the Section 6 intervened generations agrees with the self-judge
-without inflating flip rates (both in Appendix B.3).
+Three LLM annotators apply the same three-way rule (Table \ref{tbl:judge},
+Appendix B.3): the Qwen3-1.7B judge on all \(784\) items, Claude Opus 4.7
+on a stratified \(30\)-item sample, and Google Deep Research (DR; Gemini
+3.1 Pro with web search) on all \(784\). DR agrees with the Qwen judge at
+\(\kappa = 0.78\), ``substantial agreement'' \citep{landis1977agreement},
+and is systematically stricter. Claude agrees on \(30/30\), which bounds
+the Qwen judge's disagreement with a second grader at \(\le 10\%\) at
+\(95\%\) confidence by the rule of three. Under the DR labels both probe
+margins over the TF-IDF baseline stay positive, and a blind Claude-family
+regrade of the Section 6 intervened generations agrees with the self-judge
+without inflating flip rates.
 
 \textbf{Hidden-state probe pipeline.} For each binary target and layer,
 I fit the Section 2.3 pipeline on the last-prompt-token states at that
