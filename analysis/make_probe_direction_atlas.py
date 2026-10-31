@@ -134,7 +134,7 @@ def plot_score_histogram(scores, labels, label_names, out_path, title):
     for lbl_val, lbl_name, color in zip([0, 1], label_names, ["#d62728", "#1f77b4"]):
         mask = labels == lbl_val
         ax.hist(scores[mask], bins=bins, alpha=0.7, color=color,
-                label=f"{lbl_name} (n={mask.sum()})", edgecolor="white", linewidth=0.4)
+                label=lbl_name, edgecolor="white", linewidth=0.4)
     ax.set_xlabel(f"signed projection onto layer-{PROBE_LAYER} probe direction "
                   "(positive = refusal pole)")
     ax.set_ylabel("count")
