@@ -18,13 +18,13 @@ for \(v \in \mathcal{V}\). RMSNorm is scale-invariant, so the \(\ell_v\) depend 
 
 \textbf{Top tokens (full subset, \(n=549\)).} The ten highest-scoring
 tokens are all tokenizations of ``as'', and the first non-``as'' token,
-at rank 11, is \texttt{there}, the second-most-common refusal opening (scores in Appendix D.4). The refusals near-universally open with ``As of my knowledge cutoff in 2023\ldots{}'', so the probe is reading exactly that output-token commitment. An opener is a propensity, not a
+at rank 11, is \texttt{there}, the second-most-common refusal opening (scores in Appendix D.4). The refusals near-universally open with ``As of my knowledge cutoff in 2023\ldots{}'', so the probe reads the opener the model is about to emit. An opener is a propensity, not a
 guarantee, which is why the causal test scores the strict judge label
 alongside the first-token rate. The confabulation pole shows no thematic
 structure, and the layer-18 \emph{correctness} direction (all \(n=784\)
 items) shows no comparable lens structure either (token detail in Appendix D.4). Section 6.2 tests its causal counterpart.
 
-The n=393 within-post recovery (where every refusal actually lives) yields the same vocabulary in sharper form (Appendix D.4). With the within-post probe's \(+9.6\) pp margin (Section 5.6), the late-layer state carries a discrete pragmatic signal (``I am about to hedge'') not
+The n=393 within-post recovery (which contains every refusal) yields the same vocabulary in sharper form (Appendix D.4). With the within-post probe's \(+9.6\) pp margin (Section 5.6), the late-layer state carries a discrete pragmatic signal (``I am about to hedge'') not
 extractable from the question text (score histograms in Figure
 \ref{fig:score-hist}, Appendix D.4). A recovery-method check (Appendix
 D.4, Figure \ref{fig:geometry}) shows the raw class-mean difference used
@@ -89,8 +89,7 @@ CORRECT & opener rate & $0\%$ & $0\%$ & $0\%$ & $10\%$ & $63\%$ & $100\%$ \\
 
 Table~\ref{tbl:alpha} is the steering matrix. Pushed toward refusal,
 wrong items open with refusal vocabulary almost without exception from a
-\(0.9\times\) dose, yet only a third of full generations convert: the
-autoregressive continuation pulls back to content. Pulled away, refusing items collapse into attempts that are overwhelmingly confabulations. Correct items are untouched by the pull and largely resist the push, about half still delivering the fact through a forced refusal opening.
+\(0.9\times\) dose, yet only a third of full generations end as judged refusals; the rest continue into an answer. Pushed the other way, refusing items turn into attempts that are overwhelmingly confabulations. Correct items are untouched by the pull and largely resist the push, about half still delivering the fact through a forced refusal opening.
 Suppressing the refusal decision does not surface latent knowledge, and pushing
 toward refusal does not reliably erase it: the direction gates the
 opening, and whether the fact is present decides what
@@ -135,24 +134,22 @@ discriminator), deferential officialese (17077), polite modality
 (14361), the canonical opener itself (2191), a second \texttt{Please}
 feature (16612), a first-person feature (8875), and the apology register
 (14034), in that order of refusal-vs-wrong selectivity. \textbf{Feature 2191}'s
-decoder lens is \emph{exactly} the §6.1 refusal vocabulary (\texttt{as},
+decoder lens is the §6.1 refusal vocabulary (\texttt{as},
 \texttt{\zhs{作为}}, \texttt{\zht{作為}}, \texttt{\textbackslash{}tas}, \texttt{As},
-\texttt{as}, \texttt{As}). It fires on \(100\%\) of refusals (mean activation \(268\)) and \(49\%\) of wrongs, and it is the ensemble's causal anchor (Section 6.3.1). \textbf{Feature 14034}
+\texttt{as}, \texttt{As}). It fires on \(100\%\) of refusals (mean activation \(268\)) and \(49\%\) of wrongs, and it is the feature tested causally in Section 6.3.1. \textbf{Feature 14034}
 (\texttt{Sorry}/\texttt{Oops} register) fires on \(97\%\) of refusals,
 yet its apology vocabulary never surfaces in the outputs, and pushing
-its decoder direction at doses that saturate 2191 produces zero \texttt{Sorry}/\texttt{Oops} openers (Appendix C). 17077 behaves the same way: register markers, not emitted tokens. The ``refusal direction'' is thus a set of register features of which exactly one (2191) writes the opener token that carries the causal effect. The reading
+its decoder direction at doses that saturate 2191 produces zero \texttt{Sorry}/\texttt{Oops} openers (Appendix C). 17077 behaves the same way: register markers, not emitted tokens. The ``refusal direction'' is a set of register features of which exactly one (2191) writes the opener token that carries the causal effect. The reading
 beyond 2191 is correlational (only the opener member is causally
 tested), and under a dictionary reconstructing these states at EV
 \(0.50\) feature identities carry splitting and absorption risk \citep{chanin2025absorption}. How an h-space push maps into a-space is analyzed in Appendix D.4.
 
-\textbf{The wrong pole has no commitment feature.} The mirror search
-over all \(32{,}768\) features finds nothing like 2191: the strongest
+\textbf{Unifying feature not found for the wrong answers.} The same search on the wrong side over all \(32{,}768\) features finds nothing like 2191: the strongest
 wrong-side features are \emph{topic}, phrasing, and attempt-formatting
 cues, not commitment markers (ranked features and hit rates in Appendix D.7). The dictionary contains a refusal register but no confabulation marker. The claim is scoped to what was searched (one dictionary at one
 hook, per-item EV \(0.50\), so absence of a dictionary feature is not
 absence of signal). Confabulation behaves as the default attempt
-pathway missing a fact, not a marked state, the a-space form of the
-Section 5.6 prompt-feature story. This inverts the default reported for Gemma 2 \citep{ferrando2025entity} and Claude 3.5 Haiku \citep{lindsey2025biology}, where abstention is the default pathway and recognized-entity features suppress it, so that hallucination is a failure of suppression. On Qwen3-1.7B the attempt is the default and abstention is the marked state, apparently gated by the knowledge-cutoff cue (all 147 refusals are post-cutoff, Section 5.1), with no dictionary feature marking the confabulation. Llama 3.2 3B, refusing \(97.5\%\) of its post-cutoff failures, sits in the Gemma/Claude regime. Which pathway is default appears to be a post-training property, the same variable Section 8 identifies behind the correctness signal.
+pathway missing a fact, not a marked state. This is the SAE-space counterpart of the Section 5.6 prompt-feature result. This inverts the default reported for Gemma 2 \citep{ferrando2025entity} and Claude 3.5 Haiku \citep{lindsey2025biology}, where abstention is the default pathway and recognized-entity features suppress it, so that hallucination is a failure of suppression. On Qwen3-1.7B the attempt is the default and abstention is the marked state, apparently gated by the knowledge-cutoff cue (all 147 refusals are post-cutoff, Section 5.1), with no dictionary feature marking the confabulation. Llama 3.2 3B, refusing \(97.5\%\) of its post-cutoff failures, sits in the Gemma/Claude regime. Which pathway is default appears to be a post-training property, the same variable Section 8 identifies behind the correctness signal.
 
 \subsubsection{6.3.1 Causal validation of feature
 2191}\label{causal-validation-of-feature-2191}
@@ -175,7 +172,7 @@ alone, which is why the working regime stays at or below the state
 norm).
 
 Feature 2191's decoder matches the lens opener vocabulary,
-and the probe direction's causal effect runs through 2191 specifically. Its ensemble neighbors (14034, 17077, 4314) contribute to the \emph{correlational} direction only. The two vectors are far from the same object (cosine \(0.16\) to the full-subset recovery and \(0.25\) to the within-post direction actually pushed; chance \(\approx 0.02\) in \(2048\) dimensions) yet produce the same first-token flip,
+and the probe direction's causal effect runs through 2191 specifically. Its ensemble neighbors (14034, 17077, 4314) contribute to the \emph{correlational} direction only. The two vectors are far from the same object (cosine \(0.16\) to the full-subset recovery and \(0.25\) to the within-post direction used in the push; chance \(\approx 0.02\) in \(2048\) dimensions) yet produce the same first-token flip,
 \(81^\circ\) apart in the plane they span (Figure
 \ref{fig:probe-sae-plane}, Appendix D.4; norm accounting in Appendix
 C).

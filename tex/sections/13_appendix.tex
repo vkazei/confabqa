@@ -527,8 +527,7 @@ source patching in v2.
 systematically stricter than the Qwen-judge (\(467\) vs.~\(402\)
 wrong-labels), and the residual \(13\%\) disagreement primarily reflects
 DR's stricter containment rule and independent gold verification, not
-judge miscalibration. A sensitivity rerun under the DR labels keeps the
-picture: the refusal-vs-wrong probe reaches \(87.1\%\) (vs.~\(89.4\%\)
+judge miscalibration. A sensitivity rerun under the DR labels leaves the conclusions unchanged: the refusal-vs-wrong probe reaches \(87.1\%\) (vs.~\(89.4\%\)
 under the judge labels; margin over a TF-IDF question-text baseline
 \(+3.9\) vs.~\(+7.7\) pp), and the layer-18 correctness probe
 \emph{rises} to \(87.6\%\) (margin \(+9.8\) vs.~\(+6.0\) pp); artifact
@@ -755,7 +754,7 @@ this and the final normed state's statistics). The lens scores are
 therefore the asymptote of the first-token dose-response, which is the
 saturation Sections 6.2 and 6.3.1 observe, and why \(\alpha\) ranges
 must be calibrated to each model's hidden-state scale (Table
-\ref{tbl:scales}). The clean asymptotic story holds only when the hook
+\ref{tbl:scales}). The asymptotic argument holds only when the hook
 feeds the final RMSNorm directly; when it sits below the final layer
 (Gemma at layer 19, the layer-18 correctness intervention), later blocks
 process the perturbed state, and large \(|\alpha|\) is genuinely
@@ -977,9 +976,7 @@ rather than spreading across the subset: the union over all six nonzero
 \(\alpha\) is \(10\) of \(30\) items, five account for most flips, and
 one flips at every nonzero \(\alpha\) in both directions. Inspection
 shows these are items where the correct answer was already marginally
-available, a knife-edge wrong decode of a famous fact, or a
-post-cutoff fact the model demonstrably knows but hedges on, so a kick
-of any sign can dislodge the default trajectory. This null is in
+available, a narrowly wrong decode of a famous fact, or a post-cutoff fact the model demonstrably knows but hedges on, so a push of either sign can change the output. This null is in
 tension with inference-time intervention reports of
 truthfulness-direction steering \citep{li2023iti}; the settings differ
 (TruthfulQA's misconception-heavy distribution, multi-head attention
@@ -1609,9 +1606,7 @@ ranking too (diff-\(z\) \(+1.34\)). The runners-up are of the same
 species (a Nobel-Prize topic feature, an ``In {[}date{]}'' phrasing
 feature, a question-form feature), and against refusals the top
 wrong-side features are attempt and formatting features that fire on
-correct and wrong items alike. What the search rules out is a
-concentrated confabulation marker in this dictionary, the mirror image
-of 2191.
+correct and wrong items alike. What the search rules out is a concentrated confabulation marker in this dictionary, the counterpart of 2191.
 
 % ----- E. Bootstrap protocol and attribution details -----
 \subsection{E. Bootstrap protocol and attribution
@@ -1800,7 +1795,7 @@ beat the test-dataset majority, with an average winning margin of
 \(+19.8\) pp, comparable to the within-dataset \(+18.9\) pp. The single
 failure is ConfabQA \(\to\) PopQA (majority \(87.3\%\), transfer
 \(79.8\%\)). Two transfer cells (PopQA \(\to\) ConfabQA at \(94.0\%\),
-TriviaQA \(\to\) ConfabQA at \(93.8\%\)) actually exceed the
+TriviaQA \(\to\) ConfabQA at \(93.8\%\)) exceed the
 within-ConfabQA CV accuracy of \(93.5\%\), suggesting less overfit when
 trained on more diverse data than ConfabQA alone provides.
 
@@ -1974,7 +1969,7 @@ work.
 reporting ``the hidden state predicts correctness at
 \(\sim 80\)--\(90\%\)'' should be re-evaluated against a prompt-feature
 baseline (removing the cutoff variable is necessary but not sufficient),
-and the result is sharply model-dependent: a single-model study could
+and the result is model-dependent: a single-model study could
 report either ``substantial factual self-knowledge'' (Llama) or
 ``nothing over prompt features'' (Qwen ConfabQA within-obscure) on
 identical data and code, consistent with \citeauthor{orgad2024show}'s (\citeyear{orgad2024show}) finding

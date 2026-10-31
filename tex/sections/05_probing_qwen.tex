@@ -16,7 +16,7 @@ Of 784 items, 235 (30.0\%) are graded \texttt{correct}, 147 (18.8\%)
 Appendix A, Table \ref{tbl:bycategory}). The cutoff manipulation works
 as designed: pre-cutoff accuracy is 47.3\% (140/296) against 19.5\%
 (95/488) post-cutoff. In the obscure-pre-cutoff cell, the model fails on \(\approx 66.7\%\) of items whose answers
-existed in its training data, exactly the population the cutoff
+existed in its training data, the population the cutoff
 disconfound needs. All 147 refusals fall in the post-cutoff cell, so
 refusal is triggered by the knowledge-cutoff cue rather than intrinsic
 uncertainty. This motivates the \texttt{refusal\_vs\_wrong\_within\_post}
@@ -111,9 +111,7 @@ excluded from the strongest-baseline comparison.)
 Table \ref{tbl:hadds} shows three results. (1)~\emph{Correctness
 gains little from the hidden state}: \(\approx 3\) pp or less over the
 strongest baseline (\(+2.4\) pp all items, \(+3.0\) pp within-pre, \(-2.5\) pp
-within-obscure), within per-fold noise (\(0.031\)--\(0.063\)). The
-Section 8.1 bootstrap confirms the reading: the all-items margin is real,
-the disconfounded within-stratum margins consistent with zero.
+within-obscure), within per-fold noise (\(0.031\)--\(0.063\)). The Section 8.1 bootstrap confirms this. The all-items margin holds, and the disconfounded within-stratum margins are consistent with zero.
 (2)~\emph{Cutoff is easy to predict either way}: text features alone
 reach \(94.0\)--\(95.2\%\) (the year mentioned is a near-perfect
 predictor), and the probe at \(98.2\%\) adds \(+3.0\) pp (a manipulation check on the cutoff cue, not evidence of internals).

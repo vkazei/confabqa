@@ -16,14 +16,13 @@ compiles the key statistics, alongside the per-layer probe curves for
 all three models (Figure \ref{fig:comparative-probes}).
 
 The three models reach nearly identical overall accuracy
-(\(30\)--\(32\%\)) but adopt sharply different abstention policies on
+(\(30\)--\(32\%\)) but adopt different abstention policies on
 post-cutoff questions. Llama refuses almost every post-cutoff failure
 (\(97.5\%\), \(475/487\)), Qwen only about a third, Gemma in between.
 This behavioral axis, not accuracy, is what the refusal probes track.
 The correctness margins fall to a few percentage points against the
 ``+category'' baseline on all three models (Section 5.6's confound,
-cross-model; depth-band detail in Appendix D.5). Refusal is the axis on
-which the three most cleanly separate: the refusal-vs-wrong probe beats
+cross-model; depth-band detail in Appendix D.5). The refusal-vs-wrong probe separates the three models most clearly. It beats
 the strongest prompt baseline by \(+7.4\) pp (Qwen), \(+16.3\) pp
 (Gemma), and \(+2.2\) pp (Llama). It peaks in the deepest layers on Qwen
 and Llama (layer \(28\)) and at layer \(19\) on Gemma, the late-layer

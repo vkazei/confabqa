@@ -33,8 +33,7 @@ The \emph{prefill} pass over the prompt \(x_{1:T}\) produces the full
 hidden-state tensor. I pick off the \textbf{hidden state at every layer
 at the last prompt position}, \(\{h^{(\ell)}_T\}_{\ell=0}^{L}\), of
 shape \((L+1, d) = (29, 2048)\) per question. Nothing has been generated
-yet, so this is the model's representation \emph{immediately before it
-commits to the answer} (Figure \ref{fig:tokenflow}b). It summarizes the
+yet, so this is the model's representation immediately before the first generated token (Figure \ref{fig:tokenflow}b). It summarizes the
 whole prompt, sits one linear projection from the first answer token's
 logits (Section 4), and avoids the contamination of probing generated
 tokens' states (expanded rationale in Appendix B.6).
@@ -78,7 +77,6 @@ in Section 4, specification in Appendix B.7, schematic in Figure
 \ref{fig:baselines}, Appendix B.6). A hidden-state probe is evidence of
 model-internal information only to the extent it beats this baseline
 outside per-fold noise (\(h_{\rm adds}\) = probe peak \(-\) strongest
-baseline, in pp, reported throughout \S\S5--8). This is the control the
-probing literature most often omits: it distinguishes ``the hidden state
+baseline, in pp, reported throughout \S\S5--8). The probing literature most often omits this control. It distinguishes ``the hidden state
 encodes self-knowledge'' from ``the hidden state encodes the prompt,
 which encodes the answer.''
