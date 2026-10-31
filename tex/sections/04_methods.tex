@@ -11,16 +11,10 @@ Silicon MPS in 16 GB unified memory. Decoding is greedy throughout
 \texttt{\textless{}think\textgreater{}} trace), so all generations are
 deterministic conditional on the prompt.
 
-\textbf{Hidden-state capture.} Each question runs
-\texttt{model.generate(...)} with \texttt{output\_hidden\_states=True}
-and \texttt{output\_scores=True}, persisting one \((L+1, d) =
-(29, 2048)\) prefill tensor per question. One indexing fact matters
-downstream. Entries \(1..L{-}1\) of the returned stack are raw
-post-block residuals, but the final entry (index \(L = 28\)) is the
-\emph{final normed} state, because HF applies the last RMSNorm before
-recording it. So the probes read the normed state at ``layer 28'' while
-the Section 6.2/6.3.1 hooks and the SAE operate on the pre-norm
-post-block-27 residual.
+\textbf{Hidden-state capture.} Each question persists one \((L+1, d) =
+(29, 2048)\) prefill tensor from \texttt{model.generate(...)}. The cached
+``layer 28'' entry is the final \emph{normed} state, while the Section
+6.2/6.3.1 hooks and the SAE operate on the pre-norm residual (Appendix C).
 
 \textbf{Same-model judge.} Qwen3-1.7B labels each generated answer
 itself, called separately with a structured prompt (\texttt{judge.py})

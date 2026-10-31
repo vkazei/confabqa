@@ -719,6 +719,16 @@ details}\label{c.-intervention-calibration-and-details}
 Calibration and supporting detail for the Section 6.2, Section 6.3.1,
 and Section 7.2 one-shot interventions.
 
+\textbf{Cached versus hooked states.} Hidden states are captured by
+\texttt{model.generate(...)} with
+\mbox{\texttt{output\_hidden\_states=True}} and
+\mbox{\texttt{output\_scores=True}}. Entries \(1..L{-}1\) of the returned
+stack are raw post-block residuals, but the final entry (index
+\(L = 28\)) is the \emph{final normed} state, because HF applies the last
+RMSNorm before recording it. So the probes read the normed state at
+``layer 28'' while the Section 6.2/6.3.1 hooks and the SAE operate on
+the pre-norm post-block-27 residual.
+
 \textbf{Magnitude and normalization.} Magnitude enters only as a mixing
 ratio. Spelled out, with \(\mathrm{rms}(x) = \|x\|/\sqrt{d}\) and
 \(\mathrm{RMSNorm}(x) = \mathbf{g} \odot x / \mathrm{rms}(x)\), the
