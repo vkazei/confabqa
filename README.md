@@ -128,7 +128,7 @@ saes/                                    Sparse-autoencoder experiments (Qwen3-1
 
 plots/                                   Figure generators
   figure_bootstrap_forest.py               14-cell forest plot
-  figure_merge_per_layer_probes.py         Per-layer-probe comparison plot (paper §5.5)
+  figure_merge_per_layer_probes.py         Per-layer-probe comparison plot (paper §5.3)
   figure_{atlas,embeddings,confidence}_merged.py  Multi-channel scatter figures
   figure_sae_features.py                   SAE feature-card figure
   make_atlas_figure.py                     Confabulation Atlas (supervised 2-D projection)

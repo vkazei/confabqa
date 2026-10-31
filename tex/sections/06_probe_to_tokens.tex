@@ -24,7 +24,7 @@ alongside the first-token rate. The confabulation pole shows no thematic
 structure, and the layer-18 \emph{correctness} direction (all \(n=784\)
 items) shows no comparable lens structure either (token detail in Appendix D.4). Section 6.2 tests its causal counterpart.
 
-The n=393 within-post recovery (which contains every refusal) yields the same vocabulary in sharper form (Appendix D.4). With the within-post probe's \(+9.6\) pp margin (Section 5.6), the late-layer state carries a discrete pragmatic signal (``I am about to hedge'') not
+The n=393 within-post recovery (which contains every refusal) yields the same vocabulary in sharper form (Appendix D.4). With the within-post probe's \(+9.6\) pp margin (Section 5.4), the late-layer state carries a discrete pragmatic signal (``I am about to hedge'') not
 extractable from the question text (score histograms in Figure
 \ref{fig:score-hist}, Appendix D.4). A recovery-method check (Appendix
 D.4, Figure \ref{fig:geometry}) shows the raw class-mean difference used
@@ -149,7 +149,7 @@ wrong-side features are \emph{topic}, phrasing, and attempt-formatting
 cues, not commitment markers (ranked features and hit rates in Appendix D.7). The dictionary contains a refusal register but no confabulation marker. The claim is scoped to what was searched (one dictionary at one
 hook, per-item EV \(0.50\), so absence of a dictionary feature is not
 absence of signal). Confabulation behaves as the default attempt
-pathway missing a fact, not a marked state. This is the SAE-space counterpart of the Section 5.6 prompt-feature result. This inverts the default reported for Gemma 2 \citep{ferrando2025entity} and Claude 3.5 Haiku \citep{lindsey2025biology}, where abstention is the default pathway and recognized-entity features suppress it, so that hallucination is a failure of suppression. On Qwen3-1.7B the attempt is the default and abstention is the marked state, apparently gated by the knowledge-cutoff cue (all 147 refusals are post-cutoff, Section 5.1), with no dictionary feature marking the confabulation. Llama 3.2 3B, refusing \(97.5\%\) of its post-cutoff failures, sits in the Gemma/Claude regime. Which pathway is default appears to be a post-training property, the same variable Section 8 identifies behind the correctness signal.
+pathway missing a fact, not a marked state. This is the SAE-space counterpart of the Section 5.4 prompt-feature result. This inverts the default reported for Gemma 2 \citep{ferrando2025entity} and Claude 3.5 Haiku \citep{lindsey2025biology}, where abstention is the default pathway and recognized-entity features suppress it, so that hallucination is a failure of suppression. On Qwen3-1.7B the attempt is the default and abstention is the marked state, apparently gated by the knowledge-cutoff cue (all 147 refusals are post-cutoff, Section 5.1), with no dictionary feature marking the confabulation. Llama 3.2 3B, refusing \(97.5\%\) of its post-cutoff failures, sits in the Gemma/Claude regime. Which pathway is default appears to be a post-training property, the same variable Section 8 identifies behind the correctness signal.
 
 \subsubsection{6.3.1 Causal validation of feature
 2191}\label{causal-validation-of-feature-2191}

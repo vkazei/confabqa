@@ -10,8 +10,7 @@ scaling control, with \(K=30\) balanced-subsample bootstrap ranges across
 \begin{enumerate}
 \def\labelenumi{(\roman{enumi})}
 \item
-  \textbf{The hidden state encodes a refusal-vs-confabulation signal
-  that beats prompt features across all three models} (ConfabQA
+  \textbf{The hidden state encodes a refusal-vs-confabulation signal that beats prompt features on Qwen3 and Gemma} (ConfabQA
   \(+7.4\)--\(+16.3\) pp; deepest layers; the logit lens recovers each
   model's literal refusal-opening vocabulary; causal under a one-shot
   forward-hook intervention on Qwen and Gemma; on Llama the sweep ran at
@@ -30,8 +29,7 @@ scaling control, with \(K=30\) balanced-subsample bootstrap ranges across
 \item
   \textbf{Llama's correctness signal is primarily not refusal-channel
   readout:} dropping refusals leaves \(+20.8\) pp (PopQA) and
-  \(+17.7\) pp (TriviaQA), so \(\approx 83\%\) of the headline
-  \(h_{adds}\) is genuine factual self-knowledge among attempted items,
+  \(+17.7\) pp (TriviaQA), so most of the headline \(h_{adds}\) (\(\approx 83\%\); label caveat in Section 8.2) is correct-vs-wrong discrimination among attempted items,
   and a direct refusal probe additionally recovers
   \(+18.4\)--\(+25.4\) pp, an independent clean abstention direction.
   Llama at \(3\)B carries \textbf{two} linearly-decodable signals;

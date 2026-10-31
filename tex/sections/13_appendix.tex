@@ -9,7 +9,7 @@ Table \ref{tbl:bycategory} gives the full per-category judge-label
 breakdown behind Section 5.1. Mean log-probability also stratifies: the
 model is \emph{least} confident on the obscure pre-cutoff items
 (refusals, concentrated post-cutoff, are themselves fluent and
-high-confidence; Section 5.3).
+high-confidence; Section 5.2).
 
 \begin{table}[!htbp]
 \small
@@ -166,12 +166,11 @@ wrongs.}\label{fig:confidence}
 \subsubsection{A.3 Highest-confidence confabulations and
 refusals}\label{a.3-highest-confidence-confabulations-and-refusals}
 
-Table \ref{tbl:topwrong} lists the Section 5.3 case studies; they
+Table \ref{tbl:topwrong} lists the Section 5.2 case studies; they
 exemplify the canonical failure mode, a plausible-sounding specific
 answer with a recognizable name from the right time period and category,
 at high text-level confidence. Four of the five confabulations are
-obscure pre-cutoff items, where the model had partial training-data
-exposure to the gold answer; the fifth is post-cutoff, where it had
+obscure pre-cutoff items, where the model likely had some training-data exposure to the gold answer; the fifth is post-cutoff, where it had
 none.
 
 \begin{table}[!t]
@@ -243,7 +242,7 @@ figures}\label{a.4-unsupervised-hidden-state-geometry}
   hidden state already separates refusal in its top-variance directions. Whether the
   correctness separation visible in panel (a) reflects model-internal self-knowledge or
   simply prompt-readable features is the subject of Section
-  5.6.}]{figures/qwen3_1_7b/atlas_merged_layer18.png}}
+  5.4.}]{figures/qwen3_1_7b/atlas_merged_layer18.png}}
 \caption{\textbf{Confabulation Atlas (layer 18 hidden state; Section
 5).} Each point is one question: color = judge label (green correct,
 blue refusal, red wrong), shape = category (circle well-known, diamond
@@ -259,7 +258,7 @@ the refusal pole (top) and the correct pole (bottom).
 without supervision, PC1 and PC2 already carry visible refusal-vs-rest
 structure. Whether the \emph{correctness} separation in (a) reflects
 self-knowledge or prompt-readable features is the subject of Section
-5.6.}\label{fig:atlas}
+5.4.}\label{fig:atlas}
 \end{figure}
 
 \begin{figure}
@@ -272,10 +271,10 @@ self-knowledge or prompt-readable features is the subject of Section
   per-token log-probability (larger = more confident). At layer 14 the classes mix
   heavily; by layer 28 the refusals (blue, necessarily post-cutoff) pull into a distinct
   cluster with no supervision, the correct answers occupy the opposite side, and a tight
-  group of large red markers (the confident confabulations of Section 5.3) separates out
+  group of large red markers (the confident confabulations of Section 5.2) separates out
   on its own. The refusal cluster is the geometry the refusal-vs-wrong probe
   reads.}]{figures/qwen3_1_7b/embeddings_pca_merged.png}}
-\caption{Hidden-state geometry, unsupervised (Section 5.4). PCA(2) of
+\caption{Hidden-state geometry, unsupervised (Section 5.2). PCA(2) of
 the last-prompt-token hidden state at a mid-network layer (left) and the
 final layer (right), \(n=784\). Color is the judge label (green correct,
 blue refusal, red wrong), marker shape is cutoff class (circle
@@ -284,7 +283,7 @@ log-probability. At layer 14 the classes mix heavily; by layer 28 the
 refusals (blue, necessarily post-cutoff) pull into a distinct cluster
 with no supervision, the correct answers occupy the opposite side, and a
 tight group of large red markers (the confident confabulations of
-Section 5.3) separates out on its own.}\label{fig:embeddings}
+Section 5.2) separates out on its own.}\label{fig:embeddings}
 \end{figure}
 
 \subsubsection{A.5 Probe-peak summary vs.~majority
@@ -293,8 +292,7 @@ baselines}\label{a.5-probe-peak-summary-vs-majority-baselines}
 \begin{table}[!htbp]
 \small
 \centering
-\caption{Hidden-state probe vs.~the four prompt-feature baselines; ``h
-adds'' = probe peak \(-\) strongest (bolded)
+\caption{Hidden-state probe vs.~the four prompt-feature baselines; \(h_{\rm adds}\) = probe peak \(-\) strongest (bolded)
 baseline.\label{tbl:hadds}}
 \begin{tabular}{@{}
   >{\raggedright\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.4940}}
@@ -321,7 +319,7 @@ text-only
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
 \textbf{hidden state}
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
-\textbf{h adds}
+\(\boldsymbol{h_{\rm adds}}\)
 \end{minipage} \\\midrule
 \texttt{correct} & 0.700 & 0.767 & 0.773 & 0.779 & \textbf{0.800} &
 \(0.824\) & \(+2.4\) \\
@@ -341,7 +339,7 @@ text-only
 \end{table}
 
 
-Table \ref{tbl:probepeaks} is the Section 5.5 probe-peak summary
+Table \ref{tbl:probepeaks} is the Section 5.3 probe-peak summary
 (vs.~majority baseline only).
 
 \begin{table}[!htbp]
@@ -517,21 +515,17 @@ fabrication where Qwen sees hedging), \(11\) DR-refusal / Qwen-wrong,
 The Qwen judge labels are embedded in the response files under
 \texttt{data/responses/qwen3\_1\_7b/} (one \texttt{\{id\}.json} per
 item). Agreement statistics for both annotators are in Table
-\ref{tbl:judge}; the DR pass additionally web-verified each gold answer
-and flagged three items with stated-premise errors
+\ref{tbl:judge}; the DR pass was also asked to web-verify each gold answer and flagged three items with stated-premise errors
 (\texttt{his\_pc\_09}: month wrong by one; \texttt{his\_pc\_56}: year
-wrong by one; \texttt{his\_pc\_90}: dual premise error), flagged for
-source patching in v2.
+wrong by one; \texttt{his\_pc\_90}: dual premise error); a later automated audit of the \(400\) post-cutoff golds found more (Section 10).
 
 \textbf{DR strictness and label-sensitivity rerun (Section 4).} DR is
 systematically stricter than the Qwen-judge (\(467\) vs.~\(402\)
 wrong-labels), and the residual \(13\%\) disagreement primarily reflects
-DR's stricter containment rule and independent gold verification, not
-judge miscalibration. A sensitivity rerun under the DR labels leaves the conclusions unchanged: the refusal-vs-wrong probe reaches \(87.1\%\) (vs.~\(89.4\%\)
+DR's stricter containment rule and its own gold checks, not judge miscalibration. A sensitivity rerun under the DR labels leaves the conclusions unchanged: the refusal-vs-wrong probe reaches \(87.1\%\) (vs.~\(89.4\%\)
 under the judge labels; margin over a TF-IDF question-text baseline
 \(+3.9\) vs.~\(+7.7\) pp), and the layer-18 correctness probe
-\emph{rises} to \(87.6\%\) (margin \(+9.8\) vs.~\(+6.0\) pp); artifact
-\texttt{revision\_analyses}. The three flagged stated-premise items
+\emph{rises} to \(87.6\%\) (margin \(+9.8\) vs.~\(+6.0\) pp); artifact \texttt{revision\_analyses}. The rerun refits the TF-IDF baseline, so its judge-label margins (\(+7.7\), \(+6.0\) pp) differ slightly from Table \ref{tbl:hadds} (\(+7.4\), \(+5.7\) pp). The three flagged stated-premise items
 (\(3/784 \approx 0.4\%\)) are retained because dropping them does not
 shift any headline number; v2 will patch them at the source.
 
@@ -1261,7 +1255,7 @@ tuned.}\label{fig:pca-robustness}
 \end{figure}
 
 The choice of \(n_{\mathrm{components}}=16\) is not driving any of the
-reported numbers; the prompt-feature finding of Section 5.6 in
+reported numbers; the prompt-feature finding of Section 5.4 in
 particular is independent of this hyperparameter. The full sweep data
 (target \(\times\) \(n_{\mathrm{components}}\) peak-accuracy table) is
 at \texttt{figures/qwen3\_1\_7b/10\_pca\_robustness.json}, generated by
@@ -1461,7 +1455,7 @@ probe curves}\label{d.5-cross-model-per-layer-probe-curves}
 Table \ref{tbl:crossmodel} is the Section 7.1 cross-model comparison
 summary. The correctness probe peaks in the same early-to-mid depth band
 on all three architectures, but the absolute peaks hide the confound
-Section 5.6 exposed: a large fraction of what looks like model-internal
+Section 5.4 exposed: a large fraction of what looks like model-internal
 correctness knowledge is the annotator-visible difficulty signal being
 read back through the hidden state, and the margins remain modest within
 the pre-cutoff stratum.
@@ -1538,7 +1532,7 @@ over the prompt baseline.}
 \end{figure}
 
 \subsubsection{D.6 Refusal-vs-wrong probe under class imbalance
-(Section 5.5)}\label{refusal-vs-wrong-probe-under-class-imbalance}
+(Section 5.3)}\label{refusal-vs-wrong-probe-under-class-imbalance}
 
 Bare accuracy (\(0.894\)) is misleading for the
 \texttt{refusal\_vs\_wrong} target because refusals are
