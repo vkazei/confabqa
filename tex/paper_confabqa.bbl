@@ -70,7 +70,7 @@ Aaron Grattafiori, Abhimanyu Dubey, Abhinav Jauhri, Abhinav Pandey, Abhishek
 \bibitem[Joshi et~al.(2017)Joshi, Choi, Weld, and
   Zettlemoyer]{joshi2017triviaqa}
 Mandar Joshi, Eunsol Choi, Daniel~S. Weld, and Luke Zettlemoyer.
-\newblock Triviaqa: A large scale distantly supervised challenge dataset for
+\newblock {TriviaQA}: A large scale distantly supervised challenge dataset for
   reading comprehension.
 \newblock In \emph{ACL}, 2017.
 \newblock \href{https://arxiv.org/abs/1705.03551}{arXiv:1705.03551}.
@@ -114,8 +114,8 @@ Kenneth Li, Oam Patel, Fernanda Vi\'egas, Hanspeter Pfister, and Martin
 Tom Lieberum, Senthooran Rajamanoharan, Arthur Conmy, Lewis Smith, Nicolas
   Sonnerat, Vikrant Varma, J\'anos Kram\'ar, Anca Dragan, Rohin Shah, and Neel
   Nanda.
-\newblock Gemma scope: Open sparse autoencoders everywhere all at once on gemma
-  2.
+\newblock {Gemma Scope}: Open sparse autoencoders everywhere all at once on
+  {Gemma} 2.
 \newblock In \emph{BlackboxNLP}, 2024.
 \newblock \href{https://arxiv.org/abs/2408.05147}{arXiv:2408.05147}.
 
@@ -166,8 +166,8 @@ Xiangyu Qi, Ashwinee Panda, Kaifeng Lyu, Xiao Ma, Subhrajit Roy, Ahmad Beirami,
 
 \bibitem[{Qwen Team}(2026)]{qwen2025qwenscope}
 {Qwen Team}.
-\newblock Qwen-scope: Turning sparse features into development tools for large
-  language models, 2026.
+\newblock {Qwen-Scope}: Turning sparse features into development tools for
+  large language models, 2026.
 \newblock Hugging Face Hub release
   \texttt{Qwen/SAE-Res-Qwen3-1.7B-Base-W32K-L0\_50} and parallel releases for
   the 8B and 30B-A3B base models.
@@ -188,7 +188,7 @@ Shashwat Singh, Tal Linzen, and Shauli Ravfogel.
 
 \bibitem[Smith et~al.(2023)Smith, Greaves, and Panch]{smith2023confabulation}
 Andrew~L. Smith, Felix Greaves, and Trishan Panch.
-\newblock Hallucination or confabulation? neuroanatomy as metaphor in large
+\newblock Hallucination or confabulation? {Neuroanatomy} as metaphor in large
   language models.
 \newblock \emph{PLOS Digital Health}, 2023.
 \newblock
@@ -197,7 +197,7 @@ Andrew~L. Smith, Felix Greaves, and Trishan Panch.
 \bibitem[Templeton et~al.(2024)]{templeton2024scaling}
 Adly Templeton et~al.
 \newblock Scaling monosemanticity: Extracting interpretable features from
-  claude 3 sonnet.
+  {Claude} 3 {Sonnet}.
 \newblock Transformer Circuits Thread, 2024.
 \newblock
   \href{https://transformer-circuits.pub/2024/scaling-monosemanticity/}{transformer-circuits.pub}.
