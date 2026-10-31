@@ -242,9 +242,9 @@ def main():
                   f"[{r['ci_95_low']:+.2f}, {r['ci_95_high']:+.2f}] | {flag} |\n")
     n_excludes = sum(1 for r in results.values() if r.get("ci_excludes_zero"))
     n_total = sum(1 for r in results.values() if "skipped" not in r)
-    md.append(f"\n**{n_excludes}/{n_total}** cells have a range that excludes 0 — i.e., the\n")
-    md.append("hidden-state-over-strongest-prompt-baseline margin is statistically\n")
-    md.append("distinguishable from zero at the conventional bar.\n")
+    md.append(f"\n**{n_excludes}/{n_total}** cells have a range that excludes 0: every one of the\n")
+    md.append("K subsample margins is above zero. This is subsample spread, not an item-level\n")
+    md.append("confidence interval.\n")
 
     OUT_MD.write_text("".join(md))
     print(f"Wrote {OUT_MD}")

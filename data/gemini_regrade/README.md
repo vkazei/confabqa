@@ -1,8 +1,7 @@
-# Gemini regrade pack for ConfabQA-784
+# Gemini regrade pack for ConfabQA
 
-Goal: produce a third-annotator label set on the *real* benchmark so the paper can drop
-the legacy ConfabQA-133 calibration entirely and report a Gemini-vs-Claude-vs-Qwen
-three-way calibration on ConfabQA-784.
+Independent annotator labels for all 784 ConfabQA items, used in the paper to check the
+Qwen3-1.7B self-judge (agreement and Cohen's kappa in Appendix B.3).
 
 ## Files
 
@@ -22,16 +21,11 @@ three-way calibration on ConfabQA-784.
 
 The script is resumable — it skips ids already present in the output file. Safe to ^C.
 
-## What I'll do once you hand back `qwen3_1_7b_gemini_labels.jsonl`
+## Status
 
-1. Compute Gemini-vs-Qwen agreement and Cohen's κ on all 784 items (full-set, not 30-item sample).
-2. Compute Gemini-vs-Claude agreement (need Claude labels regenerated on the full 784 too;
-   currently we only have them on a 30-item sample — let me know if you want me to package
-   that as a follow-up).
-3. Compute the three-way Fleiss κ on whichever subset has all three annotators present.
-4. Update §5 to report ConfabQA-784 calibration with the *real* annotator identities
-   (Gemini 3.1 Pro replacing the "human author" label, which was inaccurate).
-5. Drop every ConfabQA-133 mention from the paper, README, dataset card, and CITATION.cff.
+The labels used in the paper are `qwen3_1_7b_dr_labels.jsonl` (Gemini 3.1 Pro in Deep Research mode,
+all 784 items). Agreement with the Qwen3-1.7B judge is 87.0% (Cohen's kappa 0.78); see the paper's
+Appendix B.3. Claude labels exist only for the stratified 30-item sample (`data/claude_grading_v1.json`).
 
 ## Notes
 

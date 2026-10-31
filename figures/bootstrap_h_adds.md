@@ -16,6 +16,6 @@ Method: K=30 balanced 50/50 subsamples per cell. Each subsample: refit probe (St
 | `popqa_qwen3_1_7b_full` | 354 | **+4.35 pp** | +4.38 | 0.94 | [+2.11, +6.50] | **yes** |
 | `triviaqa_qwen3_1_7b_full` | 400 | **+9.57 pp** | +9.56 | 1.91 | [+5.13, +13.75] | **yes** |
 
-**7/11** cells have a range that excludes 0 — i.e., the
-hidden-state-over-strongest-prompt-baseline margin is statistically
-distinguishable from zero at the conventional bar.
+**7/11** cells have a range that excludes 0: every one of the
+K subsample margins is above zero. This is subsample spread, not an item-level
+confidence interval.
